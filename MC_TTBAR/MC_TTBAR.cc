@@ -44,7 +44,7 @@ namespace Rivet {
 
       if (lfs.chargedLeptons().size() != 1) {
         getLog() << Log::DEBUG << "Event failed lepton cut" << endl;
-        vetoEvent(event);
+        vetoEvent;
       }
 
       foreach (Particle lepton, lfs.chargedLeptons()) {
@@ -57,7 +57,7 @@ namespace Rivet {
 
       if (jets.size() < 4) {
         getLog() << Log::DEBUG << "Event failed jet cut" << endl;
-        vetoEvent(event);
+        vetoEvent;
       }
 
       // Put all b-quarks in a vector
@@ -84,7 +84,7 @@ namespace Rivet {
 
       if (bjets.size() !=2) {
         getLog() << Log::DEBUG << "Event failed b-tagging cut" << endl;
-        vetoEvent(event);
+        vetoEvent;
       }
 
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
