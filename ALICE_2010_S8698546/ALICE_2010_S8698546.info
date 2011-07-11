@@ -1,9 +1,9 @@
-Name: CMS_2011_S8978280
-Year: 2011
-Summary: <Insert short CMS_2011_S8978280 description>
-Experiment: CMS
-Collider: <Insert CMS_2011_S8978280 collider>
-SpiresID: 8978280
+Name: ALICE_2010_S8698546
+Year: 2010
+Summary: <Insert short ALICE_2010_S8698546 description>
+Experiment: ALICE
+Collider: <Insert ALICE_2010_S8698546 collider>
+SpiresID: 8698546
 Status: UNVALIDATED
 Authors:
  - Your Name <your@email.address>
@@ -25,21 +25,22 @@ Description:
   and if possible what it is useful for in terms of MC validation
   and tuning. Use \LaTeX for maths like $\pT > \unit{50}{\GeV}$.
   Use single quotes around the block if required (see YAML 1.2 manual)>'
-BibKey: Khachatryan:2011tm
-BibTeX: '@Article{Khachatryan:2011tm,
-     author    = "Khachatryan, Vardan and others",
- collaboration = "CMS",
-     title     = "{Strange Particle Production in pp Collisions at sqrt(s) =
-                  0.9 and 7 TeV}",
-     journal   = "JHEP",
-     volume    = "05",
-     year      = "2011",
-     pages     = "064",
-     eprint    = "1102.4282",
+BibKey: Aamodt:2010dx
+BibTeX: '@Article{Aamodt:2010dx,
+     author    = "Aamodt, Authors:: K. and others",
+ collaboration = "ALICE",
+     title     = "{Midrapidity antiproton-to-proton ratio in pp collisions at
+                  $\sqrt{s} = 0.9$ and $7$~TeV measured by the ALICE
+                  experiment}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "105",
+     year      = "2010",
+     pages     = "072002",
+     eprint    = "1006.5432",
      archivePrefix = "arXiv",
      primaryClass  =  "hep-ex",
-     doi       = "10.1007/JHEP05(2011)064",
-     SLACcitation  = "%%CITATION = 1102.4282;%%"
+     doi       = "10.1103/PhysRevLett.105.072002",
+     SLACcitation  = "%%CITATION = 1006.5432;%%"
 }'
 ToDo:
  - Implement the analysis, test it, remove this ToDo, and mark as VALIDATED :-)

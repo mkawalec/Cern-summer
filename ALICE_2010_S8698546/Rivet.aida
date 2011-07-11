@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.0/aida.dtd">
+<aida version="3.0">
+<implementation version="1.0" package="LWH"/>
+  <dataPointSet name="d01-x01-y01"
+    title="" path="/ALICE_2010_S8698546" dimension="2">
+    <dimension dim="0" title="" />
+    <dimension dim="1" title="" />
+    <dataPoint>
+      <measurement value="5.00000000e-01" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="1.10000000e+00" errorPlus="3.14466038e-01" errorMinus="3.14466038e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="6.00000000e-01" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="1.43750000e+00" errorPlus="2.88223727e-01" errorMinus="2.88223727e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.00000000e-01" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="1.00000000e+00" errorPlus="2.77350098e-01" errorMinus="2.77350098e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="8.00000000e-01" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="1.12500000e+00" errorPlus="3.50382444e-01" errorMinus="3.50382444e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.00000000e-01" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="1.33333333e+00" errorPlus="2.88675135e-01" errorMinus="2.88675135e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.00000000e+00" errorPlus="5.00000000e-02" errorMinus="5.00000000e-02"/>
+      <measurement value="6.00000000e-01" errorPlus="4.00000000e-01" errorMinus="4.00000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

@@ -1,4 +1,4 @@
-# BEGIN PLOT /CMS_2011_S8978280/d01-x01-y01
+# BEGIN PLOT /ALICE_2010_S8698546/d01-x01-y01
 #Title=[Uncomment and insert title for histogram d01-x01-y01 here]
 #XLabel=[Uncomment and insert x-axis label for histogram d01-x01-y01 here]
 #YLabel=[Uncomment and insert y-axis label for histogram d01-x01-y01 here]
