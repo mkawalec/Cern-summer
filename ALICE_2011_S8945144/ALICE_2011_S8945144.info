@@ -1,0 +1,42 @@
+Name: ALICE_2011_S8945144
+Year: 2011
+Summary: Production of pions, kaons and protons in pp colisions a 900 GeV with ALICE
+Experiment: ALICE
+Collider: LHC
+SpiresID: 8945144
+Status: VALIDATED
+Authors:
+ - Dave Mallows <dmallows@cern.ch>
+References:
+ - arXiv:1101.4410 [hep-ex] 
+RunInfo:
+  pp QCD interactions at 900GeV.
+NumEvents: 2000000
+
+Beams: [p, p]
+Energies: [900]
+PtCuts: [0]
+Description:
+  'Transverse momentum spectra and yields of pions, kaons and protons
+  at mid-rapidity at the LHC, measured in proton-proton collisions at
+  $\sqrt{s} = 900GeV$ with the ALICE detector. A rapidity cut of
+  $|y| < 0.5$ is used. Comparison with event generators shows large
+  deviations in the kaon and proton spectra.'
+
+BibKey: Aamodt:2011zj
+BibTeX: '@Article{Aamodt:2011zj,
+     author    = "Aamodt, K. and others",
+ collaboration = "ALICE",
+     title     = "{Production of pions, kaons and protons in pp collisions at
+                  sqrt(s)= 900 GeV with ALICE at the LHC}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C71",
+     year      = "2011",
+     pages     = "1655",
+     eprint    = "1101.4110",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1140/epjc/s10052-011-1655-9",
+     SLACcitation  = "%%CITATION = 1101.4110;%%"
+}'
+
