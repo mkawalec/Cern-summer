@@ -22,6 +22,7 @@ namespace Rivet {
     //@{
 
     void init() {
+      // Actually, why fastjest have different rapidity ranges than CFSs?
       addProjection(ChargedFinalState(-3.5, 3.5, 0.5*GeV), "CFS");
       addProjection(ChargedLeptons(ChargedFinalState(-3.5, 3.5, 30*GeV)), "LFS");
       addProjection(FastJets(FinalState(-2.5, 2.5, 0*GeV), FastJets::KT, 0.5), "JETS");
@@ -33,15 +34,18 @@ namespace Rivet {
     
     void analyze(const Event& event) {
       double weight = event.weight();
-
+      
+      //Applying projections:
       const FinalState& cfs = applyProjection<FinalState>(event, "CFS");
+      const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
+      
+      //Outputting some additional info:
       getLog() << Log::DEBUG << "Total charged multiplicity    = " 
                << cfs.size()  << endl;
-
-      const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
       getLog() << Log::DEBUG << "Charged lepton multiplicity   = " 
                << lfs.chargedLeptons().size()  << endl;
 
+      //Aren't we artificially throwing out events that could give us t/tbar just because of the noise?
       if (lfs.chargedLeptons().size() != 1) {
         getLog() << Log::DEBUG << "Event failed lepton cut" << endl;
         vetoEvent;
@@ -51,9 +55,11 @@ namespace Rivet {
         getLog() << Log::DEBUG << "lepton pT = " << lepton.momentum().pT() << endl;
       }
 
+      //Applying fastjets projection and filtering out all those that have pT lower than 35,
+      //as we don't really need those for any of the computations.
       const FastJets& jetpro = applyProjection<FastJets>(event, "JETS");
       const Jets jets = jetpro.jetsByPt(35);
-      getLog() << Log::DEBUG << "jet multiplicity = " << jets.size() << endl;
+      getLog() << Log::DEBUG << "Energetic jets multiplicity = " << jets.size() << endl;
 
       if (jets.size() < 4) {
         getLog() << Log::DEBUG << "Event failed jet cut" << endl;
@@ -90,10 +96,11 @@ namespace Rivet {
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
       FourMomentum t1 = W + bjets[0].momentum();
       FourMomentum t2 = W + bjets[1].momentum();
-      std::cout << "W found with mass " << W.mass() << endl;
+      getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
 
       if (W.mass() > 70 && W.mass() < 90) {
-        std::cout << "!!! W found with mass " << W.mass() << endl;
+        getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
+
         _h_t_mass->fill(t1.mass(), weight);
         _h_t_mass->fill(t2.mass(), weight);
         _h_t_rap->fill(t1.rapidity(), weight);
@@ -105,7 +112,7 @@ namespace Rivet {
     }
     
     void finalize() {
-      // No histos, so nothing to do!
+      // No normalisation to be done for now, so proceeding
     }
     //@}
 
