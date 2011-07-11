@@ -78,8 +78,10 @@ namespace Rivet {
       Jets bjets, ljets;
 
       foreach (Jet jet, jets) {
-        foreach (Particle bquark, bquarks) {
-          if (deltaR(jet.eta(), jet.phi(), bquark.momentum().pseudorapidity(), bquark.momentum().azimuthalAngle()) < 0.5) {
+        //Next line added to avoid recomputing eta and phi again and again
+        double eta = jet.eta(); double phi = jet.phi();
+	foreach (Particle bquark, bquarks) {
+          if (deltaR(eta, phi, bquark.momentum().pseudorapidity(), bquark.momentum().azimuthalAngle()) < 0.5) {
             bjets.push_back(jet);
           }
           else {
