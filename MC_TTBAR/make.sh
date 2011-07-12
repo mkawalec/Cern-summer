@@ -1,6 +1,6 @@
 #! /bin/bash
-n=2000000
-pipe=/tmp/hepmc.fifo
+n=200000
+pipe=/tmp/$USER/hepmc.fifo
 analysis=MC_TTBAR
 
 export RIVET_ANALYSIS_PATH=$PWD
@@ -9,7 +9,7 @@ export RIVET_ANALYSIS_PATH=$PWD
 
 rivet-buildplugin RivetPlugin.so $analysis\.cc
 
-agile-runmc Pythia6:425 -p MSEL=6 -P fpythia-Wenumunu.params --beams=LHC:7000 -n $n -o $pipe &
+agile-runmc Pythia6:425 -p MSEL=6 --beams=LHC:14000 -n $n -o $pipe &
 rivet -a $analysis $pipe
 
 compare-histos Rivet.aida
