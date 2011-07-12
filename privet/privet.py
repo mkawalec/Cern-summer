@@ -8,31 +8,51 @@ null = open('/dev/null', 'w')
 
 # Make fifos
 
+pipes = []
 subprocesses = []
 
-for n in xrange(3):
-    print "Spawning process %d" % n
-    pipe = "/tmp/dmallows/privet-%02d.fifo" % n
-    aida = "privet-%02d.aida" % n
+pipe_fn = lambda n: "/tmp/dmallows/privet-%02d.fifo" % n
+aida_fn = lambda n: "privet-%02d.aida" % n
 
-    try:
-        os.mkfifo(pipe)
-    except OSError, e:
-        print e
+try:
+    for n in xrange(1):
+        pipe = pipe_fn(n)
+        aida = aida_fn(n)
 
-    agile=Popen("agile-runmc Pythia6:425 --beams=LHC:7000 -n 2000 -o %s" % pipe, shell=True)
-    agile.poll()
+        try:
+            pipes.append(pipe)
+            os.mkfifo(pipe)
+        except OSError, e:
+            print e
 
-    time.sleep(5)
+        agile=Popen(['agile-runmc','Pythia6:425','--beams=LHC:7000', '-n',
+                    '2000', '-o', pipe], stdout=null, stderr=null)
+        agile.poll()
 
-    rivet=Popen("rivet -a MC_GENERIC -H %s %s" % (aida,pipe), shell=True)
-    rivet.poll()
+        rivet=Popen(['rivet','-a','MC_GENERIC','-H', aida, pipe],stdout=null,stderr=null)
+        rivet.poll()
 
-    subprocesses.append((agile, rivet))
+        subprocesses.append((n, agile, rivet))
 
-while subprocesses:
-    time.sleep(1)
-    print subprocesses
-    for n, (a, r) in enumerate(subprocesses):
-        s = a.poll(), r.poll()
-        print s
+    state = 0
+    finished = []
+
+    while subprocesses:
+        time.sleep(1)
+        for i, (n, a, r) in enumerate(subprocesses):
+            aState, rState = a.poll(), r.poll()
+            print n, aState, rState
+            if rState is not None:
+                try:
+                    if aState is None:
+                        a.kill()
+                finally:
+                    finished.append((n, aState, rState))
+                    subprocesses.pop(i)
+
+    print finished
+
+finally:
+    print "Cleaning the pipes..."
+    for f in pipes:
+        os.unlink(f)
