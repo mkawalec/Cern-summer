@@ -40,7 +40,8 @@ def ask(files):
 
 ## Parsing command line options:
 from optparse import OptionParser
-parser = OptionParser(usage=__doc__, version="1")
+usage = "usage: %prog [options] arg1 arg2"
+parser = OptionParser(usage=usage, version="1")
 parser.add_option("-b", "--build", "--make", dest="build", action="store_true", 
 	default=None, help="if specified, the analysis will be built first before launching rivet")
 parser.add_option("-e", "--energy", dest="energy", type="int", default=7000,
@@ -137,8 +138,8 @@ if build:
 
 ##Create an options string:
 optionsString = ""
-if(options!="") optionsString+= "-p " + options
-if(options!="") optionsString+= "-P " + options2
+if(options!="") optionsString += "-p " + options
+if(options!="") optionsString += "-P " + options2
 
 ## Now, run agile
 if lxplus:
