@@ -11,7 +11,7 @@ null = open('/dev/null', 'w')
 pipes = []
 subprocesses = []
 
-pipe_fn = lambda n: "/tmp/dmallows/privet-%02d.fifo" % n
+pipe_fn = lambda n: "/tmp/privet-%02d.fifo" % n
 aida_fn = lambda n: "privet-%02d.aida" % n
 
 try:
@@ -26,7 +26,7 @@ try:
             print e
 
         agile=Popen(['agile-runmc','Pythia6:425','--beams=LHC:14000', '-n',
-                    '200000', '-o', pipe, '-p', 'MSEL=6','-P',
+                    '2000000', '-o', pipe, '-p', 'MSEL=6','-P',
                     'fpythia-Wenumunu.params','--randomize-seed' 
                     ], stdout=null, stderr=null)
         agile.poll()

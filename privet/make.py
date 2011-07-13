@@ -22,6 +22,7 @@ def md5(fileName, excludeLine='#'):
             m.update(eachLine)
         return m.hexdigest()
 
+## Not sure about this...
 def ask(files):
     """Ask the user which file they would like to process"""
     if len(files) == 1:
@@ -38,27 +39,30 @@ def ask(files):
 from optparse import OptionParser
 parser = OptionParser(usage=__doc__, version='1')
 
-parser.add_option('-m', '--make', dest='build', action='store_true', 
-    default=None, help='if specified, the analysis will be built first before launching rivet')
+parser.add_option('-m', '--make', dest='build', action='store_true',
+        default=None,
+        help='if specified, the analysis will be built first before launching rivet')
 parser.add_option('-b', '--beams', dest='beams', default=LHC:7000
-    help='Specify beam parameters for AGILe')
-parser.add_option('-g', '--generator', dest='generator', default='PYTHIA:423',
-    help='specify the version of pythia. Defaults to 423, just to be sure.')
+        help='Specify beam parameters for AGILe')
+parser.add_option('-g', '--generator', dest='generator', default='Pythia:423',
+        help='Generator to use. Default is Pythia:423.')
 parser.add_option('-n', '--number', dest='number', type='int', default=1000,
-    help='specify the number of events to generate using agile. Defaults to a 1000.')
+        help='specify the number of events to generate using agile. Defaults to a 1000.')
 parser.add_option('-j', '--threads', dest='threads', type='int', default=1,
-    help='specify the number of processes to use. Defaults to 1')
+        help='specify the number of processes to use. Defaults to 1')
 parser.add_option('-c', '--compare-histos', dest='histos', action='store_false',
-    default=True, help='toggles if compare-histos should be run. Defaults to true.')
+        default=True,
+        help='toggles if compare-histos should be run. Defaults to true.')
 parser.add_option('--plots', '--make-plots', dest='plots', action='store_true', 
-    default=False, help='specifies if the the plots should be made. Defaults to false.')
+        default=False, help='specifies if the the plots should be made. Defaults to false.')
 parser.add_option('-a', '--analysis', dest='analysis', default='',
-    help='specify an analysis. Seems like an obligatory one.')
+        help='specify an analysis. Seems like an obligatory one.')
 parser.add_option('-p', '--options', dest='options', default='',
-    help='specify an options string for Pythia.')
+        help='specify an options string for Pythia.')
 parser.add_option('-P', dest='options2', default='', help='additional options for Pythia')
 parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
-    default=False, help='make the program verbose')
+        default=False, help='make the program verbose')
+
 (args,options) = parser.parse_args()
 
 ## Now we check if the file should be built automatically
@@ -67,17 +71,14 @@ import hashlib
 files = glob('*.cc')
 
 build = args.build 
-of = ''
-for cc in files:
-    ## Those line constitute a hack that creates .makerc if it doesn't exist yet
-    data = open('.makerc', 'w')
-    data.close()
 
-    data = open('.makerc', 'rw')
-    found = False
-    while data:
-        line = data.readline()
-        if line.find(cc) >=0 and len(line.split()[0]) == len(cc):
+for cc in files:
+    with 
+    data = open('.makerc', 'r')
+    data.sort()
+
+    for line in data:
+        if 'cc' in line:
             print('Found')
             found = True
 
@@ -88,6 +89,7 @@ for cc in files:
             of += line
         if len(line.split()) == 0:
             break
+
     if not found:
         of += cc + ' ' + md5(cc) + '\n'
         build = True
