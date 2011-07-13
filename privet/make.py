@@ -72,13 +72,12 @@ files = glob('*.cc')
 
 build = args.build 
 
-for cc in files:
-    with 
+for ccfile in files:
+    with file as open('.makerc', 'r')
     data = open('.makerc', 'r')
     data.sort()
-
     for line in data:
-        if 'cc' in line:
+        if cc in line:
             print('Found')
             found = True
 
