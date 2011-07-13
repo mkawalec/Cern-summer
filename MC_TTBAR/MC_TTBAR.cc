@@ -1,5 +1,6 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Projections/FinalState.hh"
+#include "Rivet/Projections/UnstableFinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/ChargedLeptons.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -13,20 +14,29 @@ namespace Rivet {
     
   public:
     
-    /// Default constructor
     MC_TTBAR()
       : Analysis("MC_TTBAR")
     {   }
 
-    /// @name Analysis methods
-    //@{
-
     void init() {
       // Actually, why fastjest have different rapidity ranges than CFSs?
-      addProjection(ChargedFinalState(-3.5, 3.5, 0.5*GeV), "CFS");
-      addProjection(ChargedLeptons(ChargedFinalState(-3.5, 3.5, 30*GeV)), "LFS");
-      addProjection(FastJets(FinalState(-2.5, 2.5, 0*GeV), FastJets::KT, 0.5), "JETS");
+      // No idea! I suspect original author knows more about particle physics
+      // than we do!
 
+      addProjection(
+        ChargedLeptons(ChargedFinalState(-3.5, 3.5, 30*GeV)), "LFS"
+        );
+
+      addProjection(
+        UnstableFinalState(-2.5, 2.5, 0*GeV), "JETS"
+        );
+
+      addProjection(
+        FastJets(FinalState(-2.5, 2.5, 0*GeV), FastJets::KT, 0.5), "JETS"
+        );
+
+
+      // Book histograms
       _h_t_mass = bookHistogram1D("t_mass", 150, 130, 430);
       _h_t_pT = bookHistogram1D("t_pT", 150, 130, 430);
       _h_t_rap = bookHistogram1D("t_rap", 150, 130, 430);
@@ -35,31 +45,29 @@ namespace Rivet {
     void analyze(const Event& event) {
       double weight = event.weight();
       
-      //Applying projections:
-      const FinalState& cfs = applyProjection<FinalState>(event, "CFS");
+      // Applying projections
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
       
-      //Outputting some additional info:
-      getLog() << Log::DEBUG << "Total charged multiplicity    = " 
-               << cfs.size()  << endl;
-      getLog() << Log::DEBUG << "Charged lepton multiplicity   = " 
-               << lfs.chargedLeptons().size()  << endl;
-
-      //Aren't we artificially throwing out events that could give us t/tbar just because of the noise?
+      // Aren't we artificially throwing out events that could give us
+      // t/tbar just because of the noise?
       if (lfs.chargedLeptons().size() != 1) {
         getLog() << Log::DEBUG << "Event failed lepton cut" << endl;
         vetoEvent;
       }
 
       foreach (Particle lepton, lfs.chargedLeptons()) {
-        getLog() << Log::DEBUG << "lepton pT = " << lepton.momentum().pT() << endl;
+        getLog() << Log::DEBUG <<
+          "lepton pT = " << lepton.momentum().pT() << endl;
       }
 
-      //Applying fastjets projection and filtering out all those that have pT lower than 35,
-      //as we don't really need those for any of the computations.
+      // Applying fastjets projection and filtering out all those that have pT
+      // lower than 35, as we don't really need those for any of the
+      // computations.
+      const UnstableFinalState& ufs = applyProjection<UnstableFinalState>(event, "UFS");
       const FastJets& jetpro = applyProjection<FastJets>(event, "JETS");
       const Jets jets = jetpro.jetsByPt(35);
-      getLog() << Log::DEBUG << "Energetic jets multiplicity = " << jets.size() << endl;
+      getLog() << Log::DEBUG <<
+        "Energetic jets multiplicity = " << jets.size() << endl;
 
       if (jets.size() < 4) {
         getLog() << Log::DEBUG << "Event failed jet cut" << endl;
@@ -67,9 +75,9 @@ namespace Rivet {
       }
 
       // Put all b-quarks in a vector
+      // Ugly. Can we foreach this?
       ParticleVector bquarks;
-      for (GenEvent::particle_const_iterator p = event.genEvent().particles_begin(); 
-           p != event.genEvent().particles_end(); ++p) {
+      for (const Particle
         if ( fabs((*p)->pdg_id()) == BQUARK ) {
           bquarks.push_back(Particle(**p));
         }
@@ -78,8 +86,9 @@ namespace Rivet {
       Jets bjets, ljets;
 
       foreach (Jet jet, jets) {
-        //Next line added to avoid recomputing eta and phi again and again
-        double eta = jet.eta(); double phi = jet.phi();
+        const double eta = jet.eta();
+        const double phi = jet.phi();
+
 	foreach (Particle bquark, bquarks) {
           if (deltaR(eta, phi, bquark.momentum().pseudorapidity(), bquark.momentum().azimuthalAngle()) < 0.5) {
             bjets.push_back(jet);
@@ -96,12 +105,16 @@ namespace Rivet {
       }
 
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
-      FourMomentum t1 = W + bjets[0].momentum();
-      FourMomentum t2 = W + bjets[1].momentum();
       getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
 
+      // Mass cut
       if (W.mass() > 70 && W.mass() < 90) {
-        getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
+
+        FourMomentum t1 = W + bjets[0].momentum();
+        FourMomentum t2 = W + bjets[1].momentum();
+
+        getLog() << Log::INFO << "t, tbar found with massses " <<
+                    t1.mass() << ", " << t2.mass() << endl;
 
         _h_t_mass->fill(t1.mass(), weight);
         _h_t_mass->fill(t2.mass(), weight);
