@@ -1,4 +1,4 @@
-#! /usr/env/python
+#! /usr/bin/env python2
 
 import os
 from subprocess import Popen
@@ -31,7 +31,7 @@ try:
                     ], stdout=null, stderr=null)
         agile.poll()
 
-        rivet=Popen(['rivet','-a','MC_TTBAR','-H', aida, pipe])
+        rivet=Popen(['rivet','-a','MC_TTBAR2','-H', aida, pipe])
         rivet.poll()
 
         subprocesses.append((n, agile, rivet))

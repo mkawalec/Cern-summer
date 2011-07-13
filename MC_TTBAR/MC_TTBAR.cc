@@ -10,12 +10,12 @@
 
 namespace Rivet {
   
-  class MC_TTBAR : public Analysis {
+  class MC_TTBAR2 : public Analysis {
     
   public:
     
-    MC_TTBAR()
-      : Analysis("MC_TTBAR")
+    MC_TTBAR2()
+      : Analysis("MC_TTBAR2")
     {   }
 
     void init() {
@@ -28,13 +28,8 @@ namespace Rivet {
         );
 
       addProjection(
-        UnstableFinalState(-2.5, 2.5, 0*GeV), "JETS"
-        );
-
-      addProjection(
         FastJets(FinalState(-2.5, 2.5, 0*GeV), FastJets::KT, 0.5), "JETS"
         );
-
 
       // Book histograms
       _h_t_mass = bookHistogram1D("t_mass", 150, 130, 430);
@@ -45,7 +40,7 @@ namespace Rivet {
     void analyze(const Event& event) {
       double weight = event.weight();
       
-      // Applying projections
+      // Applying initial projection
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
       
       // Aren't we artificially throwing out events that could give us
@@ -63,7 +58,8 @@ namespace Rivet {
       // Applying fastjets projection and filtering out all those that have pT
       // lower than 35, as we don't really need those for any of the
       // computations.
-      const UnstableFinalState& ufs = applyProjection<UnstableFinalState>(event, "UFS");
+      
+
       const FastJets& jetpro = applyProjection<FastJets>(event, "JETS");
       const Jets jets = jetpro.jetsByPt(35);
       getLog() << Log::DEBUG <<
@@ -77,9 +73,9 @@ namespace Rivet {
       // Put all b-quarks in a vector
       // Ugly. Can we foreach this?
       ParticleVector bquarks;
-      for (const Particle
-        if ( fabs((*p)->pdg_id()) == BQUARK ) {
-          bquarks.push_back(Particle(**p));
+      foreach(const GenParticle* p, Rivet::particles(event.genEvent())) {
+        if ( fabs(p->pdg_id()) == BQUARK ) {
+          bquarks.push_back(*p);
         }
       }
 
@@ -89,8 +85,10 @@ namespace Rivet {
         const double eta = jet.eta();
         const double phi = jet.phi();
 
-	foreach (Particle bquark, bquarks) {
-          if (deltaR(eta, phi, bquark.momentum().pseudorapidity(), bquark.momentum().azimuthalAngle()) < 0.5) {
+	    foreach (Particle &bquark, bquarks) {
+          
+          if (deltaR(eta, phi, bquark.momentum().pseudorapidity(),
+                  bquark.momentum().azimuthalAngle()) < 0.5) {
             bjets.push_back(jet);
           }
           else {
@@ -136,6 +134,6 @@ namespace Rivet {
   };
 
   // This global object acts as a hook for the plugin system
-  AnalysisBuilder<MC_TTBAR> plugin_MC_TTBAR;
+  AnalysisBuilder<MC_TTBAR2> plugin_MC_TTBAR2;
 
 }
