@@ -26,7 +26,7 @@ except Exception, e:
     sys.exit(1)
 
 # Regexps here?
-def md5sum(fileName, excludeLine='//'):
+def md5sum(fileName, excludeLine='#'):
     """Compute md5 hash of the specified file"""
     m = hashlib.md5()
     with open(filename, 'rb') as file:
