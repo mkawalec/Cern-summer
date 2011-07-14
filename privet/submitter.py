@@ -19,7 +19,7 @@ def LaunchSsh(host, threads):
 	print output
 
 if sys.version_info[:3] < (2, 4, 0):
-	print 'At python 2.4 is required to launch this script.'
+	print 'At least python 2.4 is required to launch this script.'
 	system.exit(1)
 
 # A bit of parsing:
