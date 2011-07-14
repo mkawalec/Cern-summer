@@ -105,7 +105,6 @@ for i, filename in enumerate(analyses):
         build_plugin(name, verbose=opts.verbose)
         md5s[filename] = newsum
 
-
 # Some moving around of the fles to be sure we have what we need in the file
 # Great! :)
 
@@ -134,7 +133,7 @@ def run_rivet(pipe, analysis, histfile):
 def run_agile(pipe, generator, beams, number, params, pfile):
 
     agile_args = ['agile-runmc', generator, '--beams=%s' % beams, '-n', number,
-                  '-o', pipe, '--randomize-seed' ]
+                  '-o', pipe, '--randomize-seed', '--filter' ]
     if params:
         agile_args.extend(('-p', params))
     if pfile:
