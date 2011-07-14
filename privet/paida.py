@@ -8,7 +8,7 @@ files = glob("*.dat")
 def finder(content):
     foundBegin = False
     foundTitle = False
-    output = ['']*100
+    output = ['']*1000
     counter = 0
 
     for line in content:
@@ -70,16 +70,23 @@ for dat in files:
     ## Now, numpy parsing:
     import numpy as np
     from StringIO import StringIO
-
+    from progressbar import Bar, ETA, Percentage, ProgressBar 
+    
     array = [] 
     for matrix in begin:
         if len(matrix) > 0:
             array.append(np.genfromtxt(StringIO(matrix)))
 
+    # Settign up a progress bar
+    widgets = ['Adding arrays:', Percentage(), ' ', Bar(marker='0', left='[', right=']'), ' ', ETA(), ' ']
+    pbar = ProgressBar(widgets = widgets, maxval=len(array))
+    
     # Adding
     output = np.copy(array[0])
-    for  matrix in array[1:]:
+    for i, matrix in enumerate(array[1:]):
         output[:,2:] += matrix[:,2:]
+        pbar.update(float(i)/float(len(array)) + 1)
+    pbar.finish()
 
     if average:
         output /= len(array)
