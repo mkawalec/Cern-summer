@@ -32,18 +32,10 @@ def LaunchSsh(host, threads, n):
     output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc --prefix " + str(n) + " --threads " + threads + "\'")
     print output
 
-    print "Host " + str(n) + " has finished!!"
+    print "Host " + host +"(" + str(n) + ")" + " has finished!!"
     #Copying all the files to the main host:
     output = system("scp " + host + ":~/batchJob/" + str(n) + "/*.aida output/")
     print output
-
-def StatusPoll(host, statusFile, n):
-    from os import system
-    output = system("scp " + host + ":~/batchJob/" + str(n) + "/" + statusFile + " ." + host + str(n) + statusFile)
-    
-    status = open(str("." + host + str(n) + statusFile), 'r')
-    return str(status.readline())
-        
 
 import sys
 if sys.version_info[:3] < (2, 4, 0):
@@ -68,3 +60,4 @@ else:
     hosts = [] * 1
     hosts[0] = opts.HOSTS
     LauchJobs(hosts)
+
