@@ -9,8 +9,11 @@ to boost my line count at github.
 import sys
 import hashlib
 import os
-import subprocess
+from subprocess import Popen, PIPE
 import time
+
+os.putenv('RIVET_ANALYSIS_PATH',os.getcwd())
+print "foo", os.getcwd()
 
 if sys.version_info[:3] < (2, 4, 0):
     print 'This script requires at least python 2.5. Go get it now!!11!!'
@@ -32,13 +35,14 @@ def md5sum(fileName, excludeLine='#'):
         for line in file:
             if excludeLine and line.startswith(excludeLine) or line == '':
                 continue
-            m.update(eachLine)
+            m.update(line)
         return m.hexdigest()
 
-def build_plugin(name, verbose=False):
+def build_plugin(name, verbose=True):
     so_name = 'Rivet%sAnalysis.so' % name
     ana_name = '%s.cc' % name
-    output = subprocess.check_output(['rivet-buildplugin', so_name, ana_name])
+    output = Popen(['rivet-buildplugin', so_name, ana_name], stdout=PIPE)
+    output = output.communicate()[0]
     if verbose: 
         print(output)
 
@@ -53,21 +57,20 @@ parser.add_option('-b', '--beams', dest='beams', default='LHC:7000',
         help='Specify beam parameters for AGILe')
 parser.add_option('-g', '--generator', dest='generator', default='Pythia:423',
         help='Generator to use. Default: Pythia:423.')
-parser.add_option('-n', '--number', dest='number', type='int', default=1000,
+parser.add_option('-n', '--number', dest='number', default='1000',
         help='Number of events to generate. Default: 2000.')
 parser.add_option('-j', '--threads', dest='threads', type='int', default=1,
         help='Number of processes to fork. Default: 1')
-parser.add_option('-p', '--options', dest='options', default='',
-        help='Options string for Pythia.')
-parser.add_option('-P', dest='options2', default='',
-        help='additional options for Pythia')
+parser.add_option('-p', '--params', dest='params', default='',
+        help='Options string for agile.')
+parser.add_option('-P', '--pfile', dest='pfile', default='',
+        help='Parameters file for agile')
 parser.add_option('-t', '--options', dest='tempdir', default='/dev/shm',
         help='Directory to create pipes in. Defaults to /dev/shm')
 parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
         default=False, help='make the program verbose')
 
 (opts,args) = parser.parse_args()
-"""
 print opts, args
 
 # Now we check if the file should be built automatically
@@ -75,14 +78,16 @@ analyses = args
 all_analyses = rivet.AnalysisLoader.analysisNames()
 
 # Build a dictionary of files -> md5
-with file as open('.makerc', 'r'):
-    md5s = dict(line.split() for line in file)
+try:
+    with open('.makerc', 'r') as file:
+        md5s = dict(line.split() for line in file)
+except IOError, e:
+    md5s = {}
+    pass # File does not exist
 
 # Get analyses with cc on the end. We wish to preserve the order.
 
-filter(analyses, is_cc_file)
-
-for i, filename in enumerate(cc_analyses):
+for i, filename in enumerate(analyses):
     if not filename.endswith('.cc'): 
         continue
 
@@ -90,65 +95,68 @@ for i, filename in enumerate(cc_analyses):
     name = filename[:-3]
     analyses[i] = name
 
-    newsum = md5sum(file)
-    oldsum = md5s[file]
+    newsum = md5sum(filename)
+    oldsum = md5s.get(filename,'')
 
     if oldsum == newsum:
         continue
         print('Found')
     else:
-        build_plugin(name)
-        md5s[ccfile] = newsum
+        build_plugin(name, verbose=opts.verbose)
+        md5s[filename] = newsum
 
-# Some moving around of the files to be sure we have what we need in the file
+
+# Some moving around of the fles to be sure we have what we need in the file
 # Great! :)
 
 with open('.makerc.swp', 'w') as out:
-    lines = ' '.join(i) for i in md5.iteritems()
+    lines = (' '.join(i) for i in md5s.iteritems())
     out.write('\n'.join(lines))
+
+# Quick hack, only pick first analysis!
+analysis = analyses[0]
 
 # Changing this to os.rename, simple reason that...
 # "If successful, the renaming will be an atomic operation
 # (this is a POSIX requirement)"
 os.rename('.makerc.swp', '.makerc')
 
-# Now, let's add the stuff to look for analysis
-# Did I write that?
-
-# Hack to be removed - breaks cross-platform.
+# Hack to be removed - breaks cross-platform (windows - is that a problem?)
 devnull = open('/dev/null', 'w')
 
 # Make fifos
 pipes = []
 subprocesses = []
 
-def run_rivet():
+def run_rivet(pipe, analysis, histfile):
+    """Run rivet, return Popen object"""
+    rivet_args = ['rivet','-a',analysis, '-H', histfile, pipe]
+    print rivet_args
+    return Popen(rivet_args)
 
-rivet_args = []
-agile_args = lambda pipe:
-                ['agile-runmc', generator, '--beams=%s' % beams, '-n',
-                number, '-o', pipe, '-p', 'MSEL=6', '-P',
-                 'fpythia-Wenumunu.params','--randomize-seed' ]
+def run_agile(pipe, generator, beams, number, params, pfile):
+    agile_args = ['agile-runmc', generator, '--beams=%s' % beams, '-n', number,
+                  '-o', pipe, '--randomize-seed' ]
+    print agile_args
+    return Popen(agile_args)
 
-pipe_fn = lambda n: '/tmp/dmallows/privet-%02d.fifo' % n
+pipe_fn = lambda n: '/dev/shm/privet-%02d.fifo' % n
 aida_fn = lambda n: 'privet-%02d.aida' % n
 
 try:
-    for n in xrange(10):
+    for n in xrange(opts.threads):
         pipe = pipe_fn(n)
-        aida = aida_fn(n)
+        histfile = aida_fn(n)
 
         try:
             pipes.append(pipe)
             os.mkfifo(pipe)
         except OSError, e:
+            print "WTF?"
             print e
 
-        agile=Popen(agile_args(pipe), stdout=devnull, stderr=devnull)
-        agile.poll()
-
-        rivet=Popen(['rivet','-a','MC_TTBAR2','-H', aida, pipe])
-        rivet.poll()
+        agile = run_agile(pipe, opts.generator, opts.beams, opts.number, opts.params, opts.pfile)
+        rivet = run_rivet(pipe, analysis, histfile)
 
         subprocesses.append((n, agile, rivet))
 
@@ -169,8 +177,5 @@ try:
                     subprocesses.pop(i)
 
 finally:
-    print 'Cleaning the pipes...'
     for f in pipes:
         os.unlink(f)
-
-"""
