@@ -8,7 +8,7 @@ files = glob("*.dat")
 def finder(content):
     foundBegin = False
     foundTitle = False
-    output = ['']*100
+    output = ['']*1000
     counter = 0
 
     for line in content:
