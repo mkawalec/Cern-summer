@@ -133,7 +133,7 @@ def run_rivet(pipe, analysis, histfile):
 def run_agile(pipe, generator, beams, number, params, pfile):
 
     agile_args = ['agile-runmc', generator, '--beams=%s' % beams, '-n', number,
-                  '-o', pipe, '--randomize-seed', '--filter=1' ]
+                  '-o', pipe, '--randomize-seed', '--filter' ]
     if params:
         agile_args.extend(('-p', params))
     if pfile:
