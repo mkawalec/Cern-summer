@@ -16,7 +16,7 @@ def LaunchJobs(hosts):
 def LaunchSsh(host, threads):
 	from os import system
 	output = system("ssh " + host + " && mkdir batchJob ; cd batchJob && make.py --threads " + str(threads))
-	print output
+	print output:
 
 if sys.version_info[:3] < (2, 4, 0):
 	print 'At least python 2.4 is required to launch this script.'
@@ -40,6 +40,3 @@ else:
 	hosts = [] * 1
 	hosts[0] = opts.HOSTS
 	LauchJobs(hosts)
-
-		
-

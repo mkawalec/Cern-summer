@@ -25,7 +25,6 @@ except Exception, e:
     sys.stderr.write(str(e)+'\n')
     sys.exit(1)
 
-# Regexps here?
 def md5sum(fileName, excludeLine='#'):
     """Compute md5 hash of the specified file"""
     m = hashlib.md5()
@@ -68,7 +67,7 @@ parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
         default=False, help='make the program verbose')
 
 (opts,args) = parser.parse_args()
-
+"""
 print opts, args
 
 # Now we check if the file should be built automatically
@@ -110,12 +109,13 @@ with open('.makerc.swp', 'w') as out:
 
 # Changing this to os.rename, simple reason that...
 # "If successful, the renaming will be an atomic operation
-# (this is a POSIX requirement"
+# (this is a POSIX requirement)"
 os.rename('.makerc.swp', '.makerc')
 
 # Now, let's add the stuff to look for analysis
 # Did I write that?
 
+# Hack to be removed - breaks cross-platform.
 devnull = open('/dev/null', 'w')
 
 # Make fifos
@@ -172,4 +172,5 @@ finally:
     print 'Cleaning the pipes...'
     for f in pipes:
         os.unlink(f)
+
 """
