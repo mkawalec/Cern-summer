@@ -32,14 +32,6 @@ def LaunchSsh(host, threads, n):
     output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc --prefix " + str(n) + " --threads " + threads + "\'")
     print output
 
-    # Checking if the job is finished
-    output = -1
-    import time
-    while output < 0:
-        time.sleep(10)
-        output = StatusPoll(host, ".status", n)
-        print "Status of host " + host + "is:" + output
-
     print "Host " + str(n) + " has finished!!"
     #Copying all the files to the main host:
     output = system("scp " + host + ":~/batchJob/" + str(n) + "/*.aida output/")
