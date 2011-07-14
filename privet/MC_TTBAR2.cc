@@ -32,10 +32,10 @@ namespace Rivet {
         );
 
       // Book histograms
-      _h_t_mass = bookHistogram1D("t_mass", 50, 30, 180);
+      _h_t_mass = bookHistogram1D("t_mass", 50, 130, 430);
       _h_t_pT = bookHistogram1D("t_pT", 50, 0, 250);
       _h_t_rap = bookHistogram1D("t_rap", 50, 0, 2.5);
-      _h_W_mass = bookHistogram1D("W_mass", 50, 130, 430);
+      _h_W_mass = bookHistogram1D("W_mass", 50, 30, 180);
       _h_W_pT = bookHistogram1D("W_pT", 50, 0, 250);
       _h_W_rap = bookHistogram1D("W_rap", 50, 0, 2.5);
     }
