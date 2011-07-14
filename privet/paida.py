@@ -3,7 +3,7 @@
 ## Adding two dat files:
 
 from glob import glob
-files = glob("data/*.dat")
+files = glob("output/*.dat")
 
 def finder(content):
 	foundBegin = False
