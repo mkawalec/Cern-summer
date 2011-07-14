@@ -129,16 +129,16 @@ subprocesses = []
 def run_rivet(pipe, analysis, histfile):
     """Run rivet, return Popen object"""
     rivet_args = ['rivet','-a',analysis, '-H', histfile, pipe]
-    return Popen(rivet_args, stderr=devnull, stdout=devnull)
+    return Popen(rivet_args)
 
 def run_agile(pipe, generator, beams, number, params, pfile):
 
     agile_args = ['agile-runmc', generator, '--beams=%s' % beams, '-n', number,
                   '-o', pipe, '--randomize-seed' ]
     if params:
-        agile_args.extend('-p', params)
+        agile_args.extend(('-p', params))
     if pfile:
-        agile_args.extend('-P', pfile)
+        agile_args.extend(('-P', pfile))
     return Popen(agile_args, stderr=devnull, stdout=devnull)
 
 pipe_fn = lambda n: '/dev/shm/privet-%s%02d.fifo' % (opts.prefix, n)
