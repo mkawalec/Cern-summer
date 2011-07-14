@@ -29,7 +29,7 @@ def LaunchSsh(host, threads, n):
     output = system("scp make.py *.cc *.params " + host + ":~/batchJob/" + str(n) )
     print output
     
-    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc -P params.params --prefix " + str(n) + " --threads " + threads + "\'")
+    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc -P params.params -n 10000 --prefix " + str(n) + " --threads " + threads + "\'")
     print output
 
     print "Host " + host +"(" + str(n) + ")" + " has finished!!"
