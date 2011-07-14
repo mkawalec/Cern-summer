@@ -42,10 +42,10 @@ def md5sum(fileName, excludeLine='#'):
 def build_plugin(name, verbose=True):
     so_name = 'Rivet%sAnalysis.so' % name
     ana_name = '%s.cc' % name
-    output = Popen(['rivet-buildplugin', so_name, ana_name], stdout=PIPE)
+    output = Popen(['rivet-buildplugin', so_name, ana_name])
     output = output.communicate()[0]
-    if verbose: 
-        print(output)
+    """if verbose: 
+        print(output)"""
 
 # Parsing command line options:
 from optparse import OptionParser
@@ -86,6 +86,8 @@ except IOError, e:
     print e
     md5s = {}
     pass # File does not exist
+
+    print md5s
 
 # Get analyses with cc on the end. We wish to preserve the order.
 
