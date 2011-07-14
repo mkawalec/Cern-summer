@@ -34,10 +34,10 @@ namespace Rivet {
       // Book histograms
       _h_t_mass = bookHistogram1D("t_mass", 50, 30, 180);
       _h_t_pT = bookHistogram1D("t_pT", 50, 0, 250);
-      _h_t_rap = bookHistogram1D("t_rap", 50, -2.5, 2.5);
+      _h_t_rap = bookHistogram1D("t_rap", 50, 0, 2.5);
       _h_W_mass = bookHistogram1D("W_mass", 50, 130, 430);
       _h_W_pT = bookHistogram1D("W_pT", 50, 0, 250);
-      _h_W_rap = bookHistogram1D("W_rap", 50, -2.5, 2.5);
+      _h_W_rap = bookHistogram1D("W_rap", 50, 0, 2.5);
     }
     
     void analyze(const Event& event) {
@@ -107,7 +107,7 @@ namespace Rivet {
 
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
       _h_W_mass->fill(W.mass(), weight);
-      _h_W_rap-> fill(W.rapidity(), weight);
+      _h_W_rap-> fill(abs(W.rapidity()), weight);
       _h_W_pT->  fill(W.pT(), weight);
       getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
 
@@ -122,8 +122,8 @@ namespace Rivet {
 
         _h_t_mass->fill(t1.mass(), weight);
         _h_t_mass->fill(t2.mass(), weight);
-        _h_t_rap->fill(t1.rapidity(), weight);
-        _h_t_rap->fill(t2.rapidity(), weight);
+        _h_t_rap->fill(abs(t1.rapidity()), weight);
+        _h_t_rap->fill(abs(t2.rapidity()), weight);
         _h_t_pT->fill(t1.pT(), weight);
         _h_t_pT->fill(t2.pT(), weight);
       }

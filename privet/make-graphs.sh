@@ -1,6 +1,7 @@
 #!/bin/bash
 
-compare-histos output/*.aida
-./paida.py
-make-plots --png output/*.dat
-gpicview output/*.png
+cd output
+compare-histos *.aida
+../paida.py
+make-plots --png *.dat
+gpicview *.png
