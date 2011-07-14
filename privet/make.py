@@ -145,8 +145,6 @@ pipe_fn = lambda n: '/dev/shm/privet-%s%02d.fifo' % (opts.prefix, n)
 aida_fn = lambda n: 'privet-%s%02d.aida' % (opts.prefix, n)
 
 try:
-    with open('.status', 'w') as file:
-        file.write('-1')
     for n in xrange(opts.threads):
         pipe = pipe_fn(n)
         histfile = aida_fn(n)
@@ -181,6 +179,3 @@ try:
 finally:
     for f in pipes:
         os.unlink(f)
-    with open('.status', 'w') as file:
-        file.write('0')
-    print "Finished!"
