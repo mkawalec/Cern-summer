@@ -13,6 +13,7 @@ from subprocess import Popen, PIPE
 import time
 
 os.putenv('RIVET_ANALYSIS_PATH',os.getcwd())
+print os.getenv('RIVET_ANALYSIS_PATH')
 print "foo", os.getcwd()
 
 if sys.version_info[:3] < (2, 4, 0):
@@ -55,8 +56,8 @@ parser.add_option('-m', '--make', dest='make', action='store_true',
         help='Make analysis plugins before running rivet')
 parser.add_option('-b', '--beams', dest='beams', default='LHC:7000',
         help='Specify beam parameters for AGILe')
-parser.add_option('-g', '--generator', dest='generator', default='Pythia:423',
-        help='Generator to use. Default: Pythia:423.')
+parser.add_option('-g', '--generator', dest='generator', default='Pythia6:425',
+        help='Generator to use. Default: Pythia6:425.')
 parser.add_option('-n', '--number', dest='number', default='1000',
         help='Number of events to generate. Default: 2000.')
 parser.add_option('-j', '--threads', dest='threads', type='int', default=1,
@@ -68,7 +69,7 @@ parser.add_option('-P', '--pfile', dest='pfile', default='',
 parser.add_option('-t', '--options', dest='tempdir', default='/dev/shm',
         help='Directory to create pipes in. Defaults to /dev/shm')
 parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
-        default=False, help='make the program verbose')
+        default=True, help='make the program verbose')
 
 (opts,args) = parser.parse_args()
 print opts, args
@@ -82,6 +83,7 @@ try:
     with open('.makerc', 'r') as file:
         md5s = dict(line.split() for line in file)
 except IOError, e:
+    print e
     md5s = {}
     pass # File does not exist
 
