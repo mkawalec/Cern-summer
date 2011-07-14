@@ -59,7 +59,7 @@ parser.add_option('-b', '--beams', dest='beams', default='LHC:7000',
         help='Specify beam parameters for AGILe')
 parser.add_option('-g', '--generator', dest='generator', default='Pythia6:425',
         help='Generator to use. Default: Pythia6:425.')
-parser.add_option('-n', '--number', dest='number', default='10000',
+parser.add_option('-n', '--number', dest='number', default='1000',
         help='Number of events to generate. Default: 2000.')
 parser.add_option('-j', '--threads', dest='threads', type='int', default=1,
         help='Number of processes to fork. Default: 1')
