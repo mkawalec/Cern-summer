@@ -5,10 +5,16 @@ The batch job submitter. Submits the job to the hosts specified in the .hosts fi
 and launches the job with the specified number of threads.
 Alternatively another input file can be given from command line
 """
+devnull = open('/dev/null', 'w')
+
 def LaunchJobs(hosts):
     from multiprocessing import Process
+    from subprocess import call 
     from os import system
-    system("mkdir output/")
+    from progressbar import Bar, ETA, Percentage, ProgressBar
+    from time import sleep 
+
+    system('mkdir output/')
 
     subprocess = []
     for host in hosts:
@@ -17,25 +23,34 @@ def LaunchJobs(hosts):
                 line = line.strip()
                 index = line.find(" ")
                 subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),n)))
-    print "Number of subprocesses is: " + str(len(subprocess))
     for process in subprocess:
         process.start()
+    
+    # A 'progress' bar
+    counter = 0
+    widgets = ['Computing on the grid:', Percentage(), ' ', Bar(marker='#', left='[', right=']'), ' ', ETA(), ' ']
+    pbar = ProgressBar(widgets = widgets, maxval=len(subprocess))
+    while counter < len(subprocess):
+        counter = 0
+        sleep(5)
+        for process in subprocess:
+            if not process.is_alive():
+                counter += 1
+        pbar.update(counter/len(subprocess) + 1)
+    pbar.finish()
 
 def LaunchSsh(host, threads, n):
+    from subprocess import call
     from os import system
-    output = system("ssh " + host + " \' mkdir batchJob/" + str(n) + " \'")
-    print output
-    
-    output = system("scp make.py *.cc *.params " + host + ":~/batchJob/" + str(n) )
-    print output
-    
-    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc -P params.params -n 10000 --prefix " + str(n) + " --threads " + threads + "\'")
-    print output
 
-    print "Host " + host +"(" + str(n) + ")" + " has finished!!"
+    system("ssh "+ host + " \' mkdir ~/batchJob/" + str(n) + " \'")#, stdout = devnull, stderr = devnull)
+    
+    call(['scp', 'make.py', '*.cc', '*.params' , host + ':~/batchJob/' + str(n)])# , stdout = devnull, stderr = devnull)
+    
+    call(["ssh" , host , " \'  cd ~/batchJob/" + str(n) + "  && ./make.py MC_TTBAR2.cc -P params.params -n 1000 --prefix " + str(n) + " --threads " + threads + "\'"])#, stdout = devnull, stderr = devnull)
+
     #Copying all the files to the main host:
-    output = system("scp " + host + ":~/batchJob/" + str(n) + "/*.aida output/")
-    print output
+    call(["scp",  host , ":~/batchJob/" + str(n) + "/*.aida", "output/"])#, stdout = devnull, stderr = devnull)
 
 import sys
 if sys.version_info[:3] < (2, 4, 0):
