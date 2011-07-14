@@ -5,12 +5,15 @@ This is supposed to be a small script for running and compiling
 an analysis for Rivet. It has an overgrowth of features, precisely
 to boost my line count at github.
 """
+# Hack to be removed - breaks cross-platform (windows - is that a problem?)
+devnull = open('/dev/null', 'w')
 
 import sys
 import hashlib
 import os
 from subprocess import Popen, PIPE
 import time
+import logging
 
 os.putenv('RIVET_ANALYSIS_PATH',os.getcwd())
 print os.getenv('RIVET_ANALYSIS_PATH')
@@ -42,10 +45,8 @@ def md5sum(fileName, excludeLine='#'):
 def build_plugin(name, verbose=True):
     so_name = 'Rivet%sAnalysis.so' % name
     ana_name = '%s.cc' % name
-    output = Popen(['rivet-buildplugin', so_name, ana_name])
-    output = output.communicate()[0]
-    """if verbose: 
-        print(output)"""
+    process = Popen(['rivet-buildplugin', so_name, ana_name],stdout=devnull, stderr=devnull)
+    process.communicate()
 
 # Parsing command line options:
 from optparse import OptionParser
@@ -62,9 +63,9 @@ parser.add_option('-n', '--number', dest='number', default='1000',
         help='Number of events to generate. Default: 2000.')
 parser.add_option('-j', '--threads', dest='threads', type='int', default=1,
         help='Number of processes to fork. Default: 1')
-parser.add_option('-p', '--params', dest='params', default='',
+parser.add_option('-p', '--params', dest='params', default=None,
         help='Options string for agile.')
-parser.add_option('-P', '--pfile', dest='pfile', default='',
+parser.add_option('-P', '--pfile', dest='pfile', default=None,
         help='Parameters file for agile')
 parser.add_option('--prefix', default='',
         help='Prefix')
@@ -74,7 +75,6 @@ parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
         default=True, help='make the program verbose')
 
 (opts,args) = parser.parse_args()
-print opts, args
 
 # Now we check if the file should be built automatically
 analyses = args
@@ -85,14 +85,9 @@ try:
     with open('.makerc', 'r') as file:
         md5s = dict(line.split() for line in file)
 except IOError, e:
-    print e
     md5s = {}
-    pass # File does not exist
-
-    print md5s
 
 # Get analyses with cc on the end. We wish to preserve the order.
-
 for i, filename in enumerate(analyses):
     if not filename.endswith('.cc'): 
         continue
@@ -106,7 +101,6 @@ for i, filename in enumerate(analyses):
 
     if oldsum == newsum:
         continue
-        print('Found')
     else:
         build_plugin(name, verbose=opts.verbose)
         md5s[filename] = newsum
@@ -127,8 +121,6 @@ analysis = analyses[0]
 # (this is a POSIX requirement)"
 os.rename('.makerc.swp', '.makerc')
 
-# Hack to be removed - breaks cross-platform (windows - is that a problem?)
-devnull = open('/dev/null', 'w')
 
 # Make fifos
 pipes = []
@@ -137,14 +129,17 @@ subprocesses = []
 def run_rivet(pipe, analysis, histfile):
     """Run rivet, return Popen object"""
     rivet_args = ['rivet','-a',analysis, '-H', histfile, pipe]
-    print rivet_args
-    return Popen(rivet_args)
+    return Popen(rivet_args, stderr=devnull, stdout=devnull)
 
 def run_agile(pipe, generator, beams, number, params, pfile):
+
     agile_args = ['agile-runmc', generator, '--beams=%s' % beams, '-n', number,
                   '-o', pipe, '--randomize-seed' ]
-    print agile_args
-    return Popen(agile_args)
+    if params:
+        agile_args.extend('-p', params)
+    if pfile:
+        agile_args.extend('-P', pfile)
+    return Popen(agile_args, stderr=devnull, stdout=devnull)
 
 pipe_fn = lambda n: '/dev/shm/privet-%s%02d.fifo' % (opts.prefix, n)
 aida_fn = lambda n: 'privet-%s%02d.aida' % (opts.prefix, n)
@@ -160,8 +155,7 @@ try:
             pipes.append(pipe)
             os.mkfifo(pipe)
         except OSError, e:
-            print "WTF?"
-            print e
+            pass
 
         agile = run_agile(pipe, opts.generator, opts.beams, opts.number, opts.params, opts.pfile)
         rivet = run_rivet(pipe, analysis, histfile)
@@ -189,3 +183,4 @@ finally:
         os.unlink(f)
     with open('.status', 'w') as file:
         file.write('0')
+    print "Finished!"
