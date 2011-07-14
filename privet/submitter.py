@@ -11,23 +11,24 @@ def LaunchJobs(hosts):
     subprocess = []
     for host in hosts:
         with open(host, 'r') as file:
-            for line in file:
+            for n, line in enumerate(file):
                 line = line.strip()
                 index = line.find(" ")
-                subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),)))
+                subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),n)))
+    print "Number of subprocesses is:" + str(len(subprocess))
     for process in subprocess:
         process.start()
-        process.join()
+ #       process.join()
 
-def LaunchSsh(host, threads):
+def LaunchSsh(host, threads, n):
     from os import system
-    output = system("ssh " + host + " \' mkdir batchJob \'")
+    output = system("ssh " + host + " \' mkdir batchJob/" + str(n) + " \'")
     print output
     
-    output = system("scp make.py " + host + ":~/batchJob")
+    output = system("scp make.py *.cc " + host + ":~/batchJob/" + str(n) )
     print output
     
-    output = system("ssh " + host + " \' cd batchJob ; ./make.py --threads " + threads + "\'")
+    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc --prefix " + n + " --threads " + threads + "\'")
     print output
 
     # Checking if the job is finished
@@ -35,14 +36,17 @@ def LaunchSsh(host, threads):
     import time
     while output < 0:
         time.sleep(30)
-        output = StatusPoll(host, ".status")
+        output = StatusPoll(host, ".status", n)
         print "Status of host " + host + "is:" + output
 
+    print "Host " + str(n) + " has finished!!"
+    #Copying all the files to the main host:
+    output = system("scp " + host + ":~/batchJob/" + str(n) + "/*.aida output/")
+    print output
 
-
-def StatusPoll(host, statusFile):
+def StatusPoll(host, statusFile, n):
     from os import system
-    output = system("scp " + host + ":batchJob/" + statusFile + " .status")
+    output = system("scp " + host + ":batchJob/" + str(n) + " " + statusFile + " .status")
     print output
 
     status = open(".status", "r")
