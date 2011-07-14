@@ -66,6 +66,8 @@ parser.add_option('-p', '--params', dest='params', default='',
         help='Options string for agile.')
 parser.add_option('-P', '--pfile', dest='pfile', default='',
         help='Parameters file for agile')
+parser.add_option('--prefix', default='',
+        help='Prefix')
 parser.add_option('-t', '--options', dest='tempdir', default='/dev/shm',
         help='Directory to create pipes in. Defaults to /dev/shm')
 parser.add_option('-v', '--verbose', dest='verbose', action='store_true',
@@ -144,10 +146,12 @@ def run_agile(pipe, generator, beams, number, params, pfile):
     print agile_args
     return Popen(agile_args)
 
-pipe_fn = lambda n: '/dev/shm/privet-%02d.fifo' % n
-aida_fn = lambda n: 'privet-%02d.aida' % n
+pipe_fn = lambda n: '/dev/shm/privet-%s%02d.fifo' % (opts.prefix, n)
+aida_fn = lambda n: 'privet-%s%02d.aida' % (opts.prefix, n)
 
 try:
+    with open('.status', 'w') as file:
+        file.write('-1')
     for n in xrange(opts.threads):
         pipe = pipe_fn(n)
         histfile = aida_fn(n)
@@ -183,3 +187,5 @@ try:
 finally:
     for f in pipes:
         os.unlink(f)
+    with open('.status', 'w') as file:
+        file.write('0')
