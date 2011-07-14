@@ -32,11 +32,11 @@ def LaunchJobs(hosts):
     pbar = ProgressBar(widgets = widgets, maxval=len(subprocess))
     while counter < len(subprocess):
         counter = 0
-        sleep(1)
+        sleep(5)
         for process in subprocess:
             if not process.is_alive():
                 counter += 1
-        pbar.update(counter/len(subprocess))
+        pbar.update((counter/len(subprocess)+ 1)%len(subprocess))
     pbar.finish()
 
 def LaunchSsh(host, threads, n):
