@@ -10,7 +10,6 @@ devnull = open('/dev/null', 'w')
 def LaunchJobs(hosts):
     from multiprocessing import Process
     from subprocess import call 
-    from os import system
     from progressbar import Bar, ETA, Percentage, ProgressBar
     from time import sleep 
 
@@ -32,11 +31,11 @@ def LaunchJobs(hosts):
     pbar = ProgressBar(widgets = widgets, maxval=len(subprocess))
     while counter < len(subprocess):
         counter = 0
-        sleep(5)
+        sleep(0.5)
         for process in subprocess:
             if not process.is_alive():
                 counter += 1
-        pbar.update((counter/len(subprocess)+ 1)%len(subprocess))
+        pbar.update(counter)
     pbar.finish()
 
 def LaunchSsh(host, threads, n):
