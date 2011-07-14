@@ -7,6 +7,8 @@ Alternatively another input file can be given from command line
 """
 def LaunchJobs(hosts):
     from multiprocessing import Process
+    from os import system
+    system("mkdir output/")
 
     subprocess = []
     for host in hosts:
@@ -15,10 +17,9 @@ def LaunchJobs(hosts):
                 line = line.strip()
                 index = line.find(" ")
                 subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),n)))
-    print "Number of subprocesses is:" + str(len(subprocess))
+    print "Number of subprocesses is: " + str(len(subprocess))
     for process in subprocess:
         process.start()
- #       process.join()
 
 def LaunchSsh(host, threads, n):
     from os import system
@@ -28,16 +29,8 @@ def LaunchSsh(host, threads, n):
     output = system("scp make.py *.cc " + host + ":~/batchJob/" + str(n) )
     print output
     
-    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc --prefix " + n + " --threads " + threads + "\'")
+    output = system("ssh " + host + " \' cd batchJob/" + str(n) +"  && ./make.py MC_TTBAR2.cc --prefix " + str(n) + " --threads " + threads + "\'")
     print output
-
-    # Checking if the job is finished
-    output = -1
-    import time
-    while output < 0:
-        time.sleep(30)
-        output = StatusPoll(host, ".status", n)
-        print "Status of host " + host + "is:" + output
 
     print "Host " + str(n) + " has finished!!"
     #Copying all the files to the main host:
@@ -46,10 +39,9 @@ def LaunchSsh(host, threads, n):
 
 def StatusPoll(host, statusFile, n):
     from os import system
-    output = system("scp " + host + ":batchJob/" + str(n) + " " + statusFile + " .status")
-    print output
-
-    status = open(".status", "r")
+    output = system("scp " + host + ":~/batchJob/" + str(n) + "/" + statusFile + " ." + host + str(n) + statusFile)
+    
+    status = open(str("." + host + str(n) + statusFile), 'r')
     return str(status.readline())
         
 
