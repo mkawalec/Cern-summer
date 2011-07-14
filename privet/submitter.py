@@ -36,7 +36,7 @@ def LaunchSsh(host, threads, n):
     output = -1
     import time
     while output < 0:
-        time.sleep(30)
+        time.sleep(10)
         output = StatusPoll(host, ".status", n)
         print "Status of host " + host + "is:" + output
 
