@@ -14,7 +14,7 @@ def LaunchJobs(hosts):
     from progressbar import Bar, ETA, Percentage, ProgressBar
     from time import sleep 
 
-    system('mkdir output/')
+    call(['mkdir output/'], shell=True, stdout=devnull, stderr=devnull)
 
     subprocess = []
     for host in hosts:
@@ -32,25 +32,24 @@ def LaunchJobs(hosts):
     pbar = ProgressBar(widgets = widgets, maxval=len(subprocess))
     while counter < len(subprocess):
         counter = 0
-        sleep(5)
+        sleep(1)
         for process in subprocess:
             if not process.is_alive():
                 counter += 1
-        pbar.update(counter/len(subprocess) + 1)
+        pbar.update(counter/len(subprocess))
     pbar.finish()
 
 def LaunchSsh(host, threads, n):
     from subprocess import call
-    from os import system
 
-    system("ssh "+ host + " \' mkdir ~/batchJob/" + str(n) + " \'")#, stdout = devnull, stderr = devnull)
+    call("ssh "+ host + " \' mkdir ~/batchJob/" + str(n) + " \'", stdout = devnull, stderr = devnull, shell=True)
     
-    call(['scp', 'make.py', '*.cc', '*.params' , host + ':~/batchJob/' + str(n)])# , stdout = devnull, stderr = devnull)
+    call(['scp make.py *.cc *.params ' + host + ':~/batchJob/' + str(n)], shell=True , stdout = devnull, stderr = devnull)
     
-    call(["ssh" , host , " \'  cd ~/batchJob/" + str(n) + "  && ./make.py MC_TTBAR2.cc -P params.params -n 1000 --prefix " + str(n) + " --threads " + threads + "\'"])#, stdout = devnull, stderr = devnull)
+    call(["ssh " + host + " \'  cd ~/batchJob/" + str(n) + "  && ./make.py MC_TTBAR2.cc -P params.params -n 1000 --prefix " + str(n) + " --threads " + threads + "\'"], shell=True, stdout = devnull, stderr = devnull)
 
     #Copying all the files to the main host:
-    call(["scp",  host , ":~/batchJob/" + str(n) + "/*.aida", "output/"])#, stdout = devnull, stderr = devnull)
+    call(["scp " +  host + ":~/batchJob/" + str(n) + "/*.aida output/"], shell=True, stdout = devnull, stderr = devnull)
 
 import sys
 if sys.version_info[:3] < (2, 4, 0):
