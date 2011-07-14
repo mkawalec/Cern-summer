@@ -26,7 +26,7 @@ try:
             print e
 
         agile=Popen(['agile-runmc','Pythia6:425','--beams=LHC:14000', '-n',
-                    '2000', '-o', pipe,'--filter', '-P',
+                    '100000', '-o', pipe,'--filter=1', '-P',
                     'params.params','--randomize-seed' 
                     ], stdout=null, stderr=null)
         agile.poll()
