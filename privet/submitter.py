@@ -7,6 +7,8 @@ Alternatively another input file can be given from command line
 """
 def LaunchJobs(hosts):
     from multiprocessing import Process
+    from os import system
+    system("mkdir output/")
 
     subprocess = []
     for host in hosts:
