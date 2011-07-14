@@ -40,6 +40,4 @@ MDME(207,1) 1
 MDME(208,1) 0
 # tau'+ nu'_tau
 MDME(209,1) -1
-CKIN(1)=15
-CKIN(2)=1000
 MSEL=6
