@@ -45,7 +45,7 @@ def md5sum(fileName, excludeLine='#'):
 def build_plugin(name, verbose=True):
     so_name = 'Rivet%sAnalysis.so' % name
     ana_name = '%s.cc' % name
-    process = Popen(['rivet-buildplugin', so_name, ana_name],stdout=devnull, stderr=devnull)
+    process = Popen(['rivet-buildplugin', so_name, ana_name])
     process.communicate()
 
 # Parsing command line options:
@@ -128,7 +128,7 @@ subprocesses = []
 def run_rivet(pipe, analysis, histfile):
     """Run rivet, return Popen object"""
     rivet_args = ['rivet','-a',analysis, '-H', histfile, pipe]
-    return Popen(rivet_args, stdout=devnull, stderr=devnull)
+    return Popen(rivet_args)
 
 def run_agile(pipe, generator, beams, number, params, pfile):
 
@@ -138,7 +138,7 @@ def run_agile(pipe, generator, beams, number, params, pfile):
         agile_args.extend(('-p', params))
     if pfile:
         agile_args.extend(('-P', pfile))
-    return Popen(agile_args, stderr=devnull, stdout=devnull)
+    return Popen(agile_args)
 
 pipe_fn = lambda n: '/dev/shm/privet-%s%02d.fifo' % (opts.prefix, n)
 aida_fn = lambda n: 'privet-%s%02d.aida' % (opts.prefix, n)

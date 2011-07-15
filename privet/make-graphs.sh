@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd output
+cd output2
 compare-histos *.aida
 ../paida.py
 make-plots --png *.dat

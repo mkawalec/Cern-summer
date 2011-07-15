@@ -18,6 +18,11 @@ namespace Rivet {
       : Analysis("MC_TTBAR2")
     {   }
 
+    double absolute (double number){
+        if (number < 0) return -number;
+        return number;
+    }
+
     void init() {
       // Actually, why fastjest have different rapidity ranges than CFSs?
       // No idea! I suspect original author knows more about particle physics
@@ -108,7 +113,7 @@ namespace Rivet {
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
       // Can abs output int insetead of double and cause the problem with rapidity?
       _h_W_mass->fill(W.mass(), weight);
-      _h_W_rap-> fill(abs(W.rapidity()), weight);
+      _h_W_rap-> fill(absolute(W.rapidity()), weight);
       _h_W_pT->  fill(W.pT(), weight);
       getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
 
@@ -124,8 +129,8 @@ namespace Rivet {
                     t1.rapidity() << ", " << t2.rapidity() << endl;
         _h_t_mass->fill(t1.mass(), weight);
         _h_t_mass->fill(t2.mass(), weight);
-        _h_t_rap->fill(abs(t1.rapidity()), weight);
-        _h_t_rap->fill(abs(t2.rapidity()), weight);
+        _h_t_rap->fill(absolute(t1.rapidity()), weight);
+        _h_t_rap->fill(absolute(t2.rapidity()), weight);
         _h_t_pT->fill(t1.pT(), weight);
         _h_t_pT->fill(t2.pT(), weight);
       }
