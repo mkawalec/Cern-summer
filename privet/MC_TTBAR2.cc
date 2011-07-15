@@ -106,6 +106,7 @@ namespace Rivet {
       }
 
       FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
+      // Can abs output int insetead of double and cause the problem with rapidity?
       _h_W_mass->fill(W.mass(), weight);
       _h_W_rap-> fill(abs(W.rapidity()), weight);
       _h_W_pT->  fill(W.pT(), weight);
@@ -119,7 +120,8 @@ namespace Rivet {
 
         getLog() << Log::INFO << "t, tbar found with massses " <<
                     t1.mass() << ", " << t2.mass() << endl;
-
+        getLog() << Log::INFO << "and the respective rapidities are: " <<
+                    t1.rapidity() << ", " << t2.rapidity() << endl;
         _h_t_mass->fill(t1.mass(), weight);
         _h_t_mass->fill(t2.mass(), weight);
         _h_t_rap->fill(abs(t1.rapidity()), weight);

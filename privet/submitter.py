@@ -45,7 +45,7 @@ def LaunchSsh(host, threads, n):
     
     call(['scp make.py *.cc *.params ' + host + ':~/batchJob/' + str(n)], shell=True , stdout = devnull, stderr = devnull)
     
-    call(["ssh " + host + " \'  cd ~/batchJob/" + str(n) + "  && ./make.py MC_TTBAR2.cc -P params.params -n 1000 --prefix " + str(n) + " --threads " + threads + "\'"], shell=True, stdout = devnull, stderr = devnull)
+    call(["ssh " + host + " \'  cd ~/batchJob/" + str(n) + "  && ./make.py MC_TTBAR2.cc -P params.params -n 500000 --prefix " + str(n) + " --threads " + threads + "\'"], shell=True, stdout = devnull, stderr = devnull)
 
     #Copying all the files to the main host:
     call(["scp " +  host + ":~/batchJob/" + str(n) + "/*.aida output/"], shell=True, stdout = devnull, stderr = devnull)
