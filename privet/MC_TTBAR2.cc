@@ -72,7 +72,6 @@ namespace Rivet {
       const Jets jets = jetpro.jetsByPt(35);
       getLog() << Log::DEBUG <<
         "Energetic jets multiplicity = " << jets.size() << endl;
-
       if (jets.size() < 4) {
         getLog() << Log::DEBUG << "Event failed jet cut" << endl;
         vetoEvent;
