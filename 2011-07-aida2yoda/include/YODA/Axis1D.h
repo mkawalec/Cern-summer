@@ -100,7 +100,6 @@ namespace YODA {
 
     /// Constructor with histogram limits, number of bins, and a bin distribution enum
     Axis1D(size_t nbins, double lower, double upper) {
-      std::cout << lower << " " << upper << std::endl;
       _mkAxis(linspace(lower, upper, nbins));
     }
 
@@ -215,7 +214,7 @@ namespace YODA {
     size_t findBinIndex(double coord) const {
       /// @todo Improve!
       if (coord < _cachedBinEdges[0] || coord >= _cachedBinEdges[numBins()]) {
-        throw RangeError("Coordinate is outside the valid range: you should request the underlow or overflow");
+        throw RangeError("Coordinate is outside the valid range: you should request the underflow or overflow");
       }
       size_t i = _binHash.upper_bound(coord)->second;
       return i;
