@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DABS(COS(THETA*)) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DABS(COS(THETA*)) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.05" value="0.05"
+        errorMinus="0.05"/>
+      <measurement errorPlus="4.701063709417263" value="44.5"
+        errorMinus="5.539855593785816"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="5.140038910358559" value="40.1"
+        errorMinus="4.282522621072771"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.25" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="4.996999099459595" value="48.1"
+        errorMinus="5.316013544000805"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.35" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="6.086871117413281" value="54.5"
+        errorMinus="4.55521678957215"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.45" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="7.044856279584418" value="83.9"
+        errorMinus="8.013114251026252"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999993"
+        value="0.55" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="7.433034373659253" value="115.7"
+        errorMinus="8.204267182387468"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.6499999999999999" errorMinus="0.04999999999999993"/>
+      <measurement errorPlus="18.424440290006096"
+        value="205.5" errorMinus="13.940588222883566"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.75" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="22.095022063804326"
+        value="406.9" errorMinus="37.88970836520123"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DABS(COS(THETA*)) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DABS(COS(THETA*)) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d01-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d01-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.05" value="0.05"
+        errorMinus="0.05"/>
+      <measurement errorPlus="9.831581764904364" value="141.8"
+        errorMinus="11.960769206033532"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="9.496841580230766" value="142.1"
+        errorMinus="13.482210501249414"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.25" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="12.567816039392046"
+        value="155.3" errorMinus="11.852847759083048"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.35" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="11.947384651043926"
+        value="182.7" errorMinus="12.804296154025804"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.45" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="15.717506163510802"
+        value="233.8" errorMinus="16.466329281293994"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999993"
+        value="0.55" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="16.286804474788784"
+        value="283.9" errorMinus="17.570998833304838"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.6499999999999999" errorMinus="0.04999999999999993"/>
+      <measurement errorPlus="22.342112702249086"
+        value="439.7" errorMinus="27.595651831402716"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.75" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="39.29185666267248" value="686.6"
+        errorMinus="33.143023398597784"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="3.698648401781386" value="12.2"
+        errorMinus="1.3490737563232043"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.5099019513592785" value="3.0"
+        errorMinus="0.6782329983125268"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="2.6495282598983545" value="34.3"
+        errorMinus="2.012461179749811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.9486832980505138" value="16.0"
+        errorMinus="2.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.24494897427831783" value="4.0"
+        errorMinus="0.574456264653803"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.11489125293076058"
+        value="0.74" errorMinus="0.1902629759044045"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="1.9824227601599012" value="51.4"
+        errorMinus="5.874521257089807"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="1.3379088160259651" value="26.1"
+        errorMinus="2.4289915602982237"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.7071067811865476" value="12.3"
+        errorMinus="1.6309506430300091"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.43588989435406733" value="6.3"
+        errorMinus="0.8774964387392122"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.14456832294800961" value="1.7"
+        errorMinus="0.24494897427831783"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.08774964387392122"
+        value="0.56" errorMinus="0.11489125293076058"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="44.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.048363209157374985"
+        value="0.122" errorMinus="0.04080441152620633"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="3.5944401511222854" value="28.1"
+        errorMinus="1.4352700094407325"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.7810249675906654" value="15.8"
+        errorMinus="1.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.3464101615137755" value="5.4"
+        errorMinus="0.24494897427831783"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.24494897427831783" value="1.6"
+        errorMinus="0.17320508075688776"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.05477225575051661"
+        value="0.41" errorMinus="0.07348469228349536"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.019519221295943134"
+        value="0.043" errorMinus="0.019339079605813717"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="1.3638181696985856" value="38.9"
+        errorMinus="2.3874672772626644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.9165151389911681" value="23.1"
+        errorMinus="1.4035668847618201"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.5099019513592785" value="11.2"
+        errorMinus="0.4242640687119285"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.28442925306655786" value="5.3"
+        errorMinus="0.3464101615137755"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.14177446878757827" value="2.1"
+        errorMinus="0.15362291495737218"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.11" value="0.87"
+        errorMinus="0.091104335791443"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="44.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.045825756949558406"
+        value="0.34" errorMinus="0.048989794855663564"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="51.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.033166247903554" value="0.13"
+        errorMinus="0.04358898943540673"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="60.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.011180339887498947"
+        value="0.035" errorMinus="0.017916472867168916"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d07-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="0.447213595499958" value="1.5"
+        errorMinus="0.45825756949558405"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.8485281374238571" value="4.0"
+        errorMinus="0.574456264653803"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.469041575982343" value="5.0"
+        errorMinus="0.37416573867739417"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.37416573867739417" value="3.3"
+        errorMinus="0.30000000000000004"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.14142135623730953" value="1.9"
+        errorMinus="0.17320508075688776"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.1341640786499874" value="0.93"
+        errorMinus="0.1063014581273465"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="44.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.08717797887081347"
+        value="0.41" errorMinus="0.06999999999999999"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="51.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.05916079783099616"
+        value="0.23" errorMinus="0.06480740698407861"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="60.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.032710854467592254"
+        value="0.033" errorMinus="0.01711724276862369"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="70.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.017578395831246946"
+        value="0.041" errorMinus="0.01982422760159901"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d08-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="0.10677078252031312" value="0.3"
+        errorMinus="0.09"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d09-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="0.9695359714832659" value="6.2"
+        errorMinus="0.43588989435406733"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.17320508075688776" value="2.1"
+        errorMinus="0.42426406871192857"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.06480740698407861"
+        value="0.23" errorMinus="0.07280109889280519"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.024392621835300936"
+        value="0.032" errorMinus="0.015811388300841896"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d10-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d10-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="1.4177446878757827" value="29.4"
+        errorMinus="2.3366642891095846"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.754983443527075" value="12.7"
+        errorMinus="1.5394804318340651"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.469041575982343" value="4.6"
+        errorMinus="0.6164414002968976"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.24494897427831783" value="1.2"
+        errorMinus="0.1469693845669907"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.08306623862918075"
+        value="0.21" errorMinus="0.0458257569495584"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d11-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d11-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="2.467792535850613" value="15.4"
+        errorMinus="0.812403840463596"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.6164414002968976" value="6.0"
+        errorMinus="0.37416573867739417"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.22912878474779202" value="1.4"
+        errorMinus="0.1469693845669907"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.06557438524302" value="0.38"
+        errorMinus="0.189208879284245"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.01987460691435179"
+        value="0.057" errorMinus="0.026645825188948456"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d12-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d12-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="2.7586228448267445" value="56.7"
+        errorMinus="2.459674775249769"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="1.449137674618944" value="26.6"
+        errorMinus="1.1874342087037917"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.6782329983125268" value="11.2"
+        errorMinus="0.9110433579144299"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.24494897427831783" value="3.7"
+        errorMinus="0.3464101615137755"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.15000000000000002" value="1.3"
+        errorMinus="0.15000000000000002"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.06403124237432849"
+        value="0.35" errorMinus="0.060000000000000005"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="44.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.01772004514666935"
+        value="0.064" errorMinus="0.019026297590440448"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="51.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.01667333200053307"
+        value="0.019" errorMinus="0.0103440804327886"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DET(P=3) IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET(P=3) IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d13-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d13-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.5" value="15.5"
+        errorMinus="1.5"/>
+      <measurement errorPlus="7.128113354878694" value="78.4"
+        errorMinus="6.241794613730894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="19.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="3.10322412983658" value="38.2"
+        errorMinus="1.9646882704388502"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="23.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="1.3038404810405297" value="16.9"
+        errorMinus="0.9110433579144298"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="27.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.58309518948453" value="6.3"
+        errorMinus="0.43588989435406733"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="32.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.17320508075688776" value="2.5"
+        errorMinus="0.14142135623730953"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.0" value="38.0"
+        errorMinus="3.0"/>
+      <measurement errorPlus="0.130384048104053" value="0.92"
+        errorMinus="0.1004987562112089"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="44.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.061644140029689765"
+        value="0.31" errorMinus="0.0670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.5" value="51.5"
+        errorMinus="3.5"/>
+      <measurement errorPlus="0.033166247903554" value="0.12"
+        errorMinus="0.033166247903554"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="60.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.021633307652783935"
+        value="0.045" errorMinus="0.022825424421026655"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d14-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d14-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="9.565563234854496" value="8.9"
+        errorMinus="1.8973665961010275"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="16.39634105524766" value="88.2"
+        errorMinus="10.135087567455942"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="13.087780560507577"
+        value="175.0" errorMinus="17.129506706265655"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="11.538630767989762"
+        value="195.8" errorMinus="14.47238750172203"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="12.2413234578619" value="160.3"
+        errorMinus="8.448076704197234"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="8.725823743349393" value="130.0"
+        errorMinus="6.3039670049897945"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="7.1568149340331555" value="89.3"
+        errorMinus="7.29520390393579"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d15-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d15-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="12.446284586172695" value="99.3"
+        errorMinus="4.589117562233506"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="15.22136656151477" value="272.0"
+        errorMinus="28.48736562056941"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="13.615432420602733"
+        value="347.0" errorMinus="39.61489618817648"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="12.91239714383042" value="347.1"
+        errorMinus="34.14513142455304"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="10.555567251455509"
+        value="287.9" errorMinus="22.180622173419753"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="8.514693182963201" value="208.1"
+        errorMinus="9.730878685915267"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="5.701754116059373" value="125.1"
+        errorMinus="9.725739046468396"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d16-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d16-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="21.389950911584627"
+        value="115.4" errorMinus="8.917398723843181"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="11.552056094046634"
+        value="241.7" errorMinus="9.938812806366766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="12.867012085173466"
+        value="315.7" errorMinus="17.985827754095723"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="9.556673061269805" value="277.5"
+        errorMinus="21.128416883429768"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="6.0835844697020525"
+        value="104.0" errorMinus="5.831809324729333"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="2.2671568097509267" value="37.2"
+        errorMinus="2.4289915602982237"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="1.5066519173319366" value="13.2"
+        errorMinus="2.580697580112788"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d17-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d17-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="1.4594519519326423" value="2.2"
+        errorMinus="0.9000000000000001"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="3.1256999216175565" value="15.8"
+        errorMinus="1.268857754044952"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="3.4452866353904428" value="40.0"
+        errorMinus="2.9546573405388314"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="6.959885056522126" value="52.4"
+        errorMinus="2.5768197453450252"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="8.32165848854662" value="60.4"
+        errorMinus="5.6964901474504455"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="7.788452991448302" value="54.1"
+        errorMinus="4.468780594300866"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d18-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d18-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="1.6093476939431082" value="4.1"
+        errorMinus="0.7874007874011811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="5.316013544000805" value="51.7"
+        errorMinus="3.318132004607412"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="8.003749121505496" value="131.7"
+        errorMinus="13.173458164050926"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="9.410632284814874" value="195.4"
+        errorMinus="16.76573887426379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="11.437657102746174"
+        value="230.1" errorMinus="15.157176518072225"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="13.4740491315714" value="262.4"
+        errorMinus="11.732859838931"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="13.111064030047293"
+        value="243.7" errorMinus="12.578553175941977"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DETRAP(P=4) IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DETRAP(P=4) IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d19-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d19-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="5.316013544000805" value="20.5"
+        errorMinus="1.4730919862656235"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="-0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="15.45509624686951" value="135.0"
+        errorMinus="7.746612162745725"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="14.040299142112321"
+        value="288.8" errorMinus="14.006070112633308"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="20.62643934371611" value="403.6"
+        errorMinus="19.009997369805184"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="29.56974805438829" value="403.0"
+        errorMinus="22.856071403458643"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="31.096141239710114"
+        value="355.2" errorMinus="25.695330315059195"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999973" value="2.2"
+        errorMinus="0.20000000000000018"/>
+      <measurement errorPlus="29.99749989582465" value="305.0"
+        errorMinus="16.36887289950044"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DX(C=GAMMA)IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DX(C=GAMMA)IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d20-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d20-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="55.399187719676895"
+        value="421.4" errorMinus="39.95772766311918"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.25" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="54.38906140024849" value="631.6"
+        errorMinus="64.50224802284026"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.35" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="45.741447287990354"
+        value="607.2" errorMinus="30.9594896598765"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.45" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="47.558490304045606"
+        value="599.9" errorMinus="24.920072231034965"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999993"
+        value="0.55" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="56.21174254548598" value="621.2"
+        errorMinus="23.996249706985463"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.6499999999999999" errorMinus="0.04999999999999993"/>
+      <measurement errorPlus="44.09716544178322" value="695.8"
+        errorMinus="31.327463989285825"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.75" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="104.37461377174048"
+        value="842.1" errorMinus="31.41050779595898"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.9"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="142.11843652390775"
+        value="1784.0" errorMinus="96.07465846933832"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DX(C=GAMMA)IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DX(C=GAMMA)IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d21-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d21-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="21.1094765449075" value="251.2"
+        errorMinus="22.227235545609354"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.25" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="36.7699605656574" value="419.2"
+        errorMinus="30.59068485666838"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.35" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="49.29858010125647" value="523.1"
+        errorMinus="32.54811822517548"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.45" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="27.804675865760423"
+        value="539.7" errorMinus="29.982995180601954"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999993"
+        value="0.55" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="34.5301317692244" value="597.3"
+        errorMinus="33.34576434871452"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.6499999999999999" errorMinus="0.04999999999999993"/>
+      <measurement errorPlus="38.76867292028449" value="641.3"
+        errorMinus="29.61975692000189"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.75" errorMinus="0.050000000000000044"/>
+      <measurement errorPlus="42.85417132555476" value="812.2"
+        errorMinus="41.41654258868067"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.9"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="74.83034143981972"
+        value="1791.5" errorMinus="167.21537010693723"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d22-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DX(C=GAMMA)IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DX(C=GAMMA)IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d22-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d22-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.15000000000000002"
+        value="0.25" errorMinus="0.15"/>
+      <measurement errorPlus="8.820430828479978" value="40.0"
+        errorMinus="2.9274562336608896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.5"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="7.433707016018321" value="89.8"
+        errorMinus="5.2488093888042835"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="0.7"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="6.877499545619759" value="130.0"
+        errorMinus="7.705841939723395"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.9"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="33.62052944258909" value="332.2"
+        errorMinus="35.19346530252456"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d23-x01-y01" dimension="2"
+    path="/REF/ZEUS_2001_S4815815/" title="D(SIG)/DX(C=GAMMA)IN PB">
+    <annotation>
+      <item key="Title" value="D(SIG)/DX(C=GAMMA)IN PB"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/ZEUS_2001_S4815815/d23-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/ZEUS_2001_S4815815.aida/REF/ZEUS_2001_S4815815/d23-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.15000000000000002"
+        value="0.25" errorMinus="0.15"/>
+      <measurement errorPlus="0.7810249675906654" value="3.9"
+        errorMinus="2.0976176963403033"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.5"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="1.9646882704388502" value="12.7"
+        errorMinus="1.4730919862656235"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="0.7"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="3.0692018506445615" value="24.5"
+        errorMinus="3.2908965343808667"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.9"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="5.9808026217222725" value="77.6"
+        errorMinus="7.814089838234521"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

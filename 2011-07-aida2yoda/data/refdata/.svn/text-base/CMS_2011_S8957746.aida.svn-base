@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse Thrust, $90\,\text{GeV} &lt; p_\perp(leading jet) \le 125\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse Thrust, $90\,\text{GeV} &lt; p_\perp(leading jet) \le 125\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d01-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.300000e+00" value="-1.245000e+01" errorMinus="1.300000e+00"/>
+      <measurement errorPlus="2.360000e-03" value="1.277000e-02" errorMinus="2.360000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.750000e-01" value="-1.017500e+01" errorMinus="9.750000e-01"/>
+      <measurement errorPlus="5.140000e-03" value="2.828000e-02" errorMinus="5.140000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.500000e-01" value="-8.550000e+00" errorMinus="6.500000e-01"/>
+      <measurement errorPlus="5.140000e-03" value="5.817000e-02" errorMinus="5.140000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.500000e-01" value="-7.250000e+00" errorMinus="6.500000e-01"/>
+      <measurement errorPlus="4.120000e-03" value="9.763000e-02" errorMinus="4.120000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-6.275000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="5.580000e-03" value="1.361700e-01" errorMinus="5.580000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-5.625000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.980000e-03" value="1.573400e-01" errorMinus="4.980000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-4.975000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.450000e-03" value="1.588000e-01" errorMinus="4.450000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-4.325000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.360000e-03" value="1.613100e-01" errorMinus="4.360000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-3.675000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.430000e-03" value="1.492900e-01" errorMinus="4.430000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-3.025000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.280000e-03" value="1.302900e-01" errorMinus="4.280000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-2.375000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.120000e-03" value="1.125300e-01" errorMinus="4.120000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-1.725000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.350000e-03" value="7.636000e-02" errorMinus="3.350000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-1.075000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="7.700000e-04" value="1.000000e-02" errorMinus="7.700000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse minor, $90\,\text{GeV} &lt; p_\perp(leading jet) \le 125\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse minor, $90\,\text{GeV} &lt; p_\perp(leading jet) \le 125\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d02-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="6.000000e-01" value="-5.650000e+00" errorMinus="6.000000e-01"/>
+      <measurement errorPlus="4.570000e-03" value="3.390000e-02" errorMinus="4.570000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.500000e-01" value="-4.600000e+00" errorMinus="4.500000e-01"/>
+      <measurement errorPlus="9.330000e-03" value="6.530000e-02" errorMinus="9.330000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.000000e-01" value="-3.850000e+00" errorMinus="3.000000e-01"/>
+      <measurement errorPlus="1.011000e-02" value="1.271000e-01" errorMinus="1.011000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.000000e-01" value="-3.250000e+00" errorMinus="3.000000e-01"/>
+      <measurement errorPlus="8.460000e-03" value="2.021000e-01" errorMinus="8.460000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.800000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.215000e-02" value="2.818000e-01" errorMinus="1.215000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.500000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.108000e-02" value="3.304000e-01" errorMinus="1.108000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.200000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.050000e-02" value="3.440000e-01" errorMinus="1.050000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.900000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.001000e-02" value="3.546000e-01" errorMinus="1.001000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.600000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.079000e-02" value="3.542000e-01" errorMinus="1.079000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.300000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.274000e-02" value="3.307000e-01" errorMinus="1.274000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.000000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.215000e-02" value="2.287000e-01" errorMinus="1.215000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-7.000000e-01" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="7.190000e-03" value="1.034000e-01" errorMinus="7.190000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-4.000000e-01" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.550000e-03" value="1.530000e-02" errorMinus="1.550000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x02-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse Thrust, $125\,\text{GeV} &lt; p_\perp(leading jet) \le 200\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse Thrust, $125\,\text{GeV} &lt; p_\perp(leading jet) \le 200\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d01-x02-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d01-x02-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.300000e+00" value="-1.245000e+01" errorMinus="1.300000e+00"/>
+      <measurement errorPlus="9.900000e-04" value="1.436000e-02" errorMinus="9.900000e-04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.750000e-01" value="-1.017500e+01" errorMinus="9.750000e-01"/>
+      <measurement errorPlus="2.060000e-03" value="3.036000e-02" errorMinus="2.060000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.500000e-01" value="-8.550000e+00" errorMinus="6.500000e-01"/>
+      <measurement errorPlus="2.700000e-03" value="6.200000e-02" errorMinus="2.700000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-7.575000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.190000e-03" value="9.065000e-02" errorMinus="4.190000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-6.925000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.830000e-03" value="1.080700e-01" errorMinus="3.830000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-6.275000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.410000e-03" value="1.240000e-01" errorMinus="3.410000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-5.625000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.190000e-03" value="1.337400e-01" errorMinus="3.190000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-4.975000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.120000e-03" value="1.358100e-01" errorMinus="3.120000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-4.325000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="3.480000e-03" value="1.464000e-01" errorMinus="3.480000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-3.675000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.050000e-03" value="1.560700e-01" errorMinus="4.050000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-3.025000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.190000e-03" value="1.474000e-01" errorMinus="4.190000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-2.375000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.400000e-03" value="1.375100e-01" errorMinus="4.400000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-1.725000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="2.630000e-03" value="7.729000e-02" errorMinus="2.630000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.250000e-01" value="-1.075000e+00" errorMinus="3.250000e-01"/>
+      <measurement errorPlus="4.200000e-04" value="8.240000e-03" errorMinus="4.200000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x02-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse minor, $125\,\text{GeV} &lt; p_\perp(leading jet) \le 200\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse minor, $125\,\text{GeV} &lt; p_\perp(leading jet) \le 200\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d02-x02-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d02-x02-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="6.000000e-01" value="-5.650000e+00" errorMinus="6.000000e-01"/>
+      <measurement errorPlus="1.910000e-03" value="3.710300e-02" errorMinus="1.910000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.500000e-01" value="-4.600000e+00" errorMinus="4.500000e-01"/>
+      <measurement errorPlus="3.830000e-03" value="7.037400e-02" errorMinus="3.830000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.000000e-01" value="-3.850000e+00" errorMinus="3.000000e-01"/>
+      <measurement errorPlus="5.220000e-03" value="1.358700e-01" errorMinus="5.220000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-3.400000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="8.180000e-03" value="1.924830e-01" errorMinus="8.180000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-3.100000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="7.830000e-03" value="2.269740e-01" errorMinus="7.830000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.800000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="7.490000e-03" value="2.656450e-01" errorMinus="7.490000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.500000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="6.960000e-03" value="2.940380e-01" errorMinus="6.960000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-2.200000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="7.830000e-03" value="3.280060e-01" errorMinus="7.830000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.900000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="8.530000e-03" value="3.729480e-01" errorMinus="8.530000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.600000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="9.920000e-03" value="3.823540e-01" errorMinus="9.920000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.300000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.167000e-02" value="3.283540e-01" errorMinus="1.167000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-1.000000e+00" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="1.045000e-02" value="2.107740e-01" errorMinus="1.045000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-7.000000e-01" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="5.390000e-03" value="8.831600e-02" errorMinus="5.390000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.500000e-01" value="-4.000000e-01" errorMinus="1.500000e-01"/>
+      <measurement errorPlus="8.700000e-04" value="1.132200e-02" errorMinus="8.700000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x03-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse Thrust, $p_\perp(leading jet) &gt; 200\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse Thrust, $p_\perp(leading jet) &gt; 200\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d01-x03-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d01-x03-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.225000e+00" value="-1.252500e+01" errorMinus="1.225000e+00"/>
+      <measurement errorPlus="1.362000e-03" value="1.736800e-02" errorMinus="1.362000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.220000e+00" value="-1.008000e+01" errorMinus="1.220000e+00"/>
+      <measurement errorPlus="2.081000e-03" value="3.873300e-02" errorMinus="2.081000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-8.455000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="4.321000e-03" value="6.946200e-02" errorMinus="4.321000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-7.645000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="4.244000e-03" value="8.635000e-02" errorMinus="4.244000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-6.835000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="3.681000e-03" value="9.747100e-02" errorMinus="3.681000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-6.025000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="3.441000e-03" value="1.020330e-01" errorMinus="3.441000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-5.215000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="3.443000e-03" value="1.092360e-01" errorMinus="3.443000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-4.405000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="4.083000e-03" value="1.399660e-01" errorMinus="4.083000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-3.595000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="4.883000e-03" value="1.726160e-01" errorMinus="4.883000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-2.785000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="5.043000e-03" value="1.751780e-01" errorMinus="5.043000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.100000e-01" value="-1.970000e+00" errorMinus="4.100000e-01"/>
+      <measurement errorPlus="3.361000e-03" value="9.843100e-02" errorMinus="3.361000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.050000e-01" value="-1.155000e+00" errorMinus="4.050000e-01"/>
+      <measurement errorPlus="9.620000e-04" value="1.200500e-02" errorMinus="9.620000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x03-y01" dimension="2"
+    path="/REF/CMS_2011_S8957746" title="transverse minor, $p_\perp(leading jet) &gt; 200\,\text{GeV}$">
+    <annotation>
+      <item key="Title" value="transverse minor, $p_\perp(leading jet) &gt; 200\,\text{GeV}$" sticky="true"/>
+      <item key="AidaPath" value="/REF/CMS_2011_S8957746/d02-x03-y01" sticky="true"/>
+      <item key="FullPath" value="/CMS_2011_S8957746.aida/REF/CMS_2011_S8957746/d02-x03-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.625000e-01" value="-5.687500e+00" errorMinus="5.625000e-01"/>
+      <measurement errorPlus="3.107000e-03" value="4.624000e-02" errorMinus="3.107000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.625000e-01" value="-4.562500e+00" errorMinus="5.625000e-01"/>
+      <measurement errorPlus="4.569000e-03" value="8.754000e-02" errorMinus="4.569000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-3.812500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="9.138000e-03" value="1.506000e-01" errorMinus="9.138000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-3.437500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="8.772000e-03" value="1.875100e-01" errorMinus="8.772000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-3.062500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="8.224000e-03" value="2.224200e-01" errorMinus="8.224000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-2.687500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="8.407000e-03" value="2.551400e-01" errorMinus="8.407000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-2.312500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="9.321000e-03" value="3.211200e-01" errorMinus="9.321000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-1.937500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="1.114800e-02" value="4.004400e-01" errorMinus="1.114800e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-1.562500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="1.151400e-02" value="3.649800e-01" errorMinus="1.151400e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-1.187500e+00" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="9.321000e-03" value="2.487400e-01" errorMinus="9.321000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-8.125000e-01" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="4.934000e-03" value="1.025300e-01" errorMinus="4.934000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.875000e-01" value="-4.375000e-01" errorMinus="1.875000e-01"/>
+      <measurement errorPlus="1.096000e-03" value="1.133000e-02" errorMinus="1.096000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

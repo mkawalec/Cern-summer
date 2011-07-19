@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DM IN PER 40 GEV" >
+    <dataPoint>
+      <measurement value="540.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00692" errorPlus="9.0E-4" errorMinus="9.0E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="580.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00549" errorPlus="6.8E-4" errorMinus="6.8E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="620.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00418" errorPlus="5.4E-4" errorMinus="5.4E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="660.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00267" errorPlus="3.4E-4" errorMinus="3.4E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="700.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00187" errorPlus="2.3E-4" errorMinus="2.3E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="740.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.00143" errorPlus="1.9E-4" errorMinus="1.9E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="780.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="9.6E-4" errorPlus="1.24E-4" errorMinus="1.24E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="820.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="4.48E-4" errorPlus="8.0E-5" errorMinus="8.0E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="860.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="2.53E-4" errorPlus="6.7E-5" errorMinus="6.7E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="900.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="1.35E-4" errorPlus="5.0E-5" errorMinus="5.0E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="940.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="1.16E-4" errorPlus="4.7E-5" errorMinus="4.7E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="980.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="7.61E-5" errorPlus="3.37E-5" errorMinus="3.37E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1020.0" errorPlus="60.0" errorMinus="20.0"/>
+      <measurement value="2.86E-5" errorPlus="1.63E-5" errorMinus="1.63E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1171.0" errorPlus="69.0" errorMinus="91.0"/>
+      <measurement value="1.44E-5" errorPlus="8.1E-6" errorMinus="8.1E-6"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DX(P=3,Q=THREE-JET)" >
+    <dataPoint>
+      <measurement value="0.666" errorPlus="0.015000000000000013" errorMinus="0.016000000000000014"/>
+      <measurement value="0.32" errorPlus="0.15" errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.697" errorPlus="0.016000000000000014" errorMinus="0.015999999999999903"/>
+      <measurement value="1.82" errorPlus="0.22" errorMinus="0.22"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.728" errorPlus="0.016000000000000014" errorMinus="0.015000000000000013"/>
+      <measurement value="3.15" errorPlus="0.3" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.76" errorPlus="0.015000000000000013" errorMinus="0.016000000000000014"/>
+      <measurement value="4.19" errorPlus="0.3" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.791" errorPlus="0.015000000000000013" errorMinus="0.016000000000000014"/>
+      <measurement value="5.21" errorPlus="0.39" errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.822" errorPlus="0.016000000000000014" errorMinus="0.015999999999999903"/>
+      <measurement value="5.52" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.853" errorPlus="0.016000000000000014" errorMinus="0.015000000000000013"/>
+      <measurement value="6.37" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.884" errorPlus="0.016000000000000014" errorMinus="0.015000000000000013"/>
+      <measurement value="5.43" errorPlus="0.36" errorMinus="0.36"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DX(P=4,Q=THREE-JET)" >
+    <dataPoint>
+      <measurement value="0.575" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.36" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.625" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="4.36" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.675" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="6.3" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="4.34" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.33" errorPlus="0.18" errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.07" errorPlus="0.18" errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.18" errorPlus="0.19" errorMinus="0.19"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DCOS(THETA(P=3,Q=THREE-JET))" >
+    <dataPoint>
+      <measurement value="-0.8500000000000001" errorPlus="0.050000000000000044" errorMinus="0.04999999999999993"/>
+      <measurement value="2.201" errorPlus="0.059" errorMinus="0.059"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.75" errorPlus="0.050000000000000044" errorMinus="0.050000000000000044"/>
+      <measurement value="1.126" errorPlus="0.106" errorMinus="0.106"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.6499999999999999" errorPlus="0.04999999999999993" errorMinus="0.050000000000000044"/>
+      <measurement value="0.653" errorPlus="0.078" errorMinus="0.078"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.55" errorPlus="0.050000000000000044" errorMinus="0.04999999999999993"/>
+      <measurement value="0.342" errorPlus="0.053" errorMinus="0.053"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.45" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.249" errorPlus="0.047" errorMinus="0.047"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.35" errorPlus="0.04999999999999999" errorMinus="0.050000000000000044"/>
+      <measurement value="0.199" errorPlus="0.037" errorMinus="0.037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.25" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.18" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.15000000000000002" errorPlus="0.05000000000000002" errorMinus="0.04999999999999999"/>
+      <measurement value="0.112" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="-0.05" errorPlus="0.05" errorMinus="0.05"/>
+      <measurement value="0.137" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.05" errorPlus="0.05" errorMinus="0.05"/>
+      <measurement value="0.162" errorPlus="0.037" errorMinus="0.037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.15000000000000002" errorPlus="0.04999999999999999" errorMinus="0.05000000000000002"/>
+      <measurement value="0.149" errorPlus="0.037" errorMinus="0.037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.25" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.143" errorPlus="0.037" errorMinus="0.037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.35" errorPlus="0.050000000000000044" errorMinus="0.04999999999999999"/>
+      <measurement value="0.193" errorPlus="0.037" errorMinus="0.037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.45" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.199" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.55" errorPlus="0.04999999999999993" errorMinus="0.050000000000000044"/>
+      <measurement value="0.323" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.6499999999999999" errorPlus="0.050000000000000044" errorMinus="0.04999999999999993"/>
+      <measurement value="0.529" errorPlus="0.065" errorMinus="0.065"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.75" errorPlus="0.050000000000000044" errorMinus="0.050000000000000044"/>
+      <measurement value="0.92" errorPlus="0.093" errorMinus="0.093"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.8500000000000001" errorPlus="0.04999999999999993" errorMinus="0.050000000000000044"/>
+      <measurement value="2.32" errorPlus="0.177" errorMinus="0.177"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DPSI(P=3,Q=THREE-JET)" >
+    <dataPoint>
+      <measurement value="0.157" errorPlus="0.157" errorMinus="0.157"/>
+      <measurement value="0.737" errorPlus="0.042" errorMinus="0.042"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.471" errorPlus="0.15700000000000003" errorMinus="0.15699999999999997"/>
+      <measurement value="0.383" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7855" errorPlus="0.15749999999999997" errorMinus="0.15749999999999997"/>
+      <measurement value="0.225" errorPlus="0.023" errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.0999999999999999" errorPlus="0.15700000000000003" errorMinus="0.15699999999999992"/>
+      <measurement value="0.189" errorPlus="0.021" errorMinus="0.021"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.414" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.122" errorPlus="0.015" errorMinus="0.015"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.728" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.139" errorPlus="0.02" errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.042" errorPlus="0.15700000000000003" errorMinus="0.1569999999999998"/>
+      <measurement value="0.143" errorPlus="0.02" errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.3564999999999996" errorPlus="0.1575000000000002" errorMinus="0.15749999999999975"/>
+      <measurement value="0.236" errorPlus="0.022" errorMinus="0.022"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.671" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.392" errorPlus="0.026" errorMinus="0.026"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.985" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.629" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(P=3,Q=THREE-BODY)/DM(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0135" errorPlus="0.0135" errorMinus="0.0135"/>
+      <measurement value="0.23" errorPlus="0.26" errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.04" errorPlus="0.012999999999999998" errorMinus="0.013000000000000001"/>
+      <measurement value="3.32" errorPlus="0.34" errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0665" errorPlus="0.013499999999999998" errorMinus="0.013500000000000005"/>
+      <measurement value="1.43" errorPlus="0.28" errorMinus="0.28"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0935" errorPlus="0.013499999999999998" errorMinus="0.013499999999999998"/>
+      <measurement value="1.09" errorPlus="0.28" errorMinus="0.28"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.12" errorPlus="0.013000000000000012" errorMinus="0.012999999999999998"/>
+      <measurement value="2.53" errorPlus="0.3" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.14650000000000002" errorPlus="0.013499999999999984" errorMinus="0.013500000000000012"/>
+      <measurement value="3.66" errorPlus="0.34" errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1735" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="3.96" errorPlus="0.32" errorMinus="0.32"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2" errorPlus="0.012999999999999984" errorMinus="0.013000000000000012"/>
+      <measurement value="4.72" errorPlus="0.36" errorMinus="0.36"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.22649999999999998" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="5.25" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2535" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="4.42" errorPlus="0.32" errorMinus="0.32"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.28" errorPlus="0.012999999999999956" errorMinus="0.013000000000000012"/>
+      <measurement value="4.19" errorPlus="0.34" errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3065" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="2.15" errorPlus="0.32" errorMinus="0.32"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3335" errorPlus="0.013499999999999956" errorMinus="0.013500000000000012"/>
+      <measurement value="0.75" errorPlus="0.26" errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.36" errorPlus="0.013000000000000012" errorMinus="0.013000000000000012"/>
+      <measurement value="0.19" errorPlus="0.3" errorMinus="0.3"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y02" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(P=4,Q=THREE-BODY)/DM(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0135" errorPlus="0.0135" errorMinus="0.0135"/>
+      <measurement value="3.04" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.04" errorPlus="0.012999999999999998" errorMinus="0.013000000000000001"/>
+      <measurement value="5.69" errorPlus="0.4" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0665" errorPlus="0.013499999999999998" errorMinus="0.013500000000000005"/>
+      <measurement value="3.88" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0935" errorPlus="0.013499999999999998" errorMinus="0.013499999999999998"/>
+      <measurement value="3.88" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.12" errorPlus="0.013000000000000012" errorMinus="0.012999999999999998"/>
+      <measurement value="4.01" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.14650000000000002" errorPlus="0.013499999999999984" errorMinus="0.013500000000000012"/>
+      <measurement value="4.63" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1735" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="3.93" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2" errorPlus="0.012999999999999984" errorMinus="0.013000000000000012"/>
+      <measurement value="3.62" errorPlus="0.31" errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.22649999999999998" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="2.74" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2535" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="1.28" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.28" errorPlus="0.012999999999999956" errorMinus="0.013000000000000012"/>
+      <measurement value="0.57" errorPlus="0.31" errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3065" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="0.26" errorPlus="0.31" errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3335" errorPlus="0.013499999999999956" errorMinus="0.013500000000000012"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.36" errorPlus="0.013000000000000012" errorMinus="0.013000000000000012"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y03" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(P=5,Q=THREE-BODY)/DM(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0135" errorPlus="0.0135" errorMinus="0.0135"/>
+      <measurement value="3.22" errorPlus="0.29" errorMinus="0.29"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.04" errorPlus="0.012999999999999998" errorMinus="0.013000000000000001"/>
+      <measurement value="7.01" errorPlus="0.44" errorMinus="0.44"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0665" errorPlus="0.013499999999999998" errorMinus="0.013500000000000005"/>
+      <measurement value="4.5" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0935" errorPlus="0.013499999999999998" errorMinus="0.013499999999999998"/>
+      <measurement value="4.81" errorPlus="0.4" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.12" errorPlus="0.013000000000000012" errorMinus="0.012999999999999998"/>
+      <measurement value="5.6" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.14650000000000002" errorPlus="0.013499999999999984" errorMinus="0.013500000000000012"/>
+      <measurement value="4.41" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1735" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="3.22" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2" errorPlus="0.012999999999999984" errorMinus="0.013000000000000012"/>
+      <measurement value="2.25" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.22649999999999998" errorPlus="0.013500000000000012" errorMinus="0.013499999999999984"/>
+      <measurement value="1.76" errorPlus="0.33" errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.2535" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="0.62" errorPlus="0.37" errorMinus="0.37"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.28" errorPlus="0.012999999999999956" errorMinus="0.013000000000000012"/>
+      <measurement value="0.18" errorPlus="0.38" errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3065" errorPlus="0.013500000000000012" errorMinus="0.013500000000000012"/>
+      <measurement value="0.09" errorPlus="0.35" errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.3335" errorPlus="0.013499999999999956" errorMinus="0.013500000000000012"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.36" errorPlus="0.013000000000000012" errorMinus="0.013000000000000012"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DX(C=A)" >
+    <dataPoint>
+      <measurement value="0.525" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="5.26" errorPlus="0.25" errorMinus="0.25"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.575" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="5.09" errorPlus="0.27" errorMinus="0.27"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.625" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.59" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.675" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="2.95" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.01" errorPlus="0.22" errorMinus="0.22"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.87" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.3" errorPlus="0.22" errorMinus="0.22"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.03" errorPlus="0.2" errorMinus="0.2"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DX(C=C)" >
+    <dataPoint>
+      <measurement value="0.525" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.57" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.575" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="3.41" errorPlus="0.24" errorMinus="0.24"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.625" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.84" errorPlus="0.25" errorMinus="0.25"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.675" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="3.15" errorPlus="0.21" errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.96" errorPlus="0.24" errorMinus="0.24"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.63" errorPlus="0.16" errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.99" errorPlus="0.17" errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.45" errorPlus="0.16" errorMinus="0.16"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DX(C=E)" >
+    <dataPoint>
+      <measurement value="0.525" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="4.51" errorPlus="0.27" errorMinus="0.27"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.575" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="4.56" errorPlus="0.24" errorMinus="0.24"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.625" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.54" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.675" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="2.98" errorPlus="0.23" errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.47" errorPlus="0.19" errorMinus="0.19"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.4" errorPlus="0.16" errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.59" errorPlus="0.19" errorMinus="0.19"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.13" errorPlus="0.17" errorMinus="0.17"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DPSI(C=AB)" >
+    <dataPoint>
+      <measurement value="0.157" errorPlus="0.157" errorMinus="0.157"/>
+      <measurement value="0.384" errorPlus="0.043" errorMinus="0.043"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.471" errorPlus="0.15700000000000003" errorMinus="0.15699999999999997"/>
+      <measurement value="0.363" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7855" errorPlus="0.15749999999999997" errorMinus="0.15749999999999997"/>
+      <measurement value="0.323" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.0999999999999999" errorPlus="0.15700000000000003" errorMinus="0.15699999999999992"/>
+      <measurement value="0.295" errorPlus="0.032" errorMinus="0.032"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.414" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.262" errorPlus="0.022" errorMinus="0.022"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.728" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.259" errorPlus="0.027" errorMinus="0.027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.042" errorPlus="0.15700000000000003" errorMinus="0.1569999999999998"/>
+      <measurement value="0.255" errorPlus="0.027" errorMinus="0.027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.3564999999999996" errorPlus="0.1575000000000002" errorMinus="0.15749999999999975"/>
+      <measurement value="0.266" errorPlus="0.025" errorMinus="0.025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.671" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.399" errorPlus="0.032" errorMinus="0.032"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.985" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.395" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DPSI(C=CD)" >
+    <dataPoint>
+      <measurement value="0.157" errorPlus="0.157" errorMinus="0.157"/>
+      <measurement value="0.28" errorPlus="0.025" errorMinus="0.025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.471" errorPlus="0.15700000000000003" errorMinus="0.15699999999999997"/>
+      <measurement value="0.347" errorPlus="0.029" errorMinus="0.029"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7855" errorPlus="0.15749999999999997" errorMinus="0.15749999999999997"/>
+      <measurement value="0.349" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.0999999999999999" errorPlus="0.15700000000000003" errorMinus="0.15699999999999992"/>
+      <measurement value="0.32" errorPlus="0.029" errorMinus="0.029"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.414" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.309" errorPlus="0.028" errorMinus="0.028"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.728" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.328" errorPlus="0.029" errorMinus="0.029"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.042" errorPlus="0.15700000000000003" errorMinus="0.1569999999999998"/>
+      <measurement value="0.301" errorPlus="0.024" errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.3564999999999996" errorPlus="0.1575000000000002" errorMinus="0.15749999999999975"/>
+      <measurement value="0.293" errorPlus="0.027" errorMinus="0.027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.671" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.333" errorPlus="0.033" errorMinus="0.033"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.985" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.312" errorPlus="0.04" errorMinus="0.04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/DPSI(C=EF)" >
+    <dataPoint>
+      <measurement value="0.157" errorPlus="0.157" errorMinus="0.157"/>
+      <measurement value="0.257" errorPlus="0.023" errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.471" errorPlus="0.15700000000000003" errorMinus="0.15699999999999997"/>
+      <measurement value="0.235" errorPlus="0.023" errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7855" errorPlus="0.15749999999999997" errorMinus="0.15749999999999997"/>
+      <measurement value="0.327" errorPlus="0.028" errorMinus="0.028"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.0999999999999999" errorPlus="0.15700000000000003" errorMinus="0.15699999999999992"/>
+      <measurement value="0.4" errorPlus="0.035" errorMinus="0.035"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.414" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.422" errorPlus="0.031" errorMinus="0.031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.728" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.435" errorPlus="0.036" errorMinus="0.036"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.042" errorPlus="0.15700000000000003" errorMinus="0.1569999999999998"/>
+      <measurement value="0.378" errorPlus="0.03" errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.3564999999999996" errorPlus="0.1575000000000002" errorMinus="0.15749999999999975"/>
+      <measurement value="0.286" errorPlus="0.03" errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.671" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.249" errorPlus="0.028" errorMinus="0.028"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.985" errorPlus="0.15700000000000003" errorMinus="0.15700000000000003"/>
+      <measurement value="0.219" errorPlus="0.023" errorMinus="0.023"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=A)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0075" errorPlus="0.0075" errorMinus="0.0075"/>
+      <measurement value="2.88" errorPlus="1.26" errorMinus="1.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.022" errorPlus="0.007000000000000003" errorMinus="0.006999999999999999"/>
+      <measurement value="13.69" errorPlus="1.35" errorMinus="1.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0365" errorPlus="0.0075" errorMinus="0.007499999999999996"/>
+      <measurement value="17.12" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.051000000000000004" errorPlus="0.006999999999999999" errorMinus="0.007000000000000006"/>
+      <measurement value="9.91" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0655" errorPlus="0.007499999999999993" errorMinus="0.0075"/>
+      <measurement value="7.39" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.07999999999999999" errorPlus="0.007000000000000006" errorMinus="0.006999999999999992"/>
+      <measurement value="6.13" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0945" errorPlus="0.007499999999999993" errorMinus="0.007500000000000007"/>
+      <measurement value="4.68" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.109" errorPlus="0.007000000000000006" errorMinus="0.007000000000000006"/>
+      <measurement value="3.24" errorPlus="1.35" errorMinus="1.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1235" errorPlus="0.007500000000000007" errorMinus="0.007499999999999993"/>
+      <measurement value="1.98" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.138" errorPlus="0.0069999999999999785" errorMinus="0.007000000000000006"/>
+      <measurement value="1.26" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1525" errorPlus="0.007500000000000007" errorMinus="0.007500000000000007"/>
+      <measurement value="0.72" errorPlus="0.9" errorMinus="0.9"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=B)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0075" errorPlus="0.0075" errorMinus="0.0075"/>
+      <measurement value="2.88" errorPlus="1.26" errorMinus="1.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.022" errorPlus="0.007000000000000003" errorMinus="0.006999999999999999"/>
+      <measurement value="13.69" errorPlus="1.35" errorMinus="1.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0365" errorPlus="0.0075" errorMinus="0.007499999999999996"/>
+      <measurement value="17.12" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.051000000000000004" errorPlus="0.006999999999999999" errorMinus="0.007000000000000006"/>
+      <measurement value="9.91" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0655" errorPlus="0.007499999999999993" errorMinus="0.0075"/>
+      <measurement value="7.39" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.07999999999999999" errorPlus="0.007000000000000006" errorMinus="0.006999999999999992"/>
+      <measurement value="6.13" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0945" errorPlus="0.007499999999999993" errorMinus="0.007500000000000007"/>
+      <measurement value="4.68" errorPlus="1.17" errorMinus="1.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.109" errorPlus="0.007000000000000006" errorMinus="0.007000000000000006"/>
+      <measurement value="3.24" errorPlus="1.35" errorMinus="1.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1235" errorPlus="0.007500000000000007" errorMinus="0.007499999999999993"/>
+      <measurement value="1.98" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.138" errorPlus="0.0069999999999999785" errorMinus="0.007000000000000006"/>
+      <measurement value="1.26" errorPlus="1.08" errorMinus="1.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.1525" errorPlus="0.007500000000000007" errorMinus="0.007500000000000007"/>
+      <measurement value="0.72" errorPlus="0.9" errorMinus="0.9"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=C)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0050" errorPlus="0.0050" errorMinus="0.0050"/>
+      <measurement value="2.38" errorPlus="2.23" errorMinus="2.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.015" errorPlus="0.005000000000000001" errorMinus="0.004999999999999999"/>
+      <measurement value="19.6" errorPlus="1.78" errorMinus="1.78"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.025" errorPlus="0.0049999999999999975" errorMinus="0.005000000000000001"/>
+      <measurement value="27.92" errorPlus="2.23" errorMinus="2.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.035" errorPlus="0.0049999999999999975" errorMinus="0.0050000000000000044"/>
+      <measurement value="19.01" errorPlus="2.23" errorMinus="2.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.045" errorPlus="0.0050000000000000044" errorMinus="0.0049999999999999975"/>
+      <measurement value="13.07" errorPlus="2.23" errorMinus="2.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.055" errorPlus="0.0049999999999999975" errorMinus="0.0049999999999999975"/>
+      <measurement value="8.02" errorPlus="1.78" errorMinus="1.78"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.065" errorPlus="0.0050000000000000044" errorMinus="0.0050000000000000044"/>
+      <measurement value="4.46" errorPlus="1.78" errorMinus="1.78"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.07500000000000001" errorPlus="0.0049999999999999906" errorMinus="0.0050000000000000044"/>
+      <measurement value="2.67" errorPlus="1.63" errorMinus="1.63"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.08499999999999999" errorPlus="0.0050000000000000044" errorMinus="0.0049999999999999906"/>
+      <measurement value="2.08" errorPlus="1.78" errorMinus="1.78"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.095" errorPlus="0.0050000000000000044" errorMinus="0.0050000000000000044"/>
+      <measurement value="0.59" errorPlus="1.93" errorMinus="1.93"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=D)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0050" errorPlus="0.0050" errorMinus="0.0050"/>
+      <measurement value="5.09" errorPlus="1.79" errorMinus="1.79"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.015" errorPlus="0.005000000000000001" errorMinus="0.004999999999999999"/>
+      <measurement value="40.04" errorPlus="2.09" errorMinus="2.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.025" errorPlus="0.0049999999999999975" errorMinus="0.005000000000000001"/>
+      <measurement value="29.91" errorPlus="1.94" errorMinus="1.94"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.035" errorPlus="0.0049999999999999975" errorMinus="0.0050000000000000044"/>
+      <measurement value="11.73" errorPlus="1.94" errorMinus="1.94"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.045" errorPlus="0.0050000000000000044" errorMinus="0.0049999999999999975"/>
+      <measurement value="4.59" errorPlus="1.94" errorMinus="1.94"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.055" errorPlus="0.0049999999999999975" errorMinus="0.0049999999999999975"/>
+      <measurement value="2.82" errorPlus="1.79" errorMinus="1.79"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.065" errorPlus="0.0050000000000000044" errorMinus="0.0050000000000000044"/>
+      <measurement value="2.85" errorPlus="1.94" errorMinus="1.94"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.07500000000000001" errorPlus="0.0049999999999999906" errorMinus="0.0050000000000000044"/>
+      <measurement value="2.28" errorPlus="1.94" errorMinus="1.94"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.08499999999999999" errorPlus="0.0050000000000000044" errorMinus="0.0049999999999999906"/>
+      <measurement value="1.7" errorPlus="1.64" errorMinus="1.64"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=E)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0025" errorPlus="0.0025" errorMinus="0.0025"/>
+      <measurement value="0.53" errorPlus="3.45" errorMinus="3.45"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0075" errorPlus="0.0025000000000000005" errorMinus="0.0024999999999999996"/>
+      <measurement value="14.87" errorPlus="3.19" errorMinus="3.19"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0125" errorPlus="0.0024999999999999988" errorMinus="0.0025000000000000005"/>
+      <measurement value="51.5" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0175" errorPlus="0.0024999999999999988" errorMinus="0.0025000000000000022"/>
+      <measurement value="49.38" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0225" errorPlus="0.0025000000000000022" errorMinus="0.0024999999999999988"/>
+      <measurement value="31.33" errorPlus="3.98" errorMinus="3.98"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0275" errorPlus="0.0024999999999999988" errorMinus="0.0024999999999999988"/>
+      <measurement value="20.18" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0325" errorPlus="0.0025000000000000022" errorMinus="0.0025000000000000022"/>
+      <measurement value="9.03" errorPlus="3.45" errorMinus="3.45"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.037500000000000006" errorPlus="0.0024999999999999953" errorMinus="0.0025000000000000022"/>
+      <measurement value="5.31" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.042499999999999996" errorPlus="0.0025000000000000022" errorMinus="0.0024999999999999953"/>
+      <measurement value="3.72" errorPlus="2.92" errorMinus="2.92"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y01" dimension="2" path="/REF/CDF_1997_S3541940" title="(1/N)*D(N)/D(M(C=F)/M(C=6JET))" >
+    <dataPoint>
+      <measurement value="0.0025" errorPlus="0.0025" errorMinus="0.0025"/>
+      <measurement value="0.53" errorPlus="2.92" errorMinus="2.92"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0075" errorPlus="0.0025000000000000005" errorMinus="0.0024999999999999996"/>
+      <measurement value="27.61" errorPlus="3.45" errorMinus="3.45"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0125" errorPlus="0.0024999999999999988" errorMinus="0.0025000000000000005"/>
+      <measurement value="75.93" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0175" errorPlus="0.0024999999999999988" errorMinus="0.0025000000000000022"/>
+      <measurement value="52.04" errorPlus="3.45" errorMinus="3.45"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0225" errorPlus="0.0025000000000000022" errorMinus="0.0024999999999999988"/>
+      <measurement value="19.65" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0275" errorPlus="0.0024999999999999988" errorMinus="0.0024999999999999988"/>
+      <measurement value="6.9" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.0325" errorPlus="0.0025000000000000022" errorMinus="0.0025000000000000022"/>
+      <measurement value="2.65" errorPlus="3.72" errorMinus="3.72"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.037500000000000006" errorPlus="0.0024999999999999953" errorMinus="0.0025000000000000022"/>
+      <measurement value="2.12" errorPlus="4.78" errorMinus="4.78"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.042499999999999996" errorPlus="0.0025000000000000022" errorMinus="0.0024999999999999953"/>
+      <measurement value="0.0" errorPlus="3.43" errorMinus="3.43"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

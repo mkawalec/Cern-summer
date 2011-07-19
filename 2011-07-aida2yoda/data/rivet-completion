@@ -1,0 +1,235 @@
+## -*- sh -*-
+## Analysis name completion for rivet scripts
+
+(type _filedir &> /dev/null) || \
+function _filedir() {
+    local cur prev commands options command
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "$(ls ${cur}* 2> /dev/null)" -- ${cur}) )
+    return 0
+}
+
+
+function _rivet() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help --verbose --quiet --version --nevts --cross-section"
+    opts="$opts --analysis --runname --list-analyses --show-analysis"
+    opts="$opts --analysis-path --analysis-path-append"
+    opts="$opts --histo-file --histo-interval --event-timeout"
+    opts="$opts -a -A -n -h -x -H -l -v -q"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    if test -x "$(which rivet 2> /dev/null)"; then
+        anas=$(rivet --list-analyses)
+        if $(echo ${prev} | egrep -- "-a|--analysis|--show-analysis|--list-analyses" &> /dev/null); then
+            COMPREPLY=( $(compgen -W "$anas" -- ${cur}) )
+            return 0
+        fi
+    fi
+
+    if $(echo ${prev} | egrep -- "-n|--nevts|--runname|--histo-interval|--cross-section|-x|--event-timeout" &> /dev/null); then
+        COMPREPLY=()
+        return 0
+    fi
+
+    if $(echo ${prev} | egrep -- "--histo-file|-H" &> /dev/null); then
+        _filedir aida
+        return 0
+    fi
+
+    if $(echo ${prev} | egrep -- "--analysis-path|--analysis-path-append" &> /dev/null); then
+        _filedir -d
+        return 0
+    fi
+
+    _filedir
+    return 0
+}
+
+
+complete -F _rivet rivet
+
+
+##########################
+
+
+function _rivet_config() {
+    local cur prev commands options command
+    COMPREPLY=()
+    #cur=`_get_cword`
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help --version"
+    opts="$opts --prefix --includedir --libdir --datadir"
+    opts="$opts --pythonpath --cppflags --ldflags --libs"
+    opts="$opts -h"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
+    if test -n "$COMPREPLY"; then
+        return 0
+    fi
+
+    return 0
+}
+
+
+complete -F _rivet_config rivet-config
+
+
+##############################
+
+
+function _compare_histos() {
+    local cur prev commands options command
+    COMPREPLY=()
+    #cur=`_get_cword`
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --outdir -o"
+    opts="$opts --rivet-refs -R --no-rivet-refs"
+    opts="$opts --histogram-list -l"
+    opts="$opts --hier-out --linear --logarithmic --mc-errs"
+    opts="$opts --no-ratio --rel-ratio --abs-ratio"
+    opts="$opts --all --show-mc-only --show-single --refid"
+    opts="$opts --no-plottitle"
+    opts="$opts --plotinfodir"
+    opts="$opts --quiet -q --verbose -v"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    if [[ ${prev} == "--plotinfodir" ]] ; then
+        _filedir -d
+        return 0
+    fi
+
+    if [[ ${prev} == "--show-single" ]]; then
+        COMPREPLY=( $(compgen -W "no mc ref all" -- ${cur}) )
+        return 0
+    fi
+
+    _filedir aida
+    return 0
+}
+
+
+complete -F _compare_histos -o default compare-histos
+
+
+##############################
+
+
+function _make_plots() {
+    local cur prev commands options command
+    COMPREPLY=()
+    #cur=`_get_cword`
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --num-threads -n"
+    opts="$opts --palatino --cm --times --minion"
+    opts="$opts --ps --pdf --eps --png --pdfpng --pspng"
+    opts="$opts --tex --no-cleanup --full-range"
+    opts="$opts --config -c"
+    opts="$opts --quiet -q --verbose -v"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    _filedir dat
+    return 0
+}
+
+
+complete -F _make_plots -o default make-plots
+
+
+##############################
+
+
+function _aida2flat() {
+    local cur prev commands options command
+    COMPREPLY=()
+    #cur=`_get_cword`
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --split -s"
+    opts="$opts --gnuplot -g"
+    opts="$opts --plotinfodir"
+    opts="$opts --smart-output -S"
+    opts="$opts --match -m"
+    opts="$opts --quiet -q --verbose -v"
+
+    if [[ ${cur} == "--plotinfodir" ]] ; then
+        _filedir -d
+        return 0
+    fi
+
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    _filedir aida
+    return 0
+}
+
+
+complete -F _aida2flat -o default aida2flat
+
+
+##############################
+
+
+function _flat2aida() {
+    local cur prev commands options command
+    COMPREPLY=()
+    #cur=`_get_cword`
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --split -s"
+
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    _filedir dat
+    return 0
+}
+
+
+complete -F _aida2flat -o default aida2flat

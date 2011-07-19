@@ -1,0 +1,20 @@
+Name: DELPHI_2003_WUD_03_11
+Year: 2003
+Summary: 4-jet angular distributions at LEP (note)
+Experiment: DELPHI
+Collider: LEP 1
+Status: UNVALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Diploma thesis WUD-03-11, University of Wuppertal
+RunInfo:
+  Hadronic Z decay events generated on the Z pole (sqrt(s) = 91.2 GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  The 4-jet angular distributions (Bengtsson-Zerwas, K\"orner-Schierholz-
+  Willrodt, Nachtmann-Reiter, and $\alpha_{34}$) have been measured with
+  DELPHI at LEP 1 using Jade and Durham cluster algorithms.

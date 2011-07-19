@@ -1,0 +1,189 @@
+#! /usr/bin/env python
+
+## Get output filename
+OUTFILE = "analyses.html"
+import sys
+if len(sys.argv) < 2:
+    pass
+    #print "Using output name '%s'" % OUTNAME
+else:
+    OUTFILE = sys.argv[1]
+
+
+## Get input paths to allow rivet module to be imported from the src dir
+import os, re, glob
+pybuild = os.path.abspath(os.path.join(os.getcwd(), "..", "pyext", "build"))
+dirs = []
+for d in os.listdir(pybuild):
+    if re.match(r"lib\..*-.*-%d\.%d" % (sys.version_info[0], sys.version_info[1]), d):
+        dirs.append(os.path.join(pybuild, d))
+sys.path = dirs + sys.path
+try:
+    os.environ["LD_LIBRARY_PATH"] = os.environ["LD_LIBRARY_PATH"] + ":" + \
+        os.path.abspath(os.path.join(os.getcwd(), "..", "src", ".libs"))
+except:
+    pass
+try:
+    os.environ["DYLD_LIBRARY_PATH"] = os.environ["DYLD_LIBRARY_PATH"] + ":" + \
+        os.path.abspath(os.path.join(os.getcwd(), "..", "src", ".libs"))
+except:
+    pass
+anadirs = glob.glob(os.path.join(os.getcwd(), "..", "src", "Analyses", ".libs"))
+#print anadirs
+os.environ["RIVET_ANALYSIS_PATH"] = ":".join(anadirs)
+
+
+## Change dlopen status to GLOBAL for Rivet lib
+try:
+    import ctypes
+    sys.setdlopenflags(sys.getdlopenflags() | ctypes.RTLD_GLOBAL)
+except:
+    import dl
+    sys.setdlopenflags(sys.getdlopenflags() | dl.RTLD_GLOBAL)
+import rivet
+
+
+def htmlify(s):
+    t = s \
+        .replace("&", "&amp;") \
+        #.replace("->", "\\ensuremath{\\to}") \
+    return t
+
+
+## Build analysis pages
+all_analyses = rivet.AnalysisLoader.analysisNames()
+pages = []
+## Use list(...) ctor for 2.3 compatibility
+for aname in sorted(list(all_analyses)):
+    page = ""
+    ana = rivet.AnalysisLoader.getAnalysis(aname)
+    page += "<h3 id='%s'>%s</h3>\n" % (aname, aname)
+    page += "<b>%s</b><br/>\n" %  ana.summary()
+    page += "<b>Experiment:</b> %s (%s)<br/>\n" % (ana.experiment(), ana.collider())
+    spiresbase = "http://www.slac.stanford.edu/spires/find/hep/www?rawcmd=key"
+    page += "<b>Spires ID:</b> <a href='%s+%s'>%s</a><br/>\n" % \
+        (spiresbase, ana.spiresId(), ana.spiresId())
+    page += "<b>Status:</b> %s<br/>\n" % ana.status()
+
+
+    if ana.authors():
+        page += "<b>Authors:</b>\n"
+        page += "<ul>\n"
+        for a in ana.authors():
+            s = a
+            import re
+            if re.search(".* <.*@.*>", a):
+                name = " ".join(a.split()[:-1])
+                email = a.split()[-1].replace("<", "").replace(">", "")
+                #s = "<a href='mailto:%s'>%s</a>" % (email, name)
+                s = name
+            page += "  <li>%s</li>\n" % s
+        page += "</ul>\n"
+    else:
+        page += "<b>No authors listed</b>\n"
+
+
+    if ana.references():
+        page += "<b>References:</b>\n"
+        page += "<ul>\n"
+        for r in ana.references():
+            if r.startswith("arXiv:"):
+                code = r.split()[0].replace("arXiv:", "")
+                url = "http://arxiv.org/abs/" + code
+                page += "  <li>%s <a href='%s'>%s</a></li>\n" % ("arXiv:", url, code)
+            elif r.startswith("doi:"):
+                code = r.replace("doi:", "")
+                url = "http://dx.doi.org/" + code
+                page += "  <li>%s <a href='%s'>%s</a></li>\n" % ("DOI:", url, code)
+            else:
+                page += "  <li>%s</li>\n" % r
+        page += "</ul>\n"
+    else:
+        page += "<b>No references listed</b>\n"
+
+
+    if ana.requiredBeams():
+        def pid_to_str(pid):
+            if pid == 11:
+                return "e-"
+            elif pid == -11:
+                return "e+"
+            elif pid == 2212:
+                return "p+"
+            elif pid == -2212:
+                return "p-"
+            elif pid == 10000:
+                return "*"
+            else:
+                return str(pid)
+        beamstrs = []
+        for bp in ana.requiredBeams():
+            beamstrs.append(pid_to_str(bp[0]) + " " + pid_to_str(bp[1]))
+        page += "<b>Beams:</b> %s<br/>\n" % ", ".join(beamstrs)
+
+
+    page += "<b>Beam energies:</b> "
+    if ana.requiredEnergies():
+        page += "; ".join(["(%0.1f, %0.1f)" % (epair[0], epair[1]) for epair in ana.requiredEnergies()])
+        page += "GeV"
+    else:
+        page += "ANY"
+    page += "<br/>\n"
+
+    if ana.runInfo():
+        page += "<b>Run details:</b>\n"
+        page += "<ul>\n"
+        for l in ana.runInfo().split("\n*"):
+            l = l.strip()
+            if l.startswith("*"):
+                l = l[1:].strip()
+            page += "  <li>%s</li>\n" % l
+        page += "</ul>\n"
+    else:
+        page += "<ul>No run details listed</ul>\n"
+
+
+    page += "\n<p>" + ana.description().replace("\n\n", "</p><p>") + "</p>\n"
+
+    page = htmlify(page)
+    pages.append(page)
+
+
+
+## Write out HTML
+head = """\
+<html>
+<head>
+  <title>Rivet analyses reference</title>
+  <style>
+    body { font-family:sans-serif; padding: 1em 1em 2em 2em; }
+    p, li { max-width:50em; }
+    h2 { margin-left:-1em; margin-bottom:1.5em; }
+    h3 { color:#349; margin-top:2em; }
+  </style>
+</head>
+<body>
+  <h2>Rivet analyses reference</h2>
+
+"""
+
+toc = "<h3>Contents</h3>\n"
+toc += "<ul>\n"
+for a in all_analyses:
+    toc += "<li><a href='#%s'>%s</a></li>\n" % (a,a)
+toc += "</ul>\n"
+
+foot = """\
+</body>
+</html>
+"""
+
+body = "\n\n".join(pages)
+outstr = head + toc + body + foot
+
+if OUTFILE == "-":
+    sys.stdout.write(outstr)
+else:
+    f = open(OUTFILE, "w")
+    f.write(outstr)
+    f.close()

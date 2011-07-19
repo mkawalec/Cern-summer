@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/CDF_1993_S2742446" title="D(N)/DCOS(THETA(P=3,RF=CM))" >
+    <dataPoint>
+      <measurement value="0.05" errorPlus="0.05" errorMinus="0.05"/>
+      <measurement value="1.086" errorPlus="0.2659661632614194" errorMinus="0.2659661632614194"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.15000000000000002" errorPlus="0.04999999999999999" errorMinus="0.05000000000000002"/>
+      <measurement value="0.964" errorPlus="0.250569351677335" errorMinus="0.250569351677335"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.25" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.949" errorPlus="0.23992707225321613" errorMinus="0.23992707225321613"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.35" errorPlus="0.050000000000000044" errorMinus="0.04999999999999999"/>
+      <measurement value="0.915" errorPlus="0.23787601812709075" errorMinus="0.23787601812709075"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.45" errorPlus="0.04999999999999999" errorMinus="0.04999999999999999"/>
+      <measurement value="0.947" errorPlus="0.3097256850827842" errorMinus="0.3097256850827842"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.55" errorPlus="0.04999999999999993" errorMinus="0.050000000000000044"/>
+      <measurement value="1.838" errorPlus="0.6919609815589315" errorMinus="0.6919609815589315"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.6499999999999999" errorPlus="0.050000000000000044" errorMinus="0.04999999999999993"/>
+      <measurement value="2.782" errorPlus="0.9687543548289216" errorMinus="0.9687543548289216"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.75" errorPlus="0.050000000000000044" errorMinus="0.050000000000000044"/>
+      <measurement value="4.79" errorPlus="1.6587914275158284" errorMinus="1.6587914275158284"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

@@ -1,0 +1,25 @@
+Name: BELLE_2006_S6265367
+Summary: Charm hadrons from fragmentation and B decays on the $\Upsilon(4S)$
+Status: VALIDATED
+Authors:
+ - Jan Eike von Seggern <jan.eike.von.seggern@physik.hu-berlin.de>
+References:
+ - Phys.Rev.D73:032002,2006. 
+ - arXiv:hep-ex/0506068
+ - doi:10.1103/PhysRevD.73.032002
+RunInfo:
+  $e^+ e^-$ analysis on the $\Upsilon(4S)$ resonance, with CoM boost -- 8.0~GeV~($e^−$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description:
+  Analysis of charm quark fragmentation at 10.6 GeV, based on a data
+  sample of 103 fb collected by the Belle detector at the KEKB accelerator. 
+  Fragmentation into charm is studied for the main charmed hadron ground states, 
+  namely $D^0$, $D^+$, $D^+_s$ and $\Lambda_c^+$, as well as the excited states 
+  $D^{*0}$ and $D^{*+}$. This analysis can be used to constrain charm fragmentation 
+  in Monte Carlo generators. Additionally, we determine the average number of
+  these charmed hadrons produced per B decay at the $\Upsilon(4S)$ resonance
+  and measure the distribution of their production angle in $e^+ e^-$ annihilation 
+  events and in B decays.

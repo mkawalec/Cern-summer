@@ -1,0 +1,2993 @@
+2011-07-13  Andy Buckley  <andy@insectnation.org>
+
+	* Rivet PDF manual updates, to not spread disinformation about
+	bootstrapping a Genser repo.
+
+2011-07-12  Andy Buckley  <andy@insectnation.org>
+
+	* bin/make-plots: Protect property reading against unstripped \r
+	characters from DOS newlines.
+
+	* bin/rivet-mkhtml: Add a -M unmatch regex flag (note that these
+	are matching the analysis path rather than individual histos on
+	this script), and speed up the initial analysis identification and
+	selection by avoiding loops of regex comparisons for repeats of
+	strings which have already been analysed.
+
+	* bin/compare-histos: remove the completely (?) unused histogram
+	list, and add -m and -M regex flags, as for aida2flat and
+	flat2aida.
+
+2011-06-30  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* fix fromFlat() in lighthistos: It would ignore histogram paths
+	before.
+
+	* flat2aida: preserve histogram order from .dat files
+
+2011-06-27  Andy Buckley  <andy@insectnation.org>
+
+	* pyext/setup.py.in: Use CXXFLAGS and LDFLAGS safely in the Python
+	extension build, and improve the use of build/src directory
+	arguments.
+
+2011-06-23  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a tentative rivet-updateanalyses script, based on
+	lhapdf-getdata, which will download new analyses as requested. We
+	could change our analysis-providing behaviour a bit to allow this
+	sort of delivery mechanism to be used as the normal way of getting
+	analysis updates without us having to make a whole new Rivet
+	release. It is nice to be able to identify analyses with releases,
+	though, for tracking whether bugs have been addressed.
+
+2011-06-10  Frank Siegert  <frank.siegert@cern.ch>
+
+	* Bugfixes in WFinder.
+
+2011-06-10  Andy Buckley  <andy@insectnation.org>
+
+	* Adding \physicsxcoor and \physicsycoor treatment to make-plots.
+
+2011-06-06  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Allow for negative cross-sections. NLO tools need this.
+
+	* make-plots: For RatioPlotMode=deviation also consider the MC
+	uncertainties, not just data.
+
+2011-06-04  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Add support for goodness-of-fit calculations to make-plots.
+	The results are shown in the legend, and one histogram can
+	be selected to determine the color of the plot margin. See
+	the documentation for more details.
+
+2011-06-04  Andy Buckley  <andy@insectnation.org>
+
+	* Adding auto conversion of Histogram2D to DataPointSets in the
+	AnalysisHandler _normalizeTree method.
+
+2011-06-03  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a file-weight feature to the Run object, which will
+	optionally rescale the weights in the provided HepMC files. This
+	should be useful for e.g. running on multiple differently-weighted
+	AlpGen HepMC files/streams. The new functionality is used by the
+	rivet command via an optional weight appended to the filename with
+	a colon delimiter, e.g. "rivet fifo1.hepmc fifo2.hepmc:2.31"
+
+2011-06-01  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Add BeamThrust projection
+
+2011-05-31  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fix LIBS for fastjet-3.0
+
+	* Add basic infrastructure for Taylor plots in make-plots
+
+	* Fix OPAL_2004_S6132243: They are using charged+neutral.
+
+	* Release 1.5.1
+
+2011-05-22  Andy Buckley  <andy@insectnation.org>
+
+	* Adding plots of stable and decayed PID multiplicities to
+	MC_GENERIC (useful for sanity-checking generator setups).
+
+	* Removing actually-unused ProjectionApplier.fhh forward
+	declaration header.
+
+2011-05-20  Andy Buckley  <andy@insectnation.org>
+
+	* Removing import of ipython shell from rivet-rescale, having just
+	seen it throw a multi-coloured warning message on a student's
+	lxplus Rivet session!
+
+	* Adding support for the compare-histos --no-ratio flag when using
+	rivet-mkhtml. Adding --rel-ratio, --linear, etc. is an exercise
+	for the enthusiast ;-)
+
+2011-05-10  Andy Buckley  <andy@insectnation.org>
+
+	* Internal minor changes to the ProjectionHandler and
+	ProjectionApplier interfaces, in particular changing the
+	ProjectionHandler::create() function to be called getInstance and
+	to return a reference rather than a pointer. The reference change
+	is to make way for an improved singleton implementation, which
+	cannot yet be used due to a bug in projection memory
+	management. The code of the improved singleton is available, but
+	commented out, in ProjectionManager.hh to allow for easier
+	migration and to avoid branching.
+
+2011-05-08  Andy Buckley  <andy@insectnation.org>
+
+	* Extending flat2aida to be able to read from and write to
+	stdin/out as for aida2flat, and also eliminating the internal
+	histo parsing representation in favour of the one in
+	lighthisto. lighthisto's fromFlat also needed a bit of an
+	overhaul: it has been extended to parse each histo's chunk of
+	text (including BEGIN and END lines) in fromFlatHisto, and for
+	fromFlat to parse a collection of histos from a file, in keeping
+	with the behaviour of fromDPS/fromAIDA. Merging into Professor is
+	now needed.
+
+	* Extending aida2flat to have a better usage message, to accept
+	input from stdin for command chaining via pipes, and to be a bit
+	more sensibly internally structured (although it also now has to
+	hold all histos in memory before writing out -- that shouldn't be
+	a problem for anything other than truly huge histo files).
+
+2011-05-04  Andy Buckley  <andy@insectnation.org>
+
+	* compare-histos: If using --mc-errs style, prefer dotted and
+	dashdotted line styles to dashed, since dashes are often too long
+	to be distinguishable from solid lines. Even better might be to
+	always use a solid line for MC errs style, and to add more colours.
+
+	* rivet-mkhtml: use a no-mc-errors drawing style by default,
+	to match the behaviour of compare-histos, which it calls. The
+	--no-mc-errs option has been replaced with an --mc-errs option.
+
+2011-05-04  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Ignore duplicate files in compare-histos.
+
+2011-04-25  Andy Buckley  <andy@insectnation.org>
+
+	* Adding some hadron-specific N and sumET vs. |eta| plots to MC_GENERIC.
+
+	* Re-adding an explicit attempt to get the beam particles, since
+	HepMC's IO_HERWIG seems to not always set them even though it's
+	meant to.
+
+2011-04-19  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added ATLAS_2011_S9002537 W asymmetry analysis
+
+2011-04-14  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* deltaR, deltaPhi, deltaEta now available in all combinations of
+	FourVector, FourMomentum, Vector3, doubles. They also accept jets
+	and particles as arguments now.
+
+2011-04-13  David Grellscheid <david.grellscheid@durham.ac.uk>
+
+	* added ATLAS 8983313: 0-lepton BSM
+
+2011-04-01  Andy Buckley  <andy@insectnation.org>
+
+	* bin/rivet-mkanalysis: Don't try to download SPIRES or HepData
+	info if it's not a standard analysis (i.e. if the SPIRES ID is not
+	known), and make the default .info file validly parseable by YAML,
+	which was an unfortunate gotcha for anyone writing a first
+	analysis.
+
+2011-03-31  Andy Buckley  <andy@insectnation.org>
+
+	* bin/compare-histos: Write more appropriate ratio plot labels
+	when not comparing to data, and use the default make-plots labels
+	when comparing to data.
+
+	* bin/rivet-mkhtml: Adding a timestamp to the generated pages, and
+	a -t/--title option to allow setting the main HTML page title on
+	the command line: otherwise it becomes impossible to tell these
+	pages apart when you have a lot of them, except by URL!
+
+2011-03-24  Andy Buckley  <andy@insectnation.org>
+
+	* bin/aida2flat: Adding a -M option to *exclude* histograms whose
+	paths match a regex. Writing a negative lookahead regex with
+	positive matching was far too awkward!
+
+2011-03-18  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Core/AnalysisHandler.cc (AnalysisHandler::removeAnalysis):
+	Fixed strange shared pointer assignment that caused seg-fault.
+
+2011-03-13  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* filling of functions works now in a more intuitive way (I hope).
+
+2011-03-09  Andy Buckley  <andy@insectnation.org>
+
+	* Version 1.5.0 release!
+
+2011-03-08  Andy Buckley  <andy@insectnation.org>
+
+	* Adding some extra checks for external packages in make-plots.
+
+2011-03-07  Andy Buckley  <andy@insectnation.org>
+
+	* Changing the accuracy of the beam energy checking to 1%, to make
+	the UI a bit more forgiving. It's still best to specify exactly the right
+	energy of course!
+
+2011-03-01  Andy Buckley  <andy@insectnation.org>
+
+	* Adding --no-plottitle to compare-histos (+ completion).
+
+	* Fixing segfaults in UA1_1990_S2044935 and UA5_1982_S875503.
+
+	* Bump ABI version numbers for 1.5.0 release.
+
+	* Use AnalysisInfo for storage of the NeedsCrossSection analysis flag.
+
+	* Allow field setting in AnalysisInfo.
+
+2011-02-27  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Support LineStyle=dashdotted in make-plots
+
+	* New command line option --style for compare-histos. Options are
+	"default", "bw" and "talk".
+
+	* cleaner uninstall
+
+2011-02-26  Andy Buckley  <andy@insectnation.org>
+
+	* Changing internal storage and return type of Particle::pdgId()
+	to PdgId, and adding Particle::energy().
+
+	* Renaming Analysis::energies() as Analysis::requiredEnergies().
+
+	* Adding beam energies into beam consistency checking:
+	Analysis::isCompatible methods now also require the beam energies
+	to be provided.
+
+	* Removing long-deprecated AnalysisHandler::init() constructor and
+	AnalysisHandler::removeIncompatibleAnalyses() methods.
+
+2011-02-25  Andy Buckley  <andy@insectnation.org>
+
+	* Adding --disable-obsolete, which takes its value from the value
+	of --disable-preliminary by default.
+
+	* Replacing RivetUnvalidated and RivetPreliminary plugin libraries
+	with optionally-configured analysis contents in the
+	experiment-specific plugin libraries. This avoids issues with
+	making libraries rebuild consistently when sources were reassigned
+	between libraries.
+
+2011-02-24  Andy Buckley  <andy@insectnation.org>
+
+	* Changing analysis plugin registration to fall back through
+	available paths rather than have RIVET_ANALYSIS_PATH totally
+	override the built-in paths. The first analysis hook of a given
+	name to be found is now the one that's used: any duplicates found
+	will be warned about but unused. getAnalysisLibPaths() now returns
+	*all* the search paths, in keeping with the new search behaviour.
+
+2011-02-22  Andy Buckley  <andy@insectnation.org>
+
+	* Moving the definition of the MSG_* macros into the Logging.hh
+	header. They can't be used everywhere, though, as they depend on
+	the existence of a this->getLog() method in the call scope. This
+	move makes them available in e.g. AnalysisHandler and other bits
+	of framework other than projections and analyses.
+
+	* Adding a gentle print-out from the Rivet AnalysisHandler if
+	preliminary analyses are being used, and strengthening the current
+	warning if unvalidated analyses are used.
+
+	* Adding documentation about the validation "process" and
+	the (un)validated and preliminary analysis statuses.
+
+	* Adding the new RivetPreliminary analysis library, and the
+	corresponding --disable-preliminary configure flag. Analyses in
+	this library are subject to change names, histograms, reference
+	data values, etc. between releases: make sure you check any
+	dependences on these analyses when upgrading Rivet.
+
+	* Change the Python script ref data search behaviours to use Rivet
+	ref data by default where available, rather than requiring a -R
+	option. Where relevant, -R is still a valid option, to avoid
+	breaking legacy scripts, and there is a new --no-rivet-refs option
+	to turn the default searching *off*.
+
+	* Add the prepending and appending optional arguments to the path
+	searching functions. This will make it easier to combine the
+	search functions with user-supplied paths in Python scripts.
+
+	* Make make-plots killable!
+
+	* Adding Rivet version to top of run printout.
+
+	* Adding Run::crossSection() and printing out the cross-section in
+	pb at the end of a Rivet run.
+
+2011-02-22  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Make lighthisto.py aware of 2D histograms
+
+	* Adding published versions of the CDF_2008 leading jets and DY
+	analyses, and marking the preliminary ones as "OBSOLETE".
+
+2011-02-21  Andy Buckley  <andy@insectnation.org>
+
+	* Adding PDF documentation for path searching and .info/.plot
+	files, and tidying overfull lines.
+
+	* Removing unneeded const declarations from various return by
+	value path and internal binning functions. Should not affect ABI
+	compatibility but will force recompilation of external packages
+	using the RivetPaths.hh and Utils.hh headers.
+
+	* Adding findAnalysis*File(fname) functions, to be used by Rivet
+	scripts and external programs to find files known to Rivet
+	according to Rivet's (newly standard) lookup rule.
+
+	* Changing search path function behaviour to always return *all*
+	search directories rather than overriding the built-in locations
+	if the environment variables are set.
+
+2011-02-20  Andy Buckley  <andy@insectnation.org>
+
+	* Adding the ATLAS 2011 transverse jet shapes analysis.
+
+2011-02-18  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Support for transparency in make-plots
+
+2011-02-18  Frank Siegert <frank.siegert@cern.ch>
+
+	* Added ATLAS prompt photon analysis ATLAS_2010_S8914702
+
+2011-02-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Simple NOOP constructor for Thrust projection
+
+	* Add CMS event shape analysis. Data read off the plots. We
+	will get the final numbers when the paper is accepted by
+	the journal.
+
+2011-02-10  Frank Siegert <frank.siegert@cern.ch>
+
+	* Add final version of ATLAS dijet azimuthal decorrelation
+
+2011-02-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* remove ATLAS conf note analyses for which we have final data
+	* reshuffle histograms in ATLAS minbias analysis to match Hepdata
+	* small pT-cut fix in ATLAS track based UE analysis
+
+2011-01-31  Andy Buckley  <andy@insectnation.org>
+
+	* Doc tweaks and adding cmp-by-|p| functions for Jets, to match
+	those added by Hendrik for Particles.
+
+	* Don't sum photons around muons in the D0 2010 Z pT analysis.
+
+2011-01-27  Andy Buckley  <andy@insectnation.org>
+
+	* Adding ATLAS 2010 min bias and underlying event analyses and data.
+
+2011-01-23  Andy Buckley  <andy@insectnation.org>
+
+	* Make make-plots write out PDF rather than PS by default.
+
+2011-01-12  Andy Buckley  <andy@insectnation.org>
+
+	* Fix several rendering and comparison bugs in rivet-mkhtml.
+
+	* Allow make-plots to write into an existing directory, at the
+	user's own risk.
+
+	* Make rivet-mkhtml produce PDF-based output rather than PS by
+	default (most people want PDF these days). Can we do the same
+	change of default for make-plots?
+
+	* Add getAnalysisPlotPaths() function, and use it in compare-histos
+
+	* Use proper .info file search path function internally in AnalysisInfo::make.
+
+2011-01-11  Andy Buckley  <andy@insectnation.org>
+
+	* Clean up ATLAS dijet analysis.
+
+2010-12-30  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a run timeout option, and small bug-fixes to the event
+	timeout handling, and making first event timeout work nicely with
+	the run timeout. Run timeout is intended to be used in conjunction
+	with timed batch token expiry, of the type that likes to make 0
+	byte AIDA files on LCG when Grid proxies time out.
+
+2010-12-21  Andy Buckley  <andy@insectnation.org>
+
+	* Fix the cuts in the CDF 1994 colour coherence analysis.
+
+2010-12-19  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing CDF midpoint cone jet algorithm default construction to
+	have an overlap threshold of 0.5 rather than 0.75. This was
+	recommended by the FastJet manual, and noticed while adding the
+	ATLAS and CMS cones.
+
+	* Adding ATLAS and CMS old iterative cones as "official" FastJets
+	constructor options (they could always have been used by explicit
+	instantiation and attachment of a Fastjet plugin object).
+
+	* Removing defunct and unused ClosestJetShape projection.
+
+2010-12-16  Andy Buckley  <andy@insectnation.org>
+
+	* bin/compare-histos, pyext/lighthisto.py: Take ref paths from
+	rivet module API rather than getting the environment by hand.
+
+	* pyext/lighthisto.py: Only read .plot info from the first
+	matching file (speed-up compare-histos).
+
+2010-12-14  Andy Buckley  <andy@insectnation.org>
+
+	* Augmenting the physics vector functionality to make FourMomentum
+	support maths operators with the correct return type (FourMomentum
+	rather than FourVector).
+
+2010-12-11  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a --event-timeout option to control the event timeout,
+	adding it to the completion script, and making sure that the init
+	time check is turned OFF once successful!
+
+	* Adding an 3600 second timeout for initialising an event file. If
+	it takes longer than (or anywhere close to) this long, chances are
+	that the event source is inactive for some reason (perhaps
+	accidentally unspecified and stdin is not active, or the event
+	generator has died at the other end of the pipe. The reason for
+	not making it something shorter is that e.g. Herwig++ or Sherpa
+	can have long initialisation times to set up the MPI handler or to
+	run the matrix element integration. An timeout after an hour is
+	still better than a batch job which runs for two days before you
+	realise that you forgot to generate any events!
+
+2010-12-10  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing unbooked-histo segfault in UA1_1990_S2044935 at 63 GeV.
+
+2010-12-08  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixes in ATLAS_2010_CONF_083, declaring it validated
+
+	* Added ATLAS_2010_CONF_046, only two plots are implemented.
+	The paper will be out soon, and we don't need the other plots
+	right now. Data is read off the plots in the note.
+
+	* New option "SmoothLine" for HISTOGRAM sections in make-plots
+
+	* Changed CustomTicks to CustomMajorTicks and added CustomMinorTicks
+	in make-plots.
+
+2010-12-07  Andy Buckley  <andy@insectnation.org>
+
+	* Update the documentation to explain this latest bump to path
+	lookup behaviours.
+
+	* Various improvements to existing path lookups. In particular,
+	the analysis lib path locations are added to the info and ref
+	paths to avoid having to set three variables when you have all
+	three file types in the same personal plugin directory.
+
+	* Adding setAnalysisLibPaths and addAnalysisLibPath
+	functions. rivet --analysis-path{,-append} now use these and work
+	correctly. Hurrah!
+
+	* Add --show-analyses as an alias for --show-analysis, following a
+	comment at the ATLAS tutorial.
+
+2010-12-07  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Change LegendXPos behaviour in make-plots. Now the top left
+	corner of the legend is used as anchor point.
+
+2010-12-03  Andy Buckley  <andy@insectnation.org>
+
+	* 1.4.0 release.
+
+	* Add bin-skipping to compare-histos to avoid one use of
+	rivet-rmgaps (it's still needed for non-plotting post-processing
+	like Professor).
+
+2010-12-03  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fix normalisation issues in UA5 and ALEPH analyses
+
+2010-11-27  Andy Buckley  <andy@insectnation.org>
+
+	* MathUtils.hh: Adding fuzzyGtrEquals and fuzzyLessEquals, and
+	tidying up the math utils collection a bit.
+
+	* CDF 1994 colour coherence analysis overhauled and
+	correction/norm factors fixed. Moved to VALIDATED status.
+
+	* Adding programmable completion for aida2flat and flat2aida.
+
+	* Improvements to programmable completion using the neat _filedir
+	completion shell function which I just discovered.
+
+2010-11-26  Andy Buckley  <andy@insectnation.org>
+
+	* Tweak to floating point inRange to use fuzzyEquals for CLOSED
+	interval equality comparisons.
+
+	* Some BibTeX generation improvements, and fixing the ATLAS dijet
+	BibTeX key.
+
+	* Resolution upgrade in PNG make-plots output.
+
+	* CDF_2005_S6217184.cc, CDF_2008_S7782535.cc: Updates to use the
+	new per-jet JetAlg interface (and some other fixes).
+
+	* JetAlg.cc: Changed the interface on request to return per-jet
+	rather than per-event jet shapes, with an extra jet index argument.
+
+	* MathUtils.hh: Adding index_between(...) function, which is handy
+	for working out which bin a value falls in, given a set of bin edges.
+
+2010-11-25  Andy Buckley  <andy@insectnation.org>
+
+	* Cmp.hh: Adding ASC/DESC (and ANTISORTED) as preferred
+	non-EQUIVALENT enum value synonyms over misleading
+	SORTED/UNSORTED.
+
+	* Change of rapidity scheme enum name to RapScheme
+
+	* Reworking JetShape a bit further: constructor args now avoid
+	inconsistencies (it was previously possible to define incompatible
+	range-ends and interval). Internal binning implementation also
+	reworked to use a vector of bin edges: the bin details are
+	available via the interface. The general jet pT cuts can be
+	applied via the JetShape constructor.
+
+	* MathUtils.hh: Adding linspace and logspace utility
+	functions. Useful for defining binnings.
+
+	* Adding more general cuts on jet pT and (pseudo)rapidity.
+
+2010-11-11  Andy Buckley  <andy@insectnation.org>
+
+	* Adding special handling of FourMomentum::mass() for computed
+	zero-mass vectors for which mass2 can go (very slightly) negative
+	due to numerical precision.
+
+2010-11-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding ATLAS-CONF-2010-083 conference note. Data is read from plots.
+	When I run Pythia 6 the bins close to pi/2 are higher than in the note,
+	so I call this "unvalidated". But then ... the note doesn't specify
+	a tune or even just a version for the generators in the plots. Not even
+	if they used Pythia 6 or Pythia 8. Probably 6, since they mention AGILe.
+
+2010-11-10  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a JetAlg::useInvisibles(bool) mechanism to allow ATLAS
+	jet studies to include neutrinos. Anyone who chooses to use this
+	mechanism had better be careful to remove hard neutrinos manually
+	in the provided FinalState object.
+
+2010-11-09  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding ATLAS-CONF-2010-049 conference note. Data is read from plots.
+	Fragmentation functions look good, but I can't reproduce the MC lines
+	(or even the relative differences between them) in the jet cross-section
+	plots. So consider those unvalidated for now. Oh, and it seems ATLAS
+	screwed up the error bands in their ratio plots, too. They are
+	upside-down.
+
+2010-11-07  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding ATLAS-CONF-2010-081 conference note. Data is read from plots.
+
+2010-11-06  Andy Buckley  <andy@insectnation.org>
+
+	* Deprecating the old JetShape projection and renaming to
+	ClosestJetShape: the algorithm has a tenuous relationship with
+	that actually used in the CDF (and ATLAS) jet shape analyses. CDF
+	analyses to be migrated to the new JetShape projection... and some
+	of that projection's features, design elements, etc. to be
+	finished off: we may as well take this opportunity to clear up
+	what was one of our nastiest pieces of code.
+
+2010-11-05  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding ATLAS-CONF-2010-031 conference note. Data is read from plots.
+
+2010-10-29  Andy Buckley  <andy@insectnation.org>
+
+	* Making rivet-buildplugin use the same C++ compiler and CXXFLAGS
+	variable as used for the Rivet system build.
+
+	* Fixing NeutralFinalState projection to, erm, actually select
+	neutral particles (by Hendrik).
+
+	* Allow passing a general FinalState reference to the JetShape
+	projection, rather than requiring a VetoedFS.
+
+2010-10-07  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a --with-root flag to rivet-buildplugin to add
+	root-config --libs flags to the plugin build command.
+
+2010-09-24  Andy Buckley  <andy@insectnation.org>
+
+	* Releasing as Rivet 1.3.0.
+
+	* Bundling underscore.sty to fix problems with running make-plots
+	on dat files generated by compare-histos from AIDA files with
+	underscores in their names.
+
+2010-09-16  Andy Buckley  <andy@insectnation.org>
+
+	* Fix error in N_effective definition for weighted profile errors.
+
+2010-08-18  Andy Buckley  <andy@insectnation.org>
+
+	* Adding MC_GENERIC analysis. NB. Frank Siegert also added MC_HJETS.
+
+2010-08-03  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing compare-histos treatment of what is now a ref file, and
+	speeding things up... again. What a mess!
+
+2010-08-02  Andy Buckley  <andy@insectnation.org>
+
+	* Adding rivet-nopy: a super-simple Rivet C++ command line
+	interface which avoids Python to make profiling and debugging
+	easier.
+
+	* Adding graceful exception handling to the AnalysisHandler event
+	loop methods.
+
+	* Changing compare-histos behaviour to always show plots for which
+	there is at least one MC histo. The default behaviour should now
+	be the correct one in 99% of use cases.
+
+2010-07-30  Andy Buckley  <andy@insectnation.org>
+
+	* Merging in a fix for shared_ptrs not being compared for
+	insertion into a set based on raw pointer value.
+
+2010-07-16  Andy Buckley  <andy@insectnation.org>
+
+	* Adding an explicit library dependency declaration on libHepMC,
+	and hence removing the -lHepMC from the rivet-config --libs
+	output.
+
+2010-07-14  Andy Buckley  <andy@insectnation.org>
+
+	* Adding a manual section on use of Rivet (and AGILe) as
+	libraries, and how to use the -config scripts to aid compilation.
+
+	* FastJets projection now allows setting of a jet area definition,
+	plus a hacky mapping for getting the area-enabled cluster
+	sequence. Requested by Pavel Starovoitov & Paolo Francavilla.
+
+	* Lots of script updates in last two weeks!
+
+2010-06-30  Andy Buckley  <andy@insectnation.org>
+
+	* Minimising amount of Log class mapped into SWIG.
+
+	* Making Python ext build checks fail with error rather than
+	warning if it has been requested (or, rather, not explicitly
+	disabled).
+
+2010-06-28  Andy Buckley  <andy@insectnation.org>
+
+	* Converting rivet Python module to be a package, with the dlopen
+	flag setting etc. done around the SWIG generated core wrapper
+	module (rivet.rivetwrap).
+
+	* Requiring Python >= 2.4.0 in rivet scripts (and adding a Python
+	version checker function to rivet module)
+
+	* Adding --epspng option to make-plots (and converting to use subprocess.Popen).
+
+2010-06-27  Andy Buckley  <andy@insectnation.org>
+
+	* Converting JADE_OPAL analysis to use the fastjet
+	exclusive_ymerge_*max* function, rather than just
+	exclusive_ymerge: everything looks good now. It seems that fastjet
+	>= 2.4.2 is needed for this to work properly.
+
+2010-06-24  Andy Buckley  <andy@insectnation.org>
+
+	* Making rivet-buildplugin look in its own bin directory when
+	trying to find rivet-config.
+
+2010-06-23  Andy Buckley  <andy@insectnation.org>
+
+	* Adding protection and warning about numerical precision issues
+	in jet mass calculation/histogramming to the MC_JetAnalysis
+	analysis.
+
+	* Numerical precision improvement in calculation of
+	Vector4::mass2.
+
+	* Adding relative scale ratio plot flag to compare-histos
+
+	* Extended command completion to rivet-config, compare-histos, and
+	make-plots.
+
+	* Providing protected log messaging macros,
+	MSG_{TRACE,DEBUG,INFO,WARNING,ERROR} cf. Athena.
+
+	* Adding environment-aware functions for Rivet search path list access.
+
+2010-06-21  Andy Buckley  <andy@insectnation.org>
+
+	* Using .info file beam ID and energy info in HTML and LaTeX documentation.
+
+	* Using .info file beam ID and energy info in command-line printout.
+
+	* Fixing a couple of references to temporary variables in the
+	analysis beam info, which had been introduced during refactoring:
+	have reinstated reference-type returns as the more efficient
+	solution. This should not affect API compatibility.
+
+	* Making SWIG configure-time check include testing for
+	incompatibilities with the C++ compiler (re. the recurring _const_
+	char* literals issue).
+
+	* Various tweaks to scripts: make-plots and compare-histos
+	processes are now renamed (on Linux), rivet-config is avoided when
+	computing the Rivet version,and RIVET_REF_PATH is also set using
+	the rivet --analysis-path* flags. compare-histos now uses multiple
+	ref data paths for .aida file globbing.
+
+	* Hendrik changed VetoedFinalState comparison to always return
+	UNDEFINED if vetoing on the results of other FS projections is
+	being used. This is the only simple way to avoid problems
+	emanating from the remainingFinalState thing.
+
+2010-06-19  Andy Buckley  <andy@insectnation.org>
+
+	* Adding --analysis-path and --analysis-path-append command-line
+	flags to the rivet script, as a "persistent" way to set or extend
+	the RIVET_ANALYSIS_PATH variable.
+
+	* Changing -Q/-V script verbosity arguments to more standard
+	-q/-v, after Hendrik moaned about it ;)
+
+	* Small fix to TinyXML operator precendence: removes a warning,
+	and I think fixes a small bug.
+
+	* Adding plotinfo entries for new jet rapidity and jet mass plots
+	in MC_JetAnalysis derivatives.
+
+	* Moving MC_JetAnalysis base class into a new
+	libRivetAnalysisTools library, with analysis base class and helper
+	headers to be stored in the reinstated Rivet/Analyses include
+	directory.
+
+2010-06-08  Andy Buckley  <andy@insectnation.org>
+
+	* Removing check for CEDARSTD #define guard, since we no longer
+	compile against AGILe and don't have to be careful about
+	duplication.
+
+	* Moving crappy closest approach and decay significance functions
+	from Utils into SVertex, which is the only place they have ever
+	been used (and is itself almost entirely pointless).
+
+	* Overhauling particle ID <-> name system to clear up ambiguities
+	between enums, ints, particles and beams. There are no more enums,
+	although the names are still available as const static ints, and
+	names are now obtained via a singleton class which wraps an STL
+	map for name/ID lookups in both directions.
+
+2010-05-18  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing factor-of-2 bug in the error calculation when scaling
+	histograms.
+
+	* Fixing D0_2001_S4674421 analysis.
+
+2010-05-11  Andy Buckley  <andy@insectnation.org>
+
+	* Replacing TotalVisibleMomentum with MissingMomentum in analyses
+	and WFinder. Using vector ET rather than scalar ET in some places.
+
+2010-05-07  Andy Buckley  <andy@insectnation.org>
+
+	* Revamping the AnalysisHandler constructor and data writing, with
+	some LWH/AIDA mangling to bypass the stupid AIDA idea of having to
+	specify the sole output file and format when making the data
+	tree. Preferred AnalysisHandler constructor now takes only one arg
+	-- the runname -- and there is a new AH.writeData(outfile) method
+	to replace AH.commitData(). Doing this now to begin migration to
+	more flexible histogramming in the long term.
+
+2010-04-21  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing LaTeX problems (make-plots) on ancient machines, like lxplus.
+
+2010-04-29  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing (I hope!) the treatment of weighted profile bin errors in LWH.
+
+2010-04-21  Andy Buckley  <andy@insectnation.org>
+
+	* Removing defunct and unused KtJets and Configuration classes.
+
+	* Hiding some internal details from Doxygen.
+
+	* Add @brief Doxygen comments to all analyses, projections and
+	core classes which were missing them.
+
+2010-04-21  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* remove obsolete reference to InitialQuarks from DELPHI_2002
+	* fix normalisation in CDF_2000_S4155203
+
+2010-04-20  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* bin/make-plots: real support for 2-dim histograms plotted as
+	colormaps, updated the documentation accordingly.
+	* fix misleading help comment in configure.ac
+
+2010-04-08  Andy Buckley  <andy@insectnation.org>
+
+	* bin/root2flat: Adding this little helper script, minimally
+	modified from one which Holger Schulz made for internal use in
+	ATLAS.
+
+2010-04-05  Andy Buckley  <andy@insectnation.org>
+
+	* Using spiresbib in rivet-mkanalysis: analysis templates made
+	with rivet-mkanalysis will now contain a SPIRES-dumped BibTeX key
+	and entry if possible!
+
+	* Adding BibKey and BibTeX entries to analysis metadata files, and
+	updating doc build to use them rather than the time-consuming
+	SPIRES screen-scraping. Added SPIRES BibTeX dumps to all analysis
+	metadata using new (uninstalled & unpackaged) doc/get-spires-data
+	script hack.
+
+	* Updating metadata files to add Energies, Beams and PtCuts
+	entries to all of them.
+
+	* Adding ToDo, NeedsCrossSection, and better treatment of Beams
+	and Energies entries in metadata files and in AnalysisInfo and
+	Analysis interfaces.
+
+2010-04-03  Andy Buckley  <andy@insectnation.org>
+
+	* Frank Siegert: Update of rivet-mkhtml to conform to improved
+	compare-histos.
+
+	* Frank Siegert: LWH output in precision-8 scientific notation, to
+	solve a binning precision problem... the first time weve noticed a
+	problem!
+
+	* Improved treatment of data/reference datasets and labels in
+	compare-histos.
+
+	* Rewrite of rivet-mkanalysis in Python to make way for neat
+	additions.
+
+	* Improving SWIG tests, since once again the user's biuld system
+	must include SWIG (no test to check that it's a 'good SWIG', since
+	the meaning of that depends on which compiler is being used and we
+	hope that the user system is consistent... evidence from Finkified
+	Macs and bloody SLC5 notwithstanding).
+
+2010-03-23  Andy Buckley  <andy@insectnation.org>
+
+	* Tag as patch release 1.2.1.
+
+2010-03-22  Andy Buckley  <andy@insectnation.org>
+
+	* General tidying of return arguments and intentionally unused
+	parameters to keep -Wextra happy (some complaints remain from
+	TinyXML, FastJet, and HepMC).
+
+	* Some extra bug fixes: in FastJets projection with explicit
+	plugin argument, removing muon veto cut on FoxWolframMoments.
+
+	* Adding UNUSED macro to help with places where compiler warnings
+	can't be helped.
+
+	* Turning on -Wextra warnings, and fixing some violations.
+
+2010-03-21  Andy Buckley  <andy@insectnation.org>
+
+	* Adding MissingMomentum projection, as replacement for ~all uses
+	of now-deprecated TotalVisibleMomentum projection.
+
+	* Fixing bug with TotalVisibleMomentum projection usage in MC_SUSY
+	analysis.
+
+	* Frank Siegert fixed major bug in pTmin param passing to FastJets
+	projection. D'oh: requires patch release.
+
+2010-03-02  Andy Buckley  <andy@insectnation.org>
+
+	* Tagging for 1.2.0 release... at last!
+
+2010-03-01  Andy Buckley  <andy@insectnation.org>
+
+	* Updates to manual, manual generation scripts, analysis info etc.
+
+	* Add HepData URL to metadata print-out with rivet --show-analysis
+
+	* Fix average Et plot in UA1 analysis to only apply to the tracker
+	acceptance (but to include neutral particle contributions,
+	i.e. the region of the calorimeter in the tracker acceptance).
+
+	* Use Et rather than pT in filling the scalar Et measure in
+	TotalVisibleMomentum.
+
+	* Fixes to UA1 normalisation (which is rather funny in the paper).
+
+2010-02-26  Andy Buckley  <andy@insectnation.org>
+
+	* Update WFinder to not place cuts and other restrictions on the
+	neutrino.
+
+2010-02-11  Andy Buckley  <andy@insectnation.org>
+
+	* Change analysis loader behaviour to use ONLY RIVET_ANALYSIS_PATH
+	locations if set, otherwise use ONLY the standard Rivet analysis
+	install path. Should only impact users of personal plugin
+	analyses, who should now explicitly set RIVET_ANALYSIS_PATH to
+	load their analysis... and who can now create personal versions of
+	standard analyses without getting an error message about duplicate
+	loading.
+
+2010-01-15  Andy Buckley  <andy@insectnation.org>
+
+	* Add tests for "stable" heavy flavour hadrons in jets (rather
+	than just testing for c/b hadrons in the ancestor lists of stable
+	jet constituents)
+
+2009-12-23  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New option "RatioPlotMode=deviation" in make-plots.
+
+2009-12-14  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New option "MainPlot" in make-plots. For people who only want
+	the ratio plot and nothing else.
+
+	* New option "ConnectGaps" in make-plots. Set to 1 if you
+	want to connect gaps in histograms with a line when ErrorBars=0.
+	Works both in PLOT and in HISTOGRAM sections.
+
+	* Eliminated global variables for coordinates in make-plots and
+	enabled multithreading.
+
+2009-12-14  Andy Buckley  <andy@insectnation.org>
+
+	* AnalysisHandler::execute now calls AnalysisHandler::init(event)
+	if it has not yet been initialised.
+
+	* Adding more beam configuration features to Beam and
+	AnalysisHandler: the setRunBeams(...) methods on the latter now
+	allows a beam configuration for the run to be specified without
+	using the Run class.
+
+2009-12-11  Andy Buckley  <andy@insectnation.org>
+
+	* Removing use of PVertex from few remaining analyses. Still used
+	by SVertex, which is itself hardly used and could maybe be
+	removed...
+
+2009-12-10  Andy Buckley  <andy@insectnation.org>
+
+	* Updating JADE_OPAL to do the histo booking in init(), since
+	sqrtS() is now available at that stage.
+
+	* Renaming and slightly re-engineering all MC_*_* analyses to not
+	be collider-specific (now the Analysis::sqrtS/beams()) methods
+	mean that histograms can be dynamically binned.
+
+	* Creating RivetUnvalidated.so plugin library for unvalidated
+	analyses. Unvalidated analyses now need to be explicitly enabled
+	with a --enable-unvalidated flag on the configure script.
+
+	* Various min bias analyses updated and validated.
+
+2009-12-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Propagate SPECIAL and HISTOGRAM sections from .plot files
+	through compare-histos
+
+	* STAR_2006_S6860818: <pT> vs particle mass, validate analysis
+
+2009-12-04  Andy Buckley  <andy@insectnation.org>
+
+	* Use scaling rather than normalising in DELPHI_1996: this is
+	generally desirable, since normalizing to 1 for 1/sig dsig/dx
+	observables isn't correct if any events fall outside the histo
+	bounds.
+
+	* Many fixes to OPAL_2004.
+
+	* Improved Hemispheres interface to remove unnecessary consts on
+	returned doubles, and to also return non-squared versions
+	of (scaled) hemisphere masses.
+
+	* Add "make pyclean" make target at the top level to make it
+	easier for developers to clean their Python module build when the
+	API is extended.
+
+	* Identify use of unvalidated analyses with a warning message at
+	runtime.
+
+	* Providing Analysis::sqrtS() and Analysis::beams(), and making
+	sure they're available by the time the init methods are called.
+
+2009-12-02  Andy Buckley  <andy@insectnation.org>
+
+	* Adding passing of first event sqrt(s) and beams to analysis handler.
+
+	* Restructuring running to only use one HepMC input file (no-one
+	was using multiple ones, right?) and to break down the Run class
+	to cleanly separate the init and event loop phases. End of file is
+	now neater.
+
+2009-12-01  Andy Buckley  <andy@insectnation.org>
+
+	* Adding parsing of beam types and pairs of energies from YAML.
+
+2009-12-01  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing trigger efficiency in CDF_2009_S8233977
+
+2009-11-30  Andy Buckley  <andy@insectnation.org>
+
+	* Using shared pointers to make I/O object memory management
+	neater and less error-prone.
+
+	* Adding crossSectionPerEvent() method [==
+	crossSection()/sumOfWeights()] to Analysis. Useful for histogram
+	scaling since numerator of sumW_passed/sumW_total (to calculate
+	pass-cuts xsec) is cancelled by dividing histo by sumW_passed.
+
+	* Clean-up of Particle class and provision of inline PID::
+	functions which take a Particle as an argument to avoid having to
+	explicitly call the Particle::pdgId() method.
+
+2009-11-30  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing division by zero in Profile1D bin errors for
+	bins with just a single entry.
+
+2009-11-24  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* First working version of STAR_2006_S6860818
+
+2009-11-23  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding missing CDF_2001_S4751469 plots to uemerge
+	* New "ShowZero" option in make-plots
+	* Improving lots of plot defaults
+	* Fixing typos / non-existing bins in CDF_2001_S4751469 and
+	CDF_2004_S5839831 reference data
+
+2009-11-19  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing our compare() for doubles.
+
+2009-11-17  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Zeroth version of STAR_2006_S6860818 analysis (identified
+	strange particles). Not working yet for unstable particles.
+
+2009-11-11  Andy Buckley  <andy@insectnation.org>
+
+	* Adding separate jet-oriented and photon-oriented observables to
+	MC PHOTONJETUE analysis.
+
+	* Bug fix in MC leading jets analysis, and general tidying of
+	leading jet analyses to insert units, etc. (should not affect any
+	current results)
+
+2009-11-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing last issues in STAR_2006_S6500200 and setting it to
+	VALIDATED.
+	* Noramlise STAR_2006_S6870392 to cross-section
+
+2009-11-09  Andy Buckley  <andy@insectnation.org>
+
+	* Overhaul of jet caching and ParticleBase interface.
+
+	* Adding lists of analyses' histograms (obtained by scanning the
+	plot info files) to the LaTeX documentation.
+
+2009-11-07  Andy Buckley  <andy@insectnation.org>
+
+	* Adding checking system to ensure that Projections aren't
+	registered before the init phase of analyses.
+
+	* Now that the ProjHandler isn't full of defunct pointers (which
+	tend to coincidentally point to *new* Projection pointers rather
+	than undefined memory, hence it wasn't noticed until recently!),
+	use of a duplicate projection name is now banned with a helpful
+	message at runtime.
+
+	* (Huge) overhaul of ProjectionHandler system to use shared_ptr:
+	projections are now deleted much more efficiently, naturally
+	cleaning themselves out of the central repository as they go out
+	of scope.
+
+2009-11-06  Andy Buckley  <andy@insectnation.org>
+
+	* Adding Cmp<double> specialisation, using fuzzyEquals().
+
+2009-11-05  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing histogram division code.
+
+2009-11-04  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New analysis STAR_2006_S6500200 (pion and proton pT spectra in
+	pp collisions at 200 GeV). It is still unclear if they used a cut
+	in rapidity or pseudorapidity, thus the analysis is declared
+	"UNDER DEVELOPMENT" and "DO NOT USE".
+	* Fixing compare() in NeutralFinalState and MergedFinalState
+
+2009-11-04  Andy Buckley  <andy@insectnation.org>
+
+	* Adding consistence checking on beam ID and sqrt(s) vs. those
+	from first event.
+
+2009-11-03  Andy Buckley  <andy@insectnation.org>
+
+	* Adding more assertion checks to linear algebra testing.
+
+2009-11-02  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixing normalisation issue with stacked histograms in
+	make-plots.
+
+2009-10-30  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* CDF_2009_S8233977: Updating data and axes labels to match final
+	paper. Normalise to cross-section instead of data.
+
+2009-10-23  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing Cheese-3 plot in CDF 2004... at last!
+
+2009-10-23  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fix muon veto in CDF_1994_S2952106, CDF_2005_S6217184,
+	CDF_2008_S7782535, and D0_2004_S5992206
+
+2009-10-19  Andy Buckley  <andy@insectnation.org>
+
+	* Adding analysis info files for MC SUSY and PHOTONJETUE analyses.
+
+	* Adding MC UE analysis in photon+jet events.
+
+2009-10-19  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Adding new NeutralFinalState projection. Note that this final
+	state takes E_T instead of p_T as argument (makes more sense for
+	neutral particles). The compare() method does not yet work as
+	expected (E_T comparison still missing).
+
+	* Adding new MergedFinalState projection. This merges two final
+	states, removing duplicate particles. Duplicates are identified by
+	looking at the genParticle(), so users need to take care of any
+	manually added particles themselves.
+
+	* Fixing most open issues with the STAR_2009_UE_HELEN analysis.
+	There is only one question left, regarding the away region.
+
+	* Set the default split-merge value for SISCone in our FastJets
+	projection to the recommended (but not Fastjet-default!) value of
+	0.75.
+
+2009-10-17  Andy Buckley  <andy@insectnation.org>
+
+	* Adding parsing of units in cross-sections passed to the "-x"
+	flag, i.e. "-x 101 mb" is parsed internally into 1.01e11 pb.
+
+2009-10-16  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Disabling DELPHI_2003_WUD_03_11 in the Makefiles, since I don't
+	trust the data.
+
+	* Getting STAR_2009_UE_HELEN to work.
+
+2009-10-04  Andy Buckley  <andy@insectnation.org>
+
+	* Adding triggers and other tidying to (still unvalidated)
+	UA1_1990 analysis.
+
+	* Fixing definition of UA5 trigger to not be intrinscally
+	different for pp and ppbar: this is corrected for (although it
+	takes some readng to work this out) in the 1982 paper, which I
+	think is the only one to compare the two modes.
+
+	* Moving projection setup and registration into init() method for
+	remaining analyses.
+
+	* Adding trigger implementations as projections for CDF Runs 0 &
+	1, and for UA5.
+
+2009-10-01  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Moving projection setup and registration into init() method for
+	analyses from ALEPH, CDF and the MC_ group.
+
+	* Adding generic SUSY validation analysis, based on plots used in
+	ATLAS Herwig++ validation.
+
+	* Adding sorted particle accessors to FinalState (cf. JetAlg).
+
+2009-09-29  Andy Buckley  <andy@insectnation.org>
+
+	* Adding optional use of args as regex match expressions with
+	-l/--list-analyses.
+
+2009-09-03  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Passing GSL include path to compiler, since its absence was
+	breaking builds on systems with no GSL installation in a standard
+	location (such as SLC5, for some mysterious reason!)
+
+	* Removing lib extension passing to compiler from the configure
+	script, because Macs and Linux now both use .so extensions for the
+	plugin analysis modules.
+
+2009-09-02  Andy Buckley  <andy@insectnation.org>
+
+	* Adding analysis info file path search with RIVET_DATA_PATH
+	variable (and using this to fix doc build.)
+
+	* Improvements to AnalysisLoader path search.
+
+	* Moving analysis sources back into single directory, after a
+	proletarian uprising ;)
+
+2009-09-01  Andy Buckley  <andy@insectnation.org>
+
+	* Adding WFinder and WAnalysis, based on Z proj and analysis, with
+	some tidying of the Z code.
+
+	* ClusteredPhotons now uses an IdentifiedFS to pick the photons to
+	be looped over, and only clusters photons around *charged* signal
+	particles.
+
+2009-08-31  Andy Buckley  <andy@insectnation.org>
+
+	* Splitting analyses by directory, to make it easier to disable
+	building of particular analysis group plugin libs.
+
+	* Removing/merging headers for all analyses except for the special
+	MC_JetAnalysis base class.
+
+	* Exit with an error message if addProjection is used twice from
+	the same parent with distinct projections.
+
+2009-08-28  Andy Buckley  <andy@insectnation.org>
+
+	* Changed naming convention for analysis plugin libraries, since
+	the loader has changed so much: they must now *start* with the
+	word "Rivet" (i.e. no lib prefix).
+
+	* Split standard plugin analyses into several plugin libraries:
+	these will eventually move into separate subdirs for extra build
+	convenience.
+
+	* Started merging analysis headers into the source files, now that
+	we can (the plugin hooks previously forbade this).
+
+	* Replacement of analysis loader system with a new one based on
+	ideas from ThePEG, which uses dlopen-time instantiation of
+	templated global variables to reduce boilerplate plugin hooks to
+	one line in analyses.
+
+2009-07-14  Frank Siegert  <frank.siegert@durham.ac.uk>
+
+	* Replacing in-source histo-booking metadata with .plot files.
+
+2009-07-14  Andy Buckley  <andy@insectnation.org>
+
+	* Making Python wrapper files copy into place based on bundled
+	versions for each active HepMC interface (2.3, 2.4 & 2.5), using a
+	new HepMC version detector test in configure.
+
+	* Adding YAML metadata files and parser, removing same metadata
+	from the analysis classes' source headers.
+
+2009-07-07  Andy Buckley  <andy@insectnation.org>
+
+	* Adding Jet::hadronicEnergy()
+
+	* Adding VisibleFinalState and automatically using it in JetAlg
+	projections.
+
+	* Adding YAML parser for new metadata (and eventually ref data)
+	files.
+
+2009-07-02  Andy Buckley  <andy@insectnation.org>
+
+	* Adding Jet::neutralEnergy() (and Jet::totalEnergy() for
+	convenience/symmetry).
+
+2009-06-25  Andy Buckley  <andy@insectnation.org>
+
+	* Tidying and small efficiency improvements in CDF_2008_S7541902
+	W+jets analysis (remove unneeded second stage of jet storing,
+	sorting the jets twice, using foreach, etc.).
+
+2009-06-24  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing Jet's containsBottom and containsCharm methods, since B
+	hadrons are not necessarily to be found in the final
+	state. Discovered at the same time that HepMC::GenParticle defines
+	a massively unhelpful copy constructor that actually loses the
+	tree information; it would be better to hide it entirely!
+
+	* Adding RivetHepMC.hh, which defines container-type accessors to
+	HepMC particles and vertices, making it possible to use Boost
+	foreach and hence avoiding the usual huge boilerplate for-loops.
+
+2009-06-11  Andy Buckley  <andy@insectnation.org>
+
+	* Adding --disable-pdfmanual option, to make the bootstrap a bit
+	more robust.
+
+	* Re-enabling D0IL in FastJets: adding 10^-10 to the pTmin removes
+	the numerical instability!
+
+	* Fixing CDF_2004 min/max cone analysis to use calo jets for the
+	leading jet Et binning. Thanks to Markus Warsinsky
+	for (re)discovering this bug: I was sure it had been fixed. I'm
+	optimistic that this will fix the main distributions, although
+	Swiss Cheese "minus 3" is still likely to be broken. Early tests
+	look okay, but it'll take more stats before we can remove the "do
+	not trust" sign.
+
+2009-06-10  Andy Buckley  <andy@insectnation.org>
+
+	* Providing "calc" methods so that Thrust and Sphericity
+	projections can be used as calculators without having to use the
+	projecting/caching system.
+
+2009-06-09  Andy Buckley  <andy@insectnation.org>
+
+	* 1.1.3 release!
+
+	* More doc building and SWIG robustness tweaks.
+
+2009-06-07  Andy Buckley  <andy@insectnation.org>
+
+	* Make doc build from metadata work even before the library is
+	installed.
+
+2009-06-07  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fix phi rotation in CDF_2008_LEADINGJETS.
+
+2009-06-07  Andy Buckley  <andy@insectnation.org>
+
+	* Disabling D0 IL midpoint cone (using CDF modpoint instead),
+	since there seems to be a crashing bug in FastJet's
+	implementation: we can't release that way, since ~no D0 analyses
+	will run.
+
+2009-06-03  Andy Buckley  <andy@insectnation.org>
+
+	* Putting SWIG-generated source files under SVN control to make
+	life easier for people who we advise to check out the SVN head
+	version, but who don't have a sufficiently modern copy of SWIG to
+
+	* Adding the --disable-analyses option, for people who just want
+	to use Rivet as a framework for their own analyses.
+
+	* Enabling HepMC cross-section reading, now that HepMC 2.5.0 has
+	been released.
+
+2009-05-23  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Using gsl-config to locate libgsl
+
+	* Fix the paths for linking such that our own libraries are found
+	before any system libraries, e.g. for the case that there is an
+	outdated fastjet version installed on the system while we want to
+	use our own up-to-date version.
+
+	* Change dmerge to ymerge in the e+e- analyses using JADE or
+	DURHAM from fastjet. That's what it is called in fastjet-2.4 now.
+
+2009-05-18  Andy Buckley  <andy@insectnation.org>
+
+	* Adding use of gsl-config in configure script.
+
+2009-05-16  Andy Buckley  <andy@insectnation.org>
+
+	* Removing argument to vetoEvent macro, since no weight
+	subtraction is now needed. It's now just an annotated return, with
+	built-in debug log message.
+
+	* Adding an "open" FinalState, which is only calculated once per
+	even, then used by all other FSes, avoiding the loop over
+	non-status 1 particles.
+
+2009-05-15  Andy Buckley  <andy@insectnation.org>
+
+	* Removing incorrect setting of DPS x-errs in CDF_2008 jet shape
+	analysis: the DPS autobooking already gets this bit right.
+
+	* Using Jet rather than FastJet::PseudoJet where possible, as it
+	means that the phi ranges match up nicely between Particle and the
+	Jet object. The FastJet objects are only really needed if you want
+	to do detailed things like look at split/merge scales for
+	e.g. diff jet rates or "y-split" analyses.
+
+	* Tidying and debugging CDF jet shape analyses and jet shape
+	plugin... ongoing, but I think I've found at least one real bug,
+	plus a lot of stuff that can be done a lot more nicely.
+
+	* Fully removing deprecated math functions and updating affected
+	analyses.
+
+2009-05-14  Andy Buckley  <andy@insectnation.org>
+
+	* Removing redundant rotation in DISKinematics... this was a
+	legacy of Peter using theta rather than pi-theta in his rotation.
+
+	* Adding convenience phi, rho, eta, theta, and perp,perp2 methods
+	to the 3 and 4 vector classes.
+
+2009-05-12  Andy Buckley  <andy@insectnation.org>
+
+	* Adding event auto-rotation for events with one proton... more
+	complete approach?
+
+2009-05-09  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Renaming CDF_2008_NOTE_9337 to CDF_2009_S8233977.
+
+	* Numerous small bug fixes in ALEPH_1996_S3486095.
+
+	* Adding data for one of the Rick-Field-style STAR UE analyses.
+
+2009-05-08  Andy Buckley  <andy@insectnation.org>
+
+	* Adding rivet-mkanalysis script, to make generating new analysis
+	source templates easier.
+
+2009-05-07  Andy Buckley  <andy@insectnation.org>
+
+	* Adding null vector check to Vector3::azimuthalAngle().
+
+	* Fixing definition of HCM/Breit frames in DISKinematics, and
+	adding asserts to check that the transformation is doing what it
+	should.
+
+2009-05-05  Andy Buckley  <andy@insectnation.org>
+
+	* Removing eta and Et cuts from CDF 2000 Z pT analysis, based on
+	our reading of the paper, and converting most of the analysis to a
+	call of the ZFinder projection.
+
+2009-05-05  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Support non-default seed_threshold in CDF cone jet algorithms.
+
+	* New analyses STAR_2006_S6870392 and STAR_2008_S7993412. In
+	STAR_2008_S7993412 only the first distribution is filled at the
+	moment. STAR_2006_S6870392 is normalised to data instead of the
+	Monte Carlo cross-section, since we don't have that available in
+	the HepMC stream yet.
+
+2009-05-05  Andy Buckley  <andy@insectnation.org>
+
+	* Changing Event wrapper to copy whole GenEvents rather than
+	pointers, use std units if supported in HepMC, and run a
+	placeholder function for event auto-orientation.
+
+2009-04-28  Andy Buckley  <andy@insectnation.org>
+
+	* Removing inclusion of IsolationTools header by analyses that
+	aren't actually using the isolation tools... which is all of
+	them. Leaving the isolation tools in place for now, as there might
+	still be use cases for them and there's quite a lot of code there
+	that deserves a second chance to be used!
+
+2009-04-24  Andy Buckley  <andy@insectnation.org>
+
+	* Deleting Rivet implementations of TrackJet and D0ILConeJets: the
+	code from these has now been incorporated into FastJet 2.4.0.
+
+	* Removed all mentions of the FastJet JADE patch and the HAVE_JADE
+	preprocessor macro.
+
+	* Bug fix to D0_2008_S6879055 to ensure that cuts compare to both
+	electron and positron momenta (was just comparing against
+	electrons, twice, probably thanks to the miracle of cut and
+	paste).
+
+	* Converting all D0 IL Cone jets to use FastJets. Involved tidying
+	D0_2004 jet azimuthal decorrelation analysis and D0_2008_S6879055
+	as part of migration away from using the getLorentzJets method,
+	and removing the D0ILConeJets header from quite a few analyses
+	that weren't using it at all.
+
+	* Updating CDF 2001 to use FastJets in place of TrackJet, and
+	adding axis labels to its plots.
+
+	* Note that ZEUS_2001_S4815815 uses the wrong jet definition: it
+	should be a cone but curently uses kT.
+
+	* Fixing CDF_2005_S6217184 to use correct (midpoint, R=0.7) jet
+	definition. That this was using a kT definition with R=1.0 was
+	only made obvious when the default FastJets constructor was
+	removed.
+
+	* Removing FastJets default constructor: since there are now
+	several good (IRC safe) jet definitions available, there is no
+	obvious safe default and analyses should have to specify which
+	they use.
+
+	* Moving FastJets constructors into implementation file to reduce
+	recompilation dependencies, and adding new plugins.
+
+	* Ensuring that axis labels actually get written to the output
+	data file.
+
+2009-04-22  Andy Buckley  <andy@insectnation.org>
+
+	* Adding explicit FastJet CDF jet alg overlap_threshold
+	constructor param values, since the default value from 2.3.x is
+	now removed in version 2.4.0.
+
+	* Removing use of HepMC ThreeVector::mag method (in one place
+	only) since this has been removed in version 2.5.0b.
+
+	* Fix to hepmc.i (included by rivet.i) to ignore new HepMC 2.5.0b
+	GenEvent stream operator.
+
+2009-04-21  Andy Buckley  <andy@insectnation.org>
+
+	* Dependency on FastJet now requires version 2.4.0 or later. Jade
+	algorithm is now native.
+
+	* Moving all analysis constructors and Projection headers from the
+	analysis header files into their .cc implementation files, cutting
+	header dependencies.
+
+	* Removing AIDA headers: now using LWH headers only, with
+	enhancement to use axis labels. This facility is now used by the
+	histo booking routines, and calling the booking function versions
+	which don't specify axis labels will result in a runtime warning.
+
+2009-04-07  Andy Buckley  <andy@insectnation.org>
+
+	* Adding $(DESTDIR) prefix to call to Python module "setup.py
+	install"
+
+	* Moving HepMC SWIG mappings into Python Rivet module for now:
+	seems to work-around the SL type-mapping bug.
+
+2009-04-03  Andy Buckley  <andy@insectnation.org>
+
+	* Adding MC analysis for LHC UE: higher-pT replica of Tevatron
+	2008 leading jets study.
+
+	* Adding CDF_1990 pseudorapidity analysis.
+
+	* Moving CDF_2001 constructor into implementation file.
+
+	* Cleaning up CDF_2008_LEADINGJETS a bit, e.g. using foreach
+	loops.
+
+	* Adding function interface for specifying axis labels in histo
+	bookings. Currently has no effect, since AIDA doesn't seem to have
+	a mechanism for axis labels. It really is a piece of crap.
+
+2009-03-18  Andy Buckley  <andy@insectnation.org>
+
+	* Adding docs "make upload" and other tweaks to make the doc files
+	fit in with the Rivet website.
+
+	* Improving LaTex docs to show email addresses in printable form
+	and to group analyses by collider or other metadata.
+
+	* Adding doc script to include run info in LaTeX docs, and to make
+	HTML docs.
+
+	* Removing WZandh projection, which wasn't generator independent
+	and whose sole usage was already replaced by ZFinder.
+
+	* Improvements to constructors of ZFinder and InvMassFS.
+
+	* Changing ExampleTree to use real FS-based Z finding.
+
+2009-03-16  Andy Buckley  <andy@insectnation.org>
+
+	* Allow the -H histo file spec to give a full name if wanted. If
+	it doesn't end in the desired extension, it will be added.
+
+	* Adding --runname option (and API elements) to choose a run name
+	to be prepended as a "top level directory" in histo paths. An
+	empty value results in no extra TLD.
+
+2009-03-06  Andy Buckley  <andy@insectnation.org>
+
+	* Adding R=0.2 photon clustering to the electrons in the CDF 2000
+	Z pT analysis.
+
+2009-03-04  Andy Buckley  <andy@insectnation.org>
+
+	* Fixing use of fastjet-config to not use the user's PATH
+	variable.
+
+	* Fixing SWIG type table for HepMC object interchange.
+
+2009-02-20  Andy Buckley  <andy@insectnation.org>
+
+	* Adding use of new metadata in command line analysis querying
+	with the rivet command, and in building the PDF Rivet manual.
+
+	* Adding extended metadata methods to the Analysis interface and
+	the Python wrapper. All standard analyses comply with this new
+	interface.
+
+2009-02-19  Andy Buckley  <andy@insectnation.org>
+
+	* Adding usefully-scoped config headers, a Rivet::version()
+	function which uses them, and installing the generated headers to
+	fix "external" builds against an installed copy of Rivet. The
+	version() function has been added to the Python wrapper.
+
+2009-02-05  Andy Buckley  <andy@insectnation.org>
+
+	* Removing ROOT dependency and linking. Woo! There's no need for
+	this now, because the front-end accepts no histo format switch and
+	we'll just use aida2root for output conversions. Simpler this way,
+	and it avoids about half of our compilation bug reports from 32/64
+	bit ROOT build confusions.
+
+2009-02-04  Andy Buckley  <andy@insectnation.org>
+
+	* Adding automatic generation of LaTeX manual entries for the
+	standard analyses.
+
+2009-01-20  Andy Buckley  <andy@insectnation.org>
+
+	* Removing RivetGun and TCLAP source files!
+
+2009-01-19  Andy Buckley  <andy@insectnation.org>
+
+	* Added psyco Python optimiser to rivet, make-plots and
+	compare-histos.
+
+	* bin/aida2root: Added "-" -> "_" mangling, following requests.
+
+2009-01-17  Andy Buckley  <andy@insectnation.org>
+
+	* 1.1.2 release.
+
+2009-01-15  Andy Buckley  <andy@insectnation.org>
+
+	* Converting Python build system to bundle SWIG output in tarball.
+
+2009-01-14  Andy Buckley  <andy@insectnation.org>
+
+	* Converting AIDA/LWH divide function to return a DPS so that bin
+	width factors don't get all screwed up. Analyses adapted to use
+	the new division operation (a DPS/DPS divide would also be
+	nice... but can wait for YODA).
+
+2009-01-06  Andy Buckley  <andy@insectnation.org>
+
+	* bin/make-plots: Added --png option for making PNG output files,
+	using 'convert' (after making a PDF --- it's a bit messy)
+
+	* bin/make-plots: Added --eps option for output filtering through
+	ps2eps.
+
+2009-01-05  Andy Buckley  <andy@insectnation.org>
+
+	* Python: reworking Python extension build to use distutils and
+	newer m4 Python macros. Probably breaks distcheck but is otherwise
+	more robust and platform independent (i.e. it should now work on
+	Macs).
+
+2008-12-19  Andy Buckley  <andy@insectnation.org>
+
+	* make-plots: Multi-threaded make-plots and cleaned up the LaTeX
+	building a bit (necessary to remove the implicit single global
+	state).
+
+2008-12-18  Andy Buckley  <andy@insectnation.org>
+
+	* make-plots: Made LaTeX run in no-stop mode.
+
+	* compare-histos: Updated to use a nicer labelling syntax on the
+	command line and to successfully build MC-MC plots.
+
+2008-12-16  Andy Buckley  <andy@insectnation.org>
+
+	* Made LWH bin edge comparisons safe against numerical errors.
+
+	* Added Particle comparison functions for sorting.
+
+	* Removing most bad things from ExampleTree and tidying up. Marked
+	WZandh projection for removal.
+
+2008-12-03  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added the two missing observables to the CDF_2008_NOTE_9337 analysis,
+	i.e. track pT and sum(ET). There is a small difference between our MC
+	output and the MC plots of the analysis' author, we're still waiting
+	for the author's comments.
+
+2008-12-02  Andy Buckley  <andy@insectnation.org>
+
+	* Overloading use of a std::set in the interface, since the
+	version of SWIG on Sci Linux doesn't have a predefined mapping for
+	STL sets.
+
+2008-12-02  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixed uemerge. The output was seriously broken by a single line
+	of debug information in fillAbove(). Also changed uemerge output
+	to exponential notation.
+
+	* Unified ref and mc histos in compare-histos. Histos with one
+	bin are plotted linear. Option for disabling the ratio plot.
+	Several fixes for labels, legends, output directories, ...
+
+	* Changed rivetgun's fallback directory for parameter files to
+	$PREFIX/share/AGILe, since that's where the steering files now are.
+
+	* Running aida2flat in split mode now produces make-plots compatible
+	dat-files for direct plotting.
+
+2008-11-28  Andy Buckley  <andy@insectnation.org>
+
+	* Replaced binreloc with an upgraded and symbol-independent copy.
+
+2008-11-25  Andy Buckley  <andy@insectnation.org>
+
+	* Added searching of $RIVET_REF_PATH for AIDA reference data
+	files.
+
+2008-11-24  Andy Buckley  <andy@insectnation.org>
+
+	* Removing "get"s and other obsfucated syntax from
+	ProjectionApplier (Projection and Analysis) interfaces.
+
+2008-11-21  Andy Buckley  <andy@insectnation.org>
+
+	* Using new "global" Jet and V4 sorting functors in
+	TrackJet. Looks like there was a sorting direction problem before...
+
+	* Verbose mode with --list-analyses now shows descriptions as well
+	as analysis names.
+
+	* Moved data/Rivet to data/refdata and moved data/RivetGun
+	contents to AGILe (since generator steering is no longer a Rivet
+	thing)
+
+	* Added unchecked ratio plots to D0 Run II jet + photon analysis.
+
+	* Added D0 inclusive photon analysis.
+
+	* Added D0 Z rapidity analysis.
+
+	* Tidied up constructor interface and projection chain
+	implementation of InvMassFinalState.
+
+	* Added ~complete set of Jet and FourMomentum sorting functors.
+
+2008-11-20  Andy Buckley  <andy@insectnation.org>
+
+	* Added IdentifiedFinalState.
+
+	* Moved a lot of TrackJet and Jet code into .cc files.
+
+	* Fixed a caching bug in Jet: cache flag resets should never be
+	conditional, since they are then sensitive to initialisation
+	errors.
+
+	* Added quark enum values to ParticleName.
+
+	* Rationalised JetAlg interfaces somewhat, with "size()" and
+	"jets()" methods in the interface.
+
+	* Added D0 W charge asymmetry and D0 inclusive jets analyses.
+
+2008-11-18  Andy Buckley  <andy@insectnation.org>
+
+	* Adding D0 inclusive Z pT shape analysis.
+
+	* Added D0 Z + jet pT and photon + jet pT spectrum analyses.
+
+	* Lots of tidying up of particle, event, particle name etc.
+
+	* Now the first event is used to detect the beam type and remove
+	incompatible analyses.
+
+2008-11-17  Andy Buckley  <andy@insectnation.org>
+
+	* Added bash completion for rivetgun.
+
+	* Starting to provide stand-alone call methods on projections so
+	they can be used without the caching infrastructure. This could
+	also be handy for unit testing.
+
+	* Adding functionality (sorting function and built-in sorting
+	schemes) to the JetAlg interface.
+
+2008-11-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fix floating point number output format in aida2flat and flat2aida
+
+	* Added CDF_2002_S4796047: CDF Run-I charged multiplicity distribution
+
+	* Renamed CDF_2008_MINBIAS to CDF_2008_NOTE_9337, since the
+	note is publicly available now.
+
+2008-11-10  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added DELPHI_2003_WUD_03_11: Delphi 4-jet angular distributions.
+	There is still a problem with the analysis, so don't use it yet.
+	But I need to commit the code because my laptop is broken ...
+
+2008-11-06  Andy Buckley  <andy@insectnation.org>
+
+	* Code review: lots of tidying up of projections and analyses.
+
+	* Fixes for compatibility with the LLVM C & C++ compiler.
+
+	* Change of Particle interface to remove "get"-prefixed method
+	names.
+
+2008-11-05  Andy Buckley  <andy@insectnation.org>
+
+	* Adding ability to query analysis metadata from the command line.
+
+	* Example of a plugin analyis now in plugindemo, with a make check
+	test to make sure that the plugin analysis is recognised by the
+	command line "rivet" tool.
+
+	* GCC 4.3 fix to mat-vec tests.
+
+2008-11-04  Andy Buckley  <andy@insectnation.org>
+
+	* Adding native logger control from Python interface.
+
+2008-11-03  Andy Buckley  <andy@insectnation.org>
+
+	* Adding bash_completion for rivet executable.
+
+2008-10-31  Andy Buckley  <andy@insectnation.org>
+
+	* Clean-up of histo titles and analysis code review.
+
+	* Added momentum construction functions from FastJet PseudoJets.
+
+2008-10-28  Andy Buckley  <andy@insectnation.org>
+
+	* Auto-booking of histograms with a name, rather than the HepData
+	ID 3-tuple is now possible.
+
+	* Fix in CDF 2001 pT spectra to get the normalisations to depend
+	on the pT_lead cutoff.
+
+2008-10-23  Andy Buckley  <andy@insectnation.org>
+
+	* rivet handles signals neatly, as for rivetgun, so that premature
+	killing of the analysis process will still result in an analysis
+	file.
+
+	* rivet now accepts cross-section as a command line argument and,
+	if it is missing and is required, will prompt the user for it
+	interactively.
+
+2008-10-22  Andy Buckley  <andy@insectnation.org>
+
+	* rivet (Python interface) now can list analyses, check when
+	adding analyses that the given names are valid, specify histo file
+	name, and provide sensibly graded event number logging.
+
+2008-10-20  Andy Buckley  <andy@insectnation.org>
+
+	* Corrections to CDF 2004 analysis based on correspondance with
+	Joey Huston. M bias dbns now use whole event within |eta| < 0.7,
+	and Cheese plots aren't filled at all if there are insufficient
+	jets (and the correct ETlead is used).
+
+2008-10-08  Andy Buckley  <andy@insectnation.org>
+
+	* Added AnalysisHandler::commitData() method, to allow the Python
+	interface to write out a histo file without having to know
+	anything about the histogramming API.
+
+	* Reduced SWIG interface file to just map a subset of Analysis and
+	AnalysisHandler functionality. This will be the basis for a new
+	command line interface.
+
+2008-10-06  Andy Buckley  <andy@insectnation.org>
+
+	* Converted FastJets plugin to use a Boost shared_pointer to the
+	cached ClusterSequence. The nullness of the pointer is now used to
+	indicate an empty tracks (and hence jets) set. Once FastJet
+	natively support empty CSeqs, we can rewrite this a bit more
+	neatly and ditch the shared_ptr.
+
+2008-10-02  Andy Buckley  <andy@insectnation.org>
+
+	* The CDF_2004 (Acosta) data file now includes the full range of
+	pT for the min bias data at both 630 and 1800 GeV. Previously,
+	only the small low-pT insert plot had been entered into HepData.
+
+2008-09-30  Andy Buckley  <andy@insectnation.org>
+
+	* Lots of updates to CDF_2004 (Acosta) UE analysis, including
+	sorting jets by E rather than Et, and factorising transverse cone
+	code into a function so that it can be called with a random
+	"leading jet" in min bias mode. Min bias histos are now being
+	trial-filled just with tracks in the transverse cones, since the
+	paper is very unclear on this.
+
+	* Discovered a serious caching problem in FastJets projection when
+	an empty tracks vector is passed from the
+	FinalState. Unfortunately, FastJet provides no API way to solve
+	the problem, so we'll have to report this upstream. For now, we're
+	solving this for CDF_2004 by explicitly vetoing events with no
+	tracks.
+
+	* Added Doxygen to the build with target "dox"
+
+	* Moved detection of whether cross-section information is needed
+	into the AnalysisHandler, with dynamic computation by scanning
+	contained analyses.
+
+	* Improved robustness of event reading to detect properly when the
+	input file is smaller than expected.
+
+2008-09-29  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New analysis: CDF_2000_S4155203
+
+2008-09-23  Andy Buckley  <andy@insectnation.org>
+
+	* rivetgun can now be built and run without AGILe. Based on a
+	patch by Frank Siegert.
+
+2008-09-23  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Some preliminary numbers for the CDF_2008_LEADINGJETS analysis
+	(only transverse region and not all observables. But all we have now.)
+
+2008-09-17  Andy Buckley  <andy@insectnation.org>
+
+	* Breaking up the mammoth "generate" function, to make Python
+	mapping easier, among other reasons.
+
+	* Added if-zero-return-zero checking to angle mapping functions,
+	to avoid problems where 1e-19 gets mapped on to 2 pi and then
+	fails boundary asserts.
+
+	* Added HistoHandler singleton class, which will be a central
+	repository for holding analyses' histogram objects to be accessed
+	via a user-chosen name.
+
+2008-08-26  Andy Buckley  <andy@insectnation.org>
+
+	* Allowing rivet-config to return combined flags.
+
+2008-08-14  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed some g++ 4.3 compilation bugs, including "vector" not
+	being a valid name for a method which returns a physics vector,
+	since it clashes with std::vector (which we globally import). Took
+	the opportunity to rationalise the Jet interface a bit, since
+	"particle" was used to mean "FourMomentum", and "Particle" types
+	required a call to "getFullParticle". I removed the "gets" at the
+	same time, as part of our gradual migration to a coherent naming
+	policy.
+
+2008-08-11  Andy Buckley  <andy@insectnation.org>
+
+	* Tidying of FastJets and added new data files from HepData.
+
+2008-08-10  James Monk  <jmonk@hep.ucl.ac.uk>
+
+	* FastJets now uses user_index property of fastjet::PseudoJet to
+	reconstruct PID information in jet contents.
+
+2008-08-07  Andy Buckley  <andy@insectnation.org>
+
+	* Reworking of param file and command line parsing. Tab characters
+	are now handled by the parser, in a way equivalent to spaces.
+
+2008-08-06  Andy Buckley  <andy@insectnation.org>
+
+	* Added extra histos and filling to Acosta analysis - all HepData
+	histos should now be filled, depending on sqrt{s}. Also trialling
+	use of LaTeX math mode in titles.
+
+2008-08-05  Andy Buckley  <andy@insectnation.org>
+
+	* More data files for CDF analyses (2 x 2008, 1 x 1994), and moved
+	the RivetGun AtlasPythia6.params file to more standard
+	fpythia-atlas.params (and added to the install list).
+
+2008-08-04  Andy Buckley  <andy@insectnation.org>
+
+	* Reduced size of available options blocks in RivetGun help text
+	by removing "~" negating variants (which are hardly ever used in
+	practice) and restricting beam particles to
+	PROTON, ANTIPROTON,ELECTRON and POSITRON.
+
+	* Fixed Et sorting in Acosta analysis.
+
+2008-08-01  Andy Buckley  <andy@insectnation.org>
+
+	* Added AIDA headers to the install list, since
+	external (plugin-type) analyses need them to be present for
+	compilation to succeed.
+
+2008-07-29  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed missing ROOT compile flags for libRivet.
+
+	* Added command line repetition to logging.
+
+2008-07-29  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Included the missing numbers and three more observables
+	in the CDF_2008_NOTE_9351 analysis.
+
+2008-07-29  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed wrong flags on rivet-config
+
+2008-07-28  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Renamed CDF_2008_DRELLYAN to CDF_2008_NOTE_9351. Updated
+	numbers and cuts to the final version of this CDF note.
+
+2008-07-28  Andy Buckley  <andy@insectation.org>
+
+	* Fixed polar angle calcuation to use atan2.
+
+	* Added "mk" prefixes and x/setX convention to math classes.
+
+2008-07-28  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Fixed definition of FourMomentum::pT (it had been returning pT2)
+
+2008-07-27  Andy Buckley  <andy@insectnation.org>
+
+	* Added better tests for Boost headers.
+
+	* Added testing for -ansi, -pedantic and -Wall compiler flags.
+
+2008-07-25  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* updated DELPHI_2002_069_CONF_603 according to information
+	from the author
+
+2008-07-17  Andy Buckley  <andy@insectnation.org>
+
+	* Improvements to aida2flat: now can produce one output file per
+	histo, and there is a -g "gnuplot mode" which comments out the
+	YODA/make_plot headers to make the format readable by gnuplot.
+
+	* Import boost::assign namespace contents into the Rivet namespace
+	--- provides very useful intuitive collection initialising
+	functions.
+
+2008-07-15  Andy Buckley  <andy.buckley@dur.ac.uk>
+
+	* Fixed missing namespace in vector/matrix testing.
+
+	* Removed Boost headers: now a system dependency.
+
+	* Fixed polarRadius infinite loop.
+
+2008-07-09  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed definitions of mapAngleMPiToPi, etc. and used them to fix
+	the Jet::getPhi method.
+
+	* Trialling use of "foreach" loop in CDF_2004: it works! Very nice.
+
+2008-07-08  Andy Buckley  <andy@insectnation.org>
+
+	* Removed accidental reference to an "FS" projection in
+	FinalStateHCM's compare method. rivetgun -A now works again.
+
+	* Added TASSO, SLD and D0_2008 reference data. The TASSO and SLD
+	papers aren't installed or included in the tarball since there are
+	currently no plans to implement these analyses.
+
+	* Added Rivet namespacing to vector, matrix etc. classes. This
+	required some re-writing and the opportunity was taken to move
+	some canonical function definitions inside the classes and to
+	improve the header structure of the Math area.
+
+2008-07-07  Andy Buckley  <andy@insectnation.org>
+
+	* Added Rivet namespace to Units.hh and Constants.hh.
+
+	* Added Doxygen "@brief" flags to analyses.
+
+	* Added "RIVET_" namespacing to all header guards.
+
+	* Merged Giulio Lenzi's isolation/vetoing/invmass projections and
+	D0 2008 analysis.
+
+2008-06-23  Jon Butterworth  <J.Butterworth@ucl.ac.uk>
+
+	* Modified FastJet to fix ysplit and split and filter.
+
+	* Modified ExampleTree to show how to call them.
+
+2008-06-19  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added first version of the CDF_2008_DRELLYAN analysis described on
+	http://www-cdf.fnal.gov/physics/new/qcd/abstracts/UEinDY_08.html
+	There is a small difference between the analysis and this
+	implementation, but it's too small to be visible.
+	The fpythia-cdfdrellyan.params parameter file is for this analysis.
+
+	* Added first version of the CDF_2008_MINBIAS analysis described on
+	http://www-cdf.fnal.gov/physics/new/qcd/abstracts/minbias_08.html
+	The .aida file is read from the plots on the web and will change.
+	I'm still discussing some open questions about the analysis with
+	the author.
+
+2008-06-18  Jon Butterworth  <J.Butterworth@ucl.ac.uk>
+
+	* Added First versions of splitJet and filterJet methods to
+	fastjet.cc. Not yet tested, buyer beware.
+
+2008-06-18  Andy Buckley  <andy@insectnation.org>
+
+	* Added extra sorted Jets and Pseudojets methods to FastJets, and
+	added ptmin argument to the JetAlg getJets() method, requiring a
+	change to TrackJet.
+
+2008-06-13  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed processing of "RG" parameters to ensure that invalid
+	iterators are never used.
+
+2008-06-10  Andy Buckley  <andy@insectnation.org>
+
+	* Updated AIDA reference files, changing "/HepData" root path to
+	"/REF". Still missing a couple of reference files due to upstream
+	problems with the HepData records.
+
+2008-06-09  Andy Buckley  <andy@insectnation.org>
+
+	* rivetgun now handles termination signals (SIGTERM, SIGINT and
+	SIGHUP) gracefully, finishing the event loop and finalising
+	histograms. This means that histograms will always get written
+	out, even if not all the requested events have been generated.
+
+2008-06-04  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added DELPHI_2002_069_CONF_603 analysis
+
+2008-05-30  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added InitialQuarks projection
+	* Added OPAL_1998_S3780481 analysis
+
+2008-05-29  Andy Buckley  <andy@insectnation.org>
+
+	* distcheck compatibility fixes and autotools tweaks.
+
+2008-05-28  Andy Buckley  <andy@insectnation.org>
+
+	* Converted FastJet to use Boost smart_ptr for its plugin
+	handling, to solve double-delete errors stemming from the heap
+	cloning of projections.
+
+	* Added (a subset of) Boost headers, particularly the smart
+	pointers.
+
+2008-05-24  Andy Buckley  <andy@insectnation.org>
+
+	* Added autopackage spec files.
+
+	* Merged these changes into the trunk.
+
+	* Added a registerClonedProjection(...) method to
+	ProjectionHandler: this is needed so that cloned projections will
+	have valid pointer entries in the ProjectHandler repository.
+
+	* Added clone() methods to all projections (need to use this,
+	since the templated "new PROJ(proj)" approach to cloning can't
+	handle object polymorphism.
+
+2008-05-19  Andy Buckley  <andy@insectnation.org>
+
+	* Moved projection-applying functions into ProjectionApplier base
+	class (from which Projection and Analysis both derive).
+
+	* Added Rivet-specific exceptions in place of std::runtime_error.
+
+	* Removed unused HepML reference files.
+
+	* Added error handling for requested analyses with wrong case
+	convention / missing name.
+
+2008-05-15  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New analysis PDG_Hadron_Multiplicities
+
+	* flat2aida converter
+
+2008-05-15  Andy Buckley  <andy@insectnation.org>
+
+	* Removed unused mysterious Perl scripts!
+
+	* Added RivetGun.HepMC logging of HepMC event details.
+
+2008-05-14  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New analysis DELPHI_1995_S3137023. This analysis contains
+	the xp spectra of Xi+- and Sigma(1385)+-.
+
+2008-05-13  Andy Buckley  <andy@insectnation.org>
+
+	* Improved logging interface: log levels are now integers (for
+	cross-library compatibility and level setting also applies to
+	existing loggers.
+
+2008-05-09  Andy Buckley  <andy@insectnation.org>
+
+	* Improvements to robustness of ROOT checks.
+
+	* Added --version flag on config scripts and rivetgun.
+
+2008-05-06  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* New UnstableFinalState projection which selects all hadrons,
+	leptons and real photons including unstable particles.
+
+	* In the DELPHI_1996_S3430090 analysis the multiplicities for
+	pi+/pi- and p0 are filled, using the UnstableFinalState projection.
+
+2008-05-06  Andy Buckley  <andy@insectnation.org>
+
+	* FastJets projection now protects against the case where no
+	particles exist in the final state (where FastJet throws an
+	exception).
+
+	* AIDA file writing is now separated from the
+	AnalysisHandler::finalize method... API users can choose what to
+	do with the histo objects, be that writing out or further
+	processing.
+
+2008-04-29  Andy Buckley  <andy@insectnation.org>
+
+	* Increased default tolerances in floating point comparisons as
+	they were overly stringent and valid f.p. precision errors were
+	being treated as significant.
+
+	* Implemented remainder of Acosta UE analysis.
+
+	* Added proper getEtSum() to Jet.
+
+	* Added Et2() member and function to FourMomentum.
+
+	* Added aida2flat conversion script.
+
+	* Fixed ambiguity in TrackJet algorithm as to how the iteration
+	continues when tracks are merged into jets in the inner loop.
+
+2008-04-28  Andy Buckley  <andy@insectnation.org>
+
+	* Merged in major "ProjectionHandler" branch. Projections are now
+	all stored centrally in the singleton ProjectionHandler container,
+	rather than as member pointers in projections and analyses. This
+	also affects the applyProjection mechanism, which is now available
+	as a templated method on Analysis and Projection. Still a few
+	wrinkles need to be worked out.
+
+	* The branch changes required a comprehensive review of all
+	existing projections and analyses: lots of tidying up of these
+	classes, as well as the auxiliary code like math utils, has taken
+	place. Too much to list and track, unfortunately!
+
+2008-03-28  Andy Buckley  <buckley@pc54.hep.ucl.ac.uk>
+
+	* Started second CDF UE analysis ("Acosta"): histograms defined.
+
+	* Fixed anomalous factor of 2 in LWH conversion from Profile1D
+	to DataPointSet.
+
+	* Added pT distribution histos to CDF 2001 UE analysis.
+
+2008-03-26  Andy Buckley  <andy@insectnation.org>
+
+	* Removed charged+neutral versions of histograms and projections
+	from DELPHI analysis since they just duplicate the more robust
+	charged-only measurements and aren't really of interest for
+	tuning.
+
+2008-03-10  Andy Buckley  <andy@insectnation.org>
+
+	* Profile histograms now use error computation with proper
+	weighting, as described here:
+	http://en.wikipedia.org/wiki/Weighted_average
+
+2008-02-28  Andy Buckley  <andy@insectnation.org>
+
+	* Added --enable-jade flag for Professor studies with patched
+	FastJet.
+
+	* Minor fixes to LCG tag generator and gfilt m4 macros.
+
+	* Fixed projection slicing issues with Field UE analysis.
+
+	* Added Analysis::vetoEvent(e) function, which keeps track of the
+	correction to the sum of weights due to event vetoing in analysis
+	classes.
+
+2008-02-26  Andy Buckley  <andy@insectnation.org>
+
+	* Vector<N> and derived classes now initialise to have zeroed
+	components when the no-arg constructor is used.
+
+	* Added Analysis::scale() function to scale 1D
+	histograms. Analysis::normalize() uses it internally, and the
+	DELPHI (A)EEC, whose histo weights are not pure event weights, and
+	normalised using scale(h, 1/sumEventWeights).
+
+2008-02-21  Hendrik Hoeth  <hendrik.hoeth@cern.ch>
+
+	* Added EEC and AEEC to the DELPHI_1996_S3430090 analysis. The
+	normalisation of these histograms is still broken (ticket #163).
+
+2008-02-19  Hendrik Hoeth  <hendrik.hoeth@cern.ch>
+
+	* Many fixes to the DELPHI_1996_S3430090 analysis: bugfix in the
+	calulation of eigenvalues/eigenvectors in MatrixDiag.hh for the
+	sphericity, rewrite of Thrust/Major/Minor, fixed scaled momentum,
+	hemisphere masses, normalisation in single particle events,
+	final state slicing problems in the projections for Thrust,
+	Sphericity and Hemispheres.
+
+2008-02-08  Andy Buckley  <andy@insectnation.org>
+
+	* Applied fixes and extensions to DIS classes, based on
+	submissions by Dan Traynor.
+
+2008-02-06  Andy Buckley  <andy@insectnation.org>
+
+	* Made projection pointers used for cut combining into const
+	pointers. Required some redefinition of the Projection* comparison
+	operator.
+
+	* Temporarily added FinalState member to ChargedFinalState to stop
+	projection lifetime crash.
+
+2008-02-01  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed another misplaced factor of bin width in the
+	Analysis::normalize() method.
+
+2008-01-30  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed the conversion of IHistogram1D to DPS, both via the
+	explicit Analysis::normalize() method and the implicit
+	AnalysisHandler::treeNormalize() route. The root of the problem is
+	the AIDA choice of the word "height" to represent the sum of
+	weights in a bin: i.e. the bin width is not taken into account
+	either in computing bin height or error.
+
+2008-01-22  Andy Buckley  <andy@insectnation.org>
+
+	* Beam projection now uses HepMC GenEvent::beam_particles() method
+	to get the beam particles. This is more portable and robust for
+	C++ generators, and equivalent to the existing "first two" method
+	for Fortran generators.
+
+2008-01-17  Andy Buckley  <andy@insectnation.org>
+
+	* Added angle range fix to pseudorapidity function (thanks to
+	Piergiulio Lenzi).
+
+2008-01-10  Andy Buckley  <andy@insectnation.org>
+
+	* Changed autobooking plot codes to use zero-padding (gets the
+	order right in JAS, file browser, ROOT etc.). Also changed the
+	'ds' part to 'd' for consistency. HepData's AIDA output has been
+	correspondingly updated, as have the bundled data files.
+
+2008-01-04  Andy Buckley  <andy@insectnation.org>
+
+	* Tidied up JetShape projection a bit, including making the
+	constructor params const references. This seems to have sorted the
+	runtime segfault in the CDF_2005 analysis.
+
+	* Added caching of the analysis bin edges from the AIDA file -
+	each analysis object will now only read its reference file once,
+	which massively speeds up the rivetgun startup time for analyses
+	with large numbhers of autobooked histos (e.g. the
+	DELPHI_1996_S3430090 analysis).
+
+2008-01-02  Andy Buckley  <andy@insectnation.org>
+
+	* CDF_2001_S4751469 now uses the LossyFinalState projection, with
+	an 8% loss rate.
+
+	* Added LossyFinalState and HadronicFinalState, and fixed a
+	"polarity" bug in the charged final state projection (it was
+	keeping only the *uncharged* particles).
+
+	* Now using isatty(1) to determine whether or not color escapes
+	can be used. Also removed --color argument, since it can't have an
+	effect (TCLAP doesn't do position-based flag toggling).
+
+	* Made Python extension build optional (and disabled by default).
+
+2008-01-01  Andy Buckley  <andy@insectnation.org>
+
+	* Removed some unwanted DEBUG statements, and lowered the level of
+	some infrastructure DEBUGs to TRACE level.
+
+	* Added bash color escapes to the logger system.
+
+2007-12-21  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/LWH/ManagedObject.h: Fixed infinite loop in
+	encodeForXML cf. ticket #135.
+
+2007-12-20  Andy Buckley  <andy@insectnation.org>
+
+	* Removed HepPID, HepPDT and Boost dependencies.
+
+	* Fixed XML entity encoding in LWH. Updated CDF_2007_S7057202
+	analysis to not do its own XML encoding of titles.
+
+2007-12-19  Andy Buckley  <andy@insectnation.org>
+
+	* Changed units header to set GeV = 1 (HepMC convention) and using
+	units in CDF UE analysis.
+
+2007-12-15  Andy Buckley  <andy@insectnation.org>
+
+	* Introduced analysis metadata methods for all analyses (and made
+	them part of the Analysis interface).
+
+2007-12-11  Andy Buckley  <andy@insectnation.org>
+
+	* Added JetAlg base projection for TrackJet, FastJet etc.
+
+2007-12-06  Andy Buckley  <andy@insectnation.org>
+
+	* Added checking for Boost library, and the standard Boost test
+	program for shared_ptr.
+
+	* Got basic Python interface running - required some tweaking
+	since Python and Rivet's uses of dlopen collide (another
+	RTLD_GLOBAL issue - see
+	http://muttley.hates-software.com/2006/01/25/c37456e6.html )
+
+2007-12-05  Andy Buckley  <andy@insectnation.org>
+
+	* Replaced all use of KtJets projection with FastJets
+	projection. KtJets projection disabled but left undeleted for
+	now. CLHEP and KtJet libraries removed from configure searches and
+	Makefile flags.
+
+2007-12-04  Andy Buckley  <andy@insectnation.org>
+
+	* Param file loading now falls back to the share/RivetGun
+	directory if a local file can't be found and the provided name has
+	no directory separators in it.
+
+	* Converted TrackJet projection to update the jet centroid with
+	each particle added, using pT weighting in the eta and phi
+	averaging.
+
+2007-12-03  Andy Buckley  <andy@insectnation.org>
+
+	* Merged all command line handling functions into one large parse
+	function, since only one executable now needs them. This removes a
+	few awkward memory leaks.
+
+	* Removed rivet executable - HepMC file reading functionality will
+	move into rivetgun.
+
+	* Now using HepMC IO_GenEvent format (IO_Ascii and
+	IO_ExtendedAscii are deprecated). Now requires HepMC >= 2.3.0.
+
+	* Added forward declarations of GSL diagonalisation routines,
+	eliminating need for GSL headers to be installed on build machine.
+
+2007-11-27  Andy Buckley  <andy@insectnation.org>
+
+	* Removed charge differentiation from Multiplicity projection (use
+	CFS proj) and updated ExampleAnalysis to produce more useful numbers.
+
+	* Introduced binreloc for runtime path determination.
+
+	* Fixed several bugs in FinalState, ChargedFinalState, TrackJet
+	and Field analysis.
+
+	* Completed move to new analysis naming scheme.
+
+2007-11-26  Andy Buckley  <andy@insectnation.org>
+
+	* Removed conditional HAVE_FASTJET bits: FastJet is now compulsory.
+
+	* Merging appropriate RivetGun parts into Rivet. RivetGun currently broken.
+
+2007-11-23  Andy Buckley  <andy@insectnation.org>
+
+	* Renaming analyses to Spires-ID scheme: currently of form
+	S<SpiresID>, to become <Expt>_<YYYY>_<SpiresID>.
+
+2007-11-20  Andy Buckley  <andy@insectnation.org>
+
+	* Merged replacement vectors, matrices and boosts into trunk.
+
+2007-11-15  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Analysis.cc, include/Rivet/Analysis.hh: Introduced normalize
+	function. See ticket #126.
+
+2007-10-31  Andy Buckley  <andy@insectnation.org>
+
+ 	* Tagging as 1.0b2 for HERA-LHC meeting.
+
+
+2007-10-25  Andy Buckley  <andy@insectnation.org>
+
+	* Added AxesDefinition base interface to Sphericity and Thrust,
+	used by Hemispheres.
+
+	* Exposed BinaryCut class, improved its interface and fixed a few
+	bugs. It's now used by VetoedFinalState for momentum cuts.
+
+	* Removed extra output from autobooking AIDA reader.
+
+	* Added automatic DPS booking.
+
+2007-10-12  Andy Buckley  <andy@insectnation.org>
+
+	* Improved a few features of the build system
+
+2007-10-09  James Monk
+
+	* Fixed dylib dlopen on Mac OS X.
+
+2007-10-05  Andy Buckley  <andy@insectnation.org>
+
+	* Added new reference files.
+
+
+2007-10-03  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed bug in configure.ac which led to explicit CXX setting
+	being ignored.
+
+	* Including Logging.hh in Projection.hh, hence new transitive
+	dependency on Logging.hh being installed. Since this is the normal
+	behaviour, I don't think this is a problem.
+
+	* Fixed segfaulting bug due to use of addProjection() in
+	locally-scoped contained projections. This isn't a proper fix,
+	since the whole framework should be designed to avoid the
+	possibility of bugs like this.
+
+	* Added newly built HepML and AIDA reference files for current
+	analyses.
+
+2007-10-02  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed possible null-pointer dereference in Particle copy
+	constructor and copy assignment: this removes one of two blocker
+	segfaults, the other of which is related to the copy-assignment of
+	the TotalVisMomentum projection in the ExampleTree analysis.
+
+2007-10-01  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed portable path to Rivet share directory.
+
+2007-09-28  Andy Buckley  <andy@insectnation.org>
+
+	* Added more functionality to the rivet-config script: now has
+	libdir, includedir, cppflags, ldflags and ldlibs options.
+
+2007-09-26  Andy Buckley  <andy@insectnation.org>
+
+	* Added the analysis library closer function to the
+	AnalysisHandler finalize() method, and also moved the analysis
+	delete loop into AnalysisHandler::finalize() so as not to try
+	deleting objects whose libraries have already closed.
+
+	* Replaced the RivetPaths.cc.in method for portable paths with
+	something using -D defines - much simpler!
+
+2007-09-21  Lars Sonnenschein  <sonne@mail.cern.ch>
+
+	* Added HepEx0505013 analysis and JetShape projection (some fixes
+	by AB.)
+
+	* Added GetLorentzJets member function to D0 RunII cone jet projection
+
+2007-09-21  Andy Buckley  <andy@insectnation.org>
+
+	* Fixed lots if bugs and bad practice in HepEx0505013 (to make it
+	compile-able!)
+
+	* Downclassed the log messages from the Test analysis to DEBUG
+	level.
+
+	* Added isEmpty() method to final state projection.
+
+	* Added testing for empty final state and useful debug log
+	messages to sphericity projection.
+
+2007-09-20  Andy Buckley  <andy@insectnation.org>
+
+	* Added Hemispheres projection, which calculates event hemisphere
+	masses and broadenings.
+
+2007-09-19  Andy Buckley  <andy@insectnation.org>
+
+	* Added an explicit copy assignment operator to Particle: the
+	absence of one of these was responsible for the double-delete
+	error.
+
+	* Added a "fuzzy equals" utility function for float/double types
+	to Utils.hh (which already contains a variety of handy little
+	functions).
+
+	* Removed deprecated Beam::operator().
+
+	* Added ChargedFinalState projection and de-pointered the
+	contained FinalState projection in VetoedFinalState.
+
+2007-09-18  Andy Buckley  <andy@insectnation.org>
+
+	* Major bug fixes to the regularised version of the sphericity
+	projection (and hence the Parisi tensor projection). Don't trust
+	C & D param results from any previous version!
+
+	* Added extra methods to thrust and sphericity projections to get
+	the oblateness and the sphericity basis (currently returns dummy
+	axes since I can't yet work out how to get the similarity
+	transform eigenvectors from CLHEP)
+
+2007-09-14  Andy Buckley  <andy@insectnation.org>
+
+	* Merged in a branch of pluggable analysis mechanisms.
+
+2007-06-25  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Fixed some bugs in the root output for DataPoint.h
+
+2007-06-25  Andy Buckley  <andy@insectnation.org>
+
+	* include/Rivet/**/Makefile.am: No longer installing headers for
+	"internal" functionality.
+
+	* include/Rivet/Projections/*.hh: Removed the private restrictions
+	on copy-assignment operators.
+
+2007-06-18  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/LWH/Tree.h: Fixed minor bug in listObjectNames.
+
+	* include/LWH/DataPointSet.h: Fixed setCoordinate functions so
+	that they resize the vector of DataPoints if it initially was
+	empty.
+
+	* include/LWH/DataPoint.h: Added constructor taking a vector of
+	measuremts.
+
+2007-06-16  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/LWH/Tree.h: Implemented the listObjectNames and ls
+	functions.
+
+	* include/Rivet/Projections/FinalStateHCM.hh,
+	include/Rivet/Projections/VetoedFinalState.hh: removed
+	_theParticles and corresponding access function. Use base class
+	variable instead.
+
+	* include/Rivet/Projections/FinalState.hh: Made _theParticles
+	protected.
+
+2007-06-13  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Projections/FinalStateHCM.cc,
+	src/Projections/DISKinematics.cc: Equality checks using
+	GenParticle::operator== changed to check for pointer equality.
+
+	* include/Rivet/Analysis/HepEx9506012.hh: Uses modified DISLepton
+	projection.
+
+	* include/Rivet/Particle.hh: Added member function to check if a
+	GenParticle is associated.
+
+	* include/Rivet/Projections/DISLepton.hh,
+	src/Projections/DISLepton.cc: Fixed bug in projection. Introduced
+	final state projection to limit searching for scattered
+	lepton. Still not properly tested.
+
+2007-06-08  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/Rivet/Projections/PVertex.hh,
+	src/Projections/PVertex.cc: Fixed the projection to simply get the
+	signal_process_vertex from the GenEvent. This is the way it should
+	work. If the GenEvent does not have a signal_process_vertex
+	properly set up in this way, the problem is with the class that
+	fills the GenEvent.
+
+2007-06-06  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Merged TotalVisibleMomentum and CalMET
+	* Added pT ranges to Vetoed final state projection
+
+2007-05-27  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Fixed initialization of VetoedFinalStateProjection in ExampleTree
+
+2007-05-27  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/Rivet/Projections/KtJets.*: Make sure the KtEvent is
+	deleted properly.
+
+2007-05-26  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Added leptons to the ExampleTree.
+	* Added TotalVisibleEnergy projection, and added output to ExampleTree.
+
+2007-05-25  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Added a charged lepton projection
+
+2007-05-23  Andy Buckley  <andy@insectnation.org>
+
+	* src/Analysis/HepEx0409040.cc: Changed range of the histograms to
+	the "pi" range rather than the "128" range.
+
+	* src/Analysis/Analysis.cc: Fixed a bug in the AIDA path building.
+	Histogram auto-booking now works.
+
+2007-05-23  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Analysis/HepEx9506012.cc: Now uses the histogram booking
+	function in the Analysis class.
+
+2007-05-23  Jon Butterworth  <jmb@hep.ucl.ac.uk>
+
+	* Fixed bug in PRD65092002 (was failing on zero jets)
+
+2007-05-23  Andy Buckley  <andy@insectnation.org>
+
+	* Added (but haven't properly tested) a VetoedFinalState projection.
+
+	* Added normalize() method for AIDA 1D histograms.
+
+	* Added configure checking for Mac OS X version, and setting the
+	development target flag accordingly.
+
+2007-05-22  Andy Buckley  <andy@insectnation.org>
+
+	* Added an ostream method for AnalysisName enums.
+
+	* Converted Analyses and Projections to use projection lists, cuts
+	and beam constraints.
+
+	* Added beam pair combining to the BeamPair sets of Projections
+	by finding set meta-intersections.
+
+	* Added methods to Cuts, Analysis and Projection to make Cut
+	definition easier.
+
+	* Fixed default fall-through in cut handling switch statement and
+	now using -numeric_limits<double>::max() rather than min()
+
+	* Added more control of logging presentation via static flag
+	methods on Log.
+
+2007-05-13  Andy Buckley  <andy@insectnation.org>
+
+	* Added self-consistency checking mechanisms for Cuts and Beam
+
+	* Re-implemented the cut-handling part of RivetInfo as a Cuts class.
+
+	* Changed names of Analysis and Projection name() and handler()
+	methods to getName() and getHandler() to be more consistent with
+	the rest of the public method names in those classes.
+
+2007-05-02  Andy Buckley  <andy@insectnation.org>
+
+	* Added auto-booking of histogram bins from AIDA XML files. The
+	AIDA files are located via a C++ function which is generated from
+	RivetPaths.cc.in by running configure.
+
+
+2007-04-18  Andy Buckley  <andy@insectnation.org>
+
+	* Added a preliminary version of the Rick Field UE analysis, under
+	the name PRD65092002.
+
+2007-04-19  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Analysis/HepEx0409040.cc: The reason this did not compile
+	under gcc-4 is that some iterators into a vector were wrongly
+	assued to be pointers and were initialized to 0 and later compared
+	to 0. I've changed this to initialize to end() of the
+	corresponding vector and to compare with the same end() later.
+
+2007-04-05  Andy Buckley  <andy@insectnation.org>
+
+	* Lots of name changes in anticipation of the MCNet
+	school. RivetHandler is now AnalysisHandler (since that's what it
+	does!), BeamParticle has become ParticleName, and RivetInfo has
+	been split into Cut and BeamConstraint portions.
+
+	* Added BeamConstraint mechanism, which can be used to determine
+	if an analysis is compatible with the beams being used in the
+	generator. The ParticleName includes an "ANY" wildcard for this
+	purpose.
+
+2006-03-19  Andy Buckley  <andy@insectnation.org>
+
+	* Added "rivet" executable which can read in HepMC ASCII dump
+	files and apply Rivet analyses on the events.
+
+2007-02-24  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Projections/KtJets.cc: Added comparison of member variables
+	in compare() function
+
+	* all: Merged changes from polymorphic-projections branch into
+	trunk
+
+2007-02-17  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* all: projections and analysis handlers: All projections which
+	uses other projctions now has a pointer rather than a copy of
+	those projections to allow for polymorphism. The constructors has
+	also been changed to require the used projections themselves,
+	rather than the arguments needed to construct them.
+
+2007-02-17  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Projections/FinalState.cc,
+	include/Rivet/Projections/FinalState.icc (Rivet),
+	include/Rivet/Projections/FinalState.hh: Added cut in transverse
+	momentum on the particles to be included in the final state.
+
+2007-02-06  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* include/LWH/HistogramFactory.h: Fixed divide-by-zero in divide
+	function. Also fixed bug in error calculation in divide
+	function. Introduced checkBin function to make sure two histograms
+	are equal even if they have variable bin widths.
+
+	* include/LWH/Histogram1D.h: In normalize(double), do not do anything
+	if the sum of the bins are zero to avoid dividing by zero.
+
+2007-01-20  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* src/Test/testLWH.cc: Modified to output files using the Tree.
+
+	* configure.ac: Removed AC_CONFIG_AUX_DIR([include/Rivet/Config])
+	since the directory does not exist anymore.
+
+2006-12-21  Andy Buckley  <andy@insectnation.org>
+
+	* Rivet will now conditionally install the AIDA and LWH headers if
+	it can't find them when configure'ing.
+
+	* Started integrating Leif's LWH package to fulfill the AIDA
+	duties.
+
+	* Replaced multitude of CLHEP wrapper headers with a single
+	RivetCLHEP.h header.
+
+2006-11-20  Andy Buckley  <andy@insectnation.org>
+
+	* Introduced log4cpp logging.
+
+	* Added analysis enum, which can be used as input to an analysis
+	factory by Rivet users.
+
+2006-11-02  Andy Buckley  <andy@insectnation.org>
+
+	* Yet more, almost pointless, administrative moving around of
+	things with the intention of making the structure a bit
+	better-defined:
+
+	* The RivetInfo and RivetHandler classes have been
+	moved from src/Analysis into src as they are really the main Rivet
+	interface classes. The Rivet.h header has also been moved into the
+	"header root".
+
+	* The build of a single shared library in lib has been disabled,
+	with the library being built instead in src.
+
+2006-10-14  Andy Buckley  <andy@insectnation.org>
+
+	* Introduced a minimal subset of the Sherpa math tools, such as
+	Vector{3,4}D, Matrix, etc. The intention is to eventually cut the
+	dependency on CLHEP.
+
+2006-07-28  Andy Buckley  <andy@insectnation.org>
+
+	* Moving things around: all sources now in directories under src
+
+2006-06-04  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* Analysis/Examples/HZ95108.*: Now uses CentralEtHCM. Also set GeV
+	units on the relevant histograms.
+
+	* Projections/CentralEtHCM.*: Making a special class just to get
+	out one number - the summed Et in the central rapidity bin - may
+	seem like an overkill. But in case some one else might nees it...
+
+2006-06-03  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* Analysis/Examples/HZ95108.*: Added the hz95108 energy flow
+	analysis from HZtool.
+
+	* Projections/DISLepton.*: Since many HERA measurements do not
+	care if we have electron or positron beam, it is now possible to
+	specify lepton or anti-lepton.
+
+	* Projections/Event.*: Added member and access function for the
+	weight of an event (taken from the GenEvent object.weights()[0].
+
+	* Analysis/RivetHandler.*: Now depends explicitly on the AIDA
+	interface. An AIDA analysis factory must be specified in the
+	constructor, where a tree and histogram factory is automatically
+	created. Added access functions to the relevant AIDA objects.
+
+	* Analysis/AnalysisBase.*: Added access to the RivetHandler and
+	its AIDA factories.
+
+2005-12-27  Leif Lönnblad  <Leif.Lonnblad@thep.lu.se>
+
+	* configure.ac: Added -I$THEPEGPATH/include to AM_CPPFLAGS.
+
+	* Config/Rivet.h: Added some std incudes and using std::
+	declaration.
+
+	* Analysis/RivetInfo.*: Fixed some bugs. The RivetInfo facility
+	now works, although it has not been thoroughly tested.
+
+	* Analysis/Examples/TestMultiplicity.*: Re-introduced
+	FinalStateHCM for testing purposes but commented it away again.
+
+	* .: Made a number of changes to implement handling of RivetInfo
+	objects.
+

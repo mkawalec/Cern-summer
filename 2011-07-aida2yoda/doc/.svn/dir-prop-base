@@ -1,0 +1,23 @@
+K 10
+svn:ignore
+V 172
+auto
+*.aux
+*.log
+*.toc
+*.dvi
+*.pdf
+*.ps
+*.bbl
+*.blg
+Makefile
+Makefile.in
+make-plots.html
+compare-histos.html
+rivetversion.sty
+analyses.tex
+analyses.html
+analyses.bib
+*.pyc
+
+END

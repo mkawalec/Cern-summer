@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-01" value="6.600000e+00" errorMinus="2.000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="4.000000e-01" value="1.030000e+01" errorMinus="4.000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.900000e-01" value="1.702000e+01" errorMinus="1.900000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y04" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y04" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d01-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.500000e+01" value="1.650000e+02" errorMinus="3.500000e+01"/>
+      <measurement errorPlus="3.900000e-01" value="2.124000e+01" errorMinus="3.900000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-01" value="3.200000e+00" errorMinus="3.000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="2.800000e-01" value="5.830000e+00" errorMinus="2.800000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Pi0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Pi0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d02-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.200000e-01" value="9.420000e+00" errorMinus="3.200000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-02" value="9.000000e-01" errorMinus="4.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="9.000000e-02" value="1.480000e+00" errorMinus="9.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.900000e-02" value="2.228000e+00" errorMinus="5.900000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y04" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y04" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d03-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.500000e+01" value="1.650000e+02" errorMinus="3.500000e+01"/>
+      <measurement errorPlus="1.900000e-01" value="2.820000e+00" errorMinus="1.900000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.000000e-02" value="9.100000e-01" errorMinus="5.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="7.000000e-02" value="1.480000e+00" errorMinus="7.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.600000e-02" value="2.049000e+00" errorMinus="2.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y04" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y04" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d04-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.500000e+01" value="1.650000e+02" errorMinus="3.500000e+01"/>
+      <measurement errorPlus="1.200000e-01" value="2.100000e+00" errorMinus="1.200000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-02" value="2.000000e-01" errorMinus="4.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="7.000000e-02" value="6.100000e-01" errorMinus="7.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d05-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="8.000000e-02" value="1.049000e+00" errorMinus="8.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta'(958) multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta'(958) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-02" value="3.000000e-02" errorMinus="1.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta'(958) multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta'(958) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="1.000000e-01" value="2.600000e-01" errorMinus="1.000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean eta'(958) multiplicity">
+    <annotation>
+      <item key="Title" value="mean eta'(958) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d06-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-02" value="1.520000e-01" errorMinus="2.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.900000e-02" value="1.940000e-01" errorMinus="1.900000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="3.000000e-02" value="1.700000e-01" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d07-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.600000e-02" value="1.750000e-01" errorMinus="1.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean D0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.200000e-02" value="4.460000e-01" errorMinus="3.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean D0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="7.000000e-02" value="4.500000e-01" errorMinus="7.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean D0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d08-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-02" value="4.540000e-01" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+s multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+s multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.400000e-02" value="6.300000e-02" errorMinus="1.400000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+s multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+s multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="2.000000e-01" value="4.500000e-01" errorMinus="2.000000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D+s multiplicity">
+    <annotation>
+      <item key="Title" value="mean D+s multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d09-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.100000e-02" value="1.310000e-01" errorMinus="2.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean B+, B0d multiplicity">
+    <annotation>
+      <item key="Title" value="mean B+, B0d multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d10-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d10-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.200000e-02" value="3.300000e-01" errorMinus="5.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean B+u multiplicity">
+    <annotation>
+      <item key="Title" value="mean B+u multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d11-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d11-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.000000e-03" value="1.780000e-01" errorMinus="6.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean B0s multiplicity">
+    <annotation>
+      <item key="Title" value="mean B0s multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d12-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d12-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.300000e-02" value="5.700000e-02" errorMinus="1.300000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f0(980) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f0(980) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.000000e-03" value="2.400000e-02" errorMinus="6.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f0(980) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f0(980) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="2.000000e-02" value="5.000000e-02" errorMinus="2.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f0(980) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f0(980) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d13-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.200000e-02" value="1.460000e-01" errorMinus="1.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean a0(980)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean a0(980)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d14-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d14-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.100000e-01" value="2.700000e-01" errorMinus="1.100000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean rho(770)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean rho(770)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-02" value="3.500000e-01" errorMinus="4.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean rho(770)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean rho(770)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="8.000000e-02" value="8.100000e-01" errorMinus="8.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean rho(770)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean rho(770)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d15-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="9.800000e-02" value="1.231000e+00" errorMinus="9.800000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean rho(770)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean rho(770)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d16-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d16-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.300000e-01" value="2.400000e+00" errorMinus="4.300000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean omega(782) multiplicity">
+    <annotation>
+      <item key="Title" value="mean omega(782) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d17-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d17-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="8.000000e-02" value="3.000000e-01" errorMinus="8.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean omega(782) multiplicity">
+    <annotation>
+      <item key="Title" value="mean omega(782) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d17-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d17-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.500000e-02" value="1.016000e+00" errorMinus="6.500000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-02" value="2.700000e-01" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="5.000000e-02" value="6.400000e-01" errorMinus="5.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d18-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.900000e-02" value="7.150000e-01" errorMinus="5.900000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-02" value="2.900000e-01" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="6.000000e-02" value="5.600000e-01" errorMinus="6.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K*(892)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K*(892)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d19-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.400000e-02" value="7.380000e-01" errorMinus="2.400000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean phi(1020) multiplicity">
+    <annotation>
+      <item key="Title" value="mean phi(1020) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-03" value="4.400000e-02" errorMinus="3.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean phi(1020) multiplicity">
+    <annotation>
+      <item key="Title" value="mean phi(1020) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="1.100000e-02" value="8.500000e-02" errorMinus="1.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean phi(1020) multiplicity">
+    <annotation>
+      <item key="Title" value="mean phi(1020) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d20-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.200000e-03" value="9.630000e-02" errorMinus="3.200000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*(2010)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*(2010)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.200000e-02" value="1.770000e-01" errorMinus="2.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*(2010)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*(2010)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="7.000000e-02" value="4.300000e-01" errorMinus="7.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*(2010)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*(2010)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d21-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.700000e-03" value="1.937000e-01" errorMinus="5.700000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d22-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*(2007)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*(2007)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d22-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d22-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.900000e-02" value="1.680000e-01" errorMinus="1.900000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d22-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*(2007)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*(2007)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d22-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d22-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="1.100000e-01" value="2.700000e-01" errorMinus="1.100000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d23-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*s(2112)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*s(2112)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d23-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d23-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.400000e-02" value="4.800000e-02" errorMinus="1.400000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d23-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean D*s(2112)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean D*s(2112)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d23-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d23-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.800000e-02" value="1.010000e-01" errorMinus="4.800000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d24-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean B* multiplicity">
+    <annotation>
+      <item key="Title" value="mean B* multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d24-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d24-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.600000e-02" value="2.880000e-01" errorMinus="2.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d25-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean J/psi(1S) multiplicity">
+    <annotation>
+      <item key="Title" value="mean J/psi(1S) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d25-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d25-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.000000e-05" value="5.000000e-04" errorMinus="5.000000e-05"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d25-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean J/psi(1S) multiplicity">
+    <annotation>
+      <item key="Title" value="mean J/psi(1S) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d25-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d25-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-04" value="5.200000e-03" errorMinus="4.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d26-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean psi(2S) multiplicity">
+    <annotation>
+      <item key="Title" value="mean psi(2S) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d26-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d26-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-04" value="2.300000e-03" errorMinus="4.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d27-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Upsilon(1S) multiplicity">
+    <annotation>
+      <item key="Title" value="mean Upsilon(1S) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d27-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d27-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="7.000000e-05" value="1.400000e-04" errorMinus="7.000000e-05"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d28-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f1(1285) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f1(1285) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d28-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d28-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.100000e-02" value="1.650000e-01" errorMinus="5.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d29-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f1(1420) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f1(1420) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d29-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d29-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.200000e-02" value="5.600000e-02" errorMinus="1.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d30-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean chi_c1(3510) multiplicity">
+    <annotation>
+      <item key="Title" value="mean chi_c1(3510) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d30-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d30-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.100000e-03" value="4.100000e-03" errorMinus="1.100000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d31-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f2(1270) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f2(1270) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-02" value="9.000000e-02" errorMinus="2.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d31-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f2(1270) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f2(1270) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="4.000000e-02" value="1.400000e-01" errorMinus="4.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d31-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f2(1270) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f2(1270) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d31-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-02" value="1.660000e-01" errorMinus="2.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d32-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean f2'(1525) multiplicity">
+    <annotation>
+      <item key="Title" value="mean f2'(1525) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d32-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d32-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.000000e-03" value="1.200000e-02" errorMinus="6.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d33-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K2*(1430)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean K2*(1430)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d33-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d33-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="3.000000e-02" value="9.000000e-02" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d34-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K2*(1430)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K2*(1430)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d34-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d34-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="6.000000e-02" value="1.200000e-01" errorMinus="6.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d34-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean K2*(1430)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean K2*(1430)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d34-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d34-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.200000e-02" value="8.400000e-02" errorMinus="2.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d35-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean B** multiplicity">
+    <annotation>
+      <item key="Title" value="mean B** multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d35-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d35-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.400000e-02" value="1.180000e-01" errorMinus="2.400000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d36-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Ds1+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Ds1+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d36-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d36-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.100000e-03" value="5.200000e-03" errorMinus="1.100000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d37-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Ds2+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Ds2+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d37-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d37-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.100000e-03" value="8.300000e-03" errorMinus="3.100000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d38-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean p multiplicity">
+    <annotation>
+      <item key="Title" value="mean p multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.600000e-02" value="2.530000e-01" errorMinus="1.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d38-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean p multiplicity">
+    <annotation>
+      <item key="Title" value="mean p multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="5.000000e-02" value="6.400000e-01" errorMinus="5.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d38-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean p multiplicity">
+    <annotation>
+      <item key="Title" value="mean p multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.200000e-02" value="1.050000e+00" errorMinus="3.200000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d38-x01-y04" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean p multiplicity">
+    <annotation>
+      <item key="Title" value="mean p multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y04" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d38-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.500000e+01" value="1.650000e+02" errorMinus="3.500000e+01"/>
+      <measurement errorPlus="1.800000e-01" value="1.410000e+00" errorMinus="1.800000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d39-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="7.000000e-03" value="8.000000e-02" errorMinus="7.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d39-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="1.000000e-02" value="2.050000e-01" errorMinus="1.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d39-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.500000e-03" value="3.915000e-01" errorMinus="6.500000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d39-x01-y04" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y04" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d39-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.500000e+01" value="1.650000e+02" errorMinus="3.500000e+01"/>
+      <measurement errorPlus="3.000000e-02" value="3.900000e-01" errorMinus="3.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d40-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d40-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d40-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="8.000000e-03" value="2.300000e-02" errorMinus="8.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d40-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d40-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d40-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.100000e-02" value="7.600000e-02" errorMinus="1.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d41-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d41-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d41-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-02" value="8.100000e-02" errorMinus="1.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d42-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d42-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d42-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.100000e-02" value="1.070000e-01" errorMinus="1.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d43-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma+- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma+- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d43-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d43-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="9.000000e-03" value="1.740000e-01" errorMinus="9.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d44-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Xi- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Xi- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="7.000000e-04" value="5.900000e-03" errorMinus="7.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d44-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Xi- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Xi- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="2.700000e-03" value="1.760000e-02" errorMinus="2.700000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d44-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Xi- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Xi- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d44-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-03" value="2.580000e-02" errorMinus="1.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d45-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Delta(1232)++ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Delta(1232)++ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d45-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d45-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-02" value="4.000000e-02" errorMinus="1.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d45-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Delta(1232)++ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Delta(1232)++ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d45-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d45-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.400000e-02" value="8.500000e-02" errorMinus="1.400000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d46-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-03" value="6.000000e-03" errorMinus="2.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d46-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="4.000000e-03" value="1.700000e-02" errorMinus="4.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d46-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d46-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.700000e-03" value="2.400000e-02" errorMinus="1.700000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d47-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-03" value="5.000000e-03" errorMinus="1.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d47-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="4.000000e-03" value="1.700000e-02" errorMinus="4.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d47-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d47-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.500000e-03" value="2.390000e-02" errorMinus="1.500000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d48-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-03" value="1.060000e-02" errorMinus="2.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d48-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="8.000000e-03" value="3.300000e-02" errorMinus="8.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d48-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma(1385)+- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma(1385)+- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d48-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.800000e-03" value="4.620000e-02" errorMinus="2.800000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d49-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Xi(1530)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Xi(1530)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d49-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d49-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="6.000000e-04" value="1.500000e-03" errorMinus="6.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d49-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Xi(1530)0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Xi(1530)0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d49-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d49-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.000000e-04" value="5.500000e-03" errorMinus="5.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d50-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Omega- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Omega- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-04" value="7.000000e-04" errorMinus="4.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d50-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Omega- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Omega- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="7.000000e-03" value="1.400000e-02" errorMinus="7.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d50-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Omega- multiplicity">
+    <annotation>
+      <item key="Title" value="mean Omega- multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d50-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.000000e-04" value="1.600000e-03" errorMinus="3.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d51-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda_c+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda_c+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="3.100000e-02" value="7.400000e-02" errorMinus="3.100000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d51-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda_c+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda_c+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="3.000000e+00" value="3.200000e+01" errorMinus="3.000000e+00"/>
+      <measurement errorPlus="5.000000e-02" value="1.100000e-01" errorMinus="5.000000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d51-x01-y03" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda_c+ multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda_c+ multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y03" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d51-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.700000e-02" value="7.800000e-02" errorMinus="1.700000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d52-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda_b0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda_b0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d52-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d52-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.600000e-02" value="3.100000e-02" errorMinus="1.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d53-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Sigma_c++, Sigma_c0 multiplicity">
+    <annotation>
+      <item key="Title" value="mean Sigma_c++, Sigma_c0 multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d53-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d53-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="7.000000e-03" value="1.400000e-02" errorMinus="7.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d54-x01-y01" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda(1520) multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda(1520) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d54-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d54-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="1.000000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.000000e-03" value="8.000000e-03" errorMinus="2.000000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d54-x01-y02" dimension="2"
+    path="/REF/PDG_HADRON_MULTIPLICITIES" title="mean Lambda(1520) multiplicity">
+    <annotation>
+      <item key="Title" value="mean Lambda(1520) multiplicity" sticky="true"/>
+      <item key="AidaPath" value="/REF/PDG_HADRON_MULTIPLICITIES/d54-x01-y02" sticky="true"/>
+      <item key="FullPath" value="/PDG_HADRON_MULTIPLICITIES.aida/REF/PDG_HADRON_MULTIPLICITIES/d54-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="2.700000e-03" value="2.220000e-02" errorMinus="2.700000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

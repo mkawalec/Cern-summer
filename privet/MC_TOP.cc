@@ -119,7 +119,7 @@ namespace Rivet {
       _h_W_mass->fill(mass(W), weight);
       _h_t_mass->fill(mass(t1), weight);
       _h_t_mass->fill(mass(t2), weight);
-      if (mass(W) > 70 && mass(W) < 90) {
+      if (mass(W) > 78 && mass(W) < 82) {
         getLog() << Log::INFO << "W found with mass " << W.mass() << endl;
         _h_t_mass_W_cut->fill(mass(t1), weight);
         _h_t_mass_W_cut->fill(mass(t2), weight);

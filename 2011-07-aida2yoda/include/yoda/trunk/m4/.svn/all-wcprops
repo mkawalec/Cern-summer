@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/cedar/!svn/ver/971/trunk/pub/autotools
+END
+pkgchecks.m4
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/cedar/!svn/ver/961/trunk/pub/autotools/pkgchecks.m4
+END
+cxx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/cedar/!svn/ver/954/trunk/pub/autotools/cxx.m4
+END
+ccpythia.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/cedar/!svn/ver/954/trunk/pub/autotools/ccpythia.m4
+END
+lcg.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/cedar/!svn/ver/967/trunk/pub/autotools/lcg.m4
+END
+osx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/cedar/!svn/ver/968/trunk/pub/autotools/osx.m4
+END
+swig.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/cedar/!svn/ver/888/trunk/pub/autotools/swig.m4
+END
+fortran.m4
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/cedar/!svn/ver/954/trunk/pub/autotools/fortran.m4
+END
+thepeg.m4
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/cedar/!svn/ver/954/trunk/pub/autotools/thepeg.m4
+END
+cernlib.m4
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/cedar/!svn/ver/957/trunk/pub/autotools/cernlib.m4
+END
+python.m4
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/cedar/!svn/ver/943/trunk/pub/autotools/python.m4
+END
+sherpa.m4
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/cedar/!svn/ver/926/trunk/pub/autotools/sherpa.m4
+END
+root.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/cedar/!svn/ver/954/trunk/pub/autotools/root.m4
+END
+gsl.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/cedar/!svn/ver/971/trunk/pub/autotools/gsl.m4
+END
+boost.m4
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/cedar/!svn/ver/888/trunk/pub/autotools/boost.m4
+END
+rivet.m4
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/cedar/!svn/ver/871/trunk/pub/autotools/rivet.m4
+END
+clhep.m4
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/cedar/!svn/ver/957/trunk/pub/autotools/clhep.m4
+END
+ccherwig.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/cedar/!svn/ver/938/trunk/pub/autotools/ccherwig.m4
+END
+binreloc.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/cedar/!svn/ver/897/trunk/pub/autotools/binreloc.m4
+END

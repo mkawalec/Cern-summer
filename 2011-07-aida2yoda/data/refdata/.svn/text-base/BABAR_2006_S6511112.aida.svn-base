@@ -1,0 +1,2166 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/BABAR_2006_S6511112/" title="SIG IN NB">
+    <annotation>
+      <item key="Title" value="SIG IN NB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/BABAR_2006_S6511112/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/BABAR_2006_S6511112.aida/REF/BABAR_2006_S6511112/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.3125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.01" value="0.01"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.3375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.01" value="0.01"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.3625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.01" value="0.01"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.3875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.01" value="0.01"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.02" value="0.0"
+        errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.01" value="0.02"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.4625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.02" value="0.01"
+        errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.02" value="0.03"
+        errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.5125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.03" value="0.05"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.5375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.03" value="0.1"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.5625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.03" value="0.12"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.5875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.05" value="0.17"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.05" value="0.19"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.6375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.06" value="0.24"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.35"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.07" value="0.62"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.7125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.09" value="0.72"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.7375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.09" value="0.98"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.7625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.11" value="0.96"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.7875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.31"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.8125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.11" value="1.33"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.8375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.12" value="1.44"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.8625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.12" value="1.35"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.8875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.11" value="1.09"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.9125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.08"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.9375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.1" value="0.91"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.9625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.1" value="1.14"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.9875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.1" value="1.01"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.19"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11" value="1.54"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.49"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11" value="1.48"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12" value="1.36"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.35"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12" value="1.45"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.17"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12" value="1.43"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.38"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.36"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12" value="1.44"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="1.4"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11" value="1.28"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.28"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.21"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11" value="1.38"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.1" errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.1" value="1.1" errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.08"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.92"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09" value="1.08"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.13"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.1" value="1.12"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.1" errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.93"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09" value="1.12"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09" value="0.87"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09" value="0.94"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.86"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09" value="0.75"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09" value="0.89"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09" value="0.91"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.08" value="0.75"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.08" value="0.91"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09" value="0.71"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.08" value="0.55"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.08" value="0.51"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.08" value="0.6"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.08" value="0.68"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07" value="0.7"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.07" value="0.45"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07" value="0.54"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.1" value="1.87"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="1.58"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07" value="0.52"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.07" value="0.51"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.55"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.07" value="0.51"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07" value="0.55"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.38"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.4"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.53"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.33"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.3"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.37"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.35"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.31"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.34"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.39"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.32"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.05" value="0.28"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.06" value="0.28"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.22"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.3"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.35"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.05" value="0.25"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.41"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06" value="0.26"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.16"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.18"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.05" value="0.24"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.29"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.05" value="0.13"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.21"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.17"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.04" value="0.15"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05" value="0.22"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.05" value="0.2"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.19"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.14"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0375" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.04" value="0.17"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.17"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.14"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.19"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.18"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1625" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.04" value="0.13"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.15"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.14"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.08"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.13"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2875" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.04" value="0.13"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.16"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.17"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.08"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.04"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4125" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.04" value="0.1"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.16"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.4625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.03" value="0.11"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.04" value="0.06"
+        errorMinus="0.04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/BABAR_2006_S6511112/" title="SIG IN NB">
+    <annotation>
+      <item key="Title" value="SIG IN NB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/BABAR_2006_S6511112/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/BABAR_2006_S6511112.aida/REF/BABAR_2006_S6511112/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.3125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.04" value="0.0"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.3375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.05" value="0.0"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.3625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.06" value="0.04"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.3875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.07" value="0.06"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.08" value="0.09"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.06" value="0.0"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.4625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.09" value="0.19"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.4875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.09" value="0.04"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.5125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.13" value="0.18"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.5375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.15" value="0.3"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.5625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.16" value="0.58"
+        errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.5875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.22" value="1.29"
+        errorMinus="0.22"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.28" value="2.1"
+        errorMinus="0.28"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.6375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.32" value="1.72"
+        errorMinus="0.32"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.35" value="2.88"
+        errorMinus="0.35"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.6875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.39" value="4.12"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.7125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.41" value="4.67"
+        errorMinus="0.41"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.7375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.45" value="5.42"
+        errorMinus="0.45"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.7625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.41" value="4.86"
+        errorMinus="0.41"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.7875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.43" value="4.65"
+        errorMinus="0.43"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.8125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.44" value="4.97"
+        errorMinus="0.44"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.8375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.44" value="5.65"
+        errorMinus="0.44"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.8625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.41" value="4.86"
+        errorMinus="0.41"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.8875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.39" value="4.37"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.9125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.38" value="4.05"
+        errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="1.9375" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.39" value="4.44"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.9625" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.38" value="4.48"
+        errorMinus="0.38"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000067"
+        value="1.9875" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.4" value="4.85"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.41" value="5.59"
+        errorMinus="0.41"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.4" value="5.15"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.42" value="6.12"
+        errorMinus="0.42"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.42" value="5.97"
+        errorMinus="0.42"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.43" value="6.44"
+        errorMinus="0.43"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.42" value="5.45"
+        errorMinus="0.42"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.41" value="5.92"
+        errorMinus="0.41"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.4" value="4.81"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.4" value="5.81"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.39" value="5.45"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.39" value="5.68"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.39" value="5.04"
+        errorMinus="0.39"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.36" value="5.1"
+        errorMinus="0.36"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.37" value="4.99"
+        errorMinus="0.37"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.37" value="5.01"
+        errorMinus="0.37"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.36" value="4.88"
+        errorMinus="0.36"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.37" value="5.86"
+        errorMinus="0.37"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.33" value="4.07"
+        errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.34" value="4.7"
+        errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.33" value="4.37"
+        errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.34" value="4.25"
+        errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.33" value="4.39"
+        errorMinus="0.33"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.31" value="3.85"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.31" value="4.13"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.31" value="3.92"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.31" value="3.49"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.31" value="3.74"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.3" value="3.41"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.3" value="3.72"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.29" value="2.94"
+        errorMinus="0.29"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.3" value="3.34"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.29" value="3.11"
+        errorMinus="0.29"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.29" value="3.43"
+        errorMinus="0.29"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.28" value="2.81"
+        errorMinus="0.28"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.27" value="3.12"
+        errorMinus="0.27"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.26" value="2.45"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.26" value="2.46"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.26" value="2.49"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.26" value="2.16"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.26" value="2.64"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.26" value="2.88"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.26" value="2.01"
+        errorMinus="0.26"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.24" value="2.17"
+        errorMinus="0.24"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.34" value="6.94"
+        errorMinus="0.34"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.31" value="5.48"
+        errorMinus="0.31"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.23" value="2.41"
+        errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.22" value="1.77"
+        errorMinus="0.22"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.21" value="2.01"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.2" value="1.63"
+        errorMinus="0.2"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.21" value="1.79"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.18" value="1.52"
+        errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.19" value="1.77"
+        errorMinus="0.19"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.19" value="1.54"
+        errorMinus="0.19"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.18" value="1.5"
+        errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.18" value="1.4"
+        errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.17" value="1.38"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.17" value="1.46"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.18" value="1.27"
+        errorMinus="0.18"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.17" value="1.14"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.17" value="1.35"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.17" value="1.06"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.16" value="1.07"
+        errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.15" value="0.87"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.15" value="0.7"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.16" value="0.7"
+        errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.16" value="1.18"
+        errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.15" value="0.74"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.17" value="1.65"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.15" value="0.74"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.13" value="0.51"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.14" value="0.6"
+        errorMinus="0.14"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.13" value="0.64"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.14" value="0.86"
+        errorMinus="0.14"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.13" value="0.73"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.13" value="0.53"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12" value="0.53"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.13" value="0.7"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.13" value="0.62"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12" value="0.5"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12" value="0.55"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12" value="0.47"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0375" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.12" value="0.42"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12" value="0.6"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="0.4"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="0.5"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="0.46"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1625" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.11" value="0.32"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.45"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.17"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="0.5"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.14"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2875" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.11" value="0.39"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.26"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.56"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11" value="0.26"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.3" errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4125" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.1" value="0.34"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.16"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.4625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.32"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1" value="0.17"
+        errorMinus="0.1"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/BABAR_2006_S6511112/" title="SIG IN NB">
+    <annotation>
+      <item key="Title" value="SIG IN NB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/BABAR_2006_S6511112/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/BABAR_2006_S6511112.aida/REF/BABAR_2006_S6511112/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0125" errorMinus="0.012499999999999956"/>
+      <measurement errorPlus="0.010111874208078343"
+        value="0.01" errorMinus="0.010111874208078343"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.010111874208078343"
+        value="0.01" errorMinus="0.010111874208078343"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.010111874208078343"
+        value="0.01" errorMinus="0.010111874208078343"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.020223748416156685"
+        value="0.02" errorMinus="0.020223748416156685"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.030149626863362672"
+        value="0.02" errorMinus="0.030149626863362672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.0417612260356422" value="0.08"
+        errorMinus="0.0417612260356422"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.030923292192132454"
+        value="0.05" errorMinus="0.030923292192132454"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.043863424398922615"
+        value="0.12" errorMinus="0.043863424398922615"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.03354101966249685" value="0.1"
+        errorMinus="0.03354101966249685"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.030149626863362672"
+        value="0.02" errorMinus="0.030149626863362672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06579513659838392"
+        value="0.18" errorMinus="0.06579513659838392"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05482928049865327"
+        value="0.15" errorMinus="0.05482928049865327"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.06776614198845911"
+        value="0.21" errorMinus="0.06776614198845911"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.05141984052872977"
+        value="0.08" errorMinus="0.05141984052872977"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07941190087134296"
+        value="0.25" errorMinus="0.07941190087134296"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09487360012142472"
+        value="0.34" errorMinus="0.09487360012142472"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09910726512218972"
+        value="0.39" errorMinus="0.09910726512218972"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09822932352408827"
+        value="0.38" errorMinus="0.09822932352408827"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.07557942841805566"
+        value="0.19" errorMinus="0.07557942841805566"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09651942809610922"
+        value="0.36" errorMinus="0.09651942809610922"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.08772684879784523"
+        value="0.24" errorMinus="0.08772684879784523"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0917877987534291" value="0.3"
+        errorMinus="0.0917877987534291"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.0932952303175248" value="0.32"
+        errorMinus="0.0932952303175248"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.08900000000000001"
+        value="0.26" errorMinus="0.08900000000000001"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0910617922072699" value="0.29"
+        errorMinus="0.0910617922072699"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11981652640600128"
+        value="0.44" errorMinus="0.11981652640600128"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12963892162464175"
+        value="0.55" errorMinus="0.12963892162464175"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.0993176721434811" value="0.28"
+        errorMinus="0.0993176721434811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12235297299207731"
+        value="0.47" errorMinus="0.12235297299207731"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0999612424892768" value="0.29"
+        errorMinus="0.0999612424892768"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12868954891520912"
+        value="0.54" errorMinus="0.12868954891520912"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.13572122162727537"
+        value="0.53" errorMinus="0.13572122162727537"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12410580163715151"
+        value="0.49" errorMinus="0.12410580163715151"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11092339699089639"
+        value="0.32" errorMinus="0.11092339699089639"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12905909499140306"
+        value="0.45" errorMinus="0.12905909499140306"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10680004681646915"
+        value="0.25" errorMinus="0.10680004681646915"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.15001333274079343"
+        value="0.68" errorMinus="0.15001333274079343"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="2.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.1181905241548577" value="0.42"
+        errorMinus="0.1181905241548577"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="2.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.13484806264830057"
+        value="0.52" errorMinus="0.13484806264830057"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1122541758688736" value="0.34"
+        errorMinus="0.1122541758688736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12751568530969043"
+        value="0.43" errorMinus="0.12751568530969043"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.15103724706177613"
+        value="0.69" errorMinus="0.15103724706177613"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.0875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.364307905486554" value="2.03"
+        errorMinus="0.364307905486554"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.23418155350069741"
+        value="1.14" errorMinus="0.23418155350069741"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.14446106741956466"
+        value="0.42" errorMinus="0.14446106741956466"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.15181897114655993"
+        value="0.62" errorMinus="0.15181897114655993"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12458832208517778"
+        value="0.39" errorMinus="0.12458832208517778"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.13840520221436767"
+        value="0.56" errorMinus="0.13840520221436767"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11436892060345766"
+        value="0.37" errorMinus="0.11436892060345766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11364858116140299"
+        value="0.36" errorMinus="0.11364858116140299"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.2875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.12868954891520912"
+        value="0.54" errorMinus="0.12868954891520912"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11899684869777015"
+        value="0.43" errorMinus="0.11899684869777015"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10218121158021176"
+        value="0.14" errorMinus="0.10218121158021176"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11510430052782564"
+        value="0.38" errorMinus="0.11510430052782564"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11585443452885177"
+        value="0.39" errorMinus="0.11585443452885177"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10320004844960104"
+        value="0.17" errorMinus="0.10320004844960104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12751568530969043"
+        value="0.43" errorMinus="0.12751568530969043"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.4625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.1122541758688736" value="0.34"
+        errorMinus="0.1122541758688736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.12529964086141668" value="0.4"
+        errorMinus="0.12529964086141668"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10905159329418347"
+        value="0.29" errorMinus="0.10905159329418347"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11101801655587258" value="0.1"
+        errorMinus="0.11101801655587258"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10320004844960104"
+        value="0.17" errorMinus="0.10320004844960104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.5875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09354277096601318"
+        value="0.17" errorMinus="0.09354277096601318"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.6125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09396275858019495"
+        value="0.18" errorMinus="0.09396275858019495"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.090448880590088" value="0.06"
+        errorMinus="0.090448880590088"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09693296652842107"
+        value="0.24" errorMinus="0.09693296652842107"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.6875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1565255570186543" value="0.67"
+        errorMinus="0.1565255570186543"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10965856099730655" value="0.3"
+        errorMinus="0.10965856099730655"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.7375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10965856099730655" value="0.3"
+        errorMinus="0.10965856099730655"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11326517558367179"
+        value="0.18" errorMinus="0.11326517558367179"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.7875" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.11436892060345766"
+        value="0.37" errorMinus="0.11436892060345766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09749999999999999"
+        value="0.25" errorMinus="0.09749999999999999"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8375" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.09440471386535738"
+        value="0.19" errorMinus="0.09440471386535738"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.8625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10530432089900206"
+        value="0.22" errorMinus="0.10530432089900206"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.8875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11942466244457214"
+        value="0.31" errorMinus="0.11942466244457214"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9125" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10484393163173537"
+        value="0.21" errorMinus="0.10484393163173537"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10271440989461995"
+        value="0.33" errorMinus="0.10271440989461995"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999956"
+        value="3.9625" errorMinus="0.012499999999999734"/>
+      <measurement errorPlus="0.10680004681646915"
+        value="0.25" errorMinus="0.10680004681646915"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="3.9875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0915" value="0.11"
+        errorMinus="0.0915"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09585927185202274"
+        value="0.22" errorMinus="0.09585927185202274"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0375" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.11401754250991379" value="0.2"
+        errorMinus="0.11401754250991379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.0625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10320004844960104"
+        value="0.17" errorMinus="0.10320004844960104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.0875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10283968105745954"
+        value="0.16" errorMinus="0.10283968105745954"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10358088626768938"
+        value="0.18" errorMinus="0.10358088626768938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.1375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11661903789690602" value="0.4"
+        errorMinus="0.11661903789690602"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1625" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.08597819491010497"
+        value="0.21" errorMinus="0.08597819491010497"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.1875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09178235124467012"
+        value="0.12" errorMinus="0.09178235124467012"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09749999999999999"
+        value="0.25" errorMinus="0.09749999999999999"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.0915" value="0.11"
+        errorMinus="0.0915"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.2625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.090448880590088" value="0.06"
+        errorMinus="0.090448880590088"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.2875" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.08544003745317531" value="0.2"
+        errorMinus="0.08544003745317531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3125" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09354277096601318"
+        value="0.17" errorMinus="0.09354277096601318"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.1122541758688736" value="0.34"
+        errorMinus="0.1122541758688736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.3625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11401754250991379" value="0.2"
+        errorMinus="0.11401754250991379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.3875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10017983829094555"
+        value="0.04" errorMinus="0.10017983829094555"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4125" errorMinus="0.01249999999999929"/>
+      <measurement errorPlus="0.10218121158021176"
+        value="0.14" errorMinus="0.10218121158021176"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4375" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.09693296652842107"
+        value="0.24" errorMinus="0.09693296652842107"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999734"
+        value="4.4625" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.11942466244457214"
+        value="0.31" errorMinus="0.11942466244457214"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.012500000000000178"
+        value="4.4875" errorMinus="0.012500000000000178"/>
+      <measurement errorPlus="0.10733592129385205"
+        value="0.26" errorMinus="0.10733592129385205"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 47
+testYAML
+Makefile
+Makefile.in
+test
+.deps
+.libs
+
+END

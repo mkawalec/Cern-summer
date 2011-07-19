@@ -1,0 +1,168 @@
+#! /usr/bin/env python
+# -*- python -*-
+
+version = "0.2.0"
+usage = """Submit a rivet job to the Grid, using the gLite tools.
+%prog --vo=<VO> [options] <rgargs>
+
+EXAMPLES:
+  * %prog --vo pheno -- -g Pythia6:418 -P tevatron1800.params -a EXAMPLE
+
+TODO:
+  * Do the Grid proxy initialisation (using the Python getpasswd module)
+  * Allow control over the submission system
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+import os, logging
+import glob, tempfile, commands
+
+## Parse command line options
+from optparse import OptionParser, OptionGroup
+parser = OptionParser(usage=usage, version="%prog "+version)
+#parser.add_option("-n", "--number", dest="MAXEVTNUM", type=int,
+#                  default=None, metavar="NUM",
+#                  help="max number of events to read.")
+#parser.add_option("-a", "--analysis", dest="ANALYSES", action="append",
+#                  default=[], metavar="ANA",
+#                  help="add an analysis to the processing list.")
+parser.add_option("--vo", dest="VO", default=None,
+                  help="specify the virtual organisation to run under")
+parser.add_option("-m", "--machine", dest="MACHINE",
+                  choices=["32","64"], default="32",
+                  help="specify the target machine architecture - either 32 (default) or 64 bit")
+parser.add_option("-u", "--url", dest="ARCHIVE_URL",
+                  default="http://www.hep.ucl.ac.uk/~jmonk/Rivet/",
+                  help="specify the base URL from which to fetch the RivetGrid and Genser packages")
+parser.add_option("-j", "--jobname", dest="JOB_NAME", default="Rivet",
+                  help="specify the job name (affects the names of the output log and histo files)")
+parser.add_option("--dry-run", dest="DRY_RUN", action="store_true", default=False,
+                  help="do everything but actually submit the job")
+verbgroup = OptionGroup(parser, "Verbosity control")
+verbgroup.add_option("-v", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                     default=logging.INFO, help="print debug (very verbose) messages")
+verbgroup.add_option("-q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                     default=logging.INFO, help="be very quiet")
+parser.add_option_group(verbgroup)
+opts, args = parser.parse_args()
+logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+## Check VO specification
+if opts.VO is None:
+    logging.error("VO must be specified with --vo")
+    sys.exit(1)
+
+
+## Check download location
+RIVETGRID_URL = os.path.join(opts.ARCHIVE_URL, "RivetGrid%s.tar.gz" % opts.MACHINE)
+GENS_URL = os.path.join(opts.ARCHIVE_URL, "Genser%s.tar.gz" % opts.MACHINE)
+logging.info("Using Rivet libs archive from " + RIVETGRID_URL)
+logging.info("Using generator libs archive from " + GENS_URL)
+
+
+## Compress rg args
+RG_ARGS = " ".join(args)
+if len(RG_ARGS) == 0:
+    logging.error("No rivet argument string supplied. This job won't do anything.")
+    while 1:
+        cont = raw_input("Are you sure you want to continue? [yN] ")
+        if cont == "" or cont.upper() == "N":
+            logging.critical("Exiting without submitting to Grid...")
+            sys.exit(0)
+        elif cont.upper() == "Y":
+            logging.critical("Continuing with Grid submission...")
+            break
+        else:
+            logging.critical("Invalid response: '%s'" % cont)
+
+logging.info("Rivet will be run as: 'rivetgun " + RG_ARGS + "'")
+
+
+## Make batch script file
+sh = tempfile.NamedTemporaryFile(prefix="rivetgrid_", suffix=".sh")
+shstr = """#! /usr/bin/env bash
+OUT=%(jname)s.out
+AIDA=%(jname)s.aida
+SANDBOXDIR=$PWD
+WORKDIR=/tmp/Rivet/job$$
+mkdir -p $WORKDIR
+cd $WORKDIR
+
+echo "Rivet running on host `hostname`" >> $OUT
+echo "Started at `date`" >> $OUT
+uname -a >> $OUT
+echo "Working directory: $PWD" >> $OUT
+wget %(rgurl)s -O- | tar -zx
+wget %(gensurl)s -O- | tar -zx
+echo "Contents:" >> $OUT
+ls >> $OUT
+
+export LD_LIBRARY_PATH="$WORKDIR/RivetGrid/lib:$LD_LIBRARY_PATH"
+export LHAPATH="$WORKDIR/RivetGrid/share/lhapdf/PDFsets"
+export AGILE_GEN_PATH="$WORKDIR/Genser"
+export PATH="$WORKDIR/RivetGrid/bin:$PATH"
+
+rivetgun %(rgargs)s >> $OUT
+echo Finished at `date` >> $OUT
+
+ls >> $OUT
+ls -lh $WORKDIR/RivetGrid/bin >> $OUT
+mv $WORKDIR/$OUT $SANDBOXDIR/
+mv $WORKDIR/$AIDA $SANDBOXDIR/
+cd $SANDBOXDIR
+rm -r $WORKDIR""" % {
+    "jname" : opts.JOB_NAME,
+    "rgurl" : RIVETGRID_URL,
+    "gensurl" : GENS_URL,
+    "rgargs" : RG_ARGS
+    }
+sh.write(shstr)
+logging.debug("\nScript file:\n----------------\n" + shstr + "\n----------------")
+
+
+## Make JDL file
+jdlstr = \
+"""Executable = "%(shfile)s";
+StdOutput = "%(jname)s.stdout";
+StdError  = "%(jname)s.stderr";
+InputSandbox = {"%(shpath)s"};
+OutputSandbox = {"%(jname)s.stdout","%(jname)s.stderr", "%(jname)s.out", "%(jname)s.aida"};
+VirtualOrganisation = "%(voname)s";
+Requirements = other.GlueCEUniqueID == "ce01.dur.scotgrid.ac.uk:2119/jobmanager-lcgpbs-q3d";""" % \
+    {
+    "shfile" : os.path.basename(sh.name),
+    "shpath" : sh.name,
+    "jname" : opts.JOB_NAME,
+    "voname" : opts.VO
+    }
+jdl = tempfile.NamedTemporaryFile(prefix="rivetgrid_", suffix=".jdl")
+jdl.write(jdlstr)
+logging.debug("\nJDL file:\n----------------\n" + jdlstr + "\n----------------")
+
+
+## Submit job
+logging.info("Submitting Rivet job to the grid...")
+subcmd = "glite-wms-job-submit -a -o %(j)s.jid %(jf)s" % { 'j' : opts.JOB_NAME, 'jf' : jdl.name }
+logging.debug("Submitting with command '%s'" % subcmd)
+if not opts.DRY_RUN:
+    st, out = commands.getstatusoutput(subcmd)
+    if st == 0:
+        logging.info("Submission successful")
+        logging.debug("Submission output:\n" + out)
+    else:
+        logging.error("Submission failed:\n" + out)
+        sys.exit(2)
+else:
+    logging.debug("This is dry-run mode: the job was not actually submitted!")
+
+
+## Suggest how to monitor and retrieve the job
+logging.info("")
+logging.info("Run 'glite-wms-job-status -i %s.jid' for status" % opts.JOB_NAME)
+logging.info("Run 'glite-wms-job-output -i %s.jid [--dir /path/to/jobarea]'" % opts.JOB_NAME
+             + " to retrieve output when complete")

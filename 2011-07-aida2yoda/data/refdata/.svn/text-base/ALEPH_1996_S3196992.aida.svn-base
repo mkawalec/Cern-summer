@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.01" errorPlus="1.0280077820717117" errorMinus="1.0280077820717117"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.77" errorPlus="0.7060453243241541" errorMinus="0.7060453243241541"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.96" errorPlus="0.6657326790837296" errorMinus="0.6657326790837296"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.85" errorPlus="0.5660388679233962" errorMinus="0.5660388679233962"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.64" errorPlus="0.32449961479175904" errorMinus="0.32449961479175904"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="0.27" errorPlus="0.223606797749979" errorMinus="0.223606797749979"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="5.84" errorPlus="1.6297545827516486" errorMinus="1.6297545827516486"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.82" errorPlus="1.0857716150277643" errorMinus="1.0857716150277643"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.63" errorPlus="0.8373768566183329" errorMinus="0.8373768566183329"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.43" errorPlus="0.6603029607687672" errorMinus="0.6603029607687672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.83" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.53" errorPlus="0.3124099870362662" errorMinus="0.3124099870362662"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="0.92" errorPlus="0.27730849247724093" errorMinus="0.27730849247724093"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="12.74" errorPlus="2.409336008115099" errorMinus="2.409336008115099"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.95" errorPlus="1.0499523798725352" errorMinus="1.0499523798725352"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.68" errorPlus="0.8091971329657563" errorMinus="0.8091971329657563"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.25" errorPlus="0.6580273550544841" errorMinus="0.6580273550544841"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.81" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.49" errorPlus="0.29832867780352595" errorMinus="0.29832867780352595"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="1.1" errorPlus="0.30463092423455634" errorMinus="0.30463092423455634"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="16.06" errorPlus="2.606338427756457" errorMinus="2.606338427756457"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.09" errorPlus="1.0499523798725352" errorMinus="1.0499523798725352"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.62" errorPlus="0.8015609770940699" errorMinus="0.8015609770940699"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.31" errorPlus="0.6640030120413613" errorMinus="0.6640030120413613"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.04" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.53" errorPlus="0.29832867780352595" errorMinus="0.29832867780352595"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="1.77" errorPlus="0.340147027033899" errorMinus="0.340147027033899"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="23.68" errorPlus="3.0492294108512072" errorMinus="3.0492294108512072"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.32" errorPlus="0.8989994438263019" errorMinus="0.8989994438263019"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.08" errorPlus="0.73824115301167" errorMinus="0.73824115301167"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="2.15" errorPlus="0.7300684899377592" errorMinus="0.7300684899377592"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.49" errorPlus="0.6425729530566938" errorMinus="0.6425729530566938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="4.72" errorPlus="0.567978872846517" errorMinus="0.567978872846517"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="15.57" errorPlus="1.3285330255586423" errorMinus="1.3285330255586423"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="97.32" errorPlus="7.408994533673243" errorMinus="7.408994533673243"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.62" errorPlus="0.3080584360149873" errorMinus="0.3080584360149873"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.01" errorPlus="0.30083217912982646" errorMinus="0.30083217912982646"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.08" errorPlus="0.29120439557122074" errorMinus="0.29120439557122074"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.7" errorPlus="0.24515301344262524" errorMinus="0.24515301344262524"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="1.16" errorPlus="0.25" errorMinus="0.25"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="6.1" errorPlus="0.7038465741907111" errorMinus="0.7038465741907111"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="47.87" errorPlus="4.8582404222104945" errorMinus="4.8582404222104945"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.25" errorPlus="0.20223748416156687" errorMinus="0.20223748416156687"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.0" errorPlus="0.044721359549995794" errorMinus="0.044721359549995794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.09" errorPlus="0.194164878389476" errorMinus="0.194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.5" errorPlus="0.22360679774997896" errorMinus="0.22360679774997896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.56" errorPlus="0.18439088914585774" errorMinus="0.18439088914585774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="3.28" errorPlus="0.5536244214266564" errorMinus="0.5536244214266564"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="24.48" errorPlus="3.311223338888514" errorMinus="3.311223338888514"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="10E3*1/SIG(Q=HAD)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.84" errorPlus="0.5197114584074514" errorMinus="0.5197114584074514"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.36" errorPlus="0.35510561809129404" errorMinus="0.35510561809129404"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.91" errorPlus="0.5557877292636102" errorMinus="0.5557877292636102"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.78" errorPlus="0.31400636936215165" errorMinus="0.31400636936215165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="1.73" errorPlus="0.383275357934736" errorMinus="0.383275357934736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="3.5" errorPlus="0.6676076692189807" errorMinus="0.6676076692189807"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="21.54" errorPlus="3.3261539351028238" errorMinus="3.3261539351028238"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.01" errorPlus="1.0280077820717117" errorMinus="1.0280077820717117"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.77" errorPlus="0.7060453243241541" errorMinus="0.7060453243241541"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.96" errorPlus="0.6657326790837296" errorMinus="0.6657326790837296"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.85" errorPlus="0.5660388679233962" errorMinus="0.5660388679233962"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.64" errorPlus="0.32449961479175904" errorMinus="0.32449961479175904"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="0.27" errorPlus="0.223606797749979" errorMinus="0.223606797749979"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="5.84" errorPlus="1.6297545827516486" errorMinus="1.6297545827516486"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.82" errorPlus="1.0857716150277643" errorMinus="1.0857716150277643"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.63" errorPlus="0.8373768566183329" errorMinus="0.8373768566183329"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.43" errorPlus="0.6603029607687672" errorMinus="0.6603029607687672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.83" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.53" errorPlus="0.3124099870362662" errorMinus="0.3124099870362662"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="0.92" errorPlus="0.27730849247724093" errorMinus="0.27730849247724093"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="12.74" errorPlus="2.409336008115099" errorMinus="2.409336008115099"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.95" errorPlus="1.0499523798725352" errorMinus="1.0499523798725352"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.68" errorPlus="0.8091971329657563" errorMinus="0.8091971329657563"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.25" errorPlus="0.6580273550544841" errorMinus="0.6580273550544841"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.81" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.49" errorPlus="0.29832867780352595" errorMinus="0.29832867780352595"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="1.1" errorPlus="0.30463092423455634" errorMinus="0.30463092423455634"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="16.06" errorPlus="2.606338427756457" errorMinus="2.606338427756457"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.09" errorPlus="1.0499523798725352" errorMinus="1.0499523798725352"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.62" errorPlus="0.8015609770940699" errorMinus="0.8015609770940699"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="1.31" errorPlus="0.6640030120413613" errorMinus="0.6640030120413613"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="1.04" errorPlus="0.5103920062069938" errorMinus="0.5103920062069938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.53" errorPlus="0.29832867780352595" errorMinus="0.29832867780352595"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="1.77" errorPlus="0.340147027033899" errorMinus="0.340147027033899"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="23.68" errorPlus="3.0492294108512072" errorMinus="3.0492294108512072"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.32" errorPlus="0.8989994438263019" errorMinus="0.8989994438263019"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="2.08" errorPlus="0.73824115301167" errorMinus="0.73824115301167"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="2.15" errorPlus="0.7300684899377592" errorMinus="0.7300684899377592"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="3.49" errorPlus="0.6425729530566938" errorMinus="0.6425729530566938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="4.72" errorPlus="0.567978872846517" errorMinus="0.567978872846517"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="15.57" errorPlus="1.3285330255586423" errorMinus="1.3285330255586423"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="97.32" errorPlus="7.408994533673243" errorMinus="7.408994533673243"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.62" errorPlus="0.3080584360149873" errorMinus="0.3080584360149873"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.01" errorPlus="0.30083217912982646" errorMinus="0.30083217912982646"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.08" errorPlus="0.29120439557122074" errorMinus="0.29120439557122074"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.7" errorPlus="0.24515301344262524" errorMinus="0.24515301344262524"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="1.16" errorPlus="0.25" errorMinus="0.25"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="6.1" errorPlus="0.7038465741907111" errorMinus="0.7038465741907111"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="47.87" errorPlus="4.8582404222104945" errorMinus="4.8582404222104945"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.25" errorPlus="0.20223748416156687" errorMinus="0.20223748416156687"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.0" errorPlus="0.044721359549995794" errorMinus="0.044721359549995794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.09" errorPlus="0.194164878389476" errorMinus="0.194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.5" errorPlus="0.22360679774997896" errorMinus="0.22360679774997896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="0.56" errorPlus="0.18439088914585774" errorMinus="0.18439088914585774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="3.28" errorPlus="0.5536244214266564" errorMinus="0.5536244214266564"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="24.48" errorPlus="3.311223338888514" errorMinus="3.311223338888514"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2" path="/REF/ALEPH_1996_S3196992" title="(1000/SIG)*D(SIG)/D(Z)" >
+    <dataPoint>
+      <measurement value="0.725" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.84" errorPlus="0.5197114584074514" errorMinus="0.5197114584074514"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.775" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.36" errorPlus="0.35510561809129404" errorMinus="0.35510561809129404"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.825" errorPlus="0.025000000000000022" errorMinus="0.02499999999999991"/>
+      <measurement value="0.91" errorPlus="0.5557877292636102" errorMinus="0.5557877292636102"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.875" errorPlus="0.025000000000000022" errorMinus="0.025000000000000022"/>
+      <measurement value="0.78" errorPlus="0.31400636936215165" errorMinus="0.31400636936215165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.925" errorPlus="0.02499999999999991" errorMinus="0.025000000000000022"/>
+      <measurement value="1.73" errorPlus="0.383275357934736" errorMinus="0.383275357934736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.97" errorPlus="0.020000000000000018" errorMinus="0.020000000000000018"/>
+      <measurement value="3.5" errorPlus="0.6676076692189807" errorMinus="0.6676076692189807"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.995" errorPlus="0.0051" errorMinus="0.0050000000000000044"/>
+      <measurement value="21.54" errorPlus="3.3261539351028238" errorMinus="3.3261539351028238"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

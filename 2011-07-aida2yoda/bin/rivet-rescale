@@ -1,0 +1,345 @@
+#!/usr/bin/env python
+
+"""\
+%prog [-r <REFDATAPATH>] [-O <observable-file>] [-b <bindef> [-b ...]] <AIDAFILE> [<OUTFILE>]
+
+Rescale histos in observable-file of AIDAFILE to the area of the
+corresponding histos in REFDATAPATH. REFDATAPATH can either be
+a single AIDA-file or a directory containing AIDA-files. By default
+the standard Rivet reference files are used.
+
+Observable definitions of the form
+/CDF_2000_S4155203/d01-x01-y01  1.0
+can be used to specify an absolute normalisation (1.0, here) for a
+histogram rather than using the reference histo. If the --multiply
+switch is used, the ref histo area will be scaled by the given factor
+to give the target normalisation.
+
+You can also define bins to chop out in the observable-file in the
+same way as in chop_bins:
+/CDF_2000_S4155203/d01-x01-y01:0:35  1.0
+This will chop the bins with Z-pT > 35 GeV and obtain a rescaling factor
+from that restricted bin range: note that the output histograms will
+be rescaled but *unchopped*.
+
+Only one bin definition can be used for each histogram, so the last bindef
+specified for that histo path will be the one which is applied. The bindefs
+are constructed in order from those in the obsfile, and then those given on
+the command line with the -b flag, like this:
+    -b "/CDF_2000_S4155203/d01-x01-y01:5:135 2.0"
+
+
+Examples:
+
+ * %prog out.aida
+   This will return the histos in out.aida, scaled to match the overall
+   normalisations of the Rivet ref data.
+
+ * %prog -O observables.obs out.aida
+   This will return the histos in out.aida, scaled by the bin definitions
+   specified in observables.obs (and using the Rivet ref data again)
+
+ * %prog -r path/to/CDF_2000_S4155203.aida \
+     -b "/CDF_2000_S4155203/d01-x01-y01:2:5" out.aida
+   For this Z-boson pT-distribution, the normalisation to the provided ref
+   data file is only applied between 2 < x < 5 GeV.
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+import os, re, logging
+from lighthisto import Histo
+
+# try:
+#     from IPython.Shell import IPShellEmbed
+#     ipshell = IPShellEmbed([])
+# except:
+#     logging.info("Ipython shell not available.")
+
+
+## Try to load faster but non-standard cElementTree module
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    try:
+        import cElementTree as ET
+    except ImportError:
+        try:
+            import xml.etree.ElementTree as ET
+        except:
+            sys.stderr.write("Can't load the ElementTree XML parser: please install it!\n")
+            sys.exit(1)
+
+
+def getHistosFromAIDA(aidafile):
+    '''Get a dictionary of histograms indexed by name.'''
+    if not re.match(r'.*\.aida$', aidafile):
+        logging.debug("Error: input file '%s' is not an AIDA file" % aidafile)
+    aidafilepath = os.path.abspath(aidafile)
+    if not os.access(aidafilepath, os.R_OK):
+        logging.debug("Error: cannot read from %s" % aidafile)
+
+    histos = {}
+    tree = ET.parse(aidafilepath)
+    for dps in tree.findall("dataPointSet"):
+        ## Get this histogram's path name
+        dpsname = os.path.join(dps.get("path"), dps.get("name"))
+        ## Is it a data histo?
+        h = Histo.fromDPS(dps)
+        h.isdata = dpsname.upper().startswith("/REF")
+        if h.isdata:
+            dpsname = dpsname.replace("/REF", "")
+        histos[dpsname] = h
+    return histos
+
+
+def getRefHistos(refpaths, analyses):
+    """
+    Return dictionary of reference histos {name: histo}.
+    refpaths can either be a single file or a directory.
+    """
+    refhistos = {}
+    if refpaths:
+        for refpath in refpaths:
+            if os.path.isfile(refpath):
+                logging.debug("Reading ref histos from file %s" % refpath)
+                refhistos = getHistosFromAIDA(refpath)
+            elif os.path.isdir(refpath):
+                if opts.fast:
+                    logging.debug("Fast mode - not loading all data-files")
+                    for ana in analyses:
+                        refaida = os.path.join(refpath, ana+".aida")
+                        if os.path.isfile(refaida):
+                            temp = getHistosFromAIDA(refaida)
+                            for k, v in temp.iteritems():
+                                if not k in refhistos.keys():
+                                    refhistos[k] = v
+                else:
+                    for aida in os.listdir(refpath):
+                        if aida.endswith(".aida"):
+                            temp = getHistosFromAIDA(os.path.join(refpath, aida))
+                            for k, v in temp.iteritems():
+                                if not k in refhistos.keys():
+                                    refhistos[k] = v
+                logging.debug("Read ref histos from folder %s" % refpath)
+    return refhistos
+
+
+def readObservableFile(obsfile):
+    """ Read observables to normalise from file obsfile.
+        Return-values are a list of the histo-names to normalise and a
+        dictionary with name:newarea entries.
+    """
+    obslist = set()
+    obsnorms = {}
+    bindefs = {}
+
+    if obsfile is not None:
+        try:
+            f = open(obsfile, 'r')
+        except:
+            logging.error("Cannot open histo list file %s" % opts.OBSFILE)
+            sys.exit(2)
+        for line in f:
+            stripped = line.strip()
+            # Skip empty or commented lines
+            if len(stripped) == 0 or stripped.startswith("#"):
+                continue
+
+            # Split the line to find out whether newarea is given in obsfile
+            path, low, high, area = getBindef(line)
+            bindefs[path] = (low, high)
+            if area:
+                obsnorms[path] = float(area)
+
+            obslist.add(path)
+        f.close()
+    return obslist, obsnorms, bindefs
+
+
+def getBindef(line):
+    """ Try to read bin definitions (xlow, xhigh, newarea) from single
+        string.
+    """
+    area = None
+    # Try to read bin specs for chopping
+    splitline = line.strip().split()
+    try:
+        path, low, high = splitline[0].split(":")
+    except:
+        path = splitline[0].split(":")[0]
+        low  = ""
+        high = ""
+        logging.debug("No bin range supplied for %s" % path)
+    low = float(low) if low else None
+    high = float(high) if high else None
+
+    # Try to get area to normalise to
+    logging.debug("Trying to read area to rescale to from bindef...")
+    if len(splitline) == 2:
+        try:
+            area = float(splitline[1])
+            logging.debug("Success: %e" % area)
+        except:
+            logging.debug("Failed: %s" % splitline[1])
+            pass
+    return (path, low, high, area)
+
+
+
+if __name__ == "__main__":
+    from optparse import OptionParser, OptionGroup
+    parser = OptionParser(usage=__doc__)
+
+    parser.add_option("-O", "--obsfile", dest="OBSFILE", default=None,
+                      help="Specify a file with histograms (and bin ranges) that are to be normalised.")
+    parser.add_option("-b", "--bins", dest="BINRANGES", action="append", default=[],
+                      help="Specify a histogram and bin range that is to be used. The format is `AIDAPATH:start:stop'.")
+    parser.add_option("-r", "--refdir", dest="REFDIR", default=None,
+                      help="File of folder with reference histos")
+    parser.add_option("-a", dest="AIDA", default=True, action="store_true",
+                      help="Produce AIDA output rather than FLAT")
+    parser.add_option("-f", dest="AIDA", default=True, action="store_false",
+                      help="Produce FLAT output rather than AIDA")
+    parser.add_option("--multiply", default=False, action="store_true",
+                      help="Rescale histos using weight given as factor rather than new area")
+    parser.add_option("-i", "--in-place", dest="IN_PLACE", default=False, action="store_true",
+                      help="Overwrite input file rather than making input-rescaled.aida")
+    parser.add_option("--fast", default=False, action="store_true",
+                      help="Try loading only reference files from refpath that match analyses in input-file" )
+    verbgroup = OptionGroup(parser, "Verbosity control")
+    verbgroup.add_option("-v", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                         default=logging.INFO, help="print debug (very verbose) messages")
+    verbgroup.add_option("-q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                         default=logging.INFO, help="be very quiet")
+    opts, args = parser.parse_args()
+
+    ## Configure logging
+    logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+    ## Check number of args
+    if len(args) not in (1, 2):
+        print "Usage: %s" % __doc__.splitlines()[0]
+        sys.exit(1)
+
+    ## Get MC histos
+    histos = getHistosFromAIDA(args[0])
+
+    # Get unique analyses identifiers to speed up ref-data loading
+    analyses = set([obs.split("/")[1] for obs in histos.keys()])
+
+    # Read in reference histos to get reference areas to normalise to
+    refdirs = []
+    if opts.REFDIR:
+        refdirs.append(opts.REFDIR)
+    else:
+        import rivet
+        refdirs += rivet.getAnalysisRefPaths()
+    refhistos = getRefHistos(refdirs, analyses)
+    if len(refhistos) == 0 and not opts.multiply:
+        logging.warning("You haven't specified any reference histograms. You'd better know what you're doing!")
+
+    # Read in observables, if no bindefinitions are given in the file or the
+    # command line, all observables will be renormalised if possible to the
+    # corresponding refhisto area
+    obslist, obsnorms, bindefs = readObservableFile(opts.OBSFILE)
+    if opts.BINRANGES:
+        for b in opts.BINRANGES:
+            name = b.strip().split(":")[0]
+            path, low, high, area = getBindef(b)
+            obslist.add(name)
+            bindefs[name] = (low, high)
+            if area:
+                obsnorms[name] = area
+    if len(obslist) == 0 and not opts.BINRANGES:
+        logging.info("No bin-definitions given: all histos will be rescaled to match the data")
+        obslist = histos.keys()
+
+    ## Create output filename
+    base = args[0].split(".aida")[0]
+    if len(args) > 1:
+        outfile = args[1]
+    else:
+        if not opts.IN_PLACE:
+            base += "-rescaled"
+        if opts.AIDA:
+            outfile = base + ".aida"
+        else:
+            outfile = base + ".dat"
+
+    aidaheader = """<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+    """
+    # Open file for output
+    f = open(outfile, "w")
+    if opts.AIDA:
+        f.write(aidaheader)
+
+
+    # Iterate over all histos
+    for name, histo in histos.iteritems():
+        # Don't normalise all histos found
+        if name in obslist:
+            # Find out whether ref-histo is given
+            if name in refhistos.keys():
+                logging.debug("Rescaling to ref-histo for %s" % name)
+                tempref = refhistos[name]
+            else:
+                logging.debug("Not using refhisto for rescaling of %s" % name)
+                tempref = histos[name]
+
+            # Try to chop bins
+            if name in bindefs.keys():
+                logging.debug("Using bindefs for rescaling of %s" % name)
+                tempref = tempref.chop(bindefs[name])
+                tempold = histos[name].chop(bindefs[name])
+            else:
+                logging.debug("Not using bindefs for rescaling of %s" % name)
+                #tempref = refhistos[name]
+                tempold = histos[name]
+
+            # Get old and new histogram areas
+            oldarea = tempold.getArea()
+            if name in obsnorms.keys():
+                # Check if we want to scale histos by a factor
+                if opts.multiply:
+                    newarea = oldarea*obsnorms[name]
+                else:
+                    # Rescale to manually given new area
+                    newarea = obsnorms[name]
+            # Rescale this histo to ref-histo area
+            else:
+                newarea = tempref.getArea()
+
+            scalefactor = newarea/oldarea
+            if scalefactor != 1.0:
+                oldarea = histos[name].getArea()
+                newarea = histos[name].getArea() * scalefactor
+
+                # Scale histo
+                logging.info("Rescaling %s by factor %.3e (area %.3e -> %.3e)" % (name, scalefactor, oldarea, newarea))
+                renormed = histos[name].renormalise(newarea)
+
+                # Write to file
+                if opts.AIDA:
+                    f.write(renormed.asAIDA())
+                else:
+                    f.write(renormed.asFlat())
+                continue
+
+        ## Fallback to no rescaling if loop is not escaped early
+        if opts.AIDA:
+            f.write(histos[name].asAIDA())
+        else:
+            f.write(histos[name].asFlat())
+
+
+    if opts.AIDA:
+        f.write("</aida>")
+
+    logging.debug("Output written to %s" % outfile)

@@ -1,0 +1,19 @@
+// -*- C++ -*-
+#ifndef Rivet_Analysis_FHH
+#define Rivet_Analysis_FHH
+
+#include "Rivet/Cmp.fhh"
+//#include <boost/shared_ptr.hpp>
+
+namespace Rivet {
+
+  class Analysis;
+  
+  /// Smart (shared) pointer for handling projections.
+  //typedef boost::shared_ptr<Analysis> AnalysisPtr;
+  
+  typedef Analysis* AnalysisPtr;
+  
+}
+
+#endif

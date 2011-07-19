@@ -1,0 +1,20 @@
+Name: EXAMPLETREE
+Summary: Demonstrate filling a ROOT tree from a kT jets analysis
+Status: EXAMPLE
+Authors:
+ - Jon Butterworth <jmb@hep.ucl.ac.uk>
+RunInfo:
+  All event types will be accepted.
+NumEvents: 10000
+Description:
+  This analysis is a demonstration of how Rivet can be used to produce
+  ROOT data trees rather than Rivet's own histograms. We don't recommend
+  this, since analyses written this way will not be accepted for
+  inclusion into the Rivet library and hence will not contribute to
+  standard MC validation and tuning studies. However, it may be useful
+  for nascent private MC analyses if you are a ROOT fan.  Note that this
+  example analysis does some things such as accessing parton level
+  information, which are unphysical and also may be generator dependent.
+  You should not use this method in your own analyses if you expect the
+  results to be meaningfully comparable to data!
+PtCuts: [0]

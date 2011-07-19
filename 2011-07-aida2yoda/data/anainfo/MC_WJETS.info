@@ -1,0 +1,15 @@
+Name: MC_WJETS
+Summary: Monte Carlo validation observables for $W[e \, \nu]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $e \, \nu$ + jets analysis.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Available observables are W mass, pT of jets 1-4, jet multiplicity,
+  $\Delta\eta(W, \text{jet1})$, $\Delta R(\text{jet2}, \text{jet3})$, 
+  differential jet rates 0->1, 1->2, 2->3, 3->4, integrated 0--4 jet 
+  rates.

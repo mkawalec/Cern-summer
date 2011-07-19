@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="MULT(P=3)">
+    <annotation>
+      <item key="Title" value="MULT(P=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.48750000000000004"
+        value="0.5125" errorMinus="0.48749999999999993"/>
+      <measurement errorPlus="0.12369316876852982"
+        value="0.98" errorMinus="0.12369316876852982"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.15394804318340655"
+        value="1.21" errorMinus="0.15394804318340655"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="MULT(P=3)">
+    <annotation>
+      <item key="Title" value="MULT(P=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.0601664358259653"
+        value="1.962" errorMinus="0.0601664358259653"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="MULT(P=3)">
+    <annotation>
+      <item key="Title" value="MULT(P=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.27499999999999997"
+        value="0.325" errorMinus="0.275"/>
+      <measurement errorPlus="0.029" value="0.462"
+        errorMinus="0.029"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.06697014260101287"
+        value="0.712" errorMinus="0.06697014260101287"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="MULT(P=3)">
+    <annotation>
+      <item key="Title" value="MULT(P=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.27499999999999997"
+        value="0.325" errorMinus="0.275"/>
+      <measurement errorPlus="0.016" value="0.098"
+        errorMinus="0.016"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="MULT(P=3)">
+    <annotation>
+      <item key="Title" value="MULT(P=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.27499999999999997"
+        value="0.325" errorMinus="0.275"/>
+      <measurement errorPlus="0.041" value="0.163"
+        errorMinus="0.041"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.475" value="0.525"
+        errorMinus="0.47500000000000003"/>
+      <measurement errorPlus="0.043" value="0.17"
+        errorMinus="0.043"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="SIG(Q=F2)/SIG(Q=RHO0)">
+    <annotation>
+      <item key="Title" value="SIG(Q=F2)/SIG(Q=RHO0)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.475" value="0.525"
+        errorMinus="0.47500000000000003"/>
+      <measurement errorPlus="0.07" value="0.24"
+        errorMinus="0.07"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="SIG(Q=F2)/SIG(Q=F0)">
+    <annotation>
+      <item key="Title" value="SIG(Q=F2)/SIG(Q=F0)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d07-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.27499999999999997"
+        value="0.325" errorMinus="0.275"/>
+      <measurement errorPlus="0.5" value="1.7" errorMinus="0.5"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="(1/SIG(Q=HAD))*D(SIG(Q=K0))/D(X)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(Q=HAD))*D(SIG(Q=K0))/D(X)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d08-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.1375" value="0.774"
+        errorMinus="0.1375"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.499"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="NaN" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="(1/SIG(Q=HAD))*D(SIG(Q=K0))/D(LN(1/X))">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(Q=HAD))*D(SIG(Q=K0))/D(LN(1/X))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d09-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.3" value="0.3" errorMinus="0.3"/>
+      <measurement errorPlus="0.02" value="0.048"
+        errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="0.7"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="0.026" value="0.138"
+        errorMinus="0.026"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.9"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="0.025" value="0.165"
+        errorMinus="0.025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999987" value="1.1"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.027" value="0.27"
+        errorMinus="0.027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009"
+        value="1.2999999999999998" errorMinus="0.09999999999999987"/>
+      <measurement errorPlus="0.025" value="0.338"
+        errorMinus="0.025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="1.5"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.023" value="0.441"
+        errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999987"
+        value="1.7000000000000002" errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.526"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="1.9"
+        errorMinus="0.09999999999999987"/>
+      <measurement errorPlus="0.024" value="0.558"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="2.1"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.632"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="2.3"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.024" value="0.654"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="2.5"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.66"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964" value="2.7"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.025" value="0.679"
+        errorMinus="0.025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="2.9"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.62"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="3.1"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.584"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="3.3"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.024" value="0.583"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="3.5"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.024" value="0.531"
+        errorMinus="0.024"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964" value="3.7"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.023" value="0.468"
+        errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000009" value="3.9"
+        errorMinus="0.10000000000000009"/>
+      <measurement errorPlus="0.023" value="0.41"
+        errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000053" value="4.1"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.022" value="0.394"
+        errorMinus="0.022"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964"
+        value="4.300000000000001" errorMinus="0.10000000000000053"/>
+      <measurement errorPlus="0.02" value="0.298"
+        errorMinus="0.02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964" value="4.5"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.018" value="0.232"
+        errorMinus="0.018"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000053"
+        value="4.699999999999999" errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.013" value="0.176"
+        errorMinus="0.013"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964" value="4.9"
+        errorMinus="0.10000000000000053"/>
+      <measurement errorPlus="0.01" value="0.116"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10000000000000053" value="5.1"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.0070" value="0.077"
+        errorMinus="0.0070"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05000000000000071"
+        value="5.35" errorMinus="0.04999999999999982"/>
+      <measurement errorPlus="0.0060" value="0.045"
+        errorMinus="0.0060"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999964" value="5.5"
+        errorMinus="0.09999999999999964"/>
+      <measurement errorPlus="0.0040" value="0.032"
+        errorMinus="0.0040"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="1/SIG(C=HAD)*D(SIG)/D(X)">
+    <annotation>
+      <item key="Title" value="1/SIG(C=HAD)*D(SIG)/D(X)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d10-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d10-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.024999999999999994"
+        value="0.07500000000000001" errorMinus="0.02500000000000001"/>
+      <measurement errorPlus="0.2641968962724581" value="2.87"
+        errorMinus="0.2641968962724581"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.024999999999999994"
+        value="0.125" errorMinus="0.024999999999999994"/>
+      <measurement errorPlus="0.1835755975068582" value="1.86"
+        errorMinus="0.1835755975068582"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.025000000000000022"
+        value="0.175" errorMinus="0.024999999999999994"/>
+      <measurement errorPlus="0.15231546211727817"
+        value="1.28" errorMinus="0.15231546211727817"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.25" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="0.08544003745317531"
+        value="0.74" errorMinus="0.08544003745317531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.050000000000000044"
+        value="0.35" errorMinus="0.04999999999999999"/>
+      <measurement errorPlus="0.07280109889280519"
+        value="0.41" errorMinus="0.07280109889280519"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09999999999999998" value="0.5"
+        errorMinus="0.09999999999999998"/>
+      <measurement errorPlus="0.04123105625617661"
+        value="0.23" errorMinus="0.04123105625617661"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="1/SIG(C=HAD)*D(SIG)/D(X)">
+    <annotation>
+      <item key="Title" value="1/SIG(C=HAD)*D(SIG)/D(X)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d11-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d11-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.012499999999999997"
+        value="0.037500000000000006" errorMinus="0.012500000000000004"/>
+      <measurement errorPlus="2.247220505424423" value="10.5"
+        errorMinus="2.247220505424423"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.024999999999999994"
+        value="0.07500000000000001" errorMinus="0.02500000000000001"/>
+      <measurement errorPlus="1.0008995953640905" value="5.24"
+        errorMinus="1.0008995953640905"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="0.18439088914585774"
+        value="2.56" errorMinus="0.18439088914585774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07499999999999996"
+        value="0.275" errorMinus="0.07500000000000001"/>
+      <measurement errorPlus="0.07211102550927978"
+        value="0.93" errorMinus="0.07211102550927978"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.475"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.022360679774997897"
+        value="0.21" errorMinus="0.022360679774997897"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999996" value="0.8"
+        errorMinus="0.20000000000000007"/>
+      <measurement errorPlus="0.005099019513592785"
+        value="0.018" errorMinus="0.005099019513592785"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="1/SIG(C=HAD)*D(SIG)/D(X)">
+    <annotation>
+      <item key="Title" value="1/SIG(C=HAD)*D(SIG)/D(X)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d12-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d12-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.024999999999999994"
+        value="0.07500000000000001" errorMinus="0.02500000000000001"/>
+      <measurement errorPlus="0.1746424919657298" value="0.79"
+        errorMinus="0.1746424919657298"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="0.07280109889280519"
+        value="0.27" errorMinus="0.07280109889280519"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07499999999999996"
+        value="0.275" errorMinus="0.07500000000000001"/>
+      <measurement errorPlus="0.03162277660168379"
+        value="0.11" errorMinus="0.03162277660168379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.475"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.014317821063276353"
+        value="0.057" errorMinus="0.014317821063276353"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999996" value="0.8"
+        errorMinus="0.20000000000000007"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.0030" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2"
+    path="/REF/DELPHI_1994_S3021912/" title="1/SIG(C=HAD)*D(SIG)/D(X)">
+    <annotation>
+      <item key="Title" value="1/SIG(C=HAD)*D(SIG)/D(X)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/DELPHI_1994_S3021912/d13-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/DELPHI_1994_S3021912.aida/REF/DELPHI_1994_S3021912/d13-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.024999999999999994"
+        value="0.07500000000000001" errorMinus="0.02500000000000001"/>
+      <measurement errorPlus="0.3413209633175202" value="0.82"
+        errorMinus="0.3413209633175202"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04999999999999999"
+        value="0.15000000000000002" errorMinus="0.05000000000000002"/>
+      <measurement errorPlus="0.20615528128088303"
+        value="0.69" errorMinus="0.20615528128088303"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07499999999999996"
+        value="0.275" errorMinus="0.07500000000000001"/>
+      <measurement errorPlus="0.07810249675906655"
+        value="0.21" errorMinus="0.07810249675906655"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.475"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.0282842712474619" value="0.09"
+        errorMinus="0.0282842712474619"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19999999999999996" value="0.8"
+        errorMinus="0.20000000000000007"/>
+      <measurement errorPlus="0.00608276253029822"
+        value="0.019" errorMinus="0.00608276253029822"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

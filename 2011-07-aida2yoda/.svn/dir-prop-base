@@ -1,0 +1,36 @@
+K 13
+svn:externals
+V 54
+m4  http://svn.hepforge.org/cedar/trunk/pub/autotools
+
+K 10
+svn:ignore
+V 249
+*.tar.gz
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+config.status
+configure
+libtool
+Rivet-*
+config.log
+config.guess
+config.sub
+depcomp
+install-sh
+ltmain.sh
+missing
+lib
+compile
+py-compile
+a.out
+Doxyfile
+INSTALL
+*.fifo
+*.hepmc
+*.aida
+rivetenv.*sh
+
+END

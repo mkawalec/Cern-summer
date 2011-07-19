@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/LHCB_2010_S8758301" title="SIG IN MUB" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="294.0" errorPlus="126.26955294131677" errorMinus="126.26955294131677"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="649.0" errorPlus="263.9583300447251" errorMinus="263.9583300447251"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="618.0" errorPlus="133.16906547693424" errorMinus="133.16906547693424"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="401.0" errorPlus="73.78346698278686" errorMinus="73.78346698278686"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="232.0" errorPlus="42.24926034855522" errorMinus="42.24926034855522"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.1" errorPlus="0.09999999999999987" errorMinus="0.10000000000000009"/>
+      <measurement value="115.0" errorPlus="21.470910553583888" errorMinus="21.470910553583888"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.2999999999999998" errorPlus="0.10000000000000009" errorMinus="0.09999999999999987"/>
+      <measurement value="85.0" errorPlus="17.46424919657298" errorMinus="17.46424919657298"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.10000000000000009" errorMinus="0.10000000000000009"/>
+      <measurement value="46.0" errorPlus="10.099504938362077" errorMinus="10.099504938362077"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2" path="/REF/LHCB_2010_S8758301" title="SIG IN MUB" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="316.0" errorPlus="94.70480452437458" errorMinus="94.70480452437458"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="562.0" errorPlus="111.57508682497182" errorMinus="111.57508682497182"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="534.0" errorPlus="91.86947262284681" errorMinus="91.86947262284681"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="371.0" errorPlus="63.26926584053272" errorMinus="63.26926584053272"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="183.0" errorPlus="32.7566787083184" errorMinus="32.7566787083184"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.1" errorPlus="0.09999999999999987" errorMinus="0.10000000000000009"/>
+      <measurement value="136.0" errorPlus="24.779023386727733" errorMinus="24.779023386727733"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.2999999999999998" errorPlus="0.10000000000000009" errorMinus="0.09999999999999987"/>
+      <measurement value="70.0" errorPlus="13.74772708486752" errorMinus="13.74772708486752"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.10000000000000009" errorMinus="0.10000000000000009"/>
+      <measurement value="49.0" errorPlus="10.44030650891055" errorMinus="10.44030650891055"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2" path="/REF/LHCB_2010_S8758301" title="SIG IN MUB" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="196.0" errorPlus="66.9776081985614" errorMinus="66.9776081985614"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="571.0" errorPlus="124.03628501370073" errorMinus="124.03628501370073"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="477.0" errorPlus="82.46817568007674" errorMinus="82.46817568007674"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="323.0" errorPlus="55.51576352712804" errorMinus="55.51576352712804"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="201.0" errorPlus="37.16180835212409" errorMinus="37.16180835212409"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.1" errorPlus="0.09999999999999987" errorMinus="0.10000000000000009"/>
+      <measurement value="108.0" errorPlus="21.400934559032695" errorMinus="21.400934559032695"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.2999999999999998" errorPlus="0.10000000000000009" errorMinus="0.09999999999999987"/>
+      <measurement value="35.0" errorPlus="11.224972160321824" errorMinus="11.224972160321824"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.10000000000000009" errorMinus="0.10000000000000009"/>
+      <measurement value="23.0" errorPlus="7.483314773547883" errorMinus="7.483314773547883"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

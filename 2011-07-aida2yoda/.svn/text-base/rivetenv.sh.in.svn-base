@@ -1,0 +1,15 @@
+# These variables need to exist
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+datarootdir=@datarootdir@
+
+export PATH="$exec_prefix/bin:$PATH"
+export @LIBPATHVARNAME@="@libdir@:@HEPMCLIBPATH@:@FASTJETLIBPATH@:$@LIBPATHVARNAME@"
+export PYTHONPATH="@RIVET_PYTHONPATH@:$PYTHONPATH"
+export TEXMFHOME="@datadir@/Rivet/texmf:$TEXMFHOME"
+export HOMETEXMF="@datadir@/Rivet/texmf:$HOMETEXMF"
+export TEXMFCNF="@datadir@/Rivet/texmf/cnf:$TEXMFCNF"
+
+if (complete &> /dev/null); then
+    test -e "@datadir@/Rivet/rivet-completion" && source "@datadir@/Rivet/rivet-completion"
+fi

@@ -1,0 +1,244 @@
+#! /usr/bin/env python
+
+## Get output filename
+OUTNAME = "analyses"
+import sys
+if len(sys.argv) < 2:
+    pass
+    #print "Using output name '%s'" % OUTNAME
+else:
+    OUTNAME = sys.argv[1]
+
+
+## Get input paths to allow rivet module to be imported from the src dir
+import os, re, glob
+pybuild = os.path.abspath(os.path.join(os.getcwd(), "..", "pyext", "build"))
+dirs = []
+for d in os.listdir(pybuild):
+    if re.match(r"lib\..*-.*-%d\.%d" % (sys.version_info[0], sys.version_info[1]), d):
+        dirs.append(os.path.join(pybuild, d))
+sys.path = dirs + sys.path
+try:
+    os.environ["LD_LIBRARY_PATH"] = os.environ["LD_LIBRARY_PATH"] + ":" + \
+        os.path.abspath(os.path.join(os.getcwd(), "..", "src", ".libs"))
+except:
+    pass
+try:
+    os.environ["DYLD_LIBRARY_PATH"] = os.environ["DYLD_LIBRARY_PATH"] + ":" + \
+        os.path.abspath(os.path.join(os.getcwd(), "..", "src", ".libs"))
+except:
+    pass
+anadirs = glob.glob(os.path.join(os.getcwd(), "..", "src", "Analyses", ".libs"))
+#print anadirs
+os.environ["RIVET_ANALYSIS_PATH"] = ":".join(anadirs)
+
+
+## Change dlopen status to GLOBAL for Rivet lib
+try:
+    import ctypes
+    sys.setdlopenflags(sys.getdlopenflags() | ctypes.RTLD_GLOBAL)
+except:
+    import dl
+    sys.setdlopenflags(sys.getdlopenflags() | dl.RTLD_GLOBAL)
+import rivet
+
+
+def texify(s):
+    t = s \
+        .replace(r"&", r"\&") \
+        .replace(r"\\&", r"\&") \
+        .replace(r"#", r"\#") \
+        .replace(r"->", r"\ensuremath{\to}") \
+        .replace(r"pT", r"\pT") \
+        .replace(r"sqrt(s)", r"\ensuremath{\sqrt{s}}")
+        # .replace(r"_", r"\_") \
+        # .replace(r"^", r"") \
+    return t
+
+## Build analysis pages
+all_analyses = rivet.AnalysisLoader.analysisNames()
+pages = { "LEP":[], "Tevatron":[], "LHC":[], "SPS":[], "HERA":[], "RHIC":[], "Monte Carlo":[], "Example":[], "Misc.":[] }
+## Use list(...) ctor for 2.3 compatibility
+bib = {}
+for aname in sorted(list(all_analyses)):
+    #print "Handling analysis '%s'" % aname
+    page = ""
+    page += "\\typeout{Handling analysis %s}" % aname
+    safe_aname = aname.replace(r"_", r"\_")
+    ana = rivet.AnalysisLoader.getAnalysis(aname)
+    subtitle = "\\subsection{%s}\n" % safe_aname
+    if ana.bibKey() and ana.bibTeX():
+        bib[ana.bibKey()] = "%% (%s)\n" % aname + ana.bibTeX()
+        citetex = r"\cite{%s}" % ana.bibKey()
+        subtitle = "\\subsection[%s]{%s}\n" % (safe_aname, safe_aname + "\," + citetex)
+    page += subtitle
+    page += "\\textbf{%s}\\newline\n" %  ana.summary()
+    if ana.requiredBeams():
+        def pid_to_str(pid):
+            if pid == 11:
+                return "$e^-$"
+            elif pid == -11:
+                return "$e^+$"
+            elif pid == 2212:
+                return "$p$"
+            elif pid == -2212:
+                return "$\\bar{p}$"
+            elif pid == 10000:
+                return "$*$"
+            else:
+                return str(pid)
+        beamstrs = []
+        for bp in ana.requiredBeams():
+            beamstrs.append(pid_to_str(bp[0]) + "\\," + pid_to_str(bp[1]))
+        page += "\\textbf{Beams:} %s \\newline\n" % ", ".join(beamstrs)
+    if ana.requiredEnergies():
+        page += "\\textbf{Energies:} %s GeV \\newline\n" % \
+            ", ".join(["(%0.1f, %0.1f)" % (epair[0], epair[1]) for epair in ana.requiredEnergies()])
+    if ana.experiment():
+        page += "\\textbf{Experiment:} %s" % ana.experiment()
+        if ana.collider():
+            page += " (%s)" % ana.collider()
+        page += "\\newline\n"
+    if ana.spiresId():
+        spiresbase = "http://www.slac.stanford.edu/spires/find/hep/www?rawcmd=key"
+        page += "\\textbf{Spires ID:} \\href{%s+%s}{%s}\\newline\n" % \
+            (spiresbase, ana.spiresId(), ana.spiresId())
+    page += "\\textbf{Status:} %s\\newline\n" % ana.status()
+
+    if ana.authors():
+        page += "\\textbf{Authors:}\n \\penalty 100\n"
+        page += "\\begin{itemize}\n"
+        for a in ana.authors():
+            s = a
+            import re
+            if re.search(".* <.*@.*>", a):
+                name = " ".join(a.split()[:-1])
+                email = a.split()[-1].replace("<", "").replace(">", "")
+                #s = "\\href{mailto:%s}{%s}" % (email, name)
+                s = "%s $\\langle\,$\\href{mailto:%s}{%s}$\,\\rangle$;" % (name, email, email)
+            page += "  \\item %s\n" % s
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No authors listed}\\\\ \n"
+
+
+    if ana.references():
+        page += "\\textbf{References:}\n \\penalty 100\n"
+        page += "\\begin{itemize}\n"
+        for r in ana.references():
+            if r.startswith("arXiv:"):
+                code = r.split()[0].replace("arXiv:", "")
+                url = "http://arxiv.org/abs/" + code
+                page += "  \\item %s \\href{%s}{%s}\n" % ("arXiv:", url, code)
+            elif r.startswith("doi:"):
+                code = r.replace("doi:", "")
+                url = "http://dx.doi.org/" + code
+                page += "  \\item %s \\href{%s}{%s}\n" % ("DOI:", url, code)
+            else:
+                page += "  \\item %s\n" % r
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No references listed}\\\\ \n"
+
+
+    if ana.runInfo():
+        page += "\\textbf{Run details:}\n \\penalty 100\n"
+        infos = ana.runInfo().split(" * ")
+        #print ana.runInfo(), "->", infos
+        page += "\\begin{itemize}\n"
+        for i in infos:
+            if i:
+                page += "\n  \\item %s" % i
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No run details listed}\\\\ \n"
+
+
+    for para in ana.description().split("\n\n"):
+        page += "\n\\noindent " + para + "\n"
+
+
+    try:
+        import readplot
+        info = readplot.plotinfo(ana.name())
+        if info:
+            page += "\n\\vspace{1em}\n\\noindent\n"
+            page += "\\textbf{Histograms:}\n \\penalty 100\n"
+            page += "\\begin{itemize}\n"
+            for hpath in sorted(info.keys()):
+                htitle = info[hpath]["TITLE"]
+                page += "  \\item %s (\kbd{%s})\n" % (htitle, hpath.replace(r"_", r"\_"))
+            page += "\\end{itemize}\n"
+    except:
+        pass
+
+    page += "\n\\clearpage\n"
+
+    page = texify(page)
+
+
+    if "MC_" in ana.name().upper():
+        pages["Monte Carlo"].append(page)
+    elif "LEP" in ana.collider():
+        pages["LEP"].append(page)
+    elif "Tevatron" in ana.collider():
+        pages["Tevatron"].append(page)
+    elif "LHC" in ana.collider():
+        pages["LHC"].append(page)
+    elif "SPS" in ana.collider():
+        pages["SPS"].append(page)
+    elif "HERA" in ana.collider():
+        pages["HERA"].append(page)
+    elif "RHIC" in ana.collider():
+        pages["RHIC"].append(page)
+    elif "EXAMPLE" in ana.name().upper():
+        pages["Example"].append(page)
+    else:
+        pages["Misc."].append(page)
+
+
+## Write out LaTeX
+prefix = """\
+\\makeatletter
+\\renewcommand{\\d}[1]{\\ensuremath{\\mathrm{#1}}}
+\\let\\old@eta\\eta
+\\renewcommand{\\eta}{\\ensuremath{\\old@eta}\\xspace}
+\\let\\old@phi\\phi
+\\renewcommand{\\phi}{\\ensuremath{\\old@phi}\\xspace}
+\\providecommand{\\pT}{\\ensuremath{p_\\perp}\\xspace}
+\\providecommand{\\pTmin}{\\ensuremath{p_\\perp^\\text{min}}\\xspace}
+\\makeatother
+
+"""
+
+
+groups = {}
+for group, ps in pages.iteritems():
+    s = ""
+    #if len(ps):
+    s = "\\section{%s analyses}" % group + "\n\n\\clearpage\n\n".join(ps)
+    groups[group] = s
+
+body = \
+    groups["LEP"] + "\n\n" + \
+    groups["Tevatron"] + "\n\n" + \
+    groups["LHC"] + "\n\n" + \
+    groups["SPS"] + "\n\n" + \
+    groups["HERA"] + "\n\n" + \
+    groups["RHIC"] + "\n\n" + \
+    groups["Monte Carlo"] + "\n\n" + \
+    groups["Example"] + "\n\n" + \
+    groups["Misc."] + "\n\n"
+
+outstr = prefix + body
+
+## Write out to TeX and BibTeX files
+f = open("%s.tex" % OUTNAME, "w")
+f.write("%auto-ignore\n")
+f.write(outstr)
+f.close()
+f = open("%s.bib" % OUTNAME, "w")
+#
+bibentries = "\n\n".join(["%% %s\n%s" % (k,b) for k,b in bib.iteritems()])
+f.write(bibentries + "\n")
+f.close()

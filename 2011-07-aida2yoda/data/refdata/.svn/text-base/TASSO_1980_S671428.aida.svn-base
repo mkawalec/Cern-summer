@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S671428/" title="SIG(Q=K0)/SIG(Q=MU)">
+    <annotation>
+      <item key="Title" value="SIG(Q=K0)/SIG(Q=MU)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S671428/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S671428.aida/REF/TASSO_1980_S671428/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.8500000000000014"
+        value="30.75" errorMinus="0.8500000000000014"/>
+      <measurement errorPlus="1.5986244086714052" value="5.6"
+        errorMinus="1.5986244086714052"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S671428/" title="D(SIG)/DP(P=3) IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DP(P=3) IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S671428/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S671428.aida/REF/TASSO_1980_S671428/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15047923444781341"
+        value="0.08" errorMinus="0.15047923444781341"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.10905159329418347"
+        value="0.29" errorMinus="0.10905159329418347"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.0626418390534633" value="0.12"
+        errorMinus="0.0626418390534633"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.054230987451825" value="0.14"
+        errorMinus="0.054230987451825"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.03289756829919196"
+        value="0.09" errorMinus="0.03289756829919196"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.03132091952673165"
+        value="0.06" errorMinus="0.03132091952673165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="5.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.010530432089900205"
+        value="0.022" errorMinus="0.010530432089900205"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S671428/" title="(E(P=3)/(4*PI*P(P=3)**2))*D(SIG)/DP(P=3) IN NB/GEV**2">
+    <annotation>
+      <item key="Title"
+        value="(E(P=3)/(4*PI*P(P=3)**2))*D(SIG)/DP(P=3) IN NB/GEV**2" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S671428/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S671428.aida/REF/TASSO_1980_S671428/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.014135151219566064"
+        value="0.037" errorMinus="0.014135151219566064"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.004669049689176588"
+        value="0.0083" errorMinus="0.004669049689176588"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.0028757781555606822"
+        value="0.0066" errorMinus="0.0028757781555606822"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.5" errorMinus="0.5"/>
+      <measurement errorPlus="0.0010905159329418345"
+        value="0.0029" errorMinus="0.0010905159329418345"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.5" errorMinus="0.5"/>
+      <measurement errorPlus="6.356886030125127E-4"
+        value="0.0014" errorMinus="6.356886030125127E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="5.0" errorMinus="1.0"/>
+      <measurement errorPlus="1.8750000000000003E-4"
+        value="3.5E-4" errorMinus="1.8750000000000003E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x02-y01" dimension="2"
+    path="/REF/TASSO_1980_S671428/" title="(E(P=3)/(4*PI*P(P=3)**2))*D(SIG)/DP(P=3) IN NB/GEV**2">
+    <annotation>
+      <item key="Title"
+        value="(E(P=3)/(4*PI*P(P=3)**2))*D(SIG)/DP(P=3) IN NB/GEV**2" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S671428/d03-x02-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S671428.aida/REF/TASSO_1980_S671428/d03-x02-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.20500000000000007"
+        value="0.915" errorMinus="0.20500000000000007"/>
+      <measurement errorPlus="0.014135151219566064"
+        value="0.037" errorMinus="0.014135151219566064"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.22999999999999998"
+        value="1.35" errorMinus="0.22999999999999998"/>
+      <measurement errorPlus="0.004669049689176588"
+        value="0.0083" errorMinus="0.004669049689176588"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24" value="1.82"
+        errorMinus="0.24"/>
+      <measurement errorPlus="0.0028757781555606822"
+        value="0.0066" errorMinus="0.0028757781555606822"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.4900000000000002" value="2.55"
+        errorMinus="0.48999999999999977"/>
+      <measurement errorPlus="0.0010905159329418345"
+        value="0.0029" errorMinus="0.0010905159329418345"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.5" errorMinus="0.5"/>
+      <measurement errorPlus="6.356886030125127E-4"
+        value="0.0014" errorMinus="6.356886030125127E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="5.0" errorMinus="1.0"/>
+      <measurement errorPlus="1.8750000000000003E-4"
+        value="3.5E-4" errorMinus="1.8750000000000003E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S671428/" title="(S/BETA)*D(SIG)/DX(P=3) IN MUB*GEV**2">
+    <annotation>
+      <item key="Title"
+        value="(S/BETA)*D(SIG)/DX(P=3) IN MUB*GEV**2" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S671428/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S671428.aida/REF/TASSO_1980_S671428/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.013499999999999998"
+        value="0.0595" errorMinus="0.013499999999999998"/>
+      <measurement errorPlus="1.62692962355475" value="4.2"
+        errorMinus="1.62692962355475"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.015" value="0.088"
+        errorMinus="0.015"/>
+      <measurement errorPlus="0.8419657059524456" value="1.75"
+        errorMinus="0.8419657059524456"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.015500000000000014"
+        value="0.1185" errorMinus="0.0155"/>
+      <measurement errorPlus="0.7615773105863908" value="2.0"
+        errorMinus="0.7615773105863908"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0305" value="0.1645"
+        errorMinus="0.0305"/>
+      <measurement errorPlus="0.4904334817281545" value="1.3"
+        errorMinus="0.4904334817281545"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0325" value="0.2275"
+        errorMinus="0.0325"/>
+      <measurement errorPlus="0.46896055271205916"
+        value="0.88" errorMinus="0.46896055271205916"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.065" value="0.325"
+        errorMinus="0.065"/>
+      <measurement errorPlus="0.15749285698088025"
+        value="0.32" errorMinus="0.15749285698088025"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

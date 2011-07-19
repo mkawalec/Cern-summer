@@ -1,0 +1,81 @@
+YODA TODO list
+==============
+
+NOW
+
+* Implement histo/histo -> scatter, profile/profile -> scatter and
+  scatter/scatter -> scatter. Also multiplication? (AB)
+
+* Multiple errors on Scatter2D via a vector of Error2D. Combination rule enum
+  arg (QUAD, LIN) on error() method (DANIEL?)
+
+* New "flat" file format (HH)
+
+
+NEXT
+
+* Add a named Weights object, allowing named or vectorised fills? Autoconversion
+  to/from double. Template on this, or use everywhere?
+
+
+* Implement _setstate for Histo1D and Profile1D.
+
+* Axis1D and Histo/Profile1D::addBin(...) methods. (AB)
+  Needed for...
+
+* Persist whole-histo Dbn1D
+
+* Rebinning:
+  merge of 2 adjacent bins -- no gaps allowed
+  merges of n adjacent bins (via iterator ranges)
+  global rebinning by integer factor (on widths or on bin groups?)
+
+* Histo1D::integral(bin1id, bin2id) (AB)
+
+* Axis::scale -> scaleX, scaleY, scaleXY to Scatter2D.
+
+* Tests:
+  Add bin-comparison and negative-weighted mean test(s)
+  Test bin-by-index sorted behaviour on Histo and Profile
+
+* Arbitrary function transforms on Scatters
+
+* Transform differential to integral histos... or allow representation/querying
+  as such. How to do this if bin edges don't match?
+
+
+
+AND AFTER THAT...
+
+* Scatter2D -> Scatter<N> again (?) with specialisations for 1D, 2D and 3D
+
+* Read back from flat format
+
+* Explicitly return NaN for profile histo points with no weight? Or throw LowStatsError?
+
+* Terminal histos via WriterTerminal
+
+* Bin division with binomial correlation (Efficiency1D)
+
+* Write scripts to convert between data formats and to plot results.
+
+
+
+PERSISTENCY
+
+* Look into pickling of C++ interfaced classes. WriterS10n? MessagePack? The
+  latter looks awesome...
+
+* Store enough information for datafile merging to be well defined
+  That means appropriate statistical combinations for each data type.
+
+* Store "norm" and "scale" as members (and write out in histo header)
+   Rather than convert type or scale internally. API for this?
+
+Data line definition:
+H1D: xl xh y dy w w2 n wx wx2 (dysys,...)
+P1D: xl xh y dy w w2 n wx wx2 wy wy2 (dysys,...)?
+Define integration with Hendrik's flat format:
+"#" marks for comments: gnuplot compatibility
+Metadata as special comments
+Suggesting logx, logy, etc.?

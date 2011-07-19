@@ -1,0 +1,670 @@
+#! /usr/bin/env python
+
+"""%prog
+
+Script for merging parts of multiple histo files made with different run params
+(kinematic pT cuts and energies) into one histo file for plotting or further
+analysis.
+
+TODO:
+ * take merge specs from a conf file instead of hard-coding
+ * generalise to more generic merge ranges (i.e. not just sqrts & pT)
+ * improve cmd line interface
+ * rationalise all histogramming formats... remove AIDA!
+ * use lighthisto (then YODA)
+
+Usage example:
+ $ uemerge hwpp/hpp-1800-{030.aida:1800:30,090.aida:1800:90} > hpp-hists.dat
+ $ flat2aida hpp-hists.dat
+ $ mkdir plots && cd plots
+ $ compare_histos.py ../ref04.aida ../hpp-hists.aida
+ $ make_plot.py --pdf *.dat
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+import os, copy, re
+from math import sqrt
+
+
+def mean(*args):
+    total, num = 0, 0
+    for a in args:
+        if a is not None:
+            total += a
+            num += 1
+    return total / float(num)
+
+
+## TODO: replace with lighthisto
+class Histo:
+    def __init__(self):
+        self.clear()
+
+    def clear(self):
+        self._bins = []
+        self.path = None
+        self.name = None
+        self.title = None
+        self.xtitle = None
+        self.ytitle = None
+
+    def __cmp__(self, other):
+        """Sort by $path/$name string"""
+        return self.fullPath() > other.fullPath()
+
+    def __str__(self):
+        out = "Histogram '%s' with %d bins\n" % (self.fullPath(), self.numBins())
+        if self.title:
+            out += "Title: %s\n" % self.title
+        if self.xtitle:
+            out += "XLabel: %s\n" % self.xtitle
+        if self.ytitle:
+            out += "YLabel: %s\n" % self.ytitle
+        out += "\n".join([str(b) for b in self.getBins()])
+        return out
+
+    def fullPath(self):
+        return os.path.join(self.path, self.name)
+
+    def asFlat(self):
+        #global headerprefix
+        headerprefix = ""
+        global opts
+        out = "# BEGIN HISTOGRAM %s\n" % self.fullPath()
+        out += headerprefix + "AidaPath=%s\n" % self.fullPath()
+        if self.title:
+            out += headerprefix + "Title=%s\n" % self.title
+        if self.xtitle:
+            out += headerprefix + "XLabel=%s\n" % self.xtitle
+        if self.ytitle:
+            out += headerprefix + "YLabel=%s\n" % self.ytitle
+        try:
+            out += "## Area: %s\n" % self.area()
+        except:
+            out += "## Area: UNKNOWN (invalid bin details)"
+        out += "## Num bins: %d\n" % self.numBins()
+#         if opts.GNUPLOT:
+#             out += "## xval  \tyval    \txlow    \txhigh    \tylow     \tyhigh\n"
+#         else:
+        #out += "## xlow  \txhigh   \tyval    \tyerrminus\tyerrplus\n"
+        out += "\n".join([b.asFlat() for b in self.getBins()])
+        out += "\n# END HISTOGRAM"
+        return out
+
+    def numBins(self):
+        return len(self._bins)
+
+    def getBins(self):
+        return sorted(self._bins)
+
+    def setBins(self, bins):
+        self._bins = bins
+        return self
+
+    def setBin(self, index, bin):
+        self._bins[index] = bin
+        return self
+
+    def addBin(self, bin):
+        self._bins.append(bin)
+        return self
+
+    def getBin(self, index):
+        self._bins.sort()
+        return self.getBins()[index]
+
+    bins = property(getBins, setBins)
+
+    def area(self):
+        return sum([bin.area() for bin in self.bins])
+
+    def __iter__(self):
+        return iter(self.getBins())
+
+    def __len__(self):
+        return len(self._bins)
+
+    def __getitem__(self, index):
+        return self.getBin(index)
+
+
+## TODO: replace with lighthisto
+class Bin:
+    """A simple container for a binned value with an error."""
+    def __init__(self, xlow=None, xhigh=None, yval=0, yerrplus=0, yerrminus=0, focus=None):
+        self.xlow = xlow
+        self.xhigh= xhigh
+        self.yval = yval
+        self.yerrplus = yerrplus
+        self.yerrminus = yerrminus
+        self.focus= focus
+
+    def clear(self):
+        #self.xlow = None
+        #self.xhigh= None
+        self.yval = 0
+        self.yerrplus = 0
+        self.yerrminus = 0
+        self.focus= None
+
+    def __str__(self):
+        meanyerr = None
+        try:
+            meanyerr = mean(self.yerrplus, self.yerrminus)
+        except:
+            pass
+        out = "%s to %s: %s +- %s" % (str(self.xlow), str(self.xhigh), str(self.yval), str(meanyerr))
+        return out
+
+    def asFlat(self):
+        global opts
+#         if opts.GNUPLOT:
+#             out = "%e\t%e\t%e\t%e\t%e\t%e" % (self.getBinCenter(), self.yval,
+#                                               self.xlow, self.xhigh,
+#                                               self.yval-self.yerrminus, self.yval+self.yerrplus)
+#         else:
+        out = "%e\t%e\t%e\t%e" % (self.xlow, self.xhigh, self.yval, 0.5*(self.yerrminus+self.yerrplus))
+        return out
+
+    def __cmp__(self, other):
+        """Sort by mean x value (yeah, I know...)"""
+        rtn = True
+        lhnone = (self.xlow is None or self.xhigh is None)
+        rhnone = (other.xlow is None or other.xhigh is None)
+        somenones = lhnone or rhnone
+        if somenones:
+            if lhnone == rhnone:
+                return 0
+            elif lhnone:
+                return -1
+            else:
+                return 1;
+        else:
+            return cmp(self.xlow + self.xhigh, other.xlow + other.xhigh)
+
+    def getXRange(self):
+        return (self.xlow, self.xhigh)
+
+    def setXRange(self, xlow, xhigh):
+        self.xlow = xlow
+        self.xhigh = xhigh
+        return self
+
+    def getBinCenter(self):
+        """Geometric middle of the bin range."""
+        return self.xlow + .5*(self.xhigh - self.xlow)
+
+    def getFocus(self):
+        """Mean x-value of the bin."""
+        if self.focus is not None:
+            return (self.xlow + self.xhigh)/2.0
+        else:
+            return self.focus
+
+    def area(self):
+        return self.yval * (self.xhigh - self.xlow)
+
+    def getYErr(self):
+        """Get mean of +ve and -ve y-errors."""
+        return (self.yerrplus + self.yerrminus)/2.0
+
+    def setYErr(self, yerr):
+        """Set both +ve and -ve y-errors simultaneously."""
+        self.yerrplus = yerr
+        self.yerrminus = yerr
+        return self
+
+
+
+## Try to load faster but non-standard cElementTree module
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    try:
+        import cElementTree as ET
+    except ImportError:
+        try:
+            import xml.etree.ElementTree as ET
+        except:
+            sys.stderr.write("Can't load the ElementTree XML parser: please install it!\n")
+            sys.exit(1)
+
+
+## TODO: replace with lighthisto
+def mkHistoFromDPS(dps):
+    """Make a mini histo representation from an AIDA dataPointSet tag."""
+    myhist = Histo()
+    myhist.name = dps.get("name")
+    myhist.title = dps.get("title")
+    myhist.path = dps.get("path")
+    dims = dps.findall("dimension")
+    for d in dims:
+        if d.get("dim") == "0":
+            myhist.xtitle = d.get("title")
+        elif d.get("dim") == "1":
+            myhist.ytitle = d.get("title")
+    points = dps.findall("dataPoint")
+    numbins = len(points)
+    for binnum, point in enumerate(points):
+        bin = Bin()
+        for d, m in enumerate(point.findall("measurement")):
+            val  = float(m.get("value"))
+            down = float(m.get("errorMinus"))
+            up = float(m.get("errorPlus"))
+            if d == 0:
+                low  = val - down
+                high = val + up
+                bin.setXRange(low, high)
+            elif d == 1:
+                bin.yval = val
+                bin.yerrplus = up
+                bin.yerrminus = down
+        myhist.addBin(bin)
+    return myhist
+
+
+
+#############################################
+
+
+
+def fillAbove(desthisto, sourcehistosbyptmin):
+    for i, b in enumerate(desthisto.getBins()):
+        ## Fill bins with pT-ordered histos (so that 'highest always wins')
+        for ptmin, h in sorted(sourcehistosbyptmin.iteritems()):
+            newb = h.getBin(i)
+            if newb.xlow >= float(ptmin):
+                desthisto.setBin(i, newb)
+                ##### This logging line breaks the output!!!!!!!
+                ####logging.debug("Copied: %s / %s" % (str(b), str(histosS[hpath][sqrts].getBin(i))) )
+
+def mergeByPt(hpath, sqrts):
+    global inhistos
+    global outhistos
+    try:
+        fillAbove(outhistos[hpath], inhistos[hpath][sqrts])
+    except:
+        pass
+
+def useOnePt(hpath, sqrts, ptmin):
+    global inhistos
+    global outhistos
+    try:
+        ## Find best pT_min match
+        ptmins = inhistos[hpath][sqrts].keys()
+        closest_ptmin = None
+        for ptm in ptmins:
+            if closest_ptmin is None or \
+                    abs(float(ptm)-float(ptmin)) < abs(closest_ptmin-float(ptmin)):
+                closest_ptmin = float(ptm)
+        if closest_ptmin != float(ptmin):
+            logging.warning("Inexact match for requested pTmin=%s: " % ptmin + \
+                                "using pTmin=%e instead" % closest_ptmin)
+        outhistos[hpath] =  inhistos[hpath][sqrts][closest_ptmin]
+    except:
+        pass
+
+
+
+#######################################
+
+
+
+
+if __name__ == "__main__":
+    import logging
+    from optparse import OptionParser, OptionGroup
+    parser = OptionParser(usage="%prog aidafile:sqrts:minpt aidafile2:sqrts:minpt [...]")
+    parser.add_option("-o", "--out", dest="OUTFILE", default="-")
+    parser.add_option("--append", dest="APPEND_OUTPUT", action="store_true", default=False)
+    verbgroup = OptionGroup(parser, "Verbosity control")
+    verbgroup.add_option("-v", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                         default=logging.INFO, help="print debug (very verbose) messages")
+    verbgroup.add_option("-q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                         default=logging.INFO, help="be very quiet")
+    parser.add_option_group(verbgroup)
+    (opts, args) = parser.parse_args()
+    logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+    ## Prefix used in dat file headers
+    headerprefix = "# "
+
+
+    ## Check args
+    if len(args) < 1:
+        logging.error("Must specify at least one AIDA histogram file")
+        sys.exit(1)
+
+
+    ## Get histos
+    inhistos = {}
+    weights = {}
+    try:
+        for aidafile_ptmin in args:
+            aidafile, sqrts, ptmin = None, None, None
+            try:
+                aidafile, sqrts, ptmin = aidafile_ptmin.rsplit(":", 2)
+            except ValueError, v:
+                raise Exception("Did you supply the file arguments in the 'name:sqrts:ptmin' format?")
+
+
+            ## Parse this AIDA file as XML
+            if not os.access(aidafile, os.R_OK):
+                logging.error("%s can not be read" % aidafile)
+                break
+            try:
+                tree = ET.parse(aidafile)
+            except:
+                logging.error("%s can not be parsed as XML" % aidafile)
+                break
+            tree = ET.parse(aidafile)
+
+
+            ## Get histos from this AIDA file
+            for dps in tree.findall("dataPointSet"):
+                h = mkHistoFromDPS(dps)
+                if not inhistos.has_key(h.fullPath()):
+                    inhistos[h.fullPath()] = {}
+                tmpE = inhistos[h.fullPath()]
+                if not tmpE.has_key(sqrts):
+                    tmpE[sqrts] = {}
+                tmpP = tmpE[sqrts]
+                if not tmpP.has_key(float(ptmin)):
+                    tmpP[float(ptmin)] = h
+                else:
+                    raise Exception("A set with sqrt(s) = %s, and ptmin = %s already exists" % (sqrts, ptmin))
+    except Exception, e:
+        logging.error("Danger, Will Robinson!")
+        logging.error(str(e))
+        sys.exit(1)
+
+
+    ## Make empty output histos
+    outhistos = {}
+    for hpath, hsets in sorted(inhistos.iteritems()):
+        logging.debug(hpath + " " + str(dict([(sqrts, hsets[sqrts].keys()) for sqrts in hsets.keys()])))
+        workhisto = copy.deepcopy(hsets.values()[0].values()[0])
+        logging.debug(workhisto)
+        outhistos[hpath] = workhisto
+        ## There's no reason to merge reference histos
+        if re.match(r'^/REF.*', hpath):
+            continue
+        ## Empty the bin set for histos which we're going to merge
+        for b in outhistos[hpath]:
+            b.clear()
+        logging.debug(outhistos[hpath])
+
+
+    ######
+
+    ## ATLAS dijet azimuthal decorrelation
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y01", "7000", "110")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y02", "7000", "160")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y03", "7000", "210")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y04", "7000", "260")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y05", "7000", "310")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y06", "7000", "400")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y07", "7000", "500")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y08", "7000", "600")
+    useOnePt("/ATLAS_2011_S8971293/d01-x01-y09", "7000", "800")
+
+    ## Field analysis
+    logging.info("Processing CDF_2001_S4751469")
+    ## Angular distributions in different pT bins
+    useOnePt("/CDF_2001_S4751469/d01-x01-y01", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d01-x01-y02", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d01-x01-y03", "1800", "30")
+    useOnePt("/CDF_2001_S4751469/d02-x01-y01", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d02-x01-y02", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d02-x01-y03", "1800", "30")
+    ## Number, profile in pT_lead (True?)
+    useOnePt("/CDF_2001_S4751469/d03-x01-y01", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d03-x01-y02", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d03-x01-y03", "1800", "0")
+    mergeByPt("/CDF_2001_S4751469/d04-x01-y01", "1800")
+    mergeByPt("/CDF_2001_S4751469/d04-x01-y02", "1800")
+    mergeByPt("/CDF_2001_S4751469/d04-x01-y03", "1800")
+    ## pT sums, profile in pT_lead (True?)
+    useOnePt("/CDF_2001_S4751469/d05-x01-y01", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d05-x01-y02", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d05-x01-y03", "1800", "0")
+    mergeByPt("/CDF_2001_S4751469/d06-x01-y01", "1800")
+    mergeByPt("/CDF_2001_S4751469/d06-x01-y02", "1800")
+    mergeByPt("/CDF_2001_S4751469/d06-x01-y03", "1800")
+    ## pT distributions (use a specific pT cut run?)
+    useOnePt("/CDF_2001_S4751469/d07-x01-y01", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d07-x01-y02", "1800", "0")
+    useOnePt("/CDF_2001_S4751469/d07-x01-y03", "1800", "30")
+
+    ## Acosta analysis
+    logging.info("Processing CDF_2004_S5839831")
+    ## Mean pT, profile in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d01-x01-y01", "1800")
+    mergeByPt("/CDF_2004_S5839831/d01-x01-y02", "1800")
+    ## pT_max,min, profiles in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d02-x01-y01", "1800")
+    mergeByPt("/CDF_2004_S5839831/d02-x01-y02", "1800")
+    mergeByPt("/CDF_2004_S5839831/d02-x01-y03", "1800")
+    ## pT distributions (want to use a specific pT cut run)
+    useOnePt("/CDF_2004_S5839831/d03-x01-y01", "1800", "40")
+    useOnePt("/CDF_2004_S5839831/d03-x01-y02", "1800", "80")
+    useOnePt("/CDF_2004_S5839831/d03-x01-y03", "1800", "120")
+    useOnePt("/CDF_2004_S5839831/d03-x01-y04", "1800", "160")
+    useOnePt("/CDF_2004_S5839831/d03-x01-y05", "1800", "200")
+    ## N_max,min, profiles in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d04-x01-y01", "1800")
+    mergeByPt("/CDF_2004_S5839831/d04-x01-y02", "1800")
+    ## Min bias dbs (want to use min bias pT cut)
+    useOnePt("/CDF_2004_S5839831/d05-x01-y01", "1800", "0")
+    useOnePt("/CDF_2004_S5839831/d06-x01-y01", "1800", "0")
+    ## Swiss Cheese, profile in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d07-x01-y01", "1800")
+    mergeByPt("/CDF_2004_S5839831/d07-x01-y02", "1800")
+    ## pT_max,min, profiles in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d08-x01-y01", "630")
+    mergeByPt("/CDF_2004_S5839831/d08-x01-y02", "630")
+    mergeByPt("/CDF_2004_S5839831/d08-x01-y03", "630")
+    ## Swiss Cheese, profile in ET_lead
+    mergeByPt("/CDF_2004_S5839831/d09-x01-y01", "630")
+    mergeByPt("/CDF_2004_S5839831/d09-x01-y02", "630")
+    ## Min bias dbs (want to use min bias pT cut)
+    useOnePt("/CDF_2004_S5839831/d10-x01-y01", "630", "0")
+    useOnePt("/CDF_2004_S5839831/d11-x01-y01", "630", "0")
+
+    ## CDF jet shape analysis
+    logging.info("Processing CDF_2005_S6217184")
+    useOnePt("/CDF_2005_S6217184/d01-x01-y01", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d01-x01-y02", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d01-x01-y03", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d02-x01-y01", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d02-x01-y02", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d02-x01-y03", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d03-x01-y01", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d03-x01-y02", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d03-x01-y03", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d04-x01-y01", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d04-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d04-x01-y03", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d05-x01-y01", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d05-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d05-x01-y03", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d06-x01-y01", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d06-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d06-x01-y03", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d07-x01-y01", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d07-x01-y02", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d07-x01-y03", "1960", "37")
+    useOnePt("/CDF_2005_S6217184/d08-x01-y01", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d08-x01-y02", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d08-x01-y03", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d09-x01-y01", "1960", "63")
+    useOnePt("/CDF_2005_S6217184/d09-x01-y02", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d09-x01-y03", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d10-x01-y01", "1960", "112")
+    useOnePt("/CDF_2005_S6217184/d10-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d10-x01-y03", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d11-x01-y01", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d11-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d11-x01-y03", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d12-x01-y01", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d12-x01-y02", "1960", "166")
+    useOnePt("/CDF_2005_S6217184/d12-x01-y03", "1960", "166")
+    mergeByPt("/CDF_2005_S6217184/d13-x01-y01", "1960")
+
+    ## CDF dijet mass spectrum
+    mergeByPt("/CDF_2008_S8093652/d01-x01-y01", "1960")
+
+    ## Rick Field Run-II Leading Jets UE analysis
+    logging.info("Processing CDF_2010_S8591881_QCD")
+    ## charged particle density
+    mergeByPt("/CDF_2010_S8591881_QCD/d10-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d10-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d10-x01-y03", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d11-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d11-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d11-x01-y03", "1960")
+    ## pT sum density
+    mergeByPt("/CDF_2010_S8591881_QCD/d12-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d12-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d12-x01-y03", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d13-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d13-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_QCD/d13-x01-y03", "1960")
+    ## mean pT
+    mergeByPt("/CDF_2010_S8591881_QCD/d14-x01-y01", "1960")
+    ## pT max
+    mergeByPt("/CDF_2010_S8591881_QCD/d15-x01-y01", "1960")
+    ##
+    ## And again, with the deprecated name:
+    ##
+    logging.info("Processing CDF_2008_LEADINGJETS")
+    ## charged particle density
+    mergeByPt("/CDF_2008_LEADINGJETS/d01-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d02-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d03-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d04-x01-y01", "1960")
+    ## pT sum density
+    mergeByPt("/CDF_2008_LEADINGJETS/d05-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d06-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d07-x01-y01", "1960")
+    mergeByPt("/CDF_2008_LEADINGJETS/d08-x01-y01", "1960")
+    ## mean pT
+    mergeByPt("/CDF_2008_LEADINGJETS/d09-x01-y01", "1960")
+
+    ## Rick Field / Deepak Kar Run-II Drell-Yan UE analysis
+    logging.info("Processing CDF_2010_S8591881_DY")
+    ## charged particle density
+    mergeByPt("/CDF_2010_S8591881_DY/d01-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d01-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d01-x01-y03", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d02-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d02-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d02-x01-y03", "1960")
+    ## pT sum density
+    mergeByPt("/CDF_2010_S8591881_DY/d03-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d03-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d03-x01-y03", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d04-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d04-x01-y02", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d04-x01-y03", "1960")
+    ## mean pT
+    mergeByPt("/CDF_2010_S8591881_DY/d05-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d05-x01-y02", "1960")
+    ## max pT
+    mergeByPt("/CDF_2010_S8591881_DY/d06-x01-y01", "1960")
+    mergeByPt("/CDF_2010_S8591881_DY/d06-x01-y02", "1960")
+    ##
+    #useOnePt("/CDF_2010_S8591881_DY/d07-x01-y01", "1960", "10")
+    #useOnePt("/CDF_2010_S8591881_DY/d08-x01-y01", "1960", "10")
+    #useOnePt("/CDF_2010_S8591881_DY/d09-x01-y01", "1960", "10")
+    ##
+    ## And again, with the deprecated name:
+    ##
+    logging.info("Processing CDF_2008_NOTE_9351")
+    ## charged particle density
+    mergeByPt("/CDF_2008_NOTE_9351/d01-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d02-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d03-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d04-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d05-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d06-x01-y01", "1960")
+    ## pT sum density
+    mergeByPt("/CDF_2008_NOTE_9351/d07-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d08-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d09-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d10-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d11-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d12-x01-y01", "1960")
+    ## mean pT
+    mergeByPt("/CDF_2008_NOTE_9351/d13-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d14-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d15-x01-y01", "1960")
+    ## max pT
+    mergeByPt("/CDF_2008_NOTE_9351/d16-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d17-x01-y01", "1960")
+    mergeByPt("/CDF_2008_NOTE_9351/d18-x01-y01", "1960")
+    ##
+    #useOnePt("/CDF_2008_NOTE_9351/d19-x01-y01", "1960", "10")
+    #useOnePt("/CDF_2008_NOTE_9351/d20-x01-y01", "1960", "10")
+    #useOnePt("/CDF_2008_NOTE_9351/d21-x01-y01", "1960", "10")
+
+    ## D0 dijet correlation analysis
+    logging.info("Processing D0_2004_S5992206")
+    useOnePt("/D0_2004_S5992206/d01-x02-y01", "1960", "50")
+    useOnePt("/D0_2004_S5992206/d02-x02-y01", "1960", "75")
+    useOnePt("/D0_2004_S5992206/d03-x02-y01", "1960", "100")
+    useOnePt("/D0_2004_S5992206/d04-x02-y01", "1960", "150")
+
+    ## D0 incl jet cross-section analysis
+    logging.info("Processing D0_2008_S7662670")
+    mergeByPt("/D0_2008_S7662670/d01-x01-y01", "1960")
+    mergeByPt("/D0_2008_S7662670/d02-x01-y01", "1960")
+    mergeByPt("/D0_2008_S7662670/d03-x01-y01", "1960")
+    mergeByPt("/D0_2008_S7662670/d04-x01-y01", "1960")
+    mergeByPt("/D0_2008_S7662670/d05-x01-y01", "1960")
+    mergeByPt("/D0_2008_S7662670/d06-x01-y01", "1960")
+
+    ## STAR inclusive jet cross-section
+    logging.info("Processing STAR_2006_S6870392")
+    useOnePt("/STAR_2006_S6870392/d01-x01-y01", "200", "0")
+    useOnePt("/STAR_2006_S6870392/d02-x01-y01", "200", "3")
+
+    ## STAR underlying event (Helen Caines)
+    logging.info("Processing STAR_2009_UE_HELEN")
+    mergeByPt("/STAR_2009_UE_HELEN/d01-x01-y01", "200")
+    mergeByPt("/STAR_2009_UE_HELEN/d02-x01-y01", "200")
+    mergeByPt("/STAR_2009_UE_HELEN/d03-x01-y01", "200")
+
+    ## Choose output file
+    out = None
+    if opts.OUTFILE == "-":
+        out = sys.stdout
+    else:
+        if opts.APPEND_OUTPUT:
+            out = open(opts.OUTFILE, "a")
+        else:
+            out = open(opts.OUTFILE, "w")
+
+
+    ## Write out merged histos
+    for hpath, h in sorted(outhistos.iteritems()):
+        logging.debug("hpath = %s" % hpath)
+        out.write(h.asFlat() + "\n\n")
+
+
+    sys.exit(0)
+    ## Write to multiple auto-named dat files
+    for hpath, h in sorted(outhistos.iteritems()):
+        logging.debug("hpath = %s" % hpath)
+        safename = hpath.replace("/", "_") + ".dat"
+        if safename[0] == "_":
+            safename = safename[1:]
+        logging.info("Writing histo to %s" % safename)
+        f = open(safename, "w")
+        f.write(h.asFlat() + "\n")
+        f.close()

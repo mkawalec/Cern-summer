@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S653926/" title="SIG/SIG(C=QED)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(C=QED)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S653926/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S653926.aida/REF/TASSO_1980_S653926/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="12.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0565685424949238" value="1.0"
+        errorMinus="0.0565685424949238"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.0" value="13.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0978496806331017" value="0.96"
+        errorMinus="0.0978496806331017"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.25" value="17.0"
+        errorMinus="2.0"/>
+      <measurement errorPlus="0.1077032961426901" value="1.0"
+        errorMinus="0.1077032961426901"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.5999999999999996" value="27.5"
+        errorMinus="5.25"/>
+      <measurement errorPlus="0.07301068414965031"
+        value="1.04" errorMinus="0.07301068414965031"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.5999999999999979" value="30.7"
+        errorMinus="1.5999999999999979"/>
+      <measurement errorPlus="0.04436394932825525"
+        value="0.99" errorMinus="0.04436394932825525"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S653926/" title="SIG/SIG(C=QED)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(C=QED)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S653926/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S653926.aida/REF/TASSO_1980_S653926/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="9.35" value="12.0"
+        errorMinus="9.35"/>
+      <measurement errorPlus="0.25" value="0.97"
+        errorMinus="0.25"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.349999999999998" value="30.7"
+        errorMinus="9.349999999999998"/>
+      <measurement errorPlus="0.13" value="1.08"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/TASSO_1980_S653926/" title="SIG/SIG(C=QED)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(C=QED)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1980_S653926/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1980_S653926.aida/REF/TASSO_1980_S653926/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="9.35" value="12.0"
+        errorMinus="9.35"/>
+      <measurement errorPlus="0.2949804061289495" value="0.99"
+        errorMinus="0.2949804061289495"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.349999999999998" value="30.7"
+        errorMinus="9.349999999999998"/>
+      <measurement errorPlus="0.2124237274882446" value="0.94"
+        errorMinus="0.2124237274882446"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

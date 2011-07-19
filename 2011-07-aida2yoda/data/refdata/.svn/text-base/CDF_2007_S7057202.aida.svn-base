@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="2.226495227931109" value="14.5"
+        errorMinus="2.137119790746415"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.9375552002948946" value="6.68"
+        errorMinus="0.9284986556802329"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.3907799017349792" value="2.87"
+        errorMinus="0.3818493572077869"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.15865839530261233"
+        value="1.24" errorMinus="0.15865839530261233"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.06833386279144478"
+        value="0.531" errorMinus="0.06921355939409561"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.030783570228288985"
+        value="0.233" errorMinus="0.029910335939270224"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.012325253321534611"
+        value="0.0936" errorMinus="0.012147093044839987"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.005004269093484082"
+        value="0.0363" errorMinus="0.004825215970296045"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="0.002066387775805887"
+        value="0.0139" errorMinus="0.001974831243423093"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="8.295562775363706E-4"
+        value="0.00522" errorMinus="7.833668473965439E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="3.094811664705948E-4"
+        value="0.00179" errorMinus="2.908239886941928E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="1.1385939089947741E-4"
+        value="5.92E-4" errorMinus="1.0630127419744319E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="3.7928682761203294E-5"
+        value="1.78E-4" errorMinus="3.5093945004801046E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="1.1482507015456162E-5"
+        value="4.68E-5" errorMinus="1.0176834839968662E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="30.5" value="426.5"
+        errorMinus="30.5"/>
+      <measurement errorPlus="3.6823638114667594E-6"
+        value="1.29E-5" errorMinus="3.226422669149224E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="35.0" value="492.0"
+        errorMinus="35.0"/>
+      <measurement errorPlus="9.542135125851026E-7"
+        value="2.47E-6" errorMinus="8.561094717382817E-7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="86.5" value="613.5"
+        errorMinus="86.5"/>
+      <measurement errorPlus="1.3633275951142484E-7"
+        value="2.13E-7" errorMinus="1.2166602367136028E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="1.805365336988611" value="14.0"
+        errorMinus="1.805365336988611"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.7594876262323172" value="6.14"
+        errorMinus="0.750813861353132"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.32991247384723116"
+        value="2.69" errorMinus="0.3124775838360249"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.13737486815280298"
+        value="1.14" errorMinus="0.12873171481806647"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.05852090566626596"
+        value="0.49" errorMinus="0.055925811572117574"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.025170222406645515"
+        value="0.208" errorMinus="0.02430103076003156"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.010713175142785634"
+        value="0.0851" errorMinus="0.01018489674174461"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.004446381220723207"
+        value="0.0333" errorMinus="0.004178553094074551"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="0.0017546907305847374"
+        value="0.0123" errorMinus="0.0016640130888908296"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="7.013788616717786E-4"
+        value="0.00453" errorMinus="6.644789745356883E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="2.7566632656166035E-4"
+        value="0.00157" errorMinus="2.568889324202193E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="9.547165294473537E-5"
+        value="4.87E-4" errorMinus="8.787967066392545E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="3.2152611651310695E-5"
+        value="1.43E-4" errorMinus="2.8315904294230124E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="9.692288483118937E-6"
+        value="3.69E-5" errorMinus="8.34149003715763E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="30.5" value="426.5"
+        errorMinus="30.5"/>
+      <measurement errorPlus="2.2647344819205627E-6"
+        value="7.18E-6" errorMinus="1.8785692091589278E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="35.0" value="492.0"
+        errorMinus="35.0"/>
+      <measurement errorPlus="4.637096056801067E-7"
+        value="1.16E-6" errorMinus="3.7937659179237716E-7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="86.5" value="613.5"
+        errorMinus="86.5"/>
+      <measurement errorPlus="5.3472582196486455E-8"
+        value="8.97E-8" errorMinus="4.390930478566018E-8"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="1.673003156004196" value="12.3"
+        errorMinus="1.673003156004196"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.7369682934835121" value="5.48"
+        errorMinus="0.7369682934835121"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.3133315177252362" value="2.4"
+        errorMinus="0.3044283823824579"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.16113348503647526" value="1.0"
+        errorMinus="0.12475576139000555"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.05392925829269303"
+        value="0.415" errorMinus="0.0521571174433557"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.023466596600274184"
+        value="0.173" errorMinus="0.022576119152768484"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.009572496537476521"
+        value="0.0683" errorMinus="0.009120454482096823"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.0038047699746502415"
+        value="0.0252" errorMinus="0.003621639761213144"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="0.001456936789980952"
+        value="0.00895" errorMinus="0.001364061879094933"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="5.399895761956892E-4"
+        value="0.00304" errorMinus="5.023830634087897E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="1.9050933482640686E-4"
+        value="9.52E-4" errorMinus="1.77182975073792E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="5.8106163838271064E-5"
+        value="2.53E-4" errorMinus="5.3304092488288366E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="1.687299390623964E-5"
+        value="6.18E-5" errorMinus="1.541907660529644E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="3.723503516850763E-6"
+        value="1.11E-5" errorMinus="3.2426036513888033E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="30.5" value="426.5"
+        errorMinus="30.5"/>
+      <measurement errorPlus="6.858387475201441E-7"
+        value="1.53E-6" errorMinus="5.457790648238534E-7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="35.0" value="492.0"
+        errorMinus="35.0"/>
+      <measurement errorPlus="1.4480126862703932E-7"
+        value="2.17E-7" errorMinus="1.1439583644521333E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="1.5674960924991168" value="11.0"
+        errorMinus="1.4788657816042672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.6158141278015632" value="4.4"
+        errorMinus="0.6070642799572382"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.2512825373956575" value="1.82"
+        errorMinus="0.2512825373956575"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.10593677065117664"
+        value="0.722" errorMinus="0.10593677065117664"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.0420444604674623"
+        value="0.298" errorMinus="0.0420444604674623"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.01666488955858994"
+        value="0.114" errorMinus="0.01666488955858994"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.006466442917091282"
+        value="0.041" errorMinus="0.006466442917091282"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.002351586366689516"
+        value="0.0139" errorMinus="0.0024453953545388115"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="8.179600970707557E-4"
+        value="0.00419" errorMinus="7.989109589935541E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="2.595166468648977E-4"
+        value="0.00115" errorMinus="2.498977590935941E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="7.523772694599432E-5"
+        value="2.73E-4" errorMinus="6.654108171648549E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="1.7220813551049205E-5"
+        value="5.18E-5" errorMinus="1.440577729107319E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="3.397492913370093E-6"
+        value="7.99E-6" errorMinus="2.672163560937092E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="7.457940801588599E-7"
+        value="1.05E-6" errorMinus="5.045877624358323E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.9368888192309692" value="6.67"
+        errorMinus="0.8571234797857307"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.3563167040709711" value="2.68"
+        errorMinus="0.33846948695561907"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.13467925749721074"
+        value="1.04" errorMinus="0.13467925749721074"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.053806337507769475"
+        value="0.377" errorMinus="0.051089352667654735"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.0205818934017257"
+        value="0.132" errorMinus="0.019662510928159706"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.007607740489790645"
+        value="0.0418" errorMinus="0.006948936275430938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.0025084902311948514"
+        value="0.0121" errorMinus="0.0023178704105277326"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="7.213063216137787E-4"
+        value="0.00292" errorMinus="6.343365113250221E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="1.6856558742519185E-4"
+        value="5.74E-4" errorMinus="1.4224400607406977E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="3.144308740629647E-5"
+        value="8.49E-5" errorMinus="2.4889711642363394E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="4.256877128835174E-6"
+        value="8.65E-6" errorMinus="3.1835519298418867E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="3.65966513489964E-7"
+        value="5.67E-7" errorMinus="3.266595919240701E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="1.3604708743666658" value="10.5"
+        errorMinus="1.273138248581041"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.6085473197706157" value="4.81"
+        errorMinus="0.5733496667828455"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.2601812606626388" value="2.09"
+        errorMinus="0.24268145458604784"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.11351532231377402"
+        value="0.91" errorMinus="0.10481282555107461"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.04800904185671695"
+        value="0.395" errorMinus="0.045407797788485624"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.020648649447360955"
+        value="0.171" errorMinus="0.0197829907749056"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.00905306158158664"
+        value="0.071" errorMinus="0.008182782167453806"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.0035836518580911287"
+        value="0.0276" errorMinus="0.003494647427137679"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="0.001527694419705721"
+        value="0.0104" errorMinus="0.0014366106779500143"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="6.129292712866632E-4"
+        value="0.00387" errorMinus="5.759186501581625E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="2.4298230058998125E-4"
+        value="0.00134" errorMinus="2.241437003352983E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="8.669189849115084E-5"
+        value="4.26E-4" errorMinus="7.811840541127295E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="2.8949434813135818E-5"
+        value="1.22E-4" errorMinus="2.510119072872839E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="8.450393827508869E-6"
+        value="3.16E-5" errorMinus="7.387770694871356E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="30.5" value="426.5"
+        errorMinus="30.5"/>
+      <measurement errorPlus="2.019286299661343E-6"
+        value="6.3E-6" errorMinus="1.7008283746457196E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="35.0" value="492.0"
+        errorMinus="35.0"/>
+      <measurement errorPlus="4.217008612749089E-7"
+        value="1.01E-6" errorMinus="3.375375777598696E-7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="86.5" value="613.5"
+        errorMinus="86.5"/>
+      <measurement errorPlus="4.98816057881059E-8"
+        value="8.3E-8" errorMinus="3.970106542650965E-8"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/CDF_2007_S7057202/" title="D2(SIG)/DPT/DYRAP IN NB/GEV">
+    <annotation>
+      <item key="Title" value="D2(SIG)/DPT/DYRAP IN NB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2007_S7057202/d07-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2007_S7057202.aida/REF/CDF_2007_S7057202/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="58.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="2.8540497542965153" value="20.0"
+        errorMinus="2.5837182508934675"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="67.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="1.2096705708580333" value="8.65"
+        errorMinus="1.1195101116113244"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.5" value="77.5"
+        errorMinus="5.5"/>
+      <measurement errorPlus="0.46920738314736693"
+        value="3.59" errorMinus="0.44255572349705297"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="89.5"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.19096705579759038"
+        value="1.49" errorMinus="0.182121982198745"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="103.0"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.07904103969457893"
+        value="0.627" errorMinus="0.07464908543311165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.5" value="118.5"
+        errorMinus="8.5"/>
+      <measurement errorPlus="0.03290417171119796"
+        value="0.263" errorMinus="0.031155810308833243"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.5" value="136.5"
+        errorMinus="9.5"/>
+      <measurement errorPlus="0.013494002371424127"
+        value="0.105" errorMinus="0.012613013121375874"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="157.5"
+        errorMinus="11.5"/>
+      <measurement errorPlus="0.0053498211409354615"
+        value="0.0404" errorMinus="0.005082379977923729"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.0" value="182.0"
+        errorMinus="13.0"/>
+      <measurement errorPlus="0.0020873070114384227"
+        value="0.0148" errorMinus="0.001996709933866209"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.5" value="209.5"
+        errorMinus="14.5"/>
+      <measurement errorPlus="8.317198376857438E-4"
+        value="0.00541" errorMinus="7.9483198752944E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="241.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="3.1896409578508985E-4"
+        value="0.00186" errorMinus="3.002300691136715E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="19.5" value="278.5"
+        errorMinus="19.5"/>
+      <measurement errorPlus="1.1027680243822814E-4"
+        value="5.77E-4" errorMinus="1.0552712047620744E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="23.0" value="321.0"
+        errorMinus="23.0"/>
+      <measurement errorPlus="3.73794007442602E-5"
+        value="1.7E-4" errorMinus="3.354429310627965E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="26.0" value="370.0"
+        errorMinus="26.0"/>
+      <measurement errorPlus="1.0833044476969528E-5"
+        value="4.26E-5" errorMinus="9.674443272871055E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="30.5" value="426.5"
+        errorMinus="30.5"/>
+      <measurement errorPlus="2.5601256413699696E-6"
+        value="8.17E-6" errorMinus="2.1442348984194807E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="35.0" value="492.0"
+        errorMinus="35.0"/>
+      <measurement errorPlus="5.732360634154136E-7"
+        value="1.39E-6" errorMinus="4.499995382219853E-7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="86.5" value="613.5"
+        errorMinus="86.5"/>
+      <measurement errorPlus="6.61561607410829E-8"
+        value="1.19E-7" errorMinus="5.378324649925848E-8"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

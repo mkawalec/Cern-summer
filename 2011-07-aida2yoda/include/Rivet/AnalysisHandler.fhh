@@ -1,0 +1,14 @@
+// -*- C++ -*-
+#ifndef RIVET_AnalysisHandler_FH
+#define RIVET_AnalysisHandler_FH
+
+#include "Rivet/HistoFormat.hh"
+
+namespace Rivet {
+
+  // Forward declaration of AnalysisHandler class
+  class AnalysisHandler;
+
+}
+
+#endif

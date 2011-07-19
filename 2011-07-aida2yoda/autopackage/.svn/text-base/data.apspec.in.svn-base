@@ -1,0 +1,38 @@
+# -*-shell-script-*-
+
+[Meta]
+RootName: @hepforge.org/rivet-data:$SOFTWAREVERSION
+DisplayName: Rivet reference data
+ShortName: rivet-data
+Maintainer: Andy Buckley <andy.buckley@durham.ac.uk>
+Packager: Andy Buckley <andy.buckley@durham.ac.uk>
+Summary: Reference datasets used for booking Rivet analysis histograms
+URL: http://projects.hepforge.org/rivet/
+License: GNU General Public License, Version 2
+SoftwareVersion: @VERSION@
+Repository: http://www.hepforge.org/archive/rivet/rivet-data.xml
+PackageVersion: 1
+AutopackageTarget: 1.2
+# InterfaceVersion: 0.0
+
+[BuildPrepare]
+prepareBuild
+
+[BuildUnprepare]
+unprepareBuild
+
+[Globals]
+# export MY_VAR=1
+
+[Imports]
+echo "$build_root/share/Rivet" | import
+
+[Prepare]
+#require @hepforge.org/rivet @VERSION@
+#removeOwningPackage $PREFIX/bin/my-program
+
+[Install]
+installData share
+
+[Uninstall]
+uninstallFromLog

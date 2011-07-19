@@ -1,0 +1,42 @@
+Name: LHCB_2010_S8758301
+Year: 2010
+Summary: Differential cross section measurement of $K^0_S$ production in three
+  rapidity windows at $\sqrt{s}=\unit{0.9}{\TeV}$
+Experiment: LHCB
+Collider: LHC
+SpiresID: 8758301
+Status: UNVALIDATED
+Authors:
+ - Holger Schulz holger.schulz@physik.hu-berlin.de
+References:
+ - Phys.Lett.B693:69-80,2010
+ - arXiv:1008.3105[hep-ex]
+RunInfo:
+  QCD events. See paper for MC discussion.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900]
+PtCuts:
+Description:
+  'Differential cross-section measurement of prompt $K^0_S$ production in pp collisions
+  at  $\sqrt{s}=\unit{0.9}{\TeV}$ in the rapidity windows $2.5<y<3.0$, $3.0<y<3.5$ and $3.5<y<4.0$.
+  Unresolved issues at the moment are the normalisations. Not clear to me how to do this from the
+  paper so I normalise to reference data area.'
+BibKey: Aaij:2010nx
+BibTeX: '@Article{Aaij:2010nx,
+     author    = "Aaij, R and others",
+ collaboration = "LHCb",
+     title     = "{Prompt K_short production in pp collisions at sqrt(s)=0.9
+                  TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B693",
+     year      = "2010",
+     pages     = "69-80",
+     eprint    = "1008.3105",
+     archivePrefix = "arXiv",
+     primaryClass  =  "Unknown",
+     doi       = "10.1016/j.physletb.2010.08.055",
+     SLACcitation  = "%%CITATION = 1008.3105;%%"
+}'
+ToDo:
+ - Do not normalise to data!

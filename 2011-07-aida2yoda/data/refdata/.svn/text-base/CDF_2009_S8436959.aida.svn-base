@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/CDF_2009_S8436959" title="D(SIG)/DET(P=3)/DETARAP(P=3) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="32.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="123.0" errorPlus="17.86301276380891" errorMinus="17.86301276380891"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="36.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="62.1" errorPlus="6.093189775478851" errorMinus="6.093189775478851"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="41.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="31.0" errorPlus="2.611669198041743" errorMinus="2.611669198041743"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="47.0" errorPlus="3.0" errorMinus="3.0"/>
+      <measurement value="17.2" errorPlus="1.4074822343461388" errorMinus="1.4074822343461388"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="55.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="7.93" errorPlus="0.6709067404639784" errorMinus="0.6709067404639784"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="65.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="3.54" errorPlus="0.3050259169316601" errorMinus="0.3050259169316601"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="75.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="1.76" errorPlus="0.16294546817877445" errorMinus="0.16294546817877445"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="85.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.908" errorPlus="0.07308542826035845" errorMinus="0.07308542826035845"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="100.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="0.441" errorPlus="0.038691429141348606" errorMinus="0.038691429141348606"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="120.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="0.168" errorPlus="0.014920705613341481" errorMinus="0.014920705613341481"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="140.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="0.0725" errorPlus="0.0060166435825965295" errorMinus="0.0060166435825965295"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="160.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="0.0341" errorPlus="0.0035025847598594956" errorMinus="0.0035025847598594956"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="0.0146" errorPlus="0.0013875078234013673" errorMinus="0.0013875078234013673"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="215.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="0.00566" errorPlus="6.461826379592692E-4" errorMinus="6.461826379592692E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="265.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="0.00138" errorPlus="1.679389043670346E-4" errorMinus="1.679389043670346E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="350.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="1.49E-4" errorPlus="2.8976562183944456E-5" errorMinus="2.8976562183944456E-5"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

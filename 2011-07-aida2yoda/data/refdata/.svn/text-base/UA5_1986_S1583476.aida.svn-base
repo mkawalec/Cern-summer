@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.48"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.53"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.58"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.6"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.75"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.83"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.72"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.81"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.71"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.48"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.44"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.22"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.02"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.9"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.64"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.3"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="1.28"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="0.94"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.13" value="0.66"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=INELASTIC))**(SIG(NAME=INELASTIC)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=INELASTIC))**(SIG(NAME=INELASTIC)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d01-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d01-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.2"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.24"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.27"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.25"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.48"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.54"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.44"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.5"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.48"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.26"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.13"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.05"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.9"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.77"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.59"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="1.2"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="1.18"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="0.87"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.13" value="0.67"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d01-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d01-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.48"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.38"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.52"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.68"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.71"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.86"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.76"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.66"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.72"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.69"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.56"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.41"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.15"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="3.09"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="2.74"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.09" value="2.73"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.09" value="2.32"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.1" value="1.99"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.13" value="1.69"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y04" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=INELASTIC))**(SIG(NAME=INELASTIC)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=INELASTIC))**(SIG(NAME=INELASTIC)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d01-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d01-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.14"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.04"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.17"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="0.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.33"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.33"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.53"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.46"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="1.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.41"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.45"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.39"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.07"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="2.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="3.07"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.07" value="2.93"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="2.93"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.08" value="2.55"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="3.875"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.09" value="2.48"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.125"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.09" value="2.18"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.375"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.1" value="1.91"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.125" value="4.625"
+        errorMinus="0.125"/>
+      <measurement errorPlus="0.13" value="1.52"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.57"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.73"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.74"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.81"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.8"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.8"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.76"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="0.69"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.09" value="0.67"
+        errorMinus="0.09"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.63"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.72"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.86"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.88"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.86"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.82"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.64"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.29"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="0.98"
+        errorMinus="0.06"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="2.97"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="3.05"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="3.35"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="3.37"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="3.12"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="2.77"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="2.37"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="1.71"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="1.33"
+        errorMinus="0.07"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y04" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="4.66"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="4.85"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="4.96"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="5.0"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="4.46"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="3.8"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="3.01"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="2.13"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="1.53"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y05" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y05" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y05" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.23" value="6.46"
+        errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.23" value="6.27"
+        errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.24" value="6.9"
+        errorMinus="0.24"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.23" value="6.29"
+        errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.23" value="6.12"
+        errorMinus="0.23"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.2" value="4.64"
+        errorMinus="0.2"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.2" value="3.56"
+        errorMinus="0.2"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.17" value="2.27"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.17" value="1.47"
+        errorMinus="0.17"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y06" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="1/SIG(NAME=NSD))*D(SIG(NAME=NSD)) /D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d02-x01-y06" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d02-x01-y06" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.4" value="8.8" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.5" value="8.6" errorMinus="0.5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.5" value="10.0"
+        errorMinus="0.5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.4" value="8.2" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.4" value="6.9" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.4" value="5.8" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="3.3" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.4" value="2.7" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="1.3" errorMinus="0.3"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.41"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.41"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.56"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.46"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="0.55"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="0.75"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="0.7"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="0.74"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="0.82"
+        errorMinus="0.11"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y02" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.18"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.35"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.43"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.39"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.55"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="1.64"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.53"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="1.55"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="1.23"
+        errorMinus="0.06"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y03" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="2.2"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="2.33"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="2.45"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="2.5"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.04" value="2.55"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="2.53"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.05" value="2.44"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="2.22"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="1.86"
+        errorMinus="0.07"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y04" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.38"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.53"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.69"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.77"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.86"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.65"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.06" value="3.18"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.07" value="2.89"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.09" value="2.5"
+        errorMinus="0.09"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y05" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y05" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y05" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="4.59"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="5.01"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="5.17"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="5.03"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="4.97"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.08" value="4.64"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.09" value="4.03"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.1" value="3.59"
+        errorMinus="0.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="2.74"
+        errorMinus="0.11"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y06" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y06" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y06" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="6.02"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="6.48"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="6.75"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="6.51"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="6.25"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.11" value="5.61"
+        errorMinus="0.11"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.12" value="5.33"
+        errorMinus="0.12"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.13" value="4.31"
+        errorMinus="0.13"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.14" value="3.0"
+        errorMinus="0.14"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y07" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y07" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y07" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="7.39"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="7.57"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="7.84"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="7.66"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="7.33"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.15" value="6.51"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.16" value="5.97"
+        errorMinus="0.16"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.17" value="4.8"
+        errorMinus="0.17"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.18" value="3.4"
+        errorMinus="0.18"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y08" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y08" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y08" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="8.72"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="8.68"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="9.5"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="9.09"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="8.76"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="7.64"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="6.6"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.21" value="5.1"
+        errorMinus="0.21"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.22" value="3.53"
+        errorMinus="0.22"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y09" dimension="2"
+    path="/REF/UA5_1986_S1583476/" title="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)">
+    <annotation>
+      <item key="Title"
+        value="(1/SIG(NAME=NSD))*D(SIG(NAME=NSD))/D(ETARAP)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/UA5_1986_S1583476/d03-x01-y09" sticky="true"/>
+      <item key="FullPath"
+        value="/UA5_1986_S1583476.aida/REF/UA5_1986_S1583476/d03-x01-y09" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="12.2"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="0.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="11.7"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="12.5"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="1.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="11.3"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="10.9"
+        errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="2.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="9.4" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="7.1" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="3.75"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="5.0" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.25" value="4.25"
+        errorMinus="0.25"/>
+      <measurement errorPlus="0.3" value="3.4" errorMinus="0.3"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

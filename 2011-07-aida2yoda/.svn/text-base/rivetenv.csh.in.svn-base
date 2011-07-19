@@ -1,0 +1,25 @@
+# These variables need to exist
+set prefix=@prefix@
+set exec_prefix=@exec_prefix@
+set datarootdir=@datarootdir@
+
+setenv PATH "$exec_prefix/bin:$PATH"
+setenv @LIBPATHVARNAME@ "@libdir@:@HEPMCLIBPATH@:@FASTJETLIBPATH@:$@LIBPATHVARNAME@"
+
+if ($?PYTHONPATH) then
+setenv PYTHONPATH "@RIVET_PYTHONPATH@:$PYTHONPATH"
+else
+setenv PYTHONPATH "@RIVET_PYTHONPATH@"
+endif
+
+if ($?TEXMFHOME) then
+setenv TEXMFHOME "@datadir@/Rivet/texmf:$TEXMFHOME"
+else
+setenv TEXMFHOME "@datadir@/Rivet/texmf"
+endif
+
+if ($?HOMETEXMF) then
+setenv HOMETEXMF "@datadir@/Rivet/texmf:$HOMETEXMF"
+else
+setenv HOMETEXMF "@datadir@/Rivet/texmf"
+endif

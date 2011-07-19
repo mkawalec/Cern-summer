@@ -1,0 +1,8 @@
+K 10
+svn:ignore
+V 41
+Makefile
+Makefile.in
+Rivet
+done-all-links
+END

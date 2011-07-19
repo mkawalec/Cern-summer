@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG)/DM IN PB/GEV" >
+    <dataPoint>
+      <measurement value="17.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.03" errorPlus="0.03162277660168379" errorMinus="0.03162277660168379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="27.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.44" errorPlus="0.17691806012954134" errorMinus="0.17691806012954134"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="32.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.61" errorPlus="0.23345235059857505" errorMinus="0.23345235059857505"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="40.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.46" errorPlus="0.17204650534085256" errorMinus="0.17204650534085256"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="52.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.16" errorPlus="0.06403124237432849" errorMinus="0.06403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="80.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.01" errorPlus="0.022360679774997897" errorMinus="0.022360679774997897"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=DIPHOX))/DM IN PB/GEV" >
+    <dataPoint>
+      <measurement value="17.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.04" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="27.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.41" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="32.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.7" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="40.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.46" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="52.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.19" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="80.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.04" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=RESBOS))/DM IN PB/GEV" >
+    <dataPoint>
+      <measurement value="17.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.01" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="27.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.31" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="32.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.65" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="40.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.43" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="52.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.16" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="80.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.04" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y04" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=PYTHIA))/DM IN PB/GEV" >
+    <dataPoint>
+      <measurement value="17.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.01" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="27.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.18" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="32.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.38" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="40.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.24" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="52.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="0.09" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="80.0" errorPlus="20.0" errorMinus="20.0"/>
+      <measurement value="0.02" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG)/DPT IN PB/GEV" >
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="0.7" errorPlus="0.33105890714493696" errorMinus="0.33105890714493696"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="1.18" errorPlus="0.5131276644266999" errorMinus="0.5131276644266999"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.0" errorPlus="1.0" errorMinus="1.0"/>
+      <measurement value="0.92" errorPlus="0.4482186966202994" errorMinus="0.4482186966202994"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="6.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.96" errorPlus="0.3940812099047606" errorMinus="0.3940812099047606"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="10.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.29" errorPlus="0.2469817807045694" errorMinus="0.2469817807045694"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="14.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.42" errorPlus="0.18439088914585774" errorMinus="0.18439088914585774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="20.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.19" errorPlus="0.10295630140987" errorMinus="0.10295630140987"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="28.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.12" errorPlus="0.0670820393249937" errorMinus="0.0670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="36.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.1" errorPlus="0.07071067811865477" errorMinus="0.07071067811865477"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=DIPHOX))/DPT IN PB/GEV" >
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="-2.45" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="5.59" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.0" errorPlus="1.0" errorMinus="1.0"/>
+      <measurement value="2.06" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="6.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="1.17" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="10.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.44" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="14.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.24" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="20.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.13" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="28.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.09" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="36.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.06" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=RESBOS))/DPT IN PB/GEV" >
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="0.34" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="0.95" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.0" errorPlus="1.0" errorMinus="1.0"/>
+      <measurement value="1.03" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="6.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.94" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="10.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.59" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="14.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.36" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="20.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.19" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="28.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.07" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="36.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.03" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y04" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=PYTHIA))/DPT IN PB/GEV" >
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="0.53" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.5" errorPlus="0.5" errorMinus="0.5"/>
+      <measurement value="1.15" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.0" errorPlus="1.0" errorMinus="1.0"/>
+      <measurement value="0.94" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="6.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.46" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="10.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.21" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="14.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.12" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="20.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.07" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="28.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.03" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="36.0" errorPlus="4.0" errorMinus="4.0"/>
+      <measurement value="0.01" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG)/D(PHI(P=3)-PHI(P=4)) IN PB/RAD" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="1.06" errorPlus="0.6212889826803627" errorMinus="0.6212889826803627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="0.89" errorPlus="0.6105735008989499" errorMinus="0.6105735008989499"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="0.51" errorPlus="0.6580273550544841" errorMinus="0.6580273550544841"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="3.34" errorPlus="1.5138031576133009" errorMinus="1.5138031576133009"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="15.56" errorPlus="5.366386121031546" errorMinus="5.366386121031546"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y02" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=DIPHOX))/D(PHI(P=3)-PHI(P=4)) IN PB/RAD" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="0.69" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="0.56" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="0.71" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="1.83" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="23.37" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y03" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=RESBOS))/D(PHI(P=3)-PHI(P=4)) IN PB/RAD" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="0.01" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="0.23" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="0.73" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="3.08" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="17.52" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y04" dimension="2" path="/REF/CDF_2005_S6080774" title="D(SIG(C=PYTHIA))/D(PHI(P=3)-PHI(P=4)) IN PB/RAD" >
+    <dataPoint>
+      <measurement value="0.1" errorPlus="0.1" errorMinus="0.1"/>
+      <measurement value="0.02" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.30000000000000004" errorPlus="0.09999999999999998" errorMinus="0.10000000000000003"/>
+      <measurement value="0.09" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.5" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="0.44" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.7" errorPlus="0.10000000000000009" errorMinus="0.09999999999999998"/>
+      <measurement value="1.09" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.9" errorPlus="0.09999999999999998" errorMinus="0.09999999999999998"/>
+      <measurement value="10.68" errorPlus="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

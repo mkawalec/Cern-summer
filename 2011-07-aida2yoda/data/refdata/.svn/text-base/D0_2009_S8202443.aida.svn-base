@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.7" errorPlus="4.300000000000001" errorMinus="3.6999999999999993"/>
+      <measurement value="0.00681" errorPlus="4.1630215673234267E-4" errorMinus="4.1630215673234267E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="33.5" errorPlus="6.5" errorMinus="5.5"/>
+      <measurement value="0.00299" errorPlus="1.3508050969699516E-4" errorMinus="1.3508050969699516E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="46.4" errorPlus="7.600000000000001" errorMinus="6.399999999999999"/>
+      <measurement value="0.00123" errorPlus="5.569061859954511E-5" errorMinus="5.569061859954511E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="62.7" errorPlus="10.299999999999997" errorMinus="8.700000000000003"/>
+      <measurement value="5.04E-4" errorPlus="2.6135206599527772E-5" errorMinus="2.6135206599527772E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="83.1" errorPlus="11.900000000000006" errorMinus="10.099999999999994"/>
+      <measurement value="2.03E-4" errorPlus="1.9163888123238454E-5" errorMinus="1.9163888123238454E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="106.2" errorPlus="13.799999999999997" errorMinus="11.200000000000003"/>
+      <measurement value="7.29E-5" errorPlus="8.660078170547883E-6" errorMinus="8.660078170547883E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.3" errorPlus="18.69999999999999" errorMinus="15.300000000000011"/>
+      <measurement value="2.64E-5" errorPlus="4.123811828878714E-6" errorMinus="4.123811828878714E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="172.9" errorPlus="27.099999999999994" errorMinus="18.900000000000006"/>
+      <measurement value="8.08E-6" errorPlus="1.7794354160800554E-6" errorMinus="1.7794354160800554E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="236.9" errorPlus="63.099999999999994" errorMinus="36.900000000000006"/>
+      <measurement value="7.46E-7" errorPlus="3.646253863899221E-7" errorMinus="3.646253863899221E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.7" errorPlus="4.300000000000001" errorMinus="3.6999999999999993"/>
+      <measurement value="0.00719" errorPlus="5.162800515224271E-4" errorMinus="5.162800515224271E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="33.5" errorPlus="6.5" errorMinus="5.5"/>
+      <measurement value="0.00322" errorPlus="1.6282505581144446E-4" errorMinus="1.6282505581144446E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="46.4" errorPlus="7.600000000000001" errorMinus="6.399999999999999"/>
+      <measurement value="0.00137" errorPlus="6.82529545148047E-5" errorMinus="6.82529545148047E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="62.7" errorPlus="10.299999999999997" errorMinus="8.700000000000003"/>
+      <measurement value="5.74E-4" errorPlus="3.2878728016758795E-5" errorMinus="3.2878728016758795E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="83.1" errorPlus="11.900000000000006" errorMinus="10.099999999999994"/>
+      <measurement value="2.27E-4" errorPlus="2.2540539922548437E-5" errorMinus="2.2540539922548437E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="106.2" errorPlus="13.799999999999997" errorMinus="11.200000000000003"/>
+      <measurement value="7.62E-5" errorPlus="9.325398215625969E-6" errorMinus="9.325398215625969E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.3" errorPlus="18.69999999999999" errorMinus="15.300000000000011"/>
+      <measurement value="2.54E-5" errorPlus="4.134820431409326E-6" errorMinus="4.134820431409326E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="172.9" errorPlus="27.099999999999994" errorMinus="18.900000000000006"/>
+      <measurement value="6.99E-6" errorPlus="1.5393878166336123E-6" errorMinus="1.5393878166336123E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="236.9" errorPlus="63.099999999999994" errorMinus="36.900000000000006"/>
+      <measurement value="5.58E-7" errorPlus="2.727358788278506E-7" errorMinus="2.727358788278506E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=SECOND JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.6" errorPlus="4.399999999999999" errorMinus="3.6000000000000014"/>
+      <measurement value="0.0013" errorPlus="1.386131667627574E-4" errorMinus="1.386131667627574E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="33.3" errorPlus="6.700000000000003" errorMinus="5.299999999999997"/>
+      <measurement value="4.23E-4" errorPlus="3.2636855501104884E-5" errorMinus="3.2636855501104884E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="46.2" errorPlus="7.799999999999997" errorMinus="6.200000000000003"/>
+      <measurement value="1.57E-4" errorPlus="1.7287831703253013E-5" errorMinus="1.7287831703253013E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="62.3" errorPlus="10.700000000000003" errorMinus="8.299999999999997"/>
+      <measurement value="4.17E-5" errorPlus="7.1894718338693E-6" errorMinus="7.1894718338693E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="112.9" errorPlus="87.1" errorMinus="39.900000000000006"/>
+      <measurement value="2.96E-6" errorPlus="6.870516440559618E-7" errorMinus="6.870516440559618E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=SECOND JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.6" errorPlus="4.399999999999999" errorMinus="3.6000000000000014"/>
+      <measurement value="0.00139" errorPlus="1.6131786912800452E-4" errorMinus="1.6131786912800452E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="33.3" errorPlus="6.700000000000003" errorMinus="5.299999999999997"/>
+      <measurement value="4.51E-4" errorPlus="3.732416709050585E-5" errorMinus="3.732416709050585E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="46.2" errorPlus="7.799999999999997" errorMinus="6.200000000000003"/>
+      <measurement value="1.62E-4" errorPlus="1.840322852110466E-5" errorMinus="1.840322852110466E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="62.3" errorPlus="10.700000000000003" errorMinus="8.299999999999997"/>
+      <measurement value="4.2E-5" errorPlus="7.346999387505079E-6" errorMinus="7.346999387505079E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="112.9" errorPlus="87.1" errorMinus="39.900000000000006"/>
+      <measurement value="2.82E-6" errorPlus="6.601450749645869E-7" errorMinus="6.601450749645869E-7"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=THIRD JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.6" errorPlus="4.399999999999999" errorMinus="3.6000000000000014"/>
+      <measurement value="2.22E-4" errorPlus="3.7068682253352356E-5" errorMinus="3.7068682253352356E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="34.6" errorPlus="9.399999999999999" errorMinus="6.600000000000001"/>
+      <measurement value="4.4E-5" errorPlus="8.34330965504697E-6" errorMinus="8.34330965504697E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="50.9" errorPlus="9.100000000000001" errorMinus="6.899999999999999"/>
+      <measurement value="8.67E-6" errorPlus="3.764218066212424E-6" errorMinus="3.764218066212424E-6"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2" path="/REF/D0_2009_S8202443" title="(1/SIG)*D(SIG)/DPT(C=THIRD JET) IN GEV**-1" >
+    <dataPoint>
+      <measurement value="23.6" errorPlus="4.399999999999999" errorMinus="3.6000000000000014"/>
+      <measurement value="2.33E-4" errorPlus="4.288782588334363E-5" errorMinus="4.288782588334363E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="34.6" errorPlus="9.399999999999999" errorMinus="6.600000000000001"/>
+      <measurement value="4.48E-5" errorPlus="9.07130861562983E-6" errorMinus="9.07130861562983E-6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="50.9" errorPlus="9.100000000000001" errorMinus="6.899999999999999"/>
+      <measurement value="8.6E-6" errorPlus="3.781067045160665E-6" errorMinus="3.781067045160665E-6"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

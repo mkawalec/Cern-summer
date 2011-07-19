@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/D0_2008_S6879055/" title="SIG(Q=NJET)/SIG(Q=INCL)">
+    <annotation>
+      <item key="Title" value="SIG(Q=NJET)/SIG(Q=INCL)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/D0_2008_S6879055/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/D0_2008_S6879055.aida/REF/D0_2008_S6879055/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0"
+        value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0033"
+        value="0.1201" errorMinus="0.0033"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0014" value="0.0186"
+        errorMinus="0.0014"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.6e-4" value="0.0028"
+        errorMinus="5.6e-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="4.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.4E-4" value="9.0e-4"
+        errorMinus="4.4E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/D0_2008_S6879055/" title="EVENTS/5GEV">
+    <annotation>
+      <item key="Title" value="EVENTS/5GEV" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/D0_2008_S6879055/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/D0_2008_S6879055.aida/REF/D0_2008_S6879055/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="22.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="94.0" value="733.0"
+        errorMinus="94.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="27.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="39.0" value="396.0"
+        errorMinus="39.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="32.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="25.0" value="254.0"
+        errorMinus="25.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="37.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="15.0" value="151.0"
+        errorMinus="15.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="42.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="11.0" value="116.0"
+        errorMinus="11.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="47.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="6.7" value="77.2"
+        errorMinus="6.7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="52.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="6.8" value="70.4"
+        errorMinus="6.8"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="57.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="6.0" value="46.4"
+        errorMinus="6.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="62.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="7.0" value="49.9"
+        errorMinus="7.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="67.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="6.6" value="38.3"
+        errorMinus="6.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="75.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="3.0" value="17.5"
+        errorMinus="3.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="85.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="2.7" value="14.8"
+        errorMinus="2.7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="100.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="1.6" value="10.2"
+        errorMinus="1.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="20.0" value="130.0"
+        errorMinus="20.0"/>
+      <measurement errorPlus="0.7" value="3.9" errorMinus="0.7"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="25.0" value="175.0"
+        errorMinus="25.0"/>
+      <measurement errorPlus="0.4" value="1.6" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="25.0" value="225.0"
+        errorMinus="25.0"/>
+      <measurement errorPlus="0.2" value="0.3" errorMinus="0.2"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/D0_2008_S6879055/" title="EVENTS/5GEV">
+    <annotation>
+      <item key="Title" value="EVENTS/5GEV" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/D0_2008_S6879055/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/D0_2008_S6879055.aida/REF/D0_2008_S6879055/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="25.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="10.0" value="101.0"
+        errorMinus="10.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="35.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="3.6" value="23.7"
+        errorMinus="3.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="50.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="1.4" value="7.6" errorMinus="1.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="12.5" value="72.5"
+        errorMinus="12.5"/>
+      <measurement errorPlus="0.6" value="1.7" errorMinus="0.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="12.5" value="97.5"
+        errorMinus="12.5"/>
+      <measurement errorPlus="0.3" value="0.4" errorMinus="0.3"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="25.0" value="135.0"
+        errorMinus="25.0"/>
+      <measurement errorPlus="0.1" value="0.2" errorMinus="0.1"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/D0_2008_S6879055/" title="EVENTS/5GEV">
+    <annotation>
+      <item key="Title" value="EVENTS/5GEV" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/D0_2008_S6879055/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/D0_2008_S6879055.aida/REF/D0_2008_S6879055/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="25.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="3.1" value="17.7"
+        errorMinus="3.1"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="40.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="0.6" value="1.7" errorMinus="0.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="60.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="0.2" value="0.3" errorMinus="0.2"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

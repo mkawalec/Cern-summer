@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/TASSO_1983_S1188607/" title="SIG(Q=D*)/SIG(Q=MU)">
+    <annotation>
+      <item key="Title" value="SIG(Q=D*)/SIG(Q=MU)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1983_S1188607/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1983_S1188607.aida/REF/TASSO_1983_S1188607/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="34.4"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.3962897263820284" value="2.5"
+        errorMinus="1.3962897263820284"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/TASSO_1983_S1188607/" title="(N(THETA &lt; PI/2)-N(THETA &gt; PI/2))/(N(THETA &lt; PI/2) +N(THETA &gt; PI/2))">
+    <annotation>
+      <item key="Title"
+        value="(N(THETA &lt; PI/2)-N(THETA &gt; PI/2))/(N(THETA &lt; PI/2) +N(THETA &gt; PI/2))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1983_S1188607/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1983_S1188607.aida/REF/TASSO_1983_S1188607/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="34.4"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.13" value="-0.28"
+        errorMinus="0.13"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 21
+Makefile
+Makefile.in
+
+K 13
+svn:mergeinfo
+V 0
+
+END

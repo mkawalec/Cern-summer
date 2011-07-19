@@ -1,0 +1,11 @@
+// -*- C++ -*-
+#ifndef RIVET_ProjectionApplier_FHH
+#define RIVET_ProjectionApplier_FHH
+
+namespace Rivet {
+
+  class ProjectionApplier;
+
+}
+
+#endif

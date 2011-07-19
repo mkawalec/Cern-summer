@@ -1,0 +1,11 @@
+// -*- C++ -*-
+#ifndef RIVET_Event_FHH
+#define RIVET_Event_FHH
+
+namespace Rivet {
+
+  class Event;
+
+}
+
+#endif

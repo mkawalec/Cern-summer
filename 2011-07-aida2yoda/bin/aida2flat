@@ -1,0 +1,199 @@
+#! /usr/bin/env python
+
+"""\
+%prog [options] aidafile [aidafile2 ...]
+
+Convert AIDA data files to a flat format which is more human-readable then the
+XML (and by default also plottable directly using make-plots). The output is by
+default written out to standard output unless the --split, --smart-output,
+--gnuplot, or --output options are specified. When specifying either input or
+output filenames, a '-' is used to refer to stdin or stdout as appropriate.
+
+Histograms can also be filtered by AIDA path, using the -m or -M options for a
+positive or negative regex pattern patch respectively.
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+import os, logging
+import lighthisto
+
+## Try to load faster but non-standard cElementTree module
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    try:
+        import cElementTree as ET
+    except ImportError:
+        try:
+            import xml.etree.ElementTree as ET
+        except:
+            sys.stderr.write("Can't load the ElementTree XML parser: please install it!\n")
+            sys.exit(1)
+
+
+##########################################################
+
+
+if __name__ == "__main__":
+
+    ## Default plot file search paths
+    default_plotdirs = ["."]
+    try:
+        import rivet
+        default_plotdirs += rivet.getAnalysisPlotPaths()
+    except:
+        pass
+
+
+    ## Parse command line options
+    from optparse import OptionParser, OptionGroup
+    parser = OptionParser(usage=__doc__)
+    parser.add_option("-o", "--output", default=None,
+                      help="Write all histos to a single output file, rather than the default writing to stdout. "
+                      "stdout can be explicitly specified by setting '-' as the output filename. This option will "
+                      "be disregarded if --split, --smart-output, or --gnuplot is specified.",
+                      dest="OUTPUT")
+    parser.add_option("-s", "--split", action="store_true", default=False,
+                      help="Write each histo to a separate output file, with names based on the histo path",
+                      dest="SPLITOUTPUT")
+    parser.add_option("-S", "--smart-output", action="store_true", default=False,
+                      help="Write to output files with names based on the corresponding input filename. "
+                      "This option will be disregarded if --split is specified.",
+                      dest="SMARTOUTPUT")
+    parser.add_option("-g", "--gnuplot", action="store_true", default=False,
+                      help="Provide output suitable for Gnuplot's 'plot \"foo.dat\" with xye'. "
+                      "This option implies --split and will override --output or --smart-output",
+                      dest="GNUPLOT")
+    parser.add_option("--plotinfodir", dest="PLOTINFODIR", action="append",
+                      default=default_plotdirs, help="directory which may contain plot header information")
+    parser.add_option("-m", "--match", action="append",
+                      help="Only write out histograms whose $path/$name string matches these regexes",
+                      dest="PATHPATTERNS")
+    parser.add_option("-M", "--unmatch", action="append",
+                      help="Exclude histograms whose $path/$name string matches these regexes",
+                      dest="PATHUNPATTERNS")
+    verbgroup = OptionGroup(parser, "Verbosity control")
+    verbgroup.add_option("-v", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                         default=logging.INFO, help="print debug (very verbose) messages")
+    verbgroup.add_option("-q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                         default=logging.INFO, help="be very quiet")
+    opts, args = parser.parse_args()
+
+
+    ## Configure logging
+    logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+    ## Initialise steering variables which need a bit more care
+    import re
+    if opts.PATHPATTERNS is None:
+        opts.PATHPATTERNS = []
+    opts.PATHPATTERNS = [re.compile(r) for r in opts.PATHPATTERNS]
+    if opts.PATHUNPATTERNS is None:
+        opts.PATHUNPATTERNS = []
+    opts.PATHUNPATTERNS = [re.compile(r) for r in opts.PATHUNPATTERNS]
+    if opts.GNUPLOT:
+        opts.SPLITOUTPUT = True
+
+
+    ## Check that at least one file has been supplied
+    if len(args) < 1:
+        sys.stderr.write("Must specify at least one AIDA histogram file (or '-' for stdin)\n")
+        sys.exit(1)
+
+    ## Add AIDA file directories to the plotinfo path
+    for aidafile in args:
+        if aidafile != "-":
+            aidadir = os.path.dirname(aidafile)
+            if aidadir not in opts.PLOTINFODIR:
+                opts.PLOTINFODIR.append(aidadir)
+    ## Remove empty path entries
+    opts.PLOTINFODIR = filter(lambda s: len(s) > 0, opts.PLOTINFODIR)
+    ## Create plot file parser
+    plotparser = lighthisto.PlotParser(opts.PLOTINFODIR)
+
+
+    ## Run over the files and build histo objects selected by the pattern filtering
+    histos = {}
+    for aidafile in args:
+        try:
+            if aidafile == "-":
+                tree = ET.parse(sys.stdin)
+            else:
+                if not os.access(aidafile, os.R_OK):
+                    logging.error("%s can not be read" % aidafile)
+                    sys.exit(1)
+                tree = ET.parse(aidafile)
+        except:
+            logging.error("%s can not be parsed as XML" % aidafile)
+            sys.exit(1)
+        for dps in tree.findall("dataPointSet"):
+            useThis = True
+            dpspath = os.path.join(dps.get("path"), dps.get("name"))
+
+            ## If regexes have been provided, only add analyses which match and don't unmatch
+            if opts.PATHPATTERNS:
+                useThis = False
+                for regex in opts.PATHPATTERNS:
+                    if regex.search(dpspath):
+                        useThis = True
+                        break
+            if useThis and opts.PATHUNPATTERNS:
+                for regex in opts.PATHUNPATTERNS:
+                    if regex.search(dpspath):
+                        useThis = False
+                        break
+
+            if useThis:
+                hist = lighthisto.Histo.fromDPS(dps)
+                try:
+                    plotparser.updateHistoHeaders(hist)
+                except ValueError, err:
+                    logging.debug(err)
+                histos.setdefault(aidafile, []).append(hist)
+
+
+    ## Write output
+    if histos:
+        ## Split output per-histogram
+        if opts.SPLITOUTPUT:
+            for f, hs in sorted(histos.iteritems()):
+                for h in sorted(hs):
+                    histo = h.fullPath()[1:].replace("/", "_")
+                    outfile = "%s.dat" % histo
+                    #print "Writing to", outfile
+                    out = open(outfile, "w")
+                    if not opts.GNUPLOT:
+                        out.write(h.header() + "\n")
+                    if opts.GNUPLOT:
+                        out.write(h.asGnuplot() + "\n")
+                    else:
+                        out.write(h.asFlat() + "\n")
+                    out.close()
+        ## Split output per-infile
+        elif opts.SMARTOUTPUT:
+            for f, hs in sorted(histos.iteritems()):
+                outfile = os.path.basename(f).replace(".aida", ".dat")
+                if f == "-":
+                    outfile = "out.dat"
+                out = open(outfile, "w")
+                #out.write(h.header() + "\n")
+                out.write("\n\n".join(h.asFlat() for h in sorted(hs)))
+                out.write("\n")
+                out.close()
+        ## Write all output to a single file (stdout by default)
+        else:
+            outfile = opts.OUTPUT or "-"
+            if outfile == "-":
+                out = sys.stdout
+            else:
+                out = open(outfile, "w")
+            for f, hs in sorted(histos.iteritems()):
+                out.write("\n\n".join([h.asFlat() for h in sorted(hs)]))
+            out.write("\n")
+            if outfile != "-":
+                out.close()

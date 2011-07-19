@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="35000.0" errorPlus="8730.448155736336" errorMinus="8730.448155736336"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="7900.0" errorPlus="1894.3534517085243" errorMinus="1894.3534517085243"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1400.0" errorPlus="374.0804191614418" errorMinus="374.0804191614418"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="270.0" errorPlus="75.0799074320154" errorMinus="75.0799074320154"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="43.0" errorPlus="14.229037212685895" errorMinus="14.229037212685895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="22.0" errorPlus="9.357114939980164" errorMinus="9.357114939980164"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="8.8" errorPlus="3.9108055436188596" errorMinus="3.9108055436188596"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="2.0" errorPlus="1.528659543521709" errorMinus="1.528659543521709"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="34000.0" errorPlus="8478.158217443219" errorMinus="8478.158217443219"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="7900.0" errorPlus="1961.1262707944127" errorMinus="1961.1262707944127"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1200.0" errorPlus="298.3152694717453" errorMinus="298.3152694717453"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="240.0" errorPlus="65.66577190591761" errorMinus="65.66577190591761"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="49.0" errorPlus="14.527487738766121" errorMinus="14.527487738766121"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="15.0" errorPlus="6.070831903454419" errorMinus="6.070831903454419"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="9.3" errorPlus="3.5765725212834707" errorMinus="3.5765725212834707"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="32000.0" errorPlus="7699.974025930217" errorMinus="7699.974025930217"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="6800.0" errorPlus="1689.4134366696626" errorMinus="1689.4134366696626"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1100.0" errorPlus="303.6976292301275" errorMinus="303.6976292301275"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="210.0" errorPlus="58.268472607405805" errorMinus="58.268472607405805"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="43.0" errorPlus="15.099062884828315" errorMinus="15.099062884828315"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="15.0" errorPlus="6.408002808988148" errorMinus="6.408002808988148"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="2.4" errorPlus="1.5393713002391594" errorMinus="1.5393713002391594"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="1.5" errorPlus="1.1521718621802912" errorMinus="1.1521718621802912"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="25000.0" errorPlus="6872.083017542789" errorMinus="6872.083017542789"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="5600.0" errorPlus="1490.0209931407007" errorMinus="1490.0209931407007"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="920.0" errorPlus="236.48832191040637" errorMinus="236.48832191040637"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="140.0" errorPlus="40.78327598415801" errorMinus="40.78327598415801"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="27.0" errorPlus="8.648433384145363" errorMinus="8.648433384145363"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="9.0" errorPlus="3.7053339930430025" errorMinus="3.7053339930430025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="2.2" errorPlus="1.1196249371999538" errorMinus="1.1196249371999538"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="0.32" errorPlus="0.3378842405321681" errorMinus="0.3378842405321681"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="16000.0" errorPlus="4692.693895834247" errorMinus="4692.693895834247"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="3200.0" errorPlus="999.4097457999897" errorMinus="999.4097457999897"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="460.0" errorPlus="152.87579402900906" errorMinus="152.87579402900906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="52.0" errorPlus="19.373053450605045" errorMinus="19.373053450605045"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="9.3" errorPlus="4.485261865264948" errorMinus="4.485261865264948"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1.7" errorPlus="1.4243524844644322" errorMinus="1.4243524844644322"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="0.48" errorPlus="0.5272576599728068" errorMinus="0.5272576599728068"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="50000.0" errorPlus="15181.580945342945" errorMinus="15181.580945342945"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="11000.0" errorPlus="2928.748708919903" errorMinus="2928.748708919903"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1900.0" errorPlus="542.8283706660882" errorMinus="542.8283706660882"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="340.0" errorPlus="102.94535249344673" errorMinus="102.94535249344673"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="49.0" errorPlus="16.258846822576317" errorMinus="16.258846822576317"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="22.0" errorPlus="9.503388869240277" errorMinus="9.503388869240277"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="11.0" errorPlus="4.699202059924642" errorMinus="4.699202059924642"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="1.0" errorPlus="1.0392785959500945" errorMinus="1.0392785959500945"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="1.0" errorPlus="1.0502380682492898" errorMinus="1.0502380682492898"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="48000.0" errorPlus="14129.846674327362" errorMinus="14129.846674327362"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="11000.0" errorPlus="3126.187614331552" errorMinus="3126.187614331552"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1700.0" errorPlus="438.6395331020678" errorMinus="438.6395331020678"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="300.0" errorPlus="89.62120284843314" errorMinus="89.62120284843314"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="64.0" errorPlus="18.87728794080336" errorMinus="18.87728794080336"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="17.0" errorPlus="7.009279563550025" errorMinus="7.009279563550025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="10.0" errorPlus="3.9115214431215892" errorMinus="3.9115214431215892"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="0.6" errorPlus="0.6250951927506722" errorMinus="0.6250951927506722"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="45000.0" errorPlus="13248.198707748914" errorMinus="13248.198707748914"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="9500.0" errorPlus="2886.577774805314" errorMinus="2886.577774805314"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1400.0" errorPlus="412.61066394362615" errorMinus="412.61066394362615"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="270.0" errorPlus="76.5244019904762" errorMinus="76.5244019904762"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="53.0" errorPlus="18.090011055828572" errorMinus="18.090011055828572"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="16.0" errorPlus="6.710469432163446" errorMinus="6.710469432163446"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="3.2" errorPlus="1.8532393261529934" errorMinus="1.8532393261529934"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="2.2" errorPlus="1.4381001355955711" errorMinus="1.4381001355955711"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="36000.0" errorPlus="11260.708503464602" errorMinus="11260.708503464602"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="7600.0" errorPlus="2229.327575750141" errorMinus="2229.327575750141"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1200.0" errorPlus="330.8802804640978" errorMinus="330.8802804640978"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="180.0" errorPlus="56.977890448839894" errorMinus="56.977890448839894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="36.0" errorPlus="11.514373626038022" errorMinus="11.514373626038022"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="10.0" errorPlus="4.211887937730538" errorMinus="4.211887937730538"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="2.9" errorPlus="1.375590782173245" errorMinus="1.375590782173245"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="450.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="0.32" errorPlus="0.3388677618186776" errorMinus="0.3388677618186776"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DPT/DYRAP IN PB/GEV" >
+    <dataPoint>
+      <measurement value="70.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="23000.0" errorPlus="7816.351619521732" errorMinus="7816.351619521732"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="95.0" errorPlus="15.0" errorMinus="15.0"/>
+      <measurement value="4300.0" errorPlus="1503.303615375151" errorMinus="1503.303615375151"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="570.0" errorPlus="194.8399743379166" errorMinus="194.8399743379166"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="68.0" errorPlus="26.745706197444107" errorMinus="26.745706197444107"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="10.0" errorPlus="4.914264950122246" errorMinus="4.914264950122246"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="2.5" errorPlus="1.8584267540045802" errorMinus="1.8584267540045802"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="355.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="0.49" errorPlus="0.5422420677151488" errorMinus="0.5422420677151488"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="2000.0" errorPlus="523.1022844530504" errorMinus="523.1022844530504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="500.0" errorPlus="140.83550688658028" errorMinus="140.83550688658028"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="170.0" errorPlus="54.79905634224006" errorMinus="54.79905634224006"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="73.0" errorPlus="27.070400141852353" errorMinus="27.070400141852353"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="34.0" errorPlus="14.76627828669093" errorMinus="14.76627828669093"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="6.6" errorPlus="5.042957168170279" errorMinus="5.042957168170279"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="6.5" errorPlus="4.966566420576695" errorMinus="4.966566420576695"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40." errorMinus="40."/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40." errorMinus="40."/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="5.2" errorPlus="3.9899232345497575" errorMinus="3.9899232345497575"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="2300.0" errorPlus="616.9189979243629" errorMinus="616.9189979243629"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="680.0" errorPlus="186.0144940589308" errorMinus="186.0144940589308"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="280.0" errorPlus="79.44503508715947" errorMinus="79.44503508715947"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="100.0" errorPlus="31.29552683691393" errorMinus="31.29552683691393"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="57.0" errorPlus="19.04038907165502" errorMinus="19.04038907165502"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="18.0" errorPlus="7.729192454584114" errorMinus="7.729192454584114"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="14.0" errorPlus="6.303561215693872" errorMinus="6.303561215693872"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="5.1" errorPlus="3.292072714871286" errorMinus="3.292072714871286"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715" errorPlus="45.0" errorMinus="45.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="4.6" errorPlus="2.98690224145351" errorMinus="2.98690224145351"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="2100.0" errorPlus="552.0084781957611" errorMinus="552.0084781957611"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="730.0" errorPlus="201.62409702215655" errorMinus="201.62409702215655"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="300.0" errorPlus="87.7273047574129" errorMinus="87.7273047574129"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="120.0" errorPlus="38.074054157654395" errorMinus="38.074054157654395"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="57.0" errorPlus="19.83927559161372" errorMinus="19.83927559161372"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="12.0" errorPlus="6.050439984001163" errorMinus="6.050439984001163"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="13.0" errorPlus="6.555661675223943" errorMinus="6.555661675223943"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="1.8" errorPlus="1.880445277055411" errorMinus="1.880445277055411"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="7.5" errorPlus="4.38316452463286" errorMinus="4.38316452463286"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="900.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="1.7" errorPlus="1.776183560333785" errorMinus="1.776183560333785"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="130.0" errorPlus="41.92071683547408" errorMinus="41.92071683547408"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="51.0" errorPlus="17.359563963417976" errorMinus="17.359563963417976"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="25.0" errorPlus="9.089829481348922" errorMinus="9.089829481348922"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="11.0" errorPlus="4.595051686325193" errorMinus="4.595051686325193"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="900.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="5.4" errorPlus="2.6482031644116732" errorMinus="2.6482031644116732"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1005.0" errorPlus="55.0" errorMinus="55.0"/>
+      <measurement value="2.0" errorPlus="1.3235724385163057" errorMinus="1.3235724385163057"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1120.0" errorPlus="60.0" errorMinus="60.0"/>
+      <measurement value="1.3" errorPlus="1.0118510562330802" errorMinus="1.0118510562330802"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1005.0" errorPlus="55.0" errorMinus="55.0"/>
+      <measurement value="21.0" errorPlus="8.701706729142279" errorMinus="8.701706729142279"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1120.0" errorPlus="60.0" errorMinus="60.0"/>
+      <measurement value="9.3" errorPlus="4.470776107120552" errorMinus="4.470776107120552"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1245.0" errorPlus="65.0" errorMinus="65.0"/>
+      <measurement value="3.7" errorPlus="2.217223263453638" errorMinus="2.217223263453638"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1380.0" errorPlus="70.0" errorMinus="70.0"/>
+      <measurement value="2.0" errorPlus="1.4235167719419395" errorMinus="1.4235167719419395"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1525.0" errorPlus="75.0" errorMinus="75.0"/>
+      <measurement value="1.4" errorPlus="1.1618313130571063" errorMinus="1.1618313130571063"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="135.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="3100.0" errorPlus="909.3309848454521" errorMinus="909.3309848454521"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="670.0" errorPlus="202.29816504605276" errorMinus="202.29816504605276"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="240.0" errorPlus="77.4777135439605" errorMinus="77.4777135439605"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="72.0" errorPlus="28.558326908977" errorMinus="28.558326908977"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="53.0" errorPlus="21.373921586830996" errorMinus="21.373921586830996"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="13.0" errorPlus="7.577393114389671" errorMinus="7.577393114389671"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="10.0" errorPlus="6.52803063718301" errorMinus="6.52803063718301"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="2.6" errorPlus="2.7207683197949803" errorMinus="2.7207683197949803"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="2.5" errorPlus="2.616118116599478" errorMinus="2.616118116599478"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="185.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="3400.0" errorPlus="995.8227954812041" errorMinus="995.8227954812041"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1000.0" errorPlus="296.0439156611735" errorMinus="296.0439156611735"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="380.0" errorPlus="115.42621192779393" errorMinus="115.42621192779393"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="130.0" errorPlus="41.51541400492111" errorMinus="41.51541400492111"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="73.0" errorPlus="24.839745087258844" errorMinus="24.839745087258844"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="24.0" errorPlus="10.020653870880881" errorMinus="10.020653870880881"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="12.0" errorPlus="5.812622127749231" errorMinus="5.812622127749231"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="10.0" errorPlus="5.083069938531242" errorMinus="5.083069938531242"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="4.6" errorPlus="3.023344532136554" errorMinus="3.023344532136554"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="235.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="3100.0" errorPlus="940.3480951222266" errorMinus="940.3480951222266"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="285.0" errorPlus="25.0" errorMinus="25.0"/>
+      <measurement value="1000.0" errorPlus="306.9934852728963" errorMinus="306.9934852728963"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="340.0" errorPlus="30.0" errorMinus="30.0"/>
+      <measurement value="450.0" errorPlus="140.37547862785723" errorMinus="140.37547862785723"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="405.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="180.0" errorPlus="58.47756492878273" errorMinus="58.47756492878273"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="475.0" errorPlus="35.0" errorMinus="35.0"/>
+      <measurement value="83.0" errorPlus="28.766535575213084" errorMinus="28.766535575213084"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="27.0" errorPlus="11.12255815898483" errorMinus="11.12255815898483"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="8.5" errorPlus="5.004767951663694" errorMinus="5.004767951663694"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="9.3" errorPlus="5.087567528790159" errorMinus="5.087567528790159"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="5.6" errorPlus="3.6860125664462946" errorMinus="3.6860125664462946"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="900.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="6.7" errorPlus="3.946385313169509" errorMinus="3.946385313169509"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="550.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="160.0" errorPlus="55.049301539619925" errorMinus="55.049301539619925"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="630.0" errorPlus="40.0" errorMinus="40.0"/>
+      <measurement value="86.0" errorPlus="30.36908296277647" errorMinus="30.36908296277647"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="715.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="33.0" errorPlus="12.274979796317385" errorMinus="12.274979796317385"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="805.0" errorPlus="45.0" errorMinus="45.0"/>
+      <measurement value="17.0" errorPlus="6.824626656455283" errorMinus="6.824626656455283"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="900.0" errorPlus="50.0" errorMinus="50.0"/>
+      <measurement value="5.6" errorPlus="2.8416289412940596" errorMinus="2.8416289412940596"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1005.0" errorPlus="55.0" errorMinus="55.0"/>
+      <measurement value="3.5" errorPlus="1.9667259595581692" errorMinus="1.9667259595581692"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1120.0" errorPlus="60.0" errorMinus="60.0"/>
+      <measurement value="1.3" errorPlus="1.0265852327011138" errorMinus="1.0265852327011138"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1245.0" errorPlus="65.0" errorMinus="65.0"/>
+      <measurement value="0.6" errorPlus="0.6349862675680474" errorMinus="0.6349862675680474"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DM(P=3_4)/DABS(YRAP(C=MAX)) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1005.0" errorPlus="55.0" errorMinus="55.0"/>
+      <measurement value="29.0" errorPlus="12.654106052977426" errorMinus="12.654106052977426"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1120.0" errorPlus="60.0" errorMinus="60.0"/>
+      <measurement value="15.0" errorPlus="6.9162851300391015" errorMinus="6.9162851300391015"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1245.0" errorPlus="65.0" errorMinus="65.0"/>
+      <measurement value="4.6" errorPlus="2.6798701461078296" errorMinus="2.6798701461078296"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1380.0" errorPlus="70.0" errorMinus="70.0"/>
+      <measurement value="2.7" errorPlus="1.7735938091908194" errorMinus="1.7735938091908194"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1525.0" errorPlus="75.0" errorMinus="75.0"/>
+      <measurement value="2.4" errorPlus="1.576527830391839" errorMinus="1.576527830391839"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1680.0" errorPlus="80.0" errorMinus="80.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1850.0" errorPlus="90.0" errorMinus="90.0"/>
+      <measurement value="0.52" errorPlus="0.5707222091350572" errorMinus="0.5707222091350572"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.15" errorPlus="0.15" errorMinus="0.15"/>
+      <measurement value="16.0" errorPlus="6.464178215365" errorMinus="6.46417821536504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="19.0" errorPlus="6.6194211227267" errorMinus="6.6194211227267"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="17.0" errorPlus="5.84355063296281" errorMinus="5.8435506329628"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="13.0" errorPlus="4.29952276421465" errorMinus="4.29952276421465"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+      <measurement value="17.0" errorPlus="5.72725937949383" errorMinus="5.72725937949383"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="15.0" errorPlus="4.64031248947741" errorMinus="4.64031248947741"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="18.0" errorPlus="5.5327971226135" errorMinus="5.5327971226135"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="15.0" errorPlus="4.87091367199214" errorMinus="4.87091367199214"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="17.0" errorPlus="5.35132890037606" errorMinus="5.35132890037606"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="16.0" errorPlus="5.11832472592351" errorMinus="5.11832472592351"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="18.0" errorPlus="5.91299315068097" errorMinus="5.91299315068097"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d22-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.15" errorPlus="0.15" errorMinus="0.15"/>
+      <measurement value="3.6" errorPlus="1.9315736175460674" errorMinus="1.9315736175460674"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="1.7" errorPlus="0.9920501449019602" errorMinus="0.9920501449019602"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="2.1" errorPlus="1.0564899431608425" errorMinus="1.0564899431608425"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="1.2" errorPlus="0.644055773982347" errorMinus="0.644055773982347"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+      <measurement value="1.3" errorPlus="0.610619562411818" errorMinus="0.610619562411818"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="1.0" errorPlus="0.491" errorMinus="0.491"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="1.5" errorPlus="0.6004048634046864" errorMinus="0.6004048634046864"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="2.3" errorPlus="0.8317100215820415" errorMinus="0.8317100215820415"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="1.6" errorPlus="0.5862117023738096" errorMinus="0.5862117023738096"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="1.8" errorPlus="0.6207364658210439" errorMinus="0.6207364658210439"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="1.4" errorPlus="0.5103763317396292" errorMinus="0.5103763317396292"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d23-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="0.3" errorPlus="0.3132953877732642" errorMinus="0.3132953877732642"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="0.25" errorPlus="0.2610943316121589" errorMinus="0.2610943316121589"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="0.17" errorPlus="0.17796986514576002" errorMinus="0.17796986514576002"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="0.1" errorPlus="0.10478148691443542" errorMinus="0.10478148691443542"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="0.21" errorPlus="0.13822547124173604" errorMinus="0.13822547124173604"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="0.053" errorPlus="0.0555608128180285" errorMinus="0.0555608128180285"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.11" errorPlus="0.07304828266290729" errorMinus="0.07304828266290729"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.031" errorPlus="0.03301323892016656" errorMinus="0.03301323892016656"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.11" errorPlus="0.05615389567964097" errorMinus="0.05615389567964097"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d24-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.15" errorPlus="0.15" errorMinus="0.15"/>
+      <measurement value="28.0" errorPlus="10.11218749826169" errorMinus="10.11218749826169"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="31.0" errorPlus="10.410462813919466" errorMinus="10.410462813919466"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="19.0" errorPlus="6.415954254824453" errorMinus="6.415954254824453"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="20.0" errorPlus="6.565241808189551" errorMinus="6.565241808189551"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+      <measurement value="20.0" errorPlus="6.17271415181361" errorMinus="6.17271415181361"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="21.0" errorPlus="6.508102949400847" errorMinus="6.508102949400847"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="24.0" errorPlus="7.324719789862272" errorMinus="7.324719789862272"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="21.0" errorPlus="7.142130564474441" errorMinus="7.142130564474441"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="25.0" errorPlus="8.044718764506314" errorMinus="8.044718764506314"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="24.0" errorPlus="8.091417675537459" errorMinus="8.091417675537459"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="28.0" errorPlus="9.180456633523194" errorMinus="9.180456633523194"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d25-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.15" errorPlus="0.15" errorMinus="0.15"/>
+      <measurement value="4.3" errorPlus="2.1634641411403144" errorMinus="2.1634641411403144"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="1.7" errorPlus="0.9847696634238894" errorMinus="0.9847696634238894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="1.8" errorPlus="0.9573495913197019" errorMinus="0.9573495913197019"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="1.4" errorPlus="0.7055722216754284" errorMinus="0.7055722216754284"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+      <measurement value="2.0" errorPlus="0.8395236744726142" errorMinus="0.8395236744726142"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="0.99" errorPlus="0.48600833326188964" errorMinus="0.48600833326188964"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="2.3" errorPlus="0.8657934453436339" errorMinus="0.8657934453436339"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="3.0" errorPlus="1.031952033769012" errorMinus="1.031952033769012"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="2.3" errorPlus="0.7996065032251801" errorMinus="0.7996065032251801"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="2.6" errorPlus="0.8973767324819605" errorMinus="0.8973767324819605"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="2.2" errorPlus="0.7302674578536278" errorMinus="0.7302674578536278"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d26-x01-y01" dimension="2" path="/REF/ATLAS_2010_S8817804" title="D2(SIG)/DCHI/DM(P=3_4) IN PB/GEV" >
+    <dataPoint>
+      <measurement value="1.15" errorPlus="0.15" errorMinus="0.15"/>
+      <measurement value="0.5" errorPlus="0.5221886632243178" errorMinus="0.5221886632243178"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.55" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="0.61" errorPlus="0.4747387459434926" errorMinus="0.4747387459434926"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.1" errorPlus="0.3" errorMinus="0.3"/>
+      <measurement value="0.74" errorPlus="0.48373874147105483" errorMinus="0.48373874147105483"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.85" errorPlus="0.45" errorMinus="0.45"/>
+      <measurement value="0.17" errorPlus="0.1784262371401695" errorMinus="0.1784262371401695"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="3.9" errorPlus="0.6" errorMinus="0.6"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="5.25" errorPlus="0.75" errorMinus="0.75"/>
+      <measurement value="0.099" errorPlus="0.10370933998922181" errorMinus="0.10370933998922181"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="7.1" errorPlus="1.1" errorMinus="1.1"/>
+      <measurement value="0.21" errorPlus="0.13836179530491788" errorMinus="0.13836179530491788"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="9.6" errorPlus="1.4" errorMinus="1.4"/>
+      <measurement value="0.16" errorPlus="0.1056848144247791" errorMinus="0.1056848144247791"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="13.0" errorPlus="2.0" errorMinus="2.0"/>
+      <measurement value="0.19" errorPlus="0.106353168264984" errorMinus="0.106353168264984"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="17.5" errorPlus="2.5" errorMinus="2.5"/>
+      <measurement value="0.061" errorPlus="0.04865372389653232" errorMinus="0.04865372389653232"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="25.0" errorPlus="5.0" errorMinus="5.0"/>
+      <measurement value="0.11" errorPlus="0.05645358181727711" errorMinus="0.05645358181727711"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

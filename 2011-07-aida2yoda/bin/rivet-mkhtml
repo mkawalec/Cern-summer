@@ -1,0 +1,295 @@
+#! /usr/bin/env python
+
+"""\
+%prog [options] <aidafile1> [<aidafile2> <aidafile3>...]
+
+Make web pages from histogram files written out by Rivet.  You can specify
+multiple Monte Carlo AIDA files to be compared in the same syntax as for
+compare-histos, i.e. including plotting options.
+
+Reference data, analysis metadata, and plot style information should be found
+automatically (if not, set the RIVET_ANALYSIS_PATH or similar variables
+appropriately).
+
+You can overwrite an existing output directory.
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    sys.stderr.write("rivet scripts require Python version >= 2.4.0... exiting\n")
+    sys.exit(1)
+
+import traceback
+try:
+    import rivet
+except ImportError:
+    traceback.print_exc(file=sys.stderr)
+    sys.stderr.write("rivet is broken... exiting\n")
+    sys.exit(1)
+
+import sys, os, glob, shutil
+from subprocess import Popen, PIPE
+
+
+from optparse import OptionParser
+parser = OptionParser(usage=__doc__)
+parser.add_option("-o", "--outputdir", dest="OUTPUTDIR",
+                  default="./plots", help="directory for webpage output")
+parser.add_option("-t", "--title", dest="TITLE",
+                  default="Plots from Rivet analyses", help="title to be displayed on the main web page")
+parser.add_option("-c", "--config", dest="CONFIGFILES", action="append", default=["~/.make-plots"],
+                  help="plot config file(s) to be used with make-plots.")
+parser.add_option("-s", "--single", dest="SINGLE", action="store_true",
+                  default=False, help="display plots on single webpage.")
+parser.add_option("--no-ratio", dest="SHOW_RATIO", action="store_false",
+                  default=True, help="don't draw a ratio plot under each main plot.")
+parser.add_option("--mc-errs", dest="MC_ERRS", action="store_true",
+                  default=False, help="plot error bars.")
+parser.add_option("--refid", dest="REF_ID",
+                  default=None, help="ID of reference data set (file path for non-REF data)")
+parser.add_option("-n", "--num-threads", metavar="NUMTHREADS", dest="NUMTHREADS", type=int,
+                  default=None, help="request make-plots to use a specific number of threads.")
+parser.add_option("--pdf", dest="VECTORFORMAT", action="store_const", const="PDF",
+                  default="PDF", help="use PDF as the vector plot format.")
+parser.add_option("--ps", dest="VECTORFORMAT", action="store_const", const="PS",
+                  default="PDF", help="use PostScript as the vector plot format.")
+parser.add_option("-i", "--ignore-unvalidated", dest="IGNORE_UNVALIDATED", action="store_true",
+                  default=False, help="ignore unvalidated analyses.")
+parser.add_option("-m", "--match", action="append", dest="PATHPATTERNS",
+                  help="only write out histograms from analyses whose name matches any of these regexes")
+parser.add_option("-M", "--unmatch", action="append", dest="PATHUNPATTERNS"
+                  help="Exclude histograms whose $path/$name string matches these regexes")
+parser.add_option("-v", "--verbose", help="Add extra debug messages", dest="VERBOSE",
+                  action="store_true", default=False)
+opts, aidafiles = parser.parse_args()
+
+
+## Check that there are some arguments!
+if not aidafiles:
+    print "Error: You need to specify some .aida files to be plotted!"
+    sys.exit(1)
+
+
+## Make output directory
+if os.path.exists(opts.OUTPUTDIR):
+    import shutil
+    shutil.rmtree(opts.OUTPUTDIR)
+try:
+    os.makedirs(opts.OUTPUTDIR)
+except:
+    print "Error: failed to make new directory '%s'" % opts.OUTPUTDIR
+    sys.exit(1)
+
+
+## Try to load faster but non-standard cElementTree module
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    try:
+        import cElementTree as ET
+    except ImportError:
+        try:
+            import xml.etree.ElementTree as ET
+        except:
+            sys.stderr.write("Can't load the ElementTree XML parser: please install it!\n")
+            sys.exit(1)
+
+
+## Get set of analyses/reffiles involved in the runs
+analyses = set()
+blocked_analyses = set()
+reffiles = list()
+labels = []
+for aidafile in aidafiles:
+    aidafilepath = os.path.abspath(aidafile.split(":")[0])
+    if not os.access(aidafilepath, os.R_OK):
+        print "Error: cannot read from %s" % aidafilepath
+        sys.exit(2)
+    try:
+        tree = ET.parse(aidafilepath)
+    except Exception, e:
+        print "Problem parsing AIDA XML file '%s': %s. Skipping this file" % (aidafilepath, e)
+        continue
+    for dps in tree.findall("dataPointSet"):
+        path = dps.get("path")
+        analysis = path[path.rfind("/")+1:]
+        if analysis in analyses.union(blocked_analyses):
+            continue
+        ## If regexes have been provided, only add analyses which match and don't unmatch
+        if opts.PATHPATTERNS:
+            import re
+            matched = False
+            for patt in opts.PATHPATTERNS:
+                if re.search(patt, analysis) is not None:
+                    matched = True
+                    break
+            if matched and opts.PATHUNPATTERNS:
+                for patt in opts.PATHUNPATTERNS:
+                    if re.search(patt, analysis):
+                        matched = False
+                        break
+            if not matched:
+                blocked_analyses.add(analysis)
+                continue
+        analyses.add(analysis)
+        reffile = rivet.findAnalysisRefFile(analysis+".aida")
+        if reffile and reffile not in reffiles:
+            reffiles.append(reffile)
+
+def anasort(name):
+    if name.startswith("MC"):
+        return "0"+name
+    else:
+        return name
+analyses=sorted(analyses, key=anasort, reverse=True)
+
+
+## Run compare-histos to get plain .dat files from .aida
+## We do this here since it also makes the necessary directories
+ch_cmd = ["compare-histos"]
+if opts.MC_ERRS:
+    ch_cmd.append("--mc-errs")
+if not opts.SHOW_RATIO:
+    ch_cmd.append("--no-ratio")
+if opts.REF_ID is not None:
+    ch_cmd.append("--refid=%s" % os.path.abspath(opts.REF_ID))
+ch_cmd.append("--hier-out")
+ch_cmd.append("--rivet-refs")
+# TODO: This isn't very sensible... what's the intention? Provide --plotinfodir cmd line option?
+ch_cmd.append("--plotinfodir=../")
+for af in aidafiles:
+    ch_cmd.append("%s" % os.path.abspath(af))
+if opts.VERBOSE:
+    ch_cmd.append("--verbose")
+    print "Calling compare-histos with the following options:"
+    print ch_cmd
+    print " ".join(ch_cmd)
+Popen(ch_cmd, cwd=opts.OUTPUTDIR, stderr=PIPE).wait()
+
+
+## Write web page containing all (matched) plots
+## Make web pages first so that we can load it locally in
+## a browser to view the output before all plots are made
+style = """<style>
+  html { font-family: sans-serif; }
+  img { border: 0; }
+  a { text-decoration: none; font-weight: bold; }
+</style>"""
+
+
+## A timestamp HTML fragment to be used on each page:
+import datetime
+timestamp = '<p>Generated at %s</p>\n' % datetime.datetime.now().strftime("%A, %d. %B %Y %I:%M%p")
+
+
+index = open(os.path.join(opts.OUTPUTDIR, "index.html"), "w")
+index.write('<html>\n<head>\n<title>%s</title>\n%s</head>\n<body>' % (opts.TITLE, style))
+index.write('<h2>%s</h2>\n\n' % opts.TITLE)
+
+if opts.SINGLE:
+    ## Write table of contents
+    index.write('<ul>\n')
+    for analysis in analyses:
+        summary = analysis
+        ana = rivet.AnalysisLoader.getAnalysis(analysis)
+        if ana:
+            summary = "%s (%s)" % (ana.summary(), analysis)
+            if opts.IGNORE_UNVALIDATED and ana.status() != "VALIDATED":
+                continue
+        index.write('<li><a href="#%s">%s</a>\n' % (analysis, summary) )
+    index.write('</ul>\n')
+
+for analysis in analyses:
+    references = []
+    summary = analysis
+    description = "NONE"
+    if analysis.startswith("S"):
+        spiresid = analysis[analysis.rfind('S')+1:len(analysis)]
+    else:
+        spiresid = "NONE"
+    ana = rivet.AnalysisLoader.getAnalysis(analysis)
+    if ana:
+        if ana.summary() and ana.summary() != "NONE":
+            summary = "%s (%s)" % (ana.summary(), analysis)
+        references = ana.references()
+        description = ana.description()
+        spiresid = ana.spiresId()
+        if opts.IGNORE_UNVALIDATED and ana.status().upper() != "VALIDATED":
+            continue
+    if opts.SINGLE:
+        index.write('\n<h3 style="clear:left; padding-top:2em;"><a name="%s">%s</a></h3>\n' % (analysis, summary) )
+    else:
+        index.write('\n<h3><a href="%s/index.html" style="text-decoration:none;">%s</a></h3>\n' % (analysis, summary))
+    reflist = []
+    if spiresid and spiresid != "NONE":
+        reflist.append('<a href="http://durpdg.dur.ac.uk/cgi-bin/spiface/hep/www?irn+%s">Spires</a>' % spiresid)
+    reflist += references
+    index.write('<p>%s</p>\n' % " &#124; ".join(reflist))
+    index.write('<p style="font-size:smaller;">%s</p>\n' % description)
+    anapath = os.path.join(opts.OUTPUTDIR, analysis)
+    if not opts.SINGLE:
+        if not os.path.exists(anapath):
+            try:
+                os.makedirs(anapath)
+            except:
+                print "Error: failed to make new directory '%s'. Skipping analysis %s" % (anapath, analysis)
+                continue
+        anaindex = open(os.path.join(anapath, "index.html"), 'w')
+        anaindex.write('<html>\n<head>\n<title>%s - %s</title>\n%s</head>\n<body>\n' %
+                       (opts.OUTPUTDIR, analysis, style))
+        anaindex.write('<h3>%s</h3>\n' % analysis)
+        anaindex.write('<p><a href="../index.html">Back to index</a></p>\n')
+        anaindex.write('<p>\n  %s\n</p>\n' % summary)
+    else:
+        anaindex = index
+
+    datfiles = glob.glob("%s/*.dat" % anapath)
+    for datfile in sorted(datfiles):
+        obsname = os.path.basename(datfile).replace(".dat", "")
+        pngfile = obsname+".png"
+        vecfile = obsname+"."+opts.VECTORFORMAT.lower()
+        if opts.SINGLE:
+            pngfile = os.path.join(analysis, pngfile)
+            vecfile = os.path.join(analysis, vecfile)
+
+        anaindex.write('  <div style="float:left; font-size:smaller; font-weight:bold;">\n')
+        anaindex.write('    <a href="#%s-%s">&#9875;</a> %s:<br>\n' % (analysis, obsname, vecfile) )
+        anaindex.write('    <a name="%s-%s"><a href="%s">\n' % (analysis, obsname, vecfile) )
+        anaindex.write('      <img src="%s">\n' % pngfile )
+        anaindex.write('    </a></a>\n')
+        anaindex.write('  </div>\n')
+
+    if not opts.SINGLE:
+        anaindex.write("<br>%s</body>\n</html>\n" % timestamp)
+        anaindex.close()
+index.write('<br>%s</body>\n</html>' % timestamp)
+index.close()
+
+
+## Run make-plots on all generated .dat files
+# sys.exit(0)
+mp_cmd = ["make-plots"]
+if opts.NUMTHREADS:
+    mp_cmd.append("--num-threads=%d" % opts.NUMTHREADS)
+if opts.VECTORFORMAT == "PDF":
+    mp_cmd.append("--pdfpng")
+elif opts.VECTORFORMAT == "PS":
+    mp_cmd.append("--pspng")
+mp_cmd.append("--full-range")
+for configfile in opts.CONFIGFILES:
+    if os.access(os.path.expanduser(configfile), os.R_OK):
+        mp_cmd.append("-c")
+        mp_cmd.append(os.path.expanduser(configfile))
+datfiles = []
+for analysis in analyses:
+    anapath = os.path.join(opts.OUTPUTDIR, analysis)
+    #print anapath
+    anadatfiles = glob.glob("%s/*.dat" % anapath)
+    datfiles += sorted(anadatfiles)
+if datfiles:
+    mp_cmd += datfiles
+    if opts.VERBOSE:
+        mp_cmd.append("--verbose")
+        print "Calling make-plots with the following options:"
+        print mp_cmd
+    Popen(mp_cmd).wait()

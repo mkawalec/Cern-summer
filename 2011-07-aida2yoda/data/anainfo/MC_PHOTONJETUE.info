@@ -1,0 +1,15 @@
+Name: MC_PHOTONJETUE
+Summary: Study the usual underlying event observables in photon + jet events
+Description: 
+  Modification of the MC leading jets underlying event analysis to study the UE in
+  hard photon+jet events. This may be of interest, because the leading QCD dipole
+  structure is different from that in either dijet or Drell-Yan hard
+  processes. Observables are also extended to include the variation of transverse
+  activity as a function of jet-photon balance, and using the photon rather than
+  the jet to define the event alignment.
+RunInfo: Photon + jet events at any energy. pT cutoff at 10 GeV advised.
+Status: UNVALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+Beams: [[p+, p+], [p-, p+]]
+PtCuts: [0]

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG(Q=2JET)/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG(Q=2JET)/SIG(Q=HAD)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.04"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0050" value="0.547"
+        errorMinus="0.0050"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG(Q=3JET)/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG(Q=3JET)/SIG(Q=HAD)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d01-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d01-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.04"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0040" value="0.411"
+        errorMinus="0.0040"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG(Q=4JET(S))/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG(Q=4JET(S))/SIG(Q=HAD)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d01-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d01-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.04"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0012" value="0.04"
+        errorMinus="0.0012"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y04" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG(Q=4JET(S))/SIG(Q=3JET)">
+    <annotation>
+      <item key="Title" value="SIG(Q=4JET(S))/SIG(Q=3JET)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d01-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d01-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.04"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0030" value="0.097"
+        errorMinus="0.0030"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(Q=HAD)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.021" value="0.971"
+        errorMinus="0.021"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.023" value="0.803"
+        errorMinus="0.023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="35.0"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.0070" value="0.552"
+        errorMinus="0.0070"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.8"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.012" value="0.41"
+        errorMinus="0.012"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(Q=HAD)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d02-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d02-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.0050" value="0.029"
+        errorMinus="0.0050"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.012" value="0.197"
+        errorMinus="0.012"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="35.0"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.0060" value="0.411"
+        errorMinus="0.0060"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.8"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.011" value="0.496"
+        errorMinus="0.011"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(Q=HAD)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d02-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d02-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="35.0"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.0016" value="0.036"
+        errorMinus="0.0016"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.8"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.0050" value="0.087"
+        errorMinus="0.0050"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y04" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG/SIG(Q=HAD)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d02-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d02-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="35.0"
+        errorMinus="6.5"/>
+      <measurement errorPlus="2.0E-4" value="4.0E-4"
+        errorMinus="2.0E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.8"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.0011" value="0.0038"
+        errorMinus="0.0011"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/TASSO_1988_S1824554/" title="SIG(Q=3JET)/SIG(Q=HAD)">
+    <annotation>
+      <item key="Title" value="SIG(Q=3JET)/SIG(Q=HAD)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1988_S1824554/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1988_S1824554.aida/REF/TASSO_1988_S1824554/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.017" value="0.414"
+        errorMinus="0.017"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.5" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.018" value="0.265"
+        errorMinus="0.018"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="35.0"
+        errorMinus="6.5"/>
+      <measurement errorPlus="0.0050" value="0.22"
+        errorMinus="0.0050"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.8"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.0080" value="0.195"
+        errorMinus="0.0080"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

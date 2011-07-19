@@ -1,0 +1,13 @@
+Name: MC_TTBAR
+Summary: MC analysis for ttbar studies
+Status: UNVALIDATED
+Authors:
+ - Holger Schulz <hschulz@physik.hu-berlin.de>
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  "* For Pythia6, set MSEL=6.
+  * For Fortran Herwig/Jimmy select IPROC=1706."
+NumEvents: 10000
+PtCuts: [0]
+Description:
+  This is a pure Monte Carlo study for t-tbar production.

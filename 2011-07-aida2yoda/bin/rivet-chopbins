@@ -1,0 +1,183 @@
+#! /usr/bin/env python
+
+"""%prog -b <HISTO/PATH:min:max> [ -b ... ] <AIDAFILE> [...]
+
+Strip specified bins from data sets. Histograms not specified will be passed
+through without any chopping. Bins to be kept can be specified on command
+line via `-b' options. The format is
+    -b AIDAPATH:start:stop
+where start and stop are x values contained in the first and last bins,
+respectively, that should be kept. They need not to be the bin-center but
+must only lie somewhere in the bin's x-range.
+
+To chop bins from different observables can be achieved by using the `-b'
+option multiple times.
+
+Example:
+    %prog -b /ALEPH_1996_S3486095/d03-x01-y01:0.095:0.27 out.aida
+This will give you the all bins of the ALEPH 1-T distribution that are
+between the bins that contain the x-values 0.095 and 0.27 .
+
+TODO:
+    * what if the same observable is mentioned multiple times?
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+
+import os, logging
+import lighthisto
+
+## Try to load faster but non-standard cElementTree module
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    try:
+        import cElementTree as ET
+    except ImportError:
+        try:
+            import xml.etree.ElementTree as ET
+        except:
+            sys.stderr.write("Can't load the ElementTree XML parser: please install it!\n")
+            sys.exit(1)
+
+def getBindef(line):
+    """ Try to read bin definitions (xlow, xhigh) from single
+        string.
+    """
+    splitline = line.strip().split()
+    try:
+        path, low, high = splitline[0].split(":")
+    except:
+        logging.error("No bin-definition given for %s" % (line.strip()))
+        sys.exit(1)
+    if low == "":
+        low = None
+    else:
+        low = float(low)
+    if high == "":
+        high = None
+    else:
+        high = float(high)
+
+    return (path, low, high)
+
+
+def readObservableFile(obsfile):
+    """ Read observables to normalise from file obsfile.
+        Return-values are a list of the histo-names to normalise and a
+        dictionary with name:newarea entries.
+    """
+    bindefs = {}
+
+    if obsfile is not None:
+        try:
+            f = open(obsfile, 'r')
+        except:
+            logging.error("Cannot open histo list file %s" % opts.OBSFILE)
+            sys.exit(2)
+        for line in f:
+            stripped = line.strip()
+            # Skip empty or commented lines
+            if len(stripped) == 0 or stripped.startswith("#"):
+                continue
+
+            # Split the line to find out whether newarea is given in obsfile
+            path, low, high = getBindef(line)
+            bindefs[path] = (low, high)
+        f.close()
+    return bindefs
+
+if __name__ == "__main__":
+    from optparse import OptionParser, OptionGroup
+    parser = OptionParser(usage=__doc__)
+
+    parser.add_option("-b", "--bins",
+                      action="append",
+                      help="Specify a histogram and bin range that is to be"
+                           " kept. The format is `AIDAPATH:start:stop'.")
+    parser.add_option("-O", "--obsfile", default=None,
+                      help="Specify a file with bin-definitions to chop")
+    parser.add_option("-o", "--out",
+                      dest="outdir",
+                      help="output directory (default: %default)")
+    parser.add_option("-i", "--in-place", dest="IN_PLACE", default=False, action="store_true",
+                      help="Overwrite input file rather than making input-chop.aida")
+
+    verbgroup = OptionGroup(parser, "Verbosity control")
+    verbgroup.add_option("-v", "--verbose", action="store_const",
+                         const=logging.DEBUG, dest="LOGLEVEL",
+                         help="print debug (very verbose) messages")
+    verbgroup.add_option("-q", "--quiet", action="store_const",
+                         const=logging.WARNING, dest="LOGLEVEL",
+                         help="be very quiet")
+    parser.set_defaults(bins=[],
+            outdir=".",
+            LOGLEVEL=logging.INFO)
+    opts, args = parser.parse_args()
+
+
+    ## Configure logging
+    logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+    if len(args) == 0:
+        sys.stderr.write("Must specify at least one AIDA histogram file!\n")
+        sys.exit(1)
+    if len(opts.bins) == 0 and not opts.obsfile:
+        sys.stderr.write("No bins specified, so I'm doing nothing!\n")
+        sys.exit(1)
+
+
+    # Read in bin-definitions from file
+    if opts.obsfile:
+        bindefs = readObservableFile(opts.obsfile)
+
+    # If no file is given, try reading bin-definitions from CLOptions
+    else:
+        bindefs = {}
+        for bd in opts.bins:
+            try:
+                path, low, high = getBindef(bd)
+                bindefs[path] = (low, high)
+            except:
+                sys.stderr.write("Problem parsing bin definition `%s'" % (bd))
+                sys.exit(1)
+
+    for aidafile in args:
+        if not os.access(aidafile, os.R_OK):
+            logging.error("%s can not be read" % aidafile)
+            break
+
+        base, ext = os.path.splitext(os.path.basename(aidafile))
+
+        ## Create output filename
+        base = args[0].split(".aida")[0]
+        if len(args) > 1:
+            outfile = args[1]
+        else:
+            if not opts.IN_PLACE:
+                base += "-chop"
+            outfile = base + ".aida"
+
+        chopfile = os.path.join(opts.outdir, outfile)
+        outhistos = []
+
+        tree = ET.parse(aidafile)
+        for dps in tree.findall("dataPointSet"):
+            thishist = lighthisto.Histo.fromDPS(dps)
+            if thishist.histopath in bindefs.keys():
+                outhistos.append(thishist.chop(bindefs[thishist.histopath]))
+            else:
+                outhistos.append(thishist)
+        out = open(chopfile, "w")
+        out.write('<?xml version="1.0" encoding="ISO-8859-1" ?>\n')
+        out.write('<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">\n')
+        out.write('<aida version="3.3">\n')
+        out.write('  <implementation version="1.1" package="FreeHEP"/>\n')
+        out.write("\n\n".join([h.asAIDA() for h in sorted(outhistos)]) + "\n")
+        out.write("</aida>\n")
+        out.close()

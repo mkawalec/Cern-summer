@@ -1,0 +1,4412 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(MULT(C=WHOLE)/DISPERSION)/(MULT(C=SINGLE)/DISPERSION)">
+    <annotation>
+      <item key="Title"
+        value="(MULT(C=WHOLE)/DISPERSION)/(MULT(C=SINGLE)/DISPERSION)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.03" value="1.35"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.03" value="1.35"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.01" value="1.34"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.02" value="1.35"
+        errorMinus="0.02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT">
+    <annotation>
+      <item key="Title" value="MULT" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.4143669871020132" value="9.3"
+        errorMinus="0.4143669871020132"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.4669047011971501" value="11.3"
+        errorMinus="0.4669047011971501"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.46043457732885357"
+        value="13.59" errorMinus="0.46043457732885357"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.47381430961928533"
+        value="15.08" errorMinus="0.47381430961928533"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT(NAME=DISPERSION)">
+    <annotation>
+      <item key="Title" value="MULT(NAME=DISPERSION)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d02-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d02-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.28284271247461906"
+        value="3.07" errorMinus="0.28284271247461906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.36496575181789315"
+        value="3.55" errorMinus="0.36496575181789315"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.3901281840626232" value="4.14"
+        errorMinus="0.3901281840626232"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.37215588131856786"
+        value="4.59" errorMinus="0.37215588131856786"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT/MULT(NAME=DISPERSION)">
+    <annotation>
+      <item key="Title" value="MULT/MULT(NAME=DISPERSION)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d02-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d02-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.31400636936215165"
+        value="3.03" errorMinus="0.31400636936215165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.35510561809129404"
+        value="3.19" errorMinus="0.35510561809129404"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.3301514803843836" value="3.28"
+        errorMinus="0.3301514803843836"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.2816025568065745" value="3.28"
+        errorMinus="0.2816025568065745"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT">
+    <annotation>
+      <item key="Title" value="MULT" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.3014962686336267" value="4.63"
+        errorMinus="0.3014962686336267"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.3125699921617557" value="5.64"
+        errorMinus="0.3125699921617557"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.3301514803843836" value="6.78"
+        errorMinus="0.3301514803843836"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.3712142238654117" value="7.58"
+        errorMinus="0.3712142238654117"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y02" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT(NAME=DISPERSION)">
+    <annotation>
+      <item key="Title" value="MULT(NAME=DISPERSION)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d03-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d03-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.161245154965971" value="2.06"
+        errorMinus="0.161245154965971"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.18248287590894657"
+        value="2.39" errorMinus="0.18248287590894657"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.2202271554554524" value="2.78"
+        errorMinus="0.2202271554554524"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.21095023109728983"
+        value="3.11" errorMinus="0.21095023109728983"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y03" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT/MULT(NAME=DISPERSION)">
+    <annotation>
+      <item key="Title" value="MULT/MULT(NAME=DISPERSION)"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d03-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d03-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.23194827009486405"
+        value="2.24" errorMinus="0.23194827009486405"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.22203603311174516"
+        value="2.36" errorMinus="0.22203603311174516"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.23021728866442678"
+        value="2.44" errorMinus="0.23021728866442678"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.2009975124224178" value="2.44"
+        errorMinus="0.2009975124224178"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT">
+    <annotation>
+      <item key="Title" value="MULT" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.05" value="1.2"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.15" value="1.5"
+        errorMinus="0.15"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.2" value="1.76"
+        errorMinus="0.2"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.3" value="1.93"
+        errorMinus="0.3"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y02" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT">
+    <annotation>
+      <item key="Title" value="MULT" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d04-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d04-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.07" value="0.79"
+        errorMinus="0.07"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.09" value="0.8"
+        errorMinus="0.09"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.04" value="1.02"
+        errorMinus="0.04"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.04" value="0.97"
+        errorMinus="0.04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y03" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="MULT">
+    <annotation>
+      <item key="Title" value="MULT" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d04-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d04-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.0" value="14.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.05" value="0.17"
+        errorMinus="0.05"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.399999999999999" value="22.0"
+        errorMinus="4.0"/>
+      <measurement errorPlus="0.06" value="0.28"
+        errorMinus="0.06"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.400000000000002" value="34.8"
+        errorMinus="6.399999999999999"/>
+      <measurement errorPlus="0.03" value="0.28"
+        errorMinus="0.03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.399999999999999" value="43.6"
+        errorMinus="4.399999999999999"/>
+      <measurement errorPlus="0.04" value="0.33"
+        errorMinus="0.04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="2.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.0018" value="0.005783"
+        errorMinus="0.0018"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="4.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.004449" value="0.053986"
+        errorMinus="0.004449"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="6.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.00723" value="0.164745"
+        errorMinus="0.00723"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="8.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.009146" value="0.266517"
+        errorMinus="0.009146"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="10.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.008596" value="0.250602"
+        errorMinus="0.008596"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="12.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.006175" value="0.149795"
+        errorMinus="0.006175"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="14.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.003885" value="0.067216"
+        errorMinus="0.003885"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="16.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002336" value="0.026178"
+        errorMinus="0.002336"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="18.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001306" value="0.008703"
+        errorMinus="0.001306"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="20.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001159" value="0.004682"
+        errorMinus="0.001159"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="22.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="6.06E-4" value="0.001463"
+        errorMinus="6.06E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="24.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="2.08E-4" value="2.62E-4"
+        errorMinus="2.08E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="26.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="9.7E-5" value="6.7E-5"
+        errorMinus="9.7E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="28.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="30.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="32.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="34.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="36.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="38.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y02" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d05-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d05-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="2.0" errorMinus="1.0"/>
+      <measurement errorPlus="8.95E-4" value="0.001631"
+        errorMinus="8.95E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="4.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.002557" value="0.017797"
+        errorMinus="0.002557"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="6.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.005185" value="0.078243"
+        errorMinus="0.005185"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="8.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.007497" value="0.167981"
+        errorMinus="0.007497"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="10.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.008749" value="0.229196"
+        errorMinus="0.008749"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="12.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.008322" value="0.21556"
+        errorMinus="0.008322"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="14.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.006494" value="0.145702"
+        errorMinus="0.006494"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="16.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.004705" value="0.08216"
+        errorMinus="0.004705"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="18.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002927" value="0.036614"
+        errorMinus="0.002927"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="20.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001931" value="0.016538"
+        errorMinus="0.001931"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="22.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001048" value="0.005892"
+        errorMinus="0.001048"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="24.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="5.13E-4" value="0.001637"
+        errorMinus="5.13E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="26.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="3.12E-4" value="6.97E-4"
+        errorMinus="3.12E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="28.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="2.53E-4" value="3.55E-4"
+        errorMinus="2.53E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="30.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="32.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="34.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="36.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="38.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y03" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d05-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d05-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="2.0" errorMinus="1.0"/>
+      <measurement errorPlus="4.55E-4" value="4.47E-4"
+        errorMinus="4.55E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="4.0" errorMinus="1.0"/>
+      <measurement errorPlus="7.59E-4" value="0.005733"
+        errorMinus="7.59E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="6.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.001424" value="0.031675"
+        errorMinus="0.001424"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="8.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.002133" value="0.083797"
+        errorMinus="0.002133"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="10.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002897" value="0.15313"
+        errorMinus="0.002897"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="12.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.003349" value="0.197927"
+        errorMinus="0.003349"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="14.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.003312" value="0.19245"
+        errorMinus="0.003312"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="16.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002843" value="0.144335"
+        errorMinus="0.002843"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="18.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002231" value="0.091819"
+        errorMinus="0.002231"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="20.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001627" value="0.050623"
+        errorMinus="0.001627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="22.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001189" value="0.027161"
+        errorMinus="0.001189"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="24.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="8.03E-4" value="0.012348"
+        errorMinus="8.03E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="26.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="5.19E-4" value="0.005173"
+        errorMinus="5.19E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="28.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="3.26E-4" value="0.001977"
+        errorMinus="3.26E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="30.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="2.13E-4" value="8.31E-4"
+        errorMinus="2.13E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="32.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="1.55E-4" value="4.0E-4"
+        errorMinus="1.55E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="34.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="8.4E-5" value="1.32E-4"
+        errorMinus="8.4E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="36.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="5.5E-5" value="4.3E-5"
+        errorMinus="5.5E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="38.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y04" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d05-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d05-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="2.0" errorMinus="1.0"/>
+      <measurement errorPlus="3.57E-4" value="3.28E-4"
+        errorMinus="3.57E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="4.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.001505" value="0.003446"
+        errorMinus="0.001505"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="6.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.002682" value="0.022958"
+        errorMinus="0.002682"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="8.0" errorMinus="1.0"/>
+      <measurement errorPlus="0.003303" value="0.051983"
+        errorMinus="0.003303"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="10.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.004604" value="0.10778"
+        errorMinus="0.004604"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="12.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.005594" value="0.157378"
+        errorMinus="0.005594"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="14.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.005933" value="0.177662"
+        errorMinus="0.005933"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="16.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.005626" value="0.164074"
+        errorMinus="0.005626"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="18.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.004756" value="0.123672"
+        errorMinus="0.004756"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="20.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.003927" value="0.086055"
+        errorMinus="0.003927"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="22.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002972" value="0.052095"
+        errorMinus="0.002972"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="24.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.002171" value="0.029188"
+        errorMinus="0.002171"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="26.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="0.001416" value="0.013995"
+        errorMinus="0.001416"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="28.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="9.34E-4" value="0.006002"
+        errorMinus="9.34E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="30.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="5.92E-4" value="0.002374"
+        errorMinus="5.92E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="32.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="2.65E-4" value="5.91E-4"
+        errorMinus="2.65E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="34.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="1.82E-4" value="2.64E-4"
+        errorMinus="1.82E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="36.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="9.1E-5" value="4.7E-5"
+        errorMinus="9.1E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.0" value="38.0"
+        errorMinus="1.0"/>
+      <measurement errorPlus="2.17E-4" value="1.11E-4"
+        errorMinus="2.17E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.0" errorMinus="0.5"/>
+      <measurement errorPlus="9.8E-4" value="0.006157"
+        errorMinus="9.8E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002218" value="0.038679"
+        errorMinus="0.002218"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003366" value="0.09527"
+        errorMinus="0.003366"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.004669" value="0.169531"
+        errorMinus="0.004669"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="4.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.005014" value="0.197048"
+        errorMinus="0.005014"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="5.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.00481" value="0.187225"
+        errorMinus="0.00481"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="6.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003881" value="0.136571"
+        errorMinus="0.003881"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="7.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002886" value="0.084164"
+        errorMinus="0.002886"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="8.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001999" value="0.044369"
+        errorMinus="0.001999"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="9.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001363" value="0.021841"
+        errorMinus="0.001363"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="10.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="9.48E-4" value="0.010125"
+        errorMinus="9.48E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="11.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="6.14E-4" value="0.004761"
+        errorMinus="6.14E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="12.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.02E-4" value="0.002729"
+        errorMinus="5.02E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="13.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.09E-4" value="0.001075"
+        errorMinus="4.09E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="14.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.5E-4" value="2.63E-4"
+        errorMinus="1.5E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="15.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.09E-4" value="1.4E-4"
+        errorMinus="1.09E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="16.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.5E-5" value="2.6E-5"
+        errorMinus="4.5E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="17.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.4E-5" value="3.1E-5"
+        errorMinus="5.4E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="18.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="19.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="20.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="21.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="22.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="23.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y02" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d06-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d06-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.0" errorMinus="0.5"/>
+      <measurement errorPlus="5.2E-4" value="0.002812"
+        errorMinus="5.2E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001603" value="0.020135"
+        errorMinus="0.001603"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002446" value="0.053329"
+        errorMinus="0.002446"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003716" value="0.10859"
+        errorMinus="0.003716"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="4.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.004462" value="0.151301"
+        errorMinus="0.004462"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="5.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.00488" value="0.175128"
+        errorMinus="0.00488"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="6.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.004468" value="0.157342"
+        errorMinus="0.004468"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="7.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003874" value="0.12557"
+        errorMinus="0.003874"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="8.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003082" value="0.087552"
+        errorMinus="0.003082"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="9.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002332" value="0.054471"
+        errorMinus="0.002332"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="10.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.00176" value="0.032668"
+        errorMinus="0.00176"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="11.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.001161" value="0.015372"
+        errorMinus="0.001161"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="12.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="8.4E-4" value="0.008243"
+        errorMinus="8.4E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="13.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.89E-4" value="0.004259"
+        errorMinus="5.89E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="14.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="3.99E-4" value="0.001901"
+        errorMinus="3.99E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="15.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="2.37E-4" value="7.74E-4"
+        errorMinus="2.37E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="16.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.84E-4" value="4.04E-4"
+        errorMinus="1.84E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="17.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.01E-4" value="1.49E-4"
+        errorMinus="1.01E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="18.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="19.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="20.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="21.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="22.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="23.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0" value="0.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y03" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d06-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d06-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.0" errorMinus="0.5"/>
+      <measurement errorPlus="1.42E-4" value="0.001252"
+        errorMinus="1.42E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1.0" errorMinus="0.5"/>
+      <measurement errorPlus="5.11E-4" value="0.009615"
+        errorMinus="5.11E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.0" errorMinus="0.5"/>
+      <measurement errorPlus="8.34E-4" value="0.027727"
+        errorMinus="8.34E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.00128" value="0.064916"
+        errorMinus="0.00128"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="4.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001627" value="0.103787"
+        errorMinus="0.001627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="5.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001918" value="0.139725"
+        errorMinus="0.001918"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="6.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001975" value="0.148574"
+        errorMinus="0.001975"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="7.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001951" value="0.144296"
+        errorMinus="0.001951"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="8.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.00172" value="0.115939"
+        errorMinus="0.00172"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="9.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001476" value="0.087374"
+        errorMinus="0.001476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="10.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.001203" value="0.05959"
+        errorMinus="0.001203"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="11.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="9.68E-4" value="0.039341"
+        errorMinus="9.68E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="12.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="7.7E-4" value="0.025193"
+        errorMinus="7.7E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="13.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="6.03E-4" value="0.015241"
+        errorMinus="6.03E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="14.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.37E-4" value="0.008236"
+        errorMinus="4.37E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="15.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="3.31E-4" value="0.004603"
+        errorMinus="3.31E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="16.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="2.24E-4" value="0.002206"
+        errorMinus="2.24E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="17.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.75E-4" value="0.001281"
+        errorMinus="1.75E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="18.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.23E-4" value="6.41E-4"
+        errorMinus="1.23E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="19.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="6.6E-5" value="1.74E-4"
+        errorMinus="6.6E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="20.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.9E-5" value="1.48E-4"
+        errorMinus="5.9E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="21.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.8E-5" value="9.1E-5"
+        errorMinus="4.8E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="22.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="4.7E-5" value="4.5E-5"
+        errorMinus="4.7E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="23.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="8.0E-6" value="5.0E-6"
+        errorMinus="8.0E-6"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y04" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="(1/N)/D(N)/D(MULT(P=3))">
+    <annotation>
+      <item key="Title" value="(1/N)/D(N)/D(MULT(P=3))"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d06-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d06-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="0.0" errorMinus="0.5"/>
+      <measurement errorPlus="2.85E-4" value="0.001189"
+        errorMinus="2.85E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1.0" errorMinus="0.5"/>
+      <measurement errorPlus="8.14E-4" value="0.006682"
+        errorMinus="8.14E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="2.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001266" value="0.019985"
+        errorMinus="0.001266"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="3.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.001942" value="0.045684"
+        errorMinus="0.001942"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="4.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002617" value="0.080933"
+        errorMinus="0.002617"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="5.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003131" value="0.111637"
+        errorMinus="0.003131"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="6.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003461" value="0.133177"
+        errorMinus="0.003461"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="7.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003421" value="0.131853"
+        errorMinus="0.003421"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="8.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.003252" value="0.121098"
+        errorMinus="0.003252"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="9.0" errorMinus="0.5"/>
+      <measurement errorPlus="0.002907" value="0.100522"
+        errorMinus="0.002907"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="10.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.00252" value="0.078876"
+        errorMinus="0.00252"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="11.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.00213" value="0.05808"
+        errorMinus="0.00213"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="12.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.00176" value="0.041115"
+        errorMinus="0.00176"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="13.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.001357" value="0.026213"
+        errorMinus="0.001357"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="14.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.001146" value="0.018627"
+        errorMinus="0.001146"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="15.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="8.45E-4" value="0.010597"
+        errorMinus="8.45E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="16.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="6.28E-4" value="0.006019"
+        errorMinus="6.28E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="17.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.23E-4" value="0.003987"
+        errorMinus="5.23E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="18.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="3.52E-4" value="0.001976"
+        errorMinus="3.52E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="19.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="2.38E-4" value="9.08E-4"
+        errorMinus="2.38E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="20.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.63E-4" value="4.58E-4"
+        errorMinus="1.63E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="21.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.15E-4" value="1.91E-4"
+        errorMinus="1.15E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="22.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="8.0E-5" value="9.2E-5"
+        errorMinus="8.0E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="23.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="6.5E-5" value="7.9E-5"
+        errorMinus="6.5E-5"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d10-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d10-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.242878" value="0.0"
+        errorMinus="0.242878"/>
+      <measurement errorPlus="0.0169835" value="0.371844"
+        errorMinus="0.0169835"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.242878" value="0.485756"
+        errorMinus="0.242878"/>
+      <measurement errorPlus="0.0188009" value="0.537901"
+        errorMinus="0.0188009"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.242879" value="0.971512"
+        errorMinus="0.24287800000000004"/>
+      <measurement errorPlus="0.0162281" value="0.471889"
+        errorMinus="0.0162281"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287499999999995"
+        value="1.45727" errorMinus="0.24287900000000007"/>
+      <measurement errorPlus="0.0123426" value="0.318007"
+        errorMinus="0.0123426"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.2428800000000001"
+        value="1.94302" errorMinus="0.24287499999999995"/>
+      <measurement errorPlus="0.00876851" value="0.18061"
+        errorMinus="0.00876851"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287999999999998"
+        value="2.42878" errorMinus="0.24287999999999998"/>
+      <measurement errorPlus="0.00548308" value="0.0848802"
+        errorMinus="0.00548308"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287499999999995"
+        value="2.91454" errorMinus="0.24287999999999998"/>
+      <measurement errorPlus="0.00385998" value="0.0440257"
+        errorMinus="0.00385998"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287999999999998"
+        value="3.40029" errorMinus="0.24287499999999973"/>
+      <measurement errorPlus="0.0029419" value="0.0251317"
+        errorMinus="0.0029419"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287500000000017"
+        value="3.88605" errorMinus="0.24287999999999998"/>
+      <measurement errorPlus="0.00192662" value="0.011561"
+        errorMinus="0.00192662"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287999999999998"
+        value="4.3718" errorMinus="0.24287499999999973"/>
+      <measurement errorPlus="0.00173774" value="0.00831659"
+        errorMinus="0.00173774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287999999999998"
+        value="4.85756" errorMinus="0.24288000000000043"/>
+      <measurement errorPlus="8.03797E-4" value="0.00220716"
+        errorMinus="8.03797E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287499999999973"
+        value="5.34332" errorMinus="0.24287999999999954"/>
+      <measurement errorPlus="7.54985E-4" value="0.00176033"
+        errorMinus="7.54985E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.24287999999999998"
+        value="5.82907" errorMinus="0.24287499999999973"/>
+      <measurement errorPlus="2.64308E-4" value="2.87643E-4"
+        errorMinus="2.64308E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.48575500000000016"
+        value="6.31483" errorMinus="0.24288000000000043"/>
+      <measurement errorPlus="1.67108E-4" value="9.7109E-5"
+        errorMinus="1.67108E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.48575500000000016"
+        value="7.28634" errorMinus="0.48575500000000016"/>
+      <measurement errorPlus="2.4318E-4" value="1.29331E-4"
+        errorMinus="2.4318E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d11-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d11-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.118118" value="0.0"
+        errorMinus="0.118118"/>
+      <measurement errorPlus="0.0165203" value="0.162095"
+        errorMinus="0.0165203"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.118118" value="0.236236"
+        errorMinus="0.118118"/>
+      <measurement errorPlus="0.0238364" value="0.423333"
+        errorMinus="0.0238364"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.118118" value="0.472472"
+        errorMinus="0.118118"/>
+      <measurement errorPlus="0.0282862" value="0.654821"
+        errorMinus="0.0282862"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.118118" value="0.708708"
+        errorMinus="0.11811800000000006"/>
+      <measurement errorPlus="0.0277749" value="0.706141"
+        errorMinus="0.0277749"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811799999999995"
+        value="0.944944" errorMinus="0.11811799999999995"/>
+      <measurement errorPlus="0.0249476" value="0.63611"
+        errorMinus="0.0249476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="1.18118"
+        errorMinus="0.11811799999999995"/>
+      <measurement errorPlus="0.0218421" value="0.524103"
+        errorMinus="0.0218421"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811500000000008"
+        value="1.41742" errorMinus="0.11812"/>
+      <measurement errorPlus="0.0177266" value="0.375398"
+        errorMinus="0.0177266"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="1.65365"
+        errorMinus="0.11811500000000019"/>
+      <measurement errorPlus="0.0141318" value="0.254558"
+        errorMinus="0.0141318"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811499999999986"
+        value="1.88989" errorMinus="0.11812"/>
+      <measurement errorPlus="0.0113918" value="0.173041"
+        errorMinus="0.0113918"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="2.12612"
+        errorMinus="0.11811499999999997"/>
+      <measurement errorPlus="0.00895787" value="0.109911"
+        errorMinus="0.00895787"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="2.36236"
+        errorMinus="0.11812000000000022"/>
+      <measurement errorPlus="0.00737902" value="0.0766792"
+        errorMinus="0.00737902"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811500000000019"
+        value="2.5986" errorMinus="0.11811999999999978"/>
+      <measurement errorPlus="0.00583306" value="0.0467441"
+        errorMinus="0.00583306"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="2.83483"
+        errorMinus="0.11811500000000041"/>
+      <measurement errorPlus="0.00468156" value="0.0312714"
+        errorMinus="0.00468156"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="3.07107"
+        errorMinus="0.11811999999999978"/>
+      <measurement errorPlus="0.0044329" value="0.0251067"
+        errorMinus="0.0044329"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811499999999997"
+        value="3.30731" errorMinus="0.11812000000000022"/>
+      <measurement errorPlus="0.00332424" value="0.0128524"
+        errorMinus="0.00332424"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812" value="3.54354"
+        errorMinus="0.11811499999999997"/>
+      <measurement errorPlus="0.00296642" value="0.0108411"
+        errorMinus="0.00296642"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11811499999999975"
+        value="3.77978" errorMinus="0.11811999999999978"/>
+      <measurement errorPlus="0.00190168" value="0.00472649"
+        errorMinus="0.00190168"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812000000000022"
+        value="4.01601" errorMinus="0.11811499999999953"/>
+      <measurement errorPlus="0.00147896" value="0.00314807"
+        errorMinus="0.00147896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23623499999999975"
+        value="4.25225" errorMinus="0.11812000000000022"/>
+      <measurement errorPlus="0.00106025" value="0.00176498"
+        errorMinus="0.00106025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812000000000022"
+        value="4.72472" errorMinus="0.23623499999999975"/>
+      <measurement errorPlus="9.75189E-5" value="5.89295E-5"
+        errorMinus="9.75189E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11812000000000022"
+        value="4.96096" errorMinus="0.11812000000000022"/>
+      <measurement errorPlus="3.93854E-4" value="3.50403E-4"
+        errorMinus="3.93854E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d12-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d12-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0805215" value="0.0"
+        errorMinus="0.0805215"/>
+      <measurement errorPlus="0.0133952" value="0.055708"
+        errorMinus="0.0133952"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052200000000001"
+        value="0.161043" errorMinus="0.0805215"/>
+      <measurement errorPlus="0.0195592" value="0.186624"
+        errorMinus="0.0195592"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0805215" value="0.322087"
+        errorMinus="0.08052200000000001"/>
+      <measurement errorPlus="0.0283537" value="0.425124"
+        errorMinus="0.0283537"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052200000000001"
+        value="0.48313" errorMinus="0.08052149999999997"/>
+      <measurement errorPlus="0.0323704" value="0.621865"
+        errorMinus="0.0323704"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052149999999997"
+        value="0.644174" errorMinus="0.08052199999999998"/>
+      <measurement errorPlus="0.0344355" value="0.769136"
+        errorMinus="0.0344355"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052200000000004"
+        value="0.805217" errorMinus="0.08052150000000002"/>
+      <measurement errorPlus="0.0345502" value="0.831837"
+        errorMinus="0.0345502"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051949999999997"
+        value="0.966261" errorMinus="0.08052199999999998"/>
+      <measurement errorPlus="0.0325202" value="0.782326"
+        errorMinus="0.0325202"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052500000000007"
+        value="1.1273" errorMinus="0.08051949999999986"/>
+      <measurement errorPlus="0.0292319" value="0.673892"
+        errorMinus="0.0292319"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051999999999992"
+        value="1.28835" errorMinus="0.08052499999999996"/>
+      <measurement errorPlus="0.025811" value="0.544344"
+        errorMinus="0.025811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052000000000004"
+        value="1.44939" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.0214888" value="0.401848"
+        errorMinus="0.0214888"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052499999999996"
+        value="1.61043" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.0184672" value="0.309444"
+        errorMinus="0.0184672"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052000000000004"
+        value="1.77148" errorMinus="0.08052499999999996"/>
+      <measurement errorPlus="0.0136595" value="0.180073"
+        errorMinus="0.0136595"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052000000000004"
+        value="1.93252" errorMinus="0.08052000000000015"/>
+      <measurement errorPlus="0.0123915" value="0.140486"
+        errorMinus="0.0123915"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052499999999996"
+        value="2.09356" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.00929327" value="0.085142"
+        errorMinus="0.00929327"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051999999999992"
+        value="2.25461" errorMinus="0.08052500000000018"/>
+      <measurement errorPlus="0.00891224" value="0.07149"
+        errorMinus="0.00891224"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052500000000018"
+        value="2.41565" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.00661736" value="0.0393684"
+        errorMinus="0.00661736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051999999999992"
+        value="2.5767" errorMinus="0.08052500000000018"/>
+      <measurement errorPlus="0.00701746" value="0.0391413"
+        errorMinus="0.00701746"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051999999999992"
+        value="2.73774" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.00462568" value="0.018403"
+        errorMinus="0.00462568"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052499999999996"
+        value="2.89878" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="0.0035472" value="0.0120555"
+        errorMinus="0.0035472"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052000000000015"
+        value="3.05983" errorMinus="0.08052499999999974"/>
+      <measurement errorPlus="0.0038688" value="0.0104515"
+        errorMinus="0.0038688"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08051999999999992"
+        value="3.22087" errorMinus="0.08052000000000037"/>
+      <measurement errorPlus="0.00298741" value="0.00734561"
+        errorMinus="0.00298741"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08052499999999996"
+        value="3.38191" errorMinus="0.08051999999999992"/>
+      <measurement errorPlus="3.6975E-4" value="2.85855E-4"
+        errorMinus="3.6975E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.16104000000000007"
+        value="3.54296" errorMinus="0.08052499999999974"/>
+      <measurement errorPlus="0.0015884" value="0.00222739"
+        errorMinus="0.0015884"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1610400000000003"
+        value="3.86504" errorMinus="0.1610400000000003"/>
+      <measurement errorPlus="9.1284E-4" value="8.88149E-4"
+        errorMinus="9.1284E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d13-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d13-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.064324" value="0.0"
+        errorMinus="0.064324"/>
+      <measurement errorPlus="0.00992681" value="0.016659"
+        errorMinus="0.00992681"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.064324" value="0.128648"
+        errorMinus="0.064324"/>
+      <measurement errorPlus="0.017053" value="0.0798907"
+        errorMinus="0.017053"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432349999999998"
+        value="0.257296" errorMinus="0.06432399999999999"/>
+      <measurement errorPlus="0.0226465" value="0.195507"
+        errorMinus="0.0226465"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432400000000002"
+        value="0.385943" errorMinus="0.06432349999999998"/>
+      <measurement errorPlus="0.0271669" value="0.366822"
+        errorMinus="0.0271669"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432399999999999"
+        value="0.514591" errorMinus="0.06432400000000005"/>
+      <measurement errorPlus="0.0330027" value="0.579118"
+        errorMinus="0.0330027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432399999999999"
+        value="0.643239" errorMinus="0.06432399999999994"/>
+      <measurement errorPlus="0.0378364" value="0.788855"
+        errorMinus="0.0378364"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432349999999998"
+        value="0.771887" errorMinus="0.06432400000000005"/>
+      <measurement errorPlus="0.0394566" value="0.904209"
+        errorMinus="0.0394566"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432300000000002"
+        value="0.900534" errorMinus="0.06432349999999998"/>
+      <measurement errorPlus="0.0400462" value="0.95653"
+        errorMinus="0.0400462"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="1.02918" errorMinus="0.06432300000000002"/>
+      <measurement errorPlus="0.039608" value="0.951257"
+        errorMinus="0.039608"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432500000000008"
+        value="1.15783" errorMinus="0.06432499999999997"/>
+      <measurement errorPlus="0.0350769" value="0.7793"
+        errorMinus="0.0350769"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06431999999999993"
+        value="1.28648" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.0329127" value="0.702232"
+        errorMinus="0.0329127"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432500000000008"
+        value="1.41512" errorMinus="0.06431999999999993"/>
+      <measurement errorPlus="0.0251262" value="0.445036"
+        errorMinus="0.0251262"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="1.54377" errorMinus="0.06432499999999997"/>
+      <measurement errorPlus="0.0231003" value="0.37876"
+        errorMinus="0.0231003"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="1.67242" errorMinus="0.06432499999999997"/>
+      <measurement errorPlus="0.0150985" value="0.175"
+        errorMinus="0.0150985"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432500000000008"
+        value="1.80107" errorMinus="0.06432499999999997"/>
+      <measurement errorPlus="0.0162554" value="0.190915"
+        errorMinus="0.0162554"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06431999999999993"
+        value="1.92972" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.0093909" value="0.0674021"
+        errorMinus="0.0093909"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.05836" errorMinus="0.06431999999999993"/>
+      <measurement errorPlus="0.0114823" value="0.0929168"
+        errorMinus="0.0114823"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.18701" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.00492652" value="0.0208032"
+        errorMinus="0.00492652"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432500000000019"
+        value="2.31566" errorMinus="0.06432499999999974"/>
+      <measurement errorPlus="0.00729959" value="0.0370982"
+        errorMinus="0.00729959"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.44431" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.00403458" value="0.00745148"
+        errorMinus="0.00403458"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06431999999999993"
+        value="2.57296" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.00679407" value="0.0250438"
+        errorMinus="0.00679407"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.7016" errorMinus="0.06431999999999993"/>
+      <measurement errorPlus="0.00307964" value="0.00408231"
+        errorMinus="0.00307964"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.83025" errorMinus="0.06432499999999974"/>
+      <measurement errorPlus="0.00248642" value="0.00576585"
+        errorMinus="0.00248642"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06432499999999997"
+        value="2.9589" errorMinus="0.06432500000000019"/>
+      <measurement errorPlus="0.00116732" value="9.3463E-4"
+        errorMinus="0.00116732"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.12864500000000012"
+        value="3.08755" errorMinus="0.06432499999999974"/>
+      <measurement errorPlus="0.00104096" value="9.87434E-4"
+        errorMinus="0.00104096"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.12864500000000012"
+        value="3.34484" errorMinus="0.12864500000000012"/>
+      <measurement errorPlus="8.50474E-4" value="5.87715E-4"
+        errorMinus="8.50474E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d14-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d14-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d14-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.10750249999999999"
+        value="0.215006" errorMinus="0.10750249999999999"/>
+      <measurement errorPlus="0.016644" value="0.0537899"
+        errorMinus="0.016644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750299999999999"
+        value="0.430011" errorMinus="0.1075025"/>
+      <measurement errorPlus="0.041133" value="0.502181"
+        errorMinus="0.041133"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1075025" value="0.645017"
+        errorMinus="0.10750300000000002"/>
+      <measurement errorPlus="0.0668408" value="1.53247"
+        errorMinus="0.0668408"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750399999999999"
+        value="0.860022" errorMinus="0.10750249999999995"/>
+      <measurement errorPlus="0.0845553" value="2.47916"
+        errorMinus="0.0845553"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750000000000004"
+        value="1.07503" errorMinus="0.10750400000000004"/>
+      <measurement errorPlus="0.0794712" value="2.33112"
+        errorMinus="0.0794712"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750499999999996"
+        value="1.29003" errorMinus="0.10750000000000015"/>
+      <measurement errorPlus="0.0570844" value="1.3934"
+        errorMinus="0.0570844"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750000000000004"
+        value="1.50504" errorMinus="0.10750499999999996"/>
+      <measurement errorPlus="0.035913" value="0.625251"
+        errorMinus="0.035913"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750499999999996"
+        value="1.72004" errorMinus="0.10749999999999993"/>
+      <measurement errorPlus="0.0215954" value="0.243512"
+        errorMinus="0.0215954"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750499999999996"
+        value="1.93505" errorMinus="0.10750499999999996"/>
+      <measurement errorPlus="0.0120766" value="0.0809564"
+        errorMinus="0.0120766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750000000000015"
+        value="2.15006" errorMinus="0.10750499999999974"/>
+      <measurement errorPlus="0.010711" value="0.0435569"
+        errorMinus="0.010711"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10750499999999996"
+        value="2.36506" errorMinus="0.10750000000000037"/>
+      <measurement errorPlus="0.00560287" value="0.0136079"
+        errorMinus="0.00560287"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10749999999999993"
+        value="2.58007" errorMinus="0.10750499999999974"/>
+      <measurement errorPlus="0.00192629" value="0.00243894"
+        errorMinus="0.00192629"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10749999999999993"
+        value="2.79507" errorMinus="0.10749999999999993"/>
+      <measurement errorPlus="9.0009E-4" value="6.26497E-4"
+        errorMinus="9.0009E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d15-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d15-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d15-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.238339" value="0.0"
+        errorMinus="0.238339"/>
+      <measurement errorPlus="0.0181566" value="0.356253"
+        errorMinus="0.0181566"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.238339" value="0.476678"
+        errorMinus="0.238339"/>
+      <measurement errorPlus="0.0209061" value="0.548509"
+        errorMinus="0.0209061"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23833699999999997"
+        value="0.953356" errorMinus="0.23833899999999997"/>
+      <measurement errorPlus="0.0180662" value="0.483556"
+        errorMinus="0.0180662"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="1.43003"
+        errorMinus="0.23833700000000002"/>
+      <measurement errorPlus="0.0134938" value="0.325207"
+        errorMinus="0.0134938"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="1.90671"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="0.00944466" value="0.186202"
+        errorMinus="0.00944466"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="2.38339"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="0.00673591" value="0.103195"
+        errorMinus="0.00673591"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23833499999999996"
+        value="2.86007" errorMinus="0.23834"/>
+      <measurement errorPlus="0.00461484" value="0.0521705"
+        errorMinus="0.00461484"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="3.33674"
+        errorMinus="0.23833500000000019"/>
+      <measurement errorPlus="0.00295217" value="0.0236885"
+        errorMinus="0.00295217"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="3.81342"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="0.0017885" value="0.00950986"
+        errorMinus="0.0017885"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="4.2901"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="0.00123674" value="0.00455765"
+        errorMinus="0.00123674"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="4.76678"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="0.00101437" value="0.00299002"
+        errorMinus="0.00101437"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23833500000000019"
+        value="5.24346" errorMinus="0.23834"/>
+      <measurement errorPlus="7.10366E-4" value="0.00147188"
+        errorMinus="7.10366E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23834" value="5.72013"
+        errorMinus="0.23833500000000019"/>
+      <measurement errorPlus="2.98103E-4" value="3.42301E-4"
+        errorMinus="2.98103E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.47668" value="6.19681"
+        errorMinus="0.23834"/>
+      <measurement errorPlus="1.31957E-4" value="9.31814E-5"
+        errorMinus="1.31957E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.47668" value="7.15017"
+        errorMinus="0.47668"/>
+      <measurement errorPlus="2.02169E-4" value="1.07372E-4"
+        errorMinus="2.02169E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d16-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d16-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d16-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.1131145" value="0.0"
+        errorMinus="0.1131145"/>
+      <measurement errorPlus="0.0148676" value="0.140987"
+        errorMinus="0.0148676"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.113115" value="0.226229"
+        errorMinus="0.1131145"/>
+      <measurement errorPlus="0.025709" value="0.420792"
+        errorMinus="0.025709"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311449999999998"
+        value="0.452459" errorMinus="0.11311500000000002"/>
+      <measurement errorPlus="0.030513" value="0.643768"
+        errorMinus="0.030513"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1131145" value="0.678688"
+        errorMinus="0.1131145"/>
+      <measurement errorPlus="0.0304495" value="0.71217"
+        errorMinus="0.0304495"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311650000000006"
+        value="0.904917" errorMinus="0.1131145"/>
+      <measurement errorPlus="0.0278552" value="0.659888"
+        errorMinus="0.0278552"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999997"
+        value="1.13115" errorMinus="0.11311650000000006"/>
+      <measurement errorPlus="0.0243834" value="0.556007"
+        errorMinus="0.0243834"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11310999999999993"
+        value="1.35738" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.0200282" value="0.410055"
+        errorMinus="0.0200282"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="1.5836" errorMinus="0.11311000000000004"/>
+      <measurement errorPlus="0.0161154" value="0.283898"
+        errorMinus="0.0161154"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999997"
+        value="1.80983" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.0133114" value="0.205329"
+        errorMinus="0.0133114"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="2.03606" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.010715" value="0.135154"
+        errorMinus="0.010715"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999985"
+        value="2.26229" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.0085355" value="0.0889342"
+        errorMinus="0.0085355"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="2.48852" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.007442" value="0.0597289"
+        errorMinus="0.007442"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="2.71475" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.00517402" value="0.0331317"
+        errorMinus="0.00517402"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999985"
+        value="2.94098" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.0046318" value="0.0250025"
+        errorMinus="0.0046318"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="3.16721" errorMinus="0.11311499999999963"/>
+      <measurement errorPlus="0.00419695" value="0.0182543"
+        errorMinus="0.00419695"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="3.39344" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.00343124" value="0.0109587"
+        errorMinus="0.00343124"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999985"
+        value="3.61967" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.00246253" value="0.00712558"
+        errorMinus="0.00246253"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311499999999985"
+        value="3.8459" errorMinus="0.11311500000000008"/>
+      <measurement errorPlus="0.00197257" value="0.00374137"
+        errorMinus="0.00197257"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="4.07213" errorMinus="0.11311499999999963"/>
+      <measurement errorPlus="0.00207308" value="0.00292164"
+        errorMinus="0.00207308"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.11311500000000008"
+        value="4.29836" errorMinus="0.11311499999999963"/>
+      <measurement errorPlus="0.00147799" value="0.00141476"
+        errorMinus="0.00147799"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.22623000000000015"
+        value="4.52459" errorMinus="0.11311500000000052"/>
+      <measurement errorPlus="5.28604E-4" value="3.71085E-4"
+        errorMinus="5.28604E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.22623000000000015"
+        value="4.97705" errorMinus="0.22623000000000015"/>
+      <measurement errorPlus="0.00100637" value="6.63372E-4"
+        errorMinus="0.00100637"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d17-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d17-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d17-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0740055" value="0.0"
+        errorMinus="0.0740055"/>
+      <measurement errorPlus="0.0115498" value="0.0508061"
+        errorMinus="0.0115498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="0.148011" errorMinus="0.0740055"/>
+      <measurement errorPlus="0.0203679" value="0.17994"
+        errorMinus="0.0203679"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740055" value="0.296021"
+        errorMinus="0.07400499999999999"/>
+      <measurement errorPlus="0.0289825" value="0.386474"
+        errorMinus="0.0289825"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740055" value="0.444032"
+        errorMinus="0.0740055"/>
+      <measurement errorPlus="0.0354249" value="0.619059"
+        errorMinus="0.0354249"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="0.592043" errorMinus="0.07400550000000006"/>
+      <measurement errorPlus="0.0371871" value="0.746102"
+        errorMinus="0.0371871"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740055" value="0.740053"
+        errorMinus="0.07400499999999999"/>
+      <measurement errorPlus="0.0367575" value="0.791505"
+        errorMinus="0.0367575"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400300000000004"
+        value="0.888064" errorMinus="0.07400549999999995"/>
+      <measurement errorPlus="0.0359207" value="0.782306"
+        errorMinus="0.0359207"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="1.03607" errorMinus="0.07400300000000004"/>
+      <measurement errorPlus="0.0335337" value="0.726683"
+        errorMinus="0.0335337"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07401000000000002"
+        value="1.18408" errorMinus="0.07400499999999988"/>
+      <measurement errorPlus="0.0306644" value="0.625062"
+        errorMinus="0.0306644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="1.3321" errorMinus="0.07400999999999991"/>
+      <measurement errorPlus="0.0262066" value="0.486691"
+        errorMinus="0.0262066"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="1.48011" errorMinus="0.07400499999999988"/>
+      <measurement errorPlus="0.0232498" value="0.389063"
+        errorMinus="0.0232498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="1.62812" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.0192824" value="0.281416"
+        errorMinus="0.0192824"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999999"
+        value="1.77613" errorMinus="0.07400499999999988"/>
+      <measurement errorPlus="0.01613" value="0.19943"
+        errorMinus="0.01613"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="1.92414" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.0154395" value="0.166064"
+        errorMinus="0.0154395"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999988"
+        value="2.07215" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.0109742" value="0.098764"
+        errorMinus="0.0109742"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="2.22016" errorMinus="0.07400499999999965"/>
+      <measurement errorPlus="0.0104303" value="0.0799133"
+        errorMinus="0.0104303"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999988"
+        value="2.36817" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00773872" value="0.0489087"
+        errorMinus="0.00773872"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="2.51618" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00676423" value="0.0353906"
+        errorMinus="0.00676423"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999988"
+        value="2.66419" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00520311" value="0.0224507"
+        errorMinus="0.00520311"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="2.8122" errorMinus="0.07400499999999965"/>
+      <measurement errorPlus="0.00454746" value="0.0162397"
+        errorMinus="0.00454746"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="2.96021" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00484659" value="0.0106466"
+        errorMinus="0.00484659"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400999999999991"
+        value="3.10822" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00212455" value="0.00381661"
+        errorMinus="0.00212455"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="3.25624" errorMinus="0.07400999999999991"/>
+      <measurement errorPlus="0.0020431" value="0.00305851"
+        errorMinus="0.0020431"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999988"
+        value="3.40425" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00150676" value="0.00148492"
+        errorMinus="0.00150676"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0740050000000001"
+        value="3.55226" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00203814" value="0.00248271"
+        errorMinus="0.00203814"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999988"
+        value="3.70027" errorMinus="0.0740050000000001"/>
+      <measurement errorPlus="0.00188817" value="0.00206347"
+        errorMinus="0.00188817"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07400499999999965"
+        value="3.84828" errorMinus="0.07400499999999965"/>
+      <measurement errorPlus="6.49125E-4" value="4.56122E-4"
+        errorMinus="6.49125E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d18-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d18-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d18-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0570785" value="0.0"
+        errorMinus="0.0570785"/>
+      <measurement errorPlus="0.0154864" value="0.0233535"
+        errorMinus="0.0154864"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0570785" value="0.114157"
+        errorMinus="0.0570785"/>
+      <measurement errorPlus="0.0189156" value="0.0780593"
+        errorMinus="0.0189156"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.057079000000000005"
+        value="0.228314" errorMinus="0.057078500000000004"/>
+      <measurement errorPlus="0.0204874" value="0.150328"
+        errorMinus="0.0204874"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.057078500000000004"
+        value="0.342472" errorMinus="0.05707899999999999"/>
+      <measurement errorPlus="0.0291988" value="0.335561"
+        errorMinus="0.0291988"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.057078500000000004"
+        value="0.456629" errorMinus="0.057078499999999976"/>
+      <measurement errorPlus="0.0353302" value="0.518963"
+        errorMinus="0.0353302"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.057078499999999976"
+        value="0.570786" errorMinus="0.05707850000000003"/>
+      <measurement errorPlus="0.0391347" value="0.689945"
+        errorMinus="0.0391347"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707850000000003"
+        value="0.684943" errorMinus="0.05707849999999992"/>
+      <measurement errorPlus="0.0421997" value="0.833348"
+        errorMinus="0.0421997"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707899999999999"
+        value="0.7991" errorMinus="0.05707850000000003"/>
+      <measurement errorPlus="0.0433144" value="0.898711"
+        errorMinus="0.0433144"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707599999999996"
+        value="0.913258" errorMinus="0.05707899999999999"/>
+      <measurement errorPlus="0.0448878" value="0.966032"
+        errorMinus="0.0448878"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.02741" errorMinus="0.057075999999999905"/>
+      <measurement errorPlus="0.0424474" value="0.892514"
+        errorMinus="0.0424474"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.14157" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0387659" value="0.785074"
+        errorMinus="0.0387659"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.25573" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0347113" value="0.652508"
+        errorMinus="0.0347113"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707499999999999"
+        value="1.36989" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0307629" value="0.532032"
+        errorMinus="0.0307629"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.48404" errorMinus="0.05707499999999999"/>
+      <measurement errorPlus="0.0263961" value="0.39099"
+        errorMinus="0.0263961"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.5982" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0230404" value="0.304898"
+        errorMinus="0.0230404"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707499999999999"
+        value="1.71236" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0201623" value="0.226712"
+        errorMinus="0.0201623"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707999999999991"
+        value="1.82651" errorMinus="0.05707499999999999"/>
+      <measurement errorPlus="0.0163468" value="0.155699"
+        errorMinus="0.0163468"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="1.94067" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0125714" value="0.0947717"
+        errorMinus="0.0125714"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.05483" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.0122043" value="0.086699"
+        errorMinus="0.0122043"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707499999999999"
+        value="2.16899" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00950477" value="0.0503505"
+        errorMinus="0.00950477"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.28314" errorMinus="0.057074999999999765"/>
+      <measurement errorPlus="0.00944345" value="0.0474359"
+        errorMinus="0.00944345"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.3973" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00450721" value="0.0143124"
+        errorMinus="0.00450721"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.51146" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00459917" value="0.013073"
+        errorMinus="0.00459917"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707499999999999"
+        value="2.62562" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00287551" value="0.00510902"
+        errorMinus="0.00287551"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.73977" errorMinus="0.05707500000000021"/>
+      <measurement errorPlus="0.0032172" value="0.00630394"
+        errorMinus="0.0032172"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="2.85393" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00223214" value="0.00338233"
+        errorMinus="0.00223214"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05707499999999999"
+        value="2.96809" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="0.00185211" value="0.00242983"
+        errorMinus="0.00185211"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="3.08224" errorMinus="0.057074999999999765"/>
+      <measurement errorPlus="0.00145829" value="9.17682E-4"
+        errorMinus="0.00145829"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05708000000000002"
+        value="3.1964" errorMinus="0.05708000000000002"/>
+      <measurement errorPlus="6.05051E-4" value="3.45039E-4"
+        errorMinus="6.05051E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d19-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d19-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d19-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.08843599999999999"
+        value="0.176873" errorMinus="0.08843599999999999"/>
+      <measurement errorPlus="0.0101189" value="0.0184433"
+        errorMinus="0.0101189"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843650000000003"
+        value="0.353745" errorMinus="0.08843599999999996"/>
+      <measurement errorPlus="0.0289058" value="0.201236"
+        errorMinus="0.0289058"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843649999999997"
+        value="0.530618" errorMinus="0.08843650000000003"/>
+      <measurement errorPlus="0.0586027" value="0.884733"
+        errorMinus="0.0586027"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843650000000003"
+        value="0.707491" errorMinus="0.08843649999999992"/>
+      <measurement errorPlus="0.0847389" value="1.89946"
+        errorMinus="0.0847389"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843799999999996"
+        value="0.884364" errorMinus="0.08843650000000003"/>
+      <measurement errorPlus="0.0988886" value="2.59165"
+        errorMinus="0.0988886"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843500000000004"
+        value="1.06124" errorMinus="0.08843800000000002"/>
+      <measurement errorPlus="0.0940602" value="2.43746"
+        errorMinus="0.0940602"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843499999999993"
+        value="1.23811" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.0733925" value="1.64753"
+        errorMinus="0.0733925"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843500000000004"
+        value="1.41498" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.0531736" value="0.929027"
+        errorMinus="0.0531736"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843999999999996"
+        value="1.59185" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.0330852" value="0.414019"
+        errorMinus="0.0330852"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843500000000004"
+        value="1.76873" errorMinus="0.08844000000000007"/>
+      <measurement errorPlus="0.0218234" value="0.187002"
+        errorMinus="0.0218234"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843499999999993"
+        value="1.9456" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.0118417" value="0.0666272"
+        errorMinus="0.0118417"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08844000000000007"
+        value="2.12247" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.00579643" value="0.0185083"
+        errorMinus="0.00579643"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843500000000004"
+        value="2.29935" errorMinus="0.08843999999999985"/>
+      <measurement errorPlus="0.00352793" value="0.00787778"
+        errorMinus="0.00352793"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.08843500000000004"
+        value="2.47622" errorMinus="0.08843500000000004"/>
+      <measurement errorPlus="0.00286373" value="0.0040088"
+        errorMinus="0.00286373"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d20-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d20-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d20-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.218318" value="0.0"
+        errorMinus="0.218318"/>
+      <measurement errorPlus="0.00733818" value="0.353538"
+        errorMinus="0.00733818"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831849999999997"
+        value="0.436636" errorMinus="0.218318"/>
+      <measurement errorPlus="0.00891498" value="0.555232"
+        errorMinus="0.00891498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831849999999997"
+        value="0.873273" errorMinus="0.21831849999999997"/>
+      <measurement errorPlus="0.00823227" value="0.513291"
+        errorMinus="0.00823227"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000004"
+        value="1.30991" errorMinus="0.21831850000000008"/>
+      <measurement errorPlus="0.00679464" value="0.374234"
+        errorMinus="0.00679464"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21832000000000007"
+        value="1.74654" errorMinus="0.21831500000000004"/>
+      <measurement errorPlus="0.00503866" value="0.222738"
+        errorMinus="0.00503866"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831999999999985"
+        value="2.18318" errorMinus="0.21832000000000007"/>
+      <measurement errorPlus="0.00375137" value="0.127714"
+        errorMinus="0.00375137"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000004"
+        value="2.61982" errorMinus="0.21831999999999985"/>
+      <measurement errorPlus="0.00275476" value="0.0688428"
+        errorMinus="0.00275476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21832000000000007"
+        value="3.05645" errorMinus="0.21831500000000004"/>
+      <measurement errorPlus="0.00195898" value="0.036353"
+        errorMinus="0.00195898"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21832000000000007"
+        value="3.49309" errorMinus="0.21831999999999985"/>
+      <measurement errorPlus="0.00145587" value="0.0189141"
+        errorMinus="0.00145587"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000004"
+        value="3.92973" errorMinus="0.2183200000000003"/>
+      <measurement errorPlus="0.00108589" value="0.0103239"
+        errorMinus="0.00108589"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831999999999985"
+        value="4.36636" errorMinus="0.21831500000000048"/>
+      <measurement errorPlus="7.17477E-4" value="0.00423854"
+        errorMinus="7.17477E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831999999999985"
+        value="4.803" errorMinus="0.2183199999999994"/>
+      <measurement errorPlus="5.27048E-4" value="0.00231259"
+        errorMinus="5.27048E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000004"
+        value="5.23964" errorMinus="0.2183200000000003"/>
+      <measurement errorPlus="4.66364E-4" value="0.00154451"
+        errorMinus="4.66364E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.2183200000000003"
+        value="5.67627" errorMinus="0.2183149999999996"/>
+      <measurement errorPlus="2.49388E-4" value="4.36988E-4"
+        errorMinus="2.49388E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000004"
+        value="6.11291" errorMinus="0.2183200000000003"/>
+      <measurement errorPlus="2.60331E-4" value="4.82094E-4"
+        errorMinus="2.60331E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.21831500000000048"
+        value="6.54954" errorMinus="0.21831500000000048"/>
+      <measurement errorPlus="7.14295E-5" value="4.13645E-5"
+        errorMinus="7.14295E-5"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d21-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d21-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d21-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.1058105" value="0.0"
+        errorMinus="0.1058105"/>
+      <measurement errorPlus="0.0073563" value="0.157094"
+        errorMinus="0.0073563"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581099999999999"
+        value="0.211621" errorMinus="0.1058105"/>
+      <measurement errorPlus="0.0107356" value="0.389805"
+        errorMinus="0.0107356"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1058105" value="0.423243"
+        errorMinus="0.10581099999999999"/>
+      <measurement errorPlus="0.0129831" value="0.6114"
+        errorMinus="0.0129831"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581050000000003"
+        value="0.634864" errorMinus="0.10581050000000003"/>
+      <measurement errorPlus="0.0138724" value="0.731093"
+        errorMinus="0.0138724"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581250000000003"
+        value="0.846485" errorMinus="0.10581050000000003"/>
+      <measurement errorPlus="0.0131272" value="0.693607"
+        errorMinus="0.0131272"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="1.05811" errorMinus="0.10581250000000009"/>
+      <measurement errorPlus="0.0119139" value="0.596347"
+        errorMinus="0.0119139"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="1.26973" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.0101238" value="0.455283"
+        errorMinus="0.0101238"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581000000000007"
+        value="1.48135" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00834906" value="0.325283"
+        errorMinus="0.00834906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="1.69297" errorMinus="0.10581000000000018"/>
+      <measurement errorPlus="0.00707488" value="0.239087"
+        errorMinus="0.00707488"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581000000000007"
+        value="1.90459" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00583324" value="0.162468"
+        errorMinus="0.00583324"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="2.11621" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00491965" value="0.115681"
+        errorMinus="0.00491965"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581499999999999"
+        value="2.32783" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00407508" value="0.0788492"
+        errorMinus="0.00407508"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="2.53946" errorMinus="0.10581499999999977"/>
+      <measurement errorPlus="0.00337603" value="0.0544074"
+        errorMinus="0.00337603"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="2.75108" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00299666" value="0.0411822"
+        errorMinus="0.00299666"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="2.9627" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00219914" value="0.0224921"
+        errorMinus="0.00219914"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581000000000018"
+        value="3.17432" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00206516" value="0.019019"
+        errorMinus="0.00206516"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="3.38594" errorMinus="0.1058100000000004"/>
+      <measurement errorPlus="0.00162037" value="0.0113991"
+        errorMinus="0.00162037"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="3.59756" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00141697" value="0.00790119"
+        errorMinus="0.00141697"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581000000000018"
+        value="3.80918" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="0.00107162" value="0.00432331"
+        errorMinus="0.00107162"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10581499999999977"
+        value="4.0208" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="9.60636E-4" value="0.0034714"
+        errorMinus="9.60636E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="4.23243" errorMinus="0.10581499999999977"/>
+      <measurement errorPlus="8.08006E-4" value="0.00245354"
+        errorMinus="8.08006E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="4.44405" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="6.38265E-4" value="0.00149171"
+        errorMinus="6.38265E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="4.65567" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="3.82417E-4" value="6.22712E-4"
+        errorMinus="3.82417E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.10580999999999996"
+        value="4.86729" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="1.92226E-4" value="1.35383E-4"
+        errorMinus="1.92226E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1058100000000004"
+        value="5.07891" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="2.75115E-4" value="2.22472E-4"
+        errorMinus="2.75115E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.42324499999999965"
+        value="5.29053" errorMinus="0.10580999999999996"/>
+      <measurement errorPlus="1.89936E-4" value="1.1013E-4"
+        errorMinus="1.89936E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.42324499999999965"
+        value="6.13702" errorMinus="0.42324499999999965"/>
+      <measurement errorPlus="4.12855E-4" value="1.95967E-4"
+        errorMinus="4.12855E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d22-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d22-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d22-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.069238" value="0.0"
+        errorMinus="0.069238"/>
+      <measurement errorPlus="0.00662453" value="0.0538233"
+        errorMinus="0.00662453"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.069238" value="0.138476"
+        errorMinus="0.069238"/>
+      <measurement errorPlus="0.0097474" value="0.177142"
+        errorMinus="0.0097474"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923850000000001"
+        value="0.276952" errorMinus="0.069238"/>
+      <measurement errorPlus="0.0128959" value="0.358698"
+        errorMinus="0.0128959"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.069238" value="0.415429"
+        errorMinus="0.06923850000000004"/>
+      <measurement errorPlus="0.0156882" value="0.579229"
+        errorMinus="0.0156882"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923800000000002"
+        value="0.553905" errorMinus="0.06923800000000002"/>
+      <measurement errorPlus="0.0174315" value="0.74284"
+        errorMinus="0.0174315"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923799999999997"
+        value="0.692381" errorMinus="0.06923800000000002"/>
+      <measurement errorPlus="0.0179058" value="0.828926"
+        errorMinus="0.0179058"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923800000000002"
+        value="0.830857" errorMinus="0.06923799999999991"/>
+      <measurement errorPlus="0.0176025" value="0.825876"
+        errorMinus="0.0176025"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923849999999998"
+        value="0.969333" errorMinus="0.06923800000000002"/>
+      <measurement errorPlus="0.0162347" value="0.742527"
+        errorMinus="0.0162347"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="1.10781" errorMinus="0.06923849999999998"/>
+      <measurement errorPlus="0.014821" value="0.640483"
+        errorMinus="0.014821"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000005"
+        value="1.24629" errorMinus="0.06923999999999997"/>
+      <measurement errorPlus="0.0131821" value="0.523255"
+        errorMinus="0.0131821"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="1.38476" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="0.0116153" value="0.417024"
+        errorMinus="0.0116153"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000005"
+        value="1.52324" errorMinus="0.06923999999999997"/>
+      <measurement errorPlus="0.0101448" value="0.326599"
+        errorMinus="0.0101448"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="1.66171" errorMinus="0.06923500000000016"/>
+      <measurement errorPlus="0.00904894" value="0.259935"
+        errorMinus="0.00904894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="1.80019" errorMinus="0.06923999999999997"/>
+      <measurement errorPlus="0.00777344" value="0.192583"
+        errorMinus="0.00777344"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000005"
+        value="1.93867" errorMinus="0.06923999999999997"/>
+      <measurement errorPlus="0.00701711" value="0.157609"
+        errorMinus="0.00701711"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="2.07714" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="0.00588882" value="0.110155"
+        errorMinus="0.00588882"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923499999999994"
+        value="2.21562" errorMinus="0.06924000000000019"/>
+      <measurement errorPlus="0.00526332" value="0.0863705"
+        errorMinus="0.00526332"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06924000000000019"
+        value="2.35409" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="0.00455828" value="0.0626911"
+        errorMinus="0.00455828"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="2.49257" errorMinus="0.06924000000000019"/>
+      <measurement errorPlus="0.00365932" value="0.0411539"
+        errorMinus="0.00365932"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923499999999994"
+        value="2.63105" errorMinus="0.06923999999999975"/>
+      <measurement errorPlus="0.00316506" value="0.0297422"
+        errorMinus="0.00316506"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="2.76952" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="0.00274007" value="0.0214976"
+        errorMinus="0.00274007"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="2.908" errorMinus="0.06924000000000019"/>
+      <measurement errorPlus="0.00231291" value="0.0145623"
+        errorMinus="0.00231291"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000016"
+        value="3.04648" errorMinus="0.06923999999999975"/>
+      <measurement errorPlus="0.00186191" value="0.00918637"
+        errorMinus="0.00186191"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="3.18495" errorMinus="0.06923500000000038"/>
+      <measurement errorPlus="0.00163088" value="0.00641573"
+        errorMinus="0.00163088"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923499999999994"
+        value="3.32343" errorMinus="0.06923999999999975"/>
+      <measurement errorPlus="0.00173017" value="0.00668896"
+        errorMinus="0.00173017"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="3.4619" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="9.91558E-4" value="0.00222227"
+        errorMinus="9.91558E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999997"
+        value="3.60038" errorMinus="0.06924000000000019"/>
+      <measurement errorPlus="7.62853E-4" value="0.00161065"
+        errorMinus="7.62853E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000016"
+        value="3.73886" errorMinus="0.06923999999999975"/>
+      <measurement errorPlus="8.37116E-4" value="0.00134597"
+        errorMinus="8.37116E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.13847999999999971"
+        value="3.87733" errorMinus="0.06923500000000038"/>
+      <measurement errorPlus="4.2876E-4" value="5.1078E-4"
+        errorMinus="4.2876E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923500000000038"
+        value="4.15429" errorMinus="0.1384799999999995"/>
+      <measurement errorPlus="4.3641E-4" value="4.1029E-4"
+        errorMinus="4.3641E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999975"
+        value="4.29276" errorMinus="0.06923499999999994"/>
+      <measurement errorPlus="5.59245E-4" value="2.98925E-4"
+        errorMinus="5.59245E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06923999999999975"
+        value="4.43124" errorMinus="0.06923999999999975"/>
+      <measurement errorPlus="1.03712E-4" value="4.98209E-5"
+        errorMinus="1.03712E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d23-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d23-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d23-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.052292" value="0.0"
+        errorMinus="0.052292"/>
+      <measurement errorPlus="0.00604649" value="0.0128197"
+        errorMinus="0.00604649"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.052292" value="0.104584"
+        errorMinus="0.052292"/>
+      <measurement errorPlus="0.0105132" value="0.0779353"
+        errorMinus="0.0105132"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229199999999999"
+        value="0.209168" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0120211" value="0.172122"
+        errorMinus="0.0120211"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.052292000000000005"
+        value="0.313752" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.013994" value="0.304216"
+        errorMinus="0.013994"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229200000000003"
+        value="0.418336" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0166442" value="0.48696"
+        errorMinus="0.0166442"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229199999999995"
+        value="0.52292" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0189991" value="0.665655"
+        errorMinus="0.0189991"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.052292000000000005"
+        value="0.627504" errorMinus="0.052291999999999894"/>
+      <measurement errorPlus="0.0200538" value="0.791474"
+        errorMinus="0.0200538"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.052292000000000005"
+        value="0.732088" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0213764" value="0.906809"
+        errorMinus="0.0213764"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.052292000000000005"
+        value="0.836672" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.020891" value="0.920551"
+        errorMinus="0.020891"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229200000000006"
+        value="0.941256" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0204504" value="0.887269"
+        errorMinus="0.0204504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="1.04584" errorMinus="0.052292000000000005"/>
+      <measurement errorPlus="0.0190937" value="0.811481"
+        errorMinus="0.0190937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="1.15042" errorMinus="0.05228999999999995"/>
+      <measurement errorPlus="0.0175865" value="0.691228"
+        errorMinus="0.0175865"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229000000000006"
+        value="1.25501" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.0162171" value="0.609401"
+        errorMinus="0.0162171"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="1.35959" errorMinus="0.05228999999999995"/>
+      <measurement errorPlus="0.0146889" value="0.4939"
+        errorMinus="0.0146889"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="1.46418" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.0132514" value="0.412962"
+        errorMinus="0.0132514"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229000000000006"
+        value="1.56876" errorMinus="0.05228999999999995"/>
+      <measurement errorPlus="0.0121319" value="0.333141"
+        errorMinus="0.0121319"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="1.67334" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="0.0106575" value="0.264615"
+        errorMinus="0.0106575"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="1.77793" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.00941769" value="0.200781"
+        errorMinus="0.00941769"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229500000000009"
+        value="1.88251" errorMinus="0.05228999999999995"/>
+      <measurement errorPlus="0.00798624" value="0.147775"
+        errorMinus="0.00798624"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229000000000006"
+        value="1.9871" errorMinus="0.0522950000000002"/>
+      <measurement errorPlus="0.00695863" value="0.109323"
+        errorMinus="0.00695863"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="2.09168" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="0.00597932" value="0.0811376"
+        errorMinus="0.00597932"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="2.19626" errorMinus="0.052289999999999726"/>
+      <measurement errorPlus="0.00497684" value="0.0540147"
+        errorMinus="0.00497684"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="2.30085" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.00461415" value="0.0467139"
+        errorMinus="0.00461415"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="2.40543" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="0.00366085" value="0.0282722"
+        errorMinus="0.00366085"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="2.51002" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.00275821" value="0.0165228"
+        errorMinus="0.00275821"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229000000000017"
+        value="2.6146" errorMinus="0.052289999999999726"/>
+      <measurement errorPlus="0.0024202" value="0.0116946"
+        errorMinus="0.0024202"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="2.71918" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="0.00228281" value="0.00979372"
+        errorMinus="0.00228281"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="2.82377" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="0.0014955" value="0.00429136"
+        errorMinus="0.0014955"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="2.92835" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="0.00141673" value="0.0034814"
+        errorMinus="0.00141673"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="3.03294" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="7.33308E-4" value="0.00119343"
+        errorMinus="7.33308E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229000000000017"
+        value="3.13752" errorMinus="0.052289999999999726"/>
+      <measurement errorPlus="0.00122033" value="0.0026482"
+        errorMinus="0.00122033"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="3.2421" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="5.48658E-4" value="7.88037E-4"
+        errorMinus="5.48658E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05228999999999995"
+        value="3.34669" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="4.07635E-4" value="3.9452E-4"
+        errorMinus="4.07635E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="3.45127" errorMinus="0.05229000000000017"/>
+      <measurement errorPlus="1.9147E-4" value="1.07855E-4"
+        errorMinus="1.9147E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.05229499999999998"
+        value="3.55586" errorMinus="0.05229499999999998"/>
+      <measurement errorPlus="4.01624E-4" value="2.2245E-4"
+        errorMinus="4.01624E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d24-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d24-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d24-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0735995" value="0.147199"
+        errorMinus="0.0735995"/>
+      <measurement errorPlus="0.00617042" value="0.00606903"
+        errorMinus="0.00617042"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359950000000001"
+        value="0.294398" errorMinus="0.07359949999999998"/>
+      <measurement errorPlus="0.010291" value="0.0779001"
+        errorMinus="0.010291"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="0.441597"
+        errorMinus="0.07359950000000004"/>
+      <measurement errorPlus="0.0193206" value="0.430367"
+        errorMinus="0.0193206"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359949999999998"
+        value="0.588797" errorMinus="0.0736"/>
+      <measurement errorPlus="0.0289285" value="1.13855"
+        errorMinus="0.0289285"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359949999999998"
+        value="0.735996" errorMinus="0.07359949999999993"/>
+      <measurement errorPlus="0.0393006" value="2.08058"
+        errorMinus="0.0393006"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359749999999998"
+        value="0.883195" errorMinus="0.07359950000000004"/>
+      <measurement errorPlus="0.0454341" value="2.68924"
+        errorMinus="0.0454341"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.03039"
+        errorMinus="0.07359749999999998"/>
+      <measurement errorPlus="0.0449274" value="2.61483"
+        errorMinus="0.0449274"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.17759"
+        errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.03857" value="1.96108"
+        errorMinus="0.03857"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.32479"
+        errorMinus="0.07360000000000011"/>
+      <measurement errorPlus="0.0302597" value="1.24755"
+        errorMinus="0.0302597"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.47199"
+        errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.0220741" value="0.687818"
+        errorMinus="0.0220741"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.61919"
+        errorMinus="0.07360000000000011"/>
+      <measurement errorPlus="0.0161267" value="0.369032"
+        errorMinus="0.0161267"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.76639"
+        errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.0108906" value="0.167771"
+        errorMinus="0.0108906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0736" value="1.91359"
+        errorMinus="0.07360000000000011"/>
+      <measurement errorPlus="0.00703429" value="0.070284"
+        errorMinus="0.00703429"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07360000000000011"
+        value="2.06079" errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.0044215" value="0.02686"
+        errorMinus="0.0044215"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359999999999989"
+        value="2.20799" errorMinus="0.07360000000000033"/>
+      <measurement errorPlus="0.00288835" value="0.0112887"
+        errorMinus="0.00288835"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07360000000000011"
+        value="2.35519" errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.00210693" value="0.00543805"
+        errorMinus="0.00210693"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359499999999985"
+        value="2.50239" errorMinus="0.07359999999999989"/>
+      <measurement errorPlus="0.00114203" value="0.00179941"
+        errorMinus="0.00114203"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07359499999999963"
+        value="2.64958" errorMinus="0.07359499999999963"/>
+      <measurement errorPlus="7.483E-4" value="5.79773E-4"
+        errorMinus="7.483E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d25-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d25-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d25-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.1986005" value="0.0"
+        errorMinus="0.1986005"/>
+      <measurement errorPlus="0.0150326" value="0.362669"
+        errorMinus="0.0150326"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1986005" value="0.397201"
+        errorMinus="0.1986005"/>
+      <measurement errorPlus="0.0184121" value="0.574602"
+        errorMinus="0.0184121"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19859899999999997"
+        value="0.794402" errorMinus="0.19860049999999996"/>
+      <measurement errorPlus="0.0168524" value="0.531182"
+        errorMinus="0.0168524"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1986" value="1.1916"
+        errorMinus="0.19859899999999997"/>
+      <measurement errorPlus="0.013768" value="0.395802"
+        errorMinus="0.013768"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1986" value="1.5888"
+        errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="0.010697" value="0.260041"
+        errorMinus="0.010697"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19860500000000003"
+        value="1.986" errorMinus="0.1986000000000001"/>
+      <measurement errorPlus="0.00829803" value="0.163964"
+        errorMinus="0.00829803"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="2.38321" errorMinus="0.19860500000000014"/>
+      <measurement errorPlus="0.00638841" value="0.100114"
+        errorMinus="0.00638841"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1986000000000001"
+        value="2.78041" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="0.00461311" value="0.0580011"
+        errorMinus="0.00461311"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="3.17761" errorMinus="0.19860000000000033"/>
+      <measurement errorPlus="0.00355135" value="0.0356441"
+        errorMinus="0.00355135"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1986000000000001"
+        value="3.57481" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="0.0022498" value="0.0158986"
+        errorMinus="0.0022498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="3.97201" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="0.00175981" value="0.00944278"
+        errorMinus="0.00175981"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="4.36921" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="0.00117611" value="0.00461312"
+        errorMinus="0.00117611"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19860000000000033"
+        value="4.76641" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="8.28653E-4" value="0.00216784"
+        errorMinus="8.28653E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="5.16361" errorMinus="0.19860000000000078"/>
+      <measurement errorPlus="9.05743E-4" value="0.0022599"
+        errorMinus="9.05743E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.39720500000000003"
+        value="5.56081" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="4.99911E-4" value="7.67129E-4"
+        errorMinus="4.99911E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="6.35522" errorMinus="0.3972050000000005"/>
+      <measurement errorPlus="2.03869E-4" value="1.17768E-4"
+        errorMinus="2.03869E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="6.75242" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="2.72852E-4" value="2.21815E-4"
+        errorMinus="2.72852E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.1985999999999999"
+        value="7.14962" errorMinus="0.1985999999999999"/>
+      <measurement errorPlus="2.2803E-4" value="1.19553E-4"
+        errorMinus="2.2803E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d26-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d26-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d26-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.097053" value="0.0"
+        errorMinus="0.097053"/>
+      <measurement errorPlus="0.0139953" value="0.157559"
+        errorMinus="0.0139953"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705249999999999"
+        value="0.194106" errorMinus="0.097053"/>
+      <measurement errorPlus="0.0203832" value="0.380922"
+        errorMinus="0.0203832"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.097053" value="0.388211"
+        errorMinus="0.09705249999999999"/>
+      <measurement errorPlus="0.0252263" value="0.603217"
+        errorMinus="0.0252263"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705249999999999"
+        value="0.582317" errorMinus="0.097053"/>
+      <measurement errorPlus="0.0273881" value="0.730477"
+        errorMinus="0.0273881"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.097053" value="0.776422"
+        errorMinus="0.09705249999999999"/>
+      <measurement errorPlus="0.0267711" value="0.719033"
+        errorMinus="0.0267711"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705100000000005"
+        value="0.970528" errorMinus="0.09705299999999994"/>
+      <measurement errorPlus="0.0242605" value="0.622942"
+        errorMinus="0.0242605"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.097055" value="1.16463"
+        errorMinus="0.097051"/>
+      <measurement errorPlus="0.0211713" value="0.503928"
+        errorMinus="0.0211713"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999997"
+        value="1.35874" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.0177266" value="0.37782"
+        errorMinus="0.0177266"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.097055" value="1.55284"
+        errorMinus="0.09705000000000008"/>
+      <measurement errorPlus="0.0154755" value="0.29235"
+        errorMinus="0.0154755"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.097055" value="1.74695"
+        errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.0124763" value="0.207085"
+        errorMinus="0.0124763"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999997"
+        value="1.94106" errorMinus="0.09705499999999989"/>
+      <measurement errorPlus="0.0106369" value="0.154347"
+        errorMinus="0.0106369"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="2.13516" errorMinus="0.09704999999999986"/>
+      <measurement errorPlus="0.00871192" value="0.108439"
+        errorMinus="0.00871192"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999986"
+        value="2.32927" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.00731509" value="0.077737"
+        errorMinus="0.00731509"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="2.52337" errorMinus="0.09704999999999986"/>
+      <measurement errorPlus="0.00689087" value="0.0689996"
+        errorMinus="0.00689087"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999986"
+        value="2.71748" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.00562986" value="0.0464945"
+        errorMinus="0.00562986"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="2.91158" errorMinus="0.09704999999999986"/>
+      <measurement errorPlus="0.00490543" value="0.0366476"
+        errorMinus="0.00490543"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705499999999989"
+        value="3.10569" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.00357777" value="0.0206167"
+        errorMinus="0.00357777"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705000000000008"
+        value="3.2998" errorMinus="0.09705499999999967"/>
+      <measurement errorPlus="0.00340576" value="0.0168554"
+        errorMinus="0.00340576"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705499999999989"
+        value="3.4939" errorMinus="0.0970500000000003"/>
+      <measurement errorPlus="0.00234888" value="0.00924842"
+        errorMinus="0.00234888"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705000000000008"
+        value="3.68801" errorMinus="0.09705499999999967"/>
+      <measurement errorPlus="0.00202115" value="0.00713317"
+        errorMinus="0.00202115"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="3.88211" errorMinus="0.0970500000000003"/>
+      <measurement errorPlus="0.00188745" value="0.00467502"
+        errorMinus="0.00188745"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999986"
+        value="4.07622" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="0.00102939" value="0.00197929"
+        errorMinus="0.00102939"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="4.27032" errorMinus="0.09704999999999941"/>
+      <measurement errorPlus="6.90777E-4" value="0.00101119"
+        errorMinus="6.90777E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09704999999999986"
+        value="4.46443" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="7.52889E-4" value="9.0526E-4"
+        errorMinus="7.52889E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.09705500000000011"
+        value="4.65853" errorMinus="0.0970500000000003"/>
+      <measurement errorPlus="4.63066E-4" value="4.21582E-4"
+        errorMinus="4.63066E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.2911600000000001"
+        value="4.85264" errorMinus="0.09705500000000011"/>
+      <measurement errorPlus="5.96283E-4" value="4.5989E-4"
+        errorMinus="5.96283E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19410499999999997"
+        value="5.43496" errorMinus="0.29115999999999964"/>
+      <measurement errorPlus="6.43875E-4" value="3.5611E-4"
+        errorMinus="6.43875E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.19410499999999953"
+        value="5.82317" errorMinus="0.19410499999999953"/>
+      <measurement errorPlus="3.52002E-4" value="2.01097E-4"
+        errorMinus="3.52002E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d27-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d27-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d27-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0639175" value="0.0"
+        errorMinus="0.0639175"/>
+      <measurement errorPlus="0.0113204" value="0.0554565"
+        errorMinus="0.0113204"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391799999999999"
+        value="0.127835" errorMinus="0.0639175"/>
+      <measurement errorPlus="0.0201713" value="0.192864"
+        errorMinus="0.0201713"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391750000000002"
+        value="0.255671" errorMinus="0.06391799999999997"/>
+      <measurement errorPlus="0.0237234" value="0.347898"
+        errorMinus="0.0237234"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391750000000002"
+        value="0.383506" errorMinus="0.06391750000000002"/>
+      <measurement errorPlus="0.0292195" value="0.547232"
+        errorMinus="0.0292195"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391799999999997"
+        value="0.511341" errorMinus="0.06391750000000002"/>
+      <measurement errorPlus="0.0336646" value="0.739645"
+        errorMinus="0.0336646"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391750000000002"
+        value="0.639177" errorMinus="0.06391800000000003"/>
+      <measurement errorPlus="0.0339108" value="0.784557"
+        errorMinus="0.0339108"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391749999999996"
+        value="0.767012" errorMinus="0.06391750000000007"/>
+      <measurement errorPlus="0.0342172" value="0.819608"
+        errorMinus="0.0342172"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391650000000004"
+        value="0.894847" errorMinus="0.06391749999999996"/>
+      <measurement errorPlus="0.0317468" value="0.748819"
+        errorMinus="0.0317468"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="1.02268" errorMinus="0.06391650000000004"/>
+      <measurement errorPlus="0.0297815" value="0.684668"
+        errorMinus="0.0297815"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391500000000006"
+        value="1.15052" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0268474" value="0.576769"
+        errorMinus="0.0268474"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="1.27835" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.024355" value="0.492443"
+        errorMinus="0.024355"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="1.40619" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.021498" value="0.393396"
+        errorMinus="0.021498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="1.53402" errorMinus="0.06391499999999994"/>
+      <measurement errorPlus="0.0188222" value="0.314581"
+        errorMinus="0.0188222"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391500000000006"
+        value="1.66186" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0170142" value="0.25843"
+        errorMinus="0.0170142"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="1.78969" errorMinus="0.06391499999999994"/>
+      <measurement errorPlus="0.0144196" value="0.195243"
+        errorMinus="0.0144196"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06392000000000009"
+        value="1.91753" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0134858" value="0.164627"
+        errorMinus="0.0134858"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="2.04537" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0116088" value="0.130004"
+        errorMinus="0.0116088"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="2.1732" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.0100074" value="0.0965213"
+        errorMinus="0.0100074"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="2.30104" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.00881203" value="0.0750395"
+        errorMinus="0.00881203"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="2.42887" errorMinus="0.06391499999999972"/>
+      <measurement errorPlus="0.00763724" value="0.0581219"
+        errorMinus="0.00763724"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391500000000017"
+        value="2.55671" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0071762" value="0.0515394"
+        errorMinus="0.0071762"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="2.68454" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.00555982" value="0.0339261"
+        errorMinus="0.00555982"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="2.81238" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0045438" value="0.0227211"
+        errorMinus="0.0045438"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="2.94021" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.00399823" value="0.0175011"
+        errorMinus="0.00399823"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="3.06805" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.00265541" value="0.00815151"
+        errorMinus="0.00265541"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="3.19588" errorMinus="0.06391499999999972"/>
+      <measurement errorPlus="0.00144189" value="0.00335251"
+        errorMinus="0.00144189"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391500000000017"
+        value="3.32372" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="0.0013967" value="0.00266517"
+        errorMinus="0.0013967"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391999999999998"
+        value="3.45155" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.00193564" value="0.00369259"
+        errorMinus="0.00193564"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="3.57939" errorMinus="0.06391999999999998"/>
+      <measurement errorPlus="7.24789E-4" value="8.80986E-4"
+        errorMinus="7.24789E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.12783999999999995"
+        value="3.70722" errorMinus="0.06391500000000017"/>
+      <measurement errorPlus="0.00107126" value="0.00131588"
+        errorMinus="0.00107126"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06391499999999994"
+        value="3.9629" errorMinus="0.12783999999999995"/>
+      <measurement errorPlus="2.42673E-4" value="1.5188E-4"
+        errorMinus="2.42673E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.31959000000000026"
+        value="4.09073" errorMinus="0.06391499999999972"/>
+      <measurement errorPlus="7.58899E-4" value="5.77219E-4"
+        errorMinus="7.58899E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.3195899999999998"
+        value="4.72991" errorMinus="0.3195899999999998"/>
+      <measurement errorPlus="4.39522E-4" value="2.1583E-4"
+        errorMinus="4.39522E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d28-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d28-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d28-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0479466" value="0.0"
+        errorMinus="0.0479466"/>
+      <measurement errorPlus="0.0188068" value="0.0344728"
+        errorMinus="0.0188068"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794640000000001"
+        value="0.0958932" errorMinus="0.0479466"/>
+      <measurement errorPlus="0.0165019" value="0.0624667"
+        errorMinus="0.0165019"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794699999999999"
+        value="0.191786" errorMinus="0.0479464"/>
+      <measurement errorPlus="0.0215705" value="0.160929"
+        errorMinus="0.0215705"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0479465" value="0.28768"
+        errorMinus="0.04794699999999999"/>
+      <measurement errorPlus="0.0257634" value="0.275906"
+        errorMinus="0.0257634"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0479465" value="0.383573"
+        errorMinus="0.0479465"/>
+      <measurement errorPlus="0.0310853" value="0.459471"
+        errorMinus="0.0310853"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047946499999999975"
+        value="0.479466" errorMinus="0.0479465"/>
+      <measurement errorPlus="0.0361731" value="0.636049"
+        errorMinus="0.0361731"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794700000000002"
+        value="0.575359" errorMinus="0.0479465"/>
+      <measurement errorPlus="0.0386521" value="0.764204"
+        errorMinus="0.0386521"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0479465" value="0.671253"
+        errorMinus="0.04794700000000007"/>
+      <measurement errorPlus="0.0392622" value="0.82247"
+        errorMinus="0.0392622"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0479465" value="0.767146"
+        errorMinus="0.0479465"/>
+      <measurement errorPlus="0.040729" value="0.898817"
+        errorMinus="0.040729"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0479465" value="0.863039"
+        errorMinus="0.0479465"/>
+      <measurement errorPlus="0.0393094" value="0.875468"
+        errorMinus="0.0393094"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794400000000004"
+        value="0.958932" errorMinus="0.0479465"/>
+      <measurement errorPlus="0.0372726" value="0.821944"
+        errorMinus="0.0372726"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794999999999994"
+        value="1.05482" errorMinus="0.04794399999999999"/>
+      <measurement errorPlus="0.0362976" value="0.79077"
+        errorMinus="0.0362976"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000015"
+        value="1.15072" errorMinus="0.04794999999999994"/>
+      <measurement errorPlus="0.0324731" value="0.666994"
+        errorMinus="0.0324731"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000015"
+        value="1.24661" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.0311659" value="0.610426"
+        errorMinus="0.0311659"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794999999999994"
+        value="1.3425" errorMinus="0.047945000000000126"/>
+      <measurement errorPlus="0.0275146" value="0.498441"
+        errorMinus="0.0275146"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000015"
+        value="1.4384" errorMinus="0.04794999999999994"/>
+      <measurement errorPlus="0.025778" value="0.430593"
+        errorMinus="0.025778"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000015"
+        value="1.53429" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.0222285" value="0.339461"
+        errorMinus="0.0222285"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04795000000000005"
+        value="1.63018" errorMinus="0.047945000000000126"/>
+      <measurement errorPlus="0.020557" value="0.282813"
+        errorMinus="0.020557"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000015"
+        value="1.72608" errorMinus="0.04795000000000016"/>
+      <measurement errorPlus="0.0187834" value="0.241033"
+        errorMinus="0.0187834"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047944999999999904"
+        value="1.82197" errorMinus="0.047945000000000126"/>
+      <measurement errorPlus="0.0162778" value="0.181994"
+        errorMinus="0.0162778"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04795000000000005"
+        value="1.91786" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.0146853" value="0.15302"
+        errorMinus="0.0146853"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047944999999999904"
+        value="2.01376" errorMinus="0.04795000000000016"/>
+      <measurement errorPlus="0.0127673" value="0.113673"
+        errorMinus="0.0127673"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000126"
+        value="2.10965" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.0120082" value="0.100733"
+        errorMinus="0.0120082"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794999999999994"
+        value="2.20554" errorMinus="0.04794500000000035"/>
+      <measurement errorPlus="0.00924614" value="0.0636258"
+        errorMinus="0.00924614"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000126"
+        value="2.30144" errorMinus="0.047949999999999715"/>
+      <measurement errorPlus="0.00857615" value="0.0547947"
+        errorMinus="0.00857615"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047944999999999904"
+        value="2.39733" errorMinus="0.04794500000000035"/>
+      <measurement errorPlus="0.00617095" value="0.0307932"
+        errorMinus="0.00617095"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794999999999994"
+        value="2.49322" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.00547383" value="0.0234824"
+        errorMinus="0.00547383"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000126"
+        value="2.58912" errorMinus="0.047949999999999715"/>
+      <measurement errorPlus="0.00364153" value="0.0112156"
+        errorMinus="0.00364153"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047944999999999904"
+        value="2.68501" errorMinus="0.04794500000000035"/>
+      <measurement errorPlus="0.00367071" value="0.01083"
+        errorMinus="0.00367071"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04794999999999994"
+        value="2.7809" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="0.00236083" value="0.0045781"
+        errorMinus="0.00236083"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047945000000000126"
+        value="2.8768" errorMinus="0.047949999999999715"/>
+      <measurement errorPlus="0.00182589" value="0.00334645"
+        errorMinus="0.00182589"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.047944999999999904"
+        value="2.97269" errorMinus="0.04794500000000035"/>
+      <measurement errorPlus="0.00149675" value="0.00207116"
+        errorMinus="0.00149675"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.04795000000000016"
+        value="3.06858" errorMinus="0.047944999999999904"/>
+      <measurement errorPlus="8.39875E-4" value="5.76669E-4"
+        errorMinus="8.39875E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23973" value="3.16448"
+        errorMinus="0.04795000000000016"/>
+      <measurement errorPlus="4.75376E-4" value="3.13473E-4"
+        errorMinus="4.75376E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.23973000000000022"
+        value="3.64394" errorMinus="0.23973000000000022"/>
+      <measurement errorPlus="0.00106758" value="5.74701E-4"
+        errorMinus="0.00106758"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d29-x01-y01" dimension="2"
+    path="/REF/TASSO_1989_S1981820/" title="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))">
+    <annotation>
+      <item key="Title"
+        value="PROBABILITY(N(P=3))/MEAN(NAME=N(P=3))" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/TASSO_1989_S1981820/d29-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/TASSO_1989_S1981820.aida/REF/TASSO_1989_S1981820/d29-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0663225" value="0.132646"
+        errorMinus="0.0663225"/>
+      <measurement errorPlus="0.00538917" value="0.00494399"
+        errorMinus="0.00538917"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.066323" value="0.265291"
+        errorMinus="0.0663225"/>
+      <measurement errorPlus="0.0227039" value="0.0519579"
+        errorMinus="0.0227039"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632300000000002"
+        value="0.397937" errorMinus="0.06632300000000002"/>
+      <measurement errorPlus="0.0404434" value="0.346148"
+        errorMinus="0.0404434"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0663225" value="0.530583"
+        errorMinus="0.06632300000000002"/>
+      <measurement errorPlus="0.0498074" value="0.783783"
+        errorMinus="0.0498074"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632299999999997"
+        value="0.663228" errorMinus="0.06632249999999995"/>
+      <measurement errorPlus="0.069437" value="1.62508"
+        errorMinus="0.069437"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632300000000002"
+        value="0.795874" errorMinus="0.06632299999999991"/>
+      <measurement errorPlus="0.0843669" value="2.37291"
+        errorMinus="0.0843669"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632000000000005"
+        value="0.92852" errorMinus="0.06632300000000002"/>
+      <measurement errorPlus="0.0894865" value="2.67875"
+        errorMinus="0.0894865"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632499999999997"
+        value="1.06116" errorMinus="0.06632000000000005"/>
+      <measurement errorPlus="0.0848544" value="2.47387"
+        errorMinus="0.0848544"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632499999999997"
+        value="1.19381" errorMinus="0.06632499999999997"/>
+      <measurement errorPlus="0.0717301" value="1.86469"
+        errorMinus="0.0717301"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632000000000005"
+        value="1.32646" errorMinus="0.06632499999999997"/>
+      <measurement errorPlus="0.0592264" value="1.29751"
+        errorMinus="0.0592264"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632499999999997"
+        value="1.4591" errorMinus="0.06631999999999993"/>
+      <measurement errorPlus="0.0448164" value="0.785476"
+        errorMinus="0.0448164"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632000000000005"
+        value="1.59175" errorMinus="0.06632499999999997"/>
+      <measurement errorPlus="0.032748" value="0.440086"
+        errorMinus="0.032748"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632499999999997"
+        value="1.72439" errorMinus="0.06632000000000016"/>
+      <measurement errorPlus="0.021353" value="0.211016"
+        errorMinus="0.021353"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632499999999997"
+        value="1.85704" errorMinus="0.06632499999999997"/>
+      <measurement errorPlus="0.0140819" value="0.0904993"
+        errorMinus="0.0140819"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06631999999999993"
+        value="1.98969" errorMinus="0.06632499999999997"/>
+      <measurement errorPlus="0.00892276" value="0.0357935"
+        errorMinus="0.00892276"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06632500000000019"
+        value="2.12233" errorMinus="0.06632000000000016"/>
+      <measurement errorPlus="0.00400406" value="0.00890981"
+        errorMinus="0.00400406"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06631999999999993"
+        value="2.25498" errorMinus="0.06632500000000041"/>
+      <measurement errorPlus="0.00275233" value="0.00398685"
+        errorMinus="0.00275233"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06631999999999993"
+        value="2.38762" errorMinus="0.06632000000000016"/>
+      <measurement errorPlus="0.00136731" value="7.14804E-4"
+        errorMinus="0.00136731"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.06631999999999971"
+        value="2.52026" errorMinus="0.06631999999999971"/>
+      <measurement errorPlus="0.00327274" value="0.00166788"
+        errorMinus="0.00327274"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

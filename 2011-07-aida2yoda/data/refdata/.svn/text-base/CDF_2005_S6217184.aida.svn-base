@@ -1,0 +1,1977 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.14453373308677803"
+        value="2.084" errorMinus="0.14453373308677803"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.055081757415681644"
+        value="1.763" errorMinus="0.055081757415681644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03008321791298265"
+        value="1.094" errorMinus="0.03008321791298265"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03132091952673165"
+        value="0.761" errorMinus="0.03132091952673165"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03298484500494128"
+        value="0.577" errorMinus="0.03298484500494128"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.028861739379323625"
+        value="0.444" errorMinus="0.028861739379323625"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02647640458974745"
+        value="0.315" errorMinus="0.02647640458974745"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d01-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d01-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.11036756769993619"
+        value="2.525" errorMinus="0.11036756769993619"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.046141087980237305"
+        value="1.707" errorMinus="0.046141087980237305"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.048104053883222773"
+        value="1.008" errorMinus="0.048104053883222773"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.025553864678361272"
+        value="0.662" errorMinus="0.025553864678361272"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0194164878389476"
+        value="0.489" errorMinus="0.0194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03613862199918531"
+        value="0.358" errorMinus="0.03613862199918531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01746424919657298"
+        value="0.27" errorMinus="0.01746424919657298"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d01-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d01-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d01-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.10176934705499491"
+        value="2.782" errorMinus="0.10176934705499491"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.04632493928760188"
+        value="1.709" errorMinus="0.04632493928760188"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.05314132102234569"
+        value="0.944" errorMinus="0.05314132102234569"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.028653097563788806"
+        value="0.614" errorMinus="0.028653097563788806"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.028635642126552705"
+        value="0.435" errorMinus="0.028635642126552705"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.016643316977093238"
+        value="0.31" errorMinus="0.016643316977093238"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0147648230602334"
+        value="0.219" errorMinus="0.0147648230602334"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.13748090776540575"
+        value="3.01" errorMinus="0.13748090776540575"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.057201398584300366"
+        value="1.634" errorMinus="0.057201398584300366"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.057697486947006625"
+        value="0.893" errorMinus="0.057697486947006625"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.026870057685088804"
+        value="0.569" errorMinus="0.026870057685088804"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04031128874149274"
+        value="0.411" errorMinus="0.04031128874149274"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.018439088914585774"
+        value="0.287" errorMinus="0.018439088914585774"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02102379604162864"
+        value="0.211" errorMinus="0.02102379604162864"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d02-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d02-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.18341210428976598"
+        value="3.224" errorMinus="0.18341210428976598"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.10567875850898324"
+        value="1.603" errorMinus="0.10567875850898324"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.06360031446463138"
+        value="0.845" errorMinus="0.06360031446463138"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04036087214122113"
+        value="0.514" errorMinus="0.04036087214122113"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02778488797889961"
+        value="0.372" errorMinus="0.02778488797889961"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.036359317925395686"
+        value="0.267" errorMinus="0.036359317925395686"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.019798989873223333"
+        value="0.175" errorMinus="0.019798989873223333"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d02-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d02-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.11555085460523432"
+        value="3.37" errorMinus="0.11555085460523432"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.07249827584156743"
+        value="1.574" errorMinus="0.07249827584156743"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04606517122512409"
+        value="0.808" errorMinus="0.04606517122512409"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02262741699796952"
+        value="0.485" errorMinus="0.02262741699796952"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01769180601295413"
+        value="0.356" errorMinus="0.01769180601295413"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.015620499351813309"
+        value="0.244" errorMinus="0.015620499351813309"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.027202941017470887"
+        value="0.186" errorMinus="0.027202941017470887"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.1446271067262289"
+        value="3.661" errorMinus="0.1446271067262289"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.06594694837519019"
+        value="1.486" errorMinus="0.06594694837519019"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.07201388754955533"
+        value="0.766" errorMinus="0.07201388754955533"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.056080299571239806"
+        value="0.422" errorMinus="0.056080299571239806"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01972308292331602"
+        value="0.307" errorMinus="0.01972308292331602"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.022803508501982758"
+        value="0.223" errorMinus="0.022803508501982758"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.014866068747318505"
+        value="0.139" errorMinus="0.014866068747318505"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d03-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d03-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.14300349646075092"
+        value="3.784" errorMinus="0.14300349646075092"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.0898443097808648"
+        value="1.472" errorMinus="0.0898443097808648"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0499799959983992"
+        value="0.695" errorMinus="0.0499799959983992"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.019849433241279208"
+        value="0.424" errorMinus="0.019849433241279208"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.026925824035672525"
+        value="0.297" errorMinus="0.026925824035672525"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.013601470508735444"
+        value="0.203" errorMinus="0.013601470508735444"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0058309518948453"
+        value="0.131" errorMinus="0.0058309518948453"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d03-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d03-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.17773013250431116"
+        value="4.037" errorMinus="0.17773013250431116"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.09247702417357513"
+        value="1.33" errorMinus="0.09247702417357513"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.034655446902326914"
+        value="0.661" errorMinus="0.034655446902326914"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04477722635447622"
+        value="0.401" errorMinus="0.04477722635447622"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02778488797889961"
+        value="0.271" errorMinus="0.02778488797889961"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.020248456731316585"
+        value="0.184" errorMinus="0.020248456731316585"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.011401754250991379"
+        value="0.114" errorMinus="0.011401754250991379"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.12965338406690355"
+        value="4.208" errorMinus="0.12965338406690355"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.0758946638440411"
+        value="1.291" errorMinus="0.0758946638440411"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04308131845707603"
+        value="0.59" errorMinus="0.04308131845707603"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.025942243542145693"
+        value="0.372" errorMinus="0.025942243542145693"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.021470910553583886"
+        value="0.258" errorMinus="0.021470910553583886"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01131370849898476"
+        value="0.174" errorMinus="0.01131370849898476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01772004514666935"
+        value="0.109" errorMinus="0.01772004514666935"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d04-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d04-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.13260844618650805"
+        value="4.245" errorMinus="0.13260844618650805"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.13905754204644927"
+        value="1.288" errorMinus="0.13905754204644927"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03301514803843835"
+        value="0.598" errorMinus="0.03301514803843835"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.030886890422961" value="0.365"
+        errorMinus="0.030886890422961"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.014866068747318505"
+        value="0.229" errorMinus="0.014866068747318505"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.020124611797498106"
+        value="0.173" errorMinus="0.020124611797498106"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.015231546211727818"
+        value="0.101" errorMinus="0.015231546211727818"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d04-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d04-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.11227199116431488"
+        value="4.441" errorMinus="0.11227199116431488"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.08367795408588811"
+        value="1.239" errorMinus="0.08367795408588811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.04143669871020132"
+        value="0.556" errorMinus="0.04143669871020132"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.024166091947189144"
+        value="0.317" errorMinus="0.024166091947189144"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.018788294228055936"
+        value="0.215" errorMinus="0.018788294228055936"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.015231546211727818"
+        value="0.141" errorMinus="0.015231546211727818"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.008944271909999158"
+        value="0.09" errorMinus="0.008944271909999158"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.13555810562264436"
+        value="4.452" errorMinus="0.13555810562264436"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.1305067048086036"
+        value="1.269" errorMinus="0.1305067048086036"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.03114482300479487"
+        value="0.537" errorMinus="0.03114482300479487"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0322490309931942"
+        value="0.321" errorMinus="0.0322490309931942"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.039849717690342554"
+        value="0.206" errorMinus="0.039849717690342554"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.017492855684535902"
+        value="0.135" errorMinus="0.017492855684535902"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0208806130178211"
+        value="0.088" errorMinus="0.0208806130178211"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d05-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d05-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.12580143083447023"
+        value="4.597" errorMinus="0.12580143083447023"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.09518928511129811"
+        value="1.135" errorMinus="0.09518928511129811"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.057008771254956896"
+        value="0.519" errorMinus="0.057008771254956896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.035355339059327376"
+        value="0.327" errorMinus="0.035355339059327376"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.022203603311174516"
+        value="0.209" errorMinus="0.022203603311174516"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.016643316977093238"
+        value="0.136" errorMinus="0.016643316977093238"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.009219544457292887"
+        value="0.085" errorMinus="0.009219544457292887"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d05-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d05-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.14089002803605372"
+        value="4.761" errorMinus="0.14089002803605372"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.12175795661885921"
+        value="1.091" errorMinus="0.12175795661885921"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0324499614791759"
+        value="0.466" errorMinus="0.0324499614791759"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.033421549934136804"
+        value="0.298" errorMinus="0.033421549934136804"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.030886890422961" value="0.178"
+        errorMinus="0.030886890422961"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0191049731745428"
+        value="0.131" errorMinus="0.0191049731745428"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0147648230602334"
+        value="0.073" errorMinus="0.0147648230602334"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.09457801012920498"
+        value="4.813" errorMinus="0.09457801012920498"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.07964923100695952"
+        value="1.096" errorMinus="0.07964923100695952"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.05531726674375732"
+        value="0.482" errorMinus="0.05531726674375732"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.041773197148410844"
+        value="0.284" errorMinus="0.041773197148410844"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.048104053883222773"
+        value="0.165" errorMinus="0.048104053883222773"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.028160255680657446"
+        value="0.1" errorMinus="0.028160255680657446"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0147648230602334"
+        value="0.066" errorMinus="0.0147648230602334"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d06-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d06-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.14713938969562163"
+        value="4.767" errorMinus="0.14713938969562163"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.14166156853571826"
+        value="1.117" errorMinus="0.14166156853571826"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.07083784299369934"
+        value="0.44" errorMinus="0.07083784299369934"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.05360037313302959"
+        value="0.241" errorMinus="0.05360037313302959"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.08" value="0.269"
+        errorMinus="0.08"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0304138126514911"
+        value="0.136" errorMinus="0.0304138126514911"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.02831960451701259"
+        value="0.076" errorMinus="0.02831960451701259"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="RHO">
+    <annotation>
+      <item key="Title" value="RHO" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d06-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d06-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.071" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.5093927757634573"
+        value="4.963" errorMinus="0.5093927757634573"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.214"
+        errorMinus="0.07149999999999998"/>
+      <measurement errorPlus="0.25477244748991207"
+        value="1.056" errorMinus="0.25477244748991207"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.357" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.20562587385832554"
+        value="0.453" errorMinus="0.20562587385832554"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="0.5"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.06074537019394976"
+        value="0.19" errorMinus="0.06074537019394976"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.643" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.09486832980505137"
+        value="0.192" errorMinus="0.09486832980505137"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.786" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.05197114584074513"
+        value="0.09" errorMinus="0.05197114584074513"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.929" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.038483762809787714"
+        value="0.061" errorMinus="0.038483762809787714"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d07-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.020223748416156685"
+        value="0.298" errorMinus="0.020223748416156685"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.016278820596099707"
+        value="0.549" errorMinus="0.016278820596099707"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01216552506059644"
+        value="0.705" errorMinus="0.01216552506059644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00824621125123532"
+        value="0.813" errorMinus="0.00824621125123532"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.005099019513592785"
+        value="0.894" errorMinus="0.005099019513592785"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.956" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d07-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d07-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.015811388300841896"
+        value="0.361" errorMinus="0.015811388300841896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.013601470508735444"
+        value="0.605" errorMinus="0.013601470508735444"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.007615773105863909"
+        value="0.748" errorMinus="0.007615773105863909"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00670820393249937"
+        value="0.843" errorMinus="0.00670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.005385164807134504"
+        value="0.912" errorMinus="0.005385164807134504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.962" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d07-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d07-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.014317821063276353"
+        value="0.397" errorMinus="0.014317821063276353"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.012083045973594572"
+        value="0.642" errorMinus="0.012083045973594572"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.008944271909999158"
+        value="0.776" errorMinus="0.008944271909999158"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.0058309518948453"
+        value="0.863" errorMinus="0.0058309518948453"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.925" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.969" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d08-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.01969771560359221"
+        value="0.43" errorMinus="0.01969771560359221"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0147648230602334"
+        value="0.663" errorMinus="0.0147648230602334"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.008602325267042627"
+        value="0.791" errorMinus="0.008602325267042627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.007211102550927979"
+        value="0.872" errorMinus="0.007211102550927979"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.93" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.971" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d08-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d08-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.025942243542145693"
+        value="0.461" errorMinus="0.025942243542145693"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.016278820596099707"
+        value="0.689" errorMinus="0.016278820596099707"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01" value="0.81"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00848528137423857"
+        value="0.884" errorMinus="0.00848528137423857"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.937" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.00282842712474619"
+        value="0.975" errorMinus="0.00282842712474619"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d08-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d08-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.01655294535724685"
+        value="0.481" errorMinus="0.01655294535724685"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.010816653826391968"
+        value="0.706" errorMinus="0.010816653826391968"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.821" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.004242640687119285"
+        value="0.89" errorMinus="0.004242640687119285"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.00282842712474619"
+        value="0.94" errorMinus="0.00282842712474619"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.974" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d09-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.020591260281974" value="0.523"
+        errorMinus="0.020591260281974"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.013601470508735444"
+        value="0.735" errorMinus="0.013601470508735444"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0116619037896906"
+        value="0.844" errorMinus="0.0116619037896906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00565685424949238"
+        value="0.905" errorMinus="0.00565685424949238"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.949" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.98" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d09-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d09-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.0208806130178211"
+        value="0.541" errorMinus="0.0208806130178211"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.010295630140987" value="0.75"
+        errorMinus="0.010295630140987"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0050" value="0.85"
+        errorMinus="0.0050"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.91" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.001414213562373095"
+        value="0.952" errorMinus="0.001414213562373095"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0010" value="0.981"
+        errorMinus="0.0010"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d09-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d09-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.025298221281347035"
+        value="0.577" errorMinus="0.025298221281347035"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01565247584249853"
+        value="0.767" errorMinus="0.01565247584249853"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.012083045973594572"
+        value="0.861" errorMinus="0.012083045973594572"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00670820393249937"
+        value="0.919" errorMinus="0.00670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.004472135954999579"
+        value="0.957" errorMinus="0.004472135954999579"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.001414213562373095"
+        value="0.984" errorMinus="0.001414213562373095"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d10-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d10-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.018973665961010275"
+        value="0.601" errorMinus="0.018973665961010275"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.012083045973594572"
+        value="0.786" errorMinus="0.012083045973594572"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.007615773105863909"
+        value="0.87" errorMinus="0.007615773105863909"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.005385164807134504"
+        value="0.923" errorMinus="0.005385164807134504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.00412310562561766"
+        value="0.96" errorMinus="0.00412310562561766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.985" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d10-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d10-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.019313207915827964"
+        value="0.606" errorMinus="0.019313207915827964"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.010295630140987" value="0.79"
+        errorMinus="0.010295630140987"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.009848857801796104"
+        value="0.876" errorMinus="0.009848857801796104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.0058309518948453"
+        value="0.928" errorMinus="0.0058309518948453"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.005385164807134504"
+        value="0.961" errorMinus="0.005385164807134504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.986" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d10-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d10-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d10-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.015811388300841896"
+        value="0.634" errorMinus="0.015811388300841896"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.009848857801796104"
+        value="0.811" errorMinus="0.009848857801796104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.008544003745317531"
+        value="0.891" errorMinus="0.008544003745317531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.006324555320336759"
+        value="0.936" errorMinus="0.006324555320336759"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.00412310562561766"
+        value="0.967" errorMinus="0.00412310562561766"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.987" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d11-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d11-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.019313207915827964"
+        value="0.636" errorMinus="0.019313207915827964"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.014866068747318507"
+        value="0.816" errorMinus="0.014866068747318507"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.012649110640673518"
+        value="0.892" errorMinus="0.012649110640673518"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.008544003745317531"
+        value="0.938" errorMinus="0.008544003745317531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.004472135954999579"
+        value="0.968" errorMinus="0.004472135954999579"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.987" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d11-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d11-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.01746424919657298"
+        value="0.657" errorMinus="0.01746424919657298"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.010295630140987" value="0.819"
+        errorMinus="0.010295630140987"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.893" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00670820393249937"
+        value="0.939" errorMinus="0.00670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.969" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.001414213562373095"
+        value="0.988" errorMinus="0.001414213562373095"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d11-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d11-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d11-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.020124611797498106"
+        value="0.68" errorMinus="0.020124611797498106"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.011401754250991379"
+        value="0.836" errorMinus="0.011401754250991379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.008602325267042627"
+        value="0.903" errorMinus="0.008602325267042627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.00670820393249937"
+        value="0.945" errorMinus="0.00670820393249937"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.004472135954999579"
+        value="0.971" errorMinus="0.004472135954999579"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0031622776601683794"
+        value="0.99" errorMinus="0.0031622776601683794"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d12-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d12-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.013038404810405297"
+        value="0.688" errorMinus="0.013038404810405297"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.013601470508735444"
+        value="0.844" errorMinus="0.013601470508735444"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.009433981132056603"
+        value="0.912" errorMinus="0.009433981132056603"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.009486832980505138"
+        value="0.952" errorMinus="0.009486832980505138"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.005385164807134504"
+        value="0.976" errorMinus="0.005385164807134504"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0022360679774997894"
+        value="0.991" errorMinus="0.0022360679774997894"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y02" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d12-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d12-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.020518284528683192"
+        value="0.681" errorMinus="0.020518284528683192"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0194164878389476"
+        value="0.839" errorMinus="0.0194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.015" value="0.902"
+        errorMinus="0.015"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.011401754250991379"
+        value="0.936" errorMinus="0.011401754250991379"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.971" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0036055512754639895"
+        value="0.989" errorMinus="0.0036055512754639895"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d12-x01-y03" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI">
+    <annotation>
+      <item key="Title" value="PSI" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d12-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d12-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0715" value="0.143"
+        errorMinus="0.0715"/>
+      <measurement errorPlus="0.07280109889280519"
+        value="0.709" errorMinus="0.07280109889280519"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.286" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.043863424398922615"
+        value="0.859" errorMinus="0.043863424398922615"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07099999999999998"
+        value="0.429" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.022472205054244233"
+        value="0.922" errorMinus="0.022472205054244233"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.571" errorMinus="0.07099999999999995"/>
+      <measurement errorPlus="0.0194164878389476"
+        value="0.951" errorMinus="0.0194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.714" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0194164878389476"
+        value="0.977" errorMinus="0.0194164878389476"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001"
+        value="0.857" errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.01216552506059644"
+        value="0.991" errorMinus="0.01216552506059644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.07150000000000001" value="1.0"
+        errorMinus="0.07150000000000001"/>
+      <measurement errorPlus="0.0" value="1.0" errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d13-x01-y01" dimension="2"
+    path="/REF/CDF_2005_S6217184/" title="PSI(0.3/R0)">
+    <annotation>
+      <item key="Title" value="PSI(0.3/R0)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2005_S6217184/d13-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2005_S6217184.aida/REF/CDF_2005_S6217184/d13-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="4.300000000000001" value="40.3"
+        errorMinus="4.300000000000001"/>
+      <measurement errorPlus="0.01216552506059644"
+        value="0.705" errorMinus="0.01216552506059644"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.75" value="48.9"
+        errorMinus="4.300000000000004"/>
+      <measurement errorPlus="0.007615773105863909"
+        value="0.748" errorMinus="0.007615773105863909"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.349999999999998" value="58.4"
+        errorMinus="4.75"/>
+      <measurement errorPlus="0.008944271909999158"
+        value="0.776" errorMinus="0.008944271909999158"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.450000000000003" value="67.1"
+        errorMinus="4.349999999999994"/>
+      <measurement errorPlus="0.008602325267042627"
+        value="0.791" errorMinus="0.008602325267042627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.75" value="78.0"
+        errorMinus="5.450000000000003"/>
+      <measurement errorPlus="0.01" value="0.81"
+        errorMinus="0.01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.0" value="89.5"
+        errorMinus="5.75"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.821" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.700000000000003" value="103.5"
+        errorMinus="7.0"/>
+      <measurement errorPlus="0.0116619037896906"
+        value="0.844" errorMinus="0.0116619037896906"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="8.700000000000003" value="118.9"
+        errorMinus="7.700000000000003"/>
+      <measurement errorPlus="0.0050" value="0.85"
+        errorMinus="0.0050"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.799999999999997" value="136.3"
+        errorMinus="8.700000000000003"/>
+      <measurement errorPlus="0.012083045973594572"
+        value="0.861" errorMinus="0.012083045973594572"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="9.399999999999991" value="155.9"
+        errorMinus="9.799999999999983"/>
+      <measurement errorPlus="0.007615773105863909"
+        value="0.87" errorMinus="0.007615773105863909"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.400000000000006"
+        value="174.7" errorMinus="9.399999999999977"/>
+      <measurement errorPlus="0.009848857801796104"
+        value="0.876" errorMinus="0.009848857801796104"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.75" value="195.5"
+        errorMinus="10.400000000000006"/>
+      <measurement errorPlus="0.008544003745317531"
+        value="0.891" errorMinus="0.008544003745317531"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.75" value="217.0"
+        errorMinus="10.75"/>
+      <measurement errorPlus="0.012649110640673518"
+        value="0.892" errorMinus="0.012649110640673518"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="11.5" value="238.5"
+        errorMinus="10.75"/>
+      <measurement errorPlus="0.006403124237432849"
+        value="0.893" errorMinus="0.006403124237432849"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="14.949999999999989"
+        value="261.5" errorMinus="11.5"/>
+      <measurement errorPlus="0.008602325267042627"
+        value="0.903" errorMinus="0.008602325267042627"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="13.800000000000011"
+        value="291.4" errorMinus="14.949999999999989"/>
+      <measurement errorPlus="0.009433981132056603"
+        value="0.912" errorMinus="0.009433981132056603"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="18.55000000000001" value="319.0"
+        errorMinus="13.800000000000011"/>
+      <measurement errorPlus="0.015" value="0.902"
+        errorMinus="0.015"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="18.55000000000001" value="356.1"
+        errorMinus="18.55000000000001"/>
+      <measurement errorPlus="0.022472205054244233"
+        value="0.922" errorMinus="0.022472205054244233"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

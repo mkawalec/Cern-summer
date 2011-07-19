@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 79
+.deps
+Makefile.in
+Makefile
+.libs
+*.egg-info
+setup.py
+build
+*_wrap.*
+dist
+*.pyc
+
+END

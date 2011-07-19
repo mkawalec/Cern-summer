@@ -1,0 +1,44 @@
+#! /usr/bin/env python
+
+usage = """%prog [analysis1 analysis2 ...]
+
+Get SPIRES BibTeX entries for analysis info files
+"""
+
+## Change dlopen status to GLOBAL for Rivet lib
+import sys
+try:
+    import ctypes
+    sys.setdlopenflags(sys.getdlopenflags() | ctypes.RTLD_GLOBAL)
+except:
+    import dl
+    sys.setdlopenflags(sys.getdlopenflags() | dl.RTLD_GLOBAL)
+import rivet
+
+
+if __name__ == '__main__':
+    ## Parse command line options
+    from optparse import OptionParser
+    parser = OptionParser(usage=usage)
+    opts, args = parser.parse_args()
+
+    ## If not args supplied, use all analyses
+    if not args:
+        args = rivet.AnalysisLoader.analysisNames()
+
+    ## Make individual bibinfo files
+    import spiresbib
+    for aname in args:
+        ana = rivet.AnalysisLoader.getAnalysis(aname)
+        if not ana:
+            sys.exit(1)
+        sid = ana.spiresId()
+        print "Getting SPIRES biblio data for '%s'" % aname
+        key, bibtex = spiresbib.get_bibtex_from_spires(sid)
+        if key and bibtex:
+            f = open(aname+".bib.info", "w")
+            f.write("BibKey: %s\n" % key)
+            f.write("BibTeX: '%s'\n" % bibtex)
+            f.close()
+        else:
+            print "No BibTeX available for analysis '%s'" % aname

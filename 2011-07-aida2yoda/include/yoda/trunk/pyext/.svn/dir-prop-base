@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 67
+Makefile.in
+Makefile
+.deps
+*.loT
+YODA.egg-info
+setup.py
+build
+dist
+
+END

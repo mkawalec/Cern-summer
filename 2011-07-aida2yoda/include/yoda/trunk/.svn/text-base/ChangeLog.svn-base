@@ -1,0 +1,216 @@
+2011-07-10  Andy Buckley  <andy@insectnation.org>
+
+	* Add construction of Histo1Ds from Profile1D and Histo1D, and
+	construction of Profile1Ds from those and Scatter2D.
+
+2011-07-07  Andy Buckley  <andy@insectnation.org>
+
+	* Add construction of a Histo1D from Scatter2D.
+
+2011-06-15  Andy Buckley  <andy@insectnation.org>
+
+	* Making the AIDA reader work, including reading of annotations
+	and a few tweaks to the simple type persistency system. Test histo
+	1b updated.
+
+2011-06-12  Andy Buckley  <andy@insectnation.org>
+
+	* Removing Histo1D::area
+
+	* Filling and using under/overflow and total db on Histo1D, and
+	adding boolean arg to integral, sumW, etc.
+
+	* Fixing for C++ change in behaviour of std::make_pair
+
+	* Adding addAnnotation, and mapping annotations to Python.
+
+2011-02-22  Andy Buckley  <andy@insectnation.org>
+
+	* Use distutils rather than setuptools for the Python interface
+	build.
+
+	* Renaming Bin, HistoBin and ProfileBin to be Bin1D, HistoBin1D,
+	ProfileBin1D. Bin is now a top-level abstract class with minimal
+	functionality to be shared between 1D and 2D bins.
+
+2011-01-12  Andy Buckley  <andy@insectnation.org>
+
+	* Type annotations in mkScatter
+
+	* Added many vector constructors and addPoint functions to
+	Scatter2D.
+
+2011-01-11  Andy Buckley  <andy@insectnation.org>
+
+	* Add lexical_cast support to annotation get and set functions.
+
+	* Write out annotations in AIDA format, and copy annotations in
+	mkScatter -- using a new AnalysisObject::setAnnotations method.
+
+	* Convert DPS output to use interim Scatter construction
+
+	* Make (unused) yoda.plot subpackage.
+
+	* Write out annotations in YODA format.
+
+	* Make Scatter2D representations of Histo1D and Profile1D.
+
+	* Write out Scatter2D objects in AIDA and YODA formats.
+
+	* Make Scatter2D and Point2D work. Add a few extra
+	methods... evolution and tweaking required.
+
+2011-01-10  Andy Buckley  <andy@insectnation.org>
+
+	* Add Boost checks and header includes. Not used yet.
+
+	* Hide Utils:: content from Doxygen and nvector -> Utils::nvector.
+
+	* Removing unused YAML stuff: we aren't going that way for
+	persistency anymore.
+
+	* Renaming Axis -> Axis1D
+
+	* Removing dead-end templated Scatter stuff.
+
+	* Move (generated) config files into the Config subdir.
+
+	* Move sortedvector and indexedset into the Utils dir.
+
+	* Move the "utils" directory and namespace to "Utils"
+
+	* Put the Doxyfile under configure control by moving it to
+	Doxyfile.in and using the @PACKAGE_VERSION@ token.
+
+	* Make Doxygen find the .icc file and hide functions with name _*
+	and in the YAML namespace.
+
+	* Removing the Binning argument and enum in favour of explicit bin
+	edge vectors, possibly produced explicitly via the MathUtils
+	linspace and logspace functions, or the new Axis::mkBinEdgesLin/Log
+	alias functions.
+
+	* Fixed Axis, Histo1D and Profile1D constructors, by adding a path
+	argument, passing the path and title args to the AnalysisObject
+	base constructor properly.
+
+	* Removed several old and unused files such as Tree.h
+
+2011-01-09  Andy Buckley  <andy@insectnation.org>
+
+	* Updating copyright comments to be valid into 2011.
+
+	* Persistency fixes, and changing the interface to use the annotated path.
+
+	* Using annotations for path and title.
+
+	* Adding tests of collection and iterator range AO writing.
+
+	* Adding static write functions on Writer*.h implementations to
+	avoid needing to make an explicit Writer object via the create()
+	functions.
+
+	* Rename Exception.h -> Exceptions.h
+
+	* Added AnnotationError.
+
+	* Re-enable persistency of collections with begin/end iterators.
+
+2011-01-08  Andy Buckley  <andy@insectnation.org>
+
+	* Enabling quiet compilation.
+
+	* More annotation functionality.
+
+2011-01-07  Andy Buckley  <andy@insectnation.org>
+
+	* Sorting out autoheaders to be more useful.
+
+	* Rewriting AIDA writer to use DPS representation (no reloading)
+	for Histo1D and Profile1D objects.
+
+	* Adding persistency system hooks, since RTTI just sucks too much.
+
+	* Renaming test files to have more meaningful names.
+
+2010-12-10  Andy Buckley  <andy@insectnation.org>
+
+	* Some tweaks to Axis, Bin, etc. to use the sortedvector. Seems to
+	be working! (I must be checking it wrongly...)
+
+	* Adding another candidate object for the axis bin container: a
+	sorted extension to STL std::vector with an insert method. This
+	will do as a development placeholder: a proper sorted & indexed
+	container may be substituted later.
+
+	* Fix test code: titles are no longer given as histogram
+	constructor arguments.
+
+2010-11-21  Andy Buckley  <andy@insectnation.org>
+
+	* Adding indexed set for holding bins on axes. Still not sure it's
+	what we want, as (I just realised) STL sets are iterator-immutable
+	because they are self-keyed and changes to elements would also
+	change their sorting.
+
+2010-09-19  Andy Buckley  <andy@insectnation.org>
+
+	* Restarting ChangeLog contributions! Many changes in the huge
+	time since last update... activity on YODA has renewed and we have
+	a better picture of the distinctive features we require. New idea:
+	named weight vector filling, allowing "parallel" histograms for
+	various event weight variations. I/O remains an awkward issue,
+	especially since the classes are now much richer than they used to
+	be, and don't know about paths. Output can be easily put on top:
+	not an issue... and we can probably do something with
+	pickling. But reading in from C++?
+
+2008-09-16  Andy Buckley  <andy@insectnation.org>
+
+	* Moved duplicate Histo1D/Profile1D code on to Axis, making Axis a
+	templated class at the same time.
+
+2008-09-12  Andy Buckley  <andy@insectnation.org>
+
+	* Started work on a little plotting tool, initially for Herwig++
+	parton pT cut testing, but incrementally enhancing it to be a
+	command-line quick plotter seems like a good idea.
+
+	* Added some more test programs... working towards a proper test
+	suite.
+
+	* Added "no path & title" constructors - you don't always want to
+	write out the histo, since sometimes it's just a good way to
+	gather statistics.
+
+	* Fixed YODA mapping to allow use of vectors of bins as Python
+	lists.
+
+	* Added Profile1D functionality.
+
+	* Fixed Dbn1D to use sign(weight) as part of the "w**2" measure,
+	so that negative weights behave themselves.
+
+2008-05-23  Andy Buckley  <andy@insectnation.org>
+
+	* Added Dbn1D class to centralise the calculation of statistics
+	from unbounded, unbinned, weighted distributions.
+
+2008-05-15  Andy Buckley  <andy@insectnation.org>
+
+	* Added Profile1D class.
+
+	* Fixed NaN errors from zero weights.
+
+2008-04-14  Andy Buckley  <andy@insectnation.org>
+
+	* Python SWIG interface now compiles and can be used: the subtlety
+	that was breaking it was that SWIG has to be prodded in pretty
+	non-obvious ways to make std::vectors of classes without
+	default (no-arg) constructors. See
+	http://osdir.com/ml/programming.swig/2004-04/msg00011.html for
+	about the only reference to this to be found anywhere!
+
+	* Basic AIDA writer now available - it doesn't yet output all the
+	necessary information though, especially not for merging parallel
+	runs.

@@ -1,0 +1,206 @@
+#! /usr/bin/env python
+
+"""%prog
+
+Read in .root files and write out the histograms in FLAT
+format suitable for make-plots.
+
+Use e.g. 'root2flat file1.root -o flathistos' to produce the flat histogram
+files which need to be converted to AIDA files using Rivet's flat2aida tool
+
+Usage:
+    %prog [options] file1.root
+
+Use --help to get information for all options.
+"""
+
+import sys
+if sys.version_info[:3] < (2,4,0):
+    print "rivet scripts require Python version >= 2.4.0... exiting"
+    sys.exit(1)
+
+
+import os, optparse, logging, ROOT
+# try:
+#     from IPython.Shell import IPShellEmbed
+#     ipshell = IPShellEmbed([])
+# except:
+#     print "Ipython shell not available."
+
+
+## Parse options
+parser = optparse.OptionParser(usage = __doc__)
+parser.add_option("-o", dest="OUTDIR", default=".",
+                  help = "specify directory in which to write out converted files")
+(opts, args) = parser.parse_args()
+
+
+def readROOT(rootfile):
+    """ This is the main function that opens a ROOT file, browses its contents
+        for histograms and tries to write the converted histos to files.
+    """
+    # Open the ROOT file
+    f = ROOT.TFile(rootfile)
+
+    # Initial browse to see the structure
+    subdirs, histonames, tgraphnames = browse(f)
+
+    # Keep browding if there are subdirectories TODO: Make this work for
+    # arbitrarily deep directory structures
+    if len(subdirs) > 0:
+        for sd in subdirs:
+            t_s, t_h = browse(f, sd)
+            histonames.extend(t_h)
+
+    #primary_keys = f.GetListOfKeys()
+    #iter_primaries = ROOT.TListIter(primary_keys)
+
+    # This will convert and write the histos
+    for histoname in histonames:
+        writeHisto(histoname, f.Get(histoname))
+    for tgraphname in tgraphnames:
+        writeHisto(tgraphname, f.Get(tgraphname), True)
+
+
+
+def browse(f, branch=None):
+    """ This function browses a file/branch, trying to find objects that
+        either inherit from TH1 or from TProfile.
+    """
+    # Prepare return values
+    histos  = []
+    tgraphs = []
+    subdirs = []
+
+    # Get Iterator
+    if branch:
+        f.Cd(branch)
+
+    primary_keys = ROOT.gDirectory.GetListOfKeys()
+    iter_primaries = ROOT.TListIter(primary_keys)
+
+    if branch:
+        f.Cd('..')
+
+    # Iterate over iterator
+    for i in xrange(len(primary_keys)):
+        if branch:
+            t_n = branch + '/' + iter_primaries.Next().GetName()
+        else:
+            t_n = iter_primaries.Next().GetName()
+        # Make sure we don't have a NoneType object here
+        if f.Get(t_n):
+            # Check if the curent hing is a directory
+            if type(f.Get(t_n)) == ROOT.TDirectoryFile:
+                subdirs.append(t_n)
+            # Check if the curent hing is a histogram
+            elif f.Get(t_n).InheritsFrom("TH1") or f.Get(t_n).InheritsFrom("TProfile"):
+                histos.append(t_n)
+            elif f.Get(t_n).InheritsFrom("TGraphAsymmErrors"):
+                tgraphs.append(t_n)
+
+    return subdirs, histos, tgraphs
+
+
+def convertHisto(R_histo):
+    """ This function reads a single ROOT histo and converts it into the
+        FLAT format suitable for plotting with make-plots.
+    """
+    title = R_histo.GetTitle().replace("#","\\")
+    xtitle= R_histo.GetXaxis().GetTitle().replace("#","\\")
+    ytitle= R_histo.GetYaxis().GetTitle().replace("#","\\")
+    bins = getBinsFromTH1F(R_histo)
+    for bin in bins:
+        try:
+            binstr = ""
+            for key in ["xlow", "xhigh", "y", "y_err_low", "y_err_high"]:
+                binstr += "%s: %e " % (key, bin[key])
+            logging.info(binstr)
+        except:
+            pass
+    return title, xtitle, ytitle, bins
+
+
+def convertTGraph(TGraph):
+    title = TGraph.GetTitle().replace("#","\\")
+    xtitle= TGraph.GetXaxis().GetTitle().replace("#","\\")
+    ytitle= TGraph.GetYaxis().GetTitle().replace("#","\\")
+    bins = getBinsFromTGraph(TGraph)
+    return title, xtitle, ytitle, bins
+
+
+def getBinsFromTH1F(R_histo):
+    """ A little helper function that returns a list of bin-dictionaries).
+    """
+    allbins=[]
+    for ii in xrange(R_histo.GetNbinsX()):
+        i = ii + 1
+        xlow  = R_histo.GetBinLowEdge(i)
+        xhigh = xlow + R_histo.GetBinWidth(i)
+        y     = R_histo.GetBinContent(i)
+        y_err = R_histo.GetBinError(i)
+        bin = {"xlow":xlow, "xhigh":xhigh, "y":y, "y_err_low":y_err, "y_err_high":y_err}
+        allbins.append(bin)
+    return allbins
+
+
+def getBinsFromTGraph(TGraph):
+    allbins=[]
+    X = TGraph.GetX()
+    Y = TGraph.GetY()
+    for ii in xrange(TGraph.GetN()):
+        i = ii + 1
+        xlow  = X[i] - TGraph.GetErrorXlow(i)
+        xhigh = X[i] + TGraph.GetErrorXhigh(i)
+        y     = Y[i]
+        y_err_low = TGraph.GetErrorYlow(i)
+        y_err_high = TGraph.GetErrorYhigh(i)
+        bin = {"xlow":xlow, "xhigh":xhigh, "y":y, "y_err_low":y_err_low, "y_err_high":y_err_high}
+        allbins.append(bin)
+    return allbins
+
+
+def writeHisto(name, R_histo, tgraph=False):
+    """ This writes the histogram into a single file, ready to plot with
+    make-plots.
+    """
+    if tgraph:
+        title, xlabel, ylabel, bins = convertTGraph(R_histo)
+    else:
+        title, xlabel, ylabel, bins = convertHisto(R_histo)
+    head = "# BEGIN PLOT\nTitle=%s\nLegend=1\nLogY=1\nDrawOnly=%s\n" % (title, name)
+    head += "XLabel=%s\nYLabel=%s\n# END PLOT\n" % (xlabel, ylabel)
+
+    histo = getFlatHisto(bins, name, title)
+
+    flatname = name.replace("/","_") + ".dat"
+    if flatname.startswith("_"):
+        flatname = flatname[1:]
+    flatfile = os.path.join(opts.OUTDIR, flatname)
+    f = open(flatfile, "w")
+    f.write(head)
+    f.write("\n")
+    f.write(histo)
+    f.close()
+
+
+def getFlatHisto(bins, name, title):
+    """ This returns a histo in the FLAT format. """
+    histo= "# BEGIN HISTOGRAM %s\n" % name
+    histo += "LineColor=black\n"
+    histo += "ErrorBars=1\n"
+    histo += "PolyMarker=*\n"
+    histo += "Title=%s\n" % title
+    for bin in bins:
+        histo += "%.8e\t%.8e\t%.8e\t%.8e\t%.8e\n" % (bin["xlow"], bin["xhigh"],
+                                                     bin["y"], bin["y_err_low"], bin["y_err_high"])
+    histo += "# END HISTOGRAM\n"
+    return histo
+
+
+if __name__ == "__main__":
+    for infile in args:
+        if not os.path.exists(opts.OUTDIR):
+            os.mkdir(opts.OUTDIR)
+        readROOT(infile)
+    print "Done. Written all plot files to %s" % opts.OUTDIR

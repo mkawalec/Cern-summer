@@ -1,0 +1,189 @@
+#! /usr/bin/env python
+
+import os, sys, cmd, logging, re
+
+usage = """%prog [--unvalidated] [--all] [--repo=URL] [--dest=DEST] [--dryrun]
+
+Grab analysis files from the Rivet trunk repository and install them into a
+local directory. You wil have to build them after downloading, using
+rivet-buildplugin, and set RIVET_ANALYSIS_PATH appropriately.
+
+Examples:
+ * Show all available analyses:
+     %prog --list
+ * See how much will be downloaded if you ask for all new analyses:
+     %prog --all --dryrun
+
+TODO:
+  * Run rivet-buildplugin on the downloaded files.
+"""
+
+def getFileList(url):
+    logging.debug("Getting Rivet file list from '%s'" % url)
+    import urllib2
+    hreq = None
+    try:
+        hreq = urllib2.urlopen(url)
+        listpage = hreq.read()
+        logging.debug(listpage)
+        hreq.close()
+        import re
+        re_anchor = re.compile(r'^\s*<li><a\s+href="([^"]+)">\1.*$')
+        rtn = []
+        for line in listpage.splitlines():
+            m = re_anchor.match(line)
+            if m:
+                name = m.group(1)
+                if "Makefile" not in name:
+                    rtn.append(name)
+        return rtn
+    except urllib2.URLError, e:
+        logging.error("Problem downloading Rivet file list from '%s'" % url)
+        if hreq:
+            hreq.close()
+
+
+def readURL(url):
+    logging.debug("Getting Rivet file from '%s'" % url)
+    import urllib2
+    hreq = None
+    try:
+        hreq = urllib2.urlopen(url)
+        rtn = hreq.read()
+        hreq.close()
+        return rtn
+    except urllib2.URLError, e:
+        logging.error("Problem downloading Rivet file from '%s'" % url)
+        if hreq:
+            hreq.close()
+
+
+def getURL(baseurl, filename, outdir, download=True):
+    url = baseurl + "/" + filename
+    outpath = os.path.join(outdir, os.path.basename(filename))
+    if not os.path.exists(outdir):
+        logging.info("Making output directory %s" % outpath)
+        os.makedirs(outdir)
+    logging.info("Getting file from '%s'" % url)
+    if download:
+        try:
+            import urllib
+            urllib.urlretrieve(url, outpath)
+            return True
+        except IOError:
+            logging.error("Problem while writing file to '%s'" % outpath)
+        except:
+            logging.error("Problem downloading file from '%s'" % url)
+        return False
+    return True
+
+
+DEFAULT_OUTDIR = os.path.abspath(os.path.join(os.curdir, "rivetanalyses"))
+
+
+if __name__ == '__main__':
+    ## Parse command line options
+    from optparse import OptionParser
+    parser = OptionParser(usage=usage)
+    parser.add_option("--repo", help="Base URL of online sets repository (%default)", metavar="URL",
+                      dest="URL", default="http://svn.hepforge.org/rivet/trunk")
+    parser.add_option("--dest", help="Directory to install to (%default)", metavar="DEST",
+                      dest="DEST", default=DEFAULT_OUTDIR)
+    parser.add_option("--list", help="Just list available analyses",
+                      dest="LIST", action="store_true", default=False)
+    parser.add_option("--all", help="Get all analysis files, including those which are already installed",
+                      dest="ALL", action="store_true", default=False)
+    parser.add_option("--unvalidated", help="Also get unvalidated analyses",
+                      dest="UNVALIDATED", action="store_true", default=False)
+    # parser.add_option("--force", help="Overwrite existing files",
+    #                   dest="FORCE", action="store_true", default=False)
+    parser.add_option("--dryrun", help="Don't actually do any downloading",
+                      dest="DOWNLOAD", action="store_false", default=True)
+    parser.add_option("-q", "--quiet", help="Suppress normal messages", dest="LOGLEVEL",
+                     action="store_const", default=logging.INFO, const=logging.WARNING)
+    parser.add_option("-v", "--verbose", help="Add extra debug messages", dest="LOGLEVEL",
+                      action="store_const", default=logging.INFO, const=logging.DEBUG)
+    opts, args = parser.parse_args()
+
+    if opts.ALL:
+        opts.UNVALIDATED = True
+
+    ## Configure logging
+    try:
+        logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+    except:
+        logging.getLogger().setLevel(opts.LOGLEVEL)
+        h = logging.StreamHandler()
+        h.setFormatter(logging.Formatter("%(message)s"))
+        logging.getLogger().addHandler(h)
+
+
+    ## Get list of analyses
+    all_analyses = getFileList(opts.URL + "/src/Analyses/")
+    if all_analyses is None:
+        logging.error("Could not get analysis source file list: exiting")
+        sys.exit(1)
+    all_analyses = [re.sub(r"\.cc$", "", a) for a in all_analyses]
+    # print all_analyses
+    analyses = all_analyses
+
+    ## Filter down to just new analyses
+    if not opts.ALL:
+        import rivet
+        existing_analyses = rivet.AnalysisLoader.analysisNames()
+        existing_analyses += ('ExampleAnalysis', 'MC_JetAnalysis',
+                              'PDG_Hadron_Multiplicities', 'PDG_Hadron_Multiplicities_Ratios')
+        new_analyses = [a for a in analyses if a not in existing_analyses]
+        # print
+        # print new_analyses
+        analyses = new_analyses
+
+    ## Get extra info about validation status, by reading the info file
+    if not opts.UNVALIDATED:
+        logging.info("Checking validation status of new analyses")
+        tmp = []
+        for a in analyses:
+            info = readURL(opts.URL + "/data/anainfo/" + a + ".info")
+            if not info:
+                continue
+            m = re.search(r"^Status: (.*)", info)
+            if m:
+                valstatus = m.group(1)
+                if valstatus.upper() == "VALIDATED":
+                    tmp.append(a)
+        analyses = tmp
+        #print analyses
+
+    ## Just list the available PDF files
+    if opts.LIST:
+        for f in sorted(analyses):
+            print f
+        sys.exit(0)
+
+    ## Exit nicely if there are no new analyses of interest
+    if not analyses:
+        print "There are no relevant new analyses in the Rivet repository"
+        sys.exit(0)
+
+    logging.info("Getting files from %s" % opts.URL)
+    logging.info("Installing files to %s" % opts.DEST)
+    # filenames = []
+    # if opts.ALL:
+    #     filenames = analyses
+    # else:
+    #     import re
+    #     for pattern in args:
+    #         patt_re = re.compile(pattern, re.I)
+    #         for f in allpdffiles:
+    #             if f in filenames:
+    #                 continue
+    #             if patt_re.search(f) or patt_re.match(f):
+    #                 filenames.append(f)
+
+    ## Actually download the files
+    logging.debug("Getting sets " + str(analyses))
+    for a in sorted(analyses):
+        getURL(opts.URL, "src/Analyses/%s.cc" % a, opts.DEST, download=opts.DOWNLOAD)
+        getURL(opts.URL, "data/anainfo/%s.info" % a, opts.DEST, download=opts.DOWNLOAD)
+        getURL(opts.URL, "data/refdata/%s.aida" % a, opts.DEST, download=opts.DOWNLOAD)
+        getURL(opts.URL, "data/plotinfo/%s.plot" % a, opts.DEST, download=opts.DOWNLOAD)

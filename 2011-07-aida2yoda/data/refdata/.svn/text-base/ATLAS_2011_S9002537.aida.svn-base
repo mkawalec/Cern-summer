@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/ATLAS_2011_S9002537" title="Muon charge asymmetry in $W$ decays">
+    <annotation>
+      <item key="Title" value="Muon charge asymmetry in $W$ decays" sticky="true"/>
+      <item key="AidaPath" value="/REF/ATLAS_2011_S9002537/d01-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/ATLAS_2011_S9002537.aida/REF/ATLAS_2011_S9002537/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="1.050000e-01" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="2.024000e-02" value="1.470000e-01" errorMinus="2.024000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="3.150000e-01" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="1.562000e-02" value="1.500000e-01" errorMinus="1.562000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="5.250000e-01" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="1.562000e-02" value="1.580000e-01" errorMinus="1.562000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="7.350000e-01" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="1.802000e-02" value="1.840000e-01" errorMinus="1.802000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="9.450000e-01" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="2.024000e-02" value="1.860000e-01" errorMinus="2.024000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.600000e-01" value="1.210000e+00" errorMinus="1.600000e-01"/>
+      <measurement errorPlus="1.360000e-02" value="2.400000e-01" errorMinus="1.360000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.500000e-02" value="1.445000e+00" errorMinus="7.500000e-02"/>
+      <measurement errorPlus="1.486000e-02" value="2.500000e-01" errorMinus="1.486000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.100000e-01" value="1.630000e+00" errorMinus="1.100000e-01"/>
+      <measurement errorPlus="1.345000e-02" value="2.690000e-01" errorMinus="1.345000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.050000e-01" value="1.845000e+00" errorMinus="1.050000e-01"/>
+      <measurement errorPlus="1.345000e-02" value="2.730000e-01" errorMinus="1.345000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.150000e-01" value="2.065000e+00" errorMinus="1.150000e-01"/>
+      <measurement errorPlus="1.499000e-02" value="2.760000e-01" errorMinus="1.499000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="1.100000e-01" value="2.290000e+00" errorMinus="1.100000e-01"/>
+      <measurement errorPlus="1.562000e-02" value="2.730000e-01" errorMinus="1.562000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/ATLAS_2011_S9002537" title="">
+    <annotation>
+      <item key="Title" value="" sticky="true"/>
+      <item key="AidaPath" value="/REF/ATLAS_2011_S9002537/d02-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/ATLAS_2011_S9002537.aida/REF/ATLAS_2011_S9002537/d02-x01-y01" sticky="true"/>
+    </annotation>
+  </dataPointSet>
+  <dataPointSet name="d02-x02-y01" dimension="2"
+    path="/REF/ATLAS_2011_S9002537" title="">
+    <annotation>
+      <item key="Title" value="" sticky="true"/>
+      <item key="AidaPath" value="/REF/ATLAS_2011_S9002537/d02-x02-y01" sticky="true"/>
+      <item key="FullPath" value="/ATLAS_2011_S9002537.aida/REF/ATLAS_2011_S9002537/d02-x02-y01" sticky="true"/>
+    </annotation>
+  </dataPointSet>
+</aida>

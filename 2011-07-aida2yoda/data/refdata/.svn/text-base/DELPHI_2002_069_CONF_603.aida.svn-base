@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="b quark fragmentation function $f(x_B^{prim})$">
+    <annotation>
+      <item key="Title" value="b quark fragmentation function $f(x_B^{prim})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d01-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="9.350000e-02" value="1.935000e-01" errorMinus="9.350000e-02"/>
+      <measurement errorPlus="3.100000e-02" value="5.100000e-02" errorMinus="3.100000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.400000e-02" value="3.410000e-01" errorMinus="5.400000e-02"/>
+      <measurement errorPlus="3.900000e-02" value="4.810000e-01" errorMinus="3.900000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.400000e-02" value="4.490000e-01" errorMinus="5.400000e-02"/>
+      <measurement errorPlus="4.500000e-02" value="5.360000e-01" errorMinus="4.500000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.150000e-02" value="5.545000e-01" errorMinus="5.150000e-02"/>
+      <measurement errorPlus="5.900000e-02" value="8.870000e-01" errorMinus="5.900000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.650000e-02" value="6.525000e-01" errorMinus="4.650000e-02"/>
+      <measurement errorPlus="6.600000e-02" value="1.294000e+00" errorMinus="6.600000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.900000e-02" value="7.380000e-01" errorMinus="3.900000e-02"/>
+      <measurement errorPlus="7.200000e-02" value="1.849000e+00" errorMinus="7.200000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.700000e-02" value="8.140000e-01" errorMinus="3.700000e-02"/>
+      <measurement errorPlus="7.600000e-02" value="2.728000e+00" errorMinus="7.600000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.800000e-02" value="8.790000e-01" errorMinus="2.800000e-02"/>
+      <measurement errorPlus="8.200000e-02" value="3.478000e+00" errorMinus="8.200000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.200000e-02" value="9.290000e-01" errorMinus="2.200000e-02"/>
+      <measurement errorPlus="1.330000e-01" value="2.324000e+00" errorMinus="1.330000e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.450000e-02" value="9.755000e-01" errorMinus="2.450000e-02"/>
+      <measurement errorPlus="7.600000e-02" value="4.420000e-01" errorMinus="7.600000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="b quark fragmentation function $f(x_B^{weak})$">
+    <annotation>
+      <item key="Title" value="b quark fragmentation function $f(x_B^{weak})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d02-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="9.050000e-02" value="1.905000e-01" errorMinus="9.050000e-02"/>
+      <measurement errorPlus="3.600000e-02" value="2.900000e-02" errorMinus="3.600000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.400000e-02" value="3.350000e-01" errorMinus="5.400000e-02"/>
+      <measurement errorPlus="4.400000e-02" value="5.160000e-01" errorMinus="4.400000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.100000e-02" value="4.400000e-01" errorMinus="5.100000e-02"/>
+      <measurement errorPlus="4.600000e-02" value="5.520000e-01" errorMinus="4.600000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.900000e-02" value="5.400000e-01" errorMinus="4.900000e-02"/>
+      <measurement errorPlus="5.600000e-02" value="9.400000e-01" errorMinus="5.600000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.600000e-02" value="6.350000e-01" errorMinus="4.600000e-02"/>
+      <measurement errorPlus="6.400000e-02" value="1.282000e+00" errorMinus="6.400000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.150000e-02" value="7.225000e-01" errorMinus="4.150000e-02"/>
+      <measurement errorPlus="7.500000e-02" value="2.060000e+00" errorMinus="7.500000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.200000e-02" value="7.960000e-01" errorMinus="3.200000e-02"/>
+      <measurement errorPlus="8.800000e-02" value="2.904000e+00" errorMinus="8.800000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="3.400000e-02" value="8.620000e-01" errorMinus="3.400000e-02"/>
+      <measurement errorPlus="1.030000e-01" value="3.139000e+00" errorMinus="1.030000e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.500000e-02" value="9.210000e-01" errorMinus="2.500000e-02"/>
+      <measurement errorPlus="9.400000e-02" value="1.549000e+00" errorMinus="9.400000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.700000e-02" value="9.730000e-01" errorMinus="2.700000e-02"/>
+      <measurement errorPlus="4.800000e-02" value="3.580000e-01" errorMinus="4.800000e-02"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="b quark fragmentation function $f(z)$">
+    <annotation>
+      <item key="Title" value="b quark fragmentation function $f(z)$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d03-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.200000e-01" value="2.200000e-01" errorMinus="2.200000e-01"/>
+      <measurement errorPlus="6.000000e-03" value="0.000000e+00" errorMinus="6.000000e-03"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.500000e-02" value="5.150000e-01" errorMinus="7.500000e-02"/>
+      <measurement errorPlus="0.000000e+00" value="0.000000e+00" errorMinus="0.000000e+00"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="6.000000e-02" value="6.500000e-01" errorMinus="6.000000e-02"/>
+      <measurement errorPlus="2.100000e-02" value="5.000000e-03" errorMinus="2.100000e-02"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.000000e-02" value="7.500000e-01" errorMinus="4.000000e-02"/>
+      <measurement errorPlus="3.090000e-01" value="4.080000e-01" errorMinus="3.090000e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.000000e-02" value="8.300000e-01" errorMinus="4.000000e-02"/>
+      <measurement errorPlus="2.870000e-01" value="3.720000e+00" errorMinus="2.870000e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="4.000000e-02" value="9.100000e-01" errorMinus="4.000000e-02"/>
+      <measurement errorPlus="3.620000e-01" value="6.875000e+00" errorMinus="3.620000e-01"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.500000e-02" value="9.750000e-01" errorMinus="2.500000e-02"/>
+      <measurement errorPlus="4.590000e-01" value="2.312000e+00" errorMinus="4.590000e-01"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Mean of the b quark fragmentation function $f(x_B^{prim})$">
+    <annotation>
+      <item key="Title" value="Mean of the b quark fragmentation function $f(x_B^{prim})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d04-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.600000e-03" value="7.346000e-01" errorMinus="5.600000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Mean of the b quark fragmentation function $f(x_B^{weak})$">
+    <annotation>
+      <item key="Title" value="Mean of the b quark fragmentation function $f(x_B^{weak})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d05-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.200000e-03" value="7.153000e-01" errorMinus="5.200000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Mean of the b quark fragmentation function $f(z)$">
+    <annotation>
+      <item key="Title" value="Mean of the b quark fragmentation function $f(z)$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d06-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.500000e-03" value="8.872000e-01" errorMinus="5.500000e-03"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Variance of the b quark fragmentation function $f(x_B^{prim})$">
+    <annotation>
+      <item key="Title" value="Variance of the b quark fragmentation function $f(x_B^{prim})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d07-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="5.000000e-04" value="3.180000e-02" errorMinus="5.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Variance of the b quark fragmentation function $f(x_B^{weak})$">
+    <annotation>
+      <item key="Title" value="Variance of the b quark fragmentation function $f(x_B^{weak})$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d08-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="4.000000e-04" value="3.000000e-02" errorMinus="4.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/DELPHI_2002_069_CONF_603" title="Variance of the b quark fragmentation function $f(z)$">
+    <annotation>
+      <item key="Title" value="Variance of the b quark fragmentation function $f(z)$" sticky="true"/>
+      <item key="AidaPath" value="/REF/DELPHI_2002_069_CONF_603/d09-x01-y01" sticky="true"/>
+      <item key="FullPath" value="/DELPHI_2002_069_CONF_603.aida/REF/DELPHI_2002_069_CONF_603/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="5.000000e-01" value="9.100000e+01" errorMinus="5.000000e-01"/>
+      <measurement errorPlus="1.000000e-04" value="2.700000e-03" errorMinus="1.000000e-04"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

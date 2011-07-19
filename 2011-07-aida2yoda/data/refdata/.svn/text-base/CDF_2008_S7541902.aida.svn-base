@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <dataPointSet name="d01-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="D(SIG)/DET IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d01-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d01-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="22.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.3948611685136942" value="4.46"
+        errorMinus="0.3948611685136942"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="27.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.27216494998437984" value="2.8"
+        errorMinus="0.27216494998437984"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="32.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.20928700294093755"
+        value="1.92" errorMinus="0.20928700294093755"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="37.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.16423446775875034"
+        value="1.31" errorMinus="0.16423446775875034"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="45.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.10745226960841729"
+        value="0.839" errorMinus="0.10745226960841729"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="55.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.0716050658543095"
+        value="0.498" errorMinus="0.0716050658543095"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.5" value="67.5"
+        errorMinus="7.5"/>
+      <measurement errorPlus="0.04231619647369078"
+        value="0.259" errorMinus="0.04231619647369078"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.5" value="82.5"
+        errorMinus="7.5"/>
+      <measurement errorPlus="0.02690685592929802"
+        value="0.158" errorMinus="0.02690685592929802"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="100.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="0.012511974424526291"
+        value="0.056" errorMinus="0.012511974424526291"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="20.0" value="130.0"
+        errorMinus="20.0"/>
+      <measurement errorPlus="0.00513351974769748"
+        value="0.0225" errorMinus="0.00513351974769748"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="22.5" value="172.5"
+        errorMinus="22.5"/>
+      <measurement errorPlus="0.002557578737790882"
+        value="0.0035" errorMinus="0.002557578737790882"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="77.5" value="272.5"
+        errorMinus="77.5"/>
+      <measurement errorPlus="4.396722238213372E-4"
+        value="3.9E-4" errorMinus="4.396722238213372E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="D(SIG)/DET IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d02-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d02-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="22.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.11431394868518889"
+        value="0.874" errorMinus="0.11431394868518889"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="27.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.075932761019207" value="0.483"
+        errorMinus="0.075932761019207"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="32.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.05196308058612384"
+        value="0.286" errorMinus="0.05196308058612384"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="37.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.03957828192329728"
+        value="0.19" errorMinus="0.03957828192329728"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="45.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.02173384687532329"
+        value="0.095" errorMinus="0.02173384687532329"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="55.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.014280393411947725"
+        value="0.057" errorMinus="0.014280393411947725"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="7.5" value="67.5"
+        errorMinus="7.5"/>
+      <measurement errorPlus="0.008194768089458054"
+        value="0.0269" errorMinus="0.008194768089458054"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="10.0" value="85.0"
+        errorMinus="10.0"/>
+      <measurement errorPlus="0.0036145738835995592"
+        value="0.0107" errorMinus="0.0036145738835995592"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="47.5" value="142.5"
+        errorMinus="47.5"/>
+      <measurement errorPlus="6.271929594630348E-4"
+        value="5.9E-4" errorMinus="6.271929594630348E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="D(SIG)/DET IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d03-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d03-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="22.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.04081533515726656"
+        value="0.184" errorMinus="0.04081533515726656"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="27.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.02730315212571618"
+        value="0.087" errorMinus="0.02730315212571618"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="32.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.015414451530949778"
+        value="0.037" errorMinus="0.015414451530949778"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="40.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.012583544810584973"
+        value="0.02" errorMinus="0.012583544810584973"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="17.5" value="62.5"
+        errorMinus="17.5"/>
+      <measurement errorPlus="0.0017713184355163246"
+        value="0.0015" errorMinus="0.0017713184355163246"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="D(SIG)/DET IN PB/GEV">
+    <annotation>
+      <item key="Title" value="D(SIG)/DET IN PB/GEV"
+        sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d04-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d04-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="2.5" value="22.5"
+        errorMinus="2.5"/>
+      <measurement errorPlus="0.012003780477832807"
+        value="0.0422" errorMinus="0.012003780477832807"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="5.0" value="30.0"
+        errorMinus="5.0"/>
+      <measurement errorPlus="0.005324867382386156"
+        value="0.0074" errorMinus="0.005324867382386156"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG(Q=1)/SIG(Q=0)">
+    <annotation>
+      <item key="Title" value="SIG(Q=1)/SIG(Q=0)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d05-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d05-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.006592277982609653"
+        value="0.067" errorMinus="0.006592277982609653"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y02" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG(Q=2)/SIG(Q=1)">
+    <annotation>
+      <item key="Title" value="SIG(Q=2)/SIG(Q=1)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d05-x01-y02" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d05-x01-y02" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.012144406952996923"
+        value="0.1271" errorMinus="0.012144406952996923"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y03" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG(Q=3)/SIG(Q=2)">
+    <annotation>
+      <item key="Title" value="SIG(Q=3)/SIG(Q=2)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d05-x01-y03" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d05-x01-y03" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.02902702576910008"
+        value="0.1235" errorMinus="0.02902702576910008"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y04" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG(Q=4)/SIG(Q=3)">
+    <annotation>
+      <item key="Title" value="SIG(Q=4)/SIG(Q=3)" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d05-x01-y04" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d05-x01-y04" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.0922447897717806"
+        value="0.0881" errorMinus="0.0922447897717806"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG IN PB">
+    <annotation>
+      <item key="Title" value="SIG IN PB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d06-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d06-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="5.581093889194125" value="53.5"
+        errorMinus="5.581093889194125"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d07-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG IN PB">
+    <annotation>
+      <item key="Title" value="SIG IN PB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d07-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d07-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="1.093412712565571" value="6.8"
+        errorMinus="1.093412712565571"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d08-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG IN PB">
+    <annotation>
+      <item key="Title" value="SIG IN PB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d08-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d08-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.23764182796805783"
+        value="0.84" errorMinus="0.23764182796805783"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d09-x01-y01" dimension="2"
+    path="/REF/CDF_2008_S7541902/" title="SIG IN PB">
+    <annotation>
+      <item key="Title" value="SIG IN PB" sticky="true"/>
+      <item key="AidaPath"
+        value="/REF/CDF_2008_S7541902/d09-x01-y01" sticky="true"/>
+      <item key="FullPath"
+        value="/CDF_2008_S7541902.aida/REF/CDF_2008_S7541902/d09-x01-y01" sticky="true"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.5" value="1960.0"
+        errorMinus="0.5"/>
+      <measurement errorPlus="0.052577763969191386"
+        value="0.074" errorMinus="0.052577763969191386"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>

@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 71
+Makefile.in
+Makefile
+stamp-*
+DummyConfig.h*
+YodaConfig.h
+BuildConfig.h
+
+END

@@ -1,0 +1,13 @@
+/*! \mainpage The Rivet validation framework
+ *
+ * Rivet is principally a C++ framework for Monte Carlo event generator
+ * validation. It is built on the dual concepts of analyses - routines
+ * which implement published experiment analyses - and projections -
+ * routines which extract observables from event records. Rivet is
+ * designed to be efficient, via automatic caching of projection results
+ * for each event.
+ *
+ * For more information on Rivet, please see the wiki documentation,
+ * managed at http://projects.hepforge.org/rivet/trac/wiki .
+ *
+ */

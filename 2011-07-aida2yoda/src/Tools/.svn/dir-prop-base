@@ -1,0 +1,31 @@
+K 13
+svn:externals
+V 58
+yaml-cpp http://svn.hepforge.org/cedar/trunk/pub/yaml-cpp
+
+K 10
+svn:ignore
+V 204
+RivetPaths.cc
+*.tar.gz
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+config.status
+configure
+libtool
+Rivet-*
+config.log
+config.guess
+config.sub
+depcomp
+install-sh
+ltmain.sh
+missing
+lib
+.libs
+.deps
+*.loT
+
+END

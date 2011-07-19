@@ -1,0 +1,711 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE aida SYSTEM 'http://aida.freehep.org/schemas/3.3/aida.dtd'>
+<aida version="3.3">
+  <implementation package="FreeHEP" version="1.1" />
+  <dataPointSet dimension="2" name="d01-x01-y01" path="/REF/ATLAS_2010_S8994773" title="900 GeV Transverse region Particle density vs. $p_T$(lead)">
+    <dimension title="$p_T$(lead)[GeV]" dim="0" sticky="True"/>
+    <dimension title="$\langle\mathrm{d}^2\mathrm{N}/\mathrm{d}\eta\mathrm{d}\phi\rangle$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="900 GeV Transverse region Particle density vs. $p_T$(lead)"/>
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d01-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d01-x01-y01"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.25" />
+      <measurement errorMinus="0.00497672241181" errorPlus="0.019814832136" value="0.225413143635" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.75" />
+      <measurement errorMinus="0.0121570853516" errorPlus="0.0185774490237" value="0.365512222052" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="2.5" />
+      <measurement errorMinus="0.0197336878628" errorPlus="0.0155148981139" value="0.499862939119" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="3.5" />
+      <measurement errorMinus="0.0346653647721" errorPlus="0.0273362062871" value="0.601026535034" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="5.0" />
+      <measurement errorMinus="0.0364859551191" errorPlus="0.0300273727626" value="0.646519362926" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="7.0" />
+      <measurement errorMinus="0.0537727735937" errorPlus="0.0909886881709" value="0.677668273449" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d02-x01-y01" path="/REF/ATLAS_2010_S8994773" title="7 TeV Transverse region Particle density vs. $p_T$(lead)">
+    <dimension title="$p_T$(lead)[GeV]" dim="0" sticky="True"/>
+    <dimension title="$\langle\mathrm{d}^2\mathrm{N}/\mathrm{d}\eta\mathrm{d}\phi\rangle$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="7 TeV Transverse region Particle density vs. $p_T$(lead)"/>
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d02-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d02-x01-y01"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.25" />
+      <measurement errorMinus="0.00220477138646" errorPlus="0.0344346798956" value="0.226269453764" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.75" />
+      <measurement errorMinus="0.00743785360828" errorPlus="0.0392213463783" value="0.42428290844" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="2.5" />
+      <measurement errorMinus="0.0110213737935" errorPlus="0.0391123704612" value="0.737704992294" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="3.5" />
+      <measurement errorMinus="0.0274081658572" errorPlus="0.0428996197879" value="1.07595801353" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="5.0" />
+      <measurement errorMinus="0.0596443712711" errorPlus="0.0679601877928" value="1.27589201927" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="7.0" />
+      <measurement errorMinus="0.0882821977139" errorPlus="0.101489067078" value="1.39575660229" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.5" errorPlus="1.5" value="9.5" />
+      <measurement errorMinus="0.105408899486" errorPlus="0.135159865022" value="1.44929039478" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.5" errorPlus="1.5" value="12.5" />
+      <measurement errorMinus="0.109448947012" errorPlus="0.147910743952" value="1.48666870594" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d03-x01-y01" path="/REF/ATLAS_2010_S8994773" title="900 GeV Transverse region $\sum p_T$ density vs. $p_T$(lead)">
+    <dimension title="$p_T$(lead)[GeV]" dim="0" sticky="True" />
+    <dimension title="$\langle\mathrm{d}^2\sum p_T/\mathrm{d}\eta\mathrm{d}\phi\rangle$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="900 GeV Transverse region $\sum p_T$ density vs. $p_T$(lead)" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d03-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d03-x01-y01" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.25" />
+      <measurement errorMinus="0.00374200893566" errorPlus="0.0145507780835" value="0.164887979627" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.75" />
+      <measurement errorMinus="0.00947078131139" errorPlus="0.0148793365806" value="0.29563459754" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="2.5" />
+      <measurement errorMinus="0.0195990167558" errorPlus="0.0174258761108" value="0.439191967249" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="3.5" />
+      <measurement errorMinus="0.0396480038762" errorPlus="0.0358089841902" value="0.55942773819" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="5.0" />
+      <measurement errorMinus="0.0391693934798" errorPlus="0.0350570753217" value="0.617772102356" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="7.0" />
+      <measurement errorMinus="0.0420824438334" errorPlus="0.0820690467954" value="0.654921770096" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d04-x01-y01" path="/REF/ATLAS_2010_S8994773" title="7 TeV Transverse region $\sum p_T$ density vs. $p_T$(lead)">
+    <dimension title="$p_T$(lead)[GeV]" dim="0" sticky="True" />
+    <dimension title="$\langle\mathrm{d}^2\sum p_T/\mathrm{d}\eta\mathrm{d}\phi\rangle$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="7 TeV Transverse region $\sum p_T$ density vs. $p_T$(lead)" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d04-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d04-x01-y01" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.25" />
+      <measurement errorMinus="0.00218686857261" errorPlus="0.0254176277667" value="0.166594192386" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.25" errorPlus="0.25" value="1.75" />
+      <measurement errorMinus="0.00502665527165" errorPlus="0.0317126624286" value="0.349053770304" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="2.5" />
+      <measurement errorMinus="0.00760602997616" errorPlus="0.0339873284101" value="0.677683532238" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.5" errorPlus="0.5" value="3.5" />
+      <measurement errorMinus="0.0414086356759" errorPlus="0.0519694723189" value="1.07433438301" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="5.0" />
+      <measurement errorMinus="0.0738824978471" errorPlus="0.0829055607319" value="1.33983111382" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.0" errorPlus="1.0" value="7.0" />
+      <measurement errorMinus="0.10014757514" errorPlus="0.116459600627" value="1.51737642288" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.5" errorPlus="1.5" value="9.5" />
+      <measurement errorMinus="0.118726678193" errorPlus="0.150668337941" value="1.6276460886" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="1.5" errorPlus="1.5" value="12.5" />
+      <measurement errorMinus="0.128762736917" errorPlus="0.168712303042" value="1.71066105366" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d13-x01-y01" path="/REF/ATLAS_2010_S8994773" title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 1 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 1 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d13-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d13-x01-y01" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0183920208365" errorPlus="0.025924757123" value="0.44361025095" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.026714220643" errorPlus="0.0256316829473" value="0.426969379187" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0178808774799" errorPlus="0.020853465423" value="0.408373832703" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.0200491417199" errorPlus="0.0200788676739" value="0.37895783782" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0167341548949" errorPlus="0.0196944456547" value="0.364750176668" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0176804345101" errorPlus="0.0212416388094" value="0.351480156183" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0178801193833" errorPlus="0.019139572978" value="0.34026235342" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0163849666715" errorPlus="0.0230546277016" value="0.343190014362" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0163358505815" errorPlus="0.020516179502" value="0.336597084999" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0175306908786" errorPlus="0.0224361866713" value="0.349930077791" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0180828943849" errorPlus="0.0197812970728" value="0.349163919687" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0161770917475" errorPlus="0.0232265200466" value="0.358665108681" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0182813834399" errorPlus="0.0230110622942" value="0.369216114283" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.019123794511" errorPlus="0.0203111730516" value="0.381810516119" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0177616532892" errorPlus="0.0207884889096" value="0.398854494095" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.0208523757756" errorPlus="0.0217255670577" value="0.409312576056" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.0178291182965" errorPlus="0.0246222540736" value="0.429263174534" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0198595803231" errorPlus="0.0222288724035" value="0.43540391326" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.020467326045" errorPlus="0.0241725388914" value="0.453790307045" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.0221781209111" errorPlus="0.025623684749" value="0.455693036318" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0201846547425" errorPlus="0.0251285918057" value="0.466575503349" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d13-x01-y02" path="/REF/ATLAS_2010_S8994773" title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 2 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item Title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 2 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d13-x01-y02" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d13-x01-y02" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0261226352304" errorPlus="0.0227945502847" value="0.692108988762" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.0404447242618" errorPlus="0.0255639273673" value="0.653128385544" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0267300195992" errorPlus="0.0204035565257" value="0.61608672142" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.0273485146463" errorPlus="0.0213290359825" value="0.550922870636" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0228896848857" errorPlus="0.0237627588212" value="0.522539079189" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0235330481082" errorPlus="0.020909903571" value="0.506471514702" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0253012944013" errorPlus="0.0199095774442" value="0.494774788618" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0224298462272" errorPlus="0.0251623596996" value="0.500746667385" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0232510920614" errorPlus="0.0207229312509" value="0.491847783327" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0247128270566" errorPlus="0.0244857184589" value="0.519614696503" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0272509939969" errorPlus="0.0186879597604" value="0.51854044199" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0256181359291" errorPlus="0.0250055994838" value="0.534171164036" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0247678812593" errorPlus="0.0221946220845" value="0.554626643658" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.0274460092187" errorPlus="0.0274183787405" value="0.573057770729" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0281053595245" errorPlus="0.0188433006406" value="0.606102764606" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.0311095304787" errorPlus="0.0212172213942" value="0.620878458023" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.0289045162499" errorPlus="0.0227750204504" value="0.662913739681" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0278202239424" errorPlus="0.0216225609183" value="0.67412006855" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.0381689183414" errorPlus="0.0222149435431" value="0.715448439121" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.03610868752" errorPlus="0.0234101712704" value="0.716799199581" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0345377400517" errorPlus="0.0235129054636" value="0.737221777439" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d13-x01-y03" path="/REF/ATLAS_2010_S8994773" title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 3 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item title="900 GeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 3 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d13-x01-y03" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d13-x01-y03" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0507556609809" errorPlus="0.0318558178842" value="0.90836006403" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.0557333230972" errorPlus="0.0422758832574" value="0.803138613701" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0551735833287" errorPlus="0.0251445956528" value="0.738857269287" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.0398613139987" errorPlus="0.033627230674" value="0.63157171011" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0266105793417" errorPlus="0.0272486079484" value="0.589872062206" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0323895700276" errorPlus="0.0445842295885" value="0.575818419456" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0270408056676" errorPlus="0.0354017466307" value="0.554618299007" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0356764942408" errorPlus="0.0335287228227" value="0.572562754154" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0280870292336" errorPlus="0.0295407231897" value="0.566291332245" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0337472222745" errorPlus="0.0268273875117" value="0.601168632507" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0369766615331" errorPlus="0.0288665536791" value="0.591981172562" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0354462563992" errorPlus="0.0367404483259" value="0.627589225769" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0342521965504" errorPlus="0.028004379943" value="0.65691202879" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.0364326164126" errorPlus="0.0444286689162" value="0.671692311764" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0394306704402" errorPlus="0.0340576022863" value="0.717674612999" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.0546491965652" errorPlus="0.0313113294542" value="0.747599840164" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.0442268252373" errorPlus="0.0383293926716" value="0.811332583427" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0438782796264" errorPlus="0.0346966572106" value="0.82296192646" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.0610994882882" errorPlus="0.0371489748359" value="0.892723977566" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.0517610311508" errorPlus="0.0373637154698" value="0.915890395641" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0553117208183" errorPlus="0.0425654761493" value="0.954339563847" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d14-x01-y01" path="/REF/ATLAS_2010_S8994773" title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 1 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 3 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d14-x01-y01" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d14-x01-y01" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0402770750225" errorPlus="0.0635307207704" value="0.858904361725" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.0496349409223" errorPlus="0.0612833574414" value="0.800790131092" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0389546491206" errorPlus="0.0579444095492" value="0.73891967535" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.040707167238" errorPlus="0.0537124462426" value="0.681972742081" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0357531011105" errorPlus="0.0518105477095" value="0.646838188171" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0335449054837" errorPlus="0.0502053201199" value="0.625255703926" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0340483039618" errorPlus="0.0476402044296" value="0.610283315182" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0313084721565" errorPlus="0.0498410835862" value="0.608928859234" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0328940749168" errorPlus="0.0472569912672" value="0.605872094631" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0305149108171" errorPlus="0.0481239445508" value="0.615335524082" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0331995561719" errorPlus="0.0468907728791" value="0.617944598198" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0312929674983" errorPlus="0.049301430583" value="0.631944715977" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0330433882773" errorPlus="0.0483924262226" value="0.643937408924" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.0351355671883" errorPlus="0.0498255677521" value="0.656816422939" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0329961068928" errorPlus="0.0513192154467" value="0.675411760807" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.0370972119272" errorPlus="0.0515174567699" value="0.689734220505" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.0347735919058" errorPlus="0.0555201508105" value="0.712266504765" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0396206900477" errorPlus="0.0538985207677" value="0.724731445312" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.039419170469" errorPlus="0.0589226447046" value="0.747270703316" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.0429262034595" errorPlus="0.057689525187" value="0.755291104317" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0422461591661" errorPlus="0.0597557798028" value="0.764581680298" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d14-x01-y02" path="/REF/ATLAS_2010_S8994773" title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 2 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 2 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d14-x01-y02" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d14-x01-y02" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0398170128465" errorPlus="0.0668790712953" value="1.28280174732" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.0553712137043" errorPlus="0.0624830685556" value="1.1828199625" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0360652133822" errorPlus="0.0578571148217" value="1.07993113995" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.042391743511" errorPlus="0.0533460639417" value="0.989496290684" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0364903844893" errorPlus="0.053166270256" value="0.936333298683" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0344309061766" errorPlus="0.0520939528942" value="0.909261405468" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0364550165832" errorPlus="0.0492132008076" value="0.89044046402" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0323785059154" errorPlus="0.0538780465722" value="0.891854047775" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0352635979652" errorPlus="0.0492731556296" value="0.889013051987" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0307590961456" errorPlus="0.0505477897823" value="0.906090259552" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0347727686167" errorPlus="0.0487132593989" value="0.910933256149" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0320235416293" errorPlus="0.0521886125207" value="0.931520342827" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0334786847234" errorPlus="0.0490249805152" value="0.951514363289" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.0379270650446" errorPlus="0.0523945949972" value="0.96964019537" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0330367386341" errorPlus="0.0532907992601" value="1.00052440166" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.039791520685" errorPlus="0.0530810803175" value="1.02243173122" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.033651150763" errorPlus="0.0580127425492" value="1.0587669611" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0425618849695" errorPlus="0.0563283823431" value="1.07743930817" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.041798453778" errorPlus="0.0632733851671" value="1.11464774609" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.0477231964469" errorPlus="0.0611164979637" value="1.12834203243" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0469157807529" errorPlus="0.06546985358" value="1.14304447174" />
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet dimension="2" name="d14-x01-y03" path="/REF/ATLAS_2010_S8994773" title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 3 GeV">
+    <dimension title="$\Delta\phi$[rad]" dim="0" sticky="True" />
+    <dimension title="$\mathrm{d}\langle N\rangle/\mathrm{d}\Delta\phi$" dim="1" sticky="True" />
+    <annotation>
+      <item title="7 TeV Particle density vs. $\Delta\phi$ with $p_T$(lead) $>$ 3 GeV" />
+      <item AidaPath="/REF/ATLAS_2010_S8994773/d14-x01-y03" />
+      <item FullPath="/ATLAS_2010_S8994773.aida/REF/ATLAS_2010_S8994773/d14-x01-y03" />
+    </annotation>
+    <dataPoint>
+      <measurement errorMinus="0.038292683661" errorPlus="0.038292683661" value="0.038292683661" />
+      <measurement errorMinus="0.0667062029243" errorPlus="0.083983540535" value="1.68848145008" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.153170734644" />
+      <measurement errorMinus="0.0734101235867" errorPlus="0.0707091763616" value="1.52590656281" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.306341469288" />
+      <measurement errorMinus="0.0492004603148" errorPlus="0.0629537776113" value="1.36025905609" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.459512203932" />
+      <measurement errorMinus="0.0568228252232" errorPlus="0.0611844584346" value="1.23030126095" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.612682938576" />
+      <measurement errorMinus="0.0501981973648" errorPlus="0.061488751322" value="1.1689388752" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.765853643417" />
+      <measurement errorMinus="0.0492739491165" errorPlus="0.0619380138814" value="1.14051663876" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="0.919024407864" />
+      <measurement errorMinus="0.0513112805784" errorPlus="0.0582568980753" value="1.12080156803" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.07219517231" />
+      <measurement errorMinus="0.0478482730687" errorPlus="0.0643871501088" value="1.12297654152" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.22536587715" />
+      <measurement errorMinus="0.0485822297633" errorPlus="0.0581814162433" value="1.1236846447" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.37853658199" />
+      <measurement errorMinus="0.0447839535773" errorPlus="0.0592259317636" value="1.14459729195" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.53170728683" />
+      <measurement errorMinus="0.0498603619635" errorPlus="0.059152405709" value="1.15098905563" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.68487799168" />
+      <measurement errorMinus="0.0478255450726" errorPlus="0.0626930966973" value="1.18016183376" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.83804881573" />
+      <measurement errorMinus="0.0485150516033" errorPlus="0.0575234331191" value="1.2052770853" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="1.99121952057" />
+      <measurement errorMinus="0.0538181215525" errorPlus="0.0627160444856" value="1.22623944283" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.14439034462" />
+      <measurement errorMinus="0.0460526160896" errorPlus="0.0596891418099" value="1.27361249924" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.29756093025" />
+      <measurement errorMinus="0.053416095674" errorPlus="0.060334738344" value="1.30336582661" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.4507317543" />
+      <measurement errorMinus="0.047720823437" errorPlus="0.0642225965858" value="1.35600185394" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.60390233994" />
+      <measurement errorMinus="0.0582593977451" errorPlus="0.0641646832228" value="1.38519859314" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.75707316399" />
+      <measurement errorMinus="0.0610439293087" errorPlus="0.0756294801831" value="1.43932819366" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="2.91024398804" />
+      <measurement errorMinus="0.065404959023" errorPlus="0.0711312890053" value="1.46477735043" />
+    </dataPoint>
+    <dataPoint>
+      <measurement errorMinus="0.076585367322" errorPlus="0.076585367322" value="3.06341457367" />
+      <measurement errorMinus="0.0677832663059" errorPlus="0.0788670778275" value="1.48756611347" />
+    </dataPoint>
+  </dataPointSet>
+</aida>

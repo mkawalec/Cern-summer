@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.0" package="HepData"/>
+  <dataPointSet name="d01-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="1960.0" errorPlus="0.0" errorMinus="0.0"/>
+      <measurement value="0.00332" errorPlus="6.762396025078685E-4" errorMinus="6.762396025078685E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="27.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="1.42E-4" errorPlus="3.176476034853718E-5" errorMinus="3.176476034853718E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="45.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="2.5E-5" errorPlus="1.0440306508910551E-5" errorMinus="1.0440306508910551E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="77.5" errorPlus="22.5" errorMinus="22.5"/>
+      <measurement value="1.22E-5" errorPlus="4.701063709417264E-6" errorMinus="4.701063709417264E-6"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d03-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="0.25" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="0.00244" errorPlus="6.35059052372297E-4" errorMinus="6.35059052372297E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="0.75" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="0.0029" errorPlus="7.580237463298891E-4" errorMinus="7.580237463298891E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="1.25" errorPlus="0.25" errorMinus="0.25"/>
+      <measurement value="7.9E-4" errorPlus="5.192301994298867E-4" errorMinus="5.192301994298867E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d04-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="10.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="4.6E-5" errorPlus="1.5652475842498527E-5" errorMinus="1.5652475842498527E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="27.5" errorPlus="7.5" errorMinus="7.5"/>
+      <measurement value="7.0E-5" errorPlus="2.0615528128088305E-5" errorMinus="2.0615528128088305E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="45.0" errorPlus="10.0" errorMinus="10.0"/>
+      <measurement value="2.9E-5" errorPlus="1.0198039027185571E-5" errorMinus="1.0198039027185571E-5"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="77.5" errorPlus="22.5" errorMinus="22.5"/>
+      <measurement value="1.11E-5" errorPlus="4.178516483155235E-6" errorMinus="4.178516483155235E-6"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d05-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="1.0" errorPlus="0.0" errorMinus="0.0"/>
+      <measurement value="0.00223" errorPlus="5.047771785649585E-4" errorMinus="5.047771785649585E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.0" errorPlus="0.0" errorMinus="0.0"/>
+      <measurement value="7.8E-4" errorPlus="2.3769728648009427E-4" errorMinus="2.3769728648009427E-4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet name="d06-x01-y01" dimension="2" path="/REF/CDF_2008_S8095620" title="SIG(Q=Z0+BJET)/SIG(Q=Z0)" >
+    <dataPoint>
+      <measurement value="1.0" errorPlus="0.0" errorMinus="0.0"/>
+      <measurement value="0.00275" errorPlus="5.813776741499454E-4" errorMinus="5.813776741499454E-4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement value="2.0" errorPlus="0.0" errorMinus="0.0"/>
+      <measurement value="2.2E-4" errorPlus="1.2083045973594573E-4" errorMinus="1.2083045973594573E-4"/>
+    </dataPoint>
+  </dataPointSet>
+</aida>
