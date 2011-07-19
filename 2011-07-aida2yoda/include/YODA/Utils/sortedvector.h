@@ -19,6 +19,9 @@ namespace YODA {
       /// @brief Insertion operator (push_back should not be used!)
       void insert(const T& val) {
         this->push_back(val);
+      }
+      
+      void sort(){
         std::sort(this->begin(), this->end());
       }
 

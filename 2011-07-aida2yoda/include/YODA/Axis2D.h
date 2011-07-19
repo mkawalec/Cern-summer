@@ -19,7 +19,7 @@ namespace YODA {
     public:
         
         typedef BIN Bin;
-        typedef typename Utils::sortedvector<BIN> Bins;
+        typedef typename Utils::sortedvector<Utils::sortedvector<BIN> > Bins;
 
         static inline pair<std::vector<double>, std::vector<double> > mkBinEdgesLinLin(double startX, startY, double endX, double endY, size_t nbinsX, size_t nbinsY) {
             return make_pair(linspace(startX, endX, nbinsX), linspace(startY, endY, nbinsY))
@@ -49,8 +49,34 @@ namespace YODA {
             }
         }
         
-        void _mkAxis(const pair<vector <double>, vector<double> >& binedges) {
+        void _mkAxis(const pair<vector<double>,vector<double> >& binedges) {
             const size_t nbinsX = binedges.first.size() - 1;
             const size_t nbinsY = binedges.second.size() -1;
-
             
+            //Now we are pushing back the bins:
+            for(int i=0; i<nbinY; i++) {
+                Utils::sortedvector<BIN> Temp;
+                for(int j=0; j<nbinX; j++) {
+                    Temp.push_back( BIN(binedges.first[j], binedges.second[i], binedges.first[j+1], binedges.second[i+1]) ); 
+                }
+                Temp.sort();
+                _bins.push_back(Temp);
+            }
+            _bins.sort();
+            
+            //Hashing the bin edges:
+            _cachedBinEdges = binedges;
+            std::sort(_cachedBinEdges.begin(), _cachedBinEdges.end());
+            _mkBinHash();
+        }
+
+        //
+
+
+    };
+
+    inline bool operator < (const pair<vector<double>, vector<double> >& a, const pair<vector<double>, vector<double> >& b) {
+        if(a.first == b.first) return a.second < b.second;
+        return a.first < b.first;
+    }
+

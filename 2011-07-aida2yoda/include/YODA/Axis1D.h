@@ -61,7 +61,8 @@ namespace YODA {
       for (size_t i = 0; i < nbins; ++i) {
         _bins.push_back( BIN(binedges.at(i), binedges.at(i+1)) );
       }
-
+      //Sorting _bins to impose order:
+      _bins.sort();
       /// @todo Remove
       _cachedBinEdges = binedges;
       std::sort(_cachedBinEdges.begin(), _cachedBinEdges.end());

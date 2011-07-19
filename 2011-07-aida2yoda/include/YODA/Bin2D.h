@@ -81,13 +81,9 @@ namespace YODA {
     Bin2D operator - (const Bin2D& a, const Bin2D& b);
 
     //Comparison functions that _may_ be used for sorting later, we will see...
-    inline bool smallerX(const Bin2D& a, const Bin2D& b) {
+    inline bool operator<(const Bin2D& a, const Bin2D& b) {
+        if(a.edgesX().first == b.edgesX().first) return b.edgesY().first > a.edgesY().first;
         return b.edgesX().first > a.edgesX().first;
-    }
-    
-    inline bool smallerY(const Bin2D& a, const Bin2D& b) {
-        return b.edgesY().first > a.edgesY().first;
-    }
 }
 
 
