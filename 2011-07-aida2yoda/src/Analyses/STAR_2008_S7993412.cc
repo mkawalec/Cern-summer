@@ -2,7 +2,7 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -71,8 +71,8 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IProfile1D * _h_Y_jet_trigger;
-    AIDA::IProfile1D * _h_Y_jet_associated;
+    Profile1DPtr _h_Y_jet_trigger;
+    Profile1DPtr _h_Y_jet_associated;
     //@}
 
   };

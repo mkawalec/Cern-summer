@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/VetoedFinalState.hh"
@@ -120,8 +120,8 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IProfile1D* _profhistRho_pT[11][6];
-    AIDA::IProfile1D* _profhistPsi_pT[11][6];
+    Profile1DPtr _profhistRho_pT[11][6];
+    Profile1DPtr _profhistPsi_pT[11][6];
     //@}
 
   };

@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -71,33 +71,33 @@ namespace Rivet {
       _isqrts = getHistIndex(sqrtS());
 
       // Book histograms
-      _hist1MinusT[_isqrts]    = bookHistogram1D(1, 1, _isqrts+1);
-      _histHemiMassH[_isqrts]  = bookHistogram1D(2, 1, _isqrts+1);
-      _histCParam[_isqrts]     = bookHistogram1D(3, 1, _isqrts+1);
-      _histHemiBroadT[_isqrts] = bookHistogram1D(4, 1, _isqrts+1);
-      _histHemiBroadW[_isqrts] = bookHistogram1D(5, 1, _isqrts+1);
-      _histY23Durham[_isqrts]  = bookHistogram1D(6, 1, _isqrts+1);
-      _histTMajor[_isqrts]     = bookHistogram1D(7, 1, _isqrts+1);
-      _histTMinor[_isqrts]     = bookHistogram1D(8, 1, _isqrts+1);
-      _histAplanarity[_isqrts] = bookHistogram1D(9, 1, _isqrts+1);
-      _histSphericity[_isqrts] = bookHistogram1D(10, 1, _isqrts+1);
-      _histOblateness[_isqrts] = bookHistogram1D(11, 1, _isqrts+1);
-      _histHemiMassL[_isqrts]  = bookHistogram1D(12, 1, _isqrts+1);
-      _histHemiBroadN[_isqrts] = bookHistogram1D(13, 1, _isqrts+1);
-      _histDParam[_isqrts]     = bookHistogram1D(14, 1, _isqrts+1);
+      _hist1MinusT[_isqrts]    = bookHisto1D(1, 1, _isqrts+1);
+      _histHemiMassH[_isqrts]  = bookHisto1D(2, 1, _isqrts+1);
+      _histCParam[_isqrts]     = bookHisto1D(3, 1, _isqrts+1);
+      _histHemiBroadT[_isqrts] = bookHisto1D(4, 1, _isqrts+1);
+      _histHemiBroadW[_isqrts] = bookHisto1D(5, 1, _isqrts+1);
+      _histY23Durham[_isqrts]  = bookHisto1D(6, 1, _isqrts+1);
+      _histTMajor[_isqrts]     = bookHisto1D(7, 1, _isqrts+1);
+      _histTMinor[_isqrts]     = bookHisto1D(8, 1, _isqrts+1);
+      _histAplanarity[_isqrts] = bookHisto1D(9, 1, _isqrts+1);
+      _histSphericity[_isqrts] = bookHisto1D(10, 1, _isqrts+1);
+      _histOblateness[_isqrts] = bookHisto1D(11, 1, _isqrts+1);
+      _histHemiMassL[_isqrts]  = bookHisto1D(12, 1, _isqrts+1);
+      _histHemiBroadN[_isqrts] = bookHisto1D(13, 1, _isqrts+1);
+      _histDParam[_isqrts]     = bookHisto1D(14, 1, _isqrts+1);
       //
-      _hist1MinusTMom[_isqrts]    = bookHistogram1D(15, 1, _isqrts+1);
-      _histHemiMassHMom[_isqrts]  = bookHistogram1D(16, 1, _isqrts+1);
-      _histCParamMom[_isqrts]     = bookHistogram1D(17, 1, _isqrts+1);
-      _histHemiBroadTMom[_isqrts] = bookHistogram1D(18, 1, _isqrts+1);
-      _histHemiBroadWMom[_isqrts] = bookHistogram1D(19, 1, _isqrts+1);
-      _histY23DurhamMom[_isqrts]  = bookHistogram1D(20, 1, _isqrts+1);
-      _histTMajorMom[_isqrts]     = bookHistogram1D(21, 1, _isqrts+1);
-      _histTMinorMom[_isqrts]     = bookHistogram1D(22, 1, _isqrts+1);
-      _histSphericityMom[_isqrts] = bookHistogram1D(23, 1, _isqrts+1);
-      _histOblatenessMom[_isqrts] = bookHistogram1D(24, 1, _isqrts+1);
-      _histHemiMassLMom[_isqrts]  = bookHistogram1D(25, 1, _isqrts+1);
-      _histHemiBroadNMom[_isqrts] = bookHistogram1D(26, 1, _isqrts+1);
+      _hist1MinusTMom[_isqrts]    = bookHisto1D(15, 1, _isqrts+1);
+      _histHemiMassHMom[_isqrts]  = bookHisto1D(16, 1, _isqrts+1);
+      _histCParamMom[_isqrts]     = bookHisto1D(17, 1, _isqrts+1);
+      _histHemiBroadTMom[_isqrts] = bookHisto1D(18, 1, _isqrts+1);
+      _histHemiBroadWMom[_isqrts] = bookHisto1D(19, 1, _isqrts+1);
+      _histY23DurhamMom[_isqrts]  = bookHisto1D(20, 1, _isqrts+1);
+      _histTMajorMom[_isqrts]     = bookHisto1D(21, 1, _isqrts+1);
+      _histTMinorMom[_isqrts]     = bookHisto1D(22, 1, _isqrts+1);
+      _histSphericityMom[_isqrts] = bookHisto1D(23, 1, _isqrts+1);
+      _histOblatenessMom[_isqrts] = bookHisto1D(24, 1, _isqrts+1);
+      _histHemiMassLMom[_isqrts]  = bookHisto1D(25, 1, _isqrts+1);
+      _histHemiBroadNMom[_isqrts] = bookHisto1D(26, 1, _isqrts+1);
     }
 
 
@@ -223,36 +223,36 @@ namespace Rivet {
 
     /// @name Event shape histos at 4 energies
     //@{
-    AIDA::IHistogram1D* _hist1MinusT[4];
-    AIDA::IHistogram1D* _histHemiMassH[4];
-    AIDA::IHistogram1D* _histCParam[4];
-    AIDA::IHistogram1D* _histHemiBroadT[4];
-    AIDA::IHistogram1D* _histHemiBroadW[4];
-    AIDA::IHistogram1D* _histY23Durham[4];
-    AIDA::IHistogram1D* _histTMajor[4];
-    AIDA::IHistogram1D* _histTMinor[4];
-    AIDA::IHistogram1D* _histAplanarity[4];
-    AIDA::IHistogram1D* _histSphericity[4];
-    AIDA::IHistogram1D* _histOblateness[4];
-    AIDA::IHistogram1D* _histHemiMassL[4];
-    AIDA::IHistogram1D* _histHemiBroadN[4];
-    AIDA::IHistogram1D* _histDParam[4];
+    Histo1DPtr _hist1MinusT[4];
+    Histo1DPtr _histHemiMassH[4];
+    Histo1DPtr _histCParam[4];
+    Histo1DPtr _histHemiBroadT[4];
+    Histo1DPtr _histHemiBroadW[4];
+    Histo1DPtr _histY23Durham[4];
+    Histo1DPtr _histTMajor[4];
+    Histo1DPtr _histTMinor[4];
+    Histo1DPtr _histAplanarity[4];
+    Histo1DPtr _histSphericity[4];
+    Histo1DPtr _histOblateness[4];
+    Histo1DPtr _histHemiMassL[4];
+    Histo1DPtr _histHemiBroadN[4];
+    Histo1DPtr _histDParam[4];
     //@}
 
     /// @name Event shape moment histos at 4 energies
     //@{
-    AIDA::IHistogram1D* _hist1MinusTMom[4];
-    AIDA::IHistogram1D* _histHemiMassHMom[4];
-    AIDA::IHistogram1D* _histCParamMom[4];
-    AIDA::IHistogram1D* _histHemiBroadTMom[4];
-    AIDA::IHistogram1D* _histHemiBroadWMom[4];
-    AIDA::IHistogram1D* _histY23DurhamMom[4];
-    AIDA::IHistogram1D* _histTMajorMom[4];
-    AIDA::IHistogram1D* _histTMinorMom[4];
-    AIDA::IHistogram1D* _histSphericityMom[4];
-    AIDA::IHistogram1D* _histOblatenessMom[4];
-    AIDA::IHistogram1D* _histHemiMassLMom[4];
-    AIDA::IHistogram1D* _histHemiBroadNMom[4];
+    Histo1DPtr _hist1MinusTMom[4];
+    Histo1DPtr _histHemiMassHMom[4];
+    Histo1DPtr _histCParamMom[4];
+    Histo1DPtr _histHemiBroadTMom[4];
+    Histo1DPtr _histHemiBroadWMom[4];
+    Histo1DPtr _histY23DurhamMom[4];
+    Histo1DPtr _histTMajorMom[4];
+    Histo1DPtr _histTMinorMom[4];
+    Histo1DPtr _histSphericityMom[4];
+    Histo1DPtr _histOblatenessMom[4];
+    Histo1DPtr _histHemiMassLMom[4];
+    Histo1DPtr _histHemiBroadNMom[4];
     //@}
 
   };

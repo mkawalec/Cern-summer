@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -39,25 +39,25 @@ namespace Rivet {
       if (fuzzyEquals(sqrtS()/GeV, 63)) {
         _hist_Pt = bookProfile1D(8,1,1);
       } else if (fuzzyEquals(sqrtS()/GeV, 200)) {
-        _hist_Nch = bookHistogram1D(1,1,1);
-        _hist_Esigd3p = bookHistogram1D(2,1,1);
+        _hist_Nch = bookHisto1D(1,1,1);
+        _hist_Esigd3p = bookHisto1D(2,1,1);
         _hist_Pt = bookProfile1D(6,1,1);
-        _hist_Et = bookHistogram1D(9,1,1);
+        _hist_Et = bookHisto1D(9,1,1);
         _hist_Etavg = bookProfile1D(12,1,1);
       } else if (fuzzyEquals(sqrtS()/GeV, 500)) {
-        _hist_Nch = bookHistogram1D(1,1,2);
-        _hist_Esigd3p = bookHistogram1D(2,1,2);
-        _hist_Et = bookHistogram1D(10,1,1);
+        _hist_Nch = bookHisto1D(1,1,2);
+        _hist_Esigd3p = bookHisto1D(2,1,2);
+        _hist_Et = bookHisto1D(10,1,1);
         _hist_Etavg = bookProfile1D(12,1,2);
       } else if (fuzzyEquals(sqrtS()/GeV, 900)) {
-        _hist_Nch = bookHistogram1D(1,1,3);
-        _hist_Esigd3p = bookHistogram1D(2,1,3);
+        _hist_Nch = bookHisto1D(1,1,3);
+        _hist_Esigd3p = bookHisto1D(2,1,3);
         _hist_Pt = bookProfile1D(7,1,1);
-        _hist_Et = bookHistogram1D(11,1,1);
+        _hist_Et = bookHisto1D(11,1,1);
         _hist_Etavg = bookProfile1D(12,1,3);
-        _hist_Esigd3p08 = bookHistogram1D(3,1,1);
-        _hist_Esigd3p40 = bookHistogram1D(4,1,1);
-        _hist_Esigd3p80 = bookHistogram1D(5,1,1);
+        _hist_Esigd3p08 = bookHisto1D(3,1,1);
+        _hist_Esigd3p40 = bookHisto1D(4,1,1);
+        _hist_Esigd3p80 = bookHisto1D(5,1,1);
       }
 
     }
@@ -137,14 +137,14 @@ namespace Rivet {
       }
       if (fuzzyEquals(sqrtS()/GeV, 900, 1E-3)) {
         // NB. Ref data is normalised to a fixed value not reproducible from MC. Note silly AIDA binHeight forgets the bin width.
-        const double scale08 =  (_hist_Esigd3p08->binHeight(0) > 0) ?
-          0.933e5/(_hist_Esigd3p08->binHeight(0)/_hist_Esigd3p08->axis().binWidth(0)) : 0;
+        const double scale08 =  (_hist_Esigd3p08->bin(0).area() > 0) ?
+          0.933e5/_hist_Esigd3p08->bin(0).height() : 0;
         scale(_hist_Esigd3p08, scale08);
-        const double scale40 = (_hist_Esigd3p40->binHeight(0) > 0) ?
-          1.369e5/(_hist_Esigd3p40->binHeight(0)/_hist_Esigd3p40->axis().binWidth(0)) : 0;
+        const double scale40 = (_hist_Esigd3p40->bin(0).area() > 0) ?
+          1.369e5/_hist_Esigd3p40->bin(0).height() : 0;
         scale(_hist_Esigd3p40, scale40);
-        const double scale80 = (_hist_Esigd3p80->binHeight(0) > 0) ?
-          1.657e5/(_hist_Esigd3p80->binHeight(0)/_hist_Esigd3p80->axis().binWidth(0)) : 0;
+        const double scale80 = (_hist_Esigd3p80->bin(0).area() > 0) ?
+          1.657e5/_hist_Esigd3p80->bin(0).height() : 0;
         scale(_hist_Esigd3p80, scale80);
       }
     }
@@ -161,14 +161,14 @@ namespace Rivet {
 
     /// @name Histogram collections
     //@{
-    AIDA::IHistogram1D* _hist_Nch;
-    AIDA::IHistogram1D* _hist_Esigd3p;
-    AIDA::IHistogram1D* _hist_Esigd3p08;
-    AIDA::IHistogram1D* _hist_Esigd3p40;
-    AIDA::IHistogram1D* _hist_Esigd3p80;
-    AIDA::IProfile1D* _hist_Pt;
-    AIDA::IProfile1D* _hist_Etavg;
-    AIDA::IHistogram1D* _hist_Et;
+    Histo1DPtr _hist_Nch;
+    Histo1DPtr _hist_Esigd3p;
+    Histo1DPtr _hist_Esigd3p08;
+    Histo1DPtr _hist_Esigd3p40;
+    Histo1DPtr _hist_Esigd3p80;
+    Profile1DPtr _hist_Pt;
+    Profile1DPtr _hist_Etavg;
+    Histo1DPtr _hist_Et;
     //@}
 
   };

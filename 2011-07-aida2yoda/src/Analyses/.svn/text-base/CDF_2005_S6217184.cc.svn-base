@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/VetoedFinalState.hh"
@@ -53,7 +53,7 @@ namespace Rivet {
       }
 
       // Final histo
-      _profhistPsi_vs_pT = bookDataPointSet(13, 1, 1);
+      _profhistPsi_vs_pT = bookScatter2D(13, 1, 1);
     }
 
 
@@ -94,15 +94,14 @@ namespace Rivet {
     void finalize() {
 
       // Construct final 1-Psi(0.3/0.7) profile from Psi profiles
-      vector<double> y, ey;
+      vector<Point2D> points;
       for (size_t i = 0; i < _ptedges.size()-1; ++i) {
         // Get entry for rad_Psi = 0.2 bin
-        AIDA::IProfile1D* ph_i = _profhistPsi_pT[i];
-        y.push_back(ph_i->binHeight(2));
-        ey.push_back(ph_i->binError(1));
-      }
-      _profhistPsi_vs_pT->setCoordinate(1, y, ey);
+        Profile1DPtr ph_i = _profhistPsi_pT[i];
 
+	_profhistPsi_vs_pT->point(i).setY(ph_i->bin(2).mean());
+	_profhistPsi_vs_pT->point(i).setYErr(ph_i->bin(1).stdErr());
+      }
     }
 
     //@}
@@ -124,9 +123,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IProfile1D* _profhistRho_pT[18];
-    AIDA::IProfile1D* _profhistPsi_pT[18];
-    AIDA::IDataPointSet* _profhistPsi_vs_pT;
+    Profile1DPtr _profhistRho_pT[18];
+    Profile1DPtr _profhistPsi_pT[18];
+    Scatter2DPtr _profhistPsi_vs_pT;
     //@}
 
   };

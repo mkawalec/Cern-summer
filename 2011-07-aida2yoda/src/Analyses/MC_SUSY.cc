@@ -2,7 +2,7 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -56,49 +56,49 @@ namespace Rivet {
       lpfs.addParticleIdPair(MUON);
       addProjection(lpfs, "LeadingParticles");
 
-      _hist_n_trk   = bookHistogram1D("n-trk", 50, 0.5, 300.5);
-      _hist_phi_trk = bookHistogram1D("phi-trk", 50, -PI, PI);
-      _hist_eta_trk = bookHistogram1D("eta-trk", 50, -4, 4);
-      _hist_pt_trk  = bookHistogram1D("pt-trk", 100, 0.0, 1500);
+      _hist_n_trk   = bookHisto1D("n-trk", 50, 0.5, 300.5);
+      _hist_phi_trk = bookHisto1D("phi-trk", 50, -PI, PI);
+      _hist_eta_trk = bookHisto1D("eta-trk", 50, -4, 4);
+      _hist_pt_trk  = bookHisto1D("pt-trk", 100, 0.0, 1500);
 
-      _hist_n_jet   = bookHistogram1D("n-jet", 21, -0.5, 20.5);
-      _hist_phi_jet = bookHistogram1D("phi-jet", 50, -PI, PI);
-      _hist_eta_jet = bookHistogram1D("eta-jet", 50, -4, 4);
-      _hist_pt_jet  = bookHistogram1D("pt-jet", 100, 0.0, 1500);
+      _hist_n_jet   = bookHisto1D("n-jet", 21, -0.5, 20.5);
+      _hist_phi_jet = bookHisto1D("phi-jet", 50, -PI, PI);
+      _hist_eta_jet = bookHisto1D("eta-jet", 50, -4, 4);
+      _hist_pt_jet  = bookHisto1D("pt-jet", 100, 0.0, 1500);
 
-      _hist_n_e   = bookHistogram1D("n-e", 11, -0.5, 10.5);
-      _hist_phi_e = bookHistogram1D("phi-e", 50, -PI, PI);
-      _hist_eta_e = bookHistogram1D("eta-e", 50, -4, 4);
-      _hist_pt_e  = bookHistogram1D("pt-e", 100, 0.0, 500);
+      _hist_n_e   = bookHisto1D("n-e", 11, -0.5, 10.5);
+      _hist_phi_e = bookHisto1D("phi-e", 50, -PI, PI);
+      _hist_eta_e = bookHisto1D("eta-e", 50, -4, 4);
+      _hist_pt_e  = bookHisto1D("pt-e", 100, 0.0, 500);
 
-      _hist_n_mu   = bookHistogram1D("n-mu", 11, -0.5, 10.5);
-      _hist_phi_mu = bookHistogram1D("phi-mu", 50, -PI, PI);
-      _hist_eta_mu = bookHistogram1D("eta-mu", 50, -4, 4);
-      _hist_pt_mu  = bookHistogram1D("pt-mu", 100, 0.0, 500);
+      _hist_n_mu   = bookHisto1D("n-mu", 11, -0.5, 10.5);
+      _hist_phi_mu = bookHisto1D("phi-mu", 50, -PI, PI);
+      _hist_eta_mu = bookHisto1D("eta-mu", 50, -4, 4);
+      _hist_pt_mu  = bookHisto1D("pt-mu", 100, 0.0, 500);
 
-      _hist_n_gamma   = bookHistogram1D("n-gamma", 11, -0.5, 10.5);
-      _hist_phi_gamma = bookHistogram1D("phi-gamma", 50, -PI, PI);
-      _hist_eta_gamma = bookHistogram1D("eta-gamma", 50, -4, 4);
-      _hist_pt_gamma  = bookHistogram1D("pt-gamma", 100, 0.0, 500);
+      _hist_n_gamma   = bookHisto1D("n-gamma", 11, -0.5, 10.5);
+      _hist_phi_gamma = bookHisto1D("phi-gamma", 50, -PI, PI);
+      _hist_eta_gamma = bookHisto1D("eta-gamma", 50, -4, 4);
+      _hist_pt_gamma  = bookHisto1D("pt-gamma", 100, 0.0, 500);
 
-      _hist_n_gammaiso   = bookHistogram1D("n-gamma-iso", 11, -0.5, 10.5);
-      _hist_phi_gammaiso = bookHistogram1D("phi-gamma-iso", 50, -PI, PI);
-      _hist_eta_gammaiso = bookHistogram1D("eta-gamma-iso", 50, -4, 4);
-      _hist_pt_gammaiso  = bookHistogram1D("pt-gamma-iso", 100, 0.0, 500);
+      _hist_n_gammaiso   = bookHisto1D("n-gamma-iso", 11, -0.5, 10.5);
+      _hist_phi_gammaiso = bookHisto1D("phi-gamma-iso", 50, -PI, PI);
+      _hist_eta_gammaiso = bookHisto1D("eta-gamma-iso", 50, -4, 4);
+      _hist_pt_gammaiso  = bookHisto1D("pt-gamma-iso", 100, 0.0, 500);
 
-      _hist_met = bookHistogram1D("Etmiss", 100, 0.0, 1500);
+      _hist_met = bookHisto1D("Etmiss", 100, 0.0, 1500);
 
-      _hist_mll_ossf_ee   = bookHistogram1D("mll-ossf-ee", 50, 0.0, 500);
-      _hist_mll_ossf_mumu = bookHistogram1D("mll-ossf-mumu", 50, 0.0, 500);
-      _hist_mll_osof_emu  = bookHistogram1D("mll-osof-emu", 50, 0.0, 500);
+      _hist_mll_ossf_ee   = bookHisto1D("mll-ossf-ee", 50, 0.0, 500);
+      _hist_mll_ossf_mumu = bookHisto1D("mll-ossf-mumu", 50, 0.0, 500);
+      _hist_mll_osof_emu  = bookHisto1D("mll-osof-emu", 50, 0.0, 500);
 
-      _hist_mll_all_ossf_ee   = bookHistogram1D("mll-all-ossf-ee", 50, 0.0, 500);
-      _hist_mll_all_ossf_mumu = bookHistogram1D("mll-all-ossf-mumu", 50, 0.0, 500);
-      _hist_mll_all_osof_emu  = bookHistogram1D("mll-all-osof-emu", 50, 0.0, 500);
+      _hist_mll_all_ossf_ee   = bookHisto1D("mll-all-ossf-ee", 50, 0.0, 500);
+      _hist_mll_all_ossf_mumu = bookHisto1D("mll-all-ossf-mumu", 50, 0.0, 500);
+      _hist_mll_all_osof_emu  = bookHisto1D("mll-all-osof-emu", 50, 0.0, 500);
 
-      _hist_mll_2_ossf_ee   = bookHistogram1D("mll-2-ossf-ee", 50, 0.0, 500);
-      _hist_mll_2_ossf_mumu = bookHistogram1D("mll-2-ossf-mumu", 50, 0.0, 500);
-      _hist_mll_2_osof_emu  = bookHistogram1D("mll-2-osof-emu", 50, 0.0, 500);
+      _hist_mll_2_ossf_ee   = bookHisto1D("mll-2-ossf-ee", 50, 0.0, 500);
+      _hist_mll_2_ossf_mumu = bookHisto1D("mll-2-ossf-mumu", 50, 0.0, 500);
+      _hist_mll_2_osof_emu  = bookHisto1D("mll-2-osof-emu", 50, 0.0, 500);
 
       /// @todo LSP eta, pT, phi, mass: no reliable cross-scenario LSP PID but
       /// maybe plot for all of chi^0_1, gravitino, sneutrino, gluino, ... or
@@ -302,16 +302,16 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_hist_n_trk, *_hist_phi_trk, *_hist_eta_trk, *_hist_pt_trk;
-    AIDA::IHistogram1D *_hist_n_jet, *_hist_phi_jet, *_hist_eta_jet, *_hist_pt_jet;
-    AIDA::IHistogram1D *_hist_n_e, *_hist_phi_e, *_hist_eta_e, *_hist_pt_e;
-    AIDA::IHistogram1D *_hist_n_mu, *_hist_phi_mu, *_hist_eta_mu, *_hist_pt_mu;
-    AIDA::IHistogram1D *_hist_n_gamma, *_hist_phi_gamma, *_hist_eta_gamma, *_hist_pt_gamma;
-    AIDA::IHistogram1D *_hist_n_gammaiso, *_hist_phi_gammaiso, *_hist_eta_gammaiso, *_hist_pt_gammaiso;
-    AIDA::IHistogram1D *_hist_met;
-    AIDA::IHistogram1D *_hist_mll_2_ossf_ee, *_hist_mll_2_ossf_mumu, *_hist_mll_2_osof_emu;
-    AIDA::IHistogram1D *_hist_mll_ossf_ee, *_hist_mll_ossf_mumu, *_hist_mll_osof_emu;
-    AIDA::IHistogram1D *_hist_mll_all_ossf_ee, *_hist_mll_all_ossf_mumu, *_hist_mll_all_osof_emu;
+    Histo1DPtr _hist_n_trk, _hist_phi_trk, _hist_eta_trk, _hist_pt_trk;
+    Histo1DPtr _hist_n_jet, _hist_phi_jet, _hist_eta_jet, _hist_pt_jet;
+    Histo1DPtr _hist_n_e, _hist_phi_e, _hist_eta_e, _hist_pt_e;
+    Histo1DPtr _hist_n_mu, _hist_phi_mu, _hist_eta_mu, _hist_pt_mu;
+    Histo1DPtr _hist_n_gamma, _hist_phi_gamma, _hist_eta_gamma, _hist_pt_gamma;
+    Histo1DPtr _hist_n_gammaiso, _hist_phi_gammaiso, _hist_eta_gammaiso, _hist_pt_gammaiso;
+    Histo1DPtr _hist_met;
+    Histo1DPtr _hist_mll_2_ossf_ee, _hist_mll_2_ossf_mumu, _hist_mll_2_osof_emu;
+    Histo1DPtr _hist_mll_ossf_ee, _hist_mll_ossf_mumu, _hist_mll_osof_emu;
+    Histo1DPtr _hist_mll_all_ossf_ee, _hist_mll_all_ossf_mumu, _hist_mll_all_osof_emu;
   };
 
 

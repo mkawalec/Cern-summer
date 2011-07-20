@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Math/MathUtils.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -8,6 +8,15 @@
 #include "Rivet/Projections/TriggerUA5.hh"
 
 namespace Rivet {
+
+  /// @brief helper function to fill correlation points into scatter plot
+  Point2D correlation_helper(double x, double xerr, 
+			     const vector<int> & nf, const vector<int> & nb, 
+			     double sumWPassed)
+  {
+    return Point2D( x, 	correlation(nf, nb),
+		    xerr,	correlation_err(nf, nb)/sqrt(sumWPassed)  );
+  }
 
 
   /// @brief UA5 charged particle correlations at 200, 546 and 900 GeV
@@ -51,16 +60,16 @@ namespace Rivet {
       addProjection(ChargedFinalState(-4.0, -3.0), "CFS40B");
 
       // Histogram booking, we have sqrt(s) = 200, 546 and 900 GeV
-      // TODO use DataPointSet to be able to output errors
+      // TODO use Scatter2D to be able to output errors
       if (fuzzyEquals(sqrtS()/GeV, 200.0, 1E-4)) {
-        _hist_correl = bookDataPointSet(2, 1, 1);
-        _hist_correl_asym = bookDataPointSet(3, 1, 1);
+        _hist_correl = bookScatter2D(2, 1, 1);
+        _hist_correl_asym = bookScatter2D(3, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 546.0, 1E-4)) {
-        _hist_correl = bookDataPointSet(2, 1, 2);
-        _hist_correl_asym = bookDataPointSet(3, 1, 2);
+        _hist_correl = bookScatter2D(2, 1, 2);
+        _hist_correl_asym = bookScatter2D(3, 1, 2);
       } else if (fuzzyEquals(sqrtS()/GeV, 900.0, 1E-4)) {
-        _hist_correl = bookDataPointSet(2, 1, 3);
-        _hist_correl_asym = bookDataPointSet(3, 1, 3);
+        _hist_correl = bookScatter2D(2, 1, 3);
+        _hist_correl_asym = bookScatter2D(3, 1, 3);
       }
     }
 
@@ -91,7 +100,6 @@ namespace Rivet {
       n_05 += applyProjection<ChargedFinalState>(event, "CFS05").size();
     }
 
-
     void finalize() {
       // The correlation strength is defined in formulas
       // 4.1 and 4.2
@@ -104,79 +112,38 @@ namespace Rivet {
       //      the eta-intervals
       //
       
-      // Define vectors to be able to fill DataPointSets
-
-      vector<double> xvals;
-      vector<double> xerrs;
-      vector<double> yvals;
-      vector<double> yerrs;
-
-
-      // This defines the binning eventually
-      for (int i=0; i<7; i++) {
-        xvals.push_back(static_cast<double>(i));
-        xerrs.push_back(0.5);
-      }
-
+      // Define vectors to be able to fill Scatter2Ds
+      vector<Point2D> points;
       // Fill the y-value vector
-      yvals.push_back(correlation(n_10f, n_10b));
-      yvals.push_back(correlation(n_15f, n_15b));
-      yvals.push_back(correlation(n_20f, n_20b));
-      yvals.push_back(correlation(n_25f, n_25b));
-      yvals.push_back(correlation(n_30f, n_30b));
-      yvals.push_back(correlation(n_35f, n_35b));
-      yvals.push_back(correlation(n_40f, n_40b));
-
-      // Fill the y-error vector
-      yerrs.push_back(correlation_err(n_10f, n_10b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_15f, n_15b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_20f, n_20b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_25f, n_25b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_30f, n_30b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_35f, n_35b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_40f, n_40b)/sqrt(_sumWPassed));
+      points.push_back(correlation_helper(0, 0.5, n_10f, n_10b, _sumWPassed));
+      points.push_back(correlation_helper(1, 0.5, n_15f, n_15b, _sumWPassed));
+      points.push_back(correlation_helper(2, 0.5, n_20f, n_20b, _sumWPassed));
+      points.push_back(correlation_helper(3, 0.5, n_25f, n_25b, _sumWPassed));
+      points.push_back(correlation_helper(4, 0.5, n_30f, n_30b, _sumWPassed));
+      points.push_back(correlation_helper(5, 0.5, n_35f, n_35b, _sumWPassed));
+      points.push_back(correlation_helper(6, 0.5, n_40f, n_40b, _sumWPassed));
 
       // Fill the DPS
-      _hist_correl->setCoordinate(0, xvals, xerrs);
-      _hist_correl->setCoordinate(1, yvals, yerrs);
-
-      // Now do the other histo -- clear already defined vectors first
-      xvals.clear();
-      xerrs.clear();
-      yvals.clear();
-      yerrs.clear();
-
-      // Different binning for this one
-      for (int i=0; i<6; i++) {
-        xvals.push_back(0.5* static_cast<double>(i));
-        xerrs.push_back(0.25);
-      }
+      _hist_correl->addPoints(points);
 
       // Fill gap-center histo (Fig 15)
       //
       // The first bin contains the c_str strengths of
       // the gap size histo that has ane eta gap of two
       //
-      // Fill the y-value vector
-      yvals.push_back(correlation(n_20f, n_20b));
-      yvals.push_back(correlation(n_25f, n_15b));
-      yvals.push_back(correlation(n_30f, n_10b));
-      yvals.push_back(correlation(n_35f, n_05 ));
-      yvals.push_back(correlation(n_40f, n_10f));
+      // Now do the other histo -- clear already defined vectors first
+      points.clear();
 
-      // Fill the y-error vector
-      yerrs.push_back(correlation_err(n_20f, n_20b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_25f, n_15b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_30f, n_10b)/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_35f, n_05 )/sqrt(_sumWPassed));
-      yerrs.push_back(correlation_err(n_40f, n_10f)/sqrt(_sumWPassed));
-
+      points.push_back(correlation_helper(0,   0.25, n_20f, n_20b, _sumWPassed));
+      points.push_back(correlation_helper(0.5, 0.25, n_25f, n_15b, _sumWPassed));
+      points.push_back(correlation_helper(1,   0.25, n_30f, n_10b, _sumWPassed));
+      points.push_back(correlation_helper(1.5, 0.25, n_35f, n_05 , _sumWPassed));
+      points.push_back(correlation_helper(2,   0.25, n_40f, n_10f, _sumWPassed));
 
       // Fill in correlation strength for assymetric intervals,
       // see Tab. 5
       // Fill the DPS
-      _hist_correl_asym->setCoordinate(0, xvals, xerrs);
-      _hist_correl_asym->setCoordinate(1, yvals, yerrs);
+      _hist_correl_asym->addPoints(points);
     }
 
     //@}
@@ -216,9 +183,9 @@ namespace Rivet {
     /// @name Histograms
     //@{
     // Symmetric eta intervals
-    AIDA::IDataPointSet *_hist_correl;
+    Scatter2DPtr _hist_correl;
     // For asymmetric eta intervals
-    AIDA::IDataPointSet *_hist_correl_asym;
+    Scatter2DPtr _hist_correl_asym;
     //@}
 
   };

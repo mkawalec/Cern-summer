@@ -1,7 +1,7 @@
 // -*- C++ -*- 
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -81,15 +81,15 @@ namespace Rivet {
 
 
       /// book histograms
-      _count_OS_e_mu = bookHistogram1D("count_OS_e+-mu-+", 1, 0., 1.);
-      _count_OS_e_e = bookHistogram1D("count_OS_e+e-", 1, 0., 1.);
-      _count_OS_mu_mu = bookHistogram1D("count_OS_mu+mu-", 1, 0., 1.);
-      _count_SS_e_mu = bookHistogram1D("count_SS_e+-mu+-", 1, 0., 1.);
-      _count_SS_e_e = bookHistogram1D("count_SS_e+-e+-", 1, 0., 1.);
-      _count_SS_mu_mu = bookHistogram1D("count_SS_mu+-mu+-", 1, 0., 1.);
+      _count_OS_e_mu = bookHisto1D("count_OS_e+-mu-+", 1, 0., 1.);
+      _count_OS_e_e = bookHisto1D("count_OS_e+e-", 1, 0., 1.);
+      _count_OS_mu_mu = bookHisto1D("count_OS_mu+mu-", 1, 0., 1.);
+      _count_SS_e_mu = bookHisto1D("count_SS_e+-mu+-", 1, 0., 1.);
+      _count_SS_e_e = bookHisto1D("count_SS_e+-e+-", 1, 0., 1.);
+      _count_SS_mu_mu = bookHisto1D("count_SS_mu+-mu+-", 1, 0., 1.);
 
-      _hist_eTmiss_OS  = bookHistogram1D("Et_miss_OS", 20, 0., 400.);
-      _hist_eTmiss_SS  = bookHistogram1D("Et_miss_SS", 20, 0., 400.);	
+      _hist_eTmiss_OS  = bookHisto1D("Et_miss_OS", 20, 0., 400.);
+      _hist_eTmiss_SS  = bookHisto1D("Et_miss_SS", 20, 0., 400.);	
 
 
     }
@@ -316,14 +316,14 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _count_OS_e_mu;
-    AIDA::IHistogram1D* _count_OS_e_e;
-    AIDA::IHistogram1D* _count_OS_mu_mu;
-    AIDA::IHistogram1D* _count_SS_e_mu;
-    AIDA::IHistogram1D* _count_SS_e_e;
-    AIDA::IHistogram1D* _count_SS_mu_mu;
-    AIDA::IHistogram1D* _hist_eTmiss_OS;
-    AIDA::IHistogram1D* _hist_eTmiss_SS;
+    Histo1DPtr _count_OS_e_mu;
+    Histo1DPtr _count_OS_e_e;
+    Histo1DPtr _count_OS_mu_mu;
+    Histo1DPtr _count_SS_e_mu;
+    Histo1DPtr _count_SS_e_e;
+    Histo1DPtr _count_SS_mu_mu;
+    Histo1DPtr _hist_eTmiss_OS;
+    Histo1DPtr _hist_eTmiss_SS;
 
     //@}
 

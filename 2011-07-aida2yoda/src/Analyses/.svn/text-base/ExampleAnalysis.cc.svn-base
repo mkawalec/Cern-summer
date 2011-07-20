@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -41,18 +41,18 @@ namespace Rivet {
       addProjection(Sphericity(cfs), "Sphericity");
 
       // Histograms
-      _histTot         = bookHistogram1D("TotalMult", 100, -0.5, 99.5);
-      _histChTot       = bookHistogram1D("TotalChMult", 50, -1.0, 99.0);
-      _histHadrTot     = bookHistogram1D("HadrTotalMult", 100, -0.5, 99.5);
-      _histHadrChTot   = bookHistogram1D("HadrTotalChMult", 50, -1.0, 99.0);
-      _histMajor       = bookHistogram1D("Major", 10, 0.0, 0.6);
-      _histSphericity  = bookHistogram1D("Sphericity", 10, 0.0, 0.8);
-      _histAplanarity  = bookHistogram1D("Aplanarity", 10, 0.0, 0.3);
+      _histTot         = bookHisto1D("TotalMult", 100, -0.5, 99.5);
+      _histChTot       = bookHisto1D("TotalChMult", 50, -1.0, 99.0);
+      _histHadrTot     = bookHisto1D("HadrTotalMult", 100, -0.5, 99.5);
+      _histHadrChTot   = bookHisto1D("HadrTotalChMult", 50, -1.0, 99.0);
+      _histMajor       = bookHisto1D("Major", 10, 0.0, 0.6);
+      _histSphericity  = bookHisto1D("Sphericity", 10, 0.0, 0.8);
+      _histAplanarity  = bookHisto1D("Aplanarity", 10, 0.0, 0.3);
 
       // Non-uniform binning example:
       double edges[11] = { 0.5, 0.6, 0.7, 0.80, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 1.0 };
       vector<double> vedges(edges, edges+11);
-      _histThrust = bookHistogram1D("Thrust", vedges);
+      _histThrust = bookHisto1D("Thrust", vedges);
     }
 
 
@@ -112,14 +112,14 @@ namespace Rivet {
 
     //@{
     /// Histograms
-    AIDA::IHistogram1D* _histTot;
-    AIDA::IHistogram1D* _histChTot;
-    AIDA::IHistogram1D* _histHadrTot;
-    AIDA::IHistogram1D* _histHadrChTot;
-    AIDA::IHistogram1D* _histThrust;
-    AIDA::IHistogram1D* _histMajor;
-    AIDA::IHistogram1D* _histSphericity;
-    AIDA::IHistogram1D* _histAplanarity;
+    Histo1DPtr _histTot;
+    Histo1DPtr _histChTot;
+    Histo1DPtr _histHadrTot;
+    Histo1DPtr _histHadrChTot;
+    Histo1DPtr _histThrust;
+    Histo1DPtr _histMajor;
+    Histo1DPtr _histSphericity;
+    Histo1DPtr _histAplanarity;
     //@}
 
   };

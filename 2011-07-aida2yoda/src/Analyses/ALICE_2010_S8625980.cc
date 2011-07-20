@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 
@@ -38,12 +38,12 @@ namespace Rivet {
       addProjection(cfs, "CFS");
 
       if (fuzzyEquals(sqrtS()/GeV, 900, 1E-3)) {
-        _h_dN_deta    = bookHistogram1D(4, 1, 1);
+        _h_dN_deta    = bookHisto1D(4, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 2360, 1E-3)) {
-        _h_dN_deta    = bookHistogram1D(5, 1, 1);
+        _h_dN_deta    = bookHisto1D(5, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 7000, 1E-3)) {
-        _h_dN_deta    = bookHistogram1D(6, 1, 1);
-        _h_dN_dNch    = bookHistogram1D(3, 1, 1);
+        _h_dN_deta    = bookHisto1D(6, 1, 1);
+        _h_dN_dNch    = bookHisto1D(3, 1, 1);
       }
 
     }
@@ -89,8 +89,8 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_dN_deta;
-    AIDA::IHistogram1D *_h_dN_dNch;
+    Histo1DPtr _h_dN_deta;
+    Histo1DPtr _h_dN_dNch;
     double _Nevt_after_cuts;
     //@}
 

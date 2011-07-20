@@ -1,14 +1,14 @@
 10
 
 dir
-3187
+3228
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
 
 
-2011-07-06T11:16:15.939219Z
-3176
+2011-07-19T19:37:08.036008Z
+3227
 dgrell
 has-props
 
@@ -25,6 +25,15 @@ has-props
 
 
 08c271fc-aa0b-0410-ab53-e6d64525c8aa
+
+
+
+
+
+
+
+
+((conflict RivetAIDA.hh file update deleted edited (version svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet 4 3187 branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh file) (version svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet 4 3228 branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh none)))
 
 Analyses
 dir
@@ -35,11 +44,11 @@ file
 
 
 
-2011-07-18T11:57:43.348177Z
-89843a3ea94d3b3bf11914e0b30eb2a2
-2011-02-28T10:40:22.097107Z
-2989
-fsiegert
+2011-07-20T09:25:11.474710Z
+0591f3f7333945347b534b79019c9400
+2011-07-19T15:33:02.006181Z
+3211
+dgrell
 has-props
 
 
@@ -61,7 +70,7 @@ has-props
 
 
 
-8957
+6085
 
 Event.hh
 file
@@ -137,11 +146,11 @@ file
 
 
 
-2011-07-18T11:57:43.354843Z
-c4ae9c8de7d4f726a056841f81d8e689
-2011-03-01T22:51:21.941657Z
-2999
-buckley
+2011-07-20T09:25:11.481376Z
+a3134e0e7e4663015118f00bf0a36f56
+2011-07-19T15:22:39.982692Z
+3209
+dgrell
 has-props
 
 
@@ -163,7 +172,7 @@ has-props
 
 
 
-22883
+21885
 
 Rivet.hh
 file
@@ -171,11 +180,11 @@ file
 
 
 
-2011-07-18T11:57:43.354843Z
-efff16d94792a242f0570628efe045b3
-2010-06-23T10:39:45.139733Z
-2509
-buckley
+2011-07-20T09:25:11.484710Z
+7f705deaabd0de85f685bb4b0593e437
+2011-07-18T16:24:03.115303Z
+3189
+dgrell
 
 
 
@@ -377,10 +386,10 @@ dir
 
 RivetAIDA.hh
 file
+3187
 
 
-
-
+add
 2011-07-18T11:57:43.361510Z
 88ba0515f629de9460b071d142e6e46a
 2011-06-04T14:06:09.500347Z
@@ -394,9 +403,9 @@ buckley
 
 
 
-
-
-
+copied
+svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh
+3187
 
 
 
@@ -408,40 +417,6 @@ buckley
 
 
 1699
-
-RivetSTL.hh
-file
-
-
-
-
-2011-07-18T11:57:43.361510Z
-79dd71fd2149704c47d17906d88e388b
-2011-06-29T11:35:43.865889Z
-3168
-dgrell
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-901
 
 Projection.hh
 file
@@ -477,17 +452,17 @@ has-props
 
 5430
 
-RivetAIDA.fhh
+RivetSTL.hh
 file
 
 
 
 
 2011-07-18T11:57:43.361510Z
-6620b3dd4874416718b2273ab88bde89
-2010-10-05T16:38:08.357472Z
-2705
-lonnblad
+79dd71fd2149704c47d17906d88e388b
+2011-06-29T11:35:43.865889Z
+3168
+dgrell
 
 
 
@@ -509,41 +484,7 @@ lonnblad
 
 
 
-1249
-
-Projection.fhh
-file
-
-
-
-
-2011-07-18T11:57:43.364843Z
-4b4071e96a6d970e67d155e0684ae5f8
-2008-05-19T16:05:44.475743Z
-809
-buckley
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-994
+901
 
 Jet.hh
 file
@@ -578,6 +519,40 @@ hoeth
 
 
 13148
+
+Projection.fhh
+file
+
+
+
+
+2011-07-18T11:57:43.364843Z
+4b4071e96a6d970e67d155e0684ae5f8
+2008-05-19T16:05:44.475743Z
+809
+buckley
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+994
 
 HistoHandler.hh
 file
@@ -647,40 +622,6 @@ has-props
 
 732
 
-AnalysisHandler.fhh
-file
-
-
-
-
-2011-07-18T11:57:43.368177Z
-de6d09af534f4dd10e57e1c9fb54d701
-2007-04-12T16:19:33.419392Z
-225
-buckley
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-220
-
 Event.fhh
 file
 
@@ -714,6 +655,40 @@ has-props
 
 
 109
+
+AnalysisHandler.fhh
+file
+
+
+
+
+2011-07-18T11:57:43.368177Z
+de6d09af534f4dd10e57e1c9fb54d701
+2007-04-12T16:19:33.419392Z
+225
+buckley
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+220
 
 Analysis.fhh
 file
@@ -786,74 +761,6 @@ has-props
 Math
 dir
 
-ProjectionApplier.fhh
-file
-
-
-
-
-2011-07-18T11:57:43.371510Z
-59d30605b45611b784b0fa111820b95c
-2008-05-19T16:05:44.475743Z
-809
-buckley
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-145
-
-HistoFormat.hh
-file
-
-
-
-
-2011-07-18T11:57:43.371510Z
-86a741af4c6b8efa098dfc9eb033673a
-2009-03-16T15:16:23.000877Z
-1385
-buckley
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2048
-
 AnalysisInfo.hh
 file
 
@@ -887,6 +794,74 @@ buckley
 
 
 7635
+
+HistoFormat.hh
+file
+
+
+
+
+2011-07-20T09:25:11.488043Z
+7ca0841a1d99dcc1f0471432c8bbcd72
+2011-07-18T16:24:03.115303Z
+3189
+dgrell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2044
+
+ProjectionApplier.fhh
+file
+
+
+
+
+2011-07-18T11:57:43.371510Z
+59d30605b45611b784b0fa111820b95c
+2008-05-19T16:05:44.475743Z
+809
+buckley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+145
 
 RivetBoost.hh
 file
@@ -958,6 +933,19 @@ buckley
 
 
 2047
+
+RivetYODA.hh
+file
+
+
+
+
+
+6f05fd97e112ee80e666d6852e3075d8
+2011-07-19T19:37:08.036008Z
+3227
+dgrell
+has-props
 
 Constraints.hh
 file
@@ -1135,11 +1123,11 @@ file
 
 
 
-2011-07-18T11:57:43.378177Z
-6264cd36778fea3376863f5f29043314
-2011-06-01T17:26:06.110719Z
-3116
-hoeth
+2011-07-20T09:25:11.494709Z
+cc4c6d2049a2f239773f0cb1d97c2ac6
+2011-07-18T16:24:03.115303Z
+3189
+dgrell
 has-props
 
 
@@ -1162,6 +1150,40 @@ has-props
 
 
 3644
+
+RivetYODA.fhh
+file
+
+
+
+
+2011-07-20T09:25:11.498043Z
+124e134580bc887cd44d3a1b2fb75085
+2011-07-19T15:22:39.982692Z
+3209
+dgrell
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1490
 
 Cmp.hh
 file

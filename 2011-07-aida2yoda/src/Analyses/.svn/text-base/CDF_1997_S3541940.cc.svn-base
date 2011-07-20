@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -26,26 +26,26 @@ namespace Rivet {
       const FinalState fs(-4.2, 4.2);
       addProjection(FastJets(fs, FastJets::CDFJETCLU, 0.7), "Jets");
 
-      _h_m6J = bookHistogram1D(1, 1, 1);
-      _h_X3ppp = bookHistogram1D(2, 1, 1);
-      _h_X4ppp = bookHistogram1D(3, 1, 1);
-      _h_costheta3ppp = bookHistogram1D(4, 1, 1);
-      _h_psi3ppp = bookHistogram1D(5, 1, 1);
-      _h_f3ppp = bookHistogram1D(6, 1, 1);
-      _h_f4ppp = bookHistogram1D(6, 1, 2);
-      _h_f5ppp = bookHistogram1D(6, 1, 3);
-      _h_XApp = bookHistogram1D(7, 1, 1);
-      _h_XCp = bookHistogram1D(8, 1, 1);
-      _h_XE = bookHistogram1D(9, 1, 1);
-      _h_psiAppBpp = bookHistogram1D(10, 1, 1);
-      _h_psiCpDp = bookHistogram1D(11, 1, 1);
-      _h_psiEF = bookHistogram1D(12, 1, 1);
-      _h_fApp = bookHistogram1D(13, 1, 1);
-      _h_fBpp = bookHistogram1D(14, 1, 1);
-      _h_fCp = bookHistogram1D(15, 1, 1);
-      _h_fDp = bookHistogram1D(16, 1, 1);
-      _h_fE = bookHistogram1D(17, 1, 1);
-      _h_fF = bookHistogram1D(18, 1, 1);
+      _h_m6J = bookHisto1D(1, 1, 1);
+      _h_X3ppp = bookHisto1D(2, 1, 1);
+      _h_X4ppp = bookHisto1D(3, 1, 1);
+      _h_costheta3ppp = bookHisto1D(4, 1, 1);
+      _h_psi3ppp = bookHisto1D(5, 1, 1);
+      _h_f3ppp = bookHisto1D(6, 1, 1);
+      _h_f4ppp = bookHisto1D(6, 1, 2);
+      _h_f5ppp = bookHisto1D(6, 1, 3);
+      _h_XApp = bookHisto1D(7, 1, 1);
+      _h_XCp = bookHisto1D(8, 1, 1);
+      _h_XE = bookHisto1D(9, 1, 1);
+      _h_psiAppBpp = bookHisto1D(10, 1, 1);
+      _h_psiCpDp = bookHisto1D(11, 1, 1);
+      _h_psiEF = bookHisto1D(12, 1, 1);
+      _h_fApp = bookHisto1D(13, 1, 1);
+      _h_fBpp = bookHisto1D(14, 1, 1);
+      _h_fCp = bookHisto1D(15, 1, 1);
+      _h_fDp = bookHisto1D(16, 1, 1);
+      _h_fE = bookHisto1D(17, 1, 1);
+      _h_fF = bookHisto1D(18, 1, 1);
     }
 
 
@@ -246,26 +246,26 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_h_m6J;
-    AIDA::IHistogram1D *_h_X3ppp;
-    AIDA::IHistogram1D *_h_X4ppp;
-    AIDA::IHistogram1D *_h_costheta3ppp;
-    AIDA::IHistogram1D *_h_psi3ppp;
-    AIDA::IHistogram1D *_h_f3ppp;
-    AIDA::IHistogram1D *_h_f4ppp;
-    AIDA::IHistogram1D *_h_f5ppp;
-    AIDA::IHistogram1D *_h_XApp;
-    AIDA::IHistogram1D *_h_XCp;
-    AIDA::IHistogram1D *_h_XE;
-    AIDA::IHistogram1D *_h_psiAppBpp;
-    AIDA::IHistogram1D *_h_psiCpDp;
-    AIDA::IHistogram1D *_h_psiEF;
-    AIDA::IHistogram1D *_h_fApp;
-    AIDA::IHistogram1D *_h_fBpp;
-    AIDA::IHistogram1D *_h_fCp;
-    AIDA::IHistogram1D *_h_fDp;
-    AIDA::IHistogram1D *_h_fE;
-    AIDA::IHistogram1D *_h_fF;
+    Histo1DPtr _h_m6J;
+    Histo1DPtr _h_X3ppp;
+    Histo1DPtr _h_X4ppp;
+    Histo1DPtr _h_costheta3ppp;
+    Histo1DPtr _h_psi3ppp;
+    Histo1DPtr _h_f3ppp;
+    Histo1DPtr _h_f4ppp;
+    Histo1DPtr _h_f5ppp;
+    Histo1DPtr _h_XApp;
+    Histo1DPtr _h_XCp;
+    Histo1DPtr _h_XE;
+    Histo1DPtr _h_psiAppBpp;
+    Histo1DPtr _h_psiCpDp;
+    Histo1DPtr _h_psiEF;
+    Histo1DPtr _h_fApp;
+    Histo1DPtr _h_fBpp;
+    Histo1DPtr _h_fCp;
+    Histo1DPtr _h_fDp;
+    Histo1DPtr _h_fE;
+    Histo1DPtr _h_fF;
 
   };
 

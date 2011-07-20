@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -36,14 +36,14 @@ namespace Rivet {
       addProjection(ChargedFinalState(), "CFS");
 
       // Book histograms
-      _h_z_2jet_001 = bookHistogram1D(1, 1, 1);
-      _h_z_2jet_006 = bookHistogram1D(2, 1, 1);
-      _h_z_2jet_01  = bookHistogram1D(3, 1, 1);
-      _h_z_2jet_033 = bookHistogram1D(4, 1, 1);
-      _h_z_3jet_001 = bookHistogram1D(5, 1, 1);
-      _h_z_3jet_006 = bookHistogram1D(6, 1, 1);
-      _h_z_3jet_01  = bookHistogram1D(7, 1, 1);
-      _h_z_4jet_001 = bookHistogram1D(8, 1, 1);
+      _h_z_2jet_001 = bookHisto1D(1, 1, 1);
+      _h_z_2jet_006 = bookHisto1D(2, 1, 1);
+      _h_z_2jet_01  = bookHisto1D(3, 1, 1);
+      _h_z_2jet_033 = bookHisto1D(4, 1, 1);
+      _h_z_3jet_001 = bookHisto1D(5, 1, 1);
+      _h_z_3jet_006 = bookHisto1D(6, 1, 1);
+      _h_z_3jet_01  = bookHisto1D(7, 1, 1);
+      _h_z_4jet_001 = bookHisto1D(8, 1, 1);
     }
 
 
@@ -153,9 +153,9 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_z_2jet_001, *_h_z_2jet_006, *_h_z_2jet_01, *_h_z_2jet_033;
-    AIDA::IHistogram1D *_h_z_3jet_001, *_h_z_3jet_006, *_h_z_3jet_01;
-    AIDA::IHistogram1D *_h_z_4jet_001;
+    Histo1DPtr _h_z_2jet_001, _h_z_2jet_006, _h_z_2jet_01, _h_z_2jet_033;
+    Histo1DPtr _h_z_3jet_001, _h_z_3jet_006, _h_z_3jet_01;
+    Histo1DPtr _h_z_4jet_001;
     //@}
 
   };

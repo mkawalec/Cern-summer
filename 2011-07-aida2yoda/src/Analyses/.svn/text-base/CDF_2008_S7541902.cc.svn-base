@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -58,11 +58,11 @@ namespace Rivet {
 
       // Book histograms
       for (int i = 0 ; i < 4 ; ++i) {
-        _histJetEt[i] = bookHistogram1D(i+1, 1, 1);
-        _histJetMultRatio[i] = bookDataPointSet(5 , 1, i+1);
-        _histJetMult[i]   = bookHistogram1D(i+6, 1, 1);
+        _histJetEt[i] = bookHisto1D(i+1, 1, 1);
+        _histJetMultRatio[i] = bookScatter2D(5 , 1, i+1);
+        _histJetMult[i]   = bookHisto1D(i+6, 1, 1);
       }
-      _histJetMultNorm = bookHistogram1D("norm", 1, _xpoint, _xpoint+1.);
+      _histJetMultNorm = bookHisto1D("norm", 1, _xpoint, _xpoint+1.);
     }
  
 
@@ -124,46 +124,46 @@ namespace Rivet {
     void finalize() {
       const double xsec = crossSection()/sumOfWeights();
       // Get the x-axis for the ratio plots
-      /// @todo Replace with autobooking etc. once YODA in place
-      std::vector<double> xval; xval.push_back(_xpoint);
-      std::vector<double> xerr; xerr.push_back(.5);
-      // Fill the first ratio histogram using the special normalisation histogram for the total cross section
-      double ratio1to0 = 0.;
-      if (_histJetMultNorm->binHeight(0) > 0.) ratio1to0 = _histJetMult[0]->binHeight(0)/_histJetMultNorm->binHeight(0);
-      // Get the fractional error on the ratio histogram
-      double frac_err1to0 = 0.;
-      if (_histJetMult[0]->binHeight(0) > 0.)  frac_err1to0 = _histJetMult[0]->binError(0)/_histJetMult[0]->binHeight(0);
-      if (_histJetMultNorm->binHeight(0) > 0.) {
-        frac_err1to0 *= frac_err1to0;
-        frac_err1to0 += pow(_histJetMultNorm->binError(0)/_histJetMultNorm->binHeight(0),2.);
-        frac_err1to0 = sqrt(frac_err1to0);
-      }
+      /// @todo YODA Replace with autobooking etc. once YODA in place
+      // std::vector<double> xval; xval.push_back(_xpoint);
+      // std::vector<double> xerr; xerr.push_back(.5);
+      // // Fill the first ratio histogram using the special normalisation histogram for the total cross section
+      // double ratio1to0 = 0.;
+      // if (_histJetMultNorm->bin(0).area() > 0.) ratio1to0 = _histJetMult[0]->bin(0).area()/_histJetMultNorm->bin(0).area();
+      // // Get the fractional error on the ratio histogram
+      // double frac_err1to0 = 0.;
+      // if (_histJetMult[0]->bin(0).area() > 0.)  frac_err1to0 = _histJetMult[0]->bin(0).areaError()/_histJetMult[0]->bin(0).area();
+      // if (_histJetMultNorm->bin(0).area() > 0.) {
+      //   frac_err1to0 *= frac_err1to0;
+      //   frac_err1to0 += pow(_histJetMultNorm->bin(0).areaError()/_histJetMultNorm->bin(0).area(),2.);
+      //   frac_err1to0 = sqrt(frac_err1to0);
+      // }
    
-      /// @todo Replace with autobooking etc. once YODA in place
-      vector<double> yval[4]; yval[0].push_back(ratio1to0);
-      vector<double> yerr[4]; yerr[0].push_back(ratio1to0*frac_err1to0);
-      _histJetMultRatio[0]->setCoordinate(0,xval,xerr);
-      _histJetMultRatio[0]->setCoordinate(1,yval[0],yerr[0]);
-      for (int i = 0; i < 4; ++i) {
-        if (i < 3) {
-          float ratio = 0.0;
-          if (_histJetMult[i]->binHeight(0) > 0.0) ratio = _histJetMult[i+1]->binHeight(0)/_histJetMult[i]->binHeight(0);
-          float frac_err = 0.0;
-          if (_histJetMult[i]->binHeight(0) > 0.0) frac_err = _histJetMult[i]->binError(0)/_histJetMult[i]->binHeight(0);
-          if (_histJetMult[i+1]->binHeight(0) > 0.0) {
-            frac_err *= frac_err;
-            frac_err += pow(_histJetMult[i+1]->binError(0)/_histJetMult[i+1]->binHeight(0),2.);
-            frac_err = sqrt(frac_err);
-          }
-          yval[i+1].push_back(ratio);
-          yerr[i+1].push_back(ratio*frac_err);
-          _histJetMultRatio[i+1]->setCoordinate(0,xval,xerr);
-          _histJetMultRatio[i+1]->setCoordinate(1,yval[i+1],yerr[i+1]);
-        }
-        _histJetEt[i]->scale(xsec);
-        _histJetMult[i]->scale(xsec);
-      }
-      _histJetMultNorm->scale(xsec);
+      // /// @todo Replace with autobooking etc. once YODA in place
+      // vector<double> yval[4]; yval[0].push_back(ratio1to0);
+      // vector<double> yerr[4]; yerr[0].push_back(ratio1to0*frac_err1to0);
+      // _histJetMultRatio[0]->setCoordinate(0,xval,xerr);
+      // _histJetMultRatio[0]->setCoordinate(1,yval[0],yerr[0]);
+      // for (int i = 0; i < 4; ++i) {
+      //   if (i < 3) {
+      //     float ratio = 0.0;
+      //     if (_histJetMult[i]->bin(0).area() > 0.0) ratio = _histJetMult[i+1]->bin(0).area()/_histJetMult[i]->bin(0).area();
+      //     float frac_err = 0.0;
+      //     if (_histJetMult[i]->bin(0).area() > 0.0) frac_err = _histJetMult[i]->binError(0)/_histJetMult[i]->bin(0).area();
+      //     if (_histJetMult[i+1]->bin(0).area() > 0.0) {
+      //       frac_err *= frac_err;
+      //       frac_err += pow(_histJetMult[i+1]->binError(0)/_histJetMult[i+1]->bin(0).area(),2.);
+      //       frac_err = sqrt(frac_err);
+      //     }
+      //     yval[i+1].push_back(ratio);
+      //     yerr[i+1].push_back(ratio*frac_err);
+      //     _histJetMultRatio[i+1]->setCoordinate(0,xval,xerr);
+      //     _histJetMultRatio[i+1]->setCoordinate(1,yval[i+1],yerr[i+1]);
+      //   }
+      //   _histJetEt[i]->scale(xsec);
+      //   _histJetMult[i]->scale(xsec);
+      // }
+      // _histJetMultNorm->scale(xsec);
     }
 
     //@}
@@ -193,10 +193,10 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _histJetEt[4];
-    AIDA::IHistogram1D* _histJetMultNorm;
-    AIDA::IDataPointSet* _histJetMultRatio[4];
-    AIDA::IHistogram1D* _histJetMult[4];
+    Histo1DPtr _histJetEt[4];
+    Histo1DPtr _histJetMultNorm;
+    Scatter2DPtr _histJetMultRatio[4];
+    Histo1DPtr _histJetMult[4];
     //@}
 
   };

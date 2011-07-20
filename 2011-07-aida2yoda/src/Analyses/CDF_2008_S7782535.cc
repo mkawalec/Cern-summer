@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -42,7 +42,7 @@ namespace Rivet {
         addProjection(jsp, pname);
         _h_Psi_pT[i] = bookProfile1D(i+1, 2, 1);
       }
-      _h_OneMinusPsi_vs_pT = bookDataPointSet(5, 1, 1);
+      _h_OneMinusPsi_vs_pT = bookScatter2D(5, 1, 1);
     }
 
 
@@ -97,14 +97,12 @@ namespace Rivet {
     void finalize() {
 
       // Construct final 1-Psi(0.3/0.7) profile from Psi profiles
-      vector<double> y, ey;
       for (size_t i = 0; i < _ptedges.size()-1; ++i) {
         // Get entry for rad_Psi = 0.2 bin
-        AIDA::IProfile1D* ph_i = _h_Psi_pT[i];
-        y.push_back(1.0 - ph_i->binHeight(1));
-        ey.push_back(ph_i->binError(1));
+        Profile1DPtr ph_i = _h_Psi_pT[i];
+	_h_OneMinusPsi_vs_pT->point(i).setY(1.0 - ph_i->bin(1).mean());
+	_h_OneMinusPsi_vs_pT->point(i).setYErr(ph_i->bin(1).stdErr());
       }
-      _h_OneMinusPsi_vs_pT->setCoordinate(1, y, ey);
 
     }
 
@@ -127,8 +125,8 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IProfile1D* _h_Psi_pT[4];
-    AIDA::IDataPointSet* _h_OneMinusPsi_vs_pT;
+    Profile1DPtr _h_Psi_pT[4];
+    Scatter2DPtr _h_OneMinusPsi_vs_pT;
     //@}
 
   };

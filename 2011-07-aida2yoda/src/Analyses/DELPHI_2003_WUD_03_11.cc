@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -95,14 +95,14 @@ namespace Rivet {
       addProjection(FastJets(cfs, FastJets::JADE, 0.7), "JadeJets");
       addProjection(FastJets(cfs, FastJets::DURHAM, 0.7), "DurhamJets");
 
-      _histDurhamBZ      = bookHistogram1D(1, 1, 1);
-      _histDurhamKSW     = bookHistogram1D(2, 1, 1);
-      _histDurhamNR      = bookHistogram1D(3, 1, 1);
-      _histDurhamALPHA34 = bookHistogram1D(4, 1, 1);
-      _histJadeBZ        = bookHistogram1D(1, 2, 1);
-      _histJadeKSW       = bookHistogram1D(2, 2, 1);
-      _histJadeNR        = bookHistogram1D(3, 2, 1);
-      _histJadeALPHA34   = bookHistogram1D(4, 2, 1);
+      _histDurhamBZ      = bookHisto1D(1, 1, 1);
+      _histDurhamKSW     = bookHisto1D(2, 1, 1);
+      _histDurhamNR      = bookHisto1D(3, 1, 1);
+      _histDurhamALPHA34 = bookHisto1D(4, 1, 1);
+      _histJadeBZ        = bookHisto1D(1, 2, 1);
+      _histJadeKSW       = bookHisto1D(2, 2, 1);
+      _histJadeNR        = bookHisto1D(3, 2, 1);
+      _histJadeALPHA34   = bookHisto1D(4, 2, 1);
     }
 
 
@@ -186,14 +186,14 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_histDurhamBZ;
-    AIDA::IHistogram1D *_histDurhamKSW;
-    AIDA::IHistogram1D *_histDurhamNR;
-    AIDA::IHistogram1D *_histDurhamALPHA34;
-    AIDA::IHistogram1D *_histJadeBZ;
-    AIDA::IHistogram1D *_histJadeKSW;
-    AIDA::IHistogram1D *_histJadeNR;
-    AIDA::IHistogram1D *_histJadeALPHA34;
+    Histo1DPtr _histDurhamBZ;
+    Histo1DPtr _histDurhamKSW;
+    Histo1DPtr _histDurhamNR;
+    Histo1DPtr _histDurhamALPHA34;
+    Histo1DPtr _histJadeBZ;
+    Histo1DPtr _histJadeKSW;
+    Histo1DPtr _histJadeNR;
+    Histo1DPtr _histJadeALPHA34;
     //@}
 
   };

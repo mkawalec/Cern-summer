@@ -1,3 +1,25 @@
+2011-07-18  Andy Buckley  <andy@insectnation.org>
+
+	* bin/rivet-buildplugin.in: Pass the AM_CXXFLAGS
+	variable (including the warning flags) to the C++ compiler when
+	building user analysis plugins.
+
+	* include/LWH/DataPointSet.h: Fix accidental setting of errorMinus
+	= scalefactor * error_Plus_. Thanks to Anton Karneyeu for the bug
+	report!
+
+2011-07-18  Hendrik Hoeth <hendrik.hoeth@cern.ch>
+
+	* Added CMS_2011_S8884919 (charged hadron multiplicity in NSD
+	events corrected to pT>=0).
+
+	* Added CMS_2010_S8656010 and CMS_2010_S8547297 (charged
+	hadron pT and eta in NSD events)
+
+	* Added CMS_2011_S8968497 (chi_dijet)
+
+	* Added CMS_2011_S8978280 (strangeness)
+
 2011-07-13  Andy Buckley  <andy@insectnation.org>
 
 	* Rivet PDF manual updates, to not spread disinformation about

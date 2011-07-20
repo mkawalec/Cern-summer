@@ -4,7 +4,7 @@
 #include <string>
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 
@@ -60,7 +60,7 @@ namespace Rivet {
       int hist_bin = 0;
       for (int i = 0; i < (int)_eta_bins.size()-1; ++i) {
         if (fabs(_eta_bins[i] - 1.37) < .0001) continue;
-        _h_Et_photon[i] = bookHistogram1D(1, 1, hist_bin+1);
+        _h_Et_photon[i] = bookHisto1D(1, 1, hist_bin+1);
         hist_bin += 1;
       }
     }
@@ -184,7 +184,7 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_h_Et_photon[6];
+    Histo1DPtr _h_Et_photon[6];
 
     fastjet::AreaDefinition* _area_def;
 

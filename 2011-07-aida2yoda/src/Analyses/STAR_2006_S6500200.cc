@@ -3,7 +3,7 @@
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -34,10 +34,10 @@ namespace Rivet {
       addProjection(pionfs, "PIONFS");
       addProjection(protonfs, "PROTONFS");
 
-      _h_pT_piplus     = bookHistogram1D(1, 1, 1);
-      _h_pT_piminus    = bookHistogram1D(1, 2, 1);
-      _h_pT_proton     = bookHistogram1D(1, 3, 1);
-      _h_pT_antiproton = bookHistogram1D(1, 4, 1);
+      _h_pT_piplus     = bookHisto1D(1, 1, 1);
+      _h_pT_piminus    = bookHisto1D(1, 2, 1);
+      _h_pT_proton     = bookHisto1D(1, 3, 1);
+      _h_pT_antiproton = bookHisto1D(1, 4, 1);
     }
 
 
@@ -83,13 +83,14 @@ namespace Rivet {
 
     /// Finalize
     void finalize() {
-      AIDA::IHistogramFactory& hf = histogramFactory();
-      const string dir = histoDir();
+      // \todo YODA divide
+      // AIDA::IHistogramFactory& hf = histogramFactory();
+      // const string dir = histoDir();
 
-      hf.divide(dir + "/d02-x01-y01", *_h_pT_piminus, *_h_pT_piplus);
-      hf.divide(dir + "/d02-x02-y01", *_h_pT_antiproton, *_h_pT_proton);
-      hf.divide(dir + "/d02-x03-y01", *_h_pT_proton, *_h_pT_piplus);
-      hf.divide(dir + "/d02-x04-y01", *_h_pT_antiproton, *_h_pT_piminus);
+      // hf.divide(dir + "/d02-x01-y01", *_h_pT_piminus, *_h_pT_piplus);
+      // hf.divide(dir + "/d02-x02-y01", *_h_pT_antiproton, *_h_pT_proton);
+      // hf.divide(dir + "/d02-x03-y01", *_h_pT_proton, *_h_pT_piplus);
+      // hf.divide(dir + "/d02-x04-y01", *_h_pT_antiproton, *_h_pT_piminus);
 
       scale(_h_pT_piplus,     1./(2*M_PI*_sumWeightSelected));
       scale(_h_pT_piminus,    1./(2*M_PI*_sumWeightSelected));
@@ -103,10 +104,10 @@ namespace Rivet {
 
     double _sumWeightSelected;
 
-    AIDA::IHistogram1D * _h_pT_piplus;
-    AIDA::IHistogram1D * _h_pT_piminus;
-    AIDA::IHistogram1D * _h_pT_proton;
-    AIDA::IHistogram1D * _h_pT_antiproton;
+    Histo1DPtr _h_pT_piplus;
+    Histo1DPtr _h_pT_piminus;
+    Histo1DPtr _h_pT_proton;
+    Histo1DPtr _h_pT_antiproton;
   };
 
 

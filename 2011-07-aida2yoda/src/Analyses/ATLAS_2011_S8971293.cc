@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -37,15 +37,15 @@ namespace Rivet {
       addProjection(FastJets(FinalState(), FastJets::ANTIKT, 0.6), "AntiKtJets06");
 
       /// Book histograms
-      _h_deltaPhi.addHistogram(110., 160., bookHistogram1D(1, 1, 1));
-      _h_deltaPhi.addHistogram(160., 210., bookHistogram1D(1, 1, 2));
-      _h_deltaPhi.addHistogram(210., 260., bookHistogram1D(1, 1, 3));
-      _h_deltaPhi.addHistogram(260., 310., bookHistogram1D(1, 1, 4));
-      _h_deltaPhi.addHistogram(310., 400., bookHistogram1D(1, 1, 5));
-      _h_deltaPhi.addHistogram(400., 500., bookHistogram1D(1, 1, 6));
-      _h_deltaPhi.addHistogram(500., 600., bookHistogram1D(1, 1, 7));
-      _h_deltaPhi.addHistogram(600., 800., bookHistogram1D(1, 1, 8));
-      _h_deltaPhi.addHistogram(800., 10000., bookHistogram1D(1, 1, 9));
+      _h_deltaPhi.addHistogram(110., 160., bookHisto1D(1, 1, 1));
+      _h_deltaPhi.addHistogram(160., 210., bookHisto1D(1, 1, 2));
+      _h_deltaPhi.addHistogram(210., 260., bookHisto1D(1, 1, 3));
+      _h_deltaPhi.addHistogram(260., 310., bookHisto1D(1, 1, 4));
+      _h_deltaPhi.addHistogram(310., 400., bookHisto1D(1, 1, 5));
+      _h_deltaPhi.addHistogram(400., 500., bookHisto1D(1, 1, 6));
+      _h_deltaPhi.addHistogram(500., 600., bookHisto1D(1, 1, 7));
+      _h_deltaPhi.addHistogram(600., 800., bookHisto1D(1, 1, 8));
+      _h_deltaPhi.addHistogram(800., 10000., bookHisto1D(1, 1, 9));
     }
 
 
@@ -70,7 +70,7 @@ namespace Rivet {
 
     /// Normalise histograms etc., after the run
     void finalize() {
-      foreach (AIDA::IHistogram1D* hist, _h_deltaPhi.getHistograms()) {
+      foreach (Histo1DPtr hist, _h_deltaPhi.getHistograms()) {
         normalize(hist, 1/M_PI);
       }
     }

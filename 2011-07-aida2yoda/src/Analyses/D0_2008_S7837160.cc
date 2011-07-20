@@ -6,10 +6,7 @@
 #include "Rivet/Projections/WFinder.hh"
 #include "Rivet/Projections/LeadingParticlesFinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
-#include "Rivet/RivetAIDA.hh"
-
-#include "LWH/Histogram1D.h"
-#include "LWH/HistogramFactory.h"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -42,12 +39,12 @@ namespace Rivet {
 
       // Cross-section histograms
       const BinEdges& edges = binEdges(1,1,1);
-      _h_dsigplus_deta_25_35  = bookHistogram1D("/dsigplus_deta_25_35", edges);
-      _h_dsigminus_deta_25_35 = bookHistogram1D("/dsigminus_deta_25_35", edges);
-      _h_dsigplus_deta_35     = bookHistogram1D("/dsigplus_deta_35", edges);
-      _h_dsigminus_deta_35    = bookHistogram1D("/dsigminus_deta_35", edges);
-      _h_dsigplus_deta_25     = bookHistogram1D("/dsigplus_deta_25", edges);
-      _h_dsigminus_deta_25    = bookHistogram1D("/dsigminus_deta_25", edges);
+      _h_dsigplus_deta_25_35  = bookHisto1D("/dsigplus_deta_25_35", edges);
+      _h_dsigminus_deta_25_35 = bookHisto1D("/dsigminus_deta_25_35", edges);
+      _h_dsigplus_deta_35     = bookHisto1D("/dsigplus_deta_35", edges);
+      _h_dsigminus_deta_35    = bookHisto1D("/dsigminus_deta_35", edges);
+      _h_dsigplus_deta_25     = bookHisto1D("/dsigplus_deta_25", edges);
+      _h_dsigminus_deta_25    = bookHisto1D("/dsigminus_deta_25", edges);
     }
 
 
@@ -96,40 +93,39 @@ namespace Rivet {
 
     /// Finalize
     void finalize() {
+      // \todo YODA divide
       // Construct asymmetry: (dsig+/deta - dsig-/deta) / (dsig+/deta + dsig-/deta) for each Et region
-      AIDA::IHistogramFactory& hf = histogramFactory();
+      // IHistogram1D* num25_35 = hf.subtract("/num25_35", *_h_dsigplus_deta_25_35, *_h_dsigminus_deta_25_35);
+      // num25_35->scale(100.);
+      // IHistogram1D* denom25_35 = hf.add("/denom25_35", *_h_dsigplus_deta_25_35, *_h_dsigminus_deta_25_35);
+      // assert(num25_35 && denom25_35);
+      // hf.divide(histoDir() + "/d01-x01-y01", *num25_35, *denom25_35);
+      // hf.destroy(num25_35);
+      // hf.destroy(denom25_35);
+      // //
+      // IHistogram1D* num35 = hf.subtract("/num35", *_h_dsigplus_deta_35, *_h_dsigminus_deta_35);
+      // num35->scale(100.);
+      // IHistogram1D* denom35 = hf.add("/denom35", *_h_dsigplus_deta_35, *_h_dsigminus_deta_35);
+      // assert(num35 && denom35);
+      // hf.divide(histoDir() + "/d01-x01-y02", *num35, *denom35);
+      // hf.destroy(num35);
+      // hf.destroy(denom35);
+      // //
+      // IHistogram1D* num25 = hf.subtract("/num25", *_h_dsigplus_deta_25, *_h_dsigminus_deta_25);
+      // num25->scale(100.);
+      // IHistogram1D* denom25 = hf.add("/denom25", *_h_dsigplus_deta_25, *_h_dsigminus_deta_25);
+      // assert(num25 && denom25);
+      // hf.divide(histoDir() + "/d01-x01-y03", *num25, *denom25);
+      // hf.destroy(num25);
+      // hf.destroy(denom25);
 
-      IHistogram1D* num25_35 = hf.subtract("/num25_35", *_h_dsigplus_deta_25_35, *_h_dsigminus_deta_25_35);
-      num25_35->scale(100.);
-      IHistogram1D* denom25_35 = hf.add("/denom25_35", *_h_dsigplus_deta_25_35, *_h_dsigminus_deta_25_35);
-      assert(num25_35 && denom25_35);
-      hf.divide(histoDir() + "/d01-x01-y01", *num25_35, *denom25_35);
-      hf.destroy(num25_35);
-      hf.destroy(denom25_35);
-      //
-      IHistogram1D* num35 = hf.subtract("/num35", *_h_dsigplus_deta_35, *_h_dsigminus_deta_35);
-      num35->scale(100.);
-      IHistogram1D* denom35 = hf.add("/denom35", *_h_dsigplus_deta_35, *_h_dsigminus_deta_35);
-      assert(num35 && denom35);
-      hf.divide(histoDir() + "/d01-x01-y02", *num35, *denom35);
-      hf.destroy(num35);
-      hf.destroy(denom35);
-      //
-      IHistogram1D* num25 = hf.subtract("/num25", *_h_dsigplus_deta_25, *_h_dsigminus_deta_25);
-      num25->scale(100.);
-      IHistogram1D* denom25 = hf.add("/denom25", *_h_dsigplus_deta_25, *_h_dsigminus_deta_25);
-      assert(num25 && denom25);
-      hf.divide(histoDir() + "/d01-x01-y03", *num25, *denom25);
-      hf.destroy(num25);
-      hf.destroy(denom25);
-
-      // Delete raw histos
-      hf.destroy(_h_dsigplus_deta_25_35);
-      hf.destroy(_h_dsigminus_deta_25_35);
-      hf.destroy(_h_dsigplus_deta_35);
-      hf.destroy(_h_dsigminus_deta_35);
-      hf.destroy(_h_dsigplus_deta_25);
-      hf.destroy(_h_dsigminus_deta_25);
+      // // Delete raw histos
+      // hf.destroy(_h_dsigplus_deta_25_35);
+      // hf.destroy(_h_dsigminus_deta_25_35);
+      // hf.destroy(_h_dsigplus_deta_35);
+      // hf.destroy(_h_dsigminus_deta_35);
+      // hf.destroy(_h_dsigplus_deta_25);
+      // hf.destroy(_h_dsigminus_deta_25);
     }
 
     //@}
@@ -139,9 +135,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_h_dsigplus_deta_25_35, *_h_dsigminus_deta_25_35;
-    AIDA::IHistogram1D *_h_dsigplus_deta_35, *_h_dsigminus_deta_35;
-    AIDA::IHistogram1D *_h_dsigplus_deta_25, *_h_dsigminus_deta_25;
+    Histo1DPtr _h_dsigplus_deta_25_35, _h_dsigminus_deta_25_35;
+    Histo1DPtr _h_dsigplus_deta_35, _h_dsigminus_deta_35;
+    Histo1DPtr _h_dsigplus_deta_25, _h_dsigminus_deta_25;
     //@}
 
   };

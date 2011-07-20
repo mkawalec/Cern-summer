@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -36,15 +36,15 @@ namespace Rivet {
       FinalState fs(-4.2, 4.2);
       addProjection(FastJets(fs, FastJets::CDFJETCLU, 0.7), "Jets");
 
-      _h_chi.addHistogram(241.0, 300.0, bookHistogram1D(1, 1, 1));
-      _h_chi.addHistogram(300.0, 400.0, bookHistogram1D(1, 1, 2));
-      _h_chi.addHistogram(400.0, 517.0, bookHistogram1D(1, 1, 3));
-      _h_chi.addHistogram(517.0, 625.0, bookHistogram1D(1, 1, 4));
-      _h_chi.addHistogram(625.0, 1800.0, bookHistogram1D(1, 1, 5));
+      _h_chi.addHistogram(241.0, 300.0, bookHisto1D(1, 1, 1));
+      _h_chi.addHistogram(300.0, 400.0, bookHisto1D(1, 1, 2));
+      _h_chi.addHistogram(400.0, 517.0, bookHisto1D(1, 1, 3));
+      _h_chi.addHistogram(517.0, 625.0, bookHisto1D(1, 1, 4));
+      _h_chi.addHistogram(625.0, 1800.0, bookHisto1D(1, 1, 5));
 
-      _h_ratio = bookDataPointSet(2,1,1,"","","");
-      _chi_above_25.resize(_h_ratio->size());
-      _chi_below_25.resize(_h_ratio->size());
+      _h_ratio = bookScatter2D(2,1,1,"","","");
+      _chi_above_25.resize(_h_ratio->numPoints());
+      _chi_below_25.resize(_h_ratio->numPoints());
     }
 
 
@@ -68,33 +68,34 @@ namespace Rivet {
       double m = FourMomentum(jet1+jet2).mass();
       _h_chi.fill(m, chi, weight);
 
-      // fill ratio counter
-      if (m > _h_ratio->lowerExtent(0) && m < _h_ratio->upperExtent(0)) {
-        int bin=-1;
-        for (int i=0; i<_h_ratio->size(); ++i) {
-          AIDA::IMeasurement* x = _h_ratio->point(i)->coordinate(0);
-          if (m > x->value()-x->errorMinus() && m < x->value()+x->errorPlus()) {
-            bin=i;
-            break;
-          }
-        }
-        if (bin>-1) {
-          if (chi>2.5) _chi_above_25[bin] += weight;
-          else _chi_below_25[bin] += weight;
-        }
-      }
+      // \todo YODA extents
+      // // fill ratio counter
+      // if (m > _h_ratio->lowerExtent(0) && m < _h_ratio->upperExtent(0)) {
+      //   int bin=-1;
+      //   for (size_t i=0; i<_h_ratio->numPoints(); ++i) {
+      //     AIDA::IMeasurement* x = _h_ratio->point(i)->coordinate(0);
+      //     if (m > x->value()-x->errorMinus() && m < x->value()+x->errorPlus()) {
+      //       bin=i;
+      //       break;
+      //     }
+      //   }
+      //   if (bin>-1) {
+      //     if (chi>2.5) _chi_above_25[bin] += weight;
+      //     else _chi_below_25[bin] += weight;
+      //   }
+      // }
     }
 
 
     /// Normalise histograms etc., after the run
     void finalize() {
 
-      foreach (AIDA::IHistogram1D* hist, _h_chi.getHistograms()) {
+      foreach (Histo1DPtr hist, _h_chi.getHistograms()) {
         normalize(hist);
       }
 
-      for (int bin=0; bin<_h_ratio->size(); ++bin) {
-        _h_ratio->point(bin)->coordinate(1)->setValue(_chi_below_25[bin]/_chi_above_25[bin]);
+      for (size_t bin=0; bin<_h_ratio->numPoints(); ++bin) {
+        _h_ratio->point(bin).setY(_chi_below_25[bin]/_chi_above_25[bin]);
         /// @todo calculate errors while analysing and fill them here as well
       }
     }
@@ -113,7 +114,7 @@ namespace Rivet {
     /// @name Histograms
     //@{
     BinnedHistogram<double> _h_chi;
-    AIDA::IDataPointSet* _h_ratio;
+    Scatter2DPtr _h_ratio;
     //@}
 
   };

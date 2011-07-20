@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/RivetBoost.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Analysis.hh"
 
 namespace Rivet {
@@ -10,7 +10,7 @@ namespace Rivet {
   template<typename T>
   const BinnedHistogram<T>& BinnedHistogram<T>::addHistogram(const T& binMin, 
                                                              const T& binMax, 
-                                                             AIDA::IHistogram1D *histo){
+                                                             Histo1DPtr histo){
     if (binMin > binMax) {
       throw Error
         ("Cannot add a binned histogram where the lower bin edge is above the upper edge");
@@ -18,7 +18,7 @@ namespace Rivet {
     _histosByUpperBound[binMax] = histo;
     _histosByLowerBound[binMin] = histo;
     bool found = false;
-    foreach (AIDA::IHistogram1D* hist, _histos) {
+    foreach (Histo1DPtr hist, _histos) {
       if (hist == histo) {
         found = true;
         break;
@@ -36,18 +36,18 @@ namespace Rivet {
 
 
   template<typename T>
-  AIDA::IHistogram1D* BinnedHistogram<T>::fill(const T& bin,
+  Histo1DPtr BinnedHistogram<T>::fill(const T& bin,
                                                      const T& val,
                                                      double weight) {
 
-    typename map<T, AIDA::IHistogram1D*>::iterator histIt =
+    typename map<T, Histo1DPtr>::iterator histIt =
       _histosByUpperBound.upper_bound(bin);
     //check that the bin is not out of range
     if (histIt == _histosByUpperBound.end()) {
       return 0;
     }
  
-    AIDA::IHistogram1D* histo = histIt->second;
+    Histo1DPtr histo = histIt->second;
     histIt = _histosByLowerBound.lower_bound(bin);
 
     // No need to check going beyond the upper bound if we already passed above
@@ -72,7 +72,7 @@ namespace Rivet {
   
   template<typename T>
   void BinnedHistogram<T>::scale(const T& scale, Analysis* ana) {
-    foreach (AIDA::IHistogram1D* hist, getHistograms()) {
+    foreach (Histo1DPtr hist, getHistograms()) {
       ana->scale(hist, scale/_binWidths[hist]);
     }
   }

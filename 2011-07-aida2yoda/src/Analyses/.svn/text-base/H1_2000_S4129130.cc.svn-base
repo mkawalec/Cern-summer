@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Math/Constants.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -189,13 +189,13 @@ namespace Rivet {
       addProjection(FinalState(), "FS");
    
       // Histos
-      IHistogram1D* h = 0;
+      Histo1DPtr h;
    
       // Histograms and weight vectors for low Q^2 a
       _histETLowQa.reserve(17);
       _weightETLowQa.reserve(17);
       for (size_t ix = 0; ix < 17; ++ix) {
-        h = bookHistogram1D(ix+1, 1, 1);
+        h = bookHisto1D(ix+1, 1, 1);
         _histETLowQa.push_back(h);
         _weightETLowQa.push_back(0.);
       }
@@ -204,7 +204,7 @@ namespace Rivet {
       _histETHighQa.reserve(7);
       _weightETHighQa.reserve(7);
       for (size_t ix = 0; ix < 7; ++ix) {
-        h = bookHistogram1D(ix+18, 1, 1);
+        h = bookHisto1D(ix+18, 1, 1);
         _histETHighQa.push_back(h);
         _weightETHighQa.push_back(0.);
       }
@@ -213,7 +213,7 @@ namespace Rivet {
       _histETLowQb.reserve(5);
       _weightETLowQb.reserve(5);
       for (size_t ix = 0; ix < 5; ++ix) {
-        h = bookHistogram1D(ix+25, 1, 1);
+        h = bookHisto1D(ix+25, 1, 1);
         _histETLowQb.push_back(h);
         _weightETLowQb.push_back(0.);
       }
@@ -222,7 +222,7 @@ namespace Rivet {
       _histETHighQb.reserve(3);
       _weightETHighQb.reserve(3);
       for (size_t ix = 0; ix < 3; ++ix) {
-        h = bookHistogram1D(30+ix, 1, 1);
+        h = bookHisto1D(30+ix, 1, 1);
         _histETHighQb.push_back(h);
         _weightETHighQb.push_back(0.0);
       }
@@ -258,12 +258,12 @@ namespace Rivet {
  
     /// @name Histograms
     //@{
-    vector<AIDA::IHistogram1D *> _histETLowQa;
-    vector<AIDA::IHistogram1D *> _histETHighQa;
-    vector<AIDA::IHistogram1D *> _histETLowQb;
-    vector<AIDA::IHistogram1D *> _histETHighQb;
-    AIDA::IProfile1D * _histAverETCentral;
-    AIDA::IProfile1D * _histAverETFrag;
+    vector<Histo1DPtr> _histETLowQa;
+    vector<Histo1DPtr> _histETHighQa;
+    vector<Histo1DPtr> _histETLowQb;
+    vector<Histo1DPtr> _histETHighQb;
+    Profile1DPtr _histAverETCentral;
+    Profile1DPtr _histAverETFrag;
     //@}
 
     /// @name storage of weights for normalisation

@@ -4,7 +4,7 @@
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Projections/VetoedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 
 namespace Rivet {
@@ -39,9 +39,9 @@ namespace Rivet {
       elfs.acceptIdPair(ELECTRON);
       addProjection(elfs, "LeadingElectrons");
 
-      _h_jet_multiplicity = bookHistogram1D(1, 1, 1);
-      _h_jet_pT_cross_section_incl_1jet = bookHistogram1D(2, 1, 1);
-      _h_jet_pT_cross_section_incl_2jet = bookHistogram1D(3, 1, 1);
+      _h_jet_multiplicity = bookHisto1D(1, 1, 1);
+      _h_jet_pT_cross_section_incl_1jet = bookHisto1D(2, 1, 1);
+      _h_jet_pT_cross_section_incl_2jet = bookHisto1D(3, 1, 1);
     }
 
 
@@ -185,9 +185,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_jet_multiplicity;
-    AIDA::IHistogram1D * _h_jet_pT_cross_section_incl_1jet;
-    AIDA::IHistogram1D * _h_jet_pT_cross_section_incl_2jet;
+    Histo1DPtr _h_jet_multiplicity;
+    Histo1DPtr _h_jet_pT_cross_section_incl_1jet;
+    Histo1DPtr _h_jet_pT_cross_section_incl_2jet;
     //@}
 
   };

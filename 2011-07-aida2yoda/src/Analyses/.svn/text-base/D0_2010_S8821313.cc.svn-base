@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
@@ -47,12 +47,12 @@ namespace Rivet {
       addProjection(zfinder_mm, "zfinder_mm");
 
       /// Book histograms here
-      _h_phistar_ee.addHistogram(0.0, 1.0, bookHistogram1D(1, 1, 1));
-      _h_phistar_ee.addHistogram(1.0, 2.0, bookHistogram1D(1, 1, 2));
-      _h_phistar_ee.addHistogram(2.0, 10.0, bookHistogram1D(1, 1, 3));
+      _h_phistar_ee.addHistogram(0.0, 1.0, bookHisto1D(1, 1, 1));
+      _h_phistar_ee.addHistogram(1.0, 2.0, bookHisto1D(1, 1, 2));
+      _h_phistar_ee.addHistogram(2.0, 10.0, bookHisto1D(1, 1, 3));
 
-      _h_phistar_mm.addHistogram(0.0, 1.0, bookHistogram1D(2, 1, 1));
-      _h_phistar_mm.addHistogram(1.0, 2.0, bookHistogram1D(2, 1, 2));
+      _h_phistar_mm.addHistogram(0.0, 1.0, bookHisto1D(2, 1, 1));
+      _h_phistar_mm.addHistogram(1.0, 2.0, bookHisto1D(2, 1, 2));
     }
 
 
@@ -94,10 +94,10 @@ namespace Rivet {
 
     /// Normalise histograms etc., after the run
     void finalize() {
-      foreach (AIDA::IHistogram1D* hist, _h_phistar_ee.getHistograms()) {
+      foreach (Histo1DPtr hist, _h_phistar_ee.getHistograms()) {
         normalize(hist, 1.0);
       }
-      foreach (AIDA::IHistogram1D* hist, _h_phistar_mm.getHistograms()) {
+      foreach (Histo1DPtr hist, _h_phistar_mm.getHistograms()) {
         normalize(hist, 1.0);
       }
     }

@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/Sphericity.hh"
@@ -65,83 +65,83 @@ namespace Rivet {
       addProjection(thrust, "Thrust");
       addProjection(Hemispheres(thrust), "Hemispheres");
 
-      _histPtTIn = bookHistogram1D(1, 1, 1);
-      _histPtTOut = bookHistogram1D(2, 1, 1);
-      _histPtSIn = bookHistogram1D(3, 1, 1);
-      _histPtSOut = bookHistogram1D(4, 1, 1);
+      _histPtTIn = bookHisto1D(1, 1, 1);
+      _histPtTOut = bookHisto1D(2, 1, 1);
+      _histPtSIn = bookHisto1D(3, 1, 1);
+      _histPtSOut = bookHisto1D(4, 1, 1);
 
-      _histRapidityT = bookHistogram1D(5, 1, 1);
-      _histRapidityS = bookHistogram1D(6, 1, 1);
-      _histScaledMom = bookHistogram1D(7, 1, 1);
-      _histLogScaledMom = bookHistogram1D(8, 1, 1);
+      _histRapidityT = bookHisto1D(5, 1, 1);
+      _histRapidityS = bookHisto1D(6, 1, 1);
+      _histScaledMom = bookHisto1D(7, 1, 1);
+      _histLogScaledMom = bookHisto1D(8, 1, 1);
 
       _histPtTOutVsXp = bookProfile1D(9,  1, 1);
       _histPtVsXp = bookProfile1D(10, 1, 1);
 
-      _hist1MinusT = bookHistogram1D(11, 1, 1);
-      _histTMajor = bookHistogram1D(12, 1, 1);
-      _histTMinor = bookHistogram1D(13, 1, 1);
-      _histOblateness = bookHistogram1D(14, 1, 1);
+      _hist1MinusT = bookHisto1D(11, 1, 1);
+      _histTMajor = bookHisto1D(12, 1, 1);
+      _histTMinor = bookHisto1D(13, 1, 1);
+      _histOblateness = bookHisto1D(14, 1, 1);
 
-      _histSphericity = bookHistogram1D(15, 1, 1);
-      _histAplanarity = bookHistogram1D(16, 1, 1);
-      _histPlanarity = bookHistogram1D(17, 1, 1);
+      _histSphericity = bookHisto1D(15, 1, 1);
+      _histAplanarity = bookHisto1D(16, 1, 1);
+      _histPlanarity = bookHisto1D(17, 1, 1);
 
-      _histCParam = bookHistogram1D(18, 1, 1);
-      _histDParam = bookHistogram1D(19, 1, 1);
+      _histCParam = bookHisto1D(18, 1, 1);
+      _histDParam = bookHisto1D(19, 1, 1);
 
-      _histHemiMassH = bookHistogram1D(20, 1, 1);
-      _histHemiMassL = bookHistogram1D(21, 1, 1);
-      _histHemiMassD = bookHistogram1D(22, 1, 1);
+      _histHemiMassH = bookHisto1D(20, 1, 1);
+      _histHemiMassL = bookHisto1D(21, 1, 1);
+      _histHemiMassD = bookHisto1D(22, 1, 1);
 
-      _histHemiBroadW = bookHistogram1D(23, 1, 1);
-      _histHemiBroadN = bookHistogram1D(24, 1, 1);
-      _histHemiBroadT = bookHistogram1D(25, 1, 1);
-      _histHemiBroadD = bookHistogram1D(26, 1, 1);
+      _histHemiBroadW = bookHisto1D(23, 1, 1);
+      _histHemiBroadN = bookHisto1D(24, 1, 1);
+      _histHemiBroadT = bookHisto1D(25, 1, 1);
+      _histHemiBroadD = bookHisto1D(26, 1, 1);
 
       // Binned in y_cut
-      _histDiffRate2Durham = bookHistogram1D(27, 1, 1);
-      _histDiffRate2Jade = bookHistogram1D(28, 1, 1);
-      _histDiffRate3Durham = bookHistogram1D(29, 1, 1);
-      _histDiffRate3Jade = bookHistogram1D(30, 1, 1);
-      _histDiffRate4Durham = bookHistogram1D(31, 1, 1);
-      _histDiffRate4Jade = bookHistogram1D(32, 1, 1);
+      _histDiffRate2Durham = bookHisto1D(27, 1, 1);
+      _histDiffRate2Jade = bookHisto1D(28, 1, 1);
+      _histDiffRate3Durham = bookHisto1D(29, 1, 1);
+      _histDiffRate3Jade = bookHisto1D(30, 1, 1);
+      _histDiffRate4Durham = bookHisto1D(31, 1, 1);
+      _histDiffRate4Jade = bookHisto1D(32, 1, 1);
 
       // Binned in cos(chi)
-      _histEEC = bookHistogram1D(33, 1, 1);
-      _histAEEC = bookHistogram1D(34, 1, 1);
+      _histEEC = bookHisto1D(33, 1, 1);
+      _histAEEC = bookHisto1D(34, 1, 1);
 
-      _histMultiCharged = bookHistogram1D(35, 1, 1);
+      _histMultiCharged = bookHisto1D(35, 1, 1);
 
-      _histMultiPiPlus = bookHistogram1D(36, 1, 1);
-      _histMultiPi0 = bookHistogram1D(36, 1, 2);
-      _histMultiKPlus = bookHistogram1D(36, 1, 3);
-      _histMultiK0 = bookHistogram1D(36, 1, 4);
-      _histMultiEta = bookHistogram1D(36, 1, 5);
-      _histMultiEtaPrime = bookHistogram1D(36, 1, 6);
-      _histMultiDPlus = bookHistogram1D(36, 1, 7);
-      _histMultiD0 = bookHistogram1D(36, 1, 8);
-      _histMultiBPlus0 = bookHistogram1D(36, 1, 9);
+      _histMultiPiPlus = bookHisto1D(36, 1, 1);
+      _histMultiPi0 = bookHisto1D(36, 1, 2);
+      _histMultiKPlus = bookHisto1D(36, 1, 3);
+      _histMultiK0 = bookHisto1D(36, 1, 4);
+      _histMultiEta = bookHisto1D(36, 1, 5);
+      _histMultiEtaPrime = bookHisto1D(36, 1, 6);
+      _histMultiDPlus = bookHisto1D(36, 1, 7);
+      _histMultiD0 = bookHisto1D(36, 1, 8);
+      _histMultiBPlus0 = bookHisto1D(36, 1, 9);
 
-      _histMultiF0 = bookHistogram1D(37, 1, 1);
+      _histMultiF0 = bookHisto1D(37, 1, 1);
 
-      _histMultiRho = bookHistogram1D(38, 1, 1);
-      _histMultiKStar892Plus = bookHistogram1D(38, 1, 2);
-      _histMultiKStar892_0 = bookHistogram1D(38, 1, 3);
-      _histMultiPhi = bookHistogram1D(38, 1, 4);
-      _histMultiDStar2010Plus = bookHistogram1D(38, 1, 5);
+      _histMultiRho = bookHisto1D(38, 1, 1);
+      _histMultiKStar892Plus = bookHisto1D(38, 1, 2);
+      _histMultiKStar892_0 = bookHisto1D(38, 1, 3);
+      _histMultiPhi = bookHisto1D(38, 1, 4);
+      _histMultiDStar2010Plus = bookHisto1D(38, 1, 5);
 
-      _histMultiF2 = bookHistogram1D(39, 1, 1);
-      _histMultiK2Star1430_0 = bookHistogram1D(39, 1, 2);
+      _histMultiF2 = bookHisto1D(39, 1, 1);
+      _histMultiK2Star1430_0 = bookHisto1D(39, 1, 2);
 
-      _histMultiP = bookHistogram1D(40, 1, 1);
-      _histMultiLambda0 = bookHistogram1D(40, 1, 2);
-      _histMultiXiMinus = bookHistogram1D(40, 1, 3);
-      _histMultiOmegaMinus = bookHistogram1D(40, 1, 4);
-      _histMultiDeltaPlusPlus = bookHistogram1D(40, 1, 5);
-      _histMultiSigma1385Plus = bookHistogram1D(40, 1, 6);
-      _histMultiXi1530_0 = bookHistogram1D(40, 1, 7);
-      _histMultiLambdaB0 = bookHistogram1D(40, 1, 8);
+      _histMultiP = bookHisto1D(40, 1, 1);
+      _histMultiLambda0 = bookHisto1D(40, 1, 2);
+      _histMultiXiMinus = bookHisto1D(40, 1, 3);
+      _histMultiOmegaMinus = bookHisto1D(40, 1, 4);
+      _histMultiDeltaPlusPlus = bookHisto1D(40, 1, 5);
+      _histMultiSigma1385Plus = bookHisto1D(40, 1, 6);
+      _histMultiXi1530_0 = bookHisto1D(40, 1, 7);
+      _histMultiLambdaB0 = bookHisto1D(40, 1, 8);
     }
 
 
@@ -275,7 +275,7 @@ namespace Rivet {
         }
       }
 
-      _histMultiCharged->fill(_histMultiCharged->binMean(0), numParticles*weight);
+      _histMultiCharged->fill(_histMultiCharged->bin(0).xMean(), numParticles*weight);
 
 
       // Final state of unstable particles to get particle spectra
@@ -285,82 +285,82 @@ namespace Rivet {
         int id = abs(p.pdgId());
         switch (id) {
         case 211:
-          _histMultiPiPlus->fill(_histMultiPiPlus->binMean(0), weight);
+          _histMultiPiPlus->fill(_histMultiPiPlus->bin(0).xMean(), weight);
           break;
         case 111:
-          _histMultiPi0->fill(_histMultiPi0->binMean(0), weight);
+          _histMultiPi0->fill(_histMultiPi0->bin(0).xMean(), weight);
           break;
         case 321:
-          _histMultiKPlus->fill(_histMultiKPlus->binMean(0), weight);
+          _histMultiKPlus->fill(_histMultiKPlus->bin(0).xMean(), weight);
           break;
         case 130:
         case 310:
-          _histMultiK0->fill(_histMultiK0->binMean(0), weight);
+          _histMultiK0->fill(_histMultiK0->bin(0).xMean(), weight);
           break;
         case 221:
-          _histMultiEta->fill(_histMultiEta->binMean(0), weight);
+          _histMultiEta->fill(_histMultiEta->bin(0).xMean(), weight);
           break;
         case 331:
-          _histMultiEtaPrime->fill(_histMultiEtaPrime->binMean(0), weight);
+          _histMultiEtaPrime->fill(_histMultiEtaPrime->bin(0).xMean(), weight);
           break;
         case 411:
-          _histMultiDPlus->fill(_histMultiDPlus->binMean(0), weight);
+          _histMultiDPlus->fill(_histMultiDPlus->bin(0).xMean(), weight);
           break;
         case 421:
-          _histMultiD0->fill(_histMultiD0->binMean(0), weight);
+          _histMultiD0->fill(_histMultiD0->bin(0).xMean(), weight);
           break;
         case 511:
         case 521:
         case 531:
-          _histMultiBPlus0->fill(_histMultiBPlus0->binMean(0), weight);
+          _histMultiBPlus0->fill(_histMultiBPlus0->bin(0).xMean(), weight);
           break;
         case 9010221:
-          _histMultiF0->fill(_histMultiF0->binMean(0), weight);
+          _histMultiF0->fill(_histMultiF0->bin(0).xMean(), weight);
           break;
         case 113:
-          _histMultiRho->fill(_histMultiRho->binMean(0), weight);
+          _histMultiRho->fill(_histMultiRho->bin(0).xMean(), weight);
           break;
         case 323:
-          _histMultiKStar892Plus->fill(_histMultiKStar892Plus->binMean(0), weight);
+          _histMultiKStar892Plus->fill(_histMultiKStar892Plus->bin(0).xMean(), weight);
           break;
         case 313:
-          _histMultiKStar892_0->fill(_histMultiKStar892_0->binMean(0), weight);
+          _histMultiKStar892_0->fill(_histMultiKStar892_0->bin(0).xMean(), weight);
           break;
         case 333:
-          _histMultiPhi->fill(_histMultiPhi->binMean(0), weight);
+          _histMultiPhi->fill(_histMultiPhi->bin(0).xMean(), weight);
           break;
         case 413:
-          _histMultiDStar2010Plus->fill(_histMultiDStar2010Plus->binMean(0), weight);
+          _histMultiDStar2010Plus->fill(_histMultiDStar2010Plus->bin(0).xMean(), weight);
           break;
         case 225:
-          _histMultiF2->fill(_histMultiF2->binMean(0), weight);
+          _histMultiF2->fill(_histMultiF2->bin(0).xMean(), weight);
           break;
         case 315:
-          _histMultiK2Star1430_0->fill(_histMultiK2Star1430_0->binMean(0), weight);
+          _histMultiK2Star1430_0->fill(_histMultiK2Star1430_0->bin(0).xMean(), weight);
           break;
         case 2212:
-          _histMultiP->fill(_histMultiP->binMean(0), weight);
+          _histMultiP->fill(_histMultiP->bin(0).xMean(), weight);
           break;
         case 3122:
-          _histMultiLambda0->fill(_histMultiLambda0->binMean(0), weight);
+          _histMultiLambda0->fill(_histMultiLambda0->bin(0).xMean(), weight);
           break;
         case 3312:
-          _histMultiXiMinus->fill(_histMultiXiMinus->binMean(0), weight);
+          _histMultiXiMinus->fill(_histMultiXiMinus->bin(0).xMean(), weight);
           break;
         case 3334:
-          _histMultiOmegaMinus->fill(_histMultiOmegaMinus->binMean(0), weight);
+          _histMultiOmegaMinus->fill(_histMultiOmegaMinus->bin(0).xMean(), weight);
           break;
         case 2224:
-          _histMultiDeltaPlusPlus->fill(_histMultiDeltaPlusPlus->binMean(0), weight);
+          _histMultiDeltaPlusPlus->fill(_histMultiDeltaPlusPlus->bin(0).xMean(), weight);
           break;
         case 3114:
-          _histMultiSigma1385Plus->fill(_histMultiSigma1385Plus->binMean(0), weight);
+          _histMultiSigma1385Plus->fill(_histMultiSigma1385Plus->bin(0).xMean(), weight);
           break;
         case 3324:
-          _histMultiXi1530_0->fill(_histMultiXi1530_0->binMean(0), weight);
+          _histMultiXi1530_0->fill(_histMultiXi1530_0->bin(0).xMean(), weight);
           break;
         case 5122:
-          _histMultiLambdaB0->fill(_histMultiLambdaB0->binMean(0), weight);
+          _histMultiLambdaB0->fill(_histMultiLambdaB0->bin(0).xMean(), weight);
           break;
         }
       }
@@ -468,79 +468,79 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_histPtTIn;
-    AIDA::IHistogram1D *_histPtTOut;
-    AIDA::IHistogram1D *_histPtSIn;
-    AIDA::IHistogram1D *_histPtSOut;
+    Histo1DPtr _histPtTIn;
+    Histo1DPtr _histPtTOut;
+    Histo1DPtr _histPtSIn;
+    Histo1DPtr _histPtSOut;
 
-    AIDA::IHistogram1D *_histRapidityT;
-    AIDA::IHistogram1D *_histRapidityS;
+    Histo1DPtr _histRapidityT;
+    Histo1DPtr _histRapidityS;
 
-    AIDA::IHistogram1D *_histScaledMom, *_histLogScaledMom;
+    Histo1DPtr _histScaledMom, _histLogScaledMom;
 
-    AIDA::IProfile1D   *_histPtTOutVsXp, *_histPtVsXp;
+    Profile1DPtr   _histPtTOutVsXp, _histPtVsXp;
 
-    AIDA::IHistogram1D *_hist1MinusT;
-    AIDA::IHistogram1D *_histTMajor;
-    AIDA::IHistogram1D *_histTMinor;
-    AIDA::IHistogram1D *_histOblateness;
+    Histo1DPtr _hist1MinusT;
+    Histo1DPtr _histTMajor;
+    Histo1DPtr _histTMinor;
+    Histo1DPtr _histOblateness;
 
-    AIDA::IHistogram1D *_histSphericity;
-    AIDA::IHistogram1D *_histAplanarity;
-    AIDA::IHistogram1D *_histPlanarity;
+    Histo1DPtr _histSphericity;
+    Histo1DPtr _histAplanarity;
+    Histo1DPtr _histPlanarity;
 
-    AIDA::IHistogram1D *_histCParam;
-    AIDA::IHistogram1D *_histDParam;
+    Histo1DPtr _histCParam;
+    Histo1DPtr _histDParam;
 
-    AIDA::IHistogram1D *_histHemiMassD;
-    AIDA::IHistogram1D *_histHemiMassH;
-    AIDA::IHistogram1D *_histHemiMassL;
+    Histo1DPtr _histHemiMassD;
+    Histo1DPtr _histHemiMassH;
+    Histo1DPtr _histHemiMassL;
 
-    AIDA::IHistogram1D *_histHemiBroadW;
-    AIDA::IHistogram1D *_histHemiBroadN;
-    AIDA::IHistogram1D *_histHemiBroadT;
-    AIDA::IHistogram1D *_histHemiBroadD;
+    Histo1DPtr _histHemiBroadW;
+    Histo1DPtr _histHemiBroadN;
+    Histo1DPtr _histHemiBroadT;
+    Histo1DPtr _histHemiBroadD;
 
-    AIDA::IHistogram1D *_histDiffRate2Durham;
-    AIDA::IHistogram1D *_histDiffRate2Jade;
-    AIDA::IHistogram1D *_histDiffRate3Durham;
-    AIDA::IHistogram1D *_histDiffRate3Jade;
-    AIDA::IHistogram1D *_histDiffRate4Durham;
-    AIDA::IHistogram1D *_histDiffRate4Jade;
+    Histo1DPtr _histDiffRate2Durham;
+    Histo1DPtr _histDiffRate2Jade;
+    Histo1DPtr _histDiffRate3Durham;
+    Histo1DPtr _histDiffRate3Jade;
+    Histo1DPtr _histDiffRate4Durham;
+    Histo1DPtr _histDiffRate4Jade;
 
-    AIDA::IHistogram1D *_histEEC, *_histAEEC;
+    Histo1DPtr _histEEC, _histAEEC;
 
-    AIDA::IHistogram1D *_histMultiCharged;
+    Histo1DPtr _histMultiCharged;
 
-    AIDA::IHistogram1D *_histMultiPiPlus;
-    AIDA::IHistogram1D *_histMultiPi0;
-    AIDA::IHistogram1D *_histMultiKPlus;
-    AIDA::IHistogram1D *_histMultiK0;
-    AIDA::IHistogram1D *_histMultiEta;
-    AIDA::IHistogram1D *_histMultiEtaPrime;
-    AIDA::IHistogram1D *_histMultiDPlus;
-    AIDA::IHistogram1D *_histMultiD0;
-    AIDA::IHistogram1D *_histMultiBPlus0;
+    Histo1DPtr _histMultiPiPlus;
+    Histo1DPtr _histMultiPi0;
+    Histo1DPtr _histMultiKPlus;
+    Histo1DPtr _histMultiK0;
+    Histo1DPtr _histMultiEta;
+    Histo1DPtr _histMultiEtaPrime;
+    Histo1DPtr _histMultiDPlus;
+    Histo1DPtr _histMultiD0;
+    Histo1DPtr _histMultiBPlus0;
 
-    AIDA::IHistogram1D *_histMultiF0;
+    Histo1DPtr _histMultiF0;
 
-    AIDA::IHistogram1D *_histMultiRho;
-    AIDA::IHistogram1D *_histMultiKStar892Plus;
-    AIDA::IHistogram1D *_histMultiKStar892_0;
-    AIDA::IHistogram1D *_histMultiPhi;
-    AIDA::IHistogram1D *_histMultiDStar2010Plus;
+    Histo1DPtr _histMultiRho;
+    Histo1DPtr _histMultiKStar892Plus;
+    Histo1DPtr _histMultiKStar892_0;
+    Histo1DPtr _histMultiPhi;
+    Histo1DPtr _histMultiDStar2010Plus;
 
-    AIDA::IHistogram1D *_histMultiF2;
-    AIDA::IHistogram1D *_histMultiK2Star1430_0;
+    Histo1DPtr _histMultiF2;
+    Histo1DPtr _histMultiK2Star1430_0;
 
-    AIDA::IHistogram1D *_histMultiP;
-    AIDA::IHistogram1D *_histMultiLambda0;
-    AIDA::IHistogram1D *_histMultiXiMinus;
-    AIDA::IHistogram1D *_histMultiOmegaMinus;
-    AIDA::IHistogram1D *_histMultiDeltaPlusPlus;
-    AIDA::IHistogram1D *_histMultiSigma1385Plus;
-    AIDA::IHistogram1D *_histMultiXi1530_0;
-    AIDA::IHistogram1D *_histMultiLambdaB0;
+    Histo1DPtr _histMultiP;
+    Histo1DPtr _histMultiLambda0;
+    Histo1DPtr _histMultiXiMinus;
+    Histo1DPtr _histMultiOmegaMinus;
+    Histo1DPtr _histMultiDeltaPlusPlus;
+    Histo1DPtr _histMultiSigma1385Plus;
+    Histo1DPtr _histMultiXi1530_0;
+    Histo1DPtr _histMultiLambdaB0;
     //@}
 
   };

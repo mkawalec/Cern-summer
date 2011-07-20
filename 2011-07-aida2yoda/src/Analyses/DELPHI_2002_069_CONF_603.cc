@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -35,8 +35,8 @@ namespace Rivet {
       addProjection(Beam(), "Beams");
       addProjection(ChargedFinalState(), "FS");
 
-      _histXbprim     = bookHistogram1D(1, 1, 1);
-      _histXbweak     = bookHistogram1D(2, 1, 1);
+      _histXbprim     = bookHisto1D(1, 1, 1);
+      _histXbweak     = bookHisto1D(2, 1, 1);
       _histMeanXbprim = bookProfile1D(4, 1, 1);
       _histMeanXbweak = bookProfile1D(5, 1, 1);
     }
@@ -77,7 +77,7 @@ namespace Rivet {
             }
             if (is_primary) {
               _histXbprim->fill(xp, weight);
-              _histMeanXbprim->fill(_histMeanXbprim->binMean(0), xp, weight);
+              _histMeanXbprim->fill(_histMeanXbprim->bin(0).xMean(), xp, weight);
             }
           }
        
@@ -92,7 +92,7 @@ namespace Rivet {
             }
             if (is_weak) {
               _histXbweak->fill(xp, weight);
-              _histMeanXbweak->fill(_histMeanXbweak->binMean(0), xp, weight);
+              _histMeanXbweak->fill(_histMeanXbweak->bin(0).xMean(), xp, weight);
             }
           }
        
@@ -114,11 +114,11 @@ namespace Rivet {
     /// particles - used to calculate average number of particles for the
     /// inclusive single particle distributions' normalisations.
 
-    AIDA::IHistogram1D *_histXbprim;
-    AIDA::IHistogram1D *_histXbweak;
+    Histo1DPtr _histXbprim;
+    Histo1DPtr _histXbweak;
 
-    AIDA::IProfile1D *_histMeanXbprim;
-    AIDA::IProfile1D *_histMeanXbweak;
+    Profile1DPtr _histMeanXbprim;
+    Profile1DPtr _histMeanXbweak;
 
     //@}
 

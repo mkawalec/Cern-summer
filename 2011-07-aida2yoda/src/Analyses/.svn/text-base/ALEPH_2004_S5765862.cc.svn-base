@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -67,45 +67,45 @@ namespace Rivet {
       }
       // event shapes
       if(_initialisedJets) {
-        _h_thrust = bookHistogram1D(offset+54, 1, 1);
-        _h_heavyjetmass = bookHistogram1D(offset+62, 1, 1);
-        _h_totaljetbroadening = bookHistogram1D(offset+70, 1, 1);
-        _h_widejetbroadening = bookHistogram1D(offset+78, 1, 1);
-        _h_cparameter = bookHistogram1D(offset+86, 1, 1);
-        _h_thrustmajor = bookHistogram1D(offset+94, 1, 1);
-        _h_thrustminor = bookHistogram1D(offset+102, 1, 1);
-        _h_jetmassdifference = bookHistogram1D(offset+110, 1, 1);
-        _h_aplanarity = bookHistogram1D(offset+118, 1, 1);
-        _h_planarity  = offset==0 ? NULL : bookHistogram1D(offset+125, 1, 1);
-        _h_oblateness = bookHistogram1D(offset+133, 1, 1);
-        _h_sphericity = bookHistogram1D(offset+141, 1, 1);
+        _h_thrust = bookHisto1D(offset+54, 1, 1);
+        _h_heavyjetmass = bookHisto1D(offset+62, 1, 1);
+        _h_totaljetbroadening = bookHisto1D(offset+70, 1, 1);
+        _h_widejetbroadening = bookHisto1D(offset+78, 1, 1);
+        _h_cparameter = bookHisto1D(offset+86, 1, 1);
+        _h_thrustmajor = bookHisto1D(offset+94, 1, 1);
+        _h_thrustminor = bookHisto1D(offset+102, 1, 1);
+        _h_jetmassdifference = bookHisto1D(offset+110, 1, 1);
+        _h_aplanarity = bookHisto1D(offset+118, 1, 1);
+        _h_planarity  = offset==0 ? Histo1DPtr() : bookHisto1D(offset+125, 1, 1);
+        _h_oblateness = bookHisto1D(offset+133, 1, 1);
+        _h_sphericity = bookHisto1D(offset+141, 1, 1);
 
         // Durham n->m jet resolutions
-        _h_y_Durham[0] = bookHistogram1D(offset+149, 1, 1);   // y12 d149 ... d156
-        _h_y_Durham[1] = bookHistogram1D(offset+157, 1, 1);   // y23 d157 ... d164
+        _h_y_Durham[0] = bookHisto1D(offset+149, 1, 1);   // y12 d149 ... d156
+        _h_y_Durham[1] = bookHisto1D(offset+157, 1, 1);   // y23 d157 ... d164
         if (offset<6) { // there is no y34, y45 and y56 for 200 gev
-          _h_y_Durham[2] = bookHistogram1D(offset+165, 1, 1); // y34 d165 ... d172, but not 171
-          _h_y_Durham[3] = bookHistogram1D(offset+173, 1, 1); // y45 d173 ... d179
-          _h_y_Durham[4] = bookHistogram1D(offset+180, 1, 1); // y56 d180 ... d186
+          _h_y_Durham[2] = bookHisto1D(offset+165, 1, 1); // y34 d165 ... d172, but not 171
+          _h_y_Durham[3] = bookHisto1D(offset+173, 1, 1); // y45 d173 ... d179
+          _h_y_Durham[4] = bookHisto1D(offset+180, 1, 1); // y56 d180 ... d186
         }
         else if (offset==6) {
-          _h_y_Durham[2] = NULL;
-          _h_y_Durham[3] = NULL;
-          _h_y_Durham[4] = NULL;
+          _h_y_Durham[2].reset();
+          _h_y_Durham[3].reset();
+          _h_y_Durham[4].reset();
         }
         else if (offset==7) {
-          _h_y_Durham[2] = bookHistogram1D(172, 1, 1);
-          _h_y_Durham[3] = bookHistogram1D(179, 1, 1);
-          _h_y_Durham[4] = bookHistogram1D(186, 1, 1);
+          _h_y_Durham[2] = bookHisto1D(172, 1, 1);
+          _h_y_Durham[3] = bookHisto1D(179, 1, 1);
+          _h_y_Durham[4] = bookHisto1D(186, 1, 1);
         }
 
         // Durham n-jet fractions
-        _h_R_Durham[0] = bookDataPointSet(offset+187, 1, 1); // R1 d187 ... d194
-        _h_R_Durham[1] = bookDataPointSet(offset+195, 1, 1); // R2 d195 ... d202
-        _h_R_Durham[2] = bookDataPointSet(offset+203, 1, 1); // R3 d203 ... d210
-        _h_R_Durham[3] = bookDataPointSet(offset+211, 1, 1); // R4 d211 ... d218
-        _h_R_Durham[4] = bookDataPointSet(offset+219, 1, 1); // R5 d219 ... d226
-        _h_R_Durham[5] = bookDataPointSet(offset+227, 1, 1); // R>=6 d227 ... d234
+        _h_R_Durham[0] = bookScatter2D(offset+187, 1, 1); // R1 d187 ... d194
+        _h_R_Durham[1] = bookScatter2D(offset+195, 1, 1); // R2 d195 ... d202
+        _h_R_Durham[2] = bookScatter2D(offset+203, 1, 1); // R3 d203 ... d210
+        _h_R_Durham[3] = bookScatter2D(offset+211, 1, 1); // R4 d211 ... d218
+        _h_R_Durham[4] = bookScatter2D(offset+219, 1, 1); // R5 d219 ... d226
+        _h_R_Durham[5] = bookScatter2D(offset+227, 1, 1); // R>=6 d227 ... d234
       }
       // offset for the charged particle distributions
       offset = 0;
@@ -122,13 +122,13 @@ namespace Rivet {
         _initialisedSpectra=false;
       }
       if(_initialisedSpectra) {
-        _h_xp = bookHistogram1D( 2+offset, 1, 1);
-        _h_xi = bookHistogram1D(11+offset, 1, 1);
-        _h_xe = bookHistogram1D(19+offset, 1, 1);
-        _h_pTin  = bookHistogram1D(27+offset, 1, 1);
-        _h_pTout = offset!=7 ? NULL : bookHistogram1D(35, 1, 1);
-        _h_rapidityT = bookHistogram1D(36+offset, 1, 1);
-        _h_rapidityS = bookHistogram1D(44+offset, 1, 1);
+        _h_xp = bookHisto1D( 2+offset, 1, 1);
+        _h_xi = bookHisto1D(11+offset, 1, 1);
+        _h_xe = bookHisto1D(19+offset, 1, 1);
+        _h_pTin  = bookHisto1D(27+offset, 1, 1);
+        _h_pTout = offset!=7 ? Histo1DPtr() : bookHisto1D(35, 1, 1);
+        _h_rapidityT = bookHisto1D(36+offset, 1, 1);
+        _h_rapidityS = bookHisto1D(44+offset, 1, 1);
       }
 
       if(!_initialisedSpectra && !_initialisedJets) {
@@ -183,21 +183,21 @@ namespace Rivet {
               _h_y_Durham[i]->fill(logyn, weight);
             }
             if(!LEP1) logyn *= log10e;
-            for (int j = 0; j < _h_R_Durham[i]->size(); ++j) {
-              IDataPoint* dp = _h_R_Durham[i]->point(j);
-              double val = -dp->coordinate(0)->value()+dp->coordinate(0)->errorMinus();
+            for (size_t j = 0; j < _h_R_Durham[i]->numPoints(); ++j) {
+              Point2D & dp = _h_R_Durham[i]->point(j);
+              double val = -dp.xMin();
               if(val<=logynm1) break;
               if(val<logyn) {
-                dp->coordinate(1)->setValue(dp->coordinate(1)->value()+weight);
+                dp.setY(dp.y()+weight);
               }
             }
             logynm1 = logyn;
           }
-          for (int j = 0; j < _h_R_Durham[5]->size(); ++j) {
-            IDataPoint* dp = _h_R_Durham[5]->point(j);
-            double val = -dp->coordinate(0)->value()+dp->coordinate(0)->errorMinus();
+          for (size_t j = 0; j < _h_R_Durham[5]->numPoints(); ++j) {
+            Point2D & dp = _h_R_Durham[5]->point(j);
+            double val = -dp.xMin();
             if(val<=logynm1) break;
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value()+weight);
+            dp.setY(dp.y()+weight);
           }
         }
         if( !_initialisedSpectra) {
@@ -256,9 +256,8 @@ namespace Rivet {
         normalize(_h_sphericity);
 
         for (size_t N=1; N<7; ++N) {
-          for (int i = 0; i < _h_R_Durham[N-1]->size(); ++i) {
-            _h_R_Durham[N-1]->point(i)->coordinate(1)->
-              setValue(_h_R_Durham[N-1]->point(i)->coordinate(1)->value()/sumOfWeights());
+          for (size_t i = 0; i < _h_R_Durham[N-1]->numPoints(); ++i) {
+            _h_R_Durham[N-1]->point(i).setY(_h_R_Durham[N-1]->point(i).y()/sumOfWeights());
           }
         }
 
@@ -270,10 +269,10 @@ namespace Rivet {
       }
 
       const double avgNumParts = _weightedTotalChargedPartNum / sumOfWeights();
-      AIDA::IDataPointSet * mult = bookDataPointSet(1, 1, 1);
-      for (int i = 0; i < mult->size(); ++i) {
-        if (fuzzyEquals(sqrtS(), mult->point(i)->coordinate(0)->value(), 0.01)) {
-          mult->point(i)->coordinate(1)->setValue(avgNumParts);
+      Scatter2DPtr  mult = bookScatter2D(1, 1, 1);
+      for (size_t i = 0; i < mult->numPoints(); ++i) {
+        if (fuzzyEquals(sqrtS(), mult->point(i).x(), 0.01)) {
+          mult->point(i).setY(avgNumParts);
         }
       }
 
@@ -293,28 +292,28 @@ namespace Rivet {
     bool _initialisedJets;
     bool _initialisedSpectra;
 
-    AIDA::IHistogram1D *_h_xp;
-    AIDA::IHistogram1D *_h_xi;
-    AIDA::IHistogram1D *_h_xe;
-    AIDA::IHistogram1D *_h_pTin;
-    AIDA::IHistogram1D *_h_pTout;
-    AIDA::IHistogram1D *_h_rapidityT;
-    AIDA::IHistogram1D *_h_rapidityS;
-    AIDA::IHistogram1D *_h_thrust;
-    AIDA::IHistogram1D *_h_heavyjetmass;
-    AIDA::IHistogram1D *_h_totaljetbroadening;
-    AIDA::IHistogram1D *_h_widejetbroadening;
-    AIDA::IHistogram1D *_h_cparameter;
-    AIDA::IHistogram1D *_h_thrustmajor;
-    AIDA::IHistogram1D *_h_thrustminor;
-    AIDA::IHistogram1D *_h_jetmassdifference;
-    AIDA::IHistogram1D *_h_aplanarity;
-    AIDA::IHistogram1D *_h_planarity;
-    AIDA::IHistogram1D *_h_oblateness;
-    AIDA::IHistogram1D *_h_sphericity;
+    Histo1DPtr _h_xp;
+    Histo1DPtr _h_xi;
+    Histo1DPtr _h_xe;
+    Histo1DPtr _h_pTin;
+    Histo1DPtr _h_pTout;
+    Histo1DPtr _h_rapidityT;
+    Histo1DPtr _h_rapidityS;
+    Histo1DPtr _h_thrust;
+    Histo1DPtr _h_heavyjetmass;
+    Histo1DPtr _h_totaljetbroadening;
+    Histo1DPtr _h_widejetbroadening;
+    Histo1DPtr _h_cparameter;
+    Histo1DPtr _h_thrustmajor;
+    Histo1DPtr _h_thrustminor;
+    Histo1DPtr _h_jetmassdifference;
+    Histo1DPtr _h_aplanarity;
+    Histo1DPtr _h_planarity;
+    Histo1DPtr _h_oblateness;
+    Histo1DPtr _h_sphericity;
 
-    AIDA::IDataPointSet *_h_R_Durham[6];
-    AIDA::IHistogram1D *_h_y_Durham[5];
+    Scatter2DPtr _h_R_Durham[6];
+    Histo1DPtr _h_y_Durham[5];
 
     double _weightedTotalChargedPartNum;
 

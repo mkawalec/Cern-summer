@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ZFinder.hh"
@@ -38,23 +38,23 @@ namespace Rivet {
       FastJets conefinder(zfinder.remainingFinalState(), FastJets::D0ILCONE, 0.5);
       addProjection(conefinder, "ConeFinder");
 
-      _h_dphi_jet_Z25 = bookHistogram1D(1, 1, 1);
-      _h_dphi_jet_Z45 = bookHistogram1D(2, 1, 1);
+      _h_dphi_jet_Z25 = bookHisto1D(1, 1, 1);
+      _h_dphi_jet_Z45 = bookHisto1D(2, 1, 1);
 
-      _h_dy_jet_Z25 = bookHistogram1D(3, 1, 1);
-      _h_dy_jet_Z45 = bookHistogram1D(4, 1, 1);
+      _h_dy_jet_Z25 = bookHisto1D(3, 1, 1);
+      _h_dy_jet_Z45 = bookHisto1D(4, 1, 1);
 
-      _h_yboost_jet_Z25 = bookHistogram1D(5, 1, 1);
-      _h_yboost_jet_Z45 = bookHistogram1D(6, 1, 1);
+      _h_yboost_jet_Z25 = bookHisto1D(5, 1, 1);
+      _h_yboost_jet_Z45 = bookHisto1D(6, 1, 1);
 
-      _h_dphi_jet_Z25_xs = bookHistogram1D(1, 1, 2);
-      _h_dphi_jet_Z45_xs = bookHistogram1D(2, 1, 2);
+      _h_dphi_jet_Z25_xs = bookHisto1D(1, 1, 2);
+      _h_dphi_jet_Z45_xs = bookHisto1D(2, 1, 2);
 
-      _h_dy_jet_Z25_xs = bookHistogram1D(3, 1, 2);
-      _h_dy_jet_Z45_xs = bookHistogram1D(4, 1, 2);
+      _h_dy_jet_Z25_xs = bookHisto1D(3, 1, 2);
+      _h_dy_jet_Z45_xs = bookHisto1D(4, 1, 2);
 
-      _h_yboost_jet_Z25_xs = bookHistogram1D(5, 1, 2);
-      _h_yboost_jet_Z45_xs = bookHistogram1D(6, 1, 2);
+      _h_yboost_jet_Z25_xs = bookHisto1D(5, 1, 2);
+      _h_yboost_jet_Z45_xs = bookHisto1D(6, 1, 2);
 
       _inclusive_Z_sumofweights = 0.0;
     }
@@ -143,26 +143,26 @@ namespace Rivet {
 
     /// @name Histograms (normalised)
     //@{
-    AIDA::IHistogram1D *_h_dphi_jet_Z25;
-    AIDA::IHistogram1D *_h_dphi_jet_Z45;
+    Histo1DPtr _h_dphi_jet_Z25;
+    Histo1DPtr _h_dphi_jet_Z45;
 
-    AIDA::IHistogram1D *_h_dy_jet_Z25;
-    AIDA::IHistogram1D *_h_dy_jet_Z45;
+    Histo1DPtr _h_dy_jet_Z25;
+    Histo1DPtr _h_dy_jet_Z45;
 
-    AIDA::IHistogram1D *_h_yboost_jet_Z25;
-    AIDA::IHistogram1D *_h_yboost_jet_Z45;
+    Histo1DPtr _h_yboost_jet_Z25;
+    Histo1DPtr _h_yboost_jet_Z45;
     //@}
 
     /// @name Histograms (absolute cross sections)
     //@{
-    AIDA::IHistogram1D *_h_dphi_jet_Z25_xs;
-    AIDA::IHistogram1D *_h_dphi_jet_Z45_xs;
+    Histo1DPtr _h_dphi_jet_Z25_xs;
+    Histo1DPtr _h_dphi_jet_Z45_xs;
 
-    AIDA::IHistogram1D *_h_dy_jet_Z25_xs;
-    AIDA::IHistogram1D *_h_dy_jet_Z45_xs;
+    Histo1DPtr _h_dy_jet_Z25_xs;
+    Histo1DPtr _h_dy_jet_Z45_xs;
 
-    AIDA::IHistogram1D *_h_yboost_jet_Z25_xs;
-    AIDA::IHistogram1D *_h_yboost_jet_Z45_xs;
+    Histo1DPtr _h_yboost_jet_Z25_xs;
+    Histo1DPtr _h_yboost_jet_Z45_xs;
     //@}
 
     double _inclusive_Z_sumofweights;

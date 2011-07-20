@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/UnstableFinalState.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
@@ -38,9 +38,9 @@ namespace Rivet {
 
       addProjection(UnstableFinalState(), "UFS");
 
-      _h_K0s_pt_y_30 = bookHistogram1D(1,1,1);
-      _h_K0s_pt_y_35 = bookHistogram1D(1,1,2);
-      _h_K0s_pt_y_40 = bookHistogram1D(1,1,3);
+      _h_K0s_pt_y_30 = bookHisto1D(1,1,1);
+      _h_K0s_pt_y_35 = bookHisto1D(1,1,2);
+      _h_K0s_pt_y_40 = bookHisto1D(1,1,3);
 
     }
 
@@ -105,9 +105,9 @@ namespace Rivet {
     //@{
 
 
-    AIDA::IHistogram1D *_h_K0s_pt_y_30;
-    AIDA::IHistogram1D *_h_K0s_pt_y_35;
-    AIDA::IHistogram1D *_h_K0s_pt_y_40;
+    Histo1DPtr _h_K0s_pt_y_30;
+    Histo1DPtr _h_K0s_pt_y_35;
+    Histo1DPtr _h_K0s_pt_y_40;
 
     double sumKs0_30;
     double sumKs0_35;

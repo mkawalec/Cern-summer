@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 
@@ -29,17 +29,17 @@ namespace Rivet {
 
       // Histograms
       if (fuzzyEquals(sqrtS()/GeV, 30.4, 1E-1)) {
-        _hist_multiplicity_inel = bookHistogram1D(1, 1, 1);
-        _hist_multiplicity_nsd = bookHistogram1D(2, 1, 1);
+        _hist_multiplicity_inel = bookHisto1D(1, 1, 1);
+        _hist_multiplicity_nsd = bookHisto1D(2, 1, 1);
       } else if (fuzzyEquals(sqrtS(), 44.5, 1E-1)) {
-        _hist_multiplicity_inel = bookHistogram1D(1, 1, 2);
-        _hist_multiplicity_nsd = bookHistogram1D(2, 1, 2);
+        _hist_multiplicity_inel = bookHisto1D(1, 1, 2);
+        _hist_multiplicity_nsd = bookHisto1D(2, 1, 2);
       } else if (fuzzyEquals(sqrtS(), 52.2, 1E-1)) {
-        _hist_multiplicity_inel = bookHistogram1D(1, 1, 3);
-        _hist_multiplicity_nsd = bookHistogram1D(2, 1, 3);
+        _hist_multiplicity_inel = bookHisto1D(1, 1, 3);
+        _hist_multiplicity_nsd = bookHisto1D(2, 1, 3);
       } else if (fuzzyEquals(sqrtS(), 62.2, 1E-1)) {
-        _hist_multiplicity_inel = bookHistogram1D(1, 1, 4);
-        _hist_multiplicity_nsd = bookHistogram1D(2, 1, 4);
+        _hist_multiplicity_inel = bookHisto1D(1, 1, 4);
+        _hist_multiplicity_nsd = bookHisto1D(2, 1, 4);
       }
 
     }
@@ -112,8 +112,8 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_hist_multiplicity_inel;
-    AIDA::IHistogram1D *_hist_multiplicity_nsd;
+    Histo1DPtr _hist_multiplicity_inel;
+    Histo1DPtr _hist_multiplicity_nsd;
     //@}
 
   };

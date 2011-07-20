@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/VetoedFinalState.hh"
@@ -55,10 +55,10 @@ namespace Rivet {
       addProjection(MissingMomentum(vfs), "CalMET");
 
       // Book histograms
-      _histJetAzimuth_pTmax75_100  = bookHistogram1D(1, 2, 1);
-      _histJetAzimuth_pTmax100_130 = bookHistogram1D(2, 2, 1);
-      _histJetAzimuth_pTmax130_180 = bookHistogram1D(3, 2, 1);
-      _histJetAzimuth_pTmax180_    = bookHistogram1D(4, 2, 1);
+      _histJetAzimuth_pTmax75_100  = bookHisto1D(1, 2, 1);
+      _histJetAzimuth_pTmax100_130 = bookHisto1D(2, 2, 1);
+      _histJetAzimuth_pTmax130_180 = bookHisto1D(3, 2, 1);
+      _histJetAzimuth_pTmax180_    = bookHisto1D(4, 2, 1);
     }
 
 
@@ -125,10 +125,10 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _histJetAzimuth_pTmax75_100;
-    AIDA::IHistogram1D* _histJetAzimuth_pTmax100_130;
-    AIDA::IHistogram1D* _histJetAzimuth_pTmax130_180;
-    AIDA::IHistogram1D* _histJetAzimuth_pTmax180_;
+    Histo1DPtr _histJetAzimuth_pTmax75_100;
+    Histo1DPtr _histJetAzimuth_pTmax100_130;
+    Histo1DPtr _histJetAzimuth_pTmax130_180;
+    Histo1DPtr _histJetAzimuth_pTmax180_;
     //@}
 
   };

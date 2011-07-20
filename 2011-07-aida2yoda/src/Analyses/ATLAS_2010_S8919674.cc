@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Projections/MissingMomentum.hh"
@@ -81,14 +81,14 @@ namespace Rivet {
 
 
       /// book histograms
-      _h_el_njet_inclusive = bookHistogram1D(1,1,1);
-      _h_mu_njet_inclusive = bookHistogram1D(2,1,1);
+      _h_el_njet_inclusive = bookHisto1D(1,1,1);
+      _h_mu_njet_inclusive = bookHisto1D(2,1,1);
 
-      _h_el_pT_jet1 = bookHistogram1D(5,1,1);
-      _h_mu_pT_jet1 = bookHistogram1D(6,1,1);
+      _h_el_pT_jet1 = bookHisto1D(5,1,1);
+      _h_mu_pT_jet1 = bookHisto1D(6,1,1);
 
-      _h_el_pT_jet2 = bookHistogram1D(7,1,1);
-      _h_mu_pT_jet2 = bookHistogram1D(8,1,1);
+      _h_el_pT_jet2 = bookHisto1D(7,1,1);
+      _h_mu_pT_jet2 = bookHisto1D(8,1,1);
     }
 
 
@@ -187,12 +187,12 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D * _h_el_njet_inclusive;
-    AIDA::IHistogram1D * _h_mu_njet_inclusive;
-    AIDA::IHistogram1D * _h_el_pT_jet1;
-    AIDA::IHistogram1D * _h_mu_pT_jet1;
-    AIDA::IHistogram1D * _h_el_pT_jet2;
-    AIDA::IHistogram1D * _h_mu_pT_jet2;
+    Histo1DPtr _h_el_njet_inclusive;
+    Histo1DPtr _h_mu_njet_inclusive;
+    Histo1DPtr _h_el_pT_jet1;
+    Histo1DPtr _h_mu_pT_jet1;
+    Histo1DPtr _h_el_pT_jet2;
+    Histo1DPtr _h_mu_pT_jet2;
     //@}
 
   };

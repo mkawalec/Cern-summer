@@ -2,7 +2,7 @@
 // CDF Run II inclusive jet cross-section using the midpoint algorithm.
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -34,11 +34,11 @@ namespace Rivet {
       const FinalState fs;
       addProjection(FastJets(fs, FastJets::CDFMIDPOINT, 0.7), "JetsM07");
 
-      _binnedHistosR07.addHistogram(  0, 0.1, bookHistogram1D(1, 1, 1));
-      _binnedHistosR07.addHistogram(0.1, 0.7, bookHistogram1D(2, 1, 1));
-      _binnedHistosR07.addHistogram(0.7, 1.1, bookHistogram1D(3, 1, 1));
-      _binnedHistosR07.addHistogram(1.1, 1.6, bookHistogram1D(4, 1, 1));
-      _binnedHistosR07.addHistogram(1.6, 2.1, bookHistogram1D(5, 1, 1));
+      _binnedHistosR07.addHistogram(  0, 0.1, bookHisto1D(1, 1, 1));
+      _binnedHistosR07.addHistogram(0.1, 0.7, bookHisto1D(2, 1, 1));
+      _binnedHistosR07.addHistogram(0.7, 1.1, bookHisto1D(3, 1, 1));
+      _binnedHistosR07.addHistogram(1.1, 1.6, bookHisto1D(4, 1, 1));
+      _binnedHistosR07.addHistogram(1.6, 2.1, bookHisto1D(5, 1, 1));
 
     }
 

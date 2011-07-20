@@ -1,7 +1,7 @@
 // -*- C++ -*- 
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -81,14 +81,14 @@ namespace Rivet {
 
 
       /// Book histograms
-      _count_mu_channel = bookHistogram1D("count_muon_channel", 1, 0., 1.);
-      _count_e_channel = bookHistogram1D("count_electron_channel", 1, 0., 1.); 
-      _hist_eTmiss_e = bookHistogram1D("Et_miss_e", 50, 0., 500.);
-      _hist_eTmiss_mu = bookHistogram1D("Et_miss_mu", 50, 0., 500.);
-      _hist_m_eff_e = bookHistogram1D("m_eff_e", 30, 0., 1500.);
-      _hist_m_eff_mu = bookHistogram1D("m_eff_mu", 30, 0., 1500.);
-      _hist_m_eff_e_final = bookHistogram1D("m_eff_e_final", 30, 0., 1500.);
-      _hist_m_eff_mu_final = bookHistogram1D("m_eff_mu_final", 30, 0., 1500.);
+      _count_mu_channel = bookHisto1D("count_muon_channel", 1, 0., 1.);
+      _count_e_channel = bookHisto1D("count_electron_channel", 1, 0., 1.); 
+      _hist_eTmiss_e = bookHisto1D("Et_miss_e", 50, 0., 500.);
+      _hist_eTmiss_mu = bookHisto1D("Et_miss_mu", 50, 0., 500.);
+      _hist_m_eff_e = bookHisto1D("m_eff_e", 30, 0., 1500.);
+      _hist_m_eff_mu = bookHisto1D("m_eff_mu", 30, 0., 1500.);
+      _hist_m_eff_e_final = bookHisto1D("m_eff_e_final", 30, 0., 1500.);
+      _hist_m_eff_mu_final = bookHisto1D("m_eff_mu_final", 30, 0., 1500.);
 
 
 
@@ -354,16 +354,16 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _count_e_channel;
-    AIDA::IHistogram1D* _count_mu_channel;
+    Histo1DPtr _count_e_channel;
+    Histo1DPtr _count_mu_channel;
 
-    AIDA::IHistogram1D* _hist_eTmiss_e;
-    AIDA::IHistogram1D* _hist_eTmiss_mu;
+    Histo1DPtr _hist_eTmiss_e;
+    Histo1DPtr _hist_eTmiss_mu;
 
-    AIDA::IHistogram1D* _hist_m_eff_e;
-    AIDA::IHistogram1D* _hist_m_eff_mu;
-    AIDA::IHistogram1D* _hist_m_eff_e_final;
-    AIDA::IHistogram1D* _hist_m_eff_mu_final;
+    Histo1DPtr _hist_m_eff_e;
+    Histo1DPtr _hist_m_eff_mu;
+    Histo1DPtr _hist_m_eff_e_final;
+    Histo1DPtr _hist_m_eff_mu_final;
 
 
     //@}

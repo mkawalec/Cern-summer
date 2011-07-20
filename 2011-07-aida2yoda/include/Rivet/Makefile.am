@@ -12,7 +12,7 @@ nobase_pkginclude_HEADERS += \
   Event.hh             Event.fhh \
   ParticleBase.hh      Jet.hh \
   Particle.hh          Particle.fhh \
-  RivetAIDA.hh         RivetAIDA.fhh \
+  RivetYODA.hh         RivetYODA.fhh \
   Analysis.hh          Analysis.fhh  AnalysisBuilder.hh \
   AnalysisHandler.hh   AnalysisHandler.fhh \
   AnalysisInfo.hh      ProjectionHandler.hh \

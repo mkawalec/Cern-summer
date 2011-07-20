@@ -1,0 +1,58 @@
+#ifndef ANALYSIS_RIVETYODA_FHH
+#define ANALYSIS_RIVETYODA_FHH
+
+// \todo use something like RivetBoost.fhh here?
+#include "boost/smart_ptr.hpp"
+
+/// @author Andy Buckley
+/// @date   2009-01-30
+/// @author David Grellscheid
+/// @date   2011-07-18
+/// @brief Forward declarations of YODA interfaces
+
+namespace YODA {
+   class AnalysisObject;
+   class WriterYODA;
+   class Histo1D;
+   class Profile1D;
+   class Scatter2D;
+}
+
+namespace Rivet {
+  typedef boost::shared_ptr<YODA::AnalysisObject> AnalysisObjectPtr;
+  typedef boost::shared_ptr<YODA::Histo1D> Histo1DPtr;
+  typedef boost::shared_ptr<YODA::Profile1D> Profile1DPtr;
+  typedef boost::shared_ptr<YODA::Scatter2D> Scatter2DPtr;
+}
+
+#include <vector>
+
+namespace Rivet {
+
+//   /// Typedef for a collection of bin edges.
+   typedef std::vector<double> BinEdges;
+
+  /// Container for x-axis point details
+  struct DPSXPoint {
+    DPSXPoint(double xval, double xerrminus, double xerrplus) :
+      val(xval), errminus(xerrminus), errplus(xerrplus) { }
+    double val;
+    double errminus;
+    double errplus;
+  };
+
+  /// Container for x-axis point details
+  struct DPSXYPoint {
+    DPSXYPoint(double xval, double xerrminus, double xerrplus, double yval, double yerrminus, double yerrplus) :
+      xval(xval), xerrminus(xerrminus), xerrplus(xerrplus), yval(yval), yerrminus(yerrminus), yerrplus(yerrplus) { }
+    double xval;
+    double xerrminus;
+    double xerrplus;
+    double yval;
+    double yerrminus;
+    double yerrplus;
+  };
+
+}
+
+#endif

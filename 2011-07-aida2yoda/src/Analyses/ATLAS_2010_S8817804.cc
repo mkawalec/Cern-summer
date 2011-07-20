@@ -1,7 +1,7 @@
 // -*- C++ -*-
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -40,17 +40,17 @@ namespace Rivet {
       size_t ptDsOffset(0), massDsOffset(10), chiDsOffset(20);
       for (size_t alg = 0; alg < 2; ++alg) {
         for (size_t i = 0; i < 5; ++i) {
-          _pThistos[alg].addHistogram(ybins[i], ybins[i+1], bookHistogram1D(i + 1 + ptDsOffset, 1, 1));
+          _pThistos[alg].addHistogram(ybins[i], ybins[i+1], bookHisto1D(i + 1 + ptDsOffset, 1, 1));
         }
         ptDsOffset += 5;
 
         for (size_t i = 0; i < 5; ++i) {
-          _massVsY[alg].addHistogram(ybins[i], ybins[i+1], bookHistogram1D(i + 1 + massDsOffset, 1, 1));
+          _massVsY[alg].addHistogram(ybins[i], ybins[i+1], bookHisto1D(i + 1 + massDsOffset, 1, 1));
         }
         massDsOffset += 5;
 
         for (size_t i = 0; i < 3; ++i) {
-          _chiVsMass[alg].addHistogram(massBinsForChi[i], massBinsForChi[i+1], bookHistogram1D(i + 1 + chiDsOffset, 1, 1));
+          _chiVsMass[alg].addHistogram(massBinsForChi[i], massBinsForChi[i+1], bookHisto1D(i + 1 + chiDsOffset, 1, 1));
         }
         chiDsOffset += 3;
       }

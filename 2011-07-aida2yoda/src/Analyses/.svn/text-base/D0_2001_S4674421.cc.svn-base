@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/LeadingParticlesFinalState.hh"
@@ -57,9 +57,9 @@ namespace Rivet {
       _eventsFilledZ = 0.0;
 
       // Histograms
-      _h_dsigdpt_w = bookHistogram1D(1, 1, 1);
-      _h_dsigdpt_z = bookHistogram1D(1, 1, 2);
-      _h_dsigdpt_scaled_z = bookDataPointSet(2, 1, 1);
+      _h_dsigdpt_w = bookHisto1D(1, 1, 1);
+      _h_dsigdpt_z = bookHisto1D(1, 1, 2);
+      _h_dsigdpt_scaled_z = bookScatter2D(2, 1, 1);
     }
 
 
@@ -124,37 +124,28 @@ namespace Rivet {
       if (xSecW == 0 || wpt_integral == 0 || xSecZ == 0 || zpt_integral == 0) {
         getLog() << Log::WARN << "Not filling ratio plot because input histos are empty" << endl;
       } else {
-        std::vector<double> xval;
-        std::vector<double> xerr;
-        std::vector<double> yval;
-        std::vector<double> yerr;
-
         // Scale factor converts event counts to cross-sections, and inverts the
         // branching ratios since only one decay channel has been analysed for each boson.
         // Oh, and we put MW/MZ in, like they do in the paper.
         const double MW_MZ = 0.8820; // Ratio M_W/M_Z
         const double BRZEE_BRWENU = 0.033632 / 0.1073; // Ratio of branching fractions
         const double scalefactor = (xSecW / wpt_integral) / (xSecZ / zpt_integral) * MW_MZ * BRZEE_BRWENU;
-        for (int ibin=0; ibin<_h_dsigdpt_scaled_z->size(); ibin++) {
-          /// @todo I would love to use axis().binMidPoint(ibin) here, but this #*&$*^%$ LWH IAxis doesn't have it!!!!
-          ///       It's only in Axis and VariAxis, but doesn't get passed through to the user. I WANT YODA!!! *SIGH*
-          xval.push_back(0.5*(_h_dsigdpt_w->axis().binUpperEdge(ibin)+_h_dsigdpt_w->axis().binLowerEdge(ibin)));
-          xerr.push_back(0.5*_h_dsigdpt_w->axis().binWidth(ibin));
-          if (_h_dsigdpt_w->binHeight(ibin) == 0 || _h_dsigdpt_z->binHeight(ibin) == 0) {
-            yval.push_back(0.);
-            yerr.push_back(0.);
+        for (size_t ibin=0; ibin<_h_dsigdpt_scaled_z->numPoints(); ibin++) {
+          if (_h_dsigdpt_w->bin(ibin).area() == 0 || _h_dsigdpt_z->bin(ibin).area() == 0) {
+	    _h_dsigdpt_scaled_z->point(ibin) = Point2D(_h_dsigdpt_w->bin(ibin).midpoint(), 0.,
+						       _h_dsigdpt_w->bin(ibin).width(), 0.);
           } else {
-            yval.push_back(scalefactor * _h_dsigdpt_w->binHeight(ibin) / _h_dsigdpt_z->binHeight(ibin));
+	    double yval = scalefactor * _h_dsigdpt_w->bin(ibin).area() / _h_dsigdpt_z->bin(ibin).area();
             double dy2 = 0.;
             // binWidth(ibin) is needed because binHeight is actually sumofweights. It's AIDA. Don't ask.  :-((((
-            dy2 += pow(_h_dsigdpt_w->binError(ibin)/_h_dsigdpt_w->binHeight(ibin)*_h_dsigdpt_w->axis().binWidth(ibin),2);
-            dy2 += pow(_h_dsigdpt_z->binError(ibin)/_h_dsigdpt_z->binHeight(ibin)*_h_dsigdpt_z->axis().binWidth(ibin),2);
-            double dy = scalefactor * _h_dsigdpt_w->binHeight(ibin)/_h_dsigdpt_z->binHeight(ibin) * sqrt(dy2);
-            yerr.push_back(dy);
+            dy2 += pow(_h_dsigdpt_w->bin(ibin).areaError()/_h_dsigdpt_w->bin(ibin).height(),2);
+            dy2 += pow(_h_dsigdpt_z->bin(ibin).areaError()/_h_dsigdpt_z->bin(ibin).height(),2);
+            double dy = scalefactor * _h_dsigdpt_w->bin(ibin).area()/_h_dsigdpt_z->bin(ibin).area() * sqrt(dy2);
+
+	    _h_dsigdpt_scaled_z->point(ibin) = Point2D(_h_dsigdpt_w->bin(ibin).midpoint(), yval,
+						       _h_dsigdpt_w->bin(ibin).width(), dy);
           }
         }
-        _h_dsigdpt_scaled_z->setCoordinate(0, xval, xerr);
-        _h_dsigdpt_scaled_z->setCoordinate(1, yval, yerr);
       }
 
       // Normalize non-ratio histos
@@ -176,9 +167,9 @@ namespace Rivet {
 
     //@{
     /// Histograms
-    AIDA::IHistogram1D*  _h_dsigdpt_w;
-    AIDA::IHistogram1D*  _h_dsigdpt_z;
-    AIDA::IDataPointSet* _h_dsigdpt_scaled_z;
+    Histo1DPtr  _h_dsigdpt_w;
+    Histo1DPtr  _h_dsigdpt_z;
+    Scatter2DPtr _h_dsigdpt_scaled_z;
     //@}
 
   };

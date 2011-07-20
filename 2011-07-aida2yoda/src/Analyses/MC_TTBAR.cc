@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 
@@ -37,9 +37,9 @@ namespace Rivet {
       addProjection(cfs, "CFS");
 
       /// @todo Book histograms here, e.g.:
-      _hist_nch_eta = bookHistogram1D("nch-eta", 20, -5.0, 5.0);
-      _hist_nch_pt  = bookHistogram1D("nch-pt", 100, 0.0, 200.0);
-      _hist_nch_phi = bookHistogram1D("nch-phi", 100, 0.0, TWOPI);
+      _hist_nch_eta = bookHisto1D("nch-eta", 20, -5.0, 5.0);
+      _hist_nch_pt  = bookHisto1D("nch-pt", 100, 0.0, 200.0);
+      _hist_nch_phi = bookHisto1D("nch-phi", 100, 0.0, TWOPI);
 
     }
 
@@ -73,9 +73,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _hist_nch_eta;
-    AIDA::IHistogram1D* _hist_nch_pt;
-    AIDA::IHistogram1D* _hist_nch_phi;
+    Histo1DPtr _hist_nch_eta;
+    Histo1DPtr _hist_nch_pt;
+    Histo1DPtr _hist_nch_phi;
     //@}
 
   };

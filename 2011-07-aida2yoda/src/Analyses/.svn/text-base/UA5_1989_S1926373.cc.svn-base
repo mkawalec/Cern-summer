@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/TriggerUA5.hh"
@@ -32,19 +32,19 @@ namespace Rivet {
 
       // NB. _hist_nch and _hist_ncheta50 use the same data but different binning
       if (fuzzyEquals(sqrtS()/GeV, 200, 1E-3)) {
-        _hist_nch        = bookHistogram1D(1, 1, 1);
-        _hist_nch_eta05  = bookHistogram1D(3, 1, 1);
-        _hist_nch_eta15  = bookHistogram1D(4, 1, 1);
-        _hist_nch_eta30  = bookHistogram1D(5, 1, 1);
-        _hist_nch_eta50  = bookHistogram1D(6, 1, 1);
-        _hist_mean_nch   = bookHistogram1D(11, 1, 1);
+        _hist_nch        = bookHisto1D(1, 1, 1);
+        _hist_nch_eta05  = bookHisto1D(3, 1, 1);
+        _hist_nch_eta15  = bookHisto1D(4, 1, 1);
+        _hist_nch_eta30  = bookHisto1D(5, 1, 1);
+        _hist_nch_eta50  = bookHisto1D(6, 1, 1);
+        _hist_mean_nch   = bookHisto1D(11, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 900, 1E-3)) {
-        _hist_nch        = bookHistogram1D(2, 1, 1);
-        _hist_nch_eta05  = bookHistogram1D(7, 1, 1);
-        _hist_nch_eta15  = bookHistogram1D(8, 1, 1);
-        _hist_nch_eta30  = bookHistogram1D(9, 1, 1);
-        _hist_nch_eta50  = bookHistogram1D(10, 1, 1);
-        _hist_mean_nch   = bookHistogram1D(12, 1, 1);
+        _hist_nch        = bookHisto1D(2, 1, 1);
+        _hist_nch_eta05  = bookHisto1D(7, 1, 1);
+        _hist_nch_eta15  = bookHisto1D(8, 1, 1);
+        _hist_nch_eta30  = bookHisto1D(9, 1, 1);
+        _hist_nch_eta50  = bookHisto1D(10, 1, 1);
+        _hist_mean_nch   = bookHisto1D(12, 1, 1);
       }
 
       /// @todo Moments of distributions
@@ -72,7 +72,7 @@ namespace Rivet {
       _hist_nch_eta15->fill(numP15, weight);
       _hist_nch_eta30->fill(numP30, weight);
       _hist_nch_eta50->fill(numP50, weight);
-      _hist_mean_nch->fill(_hist_mean_nch->binMean(0), numP50);
+      _hist_mean_nch->fill(_hist_mean_nch->bin(0).xMean(), numP50);
     }
 
 
@@ -97,12 +97,12 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _hist_nch;
-    AIDA::IHistogram1D* _hist_nch_eta05;
-    AIDA::IHistogram1D* _hist_nch_eta15;
-    AIDA::IHistogram1D* _hist_nch_eta30;
-    AIDA::IHistogram1D* _hist_nch_eta50;
-    AIDA::IHistogram1D* _hist_mean_nch;
+    Histo1DPtr _hist_nch;
+    Histo1DPtr _hist_nch_eta05;
+    Histo1DPtr _hist_nch_eta15;
+    Histo1DPtr _hist_nch_eta30;
+    Histo1DPtr _hist_nch_eta50;
+    Histo1DPtr _hist_mean_nch;
     //@}
 
   };

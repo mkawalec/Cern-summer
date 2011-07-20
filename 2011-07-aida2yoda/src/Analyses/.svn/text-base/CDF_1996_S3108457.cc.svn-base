@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -41,9 +41,9 @@ namespace Rivet {
 
       /// Book histograms here, e.g.:
       for (size_t i=0; i<5; ++i) {
-        _h_m[i] = bookHistogram1D(1+i, 1, 1);
-        _h_costheta[i] = bookHistogram1D(10+i, 1, 1);
-        _h_pT[i] = bookHistogram1D(15+i, 1, 1);
+        _h_m[i] = bookHisto1D(1+i, 1, 1);
+        _h_costheta[i] = bookHisto1D(10+i, 1, 1);
+        _h_pT[i] = bookHisto1D(15+i, 1, 1);
       }
       /// @todo Ratios of mass histograms left out: Binning doesn't work out
     }
@@ -117,9 +117,9 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_m[5];
-    AIDA::IHistogram1D *_h_costheta[5];
-    AIDA::IHistogram1D *_h_pT[5];
+    Histo1DPtr _h_m[5];
+    Histo1DPtr _h_costheta[5];
+    Histo1DPtr _h_pT[5];
 
     //@}
 

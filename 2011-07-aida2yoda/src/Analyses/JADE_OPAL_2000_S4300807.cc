@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/FinalState.hh"
 
@@ -47,9 +47,9 @@ namespace Rivet {
       default: break;
       }
       for (size_t i = 0; i < 5; ++i) {
-        _h_R_Jade[i] = bookDataPointSet(offset, 1, i+1);
-        _h_R_Durham[i] = bookDataPointSet(offset+9, 1, i+1);
-        if (i < 4) _h_y_Durham[i] = bookHistogram1D(offset+17, 1, i+1);
+        _h_R_Jade[i] = bookScatter2D(offset, 1, i+1);
+        _h_R_Durham[i] = bookScatter2D(offset+9, 1, i+1);
+        if (i < 4) _h_y_Durham[i] = bookHisto1D(offset+17, 1, i+1);
       }
     }
 
@@ -67,38 +67,38 @@ namespace Rivet {
         double y_45 = jadejet.clusterSeq()->exclusive_ymerge_max(4);
         double y_56 = jadejet.clusterSeq()->exclusive_ymerge_max(5);
 
-        for (int i = 0; i < _h_R_Jade[0]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[0]->point(i);
-          if (y_23 < dp->coordinate(0)->value()) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+        for (size_t i = 0; i < _h_R_Jade[0]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[0]->point(i);
+          if (y_23 < dp.x()) {
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Jade[1]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[1]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Jade[1]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[1]->point(i);
+          double ycut = dp.x();
           if (y_34 < ycut && y_23 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Jade[2]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[2]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Jade[2]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[2]->point(i);
+          double ycut = dp.x();
           if (y_45 < ycut && y_34 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Jade[3]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[3]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Jade[3]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[3]->point(i);
+          double ycut = dp.x();
           if (y_56 < ycut && y_45 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Jade[4]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[4]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Jade[4]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[4]->point(i);
+          double ycut = dp.x();
           if (y_56 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
       }
@@ -116,38 +116,38 @@ namespace Rivet {
         _h_y_Durham[2]->fill(y_45, weight);
         _h_y_Durham[3]->fill(y_56, weight);
 
-        for (int i = 0; i < _h_R_Durham[0]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[0]->point(i);
-          if (y_23 < dp->coordinate(0)->value()) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+        for (size_t i = 0; i < _h_R_Durham[0]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[0]->point(i);
+          if (y_23 < dp.x()) {
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Durham[1]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[1]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Durham[1]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[1]->point(i);
+          double ycut = dp.x();
           if (y_34 < ycut && y_23 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Durham[2]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[2]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Durham[2]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[2]->point(i);
+          double ycut = dp.x();
           if (y_45 < ycut && y_34 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Durham[3]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[3]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Durham[3]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[3]->point(i);
+          double ycut = dp.x();
           if (y_56 < ycut && y_45 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
-        for (int i = 0; i < _h_R_Durham[4]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[4]->point(i);
-          double ycut = dp->coordinate(0)->value();
+        for (size_t i = 0; i < _h_R_Durham[4]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[4]->point(i);
+          double ycut = dp.x();
           if (y_56 > ycut) {
-            dp->coordinate(1)->setValue(dp->coordinate(1)->value() + weight);
+            dp.setY(dp.y() + weight);
           }
         }
       }
@@ -163,13 +163,13 @@ namespace Rivet {
 
       for (size_t n = 0; n < 5; ++n) {
         // Scale integrated jet rates to 100%
-        for (int i = 0; i < _h_R_Jade[n]->size(); ++i) {
-          IDataPoint* dp = _h_R_Jade[n]->point(i);
-          dp->coordinate(1)->setValue(dp->coordinate(1)->value()*100.0/sumOfWeights());
+        for (size_t i = 0; i < _h_R_Jade[n]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Jade[n]->point(i);
+          dp.setY(dp.y()*100.0/sumOfWeights());
         }
-        for (int i = 0; i < _h_R_Durham[n]->size(); ++i) {
-          IDataPoint* dp = _h_R_Durham[n]->point(i);
-          dp->coordinate(1)->setValue(dp->coordinate(1)->value()*100.0/sumOfWeights());
+        for (size_t i = 0; i < _h_R_Durham[n]->numPoints(); ++i) {
+          Point2D & dp = _h_R_Durham[n]->point(i);
+          dp.setY(dp.y()*100.0/sumOfWeights());
         }
       }
     }
@@ -181,9 +181,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IDataPointSet *_h_R_Jade[5];
-    AIDA::IDataPointSet *_h_R_Durham[5];
-    AIDA::IHistogram1D *_h_y_Durham[4];
+    Scatter2DPtr _h_R_Jade[5];
+    Scatter2DPtr _h_R_Durham[5];
+    Histo1DPtr _h_y_Durham[4];
     //@}
 
   };

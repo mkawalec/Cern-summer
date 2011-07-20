@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/LossyFinalState.hh"
@@ -69,13 +69,13 @@ namespace Rivet {
       const LossyFinalState<STARRandomFilter> lfs(cfs, STARRandomFilter());
       addProjection(lfs, "FS");
 
-      _h_dNch           = bookHistogram1D(1, 1, 1);
-      _h_dpT_Pi         = bookHistogram1D(2, 1, 1);
-      _h_dpT_Piplus     = bookHistogram1D(2, 1, 2);
-      _h_dpT_Kaon       = bookHistogram1D(2, 1, 3);
-      _h_dpT_Kaonplus   = bookHistogram1D(2, 1, 4);
-      _h_dpT_AntiProton = bookHistogram1D(2, 1, 5);
-      _h_dpT_Proton     = bookHistogram1D(2, 1, 6);
+      _h_dNch           = bookHisto1D(1, 1, 1);
+      _h_dpT_Pi         = bookHisto1D(2, 1, 1);
+      _h_dpT_Piplus     = bookHisto1D(2, 1, 2);
+      _h_dpT_Kaon       = bookHisto1D(2, 1, 3);
+      _h_dpT_Kaonplus   = bookHisto1D(2, 1, 4);
+      _h_dpT_AntiProton = bookHisto1D(2, 1, 5);
+      _h_dpT_Proton     = bookHisto1D(2, 1, 6);
     }
 
 
@@ -155,13 +155,13 @@ namespace Rivet {
   private:
 
 
-    AIDA::IHistogram1D *_h_dNch;
+    Histo1DPtr _h_dNch;
 
-    AIDA::IHistogram1D *_h_dpT_Pi, *_h_dpT_Piplus;
-    AIDA::IHistogram1D *_h_dpT_Kaon, *_h_dpT_Kaonplus;
-    AIDA::IHistogram1D *_h_dpT_AntiProton, *_h_dpT_Proton;
+    Histo1DPtr _h_dpT_Pi, _h_dpT_Piplus;
+    Histo1DPtr _h_dpT_Kaon, _h_dpT_Kaonplus;
+    Histo1DPtr _h_dpT_AntiProton, _h_dpT_Proton;
 
-    AIDA::IProfile1D   *_h_pT_vs_Nch;
+    Profile1DPtr _h_pT_vs_Nch;
     double nCutsPassed, nPi, nPiPlus, nKaon, nKaonPlus, nProton, nAntiProton;
   };
 

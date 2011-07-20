@@ -1,10 +1,9 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "LWH/Histogram1D.h"
 
 namespace Rivet {
 
@@ -27,11 +26,11 @@ namespace Rivet {
       addProjection(jetsproj4, "Jets4");
 
       for (size_t i=0 ; i<2 ; i++) {
-        _h_xsec[i]       = bookHistogram1D(1+i, 1, 1);
-        _h_frag_04_06[i] = bookHistogram1D(3+i, 1, 1);
-        _h_frag_06_10[i] = bookHistogram1D(3+i, 2, 1);
-        _h_frag_10_15[i] = bookHistogram1D(3+i, 3, 1);
-        _h_frag_15_24[i] = bookHistogram1D(3+i, 4, 1);
+        _h_xsec[i]       = bookHisto1D(1+i, 1, 1);
+        _h_frag_04_06[i] = bookHisto1D(3+i, 1, 1);
+        _h_frag_06_10[i] = bookHisto1D(3+i, 2, 1);
+        _h_frag_10_15[i] = bookHisto1D(3+i, 3, 1);
+        _h_frag_15_24[i] = bookHisto1D(3+i, 4, 1);
         _njets_04_06[i] = 0.0;
         _njets_06_10[i] = 0.0;
         _njets_10_15[i] = 0.0;
@@ -108,11 +107,11 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D* _h_xsec[2];
-    AIDA::IHistogram1D* _h_frag_04_06[2];
-    AIDA::IHistogram1D* _h_frag_06_10[2];
-    AIDA::IHistogram1D* _h_frag_10_15[2];
-    AIDA::IHistogram1D* _h_frag_15_24[2];
+    Histo1DPtr _h_xsec[2];
+    Histo1DPtr _h_frag_04_06[2];
+    Histo1DPtr _h_frag_06_10[2];
+    Histo1DPtr _h_frag_10_15[2];
+    Histo1DPtr _h_frag_15_24[2];
     double _njets_04_06[2];
     double _njets_06_10[2];
     double _njets_10_15[2];

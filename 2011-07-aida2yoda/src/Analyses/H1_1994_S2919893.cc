@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Math/Constants.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -180,16 +180,16 @@ namespace Rivet {
       addProjection(FinalState(), "FS");
 
       // Histos
-      _histEnergyFlowLowX =  bookHistogram1D(1, 1, 1);
-      _histEnergyFlowHighX = bookHistogram1D(1, 1, 2);
+      _histEnergyFlowLowX =  bookHisto1D(1, 1, 1);
+      _histEnergyFlowHighX = bookHisto1D(1, 1, 2);
 
-      _histEECLowX = bookHistogram1D(2, 1, 1);
-      _histEECHighX = bookHistogram1D(2, 1, 2);
+      _histEECLowX = bookHisto1D(2, 1, 1);
+      _histEECHighX = bookHisto1D(2, 1, 2);
 
-      _histSpectraW77 = bookHistogram1D(3, 1, 1);
-      _histSpectraW122 = bookHistogram1D(3, 1, 2);
-      _histSpectraW169 = bookHistogram1D(3, 1, 3);
-      _histSpectraW117 = bookHistogram1D(3, 1, 4);
+      _histSpectraW77 = bookHisto1D(3, 1, 1);
+      _histSpectraW122 = bookHisto1D(3, 1, 2);
+      _histSpectraW169 = bookHisto1D(3, 1, 3);
+      _histSpectraW117 = bookHisto1D(3, 1, 4);
 
       _histPT2 = bookProfile1D(4, 1, 1);
     }
@@ -236,15 +236,15 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_histEnergyFlowLowX;
-    AIDA::IHistogram1D *_histEnergyFlowHighX;
-    AIDA::IHistogram1D *_histEECLowX;
-    AIDA::IHistogram1D *_histEECHighX;
-    AIDA::IHistogram1D *_histSpectraW77;
-    AIDA::IHistogram1D *_histSpectraW122;
-    AIDA::IHistogram1D *_histSpectraW169;
-    AIDA::IHistogram1D *_histSpectraW117;
-    AIDA::IProfile1D *_histPT2;
+    Histo1DPtr _histEnergyFlowLowX;
+    Histo1DPtr _histEnergyFlowHighX;
+    Histo1DPtr _histEECLowX;
+    Histo1DPtr _histEECHighX;
+    Histo1DPtr _histSpectraW77;
+    Histo1DPtr _histSpectraW122;
+    Histo1DPtr _histSpectraW169;
+    Histo1DPtr _histSpectraW117;
+    Profile1DPtr _histPT2;
     //@}
 
     /// @name storage of weight to calculate averages for normalisation

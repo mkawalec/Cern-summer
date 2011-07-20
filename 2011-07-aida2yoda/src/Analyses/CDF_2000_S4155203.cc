@@ -2,7 +2,7 @@
 // CDF Z pT analysis
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ZFinder.hh"
 
@@ -33,7 +33,7 @@ namespace Rivet {
       addProjection(zfinder, "ZFinder");
 
       // Book histogram
-      _hist_zpt = bookHistogram1D(1, 1, 1);
+      _hist_zpt = bookHisto1D(1, 1, 1);
     }
 
 
@@ -66,7 +66,7 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_hist_zpt;
+    Histo1DPtr _hist_zpt;
 
   };
 

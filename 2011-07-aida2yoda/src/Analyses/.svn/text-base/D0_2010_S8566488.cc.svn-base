@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -39,12 +39,12 @@ namespace Rivet {
       FastJets conefinder(fs, FastJets::D0ILCONE, 0.7);
       addProjection(conefinder, "ConeFinder");
 
-      _h_m_dijet.addHistogram(0.0, 0.4, bookHistogram1D(1, 1, 1));
-      _h_m_dijet.addHistogram(0.4, 0.8, bookHistogram1D(2, 1, 1));
-      _h_m_dijet.addHistogram(0.8, 1.2, bookHistogram1D(3, 1, 1));
-      _h_m_dijet.addHistogram(1.2, 1.6, bookHistogram1D(4, 1, 1));
-      _h_m_dijet.addHistogram(1.6, 2.0, bookHistogram1D(5, 1, 1));
-      _h_m_dijet.addHistogram(2.0, 2.4, bookHistogram1D(6, 1, 1));
+      _h_m_dijet.addHistogram(0.0, 0.4, bookHisto1D(1, 1, 1));
+      _h_m_dijet.addHistogram(0.4, 0.8, bookHisto1D(2, 1, 1));
+      _h_m_dijet.addHistogram(0.8, 1.2, bookHisto1D(3, 1, 1));
+      _h_m_dijet.addHistogram(1.2, 1.6, bookHisto1D(4, 1, 1));
+      _h_m_dijet.addHistogram(1.6, 2.0, bookHisto1D(5, 1, 1));
+      _h_m_dijet.addHistogram(2.0, 2.4, bookHisto1D(6, 1, 1));
     }
 
 

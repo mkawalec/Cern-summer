@@ -5,7 +5,7 @@
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -35,16 +35,16 @@ namespace Rivet {
       FastJets conefinder(fs, FastJets::D0ILCONE, 0.7);
       addProjection(conefinder, "ConeFinder");
 
-      _h_chi_dijet.addHistogram(250., 300., bookHistogram1D(1, 1, 1));
-      _h_chi_dijet.addHistogram(300., 400., bookHistogram1D(2, 1, 1));
-      _h_chi_dijet.addHistogram(400., 500., bookHistogram1D(3, 1, 1));
-      _h_chi_dijet.addHistogram(500., 600., bookHistogram1D(4, 1, 1));
-      _h_chi_dijet.addHistogram(600., 700., bookHistogram1D(5, 1, 1));
-      _h_chi_dijet.addHistogram(700., 800., bookHistogram1D(6, 1, 1));
-      _h_chi_dijet.addHistogram(800., 900., bookHistogram1D(7, 1, 1));
-      _h_chi_dijet.addHistogram(900., 1000., bookHistogram1D(8, 1, 1));
-      _h_chi_dijet.addHistogram(1000., 1100., bookHistogram1D(9, 1, 1));
-      _h_chi_dijet.addHistogram(1100., 1960, bookHistogram1D(10, 1, 1));
+      _h_chi_dijet.addHistogram(250., 300., bookHisto1D(1, 1, 1));
+      _h_chi_dijet.addHistogram(300., 400., bookHisto1D(2, 1, 1));
+      _h_chi_dijet.addHistogram(400., 500., bookHisto1D(3, 1, 1));
+      _h_chi_dijet.addHistogram(500., 600., bookHisto1D(4, 1, 1));
+      _h_chi_dijet.addHistogram(600., 700., bookHisto1D(5, 1, 1));
+      _h_chi_dijet.addHistogram(700., 800., bookHisto1D(6, 1, 1));
+      _h_chi_dijet.addHistogram(800., 900., bookHisto1D(7, 1, 1));
+      _h_chi_dijet.addHistogram(900., 1000., bookHisto1D(8, 1, 1));
+      _h_chi_dijet.addHistogram(1000., 1100., bookHisto1D(9, 1, 1));
+      _h_chi_dijet.addHistogram(1100., 1960, bookHisto1D(10, 1, 1));
     }
 
 
@@ -72,7 +72,7 @@ namespace Rivet {
 
     /// Finalize
     void finalize() {
-      foreach (AIDA::IHistogram1D* hist, _h_chi_dijet.getHistograms()) {
+      foreach (Histo1DPtr hist, _h_chi_dijet.getHistograms()) {
         normalize(hist);
       }
     }

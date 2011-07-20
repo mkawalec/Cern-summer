@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include <iostream>
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/UnstableFinalState.hh"
@@ -173,22 +173,22 @@ namespace Rivet {
       addProjection(UnstableFinalState(-1.3170, 1.9008), "UFS");
 
       // histograms for continuum data (sqrt(s) = 10.52 GeV)
-      _histXpDstarplus2D0_C = bookHistogram1D(2, 1, 1);
-      _histXpD0_C = bookHistogram1D(3, 1, 1);
-      _histXpDplus_C = bookHistogram1D(4, 1, 1);
-      _histXpDplus_s_C = bookHistogram1D(5, 1, 1);
-      _histXpLambda_c_C = bookHistogram1D(6, 1, 1);
-      _histXpDstarplus2Dplus_C = bookHistogram1D(7, 1, 1);
-      _histXpDstar0_C = bookHistogram1D(8, 1, 1);
+      _histXpDstarplus2D0_C = bookHisto1D(2, 1, 1);
+      _histXpD0_C = bookHisto1D(3, 1, 1);
+      _histXpDplus_C = bookHisto1D(4, 1, 1);
+      _histXpDplus_s_C = bookHisto1D(5, 1, 1);
+      _histXpLambda_c_C = bookHisto1D(6, 1, 1);
+      _histXpDstarplus2Dplus_C = bookHisto1D(7, 1, 1);
+      _histXpDstar0_C = bookHisto1D(8, 1, 1);
 
       // histograms for on-resonance data (sqrt(s) = 10.58 GeV)
-      _histXpDstarplus2D0_R = bookHistogram1D(9, 1, 1);
-      _histXpD0_R = bookHistogram1D(10, 1, 1);
-      _histXpDplus_R = bookHistogram1D(11, 1, 1);
-      _histXpDplus_s_R = bookHistogram1D(12, 1, 1);
-      _histXpLambda_c_R = bookHistogram1D(13, 1, 1);
-      _histXpDstarplus2Dplus_R = bookHistogram1D(14, 1, 1);
-      _histXpDstar0_R = bookHistogram1D(15, 1, 1);
+      _histXpDstarplus2D0_R = bookHisto1D(9, 1, 1);
+      _histXpD0_R = bookHisto1D(10, 1, 1);
+      _histXpDplus_R = bookHisto1D(11, 1, 1);
+      _histXpDplus_s_R = bookHisto1D(12, 1, 1);
+      _histXpLambda_c_R = bookHisto1D(13, 1, 1);
+      _histXpDstarplus2Dplus_R = bookHisto1D(14, 1, 1);
+      _histXpDstar0_R = bookHisto1D(15, 1, 1);
 
     } // init
 
@@ -197,22 +197,22 @@ namespace Rivet {
     //@{
     /// Histograms
     // histograms for continuum data (sqrt(s) = 10.52 GeV)
-    AIDA::IHistogram1D* _histXpDstarplus2D0_C;
-    AIDA::IHistogram1D* _histXpD0_C;
-    AIDA::IHistogram1D* _histXpDplus_C;
-    AIDA::IHistogram1D* _histXpDplus_s_C;
-    AIDA::IHistogram1D* _histXpLambda_c_C;
-    AIDA::IHistogram1D* _histXpDstarplus2Dplus_C;
-    AIDA::IHistogram1D* _histXpDstar0_C;
+    Histo1DPtr _histXpDstarplus2D0_C;
+    Histo1DPtr _histXpD0_C;
+    Histo1DPtr _histXpDplus_C;
+    Histo1DPtr _histXpDplus_s_C;
+    Histo1DPtr _histXpLambda_c_C;
+    Histo1DPtr _histXpDstarplus2Dplus_C;
+    Histo1DPtr _histXpDstar0_C;
 
     // histograms for on-resonance data (sqrt(s) = 10.58 GeV)
-    AIDA::IHistogram1D* _histXpDstarplus2D0_R;
-    AIDA::IHistogram1D* _histXpD0_R;
-    AIDA::IHistogram1D* _histXpDplus_R;
-    AIDA::IHistogram1D* _histXpDplus_s_R;
-    AIDA::IHistogram1D* _histXpLambda_c_R;
-    AIDA::IHistogram1D* _histXpDstarplus2Dplus_R;
-    AIDA::IHistogram1D* _histXpDstar0_R;
+    Histo1DPtr _histXpDstarplus2D0_R;
+    Histo1DPtr _histXpD0_R;
+    Histo1DPtr _histXpDplus_R;
+    Histo1DPtr _histXpDplus_s_R;
+    Histo1DPtr _histXpLambda_c_R;
+    Histo1DPtr _histXpDstarplus2Dplus_R;
+    Histo1DPtr _histXpDstar0_R;
     //@}
   };
 

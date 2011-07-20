@@ -4,7 +4,6 @@
 
 #include "Rivet/Analysis.hh"
 #include "Rivet/Projections/FinalState.hh"
-#include "LWH/Histogram1D.h"
 
 namespace Rivet {
 
@@ -44,20 +43,20 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    std::vector<AIDA::IHistogram1D *> _h_log10_d;
-    std::vector<AIDA::IDataPointSet *> _h_log10_R;
-    std::vector<AIDA::IHistogram1D *> _h_pT_jet;
-    std::vector<AIDA::IHistogram1D *> _h_eta_jet;
-    std::vector<shared_ptr<LWH::Histogram1D> > _h_eta_jet_plus, _h_eta_jet_minus;
-    std::vector<AIDA::IHistogram1D *> _h_rap_jet;
-    std::vector<shared_ptr<LWH::Histogram1D> > _h_rap_jet_plus, _h_rap_jet_minus;
-    std::vector<AIDA::IHistogram1D *> _h_mass_jet;
-    std::map<std::pair<size_t, size_t>, AIDA::IHistogram1D*> _h_deta_jets;
-    std::map<std::pair<size_t, size_t>, AIDA::IHistogram1D*> _h_dR_jets;
-    AIDA::IHistogram1D * _h_jet_multi_exclusive;
-    AIDA::IHistogram1D * _h_jet_multi_inclusive;
-    AIDA::IDataPointSet * _h_jet_multi_ratio;
-    AIDA::IHistogram1D * _h_jet_HT;
+    std::vector<Histo1DPtr> _h_log10_d;
+    std::vector<Scatter2DPtr> _h_log10_R;
+    std::vector<Histo1DPtr> _h_pT_jet;
+    std::vector<Histo1DPtr> _h_eta_jet;
+    std::vector<Histo1DPtr> _h_eta_jet_plus, _h_eta_jet_minus;
+    std::vector<Histo1DPtr> _h_rap_jet;
+    std::vector<Histo1DPtr> _h_rap_jet_plus, _h_rap_jet_minus;
+    std::vector<Histo1DPtr> _h_mass_jet;
+    std::map<std::pair<size_t, size_t>, Histo1DPtr> _h_deta_jets;
+    std::map<std::pair<size_t, size_t>, Histo1DPtr> _h_dR_jets;
+    Histo1DPtr _h_jet_multi_exclusive;
+    Histo1DPtr _h_jet_multi_inclusive;
+    Scatter2DPtr _h_jet_multi_ratio;
+    Histo1DPtr _h_jet_HT;
     //@}
 
   };

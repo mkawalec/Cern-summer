@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/LeadingParticlesFinalState.hh"
@@ -40,7 +40,7 @@ namespace Rivet {
       photonfs.addParticleId(PHOTON);
       addProjection(photonfs, "LeadingPhoton");
 
-      _h_Et_photon = bookHistogram1D(1, 1, 1);
+      _h_Et_photon = bookHisto1D(1, 1, 1);
 
     }
 
@@ -82,7 +82,7 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_h_Et_photon;
+    Histo1DPtr _h_Et_photon;
     //@}
 
   };

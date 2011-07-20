@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/Beam.hh"
@@ -32,18 +32,18 @@ namespace Rivet {
 
       // Histograms
       if (fuzzyEquals(sqrtS()/GeV, 200.0, 1E-4)) {
-        _hist_eta_nsd       = bookHistogram1D(1,1,1);
-        _hist_eta_inelastic = bookHistogram1D(1,1,2);
+        _hist_eta_nsd       = bookHisto1D(1,1,1);
+        _hist_eta_inelastic = bookHisto1D(1,1,2);
         for (int i = 1; i <= 6; ++i) {
           _sumWn += 0.0;
-          _hists_eta_nsd += bookHistogram1D(2,1,i);
+          _hists_eta_nsd += bookHisto1D(2,1,i);
         }
       } else if (fuzzyEquals(sqrtS()/GeV, 900.0, 1E-4)) {
-        _hist_eta_nsd       = bookHistogram1D(1,1,3);
-        _hist_eta_inelastic = bookHistogram1D(1,1,4);
+        _hist_eta_nsd       = bookHisto1D(1,1,3);
+        _hist_eta_inelastic = bookHisto1D(1,1,4);
         for (int i = 1; i <= 9; ++i) {
           _sumWn += 0.0;
-          _hists_eta_nsd += bookHistogram1D(3,1,i);
+          _hists_eta_nsd += bookHisto1D(3,1,i);
         }
       }
     }
@@ -107,9 +107,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D *_hist_eta_nsd;
-    AIDA::IHistogram1D *_hist_eta_inelastic;
-    vector<AIDA::IHistogram1D*> _hists_eta_nsd;
+    Histo1DPtr _hist_eta_nsd;
+    Histo1DPtr _hist_eta_inelastic;
+    vector<Histo1DPtr> _hists_eta_nsd;
     //@}
 
   };

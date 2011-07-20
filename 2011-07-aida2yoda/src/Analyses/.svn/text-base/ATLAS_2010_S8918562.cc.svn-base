@@ -1,7 +1,7 @@
 // -*- C++ -*-
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Tools/Logging.hh"
 
@@ -14,8 +14,8 @@ namespace Rivet {
 
     /// Helper for collectively filling Nch, pT, eta, and pT vs. Nch histograms
     void fillPtEtaNch(const ChargedFinalState& cfs, int nchcut, double weight,
-                      AIDA::IHistogram1D* h_nch, AIDA::IHistogram1D* h_pt,
-                      AIDA::IHistogram1D* h_eta, AIDA::IProfile1D* h_ptnch = 0) {
+                      Histo1DPtr h_nch, Histo1DPtr h_pt,
+                      Histo1DPtr h_eta, Profile1DPtr h_ptnch = Profile1DPtr()) {
 
       // Get number of particles and skip if event fails cut
       const int nch = cfs.size();
@@ -55,60 +55,60 @@ namespace Rivet {
 
       // Book histograms
       if (fuzzyEquals(sqrtS()/GeV, 900)) {
-        _hist_pt100_nch2_nch = bookHistogram1D(18, 1, 1);
-        _hist_pt100_nch2_pt = bookHistogram1D(11, 1, 1);
-        _hist_pt100_nch2_eta = bookHistogram1D(4, 1, 1);
+        _hist_pt100_nch2_nch = bookHisto1D(18, 1, 1);
+        _hist_pt100_nch2_pt = bookHisto1D(11, 1, 1);
+        _hist_pt100_nch2_eta = bookHisto1D(4, 1, 1);
         _hist_pt100_nch2_ptnch = bookProfile1D(24, 1, 1);
 
-        _hist_pt100_nch20_nch = bookHistogram1D(34, 1, 1);
-        _hist_pt100_nch20_pt = bookHistogram1D(30, 1, 1);
-        _hist_pt100_nch20_eta = bookHistogram1D(26, 1, 1);
+        _hist_pt100_nch20_nch = bookHisto1D(34, 1, 1);
+        _hist_pt100_nch20_pt = bookHisto1D(30, 1, 1);
+        _hist_pt100_nch20_eta = bookHisto1D(26, 1, 1);
 
-        _hist_pt500_nch1_nch = bookHistogram1D(15, 1, 1);
-        _hist_pt500_nch1_pt = bookHistogram1D(8, 1, 1);
-        _hist_pt500_nch1_eta = bookHistogram1D(1, 1, 1);
+        _hist_pt500_nch1_nch = bookHisto1D(15, 1, 1);
+        _hist_pt500_nch1_pt = bookHisto1D(8, 1, 1);
+        _hist_pt500_nch1_eta = bookHisto1D(1, 1, 1);
         _hist_pt500_nch1_ptnch = bookProfile1D(22, 1, 1);
 
-        _hist_pt500_nch6_nch = bookHistogram1D(20, 1, 1);
-        _hist_pt500_nch6_pt = bookHistogram1D(13, 1, 1);
-        _hist_pt500_nch6_eta = bookHistogram1D(6, 1, 1);
+        _hist_pt500_nch6_nch = bookHisto1D(20, 1, 1);
+        _hist_pt500_nch6_pt = bookHisto1D(13, 1, 1);
+        _hist_pt500_nch6_eta = bookHisto1D(6, 1, 1);
 
-        _hist_pt2500_nch1_nch = bookHistogram1D(36, 1, 1);
-        _hist_pt2500_nch1_pt = bookHistogram1D(32, 1, 1);
-        _hist_pt2500_nch1_eta = bookHistogram1D(28, 1, 1);
+        _hist_pt2500_nch1_nch = bookHisto1D(36, 1, 1);
+        _hist_pt2500_nch1_pt = bookHisto1D(32, 1, 1);
+        _hist_pt2500_nch1_eta = bookHisto1D(28, 1, 1);
         _hist_pt2500_nch1_ptnch = bookProfile1D(38, 1, 1);
 
       } else if (fuzzyEquals(sqrtS()/GeV, 2360)) {
 
-        _hist_pt500_nch1_nch = bookHistogram1D(16, 1, 1);
-        _hist_pt500_nch1_pt = bookHistogram1D(9, 1, 1);
-        _hist_pt500_nch1_eta = bookHistogram1D(2, 1, 1);
+        _hist_pt500_nch1_nch = bookHisto1D(16, 1, 1);
+        _hist_pt500_nch1_pt = bookHisto1D(9, 1, 1);
+        _hist_pt500_nch1_eta = bookHisto1D(2, 1, 1);
         // This one histogram might be called while unbooked, so ensure its pointer is null!
-        _hist_pt500_nch1_ptnch = 0;
+        _hist_pt500_nch1_ptnch = Profile1DPtr();
 
       } else if (fuzzyEquals(sqrtS()/GeV, 7000)) {
 
-        _hist_pt100_nch2_nch = bookHistogram1D(19, 1, 1);
-        _hist_pt100_nch2_pt = bookHistogram1D(12, 1, 1);
-        _hist_pt100_nch2_eta = bookHistogram1D(5, 1, 1);
+        _hist_pt100_nch2_nch = bookHisto1D(19, 1, 1);
+        _hist_pt100_nch2_pt = bookHisto1D(12, 1, 1);
+        _hist_pt100_nch2_eta = bookHisto1D(5, 1, 1);
         _hist_pt100_nch2_ptnch = bookProfile1D(25, 1, 1);
 
-        _hist_pt100_nch20_nch = bookHistogram1D(35, 1, 1);
-        _hist_pt100_nch20_pt = bookHistogram1D(31, 1, 1);
-        _hist_pt100_nch20_eta = bookHistogram1D(27, 1, 1);
+        _hist_pt100_nch20_nch = bookHisto1D(35, 1, 1);
+        _hist_pt100_nch20_pt = bookHisto1D(31, 1, 1);
+        _hist_pt100_nch20_eta = bookHisto1D(27, 1, 1);
 
-        _hist_pt500_nch1_nch = bookHistogram1D(17, 1, 1);
-        _hist_pt500_nch1_pt = bookHistogram1D(10, 1, 1);
-        _hist_pt500_nch1_eta = bookHistogram1D(3, 1, 1);
+        _hist_pt500_nch1_nch = bookHisto1D(17, 1, 1);
+        _hist_pt500_nch1_pt = bookHisto1D(10, 1, 1);
+        _hist_pt500_nch1_eta = bookHisto1D(3, 1, 1);
         _hist_pt500_nch1_ptnch = bookProfile1D(23, 1, 1);
 
-        _hist_pt500_nch6_nch = bookHistogram1D(21, 1, 1);
-        _hist_pt500_nch6_pt = bookHistogram1D(14, 1, 1);
-        _hist_pt500_nch6_eta = bookHistogram1D(7, 1, 1);
+        _hist_pt500_nch6_nch = bookHisto1D(21, 1, 1);
+        _hist_pt500_nch6_pt = bookHisto1D(14, 1, 1);
+        _hist_pt500_nch6_eta = bookHisto1D(7, 1, 1);
 
-        _hist_pt2500_nch1_nch = bookHistogram1D(37, 1, 1);
-        _hist_pt2500_nch1_pt = bookHistogram1D(33, 1, 1);
-        _hist_pt2500_nch1_eta = bookHistogram1D(29, 1, 1);
+        _hist_pt2500_nch1_nch = bookHisto1D(37, 1, 1);
+        _hist_pt2500_nch1_pt = bookHisto1D(33, 1, 1);
+        _hist_pt2500_nch1_eta = bookHisto1D(29, 1, 1);
         _hist_pt2500_nch1_ptnch = bookProfile1D(39, 1, 1);
 
       } else {
@@ -160,34 +160,34 @@ namespace Rivet {
 
       if (!fuzzyEquals(sqrtS()/GeV, 2360)) {
         if (_sumW_pt100_nch2 > 0) {
-          _hist_pt100_nch2_nch->scale(1.0/_sumW_pt100_nch2);
-          _hist_pt100_nch2_pt->scale(1.0/_sumW_pt100_nch2/TWOPI/5);
-          _hist_pt100_nch2_eta->scale(1.0/_sumW_pt100_nch2);
+          scale(_hist_pt100_nch2_nch, 1.0/_sumW_pt100_nch2);
+          scale(_hist_pt100_nch2_pt, 1.0/_sumW_pt100_nch2/TWOPI/5);
+          scale(_hist_pt100_nch2_eta, 1.0/_sumW_pt100_nch2);
         }
 
         if (_sumW_pt100_nch20 > 0) {
-          _hist_pt100_nch20_nch->scale(1.0/_sumW_pt100_nch20);
-          _hist_pt100_nch20_pt->scale(1.0/_sumW_pt100_nch20/TWOPI/5);
-          _hist_pt100_nch20_eta->scale(1.0/_sumW_pt100_nch20);
+          scale(_hist_pt100_nch20_nch, 1.0/_sumW_pt100_nch20);
+          scale(_hist_pt100_nch20_pt, 1.0/_sumW_pt100_nch20/TWOPI/5);
+          scale(_hist_pt100_nch20_eta, 1.0/_sumW_pt100_nch20);
         }
 
         if (_sumW_pt500_nch6 > 0) {
-          _hist_pt500_nch6_nch->scale(1.0/_sumW_pt500_nch6);
-          _hist_pt500_nch6_pt->scale(1.0/_sumW_pt500_nch6/TWOPI/5);
-          _hist_pt500_nch6_eta->scale(1.0/_sumW_pt500_nch6);
+          scale(_hist_pt500_nch6_nch, 1.0/_sumW_pt500_nch6);
+          scale(_hist_pt500_nch6_pt, 1.0/_sumW_pt500_nch6/TWOPI/5);
+          scale(_hist_pt500_nch6_eta, 1.0/_sumW_pt500_nch6);
         }
 
         if (_sumW_pt2500_nch1 > 0) {
-          _hist_pt2500_nch1_nch->scale(1.0/_sumW_pt2500_nch1);
-          _hist_pt2500_nch1_pt->scale(1.0/_sumW_pt2500_nch1/TWOPI/5);
-          _hist_pt2500_nch1_eta->scale(1.0/_sumW_pt2500_nch1);
+          scale(_hist_pt2500_nch1_nch, 1.0/_sumW_pt2500_nch1);
+          scale(_hist_pt2500_nch1_pt, 1.0/_sumW_pt2500_nch1/TWOPI/5);
+          scale(_hist_pt2500_nch1_eta, 1.0/_sumW_pt2500_nch1);
         }
       }
 
       if (_sumW_pt500_nch1 > 0) {
-        _hist_pt500_nch1_nch->scale(1.0/_sumW_pt500_nch1);
-        _hist_pt500_nch1_pt->scale(1.0/_sumW_pt500_nch1/TWOPI/5);
-        _hist_pt500_nch1_eta->scale(1.0/_sumW_pt500_nch1);
+        scale(_hist_pt500_nch1_nch, 1.0/_sumW_pt500_nch1);
+        scale(_hist_pt500_nch1_pt, 1.0/_sumW_pt500_nch1/TWOPI/5);
+        scale(_hist_pt500_nch1_eta, 1.0/_sumW_pt500_nch1);
       }
     }
 
@@ -197,20 +197,20 @@ namespace Rivet {
     double _sumW_pt100_nch2, _sumW_pt100_nch20, _sumW_pt500_nch1,
       _sumW_pt500_nch6, _sumW_pt2500_nch1;
 
-    AIDA::IHistogram1D *_hist_pt100_nch2_nch,
-      *_hist_pt100_nch20_nch, *_hist_pt500_nch1_nch,
-      *_hist_pt500_nch6_nch, *_hist_pt2500_nch1_nch;
+    Histo1DPtr _hist_pt100_nch2_nch,
+      _hist_pt100_nch20_nch, _hist_pt500_nch1_nch,
+      _hist_pt500_nch6_nch, _hist_pt2500_nch1_nch;
 
-    AIDA::IHistogram1D *_hist_pt100_nch2_pt,
-      *_hist_pt100_nch20_pt, *_hist_pt500_nch1_pt,
-      *_hist_pt500_nch6_pt, *_hist_pt2500_nch1_pt;
+    Histo1DPtr _hist_pt100_nch2_pt,
+      _hist_pt100_nch20_pt, _hist_pt500_nch1_pt,
+      _hist_pt500_nch6_pt, _hist_pt2500_nch1_pt;
 
-    AIDA::IHistogram1D *_hist_pt100_nch2_eta,
-      *_hist_pt100_nch20_eta, *_hist_pt500_nch1_eta,
-      *_hist_pt500_nch6_eta, *_hist_pt2500_nch1_eta;
+    Histo1DPtr _hist_pt100_nch2_eta,
+      _hist_pt100_nch20_eta, _hist_pt500_nch1_eta,
+      _hist_pt500_nch6_eta, _hist_pt2500_nch1_eta;
 
-    AIDA::IProfile1D *_hist_pt100_nch2_ptnch,
-      *_hist_pt500_nch1_ptnch, *_hist_pt2500_nch1_ptnch;
+    Profile1DPtr _hist_pt100_nch2_ptnch,
+      _hist_pt500_nch1_ptnch, _hist_pt2500_nch1_ptnch;
 
   };
 

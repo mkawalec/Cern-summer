@@ -3,7 +3,7 @@
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ZFinder.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -38,15 +38,15 @@ namespace Rivet {
 
       _sum_of_weights_inclusive=0.0;
 
-      _h_jet_pT_cross_section = bookHistogram1D(1, 1, 1);
-      _h_jet_pT_normalised = bookHistogram1D(1, 1, 2);
-      _h_jet_y_cross_section = bookHistogram1D(2, 1, 1);
-      _h_jet_y_normalised = bookHistogram1D(2, 1, 2);
-      _h_Z_pT_cross_section = bookHistogram1D(3, 1, 1);
-      _h_Z_pT_normalised = bookHistogram1D(3, 1, 2);
-      _h_Z_y_cross_section = bookHistogram1D(4, 1, 1);
-      _h_Z_y_normalised = bookHistogram1D(4, 1, 2);
-      _h_total_cross_section = bookHistogram1D(5, 1, 1);
+      _h_jet_pT_cross_section = bookHisto1D(1, 1, 1);
+      _h_jet_pT_normalised = bookHisto1D(1, 1, 2);
+      _h_jet_y_cross_section = bookHisto1D(2, 1, 1);
+      _h_jet_y_normalised = bookHisto1D(2, 1, 2);
+      _h_Z_pT_cross_section = bookHisto1D(3, 1, 1);
+      _h_Z_pT_normalised = bookHisto1D(3, 1, 2);
+      _h_Z_y_cross_section = bookHisto1D(4, 1, 1);
+      _h_Z_y_normalised = bookHisto1D(4, 1, 2);
+      _h_total_cross_section = bookHisto1D(5, 1, 1);
     }
 
 
@@ -118,15 +118,15 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_jet_pT_cross_section;
-    AIDA::IHistogram1D * _h_jet_y_cross_section;
-    AIDA::IHistogram1D * _h_Z_pT_cross_section;
-    AIDA::IHistogram1D * _h_Z_y_cross_section;
-    AIDA::IHistogram1D * _h_total_cross_section;
-    AIDA::IHistogram1D * _h_jet_pT_normalised;
-    AIDA::IHistogram1D * _h_jet_y_normalised;
-    AIDA::IHistogram1D * _h_Z_pT_normalised;
-    AIDA::IHistogram1D * _h_Z_y_normalised;
+    Histo1DPtr _h_jet_pT_cross_section;
+    Histo1DPtr _h_jet_y_cross_section;
+    Histo1DPtr _h_Z_pT_cross_section;
+    Histo1DPtr _h_Z_y_cross_section;
+    Histo1DPtr _h_total_cross_section;
+    Histo1DPtr _h_jet_pT_normalised;
+    Histo1DPtr _h_jet_y_normalised;
+    Histo1DPtr _h_Z_pT_normalised;
+    Histo1DPtr _h_Z_y_normalised;
     //@}
 
     double _sum_of_weights_inclusive;

@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -82,15 +82,15 @@ namespace Rivet {
 
 
       /// Book histograms
-      _count_A = bookHistogram1D("count_A", 1, 0., 1.);
-      _count_B = bookHistogram1D("count_B", 1, 0., 1.);
-      _count_C = bookHistogram1D("count_C", 1, 0., 1.);
-      _count_D = bookHistogram1D("count_D", 1, 0., 1.);
+      _count_A = bookHisto1D("count_A", 1, 0., 1.);
+      _count_B = bookHisto1D("count_B", 1, 0., 1.);
+      _count_C = bookHisto1D("count_C", 1, 0., 1.);
+      _count_D = bookHisto1D("count_D", 1, 0., 1.);
 
-      _hist_meff_A  = bookHistogram1D("m_eff_A", 30, 0., 3000.);
-      _hist_mT2_B   = bookHistogram1D("m_T2", 25, 0., 1000.);
-      _hist_meff_CD = bookHistogram1D("m_eff_C_D", 30, 0., 3000.);
-      _hist_eTmiss  = bookHistogram1D("Et_miss", 20, 0., 1000.);
+      _hist_meff_A  = bookHisto1D("m_eff_A", 30, 0., 3000.);
+      _hist_mT2_B   = bookHisto1D("m_T2", 25, 0., 1000.);
+      _hist_meff_CD = bookHisto1D("m_eff_C_D", 30, 0., 3000.);
+      _hist_eTmiss  = bookHisto1D("Et_miss", 20, 0., 1000.);
     }
 
 
@@ -313,14 +313,14 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _count_A;
-    AIDA::IHistogram1D* _count_B;
-    AIDA::IHistogram1D* _count_C;
-    AIDA::IHistogram1D* _count_D;
-    AIDA::IHistogram1D* _hist_meff_A;
-    AIDA::IHistogram1D* _hist_mT2_B;
-    AIDA::IHistogram1D* _hist_meff_CD;
-    AIDA::IHistogram1D* _hist_eTmiss;
+    Histo1DPtr _count_A;
+    Histo1DPtr _count_B;
+    Histo1DPtr _count_C;
+    Histo1DPtr _count_D;
+    Histo1DPtr _hist_meff_A;
+    Histo1DPtr _hist_mT2_B;
+    Histo1DPtr _hist_meff_CD;
+    Histo1DPtr _hist_eTmiss;
     //@}
 
 

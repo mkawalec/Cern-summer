@@ -47,8 +47,11 @@ fi
 
 ## Get Rivet system C++ compiler flags
 mycxxflags=""
+if [[ -n "@AM_CXXFLAGS@" ]]; then
+    mycxxflags="@AM_CXXFLAGS@"
+fi
 if [[ -n "@CXXFLAGS@" ]]; then
-    mycxxflags="@CXXFLAGS@"
+    mycxxflags="$mycxxflags @CXXFLAGS@"
 fi
 
 ## Get Rivet system C preprocessor flags (duplicating that in rivet-config.in)

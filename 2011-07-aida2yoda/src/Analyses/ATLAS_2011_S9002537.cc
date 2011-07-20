@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -28,9 +28,9 @@ namespace Rivet {
       MissingMomentum missmom(FinalState(-5.,5.,0.*GeV));
       addProjection(missmom,"MissingMomentum");
 
-      _h_plus   = bookHistogram1D("_h_plus",  binEdges(1,1,1));
-      _h_minus  = bookHistogram1D("_h_minus", binEdges(1,1,1));
-      _h_asym   = bookDataPointSet(1,1,1);
+      _h_plus   = bookHisto1D("_h_plus",  binEdges(1,1,1));
+      _h_minus  = bookHisto1D("_h_minus", binEdges(1,1,1));
+      _h_asym   = bookScatter2D(1,1,1);
     }
 
     void analyze(const Event& event) {
@@ -76,31 +76,33 @@ namespace Rivet {
 
     /// Normalise histograms etc., after the run
     void finalize() {
-      int Nbins = _h_plus->axis().bins();
-      std::vector<double> asym, asym_err;
+      int Nbins = _h_plus->numBins();
       for (int i=0; i<Nbins; i++) {
-        double num   = _h_plus->binHeight(i) - _h_minus->binHeight(i);
-        double denom = _h_plus->binHeight(i) + _h_minus->binHeight(i);
-        double err   = _h_plus->binError(i)  + _h_minus->binError(i);
+        double num   = _h_plus->bin(i).area() - _h_minus->bin(i).area();
+        double denom = _h_plus->bin(i).area() + _h_minus->bin(i).area();
+        double err   = _h_plus->bin(i).areaError()  + _h_minus->bin(i).areaError();
 
+        double asym, asym_err;
         if (num==0 || denom==0) {
-          asym.push_back(0.);
-          asym_err.push_back(0.);
+          asym = 0;
+          asym_err = 0;
         }
         else {
-          asym.push_back(num/denom);
-          asym_err.push_back(num/denom*((err/num)+(err/denom)));
+          asym = num/denom;
+          asym_err = num/denom*((err/num)+(err/denom));
         }
+        _h_asym->point(i).setY(asym);
+        _h_asym->point(i).setYErr(asym_err);
       }
-      _h_asym->setCoordinate(1, asym, asym_err);
 
-      histogramFactory().destroy(_h_plus);
-      histogramFactory().destroy(_h_minus);
+      // todo YODA deleteplot
+      // histogramFactory().destroy(_h_plus);
+      // histogramFactory().destroy(_h_minus);
     }
 
   private:
-    AIDA::IHistogram1D  *_h_plus, *_h_minus;
-    AIDA::IDataPointSet *_h_asym;
+    Histo1DPtr  _h_plus, _h_minus;
+    Scatter2DPtr _h_asym;
 
   };
 

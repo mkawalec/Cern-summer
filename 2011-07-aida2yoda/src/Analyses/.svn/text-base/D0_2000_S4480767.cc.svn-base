@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/WFinder.hh"
@@ -35,7 +35,7 @@ namespace Rivet {
       WFinder wf(-5, 5, 0.0*GeV, ELECTRON, 0.0*GeV, 200.0*GeV, 0.0*GeV, 0.2);
       addProjection(wf, "WFinder");
 
-      _h_W_pT = bookHistogram1D(1, 1, 1);
+      _h_W_pT = bookHisto1D(1, 1, 1);
     }
 
 
@@ -65,7 +65,7 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_W_pT;
+    Histo1DPtr _h_W_pT;
     //@}
 
 

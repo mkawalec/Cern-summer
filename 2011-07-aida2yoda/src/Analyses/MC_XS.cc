@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "HepMC/HepMCDefs.h"
 
@@ -31,7 +31,7 @@ namespace Rivet {
 
     /// Book histograms and initialise projections before the run
     void init() {
-      _h_XS = bookDataPointSet("XS", 1, 0.0, 1.0);
+      _h_XS = bookScatter2D("XS", 1, 0.0, 1.0);
       _mc_xs=_mc_error=0.;
     }
 
@@ -51,10 +51,8 @@ namespace Rivet {
       _mc_xs=crossSection();
       _mc_error=0.0;
 #endif
-      std::vector<double> xs,err;
-      xs.push_back(_mc_xs);
-      err.push_back(_mc_error);
-      _h_XS->setCoordinate(1,xs,err);
+      _h_XS->addPoint(0,_mc_xs,
+		      0,_mc_error);
     }
 
     //@}
@@ -64,7 +62,7 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IDataPointSet * _h_XS;
+    Scatter2DPtr  _h_XS;
     double _mc_xs, _mc_error;
     //@}
 

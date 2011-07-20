@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
@@ -33,19 +33,19 @@ namespace Rivet {
       ifs.acceptId(PHOTON);
       addProjection(ifs, "IFS");
 
-      _h_M = bookHistogram1D(1, 1, 1);
-      _h_pT = bookHistogram1D(2, 1, 1);
-      _h_dPhi = bookHistogram1D(3, 1, 1);
-      _h_costheta = bookHistogram1D(4, 1, 1);
+      _h_M = bookHisto1D(1, 1, 1);
+      _h_pT = bookHisto1D(2, 1, 1);
+      _h_dPhi = bookHisto1D(3, 1, 1);
+      _h_costheta = bookHisto1D(4, 1, 1);
 
       std::pair<double, double> M_ranges[] = { std::make_pair(30.0, 50.0),
                                                std::make_pair(50.0, 80.0),
                                                std::make_pair(80.0, 350.0) };
 
       for (size_t i=0; i<3; ++i) {
-        _h_pT_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHistogram1D(5+3*i, 1, 1));
-        _h_dPhi_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHistogram1D(6+3*i, 1, 1));
-        _h_costheta_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHistogram1D(7+3*i, 1, 1));
+        _h_pT_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHisto1D(5+3*i, 1, 1));
+        _h_dPhi_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHisto1D(6+3*i, 1, 1));
+        _h_costheta_M.addHistogram(M_ranges[i].first, M_ranges[i].second, bookHisto1D(7+3*i, 1, 1));
       }
     }
 
@@ -134,10 +134,10 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_h_M;
-    AIDA::IHistogram1D *_h_pT;
-    AIDA::IHistogram1D *_h_dPhi;
-    AIDA::IHistogram1D *_h_costheta;
+    Histo1DPtr _h_M;
+    Histo1DPtr _h_pT;
+    Histo1DPtr _h_dPhi;
+    Histo1DPtr _h_costheta;
     BinnedHistogram<double> _h_pT_M;
     BinnedHistogram<double> _h_dPhi_M;
     BinnedHistogram<double> _h_costheta_M;

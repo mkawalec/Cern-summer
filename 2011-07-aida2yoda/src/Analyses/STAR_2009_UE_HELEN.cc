@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/NeutralFinalState.hh"
@@ -157,9 +157,9 @@ namespace Rivet {
 
   private:
 
-    AIDA::IProfile1D *_hist_pmaxnchg;
-    AIDA::IProfile1D *_hist_pminnchg;
-    AIDA::IProfile1D *_hist_anchg;
+    Profile1DPtr _hist_pmaxnchg;
+    Profile1DPtr _hist_pminnchg;
+    Profile1DPtr _hist_anchg;
 
   };
 

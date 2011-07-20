@@ -10,13 +10,15 @@ libRivet_la_SOURCES =
 
 libRivet_la_LDFLAGS = \
   -L$(prefix)/lib \
+  -L$(YODALIBPATH) -R$(YODALIBPATH) \
   -L$(HEPMCLIBPATH) -R$(HEPMCLIBPATH) \
   -export-dynamic $(VERSIONINFOFLAGS)
 
 libRivet_la_LIBADD  = \
   Core/libRivetCore.la \
   Projections/libRivetProjections.la \
-  Analyses/libRivetAnalysisTools.la \
   Tools/libRivetTools.la \
-  -ldl -lm -lHepMC \
+  Analyses/libRivetAnalysisTools.la \
+ -ldl -lm -lYODA -lHepMC \
   $(GSL_LDFLAGS) $(FASTJETCONFIGLIBADD)
+

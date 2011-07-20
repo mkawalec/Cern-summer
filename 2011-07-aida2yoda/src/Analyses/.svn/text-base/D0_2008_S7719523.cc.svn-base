@@ -5,7 +5,7 @@
 #include "Rivet/Projections/LeadingParticlesFinalState.hh"
 #include "Rivet/Projections/VetoedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -59,10 +59,10 @@ namespace Rivet {
       addProjection(jetpro, "Jets");
 
       // Histograms
-      _h_central_same_cross_section = bookHistogram1D(1, 1, 1);
-      _h_central_opp_cross_section  = bookHistogram1D(2, 1, 1);
-      _h_forward_same_cross_section = bookHistogram1D(3, 1, 1);
-      _h_forward_opp_cross_section  = bookHistogram1D(4, 1, 1);
+      _h_central_same_cross_section = bookHisto1D(1, 1, 1);
+      _h_central_opp_cross_section  = bookHisto1D(2, 1, 1);
+      _h_forward_same_cross_section = bookHisto1D(3, 1, 1);
+      _h_forward_opp_cross_section  = bookHisto1D(4, 1, 1);
     }
 
 
@@ -140,23 +140,24 @@ namespace Rivet {
       const double dy_jet_central = 1.6;
       const double dy_jet_forward = 2.0;
 
+      // \todo YODA divide
       // Cross-section ratios (6 plots)
       // Central/central and forward/forward ratios
-      AIDA::IHistogramFactory& hf = histogramFactory();
-      const string dir = histoDir();
+      // AIDA::IHistogramFactory& hf = histogramFactory();
+      // const string dir = histoDir();
 
-      hf.divide(dir + "/d05-x01-y01", *_h_central_opp_cross_section, *_h_central_same_cross_section);
-      hf.divide(dir + "/d08-x01-y01", *_h_forward_opp_cross_section, *_h_forward_same_cross_section);
+      // hf.divide(dir + "/d05-x01-y01", *_h_central_opp_cross_section, *_h_central_same_cross_section);
+      // hf.divide(dir + "/d08-x01-y01", *_h_forward_opp_cross_section, *_h_forward_same_cross_section);
 
-      // Central/forward ratio combinations
-      hf.divide(dir + "/d06-x01-y01", *_h_central_same_cross_section,
-                *_h_forward_same_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
-      hf.divide(dir + "/d07-x01-y01", *_h_central_opp_cross_section,
-                *_h_forward_same_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
-      hf.divide(dir + "/d09-x01-y01", *_h_central_same_cross_section,
-                *_h_forward_opp_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
-      hf.divide(dir + "/d10-x01-y01", *_h_central_opp_cross_section,
-                *_h_forward_opp_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
+      // // Central/forward ratio combinations
+      // hf.divide(dir + "/d06-x01-y01", *_h_central_same_cross_section,
+      //           *_h_forward_same_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
+      // hf.divide(dir + "/d07-x01-y01", *_h_central_opp_cross_section,
+      //           *_h_forward_same_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
+      // hf.divide(dir + "/d09-x01-y01", *_h_central_same_cross_section,
+      //           *_h_forward_opp_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
+      // hf.divide(dir + "/d10-x01-y01", *_h_central_opp_cross_section,
+      //           *_h_forward_opp_cross_section)->scale(dy_jet_forward/dy_jet_central, 1);
 
       // Use generator cross section for remaining histograms
       // Each of these needs the additional factor 2 because the
@@ -174,10 +175,10 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _h_central_same_cross_section;
-    AIDA::IHistogram1D* _h_central_opp_cross_section;
-    AIDA::IHistogram1D* _h_forward_same_cross_section;
-    AIDA::IHistogram1D* _h_forward_opp_cross_section;
+    Histo1DPtr _h_central_same_cross_section;
+    Histo1DPtr _h_central_opp_cross_section;
+    Histo1DPtr _h_forward_same_cross_section;
+    Histo1DPtr _h_forward_opp_cross_section;
     //@}
 
   };

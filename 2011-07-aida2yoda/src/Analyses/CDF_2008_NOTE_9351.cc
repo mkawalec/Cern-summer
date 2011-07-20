@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -196,27 +196,27 @@ namespace Rivet {
 
   private:
 
-    AIDA::IProfile1D *_hist_tnchg;
-    AIDA::IProfile1D *_hist_pnchg;
-    AIDA::IProfile1D *_hist_pmaxnchg;
-    AIDA::IProfile1D *_hist_pminnchg;
-    AIDA::IProfile1D *_hist_pdifnchg;
-    AIDA::IProfile1D *_hist_anchg;
-    AIDA::IProfile1D *_hist_tcptsum;
-    AIDA::IProfile1D *_hist_pcptsum;
-    AIDA::IProfile1D *_hist_pmaxcptsum;
-    AIDA::IProfile1D *_hist_pmincptsum;
-    AIDA::IProfile1D *_hist_pdifcptsum;
-    AIDA::IProfile1D *_hist_acptsum;
-    AIDA::IProfile1D *_hist_tcptave;
-    AIDA::IProfile1D *_hist_pcptave;
-    AIDA::IProfile1D *_hist_acptave;
-    AIDA::IProfile1D *_hist_tcptmax;
-    AIDA::IProfile1D *_hist_pcptmax;
-    AIDA::IProfile1D *_hist_acptmax;
-    AIDA::IProfile1D *_hist_zptvsnchg;
-    AIDA::IProfile1D *_hist_cptavevsnchg;
-    AIDA::IProfile1D *_hist_cptavevsnchgsmallzpt;
+    Profile1DPtr _hist_tnchg;
+    Profile1DPtr _hist_pnchg;
+    Profile1DPtr _hist_pmaxnchg;
+    Profile1DPtr _hist_pminnchg;
+    Profile1DPtr _hist_pdifnchg;
+    Profile1DPtr _hist_anchg;
+    Profile1DPtr _hist_tcptsum;
+    Profile1DPtr _hist_pcptsum;
+    Profile1DPtr _hist_pmaxcptsum;
+    Profile1DPtr _hist_pmincptsum;
+    Profile1DPtr _hist_pdifcptsum;
+    Profile1DPtr _hist_acptsum;
+    Profile1DPtr _hist_tcptave;
+    Profile1DPtr _hist_pcptave;
+    Profile1DPtr _hist_acptave;
+    Profile1DPtr _hist_tcptmax;
+    Profile1DPtr _hist_pcptmax;
+    Profile1DPtr _hist_acptmax;
+    Profile1DPtr _hist_zptvsnchg;
+    Profile1DPtr _hist_cptavevsnchg;
+    Profile1DPtr _hist_cptavevsnchgsmallzpt;
 
   };
 

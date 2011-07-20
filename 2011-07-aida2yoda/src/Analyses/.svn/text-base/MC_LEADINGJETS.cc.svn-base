@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -152,13 +152,13 @@ namespace Rivet {
 
   private:
 
-    AIDA::IProfile1D *_hist_pnchg;
-    AIDA::IProfile1D *_hist_pmaxnchg;
-    AIDA::IProfile1D *_hist_pminnchg;
-    AIDA::IProfile1D *_hist_pcptsum;
-    AIDA::IProfile1D *_hist_pmaxcptsum;
-    AIDA::IProfile1D *_hist_pmincptsum;
-    AIDA::IProfile1D *_hist_pcptave;
+    Profile1DPtr _hist_pnchg;
+    Profile1DPtr _hist_pmaxnchg;
+    Profile1DPtr _hist_pminnchg;
+    Profile1DPtr _hist_pcptsum;
+    Profile1DPtr _hist_pmaxcptsum;
+    Profile1DPtr _hist_pmincptsum;
+    Profile1DPtr _hist_pcptave;
 
   };
 

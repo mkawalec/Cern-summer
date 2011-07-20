@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/TriggerUA5.hh"
 
@@ -27,11 +27,11 @@ namespace Rivet {
 
       // Book histos based on pp or ppbar beams
       if (beamIds().first == beamIds().second) {
-        _hist_nch = bookHistogram1D(2,1,1);
-        _hist_eta = bookHistogram1D(3,1,1);
+        _hist_nch = bookHisto1D(2,1,1);
+        _hist_eta = bookHisto1D(3,1,1);
       } else {
-        _hist_nch = bookHistogram1D(2,1,2);
-        _hist_eta = bookHistogram1D(4,1,1);
+        _hist_nch = bookHisto1D(2,1,2);
+        _hist_eta = bookHisto1D(4,1,1);
       }
     }
 
@@ -47,7 +47,7 @@ namespace Rivet {
       const ChargedFinalState& cfs = applyProjection<ChargedFinalState>(event, "CFS");
 
       // Fill mean charged multiplicity histos
-      _hist_nch->fill(_hist_nch->binMean(0), cfs.size());
+      _hist_nch->fill(_hist_nch->bin(0).xMean(), cfs.size());
 
       // Iterate over all tracks and fill eta histograms
       foreach (const Particle& p, cfs.particles()) {
@@ -80,8 +80,8 @@ namespace Rivet {
 
     /// @name Histogram collections
     //@{
-    AIDA::IHistogram1D* _hist_nch;
-    AIDA::IHistogram1D* _hist_eta;
+    Histo1DPtr _hist_nch;
+    Histo1DPtr _hist_eta;
     //@}
 
   };

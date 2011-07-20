@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 
@@ -41,13 +41,13 @@ namespace Rivet {
       addProjection(cfs13, "CFS13");
 
       if (fuzzyEquals(sqrtS()/GeV, 900, 1E-3)) {
-        _h_dN_dNch_05    = bookHistogram1D(11, 1, 1);
-        _h_dN_dNch_10    = bookHistogram1D(12, 1, 1);
-        _h_dN_dNch_13    = bookHistogram1D(13, 1, 1);
+        _h_dN_dNch_05    = bookHisto1D(11, 1, 1);
+        _h_dN_dNch_10    = bookHisto1D(12, 1, 1);
+        _h_dN_dNch_13    = bookHisto1D(13, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 2360, 1E-3)) {
-        _h_dN_dNch_05    = bookHistogram1D(17, 1, 1);
-        _h_dN_dNch_10    = bookHistogram1D(18, 1, 1);
-        _h_dN_dNch_13    = bookHistogram1D(19, 1, 1);
+        _h_dN_dNch_05    = bookHisto1D(17, 1, 1);
+        _h_dN_dNch_10    = bookHisto1D(18, 1, 1);
+        _h_dN_dNch_13    = bookHisto1D(19, 1, 1);
       }
 
     }
@@ -84,9 +84,9 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_dN_dNch_05;
-    AIDA::IHistogram1D *_h_dN_dNch_10;
-    AIDA::IHistogram1D *_h_dN_dNch_13;
+    Histo1DPtr _h_dN_dNch_05;
+    Histo1DPtr _h_dN_dNch_10;
+    Histo1DPtr _h_dN_dNch_13;
     //@}
 
 

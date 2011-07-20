@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/TriggerUA5.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -25,8 +25,8 @@ namespace Rivet {
       addProjection(TriggerUA5(), "Trigger");
       addProjection(ChargedFinalState(-5.0, 5.0), "CFS");
 
-      _hist_mean_nch = bookHistogram1D(1, 1, 1);
-      _hist_nch      = bookHistogram1D(3, 1, 1);
+      _hist_mean_nch = bookHisto1D(1, 1, 1);
+      _hist_nch      = bookHisto1D(3, 1, 1);
 
     }
 
@@ -45,7 +45,7 @@ namespace Rivet {
 
       // Fill histograms
       _hist_nch->fill(Nch, weight);
-      _hist_mean_nch->fill(_hist_mean_nch->binMean(0), Nch);
+      _hist_mean_nch->fill(_hist_mean_nch->bin(0).xMean(), Nch);
 
     }
 
@@ -62,8 +62,8 @@ namespace Rivet {
     
     double _sumWPassed;
 
-    AIDA::IHistogram1D *_hist_mean_nch;
-    AIDA::IHistogram1D *_hist_nch;
+    Histo1DPtr _hist_mean_nch;
+    Histo1DPtr _hist_nch;
 
   };
 

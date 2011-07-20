@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/TriggerCDFRun2.hh"
@@ -41,7 +41,7 @@ namespace Rivet {
       
       addProjection(ChargedFinalState(-1.0, 1.0, 0.4*GeV), "CFS");
 
-      _hist_nch = bookHistogram1D(1, 1, 1);
+      _hist_nch = bookHisto1D(1, 1, 1);
     }
 
 
@@ -69,7 +69,7 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_hist_nch;
+    Histo1DPtr _hist_nch;
 
   };
 

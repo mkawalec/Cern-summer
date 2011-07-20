@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/WFinder.hh"
@@ -46,7 +46,7 @@ namespace Rivet {
       _h_dists.resize(tags.size());
       _h_histos.resize(tags.size());
       for (size_t i=0; i<tags.size(); ++i) {
-        _h_dists[i].resize(11,NULL);
+        _h_dists[i].resize(11,Profile1DPtr());
         _h_dists[i][0] = bookProfile1D("A0"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
         _h_dists[i][1] = bookProfile1D("A1"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
         _h_dists[i][2] = bookProfile1D("A2"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
@@ -58,11 +58,11 @@ namespace Rivet {
         _h_dists[i][8] = bookProfile1D("fL"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
         _h_dists[i][9] = bookProfile1D("fR"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
         _h_dists[i][10] = bookProfile1D("f0"+tags[i],logBinEdges(100, 1.0, 0.5*sqrtS()));
-        _h_histos[i].resize(4,NULL);
-        _h_histos[i][0] = bookHistogram1D("thetastar"+tags[i],100,-1.0,1.0);
-        _h_histos[i][1] = bookHistogram1D("phistar"+tags[i],90,0.0,360.0);
-        _h_histos[i][2] = bookHistogram1D("thetastar_ptw20"+tags[i],100,-1.0,1.0);
-        _h_histos[i][3] = bookHistogram1D("phistar_ptw20"+tags[i],90,0.0,360.0);
+        _h_histos[i].resize(4,Histo1DPtr());
+        _h_histos[i][0] = bookHisto1D("thetastar"+tags[i],100,-1.0,1.0);
+        _h_histos[i][1] = bookHisto1D("phistar"+tags[i],90,0.0,360.0);
+        _h_histos[i][2] = bookHisto1D("thetastar_ptw20"+tags[i],100,-1.0,1.0);
+        _h_histos[i][3] = bookHisto1D("phistar_ptw20"+tags[i],90,0.0,360.0);
       }
     }
 
@@ -129,7 +129,7 @@ namespace Rivet {
     void finalize() {
 
       for (size_t i=0; i<_h_histos.size(); ++i) {
-        foreach (AIDA::IHistogram1D* histo, _h_histos[i]) {
+        foreach (Histo1DPtr histo, _h_histos[i]) {
           scale(histo, crossSectionPerEvent());
         }
       }
@@ -144,8 +144,8 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    std::vector<std::vector<AIDA::IProfile1D*> > _h_dists;
-    std::vector<std::vector<AIDA::IHistogram1D*> > _h_histos;
+    std::vector<std::vector<Profile1DPtr> > _h_dists;
+    std::vector<std::vector<Histo1DPtr> > _h_histos;
     //@}
 
 

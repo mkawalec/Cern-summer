@@ -5,10 +5,6 @@
 using namespace std;
 
 int main() {
-  // Old type of constructor
-  /// @deprecated Use new kind which specifies output names only when writing
-  Rivet::AnalysisHandler rivet_old("out", "", Rivet::AIDAML);
-
   // New type
   Rivet::AnalysisHandler rivet;
 

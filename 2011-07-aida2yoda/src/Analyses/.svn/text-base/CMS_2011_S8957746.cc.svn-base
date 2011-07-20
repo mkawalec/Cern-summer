@@ -1,7 +1,7 @@
 // -*- C++ -*-
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/Thrust.hh"
@@ -25,12 +25,12 @@ namespace Rivet {
       addProjection(jets, "Jets");
 
       // Book histograms
-      _hist_T_90  = bookHistogram1D(1, 1, 1);
-      _hist_m_90  = bookHistogram1D(2, 1, 1);
-      _hist_T_125 = bookHistogram1D(1, 2, 1);
-      _hist_m_125 = bookHistogram1D(2, 2, 1);
-      _hist_T_200 = bookHistogram1D(1, 3, 1);
-      _hist_m_200 = bookHistogram1D(2, 3, 1);
+      _hist_T_90  = bookHisto1D(1, 1, 1);
+      _hist_m_90  = bookHisto1D(2, 1, 1);
+      _hist_T_125 = bookHisto1D(1, 2, 1);
+      _hist_m_125 = bookHisto1D(2, 2, 1);
+      _hist_T_200 = bookHisto1D(1, 3, 1);
+      _hist_m_200 = bookHisto1D(2, 3, 1);
     }
 
     void analyze(const Event& event) {
@@ -83,12 +83,12 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_hist_T_90;
-    AIDA::IHistogram1D *_hist_m_90;
-    AIDA::IHistogram1D *_hist_T_125;
-    AIDA::IHistogram1D *_hist_m_125;
-    AIDA::IHistogram1D *_hist_T_200;
-    AIDA::IHistogram1D *_hist_m_200;
+    Histo1DPtr _hist_T_90;
+    Histo1DPtr _hist_m_90;
+    Histo1DPtr _hist_T_125;
+    Histo1DPtr _hist_m_125;
+    Histo1DPtr _hist_T_200;
+    Histo1DPtr _hist_m_200;
   };
 
   // This global object acts as a hook for the plugin system

@@ -5,7 +5,7 @@
 #include "Rivet/Projections/VetoedFinalState.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -38,45 +38,45 @@ namespace Rivet {
       addProjection(jetpro, "Jets");
 
       // properties of the pair momentum
-      _h_WW_pT = bookHistogram1D("WW_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_WW_pT_peak = bookHistogram1D("WW_pT_peak", 25, 0.0, 25.0);
-      _h_WW_eta = bookHistogram1D("WW_eta", 40, -7.0, 7.0);
-      _h_WW_phi = bookHistogram1D("WW_phi", 25, 0.0, TWOPI);
-      _h_WW_m = bookHistogram1D("WW_m", logBinEdges(100, 150.0, 180.0+0.25*sqrtS()));
+      _h_WW_pT = bookHisto1D("WW_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_WW_pT_peak = bookHisto1D("WW_pT_peak", 25, 0.0, 25.0);
+      _h_WW_eta = bookHisto1D("WW_eta", 40, -7.0, 7.0);
+      _h_WW_phi = bookHisto1D("WW_phi", 25, 0.0, TWOPI);
+      _h_WW_m = bookHisto1D("WW_m", logBinEdges(100, 150.0, 180.0+0.25*sqrtS()));
 
       // correlations between the WW
-      _h_WW_dphi = bookHistogram1D("WW_dphi", 25, 0.0, PI);  /// @todo non-linear?
-      _h_WW_deta = bookHistogram1D("WW_deta", 25, -7.0, 7.0);
-      _h_WW_dR = bookHistogram1D("WW_dR", 25, 0.5, 7.0);
-      _h_WW_dpT = bookHistogram1D("WW_dpT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_WW_costheta_planes = bookHistogram1D("WW_costheta_planes", 25, -1.0, 1.0);
+      _h_WW_dphi = bookHisto1D("WW_dphi", 25, 0.0, PI);  /// @todo non-linear?
+      _h_WW_deta = bookHisto1D("WW_deta", 25, -7.0, 7.0);
+      _h_WW_dR = bookHisto1D("WW_dR", 25, 0.5, 7.0);
+      _h_WW_dpT = bookHisto1D("WW_dpT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_WW_costheta_planes = bookHisto1D("WW_costheta_planes", 25, -1.0, 1.0);
 
       /// @todo fuer WW: missing ET
 
       // properties of the W bosons
-      _h_W_pT = bookHistogram1D("W_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
-      _h_W_eta = bookHistogram1D("W_eta", 70, -7.0, 7.0);
+      _h_W_pT = bookHisto1D("W_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
+      _h_W_eta = bookHisto1D("W_eta", 70, -7.0, 7.0);
 
       // properties of the leptons
-      _h_Wl_pT = bookHistogram1D("Wl_pT", logBinEdges(100, 30.0, 0.1
+      _h_Wl_pT = bookHisto1D("Wl_pT", logBinEdges(100, 30.0, 0.1
                                                       *sqrtS()));
-      _h_Wl_eta = bookHistogram1D("Wl_eta", 40, -3.5, 3.5);
+      _h_Wl_eta = bookHisto1D("Wl_eta", 40, -3.5, 3.5);
 
       // correlations between the opposite charge leptons
-      _h_WeWm_dphi = bookHistogram1D("WeWm_dphi", 25, 0.0, PI);
-      _h_WeWm_deta = bookHistogram1D("WeWm_deta", 25, -5.0, 5.0);
-      _h_WeWm_dR = bookHistogram1D("WeWm_dR", 25, 0.5, 5.0);
-      _h_WeWm_m = bookHistogram1D("WeWm_m", 100, 0.0, 300.0);
+      _h_WeWm_dphi = bookHisto1D("WeWm_dphi", 25, 0.0, PI);
+      _h_WeWm_deta = bookHisto1D("WeWm_deta", 25, -5.0, 5.0);
+      _h_WeWm_dR = bookHisto1D("WeWm_dR", 25, 0.5, 5.0);
+      _h_WeWm_m = bookHisto1D("WeWm_m", 100, 0.0, 300.0);
 
       // correlations with jets
-      _h_WW_jet1_deta = bookHistogram1D("WW_jet1_deta", 70, -7.0, 7.0);
-      _h_WW_jet1_dR = bookHistogram1D("WW_jet1_dR", 25, 1.5, 7.0);
-      _h_We_jet1_dR = bookHistogram1D("We_jet1_dR", 25, 0.0, 7.0);
+      _h_WW_jet1_deta = bookHisto1D("WW_jet1_deta", 70, -7.0, 7.0);
+      _h_WW_jet1_dR = bookHisto1D("WW_jet1_dR", 25, 1.5, 7.0);
+      _h_We_jet1_dR = bookHisto1D("We_jet1_dR", 25, 0.0, 7.0);
 
       // global stuff
-      _h_HT = bookHistogram1D("HT", logBinEdges(100, 100.0, 0.5*sqrtS()));
-      _h_jets_dphi_12 = bookHistogram1D("jets_dphi_12", 25, 0.0, PI);
-      _h_jets_m_12 = bookHistogram1D("jets_m_12", logBinEdges(100, 1.0, 0.25*sqrtS()));
+      _h_HT = bookHisto1D("HT", logBinEdges(100, 100.0, 0.5*sqrtS()));
+      _h_jets_dphi_12 = bookHisto1D("jets_dphi_12", 25, 0.0, PI);
+      _h_jets_m_12 = bookHisto1D("jets_m_12", logBinEdges(100, 1.0, 0.25*sqrtS()));
 
       MC_JetAnalysis::init();
     }
@@ -203,30 +203,30 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_WW_pT;
-    AIDA::IHistogram1D * _h_WW_pT_peak;
-    AIDA::IHistogram1D * _h_WW_eta;
-    AIDA::IHistogram1D * _h_WW_phi;
-    AIDA::IHistogram1D * _h_WW_m;
-    AIDA::IHistogram1D * _h_WW_dphi;
-    AIDA::IHistogram1D * _h_WW_deta;
-    AIDA::IHistogram1D * _h_WW_dR;
-    AIDA::IHistogram1D * _h_WW_dpT;
-    AIDA::IHistogram1D * _h_WW_costheta_planes;
-    AIDA::IHistogram1D * _h_W_pT;
-    AIDA::IHistogram1D * _h_W_eta;
-    AIDA::IHistogram1D * _h_Wl_pT;
-    AIDA::IHistogram1D * _h_Wl_eta;
-    AIDA::IHistogram1D * _h_WeWm_dphi;
-    AIDA::IHistogram1D * _h_WeWm_deta;
-    AIDA::IHistogram1D * _h_WeWm_dR;
-    AIDA::IHistogram1D * _h_WeWm_m;
-    AIDA::IHistogram1D * _h_WW_jet1_deta;
-    AIDA::IHistogram1D * _h_WW_jet1_dR;
-    AIDA::IHistogram1D * _h_We_jet1_dR;
-    AIDA::IHistogram1D * _h_jets_dphi_12;
-    AIDA::IHistogram1D * _h_jets_m_12;
-    AIDA::IHistogram1D * _h_HT;
+    Histo1DPtr _h_WW_pT;
+    Histo1DPtr _h_WW_pT_peak;
+    Histo1DPtr _h_WW_eta;
+    Histo1DPtr _h_WW_phi;
+    Histo1DPtr _h_WW_m;
+    Histo1DPtr _h_WW_dphi;
+    Histo1DPtr _h_WW_deta;
+    Histo1DPtr _h_WW_dR;
+    Histo1DPtr _h_WW_dpT;
+    Histo1DPtr _h_WW_costheta_planes;
+    Histo1DPtr _h_W_pT;
+    Histo1DPtr _h_W_eta;
+    Histo1DPtr _h_Wl_pT;
+    Histo1DPtr _h_Wl_eta;
+    Histo1DPtr _h_WeWm_dphi;
+    Histo1DPtr _h_WeWm_deta;
+    Histo1DPtr _h_WeWm_dR;
+    Histo1DPtr _h_WeWm_m;
+    Histo1DPtr _h_WW_jet1_deta;
+    Histo1DPtr _h_WW_jet1_dR;
+    Histo1DPtr _h_We_jet1_dR;
+    Histo1DPtr _h_jets_dphi_12;
+    Histo1DPtr _h_jets_m_12;
+    Histo1DPtr _h_HT;
     //@}
 
   };

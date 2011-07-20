@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/BinnedHistogram.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -32,10 +32,10 @@ namespace Rivet {
       /// @todo Use correct jet algorithm
       addProjection(FastJets(fs, FastJets::D0ILCONE, 0.7), "ConeJets");
 
-      _h_deta = bookHistogram1D(1, 1, 1);
-      _h_dphi.addHistogram(0.0, 2.0, bookHistogram1D(2, 1, 1));
-      _h_dphi.addHistogram(2.0, 4.0, bookHistogram1D(2, 1, 2));
-      _h_dphi.addHistogram(4.0, 6.0, bookHistogram1D(2, 1, 3));
+      _h_deta = bookHisto1D(1, 1, 1);
+      _h_dphi.addHistogram(0.0, 2.0, bookHisto1D(2, 1, 1));
+      _h_dphi.addHistogram(2.0, 4.0, bookHisto1D(2, 1, 2));
+      _h_dphi.addHistogram(4.0, 6.0, bookHisto1D(2, 1, 3));
       _h_cosdphi_deta = bookProfile1D(3, 1, 1);
     }
 
@@ -91,7 +91,7 @@ namespace Rivet {
 
       // I have no idea what this is normalised to... in the paper it says unity!
       /// @todo Understand this!
-      foreach (IHistogram1D* histo, _h_dphi.getHistograms()) {
+      foreach (Histo1DPtr histo, _h_dphi.getHistograms()) {
         /// @todo Prefer to scale rather than normalize, if possible
         normalize(histo, 0.0798);
       }
@@ -106,9 +106,9 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_deta;
+    Histo1DPtr _h_deta;
     BinnedHistogram<double> _h_dphi;
-    AIDA::IProfile1D *_h_cosdphi_deta;
+    Profile1DPtr _h_cosdphi_deta;
     //@}
 
   };

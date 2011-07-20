@@ -3,13 +3,10 @@
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/ParticleName.hh"
 #include "Rivet/AnalysisHandler.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Analysis.hh"
 #include "Rivet/Event.hh"
 #include "Rivet/Projections/Beam.hh"
-#include "LWH/AIManagedObject.h"
-
-using namespace AIDA;
 
 namespace Rivet {
 
@@ -18,27 +15,10 @@ namespace Rivet {
     : _runname(runname), _numEvents(0),
       _sumOfWeights(0.0), _xs(-1.0),
       _initialised(false)
-  {
-    _theAnalysisFactory.reset( createAnalysisFactory() );
-    _setupFactories();
-  }
-
-
-  AnalysisHandler::AnalysisHandler(const string& basefilename,
-                                   const string& runname, HistoFormat storetype)
-    : _runname(runname), _numEvents(0),
-      _sumOfWeights(0.0), _xs(-1.0),
-      _initialised(false)
-  {
-    cerr << "AnalysisHandler(basefilename, runname, format) constructor is deprecated: "
-         << "please migrate your code to use the one-arg constructor" << endl;
-    _theAnalysisFactory.reset( createAnalysisFactory() );
-    _setupFactories(basefilename, storetype);
-  }
-
+  {}
 
   AnalysisHandler::~AnalysisHandler()
-  {  }
+  {}
 
 
   Log& AnalysisHandler::getLog() const {
@@ -163,14 +143,9 @@ namespace Rivet {
     // Print out number of events processed
     MSG_INFO("Processed " << _numEvents << " event" << (_numEvents == 1 ? "" : "s"));
 
-    // Change AIDA histos into data point sets
-    MSG_DEBUG("Converting histograms to scatter plots");
-    assert(_theTree != 0);
-    _normalizeTree(tree());
-
-    // Delete analyses
-    MSG_DEBUG("Deleting analyses");
-    _analyses.clear();
+    // // Delete analyses
+    // MSG_DEBUG("Deleting analyses");
+    // _analyses.clear();
 
     // Print out MCnet boilerplate
     cout << endl;
@@ -216,93 +191,13 @@ namespace Rivet {
     return *this;
   }
 
-
-  void AnalysisHandler::_setupFactories(const string& basefilename, HistoFormat storetype) {
-    string filename(basefilename), storetypestr("");
-    if (storetype == AIDAML) {
-      if (!endsWith(filename, ".aida")) filename += ".aida";
-      storetypestr = "xml";
-    } else if (storetype == FLAT) {
-      if (!endsWith(filename, ".data")) filename += ".data";
-      storetypestr = "flat";
-    } else if (storetype == ROOT) {
-      if (!endsWith(filename, ".root")) filename += ".root";
-      storetypestr = "root";
-    }
-    _theTreeFactory = _theAnalysisFactory->createTreeFactory();
-    _theTree = _theTreeFactory->create(filename, storetypestr, false, true);
-    _theHistogramFactory = _theAnalysisFactory->createHistogramFactory(tree());
-    _theDataPointSetFactory = _theAnalysisFactory->createDataPointSetFactory(tree());
-  }
-
-
-  void AnalysisHandler::_setupFactories() {
-    _theTreeFactory = _theAnalysisFactory->createTreeFactory();
-    _theTree = _theTreeFactory->create();
-    _theHistogramFactory = _theAnalysisFactory->createHistogramFactory(tree());
-    _theDataPointSetFactory = _theAnalysisFactory->createDataPointSetFactory(tree());
-  }
-
-
-  void AnalysisHandler::commitData() {
-    tree().commit();
-  }
-
-
   void AnalysisHandler::writeData(const string& filename) {
-    tree().commit(filename);
-  }
-
-
-  void AnalysisHandler::_normalizeTree(ITree& tree) {
-    const vector<string> paths = tree.listObjectNames("/", true); // args set recursive listing
-    MSG_TRACE("Number of objects in AIDA tree = " << paths.size());
-    const string tmpdir = "/RivetNormalizeTmp";
-    tree.mkdir(tmpdir);
-    foreach (const string& path, paths) {
-
-      IManagedObject* hobj = tree.find(path);
-      if (hobj) {
-
-        // Try to cast to specific histogram types
-        const IProfile1D* prof = dynamic_cast<IProfile1D*>(hobj);
-        const IHistogram1D* histo = dynamic_cast<IHistogram1D*>(hobj);
-        const IHistogram2D* histo2 = dynamic_cast<IHistogram2D*>(hobj);
-        if (!(histo || histo2 || prof)) {
-          MSG_TRACE("Could not find the type of histo for " << path << ": it's probably already a DPS");
-          continue;
-        }
-
-        // AIDA path mangling
-        const size_t lastslash = path.find_last_of("/");
-        const string basename = path.substr(lastslash+1, path.length() - (lastslash+1));
-        const string tmppath = tmpdir + "/" + basename;
-
-        // If it's a normal histo:
-        tree.mv(path, tmpdir);
-        if (histo) {
-          MSG_TRACE("Converting histo " << path << " to DPS");
-          IHistogram1D* tmphisto = dynamic_cast<IHistogram1D*>(tree.find(tmppath));
-          if (tmphisto) datapointsetFactory().create(path, *tmphisto);
-        }
-        // If it's a 2D histo:
-        else if (histo2) {
-          MSG_TRACE("Converting 2D histo " << path << " to DPS");
-          IHistogram2D* tmphisto2 = dynamic_cast<IHistogram2D*>(tree.find(tmppath));
-          if (tmphisto2) datapointsetFactory().create(path, *tmphisto2);
-        }
-        // If it's a profile histo:
-        else if (prof) {
-          MSG_TRACE("Converting profile histo " << path << " to DPS");
-          IProfile1D* tmpprof = dynamic_cast<IProfile1D*>(tree.find(tmppath));
-          if (tmpprof) datapointsetFactory().create(path, *tmpprof);
-        }
-        tree.rm(tmppath);
-
-      }
-
+    vector<AnalysisObjectPtr> allPlots;
+    foreach (const AnaHandle a, _analyses) {
+      const vector<AnalysisObjectPtr> & plots = a->plots();
+      allPlots.insert(allPlots.end(), plots.begin(), plots.end());
     }
-    tree.rmdir(tmpdir);
+    WriterYODA::write(filename, allPlots.begin(), allPlots.end());
   }
 
 
@@ -339,27 +234,6 @@ namespace Rivet {
       removeAnalysis(aname);
     }
     return *this;
-  }
-
-
-
-  AIDA::IAnalysisFactory& AnalysisHandler::analysisFactory() {
-    return *_theAnalysisFactory;
-  }
-
-
-  AIDA::ITree& AnalysisHandler::tree() {
-    return *_theTree;
-  }
-
-
-  AIDA::IHistogramFactory& AnalysisHandler::histogramFactory() {
-    return *_theHistogramFactory;
-  }
-
-
-  AIDA::IDataPointSetFactory& AnalysisHandler::datapointsetFactory() {
-    return *_theDataPointSetFactory;
   }
 
 

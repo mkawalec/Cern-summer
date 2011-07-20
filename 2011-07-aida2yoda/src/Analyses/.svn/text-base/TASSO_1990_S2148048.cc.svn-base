@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 //#include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/Thrust.hh"
@@ -64,10 +64,10 @@ namespace Rivet {
           offset = 3;
           break;
       }
-      //_h_xp         = bookHistogram1D( 2, 1, 1+offset);
-      _h_sphericity = bookHistogram1D( 6, 1, 1+offset);
-      _h_aplanarity = bookHistogram1D( 7, 1, 1+offset);
-      _h_thrust     = bookHistogram1D( 8, 1, 1+offset);
+      //_h_xp         = bookHisto1D( 2, 1, 1+offset);
+      _h_sphericity = bookHisto1D( 6, 1, 1+offset);
+      _h_aplanarity = bookHisto1D( 7, 1, 1+offset);
+      _h_thrust     = bookHisto1D( 8, 1, 1+offset);
     }
 
 
@@ -152,10 +152,10 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _h_xp        ;
-    AIDA::IHistogram1D* _h_sphericity;
-    AIDA::IHistogram1D* _h_aplanarity;
-    AIDA::IHistogram1D* _h_thrust    ;
+    Histo1DPtr _h_xp        ;
+    Histo1DPtr _h_sphericity;
+    Histo1DPtr _h_aplanarity;
+    Histo1DPtr _h_thrust    ;
     //@}
 
 

@@ -27,11 +27,11 @@ namespace Rivet {
     ///  set of BinnedHistograms.
     const BinnedHistogram<T>& addHistogram(const T& binMin,
                                            const T& binMax,
-                                           AIDA::IHistogram1D* histo);
+                                           Histo1DPtr histo);
 
     /// Fill the histogram that lies in the same region as @a bin with the value
     /// @a val of weight @a weight.
-    AIDA::IHistogram1D* fill(const T& bin,
+    Histo1DPtr fill(const T& bin,
                              const T& val,
                              double weight);
 
@@ -39,16 +39,16 @@ namespace Rivet {
     /// scale/binWidth
     void scale(const T& scale, Analysis* ana);
 
-    const vector<AIDA::IHistogram1D*>& getHistograms() const { return _histos; }
-    vector<AIDA::IHistogram1D*>& getHistograms() { return _histos; }
+    const vector<Histo1DPtr>& getHistograms() const { return _histos; }
+    vector<Histo1DPtr>& getHistograms() { return _histos; }
 
 
   private:
 
-    map<T, AIDA::IHistogram1D*> _histosByUpperBound;
-    map<T, AIDA::IHistogram1D*> _histosByLowerBound;
-    vector<AIDA::IHistogram1D*> _histos;
-    map<AIDA::IHistogram1D*, T> _binWidths;
+    map<T, Histo1DPtr> _histosByUpperBound;
+    map<T, Histo1DPtr> _histosByLowerBound;
+    vector<Histo1DPtr> _histos;
+    map<Histo1DPtr, T> _binWidths;
 
   };
 

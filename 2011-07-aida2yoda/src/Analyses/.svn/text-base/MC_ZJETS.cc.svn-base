@@ -3,7 +3,7 @@
 #include "Rivet/Projections/ZFinder.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -30,15 +30,15 @@ namespace Rivet {
       FastJets jetpro(zfinder.remainingFinalState(), FastJets::KT, 0.7);
       addProjection(jetpro, "Jets");
 
-      _h_Z_mass = bookHistogram1D("Z_mass", 50, 66.0, 116.0);
-      _h_Z_pT = bookHistogram1D("Z_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_Z_pT_peak = bookHistogram1D("Z_pT_peak", 25, 0.0, 25.0);
-      _h_Z_y = bookHistogram1D("Z_y", 40, -4.0, 4.0);
-      _h_Z_phi = bookHistogram1D("Z_phi", 25, 0.0, TWOPI);
-      _h_Z_jet1_deta = bookHistogram1D("Z_jet1_deta", 50, -5.0, 5.0);
-      _h_Z_jet1_dR = bookHistogram1D("Z_jet1_dR", 25, 0.5, 7.0);
-      _h_lepton_pT = bookHistogram1D("lepton_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
-      _h_lepton_eta = bookHistogram1D("lepton_eta", 40, -4.0, 4.0);
+      _h_Z_mass = bookHisto1D("Z_mass", 50, 66.0, 116.0);
+      _h_Z_pT = bookHisto1D("Z_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_Z_pT_peak = bookHisto1D("Z_pT_peak", 25, 0.0, 25.0);
+      _h_Z_y = bookHisto1D("Z_y", 40, -4.0, 4.0);
+      _h_Z_phi = bookHisto1D("Z_phi", 25, 0.0, TWOPI);
+      _h_Z_jet1_deta = bookHisto1D("Z_jet1_deta", 50, -5.0, 5.0);
+      _h_Z_jet1_dR = bookHisto1D("Z_jet1_dR", 25, 0.5, 7.0);
+      _h_lepton_pT = bookHisto1D("lepton_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
+      _h_lepton_eta = bookHisto1D("lepton_eta", 40, -4.0, 4.0);
 
       MC_JetAnalysis::init();
     }
@@ -97,15 +97,15 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_Z_mass;
-    AIDA::IHistogram1D * _h_Z_pT;
-    AIDA::IHistogram1D * _h_Z_pT_peak;
-    AIDA::IHistogram1D * _h_Z_y;
-    AIDA::IHistogram1D * _h_Z_phi;
-    AIDA::IHistogram1D * _h_Z_jet1_deta;
-    AIDA::IHistogram1D * _h_Z_jet1_dR;
-    AIDA::IHistogram1D * _h_lepton_pT;
-    AIDA::IHistogram1D * _h_lepton_eta;
+    Histo1DPtr _h_Z_mass;
+    Histo1DPtr _h_Z_pT;
+    Histo1DPtr _h_Z_pT_peak;
+    Histo1DPtr _h_Z_y;
+    Histo1DPtr _h_Z_phi;
+    Histo1DPtr _h_Z_jet1_deta;
+    Histo1DPtr _h_Z_jet1_dR;
+    Histo1DPtr _h_lepton_pT;
+    Histo1DPtr _h_lepton_eta;
     //@}
 
   };

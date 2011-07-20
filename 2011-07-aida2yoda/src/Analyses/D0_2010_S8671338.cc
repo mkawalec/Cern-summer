@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ZFinder.hh"
@@ -35,8 +35,8 @@ namespace Rivet {
       ZFinder zfinder(-1.7, 1.7, 15.0*GeV, MUON, 65.0*GeV, 115.0*GeV, 0.2, false, true);
       addProjection(zfinder, "ZFinder");
 
-      _h_Z_pT_normalised = bookHistogram1D(1, 1, 1);
-      _h_Z_pT_xs = bookHistogram1D(2, 1, 1);
+      _h_Z_pT_normalised = bookHisto1D(1, 1, 1);
+      _h_Z_pT_xs = bookHisto1D(2, 1, 1);
     }
 
 
@@ -64,8 +64,8 @@ namespace Rivet {
   private:
 
     /// @name Histogram
-    AIDA::IHistogram1D * _h_Z_pT_normalised;
-    AIDA::IHistogram1D * _h_Z_pT_xs;
+    Histo1DPtr _h_Z_pT_normalised;
+    Histo1DPtr _h_Z_pT_xs;
 
   };
 

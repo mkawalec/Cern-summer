@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -41,8 +41,8 @@ namespace Rivet {
       addProjection(photonfs, "Photons");
 
       // Histograms
-      _hist_jetgamma_dR   = bookHistogram1D("gammajet-dR", 52, 0.0, 5.2);
-      _hist_jetgamma_dphi = bookHistogram1D("gammajet-dphi", 50, 0.0, PI);
+      _hist_jetgamma_dR   = bookHisto1D("gammajet-dR", 52, 0.0, 5.2);
+      _hist_jetgamma_dphi = bookHisto1D("gammajet-dphi", 50, 0.0, PI);
       //
       const double MAXPT1 = 50.0;
       _hist_pnchg_jet      = bookProfile1D("trans-nchg-jet",     50, 0.0, MAXPT1);
@@ -239,16 +239,16 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D* _hist_jetgamma_dR;
-    AIDA::IHistogram1D* _hist_jetgamma_dphi;
+    Histo1DPtr _hist_jetgamma_dR;
+    Histo1DPtr _hist_jetgamma_dphi;
 
-    AIDA::IProfile1D *_hist_pnchg_jet, *_hist_pnchg_gamma;
-    AIDA::IProfile1D *_hist_pmaxnchg_jet, *_hist_pmaxnchg_gamma;
-    AIDA::IProfile1D *_hist_pminnchg_jet, *_hist_pminnchg_gamma;
-    AIDA::IProfile1D *_hist_pcptsum_jet, *_hist_pcptsum_gamma;
-    AIDA::IProfile1D *_hist_pmaxcptsum_jet, *_hist_pmaxcptsum_gamma;
-    AIDA::IProfile1D *_hist_pmincptsum_jet, *_hist_pmincptsum_gamma;
-    AIDA::IProfile1D *_hist_pcptave_jet, *_hist_pcptave_gamma;
+    Profile1DPtr _hist_pnchg_jet, _hist_pnchg_gamma;
+    Profile1DPtr _hist_pmaxnchg_jet, _hist_pmaxnchg_gamma;
+    Profile1DPtr _hist_pminnchg_jet, _hist_pminnchg_gamma;
+    Profile1DPtr _hist_pcptsum_jet, _hist_pcptsum_gamma;
+    Profile1DPtr _hist_pmaxcptsum_jet, _hist_pmaxcptsum_gamma;
+    Profile1DPtr _hist_pmincptsum_jet, _hist_pmincptsum_gamma;
+    Profile1DPtr _hist_pcptave_jet, _hist_pcptave_gamma;
 
   };
 

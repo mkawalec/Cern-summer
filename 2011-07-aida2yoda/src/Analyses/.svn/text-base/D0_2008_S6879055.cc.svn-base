@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ZFinder.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -31,10 +31,10 @@ namespace Rivet {
       FastJets conefinder(zfinder.remainingFinalState(), FastJets::D0ILCONE, 0.5);
       addProjection(conefinder, "ConeFinder");
 
-      _crossSectionRatio = bookHistogram1D(1, 1, 1);
-      _pTjet1 = bookHistogram1D(2, 1, 1);
-      _pTjet2 = bookHistogram1D(3, 1, 1);
-      _pTjet3 = bookHistogram1D(4, 1, 1);
+      _crossSectionRatio = bookHisto1D(1, 1, 1);
+      _pTjet1 = bookHisto1D(2, 1, 1);
+      _pTjet2 = bookHisto1D(3, 1, 1);
+      _pTjet3 = bookHisto1D(4, 1, 1);
     }
 
 
@@ -95,7 +95,7 @@ namespace Rivet {
     /// Finalize
     void finalize() {
       // Now divide by the inclusive result
-      _crossSectionRatio->scale(1.0/_crossSectionRatio->binHeight(0));
+      scale(_crossSectionRatio,1.0/_crossSectionRatio->bin(0).area());
 
       // Normalise jet pTs to integrals of data
       // NB. There is no other way to do this, because these quantities are not
@@ -112,10 +112,10 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _crossSectionRatio;
-    AIDA::IHistogram1D * _pTjet1;
-    AIDA::IHistogram1D * _pTjet2;
-    AIDA::IHistogram1D * _pTjet3;
+    Histo1DPtr _crossSectionRatio;
+    Histo1DPtr _pTjet1;
+    Histo1DPtr _pTjet2;
+    Histo1DPtr _pTjet3;
     //@}
 
   };

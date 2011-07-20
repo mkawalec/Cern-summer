@@ -1,0 +1,52 @@
+#ifndef RIVET_RIVETYODA_HH
+#define RIVET_RIVETYODA_HH
+
+/// @author Andy Buckley
+/// @date   2009-01-30
+/// @author David Grellscheid
+/// @date   2011-07-18
+
+// Include files
+#include "Rivet/Rivet.hh"
+#include "Rivet/RivetYODA.fhh"
+#include "YODA/AnalysisObject.h"
+#include "YODA/WriterYODA.h"
+#include "YODA/Histo1D.h"
+#include "YODA/Profile1D.h"
+#include "YODA/Scatter2D.h"
+#include "YODA/Point2D.h"
+#include "YODA/ReaderAIDA.h"
+
+namespace Rivet {
+
+  /// Function to get a map of all the bin edge vectors in a paper with the
+  /// given @a papername.
+  map<string, BinEdges> getBinEdges(string papername);
+
+  map<string, BinEdges> getBinEdges(const map<string, vector<DPSXPoint> >& xpoints);
+
+  map<string, vector<DPSXPoint> > getDPSXValsErrs(string papername);
+
+  map<string, vector<DPSXYPoint> > getDPSXYValsErrs(string papername);
+
+  /// Get the file system path to the AIDA reference file for this paper.
+  string getDatafilePath(string papername);
+
+  /// Return the integral over the histogram bins
+  inline double integral(Histo1DPtr histo) {
+    double intg = 0.;
+    for ( size_t i = 0; i < histo->numBins(); ++i ) {
+      intg += histo->bin(i).area();
+    }
+    return intg;
+  }
+
+  using YODA::WriterYODA;
+  using YODA::ReaderAIDA;
+  using YODA::Histo1D;
+  using YODA::Profile1D;
+  using YODA::Scatter2D;
+  using YODA::Point2D;
+}
+
+#endif

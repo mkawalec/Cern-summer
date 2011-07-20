@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -40,7 +40,7 @@ namespace Rivet {
       // Jets
       addProjection(FastJets(vfs, FastJets::CDFJETCLU, 0.7), "Jets");
 
-      _h_costheta = bookHistogram1D(1, 1, 1);
+      _h_costheta = bookHisto1D(1, 1, 1);
 
     }
 
@@ -93,7 +93,7 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_h_costheta;
+    Histo1DPtr _h_costheta;
 
   };
 

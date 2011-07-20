@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Tools/Logging.hh"
@@ -29,9 +29,9 @@ namespace Rivet {
       ifs.acceptId(PHOTON);
       addProjection(ifs, "IFS");
 
-      _h_m_PP = bookHistogram1D("m_PP", logBinEdges(50, 1.0, 0.25*sqrtS()));
-      _h_pT_PP = bookHistogram1D("pT_PP", logBinEdges(50, 1.0, 0.25*sqrtS()));
-      _h_dphi_PP = bookHistogram1D("dphi_PP", 20, 0.0, M_PI);
+      _h_m_PP = bookHisto1D("m_PP", logBinEdges(50, 1.0, 0.25*sqrtS()));
+      _h_pT_PP = bookHisto1D("pT_PP", logBinEdges(50, 1.0, 0.25*sqrtS()));
+      _h_dphi_PP = bookHisto1D("dphi_PP", 20, 0.0, M_PI);
     }
 
 
@@ -86,9 +86,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _h_m_PP;
-    AIDA::IHistogram1D* _h_pT_PP;
-    AIDA::IHistogram1D* _h_dphi_PP;
+    Histo1DPtr _h_m_PP;
+    Histo1DPtr _h_pT_PP;
+    Histo1DPtr _h_dphi_PP;
     //@}
 
 

@@ -5,7 +5,7 @@
 #include "Rivet/Projections/VetoedFinalState.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -38,43 +38,43 @@ namespace Rivet {
       addProjection(jetpro, "Jets");
 
       // properties of the pair momentum
-      _h_ZZ_pT = bookHistogram1D("ZZ_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_ZZ_pT_peak = bookHistogram1D("ZZ_pT_peak", 25, 0.0, 25.0);
-      _h_ZZ_eta = bookHistogram1D("ZZ_eta", 40, -7.0, 7.0);
-      _h_ZZ_phi = bookHistogram1D("ZZ_phi", 25, 0.0, TWOPI);
-      _h_ZZ_m = bookHistogram1D("ZZ_m", logBinEdges(100, 150.0, 180.0+0.25*sqrtS()));
+      _h_ZZ_pT = bookHisto1D("ZZ_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_ZZ_pT_peak = bookHisto1D("ZZ_pT_peak", 25, 0.0, 25.0);
+      _h_ZZ_eta = bookHisto1D("ZZ_eta", 40, -7.0, 7.0);
+      _h_ZZ_phi = bookHisto1D("ZZ_phi", 25, 0.0, TWOPI);
+      _h_ZZ_m = bookHisto1D("ZZ_m", logBinEdges(100, 150.0, 180.0+0.25*sqrtS()));
 
       // correlations between the ZZ
-      _h_ZZ_dphi = bookHistogram1D("ZZ_dphi", 25, 0.0, PI);  /// @todo non-linear?
-      _h_ZZ_deta = bookHistogram1D("ZZ_deta", 25, -7.0, 7.0);
-      _h_ZZ_dR = bookHistogram1D("ZZ_dR", 25, 0.5, 7.0);
-      _h_ZZ_dpT = bookHistogram1D("ZZ_dpT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_ZZ_costheta_planes = bookHistogram1D("ZZ_costheta_planes", 25, -1.0, 1.0);
+      _h_ZZ_dphi = bookHisto1D("ZZ_dphi", 25, 0.0, PI);  /// @todo non-linear?
+      _h_ZZ_deta = bookHisto1D("ZZ_deta", 25, -7.0, 7.0);
+      _h_ZZ_dR = bookHisto1D("ZZ_dR", 25, 0.5, 7.0);
+      _h_ZZ_dpT = bookHisto1D("ZZ_dpT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_ZZ_costheta_planes = bookHisto1D("ZZ_costheta_planes", 25, -1.0, 1.0);
 
       /// @todo fuer WW: missing ET
 
       // properties of the Z bosons
-      _h_Z_pT = bookHistogram1D("Z_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
-      _h_Z_eta = bookHistogram1D("Z_eta", 70, -7.0, 7.0);
+      _h_Z_pT = bookHisto1D("Z_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
+      _h_Z_eta = bookHisto1D("Z_eta", 70, -7.0, 7.0);
 
       // properties of the leptons
-      _h_Zl_pT = bookHistogram1D("Zl_pT", logBinEdges(100, 30.0, 0.1
+      _h_Zl_pT = bookHisto1D("Zl_pT", logBinEdges(100, 30.0, 0.1
                                                       *sqrtS()));
-      _h_Zl_eta = bookHistogram1D("Zl_eta", 40, -3.5, 3.5);
+      _h_Zl_eta = bookHisto1D("Zl_eta", 40, -3.5, 3.5);
 
       // correlations between the opposite charge leptons
-      _h_ZeZm_dphi = bookHistogram1D("ZeZm_dphi", 25, 0.0, PI);
-      _h_ZeZm_deta = bookHistogram1D("ZeZm_deta", 25, -5.0, 5.0);
-      _h_ZeZm_dR = bookHistogram1D("ZeZm_dR", 25, 0.5, 5.0);
-      _h_ZeZm_m = bookHistogram1D("ZeZm_m", 100, 0.0, 300.0);
+      _h_ZeZm_dphi = bookHisto1D("ZeZm_dphi", 25, 0.0, PI);
+      _h_ZeZm_deta = bookHisto1D("ZeZm_deta", 25, -5.0, 5.0);
+      _h_ZeZm_dR = bookHisto1D("ZeZm_dR", 25, 0.5, 5.0);
+      _h_ZeZm_m = bookHisto1D("ZeZm_m", 100, 0.0, 300.0);
 
       // correlations with jets
-      _h_ZZ_jet1_deta = bookHistogram1D("ZZ_jet1_deta", 70, -7.0, 7.0);
-      _h_ZZ_jet1_dR = bookHistogram1D("ZZ_jet1_dR", 25, 1.5, 7.0);
-      _h_Ze_jet1_dR = bookHistogram1D("Ze_jet1_dR", 25, 0.0, 7.0);
+      _h_ZZ_jet1_deta = bookHisto1D("ZZ_jet1_deta", 70, -7.0, 7.0);
+      _h_ZZ_jet1_dR = bookHisto1D("ZZ_jet1_dR", 25, 1.5, 7.0);
+      _h_Ze_jet1_dR = bookHisto1D("Ze_jet1_dR", 25, 0.0, 7.0);
 
       // global stuff
-      _h_HT = bookHistogram1D("HT", logBinEdges(100, 100.0, 0.5*sqrtS()));
+      _h_HT = bookHisto1D("HT", logBinEdges(100, 100.0, 0.5*sqrtS()));
 
       MC_JetAnalysis::init();
     }
@@ -210,28 +210,28 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_ZZ_pT;
-    AIDA::IHistogram1D * _h_ZZ_pT_peak;
-    AIDA::IHistogram1D * _h_ZZ_eta;
-    AIDA::IHistogram1D * _h_ZZ_phi;
-    AIDA::IHistogram1D * _h_ZZ_m;
-    AIDA::IHistogram1D * _h_ZZ_dphi;
-    AIDA::IHistogram1D * _h_ZZ_deta;
-    AIDA::IHistogram1D * _h_ZZ_dR;
-    AIDA::IHistogram1D * _h_ZZ_dpT;
-    AIDA::IHistogram1D * _h_ZZ_costheta_planes;
-    AIDA::IHistogram1D * _h_Z_pT;
-    AIDA::IHistogram1D * _h_Z_eta;
-    AIDA::IHistogram1D * _h_Zl_pT;
-    AIDA::IHistogram1D * _h_Zl_eta;
-    AIDA::IHistogram1D * _h_ZeZm_dphi;
-    AIDA::IHistogram1D * _h_ZeZm_deta;
-    AIDA::IHistogram1D * _h_ZeZm_dR;
-    AIDA::IHistogram1D * _h_ZeZm_m;
-    AIDA::IHistogram1D * _h_ZZ_jet1_deta;
-    AIDA::IHistogram1D * _h_ZZ_jet1_dR;
-    AIDA::IHistogram1D * _h_Ze_jet1_dR;
-    AIDA::IHistogram1D * _h_HT;
+    Histo1DPtr _h_ZZ_pT;
+    Histo1DPtr _h_ZZ_pT_peak;
+    Histo1DPtr _h_ZZ_eta;
+    Histo1DPtr _h_ZZ_phi;
+    Histo1DPtr _h_ZZ_m;
+    Histo1DPtr _h_ZZ_dphi;
+    Histo1DPtr _h_ZZ_deta;
+    Histo1DPtr _h_ZZ_dR;
+    Histo1DPtr _h_ZZ_dpT;
+    Histo1DPtr _h_ZZ_costheta_planes;
+    Histo1DPtr _h_Z_pT;
+    Histo1DPtr _h_Z_eta;
+    Histo1DPtr _h_Zl_pT;
+    Histo1DPtr _h_Zl_eta;
+    Histo1DPtr _h_ZeZm_dphi;
+    Histo1DPtr _h_ZeZm_deta;
+    Histo1DPtr _h_ZeZm_dR;
+    Histo1DPtr _h_ZeZm_m;
+    Histo1DPtr _h_ZZ_jet1_deta;
+    Histo1DPtr _h_ZZ_jet1_dR;
+    Histo1DPtr _h_Ze_jet1_dR;
+    Histo1DPtr _h_HT;
     //@}
 
   };

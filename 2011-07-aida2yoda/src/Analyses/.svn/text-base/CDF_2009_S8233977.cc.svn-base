@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -46,9 +46,9 @@ namespace Rivet {
       addProjection(FinalState(-1.0, 1.0, 0.0*GeV), "EtFS");
       addProjection(ChargedFinalState(-1.0, 1.0, 0.4*GeV), "CFS");
 
-      _hist_pt = bookHistogram1D(1, 1, 1);
+      _hist_pt = bookHisto1D(1, 1, 1);
       _hist_pt_vs_multiplicity = bookProfile1D(2, 1, 1);
-      _hist_sumEt = bookHistogram1D(3, 1, 1);
+      _hist_sumEt = bookHisto1D(3, 1, 1);
     }
 
 
@@ -117,9 +117,9 @@ namespace Rivet {
   private:
 
     double _sumWeightSelected;
-    AIDA::IProfile1D *_hist_pt_vs_multiplicity;
-    AIDA::IHistogram1D *_hist_pt;
-    AIDA::IHistogram1D *_hist_sumEt;
+    Profile1DPtr _hist_pt_vs_multiplicity;
+    Histo1DPtr _hist_pt;
+    Histo1DPtr _hist_sumEt;
 
   };
 

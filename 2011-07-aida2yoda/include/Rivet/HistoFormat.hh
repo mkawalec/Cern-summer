@@ -8,7 +8,7 @@ namespace Rivet {
 
 
   /// Enumeration of available histogram output formats.
-  enum HistoFormat { AIDAML, FLAT, ROOT };
+  enum HistoFormat { YODA, FLAT, ROOT };
 
   /// Typedef for a map of histogram format enums to strings.
   typedef std::map<HistoFormat, std::string> HistoFormatMap;
@@ -21,7 +21,7 @@ namespace Rivet {
   /// Function which returns a map from histogram format enums to the corresponding name strings.
   inline HistoFormatMap getKnownHistoFormats() {
     HistoFormatMap hfmap;
-    hfmap[AIDAML] = "AIDA";
+    hfmap[YODA] = "YODA";
     hfmap[FLAT] = "FLAT";
 #ifdef HAVE_ROOT
     hfmap[ROOT] = "ROOT";

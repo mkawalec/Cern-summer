@@ -5,13 +5,12 @@
 // FNAL-PUB 01/211-E
 
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/ConstLossyFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/TriggerCDFRun0Run1.hh"
-#include "LWH/Profile1D.h"
 
 namespace Rivet {
 
@@ -78,9 +77,9 @@ namespace Rivet {
       _ptsumTransJ20 = bookProfile1D(6, 1, 2);
       _ptsumAwayJ20 = bookProfile1D(6, 1, 3);
 
-      _ptTrans2 = bookHistogram1D(7, 1, 1);
-      _ptTrans5 = bookHistogram1D(7, 1, 2);
-      _ptTrans30 = bookHistogram1D(7, 1, 3);
+      _ptTrans2 = bookHisto1D(7, 1, 1);
+      _ptTrans5 = bookHisto1D(7, 1, 2);
+      _ptTrans30 = bookHisto1D(7, 1, 3);
     }
 
 
@@ -130,8 +129,8 @@ namespace Rivet {
 
       // Temporary histos that bin N and pT in dphi
       /// @todo Copy the permanent histos to get the binnings more robustly
-      LWH::Profile1D hist_num_dphi_2(50, 0, 180), hist_num_dphi_5(50, 0, 180), hist_num_dphi_30(50, 0, 180);
-      LWH::Profile1D hist_pt_dphi_2(50, 0, 180), hist_pt_dphi_5(50, 0, 180), hist_pt_dphi_30(50, 0, 180);
+      Profile1D hist_num_dphi_2(50, 0, 180), hist_num_dphi_5(50, 0, 180), hist_num_dphi_30(50, 0, 180);
+      Profile1D hist_pt_dphi_2(50, 0, 180), hist_pt_dphi_5(50, 0, 180), hist_pt_dphi_30(50, 0, 180);
 
       foreach (const Particle& p, fs.particles()) {
         // Calculate DeltaPhi(p,leadingJet)
@@ -183,16 +182,16 @@ namespace Rivet {
       // Update the "proper" dphi profile histograms
       for (int i = 0; i < 50; i++) {
         if (ptLead/GeV > 2.0) {
-          _numvsDeltaPhi2->fill(hist_num_dphi_2.binMean(i), hist_num_dphi_2.binHeight(i), weight);
-          _pTvsDeltaPhi2->fill(hist_pt_dphi_2.binMean(i), hist_pt_dphi_2.binHeight(i), weight);
+          _numvsDeltaPhi2->fill(hist_num_dphi_2.bin(i).xMean(), hist_num_dphi_2.bin(i).mean(), weight);
+          _pTvsDeltaPhi2->fill(hist_pt_dphi_2.bin(i).xMean(), hist_pt_dphi_2.bin(i).mean(), weight);
         }
         if (ptLead/GeV > 5.0) {
-          _numvsDeltaPhi5->fill(hist_num_dphi_5.binMean(i), hist_num_dphi_5.binHeight(i), weight);
-          _pTvsDeltaPhi5->fill(hist_pt_dphi_5.binMean(i), hist_pt_dphi_5.binHeight(i), weight);
+          _numvsDeltaPhi5->fill(hist_num_dphi_5.bin(i).xMean(), hist_num_dphi_5.bin(i).mean(), weight);
+          _pTvsDeltaPhi5->fill(hist_pt_dphi_5.bin(i).xMean(), hist_pt_dphi_5.bin(i).mean(), weight);
         }
         if (ptLead/GeV > 30.0) {
-          _numvsDeltaPhi30->fill(hist_num_dphi_30.binMean(i), hist_num_dphi_30.binHeight(i), weight);
-          _pTvsDeltaPhi30->fill(hist_pt_dphi_30.binMean(i), hist_pt_dphi_30.binHeight(i), weight);
+          _numvsDeltaPhi30->fill(hist_num_dphi_30.bin(i).xMean(), hist_num_dphi_30.bin(i).mean(), weight);
+          _pTvsDeltaPhi30->fill(hist_pt_dphi_30.bin(i).xMean(), hist_pt_dphi_30.bin(i).mean(), weight);
         }
       }
 
@@ -258,27 +257,27 @@ namespace Rivet {
     //@{
     // These histos (binned in dphi) are filled per event and then reset
     // TODO: use LWH
-    AIDA::IProfile1D *_hist_num_dphi_2, *_hist_num_dphi_5, *_hist_num_dphi_30;
-    AIDA::IProfile1D *_hist_pt_dphi_2, *_hist_pt_dphi_5, *_hist_pt_dphi_30;
+    Profile1DPtr _hist_num_dphi_2, _hist_num_dphi_5, _hist_num_dphi_30;
+    Profile1DPtr _hist_pt_dphi_2, _hist_pt_dphi_5, _hist_pt_dphi_30;
 
     // The sumpt vs. dphi and Nch vs. dphi histos
-    AIDA::IProfile1D *_numvsDeltaPhi2, *_numvsDeltaPhi5, *_numvsDeltaPhi30;
-    AIDA::IProfile1D *_pTvsDeltaPhi2, *_pTvsDeltaPhi5, *_pTvsDeltaPhi30;
+    Profile1DPtr _numvsDeltaPhi2, _numvsDeltaPhi5, _numvsDeltaPhi30;
+    Profile1DPtr _pTvsDeltaPhi2, _pTvsDeltaPhi5, _pTvsDeltaPhi30;
 
 
     /// Profile histograms, binned in the \f$ p_T \f$ of the leading jet, for
     /// the \f$ p_T \f$ sum in the toward, transverse and away regions.
-    AIDA::IProfile1D *_ptsumTowardMB,  *_ptsumTransMB,  *_ptsumAwayMB;
-    AIDA::IProfile1D *_ptsumTowardJ20, *_ptsumTransJ20, *_ptsumAwayJ20;
+    Profile1DPtr _ptsumTowardMB,  _ptsumTransMB,  _ptsumAwayMB;
+    Profile1DPtr _ptsumTowardJ20, _ptsumTransJ20, _ptsumAwayJ20;
 
     /// Profile histograms, binned in the \f$ p_T \f$ of the leading jet, for
     /// the number of charged particles per jet in the toward, transverse and
     /// away regions.
-    AIDA::IProfile1D *_numTowardMB,  *_numTransMB,  *_numAwayMB;
-    AIDA::IProfile1D *_numTowardJ20, *_numTransJ20, *_numAwayJ20;
+    Profile1DPtr _numTowardMB,  _numTransMB,  _numAwayMB;
+    Profile1DPtr _numTowardJ20, _numTransJ20, _numAwayJ20;
 
     /// Histogram of \f$ p_T \f$ distribution for 3 different \f$ p_{T1} \f$ IR cutoffs.
-    AIDA::IHistogram1D *_ptTrans2, *_ptTrans5, *_ptTrans30;
+    Histo1DPtr _ptTrans2, _ptTrans5, _ptTrans30;
     //@}
 
   };

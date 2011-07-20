@@ -1,7 +1,7 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -48,12 +48,12 @@ namespace Rivet {
       addProjection(FastJets(vfs, FastJets::CDFMIDPOINT, 0.7), "Jets");
 
       // Book histograms
-      _dStot    = bookHistogram1D(1, 1, 1);
-      _dSdET    = bookHistogram1D(2, 1, 1);
-      _dSdETA   = bookHistogram1D(3, 1, 1);
-      _dSdZpT   = bookHistogram1D(4, 1, 1);
-      _dSdNJet  = bookHistogram1D(5, 1, 1);
-      _dSdNbJet = bookHistogram1D(6, 1, 1);
+      _dStot    = bookHisto1D(1, 1, 1);
+      _dSdET    = bookHisto1D(2, 1, 1);
+      _dSdETA   = bookHisto1D(3, 1, 1);
+      _dSdZpT   = bookHisto1D(4, 1, 1);
+      _dSdNJet  = bookHisto1D(5, 1, 1);
+      _dSdNbJet = bookHisto1D(6, 1, 1);
      }
  
 
@@ -148,12 +148,12 @@ namespace Rivet {
       // Z cross sections.
       double Scale = 1.0;
       if (_sumWeightSelected != 0.0) Scale = 1.0/_sumWeightSelected;
-      _dStot->scale(Scale);
-      _dSdET->scale(Scale);
-      _dSdETA->scale(Scale);
-      _dSdNJet->scale(Scale);
-      _dSdNbJet->scale(Scale);
-      _dSdZpT->scale(Scale);
+      scale(_dStot,Scale);
+      scale(_dSdET,Scale);
+      scale(_dSdETA,Scale);
+      scale(_dSdNJet,Scale);
+      scale(_dSdNbJet,Scale);
+      scale(_dSdZpT,Scale);
     }
 
     //@}
@@ -171,12 +171,12 @@ namespace Rivet {
 
     //@{
     /// Histograms
-    AIDA::IHistogram1D* _dStot;
-    AIDA::IHistogram1D* _dSdET;
-    AIDA::IHistogram1D* _dSdETA;
-    AIDA::IHistogram1D* _dSdNJet;
-    AIDA::IHistogram1D* _dSdNbJet;
-    AIDA::IHistogram1D* _dSdZpT;
+    Histo1DPtr _dStot;
+    Histo1DPtr _dSdET;
+    Histo1DPtr _dSdETA;
+    Histo1DPtr _dSdNJet;
+    Histo1DPtr _dSdNbJet;
+    Histo1DPtr _dSdZpT;
 
     //@}
 

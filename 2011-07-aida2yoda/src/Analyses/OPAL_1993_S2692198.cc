@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -86,9 +86,9 @@ namespace Rivet {
 	// run the jet clustering DURHAM
 	fastjet::ClusterSequence clust_seq(input_particles, durham_def);
 	// cluster the jets
-	for (int j = 0; j < _nPhotonDurham->size(); ++j) {
+	for (size_t j = 0; j < _nPhotonDurham->numPoints(); ++j) {
 	  bool accept(true);
-	  double ycut = _nPhotonDurham->point(j)->coordinate(0)->value();
+	  double ycut = _nPhotonDurham->point(j).x();
 	  double dcut = sqr(evis)*ycut;
 	  vector<fastjet::PseudoJet> exclusive_jets = 
 	    sorted_by_E(clust_seq.exclusive_jets(dcut));
@@ -103,19 +103,17 @@ namespace Rivet {
 	    }
 	  }
 	  if(!accept) continue;
-	  _nPhotonDurham->point(j)->coordinate(1)->
-	    setValue(_nPhotonDurham->point(j)->coordinate(1)->value()+weight);
+	  _nPhotonDurham->point(j).setY(_nPhotonDurham->point(j).y()+weight);
 	  int njet = min(4,int(exclusive_jets.size())) - 1;
-	  if(j<_nPhotonJetDurham[njet]->size()) {
-	    _nPhotonJetDurham[njet]->point(j)->coordinate(1)->
-	      setValue(_nPhotonJetDurham[njet]->point(j)->coordinate(1)->value()+weight);
+	  if(j<_nPhotonJetDurham[njet]->numPoints()) {
+	    _nPhotonJetDurham[njet]->point(j).setY(_nPhotonJetDurham[njet]->point(j).y()+weight);
 	  }
 	}
 	// run the jet clustering JADE
 	fastjet::ClusterSequence clust_seq2(input_particles, jade_def);
-	for (int j = 0; j < _nPhotonJade->size(); ++j) {
+	for (size_t j = 0; j < _nPhotonJade->numPoints(); ++j) {
 	  bool accept(true);
-	  double ycut = _nPhotonJade->point(j)->coordinate(0)->value();
+	  double ycut = _nPhotonJade->point(j).x();
 	  double dcut = sqr(evis)*ycut;
 	  vector<fastjet::PseudoJet> exclusive_jets = 
 	    sorted_by_E(clust_seq2.exclusive_jets(dcut));
@@ -129,12 +127,10 @@ namespace Rivet {
 	    }
 	  }
 	  if(!accept) continue;
-	  _nPhotonJade->point(j)->coordinate(1)->
-	    setValue(_nPhotonJade->point(j)->coordinate(1)->value()+weight);
+	  _nPhotonJade->point(j).setY(_nPhotonJade->point(j).y()+weight);
 	  int njet = min(4,int(exclusive_jets.size())) - 1;
-	  if(j<_nPhotonJetJade[njet]->size()) {
-	    _nPhotonJetJade[njet]->point(j)->coordinate(1)->
-	      setValue(_nPhotonJetJade[njet]->point(j)->coordinate(1)->value()+weight);
+	  if(j<_nPhotonJetJade[njet]->numPoints()) {
+	    _nPhotonJetJade[njet]->point(j).setY(_nPhotonJetJade[njet]->point(j).y()+weight);
 	  }
 	}
 	// add this photon back in for the next interation of the loop
@@ -152,11 +148,11 @@ namespace Rivet {
 //       addProjection(ChargedFinalState(), "CFS");
 
       // Book data sets
-      _nPhotonJade       = bookDataPointSet(1, 1, 1);
-      _nPhotonDurham     = bookDataPointSet(2, 1, 1);
+      _nPhotonJade       = bookScatter2D(1, 1, 1);
+      _nPhotonDurham     = bookScatter2D(2, 1, 1);
       for(unsigned int ix=0;ix<4;++ix) {
-	_nPhotonJetJade  [ix] = bookDataPointSet(3 , 1, 1+ix);
-	_nPhotonJetDurham[ix] = bookDataPointSet(4 , 1, 1+ix);
+	_nPhotonJetJade  [ix] = bookScatter2D(3 , 1, 1+ix);
+	_nPhotonJetDurham[ix] = bookScatter2D(4 , 1, 1+ix);
       }
     }
 
@@ -164,29 +160,28 @@ namespace Rivet {
     /// Finalize
     void finalize() {
       const double fact = 1000./sumOfWeights();
-      normaliseDataPointSet(_nPhotonJade      ,fact);
-      normaliseDataPointSet(_nPhotonDurham    ,fact);
+      normaliseScatter2D(_nPhotonJade      ,fact);
+      normaliseScatter2D(_nPhotonDurham    ,fact);
       for(unsigned int ix=0;ix<4;++ix) {
-	normaliseDataPointSet(_nPhotonJetJade  [ix],fact);
-	normaliseDataPointSet(_nPhotonJetDurham[ix],fact);
+	normaliseScatter2D(_nPhotonJetJade  [ix],fact);
+	normaliseScatter2D(_nPhotonJetDurham[ix],fact);
       }
     }
 
     // normalise a data point set, default function does both x and y AHHH
-    void normaliseDataPointSet(AIDA::IDataPointSet * points, const double & fact) {
-      for (int i = 0; i < points->size(); ++i) {
-	points->point(i)->coordinate(1)->
-	  setValue(points->point(i)->coordinate(1)->value()*fact);
+    void normaliseScatter2D(Scatter2DPtr points, double fact) {
+      for (size_t i = 0; i < points->numPoints(); ++i) {
+	points->point(i).setY(points->point(i).y()*fact);
       }
     }
     //@}
 
   private:
 
-    AIDA::IDataPointSet *_nPhotonJade;
-    AIDA::IDataPointSet *_nPhotonDurham;
-    AIDA::IDataPointSet *_nPhotonJetJade  [4];
-    AIDA::IDataPointSet *_nPhotonJetDurham[4];
+    Scatter2DPtr _nPhotonJade;
+    Scatter2DPtr _nPhotonDurham;
+    Scatter2DPtr _nPhotonJetJade  [4];
+    Scatter2DPtr _nPhotonJetDurham[4];
 
   };
 

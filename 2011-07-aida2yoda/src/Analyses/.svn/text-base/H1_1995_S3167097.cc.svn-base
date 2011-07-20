@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalStateHCM.hh"
 #include "Rivet/Projections/CentralEtHCM.hh"
 
@@ -28,19 +28,19 @@ namespace Rivet {
       const FinalStateHCM& fshcm = addProjection(FinalStateHCM(diskin), "FS");
       addProjection(CentralEtHCM(fshcm), "Y1HCM");
 
-      _hEtFlow = vector<AIDA::IHistogram1D *>(_nbin);
-      _hEtFlowStat = vector<AIDA::IHistogram1D *>(_nbin);
+      _hEtFlow = vector<Histo1DPtr>(_nbin);
+      _hEtFlowStat = vector<Histo1DPtr>(_nbin);
       _nev = vector<double>(_nbin);
       /// @todo Automate this sort of thing so that the analysis code is more readable.
       for (size_t i = 0; i < _nbin; ++i) {
         string istr(1, char('1' + i));
-        _hEtFlow[i] = bookHistogram1D(istr, _nb, _xmin, _xmax);
-        _hEtFlowStat[i] = bookHistogram1D(istr, _nb, _xmin, _xmax);
+        _hEtFlow[i] = bookHisto1D(istr, _nb, _xmin, _xmax);
+        _hEtFlowStat[i] = bookHisto1D(istr, _nb, _xmin, _xmax);
       }
-      _hAvEt = bookHistogram1D("21tmp", _nbin, 1.0, 10.0);
-      _hAvX  = bookHistogram1D("22tmp", _nbin, 1.0, 10.0);
-      _hAvQ2 = bookHistogram1D("23tmp", _nbin, 1.0, 10.0);
-      _hN    = bookHistogram1D("24", _nbin, 1.0, 10.0);
+      _hAvEt = bookHisto1D("21tmp", _nbin, 1.0, 10.0);
+      _hAvX  = bookHisto1D("22tmp", _nbin, 1.0, 10.0);
+      _hAvQ2 = bookHisto1D("23tmp", _nbin, 1.0, 10.0);
+      _hN    = bookHisto1D("24", _nbin, 1.0, 10.0);
     }
 
 
@@ -100,23 +100,24 @@ namespace Rivet {
 
     void finalize() {
       for (size_t ibin = 0; ibin < _nbin; ++ibin) {
-        _hEtFlow[ibin]->scale(1.0/(_nev[ibin]*double(_nb)/(_xmax-_xmin)));
-        _hEtFlowStat[ibin]->scale(1.0/(_nev[ibin]*double(_nb)/(_xmax-_xmin)));
+        scale( _hEtFlow[ibin], 1.0/(_nev[ibin]*double(_nb)/(_xmax-_xmin)));
+        scale( _hEtFlowStat[ibin], 1.0/(_nev[ibin]*double(_nb)/(_xmax-_xmin)));
       }
 
       /// @todo Automate this sort of thing so that the analysis code is more readable.
-      AIDA::IDataPointSet* h = 0;
-      h = histogramFactory().divide("/H1_1995_S3167097/21", *_hAvEt, *_hN);
-      h->setTitle(_hAvEt->title());
-      histogramFactory().destroy(_hAvEt);
+      // \todo YODA divide
+      // Scatter2DPtr h;
+      // h = histogramFactory().divide("/H1_1995_S3167097/21", *_hAvEt, *_hN);
+      // h->setTitle(_hAvEt->title());
+      // histogramFactory().destroy(_hAvEt);
 
-      h = histogramFactory().divide("/H1_1995_S3167097/22", *_hAvX, *_hN);
-      h->setTitle(_hAvX->title());
-      histogramFactory().destroy(_hAvX);
+      // h = histogramFactory().divide("/H1_1995_S3167097/22", *_hAvX, *_hN);
+      // h->setTitle(_hAvX->title());
+      // histogramFactory().destroy(_hAvX);
 
-      h = histogramFactory().divide("/H1_1995_S3167097/23", *_hAvQ2, *_hN);
-      h->setTitle(_hAvQ2->title());
-      histogramFactory().destroy(_hAvQ2);
+      // h = histogramFactory().divide("/H1_1995_S3167097/23", *_hAvQ2, *_hN);
+      // h->setTitle(_hAvQ2->title());
+      // histogramFactory().destroy(_hAvQ2);
     }
 
     //@}
@@ -133,10 +134,10 @@ namespace Rivet {
     static const double _xmin, _xmax;
 
     /// Histograms for the \f$ E_T \f$ flows
-    vector<AIDA::IHistogram1D*> _hEtFlow, _hEtFlowStat;
+    vector<Histo1DPtr> _hEtFlow, _hEtFlowStat;
 
     /// Histograms for averages in different kinematical bins.
-    AIDA::IHistogram1D *_hAvEt, *_hAvX, *_hAvQ2, *_hN;
+    Histo1DPtr _hAvEt, _hAvX, _hAvQ2, _hN;
 
     /// Helper vector;
     vector<double> _nev;

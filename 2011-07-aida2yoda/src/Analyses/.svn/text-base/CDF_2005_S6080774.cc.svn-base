@@ -2,7 +2,7 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 
 namespace Rivet {
@@ -31,9 +31,9 @@ namespace Rivet {
       addProjection(ifs, "IFS");
 
       for (size_t yAxisId=1; yAxisId<5; ++yAxisId) {
-        _h_m_PP.push_back(bookHistogram1D(1, 1, yAxisId));
-        _h_pT_PP.push_back(bookHistogram1D(2, 1, yAxisId));
-        _h_dphi_PP.push_back(bookHistogram1D(3, 1, yAxisId));
+        _h_m_PP.push_back(bookHisto1D(1, 1, yAxisId));
+        _h_pT_PP.push_back(bookHisto1D(2, 1, yAxisId));
+        _h_dphi_PP.push_back(bookHisto1D(3, 1, yAxisId));
       }
     }
 
@@ -93,9 +93,9 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    std::vector<AIDA::IHistogram1D*> _h_m_PP;
-    std::vector<AIDA::IHistogram1D*> _h_pT_PP;
-    std::vector<AIDA::IHistogram1D*> _h_dphi_PP;
+    std::vector<Histo1DPtr> _h_m_PP;
+    std::vector<Histo1DPtr> _h_pT_PP;
+    std::vector<Histo1DPtr> _h_dphi_PP;
     //@}
 
 

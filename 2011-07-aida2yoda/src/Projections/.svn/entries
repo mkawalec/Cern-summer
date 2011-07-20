@@ -1,7 +1,7 @@
 10
 
 dir
-3187
+3228
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/src/Projections
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -502,40 +502,6 @@ buckley
 
 2460
 
-FParameter.cc
-file
-
-
-
-
-2011-07-18T11:57:44.038174Z
-173422774f87b8f595ac664fe78a66fe
-2011-04-29T11:33:13.264905Z
-3068
-holsch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3693
-
 LeptonClusters.cc
 file
 
@@ -570,17 +536,17 @@ richardn
 
 2753
 
-FoxWolframMoments.cc
+FParameter.cc
 file
 
 
 
 
-2011-07-18T11:57:44.041507Z
-fe38c2bb3802b952d391aba1ff3a3d3f
-2009-11-19T15:02:51.475160Z
-2080
-buckley
+2011-07-18T11:57:44.038174Z
+173422774f87b8f595ac664fe78a66fe
+2011-04-29T11:33:13.264905Z
+3068
+holsch
 
 
 
@@ -602,7 +568,7 @@ buckley
 
 
 
-3505
+3693
 
 TriggerCDFRun2.cc
 file
@@ -637,6 +603,40 @@ holsch
 
 
 1050
+
+FoxWolframMoments.cc
+file
+
+
+
+
+2011-07-18T11:57:44.041507Z
+fe38c2bb3802b952d391aba1ff3a3d3f
+2009-11-19T15:02:51.475160Z
+2080
+buckley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3505
 
 Multiplicity.cc
 file
@@ -774,40 +774,6 @@ buckley
 
 6346
 
-DISLepton.cc
-file
-
-
-
-
-2011-07-18T11:57:44.044840Z
-74141dfe708df605a4e535b90036c316
-2009-11-19T15:02:51.475160Z
-2080
-buckley
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1399
-
 ZFinder.cc
 file
 
@@ -841,6 +807,40 @@ fsiegert
 
 
 3675
+
+DISLepton.cc
+file
+
+
+
+
+2011-07-18T11:57:44.044840Z
+74141dfe708df605a4e535b90036c316
+2009-11-19T15:02:51.475160Z
+2080
+buckley
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1399
 
 JetShape.cc
 file
@@ -944,40 +944,6 @@ buckley
 
 413
 
-ChargedFinalState.cc
-file
-
-
-
-
-2011-07-18T11:57:44.051507Z
-673c66d944dee240021fe05ce327e302
-2010-02-26T21:50:22.382963Z
-2272
-buckley
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1678
-
 VisibleFinalState.cc
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 1282
+
+ChargedFinalState.cc
+file
+
+
+
+
+2011-07-18T11:57:44.051507Z
+673c66d944dee240021fe05ce327e302
+2010-02-26T21:50:22.382963Z
+2272
+buckley
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1678
 
 CentralEtHCM.cc
 file

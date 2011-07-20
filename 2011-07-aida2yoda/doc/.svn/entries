@@ -1,7 +1,7 @@
 10
 
 dir
-3187
+3228
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/doc
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -672,40 +672,6 @@ buckley
 
 1493
 
-picinpar.sty
-file
-
-
-
-
-2011-07-18T11:57:44.321506Z
-36336d324485fd3168011d80d106da8e
-2010-07-19T12:51:58.159210Z
-2601
-hoeth
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16156
-
 Thinker.jpg
 file
 
@@ -739,6 +705,40 @@ has-props
 
 
 30266
+
+picinpar.sty
+file
+
+
+
+
+2011-07-18T11:57:44.321506Z
+36336d324485fd3168011d80d106da8e
+2010-07-19T12:51:58.159210Z
+2601
+hoeth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16156
 
 preamble.tex
 file
@@ -774,17 +774,17 @@ buckley
 
 4188
 
-refs.bib
+make-plots.txt
 file
 
 
 
 
-2011-07-18T11:57:44.324839Z
-7b766e86e86c8bd063ee70dff9b3781c
-2010-11-26T21:24:22.646077Z
-2778
-buckley
+2011-07-18T11:57:44.321506Z
+dfd6c55c1255adb16bccb234388270fd
+2011-06-24T10:44:31.222357Z
+3164
+hoeth
 
 
 
@@ -806,7 +806,7 @@ buckley
 
 
 
-16469
+17652
 
 mk-analysis-html
 file
@@ -842,17 +842,17 @@ has-props
 
 5384
 
-make-plots.txt
+refs.bib
 file
 
 
 
 
-2011-07-18T11:57:44.321506Z
-dfd6c55c1255adb16bccb234388270fd
-2011-06-24T10:44:31.222357Z
-3164
-hoeth
+2011-07-18T11:57:44.324839Z
+7b766e86e86c8bd063ee70dff9b3781c
+2010-11-26T21:24:22.646077Z
+2778
+buckley
 
 
 
@@ -874,7 +874,7 @@ hoeth
 
 
 
-17652
+16469
 
 hepparticles.sty
 file
@@ -910,40 +910,6 @@ buckley
 
 17139
 
-rivet-manual.tex
-file
-
-
-
-
-2011-07-18T11:57:44.328172Z
-bb0958c2d5a970d050f92dffe4d9b273
-2011-07-13T14:23:45.735840Z
-3186
-buckley
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-78373
-
 mk-analysis-latex
 file
 
@@ -977,6 +943,40 @@ has-props
 
 
 8036
+
+rivet-manual.tex
+file
+
+
+
+
+2011-07-18T11:57:44.328172Z
+bb0958c2d5a970d050f92dffe4d9b273
+2011-07-13T14:23:45.735840Z
+3186
+buckley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+78373
 
 mparhack.sty
 file

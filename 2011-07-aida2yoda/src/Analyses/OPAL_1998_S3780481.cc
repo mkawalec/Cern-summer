@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/FinalState.hh"
@@ -95,7 +95,7 @@ namespace Rivet {
         const double logxp = -std::log(xp);
         _histXpall->fill(xp, weight);
         _histLogXpall->fill(logxp, weight);
-        _histMultiChargedall->fill(_histMultiChargedall->binMean(0), weight);
+        _histMultiChargedall->fill(_histMultiChargedall->bin(0).xMean(), weight);
         switch (flavour) {
           /// @todo Use PDG code enums
         case DQUARK:
@@ -103,17 +103,17 @@ namespace Rivet {
         case SQUARK:
           _histXpuds->fill(xp, weight);
           _histLogXpuds->fill(logxp, weight);
-          _histMultiChargeduds->fill(_histMultiChargeduds->binMean(0), weight);
+          _histMultiChargeduds->fill(_histMultiChargeduds->bin(0).xMean(), weight);
           break;
         case CQUARK:
           _histXpc->fill(xp, weight);
           _histLogXpc->fill(logxp, weight);
-          _histMultiChargedc->fill(_histMultiChargedc->binMean(0), weight);
+          _histMultiChargedc->fill(_histMultiChargedc->bin(0).xMean(), weight);
           break;
         case BQUARK:
           _histXpb->fill(xp, weight);
           _histLogXpb->fill(logxp, weight);
-          _histMultiChargedb->fill(_histMultiChargedb->binMean(0), weight);
+          _histMultiChargedb->fill(_histMultiChargedb->bin(0).xMean(), weight);
           break;
         }
       }
@@ -128,18 +128,18 @@ namespace Rivet {
       addProjection(InitialQuarks(), "IQF");
 
       // Book histos
-      _histXpuds           = bookHistogram1D(1, 1, 1);
-      _histXpc             = bookHistogram1D(2, 1, 1);
-      _histXpb             = bookHistogram1D(3, 1, 1);
-      _histXpall           = bookHistogram1D(4, 1, 1);
-      _histLogXpuds        = bookHistogram1D(5, 1, 1);
-      _histLogXpc          = bookHistogram1D(6, 1, 1);
-      _histLogXpb          = bookHistogram1D(7, 1, 1);
-      _histLogXpall        = bookHistogram1D(8, 1, 1);
-      _histMultiChargeduds = bookHistogram1D(9, 1, 1);
-      _histMultiChargedc   = bookHistogram1D(9, 1, 2);
-      _histMultiChargedb   = bookHistogram1D(9, 1, 3);
-      _histMultiChargedall = bookHistogram1D(9, 1, 4);
+      _histXpuds           = bookHisto1D(1, 1, 1);
+      _histXpc             = bookHisto1D(2, 1, 1);
+      _histXpb             = bookHisto1D(3, 1, 1);
+      _histXpall           = bookHisto1D(4, 1, 1);
+      _histLogXpuds        = bookHisto1D(5, 1, 1);
+      _histLogXpc          = bookHisto1D(6, 1, 1);
+      _histLogXpb          = bookHisto1D(7, 1, 1);
+      _histLogXpall        = bookHisto1D(8, 1, 1);
+      _histMultiChargeduds = bookHisto1D(9, 1, 1);
+      _histMultiChargedc   = bookHisto1D(9, 1, 2);
+      _histMultiChargedb   = bookHisto1D(9, 1, 3);
+      _histMultiChargedall = bookHisto1D(9, 1, 4);
     }
 
 
@@ -175,18 +175,18 @@ namespace Rivet {
     double _SumOfcWeights;
     double _SumOfbWeights;
 
-    AIDA::IHistogram1D *_histXpuds;
-    AIDA::IHistogram1D *_histXpc;
-    AIDA::IHistogram1D *_histXpb;
-    AIDA::IHistogram1D *_histXpall;
-    AIDA::IHistogram1D *_histLogXpuds;
-    AIDA::IHistogram1D *_histLogXpc;
-    AIDA::IHistogram1D *_histLogXpb;
-    AIDA::IHistogram1D *_histLogXpall;
-    AIDA::IHistogram1D *_histMultiChargeduds;
-    AIDA::IHistogram1D *_histMultiChargedc;
-    AIDA::IHistogram1D *_histMultiChargedb;
-    AIDA::IHistogram1D *_histMultiChargedall;
+    Histo1DPtr _histXpuds;
+    Histo1DPtr _histXpc;
+    Histo1DPtr _histXpb;
+    Histo1DPtr _histXpall;
+    Histo1DPtr _histLogXpuds;
+    Histo1DPtr _histLogXpc;
+    Histo1DPtr _histLogXpb;
+    Histo1DPtr _histLogXpall;
+    Histo1DPtr _histMultiChargeduds;
+    Histo1DPtr _histMultiChargedc;
+    Histo1DPtr _histMultiChargedb;
+    Histo1DPtr _histMultiChargedall;
 
     //@}
 

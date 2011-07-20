@@ -3,7 +3,7 @@
 #include "Rivet/Projections/WFinder.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/ParticleIdUtils.hh"
 
 namespace Rivet {
@@ -31,19 +31,19 @@ namespace Rivet {
       FastJets jetpro(wfinder.remainingFinalState(), FastJets::KT, 0.7);
       addProjection(jetpro, "Jets");
 
-      _h_W_mass = bookHistogram1D("W_mass", 50, 55.0, 105.0);
-      _h_W_pT = bookHistogram1D("W_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
-      _h_W_pT_peak = bookHistogram1D("W_pT_peak", 25, 0.0, 25.0);
-      _h_W_y = bookHistogram1D("W_y", 40, -4.0, 4.0);
-      _h_W_phi = bookHistogram1D("W_phi", 25, 0.0, TWOPI);
-      _h_W_jet1_deta = bookHistogram1D("W_jet1_deta", 50, -5.0, 5.0);
-      _h_W_jet1_dR = bookHistogram1D("W_jet1_dR", 25, 0.5, 7.0);
-      _h_Wplus_pT = bookHistogram1D("Wplus_pT", logBinEdges(25, 10.0, 0.5*sqrtS()));
-      _h_Wminus_pT = bookHistogram1D("Wminus_pT", logBinEdges(25, 10.0, 0.5*sqrtS()));
-      _h_lepton_pT = bookHistogram1D("lepton_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
-      _h_lepton_eta = bookHistogram1D("lepton_eta", 40, -4.0, 4.0);
-      _htmp_dsigminus_deta = bookHistogram1D("lepton_dsigminus_deta", 20, 0.0, 4.0);
-      _htmp_dsigplus_deta  = bookHistogram1D("lepton_dsigplus_deta", 20, 0.0, 4.0);
+      _h_W_mass = bookHisto1D("W_mass", 50, 55.0, 105.0);
+      _h_W_pT = bookHisto1D("W_pT", logBinEdges(100, 1.0, 0.5*sqrtS()));
+      _h_W_pT_peak = bookHisto1D("W_pT_peak", 25, 0.0, 25.0);
+      _h_W_y = bookHisto1D("W_y", 40, -4.0, 4.0);
+      _h_W_phi = bookHisto1D("W_phi", 25, 0.0, TWOPI);
+      _h_W_jet1_deta = bookHisto1D("W_jet1_deta", 50, -5.0, 5.0);
+      _h_W_jet1_dR = bookHisto1D("W_jet1_dR", 25, 0.5, 7.0);
+      _h_Wplus_pT = bookHisto1D("Wplus_pT", logBinEdges(25, 10.0, 0.5*sqrtS()));
+      _h_Wminus_pT = bookHisto1D("Wminus_pT", logBinEdges(25, 10.0, 0.5*sqrtS()));
+      _h_lepton_pT = bookHisto1D("lepton_pT", logBinEdges(100, 10.0, 0.25*sqrtS()));
+      _h_lepton_eta = bookHisto1D("lepton_eta", 40, -4.0, 4.0);
+      _htmp_dsigminus_deta = bookHisto1D("lepton_dsigminus_deta", 20, 0.0, 4.0);
+      _htmp_dsigplus_deta  = bookHisto1D("lepton_dsigplus_deta", 20, 0.0, 4.0);
 
       MC_JetAnalysis::init();
     }
@@ -114,18 +114,19 @@ namespace Rivet {
       scale(_h_lepton_eta, crossSection()/sumOfWeights());
 
       // Construct asymmetry: (dsig+/deta - dsig-/deta) / (dsig+/deta + dsig-/deta) for each Et region
-      AIDA::IHistogramFactory& hf = histogramFactory();
-      IHistogram1D* numtmp = hf.subtract("/numtmp", *_htmp_dsigplus_deta, *_htmp_dsigminus_deta);
-      IHistogram1D* dentmp = hf.add("/dentmp", *_htmp_dsigplus_deta, *_htmp_dsigminus_deta);
-      assert(numtmp && dentmp);
-      hf.divide(histoDir() + "/W_chargeasymm_eta", *numtmp, *dentmp);
-      hf.destroy(numtmp);
-      hf.destroy(dentmp);
-      hf.destroy(_htmp_dsigminus_deta);
-      hf.destroy(_htmp_dsigplus_deta);
+      // \todo YODA
+      // AIDA::IHistogramFactory& hf = histogramFactory();
+      // IHistogram1D* numtmp = hf.subtract("/numtmp", *_htmp_dsigplus_deta, *_htmp_dsigminus_deta);
+      // IHistogram1D* dentmp = hf.add("/dentmp", *_htmp_dsigplus_deta, *_htmp_dsigminus_deta);
+      // assert(numtmp && dentmp);
+      // hf.divide(histoDir() + "/W_chargeasymm_eta", *numtmp, *dentmp);
+      // hf.destroy(numtmp);
+      // hf.destroy(dentmp);
+      // hf.destroy(_htmp_dsigminus_deta);
+      // hf.destroy(_htmp_dsigplus_deta);
 
-      // W charge asymmetry vs. pTW: dsig+/dpT / dsig-/dpT
-      hf.divide(histoDir() + "/W_chargeasymm_pT", *_h_Wplus_pT, *_h_Wminus_pT);
+      // // W charge asymmetry vs. pTW: dsig+/dpT / dsig-/dpT
+      // hf.divide(histoDir() + "/W_chargeasymm_pT", *_h_Wplus_pT, *_h_Wminus_pT);
       scale(_h_Wplus_pT, crossSection()/sumOfWeights());
       scale(_h_Wminus_pT, crossSection()/sumOfWeights());
 
@@ -139,20 +140,20 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_W_mass;
-    AIDA::IHistogram1D * _h_W_pT;
-    AIDA::IHistogram1D * _h_W_pT_peak;
-    AIDA::IHistogram1D * _h_W_y;
-    AIDA::IHistogram1D * _h_W_phi;
-    AIDA::IHistogram1D * _h_W_jet1_deta;
-    AIDA::IHistogram1D * _h_W_jet1_dR;
-    AIDA::IHistogram1D * _h_Wplus_pT;
-    AIDA::IHistogram1D * _h_Wminus_pT;
-    AIDA::IHistogram1D * _h_lepton_pT;
-    AIDA::IHistogram1D * _h_lepton_eta;
+    Histo1DPtr _h_W_mass;
+    Histo1DPtr _h_W_pT;
+    Histo1DPtr _h_W_pT_peak;
+    Histo1DPtr _h_W_y;
+    Histo1DPtr _h_W_phi;
+    Histo1DPtr _h_W_jet1_deta;
+    Histo1DPtr _h_W_jet1_dR;
+    Histo1DPtr _h_Wplus_pT;
+    Histo1DPtr _h_Wminus_pT;
+    Histo1DPtr _h_lepton_pT;
+    Histo1DPtr _h_lepton_eta;
 
-    AIDA::IHistogram1D * _htmp_dsigminus_deta;
-    AIDA::IHistogram1D * _htmp_dsigplus_deta;
+    Histo1DPtr _htmp_dsigminus_deta;
+    Histo1DPtr _htmp_dsigplus_deta;
     //@}
 
   };

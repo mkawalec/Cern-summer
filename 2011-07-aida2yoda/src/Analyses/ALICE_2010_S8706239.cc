@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 
@@ -36,7 +36,7 @@ namespace Rivet {
       ChargedFinalState cfs(-0.8, 0.8, 0.15);
       addProjection(cfs, "CFS");
 
-      _h_pT = bookHistogram1D(4, 1, 1);
+      _h_pT = bookHisto1D(4, 1, 1);
 
       _h_pT_Nch_015 = bookProfile1D(11, 1, 1);
       _h_pT_Nch_05  = bookProfile1D(12, 1, 1);
@@ -87,10 +87,10 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D* _h_pT;
+    Histo1DPtr _h_pT;
 
-    AIDA::IProfile1D* _h_pT_Nch_015 ;
-    AIDA::IProfile1D* _h_pT_Nch_05  ;
+    Profile1DPtr _h_pT_Nch_015 ;
+    Profile1DPtr _h_pT_Nch_05  ;
 
     double _Nevt_after_cuts;
     //@}

@@ -4,7 +4,7 @@
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ZFinder.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -49,12 +49,12 @@ namespace Rivet {
       FastJets conefinder(zfinder.remainingFinalState(), FastJets::D0ILCONE, 0.5);
       addProjection(conefinder, "ConeFinder");
 
-      _h_jet1_pT_constrained = bookHistogram1D(1, 1, 1);
-      _h_jet2_pT_constrained = bookHistogram1D(3, 1, 1);
-      _h_jet3_pT_constrained = bookHistogram1D(5, 1, 1);
-      _h_jet1_pT = bookHistogram1D(2, 1, 1);
-      _h_jet2_pT = bookHistogram1D(4, 1, 1);
-      _h_jet3_pT = bookHistogram1D(6, 1, 1);
+      _h_jet1_pT_constrained = bookHisto1D(1, 1, 1);
+      _h_jet2_pT_constrained = bookHisto1D(3, 1, 1);
+      _h_jet3_pT_constrained = bookHisto1D(5, 1, 1);
+      _h_jet1_pT = bookHisto1D(2, 1, 1);
+      _h_jet2_pT = bookHisto1D(4, 1, 1);
+      _h_jet3_pT = bookHisto1D(6, 1, 1);
     }
 
 
@@ -139,12 +139,12 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_jet1_pT;
-    AIDA::IHistogram1D * _h_jet2_pT;
-    AIDA::IHistogram1D * _h_jet3_pT;
-    AIDA::IHistogram1D * _h_jet1_pT_constrained;
-    AIDA::IHistogram1D * _h_jet2_pT_constrained;
-    AIDA::IHistogram1D * _h_jet3_pT_constrained;
+    Histo1DPtr _h_jet1_pT;
+    Histo1DPtr _h_jet2_pT;
+    Histo1DPtr _h_jet3_pT;
+    Histo1DPtr _h_jet1_pT_constrained;
+    Histo1DPtr _h_jet2_pT_constrained;
+    Histo1DPtr _h_jet3_pT_constrained;
     //@}
 
     double _sum_of_weights, _sum_of_weights_constrained;

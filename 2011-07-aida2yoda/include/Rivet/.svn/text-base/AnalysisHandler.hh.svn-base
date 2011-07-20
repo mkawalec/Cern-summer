@@ -35,22 +35,6 @@ namespace Rivet {
     /// Preferred constructor, with optional run name.
     AnalysisHandler(const string& runname="");
 
-
-    /// @brief Make a Rivet handler with a set base filename and store type.
-    ///
-    /// An AnalysisHandler built with this constructor sets the output histo format
-    /// and filename when the handler is created rather than when it is written.
-    /// This is not the preferred behaviour, to allow for more flexible histogramming
-    /// in future, use the writeData() method to supply the filename and format at
-    /// the point of file-writing.
-    ///
-    /// Note that the run name is now a compulsory argument: this is to avoid
-    /// conflict with the preferred one-argument constructor.
-    ///
-    /// @deprecated Prefer to specify output files and formats explicitly.
-    AnalysisHandler(const string& basefilename, const string& runname, HistoFormat storetype=AIDAML);
-
-
     /// @brief Destructor
     /// The destructor is not virtual, as this class should not be inherited from.
     ~AnalysisHandler();
@@ -59,18 +43,6 @@ namespace Rivet {
 
 
   private:
-
-    /// Do the initialisation of the AIDA analysis factories.
-    /// @deprecated When AIDA goes, this goes...
-    void _setupFactories(const string& basefilename, HistoFormat storetype);
-
-    /// Do the initialisation of the AIDA analysis factories with no store.
-    /// @deprecated When AIDA goes, this goes...
-    void _setupFactories();
-
-    /// Convert any IHistogram1D objects in the AIDA tree to IDataPointSet objects.
-    /// @deprecated When AIDA goes, this goes...
-    void _normalizeTree(AIDA::ITree& tree);
 
     /// Get a logger object.
     Log& getLog() const;
@@ -190,50 +162,14 @@ namespace Rivet {
     void analyze(const GenEvent& event);
 
 
-    /// Finalize a run. This function first calls the AnalysisBase::finalize()
-    /// functions of all included analysis objects and converts all histograms
-    /// to AIDA DataPointSet objects in the AIDA tree. Using the histogram tree
-    /// for further analysis or writing to file is left to the API user.
+    /// Finalize a run. This function calls the AnalysisBase::finalize()
+    /// functions of all included analysis objects.
     void finalize();
 
     //@}
 
-
-    /// @name AIDA factories etc.
-    /// @deprecated All this will be removed when histogramming is overhauled
-    //@{
-
-    /// The AIDA analysis factory.
-    /// @deprecated When AIDA goes, this goes...
-    AIDA::IAnalysisFactory& analysisFactory();
-
-
-    /// Commit the AIDA tree to file.
-    /// @deprecated When AIDA goes, this goes...
-    void commitData();
-
-
-    /// Write the AIDA tree to the named file.
-    /// @deprecated When AIDA goes, this goes...
+    /// Write all analyses' plots to the named file.
     void writeData(const std::string& filename);
-
-
-    /// The AIDA tree object.
-    /// @deprecated When AIDA goes, this goes...
-    AIDA::ITree& tree();
-
-
-    /// The AIDA histogram factory.
-    /// @deprecated When AIDA goes, this goes...
-    AIDA::IHistogramFactory& histogramFactory();
-
-
-    /// The AIDA histogram factory.
-    /// @deprecated When AIDA goes, this goes...
-    AIDA::IDataPointSetFactory& datapointsetFactory();
-
-    //@}
-
 
   private:
 
@@ -263,29 +199,6 @@ namespace Rivet {
     bool _initialised;
 
     //@}
-
-
-    /// @name AIDA factory handles
-    /// Note that only the analysis factory can be a shared_ptr, since it deletes all the others.
-    //@{
-
-    /// The AIDA analysis factory.
-    shared_ptr<AIDA::IAnalysisFactory> _theAnalysisFactory;
-
-    /// The AIDA tree factory.
-    AIDA::ITreeFactory* _theTreeFactory;
-
-    /// The AIDA tree object.
-    AIDA::ITree* _theTree;
-
-    /// The AIDA histogram factory.
-    AIDA::IHistogramFactory* _theHistogramFactory;
-
-    /// The AIDA data point set factory.
-    AIDA::IDataPointSetFactory* _theDataPointSetFactory;
-
-    //@}
-
 
   private:
 

@@ -4,7 +4,7 @@
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/IdentifiedFinalState.hh"
 #include "Rivet/Projections/UnstableFinalState.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -37,15 +37,15 @@ namespace Rivet {
       UnstableFinalState ufs(-2.5, 2.5, 0.0*GeV);
       addProjection(ufs, "UFS");
 
-      _h_pT_k0s        = bookHistogram1D(1, 1, 1);
-      _h_pT_kminus     = bookHistogram1D(1, 2, 1);
-      _h_pT_kplus      = bookHistogram1D(1, 3, 1);
-      _h_pT_lambda     = bookHistogram1D(1, 4, 1);
-      _h_pT_lambdabar  = bookHistogram1D(1, 5, 1);
-      _h_pT_ximinus    = bookHistogram1D(1, 6, 1);
-      _h_pT_xiplus     = bookHistogram1D(1, 7, 1);
-      //_h_pT_omega      = bookHistogram1D(1, 8, 1);
-      _h_antibaryon_baryon_ratio = bookDataPointSet(2, 1, 1);
+      _h_pT_k0s        = bookHisto1D(1, 1, 1);
+      _h_pT_kminus     = bookHisto1D(1, 2, 1);
+      _h_pT_kplus      = bookHisto1D(1, 3, 1);
+      _h_pT_lambda     = bookHisto1D(1, 4, 1);
+      _h_pT_lambdabar  = bookHisto1D(1, 5, 1);
+      _h_pT_ximinus    = bookHisto1D(1, 6, 1);
+      _h_pT_xiplus     = bookHisto1D(1, 7, 1);
+      //_h_pT_omega      = bookHisto1D(1, 8, 1);
+      _h_antibaryon_baryon_ratio = bookScatter2D(2, 1, 1);
       _h_pT_vs_mass    = bookProfile1D(3, 1, 1);
     }
 
@@ -142,31 +142,24 @@ namespace Rivet {
 
     /// Finalize
     void finalize() {
-      std::vector<double> xval;
-      std::vector<double> xerr;
-      std::vector<double> yval;
-      std::vector<double> yerr;
+      std::vector<Point2D> points;
       for (size_t i=0 ; i<4 ; i++) {
-        xval.push_back(i);
-        xerr.push_back(0.5);
         if (_nWeightedBaryon[i]==0 || _nWeightedAntiBaryon[i]==0) {
-          yval.push_back(0);
-          yerr.push_back(0);
+	  points.push_back(Point2D(i,0,0.5,0));
         }
         else {
           double y  = _nWeightedAntiBaryon[i]/_nWeightedBaryon[i];
           double dy = sqrt( 1./_nAntiBaryon[i] + 1./_nBaryon[i] );
-          yval.push_back(y);
-          yerr.push_back(y*dy);
+	  points.push_back(Point2D(i,y,0.5,y*dy));
         }
       }
-      _h_antibaryon_baryon_ratio->setCoordinate(0, xval, xerr);
-      _h_antibaryon_baryon_ratio->setCoordinate(1, yval, yerr);
+      _h_antibaryon_baryon_ratio->addPoints( points );
 
-      AIDA::IHistogramFactory& hf = histogramFactory();
-      const string dir = histoDir();
-      hf.divide(dir + "/d02-x02-y01", *_h_pT_lambdabar, *_h_pT_lambda);
-      hf.divide(dir + "/d02-x03-y01", *_h_pT_xiplus, *_h_pT_ximinus);
+      // \todo YODA divide
+      // AIDA::IHistogramFactory& hf = histogramFactory();
+      // const string dir = histoDir();
+      // hf.divide(dir + "/d02-x02-y01", *_h_pT_lambdabar, *_h_pT_lambda);
+      // hf.divide(dir + "/d02-x03-y01", *_h_pT_xiplus, *_h_pT_ximinus);
 
       scale(_h_pT_k0s,       1./(2*M_PI*_sumWeightSelected));
       scale(_h_pT_kminus,    1./(2*M_PI*_sumWeightSelected));
@@ -176,8 +169,8 @@ namespace Rivet {
       scale(_h_pT_ximinus,   1./(2*M_PI*_sumWeightSelected));
       scale(_h_pT_xiplus,    1./(2*M_PI*_sumWeightSelected));
       //scale(_h_pT_omega,     1./(2*M_PI*_sumWeightSelected));
-      getLog() << Log::DEBUG << "sumOfWeights()     = " << sumOfWeights() << std::endl;
-      getLog() << Log::DEBUG << "_sumWeightSelected = " << _sumWeightSelected << std::endl;
+      MSG_DEBUG("sumOfWeights()     = " << sumOfWeights());
+      MSG_DEBUG("_sumWeightSelected = " << _sumWeightSelected);
     }
 
   private:
@@ -188,16 +181,16 @@ namespace Rivet {
     double _nWeightedBaryon[4];
     double _nWeightedAntiBaryon[4];
 
-    AIDA::IHistogram1D * _h_pT_k0s;
-    AIDA::IHistogram1D * _h_pT_kminus;
-    AIDA::IHistogram1D * _h_pT_kplus;
-    AIDA::IHistogram1D * _h_pT_lambda;
-    AIDA::IHistogram1D * _h_pT_lambdabar;
-    AIDA::IHistogram1D * _h_pT_ximinus;
-    AIDA::IHistogram1D * _h_pT_xiplus;
-    //AIDA::IHistogram1D * _h_pT_omega;
-    AIDA::IDataPointSet* _h_antibaryon_baryon_ratio;
-    AIDA::IProfile1D*    _h_pT_vs_mass;
+    Histo1DPtr _h_pT_k0s;
+    Histo1DPtr _h_pT_kminus;
+    Histo1DPtr _h_pT_kplus;
+    Histo1DPtr _h_pT_lambda;
+    Histo1DPtr _h_pT_lambdabar;
+    Histo1DPtr _h_pT_ximinus;
+    Histo1DPtr _h_pT_xiplus;
+    //Histo1DPtr _h_pT_omega;
+    Scatter2DPtr _h_antibaryon_baryon_ratio;
+    Profile1DPtr   _h_pT_vs_mass;
   };
 
 

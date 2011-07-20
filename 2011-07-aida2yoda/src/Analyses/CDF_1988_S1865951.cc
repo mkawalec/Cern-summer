@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
 #include "Rivet/Projections/TriggerCDFRun0Run1.hh"
 
@@ -33,9 +33,9 @@ namespace Rivet {
 
       // Book histo
       if (fuzzyEquals(sqrtS()/GeV, 1800, 1E-3)) {
-        _hist_pt = bookHistogram1D(1, 1, 1);
+        _hist_pt = bookHisto1D(1, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 630, 1E-3)) {
-        _hist_pt = bookHistogram1D(2, 1, 1);
+        _hist_pt = bookHisto1D(2, 1, 1);
       }
     }
 
@@ -75,7 +75,7 @@ namespace Rivet {
 
     /// @name Histos
     //@{
-    AIDA::IHistogram1D* _hist_pt;
+    Histo1DPtr _hist_pt;
     //@}
 
   };

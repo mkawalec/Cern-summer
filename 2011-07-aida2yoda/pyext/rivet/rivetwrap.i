@@ -138,7 +138,6 @@ namespace Rivet {
     bool needCrossSection();
     AnalysisHandler& setCrossSection(double xs);
     double crossSection();
-    void commitData();
     void writeData(const std::string& filename);
   };
 

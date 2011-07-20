@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -36,36 +36,36 @@ namespace Rivet {
       /// @todo Use correct jet algorithm
       addProjection(FastJets(fs, FastJets::D0ILCONE, 0.7), "ConeJets");
 
-      _h_3j_x3 = bookHistogram1D(1, 1, 1);
-      _h_3j_x5 = bookHistogram1D(2, 1, 1);
-      _h_3j_costheta3 = bookHistogram1D(3, 1, 1);
-      _h_3j_psi = bookHistogram1D(4, 1, 1);
-      _h_3j_mu34 = bookHistogram1D(5, 1, 1);
-      _h_3j_mu35 = bookHistogram1D(6, 1, 1);
-      _h_3j_mu45 = bookHistogram1D(7, 1, 1);
+      _h_3j_x3 = bookHisto1D(1, 1, 1);
+      _h_3j_x5 = bookHisto1D(2, 1, 1);
+      _h_3j_costheta3 = bookHisto1D(3, 1, 1);
+      _h_3j_psi = bookHisto1D(4, 1, 1);
+      _h_3j_mu34 = bookHisto1D(5, 1, 1);
+      _h_3j_mu35 = bookHisto1D(6, 1, 1);
+      _h_3j_mu45 = bookHisto1D(7, 1, 1);
 
-      _h_4j_x3 = bookHistogram1D(8, 1, 1);
-      _h_4j_x4 = bookHistogram1D(9, 1, 1);
-      _h_4j_x5 = bookHistogram1D(10, 1, 1);
-      _h_4j_x6 = bookHistogram1D(11, 1, 1);
-      _h_4j_costheta3 = bookHistogram1D(12, 1, 1);
-      _h_4j_costheta4 = bookHistogram1D(13, 1, 1);
-      _h_4j_costheta5 = bookHistogram1D(14, 1, 1);
-      _h_4j_costheta6 = bookHistogram1D(15, 1, 1);
-      _h_4j_cosomega34 = bookHistogram1D(16, 1, 1);
-      _h_4j_cosomega35 = bookHistogram1D(17, 1, 1);
-      _h_4j_cosomega36 = bookHistogram1D(18, 1, 1);
-      _h_4j_cosomega45 = bookHistogram1D(19, 1, 1);
-      _h_4j_cosomega46 = bookHistogram1D(20, 1, 1);
-      _h_4j_cosomega56 = bookHistogram1D(21, 1, 1);
-      _h_4j_mu34 = bookHistogram1D(22, 1, 1);
-      _h_4j_mu35 = bookHistogram1D(23, 1, 1);
-      _h_4j_mu36 = bookHistogram1D(24, 1, 1);
-      _h_4j_mu45 = bookHistogram1D(25, 1, 1);
-      _h_4j_mu46 = bookHistogram1D(26, 1, 1);
-      _h_4j_mu56 = bookHistogram1D(27, 1, 1);
-      _h_4j_theta_BZ = bookHistogram1D(28, 1, 1);
-      _h_4j_costheta_NR = bookHistogram1D(29, 1, 1);
+      _h_4j_x3 = bookHisto1D(8, 1, 1);
+      _h_4j_x4 = bookHisto1D(9, 1, 1);
+      _h_4j_x5 = bookHisto1D(10, 1, 1);
+      _h_4j_x6 = bookHisto1D(11, 1, 1);
+      _h_4j_costheta3 = bookHisto1D(12, 1, 1);
+      _h_4j_costheta4 = bookHisto1D(13, 1, 1);
+      _h_4j_costheta5 = bookHisto1D(14, 1, 1);
+      _h_4j_costheta6 = bookHisto1D(15, 1, 1);
+      _h_4j_cosomega34 = bookHisto1D(16, 1, 1);
+      _h_4j_cosomega35 = bookHisto1D(17, 1, 1);
+      _h_4j_cosomega36 = bookHisto1D(18, 1, 1);
+      _h_4j_cosomega45 = bookHisto1D(19, 1, 1);
+      _h_4j_cosomega46 = bookHisto1D(20, 1, 1);
+      _h_4j_cosomega56 = bookHisto1D(21, 1, 1);
+      _h_4j_mu34 = bookHisto1D(22, 1, 1);
+      _h_4j_mu35 = bookHisto1D(23, 1, 1);
+      _h_4j_mu36 = bookHisto1D(24, 1, 1);
+      _h_4j_mu45 = bookHisto1D(25, 1, 1);
+      _h_4j_mu46 = bookHisto1D(26, 1, 1);
+      _h_4j_mu56 = bookHisto1D(27, 1, 1);
+      _h_4j_theta_BZ = bookHisto1D(28, 1, 1);
+      _h_4j_costheta_NR = bookHisto1D(29, 1, 1);
 
     }
 
@@ -239,36 +239,36 @@ namespace Rivet {
     /// @name Histograms
     //@{
 
-    AIDA::IHistogram1D *_h_3j_x3;
-    AIDA::IHistogram1D *_h_3j_x5;
-    AIDA::IHistogram1D *_h_3j_costheta3;
-    AIDA::IHistogram1D *_h_3j_psi;
-    AIDA::IHistogram1D *_h_3j_mu34;
-    AIDA::IHistogram1D *_h_3j_mu35;
-    AIDA::IHistogram1D *_h_3j_mu45;
+    Histo1DPtr _h_3j_x3;
+    Histo1DPtr _h_3j_x5;
+    Histo1DPtr _h_3j_costheta3;
+    Histo1DPtr _h_3j_psi;
+    Histo1DPtr _h_3j_mu34;
+    Histo1DPtr _h_3j_mu35;
+    Histo1DPtr _h_3j_mu45;
 
-    AIDA::IHistogram1D *_h_4j_x3;
-    AIDA::IHistogram1D *_h_4j_x4;
-    AIDA::IHistogram1D *_h_4j_x5;
-    AIDA::IHistogram1D *_h_4j_x6;
-    AIDA::IHistogram1D *_h_4j_costheta3;
-    AIDA::IHistogram1D *_h_4j_costheta4;
-    AIDA::IHistogram1D *_h_4j_costheta5;
-    AIDA::IHistogram1D *_h_4j_costheta6;
-    AIDA::IHistogram1D *_h_4j_cosomega34;
-    AIDA::IHistogram1D *_h_4j_cosomega35;
-    AIDA::IHistogram1D *_h_4j_cosomega36;
-    AIDA::IHistogram1D *_h_4j_cosomega45;
-    AIDA::IHistogram1D *_h_4j_cosomega46;
-    AIDA::IHistogram1D *_h_4j_cosomega56;
-    AIDA::IHistogram1D *_h_4j_mu34;
-    AIDA::IHistogram1D *_h_4j_mu35;
-    AIDA::IHistogram1D *_h_4j_mu36;
-    AIDA::IHistogram1D *_h_4j_mu45;
-    AIDA::IHistogram1D *_h_4j_mu46;
-    AIDA::IHistogram1D *_h_4j_mu56;
-    AIDA::IHistogram1D *_h_4j_theta_BZ;
-    AIDA::IHistogram1D *_h_4j_costheta_NR;
+    Histo1DPtr _h_4j_x3;
+    Histo1DPtr _h_4j_x4;
+    Histo1DPtr _h_4j_x5;
+    Histo1DPtr _h_4j_x6;
+    Histo1DPtr _h_4j_costheta3;
+    Histo1DPtr _h_4j_costheta4;
+    Histo1DPtr _h_4j_costheta5;
+    Histo1DPtr _h_4j_costheta6;
+    Histo1DPtr _h_4j_cosomega34;
+    Histo1DPtr _h_4j_cosomega35;
+    Histo1DPtr _h_4j_cosomega36;
+    Histo1DPtr _h_4j_cosomega45;
+    Histo1DPtr _h_4j_cosomega46;
+    Histo1DPtr _h_4j_cosomega56;
+    Histo1DPtr _h_4j_mu34;
+    Histo1DPtr _h_4j_mu35;
+    Histo1DPtr _h_4j_mu36;
+    Histo1DPtr _h_4j_mu45;
+    Histo1DPtr _h_4j_mu46;
+    Histo1DPtr _h_4j_mu56;
+    Histo1DPtr _h_4j_theta_BZ;
+    Histo1DPtr _h_4j_costheta_NR;
     //@}
 
   };

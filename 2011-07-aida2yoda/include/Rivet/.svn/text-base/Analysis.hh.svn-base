@@ -13,7 +13,7 @@
 #include "Rivet/AnalysisHandler.fhh"
 #include "Rivet/AnalysisLoader.hh"
 #include "Rivet/Tools/Logging.fhh"
-#include "Rivet/RivetAIDA.fhh"
+#include "Rivet/RivetYODA.fhh"
 
 
 /// @def vetoEvent
@@ -285,36 +285,36 @@ namespace Rivet {
     AnalysisHandler& handler() const { return *_analysishandler; }
 
     /// Normalize the given histogram, @a histo. After this call the
-    /// histogram will have been transformed to a DataPointSet with the
+    /// histogram will have been transformed to a Scatter2D with the
     /// same name and path. It has the same effect as
     /// @c scale(histo, norm/sumOfWeights).
     /// @param histo The histogram to be normalised.
     /// @param norm The new area of the histogram.
     /// @warning The old histogram will be deleted, and its pointer set to zero.
-    void normalize(AIDA::IHistogram1D*& histo, double norm=1.0);
+    void normalize(Histo1DPtr histo, double norm=1.0);
 
     /// Multiplicatively scale the given histogram, @a histo. After this call the
-    /// histogram will have been transformed to a DataPointSet with the same name and path.
+    /// histogram will have been transformed to a Scatter2D with the same name and path.
     /// @param histo The histogram to be scaled.
     /// @param scale The factor used to multiply the histogram bin heights.
     /// @warning The old histogram will be deleted, and its pointer set to zero.
-    void scale(AIDA::IHistogram1D*& histo, double scale);
+    void scale(Histo1DPtr histo, double scale);
 
     /// Normalize the given histogram, @a histo. After this call the
-    /// histogram will have been transformed to a DataPointSet with the
+    /// histogram will have been transformed to a Scatter2D with the
     /// same name and path. It has the same effect as
     /// @c scale(histo, norm/sumOfWeights).
     /// @param histo The histogram to be normalised.
     /// @param norm The new area of the histogram.
     /// @warning The old histogram will be deleted, and its pointer set to zero.
-    void normalize(AIDA::IHistogram2D*& histo, double norm=1.0);
+    // void normalize(AIDA::IHistogram2D*& histo, double norm=1.0);
 
     /// Multiplicatively scale the given histogram, @a histo. After this call the
-    /// histogram will have been transformed to a DataPointSet with the same name and path.
+    /// histogram will have been transformed to a Scatter2D with the same name and path.
     /// @param histo The histogram to be scaled.
     /// @param scale The factor used to multiply the histogram bin heights.
     /// @warning The old histogram will be deleted, and its pointer set to zero.
-    void scale(AIDA::IHistogram2D*& histo, double scale);
+    // void scale(AIDA::IHistogram2D*& histo, double scale);
 
     /// Set the cross section from the generator
     Analysis& setCrossSection(double xs);
@@ -345,18 +345,6 @@ namespace Rivet {
 
     /// @name AIDA analysis infrastructure.
     //@{
-    /// Access the AIDA analysis factory of the controlling AnalysisHandler object.
-    AIDA::IAnalysisFactory& analysisFactory();
-
-    /// Access the AIDA tree of the controlling AnalysisHandler object.
-    AIDA::ITree& tree();
-
-    /// Access the AIDA histogram factory of the controlling AnalysisHandler object.
-    AIDA::IHistogramFactory& histogramFactory();
-
-    /// Access the AIDA histogram factory of the controlling AnalysisHandler object.
-    AIDA::IDataPointSetFactory& datapointsetFactory();
-
     /// Get the canonical histogram "directory" path for this analysis.
     const std::string histoDir() const;
 
@@ -382,58 +370,61 @@ namespace Rivet {
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IHistogram1D* bookHistogram1D(const std::string& name,
-                                        size_t nbins, double lower, double upper,
-                                        const std::string& title="",
-                                        const std::string& xtitle="", const std::string& ytitle="");
+    Histo1DPtr bookHisto1D(const std::string& name,
+			   size_t nbins, double lower, double upper,
+			   const std::string& title="",
+			   const std::string& xtitle="", const std::string& ytitle="");
 
     /// Book a 1D histogram with non-uniform bins defined by the vector of bin edges @a binedges .
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IHistogram1D* bookHistogram1D(const std::string& name,
+    Histo1DPtr bookHisto1D(const std::string& name,
                                         const std::vector<double>& binedges, const std::string& title="",
                                         const std::string& xtitle="", const std::string& ytitle="");
 
-    /// Book a 2D histogram with @a nxbins and @a nybins uniformly
-    /// distributed across the ranges @a xlower - @a xupper and @a
-    /// ylower - @a yupper respectively along the x- and y-axis.
-    /// (NB. this returns a pointer rather than a reference since it
-    /// will have to be stored in the analysis class - there's no
-    /// point in forcing users to explicitly get the pointer from a
-    /// reference before they can use it!)
-    AIDA::IHistogram2D*
-    bookHistogram2D(const std::string& name,
-		    size_t nxbins, double xlower, double xupper,
-		    size_t nybins, double ylower, double yupper,
-		    const std::string& title="", const std::string& xtitle="",
-		    const std::string& ytitle="", const std::string& ztitle="");
+    // /// Book a 2D histogram with @a nxbins and @a nybins uniformly
+    // /// distributed across the ranges @a xlower - @a xupper and @a
+    // /// ylower - @a yupper respectively along the x- and y-axis.
+    // /// (NB. this returns a pointer rather than a reference since it
+    // /// will have to be stored in the analysis class - there's no
+    // /// point in forcing users to explicitly get the pointer from a
+    // /// reference before they can use it!)
+    // AIDA::IHistogram2D*
+    // bookHistogram2D(const std::string& name,
+    // 		    size_t nxbins, double xlower, double xupper,
+    // 		    size_t nybins, double ylower, double yupper,
+    // 		    const std::string& title="", const std::string& xtitle="",
+    // 		    const std::string& ytitle="", const std::string& ztitle="");
 
-    /// Book a 2D histogram with non-uniform bins defined by the
-    /// vectorx of bin edges @a xbinedges and @a ybinedges.
-    /// (NB. this returns a pointer rather than a reference since it
-    /// will have to be stored in the analysis class - there's no
-    /// point in forcing users to explicitly get the pointer from a
-    /// reference before they can use it!)
-    AIDA::IHistogram2D*
-    bookHistogram2D(const std::string& name,
-		    const std::vector<double>& xbinedges,
-		    const std::vector<double>& ybinedges,
-		    const std::string& title="", const std::string& xtitle="",
-		    const std::string& ytitle="", const std::string& ztitle="");
+    // /// Book a 2D histogram with non-uniform bins defined by the
+    // /// vectorx of bin edges @a xbinedges and @a ybinedges.
+    // /// (NB. this returns a pointer rather than a reference since it
+    // /// will have to be stored in the analysis class - there's no
+    // /// point in forcing users to explicitly get the pointer from a
+    // /// reference before they can use it!)
+    // AIDA::IHistogram2D*
+    // bookHistogram2D(const std::string& name,
+    // 		    const std::vector<double>& xbinedges,
+    // 		    const std::vector<double>& ybinedges,
+    // 		    const std::string& title="", const std::string& xtitle="",
+    // 		    const std::string& ytitle="", const std::string& ztitle="");
 
     /// Book a 1D histogram based on the name in the corresponding AIDA
     /// file. The binnings will be obtained by reading the bundled AIDA data
     /// record file with the same filename as the analysis' name() property.
-    AIDA::IHistogram1D* bookHistogram1D(const std::string& name, const std::string& title="",
-                                        const std::string& xtitle="", const std::string& ytitle="");
+    Histo1DPtr bookHisto1D(const std::string& name, 
+			   const std::string& title="",
+			   const std::string& xtitle="", 
+			   const std::string& ytitle="");
 
     /// Book a 1D histogram based on the paper, dataset and x/y-axis IDs in the corresponding
     /// HepData record. The binnings will be obtained by reading the bundled AIDA data record file
     /// of the same filename as the analysis' name() property.
-    AIDA::IHistogram1D* bookHistogram1D(size_t datasetId, size_t xAxisId, size_t yAxisId,
-                                        const std::string& title="",
-                                        const std::string& xtitle="", const std::string& ytitle="");
+    Histo1DPtr bookHisto1D(size_t datasetId, size_t xAxisId, size_t yAxisId,
+			   const std::string& title="",
+			   const std::string& xtitle="", 
+			   const std::string& ytitle="");
 
     //@}
 
@@ -445,32 +436,32 @@ namespace Rivet {
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IProfile1D* bookProfile1D(const std::string& name,
-                                    size_t nbins, double lower, double upper,
-                                    const std::string& title="",
-                                    const std::string& xtitle="", const std::string& ytitle="");
+    Profile1DPtr bookProfile1D(const std::string& name,
+			       size_t nbins, double lower, double upper,
+			       const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
 
     /// Book a 1D profile histogram with non-uniform bins defined by the vector of bin edges @a binedges .
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IProfile1D* bookProfile1D(const std::string& name,
-                                    const std::vector<double>& binedges,
-                                    const std::string& title="",
-                                    const std::string& xtitle="", const std::string& ytitle="");
+    Profile1DPtr bookProfile1D(const std::string& name,
+			       const std::vector<double>& binedges,
+			       const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
 
     /// Book a 1D profile histogram based on the name in the corresponding AIDA
     /// file. The binnings will be obtained by reading the bundled AIDA data
     /// record file with the same filename as the analysis' name() property.
-    AIDA::IProfile1D* bookProfile1D(const std::string& name, const std::string& title="",
-                                    const std::string& xtitle="", const std::string& ytitle="");
-
+    Profile1DPtr bookProfile1D(const std::string& name, const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
+    
     /// Book a 1D profile histogram based on the paper, dataset and x/y-axis IDs in the corresponding
     /// HepData record. The binnings will be obtained by reading the bundled AIDA data record file
     /// of the same filename as the analysis' name() property.
-    AIDA::IProfile1D* bookProfile1D(size_t datasetId, size_t xAxisId, size_t yAxisId,
-                                    const std::string& title="",
-                                    const std::string& xtitle="", const std::string& ytitle="");
+    Profile1DPtr bookProfile1D(size_t datasetId, size_t xAxisId, size_t yAxisId,
+			       const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
     //@}
 
 
@@ -481,42 +472,44 @@ namespace Rivet {
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IDataPointSet* bookDataPointSet(const std::string& name, const std::string& title="",
-                                          const std::string& xtitle="", const std::string& ytitle="");
+    Scatter2DPtr bookScatter2D(const std::string& name, const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
 
 
     /// Book a 2-dimensional data point set with equally spaced points in a range.
     /// (NB. this returns a pointer rather than a reference since it will
     /// have to be stored in the analysis class - there's no point in forcing users to explicitly
     /// get the pointer from a reference before they can use it!)
-    AIDA::IDataPointSet* bookDataPointSet(const std::string& name,
-                                          size_t npts, double lower, double upper,
-                                          const std::string& title="",
-                                          const std::string& xtitle="", const std::string& ytitle="");
+    Scatter2DPtr bookScatter2D(const std::string& name,
+			       size_t npts, double lower, double upper,
+			       const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
 
     /// Book a 2-dimensional data point set based on the corresponding AIDA data
     /// file. The binnings (x-errors) will be obtained by reading the bundled
     /// AIDA data record file of the same filename as the analysis' name()
     /// property.
-    //AIDA::IDataPointSet* bookDataPointSet(const std::string& name, const std::string& title);
+    Scatter2DPtr bookScatter2D(const std::string& name, const std::string& title);
 
     /// Book a 2-dimensional data point set based on the paper, dataset and x/y-axis IDs in the corresponding
     /// HepData record. The binnings (x-errors) will be obtained by reading the bundled AIDA data record file
     /// of the same filename as the analysis' name() property.
-    AIDA::IDataPointSet* bookDataPointSet(size_t datasetId, size_t xAxisId, size_t yAxisId,
-                                          const std::string& title="",
-                                          const std::string& xtitle="", const std::string& ytitle="");
+    Scatter2DPtr bookScatter2D(size_t datasetId, size_t xAxisId, size_t yAxisId,
+			       const std::string& title="",
+			       const std::string& xtitle="", const std::string& ytitle="");
 
     //@}
 
+  public:
+    /// List of registered plot objects
+    const vector<AnalysisObjectPtr> & plots() const {
+      return _plotobjects;
+    }
 
   private:
 
     /// @name Utility functions
     //@{
-
-    /// Make the histogram directory.
-    void _makeHistoDir();
 
     /// Get the bin edges for this paper from the reference AIDA file, and cache them.
     void _cacheBinEdges() const;
@@ -529,6 +522,9 @@ namespace Rivet {
 
   protected:
 
+    /// Add a plot object to the final output list
+    void addPlot(AnalysisObjectPtr);
+
     /// Name passed to constructor (used to find .info analysis data file, and as a fallback)
     string _defaultname;
 
@@ -537,6 +533,9 @@ namespace Rivet {
 
 
   private:
+
+    /// Storage of all plot objects
+    vector<AnalysisObjectPtr> _plotobjects;
 
     /// @name Cross-section variables
     //@{
@@ -547,12 +546,9 @@ namespace Rivet {
     /// The controlling AnalysisHandler object.
     AnalysisHandler* _analysishandler;
 
-    /// Flag to indicate whether the histogram directory is present
-    mutable bool _madeHistoDir;
-
-    /// Collection of x-axis point data to speed up many autobookings: the
-    /// reference data file should only be read once.
-    /// @todo Reduce memory occupancy, or clear after initialisation?
+    // /// Collection of x-axis point data to speed up many autobookings: the
+    // /// reference data file should only be read once.
+    // /// @todo Reduce memory occupancy, or clear after initialisation?
     mutable map<string, vector<DPSXPoint> > _dpsData;
 
     /// Collection of cached bin edges to speed up many autobookings: the

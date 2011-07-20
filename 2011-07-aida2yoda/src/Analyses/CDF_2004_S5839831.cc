@@ -3,7 +3,7 @@
 
 #include "Rivet/Analysis.hh"
 #include "Rivet/Jet.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/Beam.hh"
 #include "Rivet/Projections/ChargedFinalState.hh"
@@ -129,13 +129,13 @@ namespace Rivet {
         _pTSum1800_2Jet = bookProfile1D(7, 1, 1);
         _pTSum1800_3Jet = bookProfile1D(7, 1, 2);
 
-        _pt90Dbn1800Et40 = bookHistogram1D(3, 1, 1);
-        _pt90Dbn1800Et80 = bookHistogram1D(3, 1, 2);
-        _pt90Dbn1800Et120 = bookHistogram1D(3, 1, 3);
-        _pt90Dbn1800Et160 = bookHistogram1D(3, 1, 4);
-        _pt90Dbn1800Et200 = bookHistogram1D(3, 1, 5);
-        _numTracksDbn1800MB = bookHistogram1D(5, 1, 1);
-        _ptDbn1800MB = bookHistogram1D(6, 1, 1);
+        _pt90Dbn1800Et40 = bookHisto1D(3, 1, 1);
+        _pt90Dbn1800Et80 = bookHisto1D(3, 1, 2);
+        _pt90Dbn1800Et120 = bookHisto1D(3, 1, 3);
+        _pt90Dbn1800Et160 = bookHisto1D(3, 1, 4);
+        _pt90Dbn1800Et200 = bookHisto1D(3, 1, 5);
+        _numTracksDbn1800MB = bookHisto1D(5, 1, 1);
+        _ptDbn1800MB = bookHisto1D(6, 1, 1);
       } else if (fuzzyEquals(sqrtS()/GeV, 630, 1E-3)) {
         _pt90Max630 = bookProfile1D(8, 1, 1);
         _pt90Min630 = bookProfile1D(8, 1, 2);
@@ -143,8 +143,8 @@ namespace Rivet {
         _pTSum630_2Jet = bookProfile1D(9, 1, 1);
         _pTSum630_3Jet = bookProfile1D(9, 1, 2);
 
-        _numTracksDbn630MB = bookHistogram1D(10, 1, 1);
-        _ptDbn630MB = bookHistogram1D(11, 1, 1);
+        _numTracksDbn630MB = bookHisto1D(10, 1, 1);
+        _ptDbn630MB = bookHisto1D(11, 1, 1);
       }
     }
 
@@ -337,47 +337,47 @@ namespace Rivet {
     /// the average \f$ p_T \f$ in the toward, transverse and away regions at
     /// \f$ \sqrt{s} = 1800 \text{GeV} \f$.
     /// Corresponds to Table 1, and HepData table 1.
-    AIDA::IProfile1D *_pt90MaxAvg1800, *_pt90MinAvg1800;
+    Profile1DPtr _pt90MaxAvg1800, _pt90MinAvg1800;
 
     /// Profile histograms, binned in the \f$ E_T \f$ of the leading jet, for
     /// the \f$ p_T \f$ sum in the toward, transverse and away regions at
     /// \f$ \sqrt{s} = 1800 \text{GeV} \f$.
     /// Corresponds to figure 2/3, and HepData table 2.
-    AIDA::IProfile1D *_pt90Max1800, *_pt90Min1800, *_pt90Diff1800;
+    Profile1DPtr _pt90Max1800, _pt90Min1800, _pt90Diff1800;
 
     /// Profile histograms, binned in the \f$ E_T \f$ of the leading jet, for
     /// the \f$ p_T \f$ sum in the toward, transverse and away regions at
     /// at \f$ \sqrt{s} = 630 \text{GeV} \f$.
     /// Corresponds to figure 8, and HepData table 8.
-    AIDA::IProfile1D *_pt90Max630, *_pt90Min630, *_pt90Diff630;
+    Profile1DPtr _pt90Max630, _pt90Min630, _pt90Diff630;
 
     /// Profile histograms, binned in the \f$ E_T \f$ of the leading jet, for
     /// the cone track multiplicity at \f$ \sqrt{s} = 1800 \text{GeV} \f$.
     /// Corresponds to figure 5, and HepData table 4.
-    AIDA::IProfile1D *_num90Max1800, *_num90Min1800;
+    Profile1DPtr _num90Max1800, _num90Min1800;
 
     /// Profile histograms, binned in the \f$ E_T \f$ of the leading jet, for
     /// the \f$ p_T \f$ sum at \f$ \sqrt{s} = 1800 \text{GeV} \f$.
     /// Corresponds to figure 7, and HepData table 7.
-    AIDA::IProfile1D *_pTSum1800_2Jet, *_pTSum1800_3Jet;
+    Profile1DPtr _pTSum1800_2Jet, _pTSum1800_3Jet;
 
     /// Profile histograms, binned in the \f$ E_T \f$ of the leading jet, for
     /// the \f$ p_T \f$ sum at \f$ \sqrt{s} = 630 \text{GeV} \f$.
     /// Corresponds to figure 9, and HepData table 9.
-    AIDA::IProfile1D *_pTSum630_2Jet, *_pTSum630_3Jet;
+    Profile1DPtr _pTSum630_2Jet, _pTSum630_3Jet;
 
     /// Histogram of \f$ p_{T\text{sum}} \f$ distribution for 5 different
     /// \f$ E_{T1} \f$ bins.
     /// Corresponds to figure 4, and HepData table 3.
-    AIDA::IHistogram1D *_pt90Dbn1800Et40, *_pt90Dbn1800Et80, *_pt90Dbn1800Et120,
-      *_pt90Dbn1800Et160, *_pt90Dbn1800Et200;
+    Histo1DPtr _pt90Dbn1800Et40, _pt90Dbn1800Et80, _pt90Dbn1800Et120,
+      _pt90Dbn1800Et160, _pt90Dbn1800Et200;
 
     /// Histograms of track multiplicity and \f$ p_T \f$ distributions for
     /// minimum bias events.
     /// Figure 6, and HepData tables 5 & 6.
     /// Figure 10, and HepData tables 10 & 11.
-    AIDA::IHistogram1D *_numTracksDbn1800MB, *_ptDbn1800MB;
-    AIDA::IHistogram1D *_numTracksDbn630MB, *_ptDbn630MB;
+    Histo1DPtr _numTracksDbn1800MB, _ptDbn1800MB;
+    Histo1DPtr _numTracksDbn630MB, _ptDbn630MB;
     //@}
 
   };

@@ -1,10 +1,8 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Tools/Logging.hh"
-#include "LWH/Profile1D.h"
-#include "LWH/Histogram1D.h"
 
 namespace Rivet {
 
@@ -64,7 +62,7 @@ namespace Rivet {
       vector<double> num500(3, 0), ptSum500(3, 0.0);
       // Temporary histos that bin N in dPhi.
       // NB. Only one of each needed since binnings are the same for the energies and pT cuts
-      LWH::Histogram1D hist_num_dphi_500(binEdges(13+isqrts,1,1));
+      Histo1D hist_num_dphi_500(binEdges(13+isqrts,1,1));
       foreach (const Particle& p, particles500) {
         const double pT = p.momentum().pT();
         const double dPhi = deltaPhi(philead, p.momentum().phi());
@@ -92,8 +90,8 @@ namespace Rivet {
       // |Delta(phi)| and so differ by a factor of 2: we have to actually norm for angular range = 2pi
       const size_t nbins = binEdges(13+isqrts,1,1).size() - 1;
       for (size_t i = 0; i < nbins; ++i) {
-        const double binmean_num = hist_num_dphi_500.binMean(i);
-        const double binvalue_num = hist_num_dphi_500.binHeight(i)/hist_num_dphi_500.axis().binWidth(i)/10.0;
+        const double binmean_num = hist_num_dphi_500.bin(i).xMean();
+        const double binvalue_num = hist_num_dphi_500.bin(i).area()/hist_num_dphi_500.bin(i).width()/10.0;
         if (pTlead/GeV >= 1.0) _hist_N_vs_dPhi_1_500->fill(binmean_num, binvalue_num, weight);
         if (pTlead/GeV >= 2.0) _hist_N_vs_dPhi_2_500->fill(binmean_num, binvalue_num, weight);
         if (pTlead/GeV >= 3.0) _hist_N_vs_dPhi_3_500->fill(binmean_num, binvalue_num, weight);
@@ -103,7 +101,6 @@ namespace Rivet {
 
 
     void finalize() {
-      // nothing
     }
 
 
@@ -121,13 +118,13 @@ namespace Rivet {
   private:
     int isqrts;
 
-    AIDA::IProfile1D*  _hist_N_transverse_500;
+    Profile1DPtr _hist_N_transverse_500;
 
-    AIDA::IProfile1D*  _hist_ptsum_transverse_500;
+    Profile1DPtr _hist_ptsum_transverse_500;
 
-    AIDA::IProfile1D*  _hist_N_vs_dPhi_1_500;
-    AIDA::IProfile1D*  _hist_N_vs_dPhi_2_500;
-    AIDA::IProfile1D*  _hist_N_vs_dPhi_3_500;
+    Profile1DPtr _hist_N_vs_dPhi_1_500;
+    Profile1DPtr _hist_N_vs_dPhi_2_500;
+    Profile1DPtr _hist_N_vs_dPhi_3_500;
 
   };
 

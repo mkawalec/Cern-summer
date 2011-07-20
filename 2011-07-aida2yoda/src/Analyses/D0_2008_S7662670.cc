@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/LeadingParticlesFinalState.hh"
@@ -46,12 +46,12 @@ namespace Rivet {
       addProjection(jetpro, "Jets");
 
       // Book histograms
-      _h_dsigdptdy_y00_04 = bookHistogram1D(1, 1, 1);
-      _h_dsigdptdy_y04_08 = bookHistogram1D(2, 1, 1);
-      _h_dsigdptdy_y08_12 = bookHistogram1D(3, 1, 1);
-      _h_dsigdptdy_y12_16 = bookHistogram1D(4, 1, 1);
-      _h_dsigdptdy_y16_20 = bookHistogram1D(5, 1, 1);
-      _h_dsigdptdy_y20_24 = bookHistogram1D(6, 1, 1);
+      _h_dsigdptdy_y00_04 = bookHisto1D(1, 1, 1);
+      _h_dsigdptdy_y04_08 = bookHisto1D(2, 1, 1);
+      _h_dsigdptdy_y08_12 = bookHisto1D(3, 1, 1);
+      _h_dsigdptdy_y12_16 = bookHisto1D(4, 1, 1);
+      _h_dsigdptdy_y16_20 = bookHisto1D(5, 1, 1);
+      _h_dsigdptdy_y20_24 = bookHisto1D(6, 1, 1);
     }
 
 
@@ -112,12 +112,12 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D* _h_dsigdptdy_y00_04;
-    AIDA::IHistogram1D* _h_dsigdptdy_y04_08;
-    AIDA::IHistogram1D* _h_dsigdptdy_y08_12;
-    AIDA::IHistogram1D* _h_dsigdptdy_y12_16;
-    AIDA::IHistogram1D* _h_dsigdptdy_y16_20;
-    AIDA::IHistogram1D* _h_dsigdptdy_y20_24;
+    Histo1DPtr _h_dsigdptdy_y00_04;
+    Histo1DPtr _h_dsigdptdy_y04_08;
+    Histo1DPtr _h_dsigdptdy_y08_12;
+    Histo1DPtr _h_dsigdptdy_y12_16;
+    Histo1DPtr _h_dsigdptdy_y16_20;
+    Histo1DPtr _h_dsigdptdy_y20_24;
     //@}
 
   };

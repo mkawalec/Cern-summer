@@ -3,7 +3,7 @@
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 
 namespace Rivet {
 
@@ -31,8 +31,8 @@ namespace Rivet {
       // R=0.4, pTmin=0, seed_threshold=0.5:
       addProjection(FastJets(fs, FastJets::CDFMIDPOINT, 0.4, 0.5), "MidpointJets");
 
-      _h_jet_pT_MB = bookHistogram1D(1, 1, 1);
-      _h_jet_pT_HT = bookHistogram1D(2, 1, 1);
+      _h_jet_pT_MB = bookHisto1D(1, 1, 1);
+      _h_jet_pT_HT = bookHisto1D(2, 1, 1);
     }
 
 
@@ -79,8 +79,8 @@ namespace Rivet {
 
     /// @name Histograms
     //@{
-    AIDA::IHistogram1D * _h_jet_pT_MB;
-    AIDA::IHistogram1D * _h_jet_pT_HT;
+    Histo1DPtr _h_jet_pT_MB;
+    Histo1DPtr _h_jet_pT_HT;
     //@}
 
   };

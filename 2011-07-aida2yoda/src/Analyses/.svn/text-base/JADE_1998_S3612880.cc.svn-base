@@ -1,6 +1,6 @@
 // -*- C++ -*-
 #include "Rivet/Analysis.hh"
-#include "Rivet/RivetAIDA.hh"
+#include "Rivet/RivetYODA.hh"
 #include "Rivet/Tools/Logging.hh"
 #include "Rivet/Projections/Thrust.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -44,22 +44,22 @@ namespace Rivet {
 
         case 44:
           offset = 0;
-          _h_thrust  = bookHistogram1D( 2+offset, 1, 1);
-          _h_MH = bookHistogram1D( 3 + offset, 1, 1);
-          _h_BT = bookHistogram1D( 4 + offset, 1, 1);
-          _h_BW = bookHistogram1D( 5 + offset, 1, 1);
-          _h_y23 = bookHistogram1D(10, 1, 1);
+          _h_thrust  = bookHisto1D( 2+offset, 1, 1);
+          _h_MH = bookHisto1D( 3 + offset, 1, 1);
+          _h_BT = bookHisto1D( 4 + offset, 1, 1);
+          _h_BW = bookHisto1D( 5 + offset, 1, 1);
+          _h_y23 = bookHisto1D(10, 1, 1);
           break;
         case 35:
           offset = 4;
-          _h_thrust  = bookHistogram1D( 2+offset, 1, 1);
-          _h_MH = bookHistogram1D( 3 + offset, 1, 1);
-          _h_BT = bookHistogram1D( 4 + offset, 1, 1);
-          _h_BW = bookHistogram1D( 5 + offset, 1, 1);
-          _h_y23 = bookHistogram1D(11, 1, 1);
+          _h_thrust  = bookHisto1D( 2+offset, 1, 1);
+          _h_MH = bookHisto1D( 3 + offset, 1, 1);
+          _h_BT = bookHisto1D( 4 + offset, 1, 1);
+          _h_BW = bookHisto1D( 5 + offset, 1, 1);
+          _h_y23 = bookHisto1D(11, 1, 1);
           break;
         case 22:
-          _h_y23 = bookHistogram1D(12, 1, 1);
+          _h_y23 = bookHisto1D(12, 1, 1);
           break;
       }
     }
@@ -119,11 +119,11 @@ namespace Rivet {
 
   private:
 
-    AIDA::IHistogram1D *_h_thrust;
-    AIDA::IHistogram1D *_h_MH;
-    AIDA::IHistogram1D *_h_BT;
-    AIDA::IHistogram1D *_h_BW;
-    AIDA::IHistogram1D *_h_y23;
+    Histo1DPtr _h_thrust;
+    Histo1DPtr _h_MH;
+    Histo1DPtr _h_BT;
+    Histo1DPtr _h_BW;
+    Histo1DPtr _h_y23;
 
 
   };
