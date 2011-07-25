@@ -74,6 +74,10 @@ namespace YODA {
     protected:
         Bin2D& add(const Bin2D&);
         Bin2D& substract(const Bin2D&);
+        
+        std::pair<double,double> _edgesX;
+        std::pair<double,double> _edgesY;
+        Dbn2D _xdbn;
 
     };
 

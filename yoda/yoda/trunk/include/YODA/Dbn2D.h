@@ -1,6 +1,4 @@
-
-
-#ifndef YODA_Dbn1D_h
+#ifndef YODA_Dbn2D_h
 #define YODA_Dbn2D_h
 
 #include "YODA/Exceptions.h"
@@ -39,7 +37,11 @@ namespace YODA {
         double sumWXY() const;
         double sumWX2() const;
         double sumWY2() const;
-        
+    
+        Dbn2D& operator += (const Dbn2D&);
+        Dbn2D& operator -= (const Dbn2D&);
+
+    protected:   
         Dbn2D& add(const Dbn2D&);
         Dbn2D& substract(const Dbn2D&);
 
@@ -47,7 +49,7 @@ namespace YODA {
 
         unsigned long _numFills;
         double _sumW;
-        double _symW2;
+        double _sumW2;
         double _sumWX;
         double _sumWY;
         double _sumWX2;

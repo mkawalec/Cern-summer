@@ -1,7 +1,7 @@
 10
 
 dir
-3228
+3229
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/src/Projections
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -502,40 +502,6 @@ buckley
 
 2460
 
-LeptonClusters.cc
-file
-
-
-
-
-2011-07-18T11:57:44.038174Z
-f537257e945c9ea1b7f19b90c4087afd
-2011-06-11T14:53:03.643492Z
-3153
-richardn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2753
-
 FParameter.cc
 file
 
@@ -570,17 +536,17 @@ holsch
 
 3693
 
-TriggerCDFRun2.cc
+LeptonClusters.cc
 file
 
 
 
 
-2011-07-18T11:57:44.041507Z
-b2af1e2e7e426091664ee07060135c65
-2010-06-11T10:20:25.833903Z
-2484
-holsch
+2011-07-18T11:57:44.038174Z
+f537257e945c9ea1b7f19b90c4087afd
+2011-06-11T14:53:03.643492Z
+3153
+richardn
 
 
 
@@ -602,7 +568,7 @@ holsch
 
 
 
-1050
+2753
 
 FoxWolframMoments.cc
 file
@@ -637,6 +603,40 @@ buckley
 
 
 3505
+
+TriggerCDFRun2.cc
+file
+
+
+
+
+2011-07-18T11:57:44.041507Z
+b2af1e2e7e426091664ee07060135c65
+2010-06-11T10:20:25.833903Z
+2484
+holsch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1050
 
 Multiplicity.cc
 file
@@ -774,40 +774,6 @@ buckley
 
 6346
 
-ZFinder.cc
-file
-
-
-
-
-2011-07-18T11:57:44.044840Z
-892e88b349bb8e84177475a8cc2451c4
-2011-02-09T15:47:24.865636Z
-2919
-fsiegert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3675
-
 DISLepton.cc
 file
 
@@ -841,6 +807,40 @@ has-props
 
 
 1399
+
+ZFinder.cc
+file
+
+
+
+
+2011-07-18T11:57:44.044840Z
+892e88b349bb8e84177475a8cc2451c4
+2011-02-09T15:47:24.865636Z
+2919
+fsiegert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3675
 
 JetShape.cc
 file
@@ -944,40 +944,6 @@ buckley
 
 413
 
-VisibleFinalState.cc
-file
-
-
-
-
-2011-07-18T11:57:44.048174Z
-7a08e44634ab0a448280e22114acf7a5
-2010-08-30T11:27:45.062709Z
-2681
-fsiegert
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1282
-
 ChargedFinalState.cc
 file
 
@@ -1011,6 +977,40 @@ has-props
 
 
 1678
+
+VisibleFinalState.cc
+file
+
+
+
+
+2011-07-18T11:57:44.048174Z
+7a08e44634ab0a448280e22114acf7a5
+2010-08-30T11:27:45.062709Z
+2681
+fsiegert
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1282
 
 CentralEtHCM.cc
 file

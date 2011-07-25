@@ -38,42 +38,30 @@ namespace YODA {
 
 
     /// Values with explicit asymmetric errors
-    Point3D(double x, double y, double z
+    Point3D(double x, double y, double z,
             double exminus,
             double explus,
             double eyminus,
             double eyplus,
-            double exminus,
-            double explus)
+            double ezminus,
+            double ezplus)
       : _x(x), _y(y), _z(z)
     {
       _ex = std::make_pair(exminus, explus);
-      _ey = std::make_pair(eyplus, eyplus);!!!!!!!
-      _ez = std::make_pair(ezminus, ezplus)
+      _ey = std::make_pair(eyminus, eyplus);
+      _ez = std::make_pair(ezminus, ezplus);
     }
+    
+    //Assymetric Errors given as vectors:
+    Point3D(const double& x, 
+            const double& y, 
+            const double& z,
+            const std::pair<double,double>& ex,
+            const std::pair<double,double>& ey,
+            const std::pair<double,double>& ez) {
+        Point3D(x, y, z, ex.first, ex.second, ey.first, ey.second, ez.first, ez.second);
+        }
 
-
-    /// Values with symmetric errors on x and asymmetric errors on y
-    Point3D(double x, double y, double ex, const std::pair<double,double>& ey)
-      : _x(x), _y(y), _ey(ey)
-    {
-      _ex = std::make_pair(ex, ex);
-    }
-
-
-    /// Values with asymmetric errors on x and symmetric errors on y
-    Point3D(double x, double y, const std::pair<double,double>& ex, double ey)
-      : _x(x), _y(y), _ex(ex)
-    {
-      _ey = std::make_pair(ey, ey);
-    }
-
-
-    /// Values with asymmetric errors on both x and y
-    Point3D(double x, double y, const std::pair<double,double>& ex, const std::pair<double,double>& ey)
-      : _x(x), _y(y), _ex(ex), _ey(ey)
-    {
-    }
 
     //@}
 
@@ -99,7 +87,7 @@ namespace YODA {
     double z() const { return _z;}
 
     //Set z value
-    double setZ(double z) { _z = z;}
+    void setZ(double z) { _z = z;}
     //@}
 
 
@@ -216,8 +204,10 @@ namespace YODA {
 
     double _x;
     double _y;
+    double _z;
     std::pair<double,double> _ex;
     std::pair<double,double> _ey;
+    std::pair<double,double> _ez;
 
     //@}
 
@@ -229,45 +219,46 @@ namespace YODA {
   //@{
 
   /// Equality test of x characteristics only
-  inline bool operator==(const YODA::Point3D& a, const YODA::Point3D& b) {
-    const bool same_val = YODA::fuzzyEquals(a.x(), b.x());
-    const bool same_eminus = YODA::fuzzyEquals(a.xErrMinus(), b.xErrMinus());
-    const bool same_eplus = YODA::fuzzyEquals(a.xErrPlus(), b.xErrPlus());
+  /// Why only X?
+  inline bool operator==(const  Point3D& a, const YODA::Point3D& b) {
+    const bool same_val =  fuzzyEquals(a.x(), b.x());
+    const bool same_eminus =  fuzzyEquals(a.xErrMinus(), b.xErrMinus());
+    const bool same_eplus =  fuzzyEquals(a.xErrPlus(), b.xErrPlus());
     return same_val && same_eminus && same_eplus;
   }
 
   /// Equality test of x characteristics only
-  inline bool operator!=(const YODA::Point3D& a, const YODA::Point3D& b) {
+  inline bool operator!=(const  Point3D& a, const YODA::Point3D& b) {
     return !(a == b);
   }
 
   /// Less-than operator used to sort bins by x-ordering
-  inline bool operator<(const YODA::Point3D& a, const YODA::Point3D& b) {
-    if (!YODA::fuzzyEquals(a.x(), b.x())) {
+  inline bool operator<(const  Point3D& a, const YODA::Point3D& b) {
+    if (! fuzzyEquals(a.x(), b.x())) {
       return a.x() < b.x();
     }
-    if (!YODA::fuzzyEquals(a.xErrMinus(), b.xErrMinus())) {
+    if (! fuzzyEquals(a.xErrMinus(), b.xErrMinus())) {
       return a.xErrMinus() < b.xErrMinus();
     }
-    if (!YODA::fuzzyEquals(a.xErrPlus(), b.xErrPlus())) {
+    if (! fuzzyEquals(a.xErrPlus(), b.xErrPlus())) {
       return a.xErrPlus() < b.xErrPlus();
     }
     return false;
   }
 
   /// Less-than-or-equals operator used to sort bins by x-ordering
-  inline bool operator<=(const YODA::Point3D& a, const YODA::Point3D& b) {
+  inline bool operator<=(const  Point3D& a, const YODA::Point3D& b) {
     if (a == b) return true;
     return a < b;
   }
 
   /// Greater-than operator used to sort bins by x-ordering
-  inline bool operator>(const YODA::Point3D& a, const YODA::Point3D& b) {
+  inline bool operator>(const  Point3D& a, const YODA::Point3D& b) {
     return !(a <= b);
   }
 
   /// Greater-than-or-equals operator used to sort bins by x-ordering
-  inline bool operator>=(const YODA::Point3D& a, const YODA::Point3D& b) {
+  inline bool operator>=(const  Point3D& a, const YODA::Point3D& b) {
     return !(a < b);
   }
 

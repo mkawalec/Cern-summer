@@ -1,7 +1,7 @@
 10
 
 dir
-3228
+3229
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet/Math
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -60,40 +60,6 @@ dgrell
 
 9637
 
-Vector3.hh
-file
-
-
-
-
-2011-07-18T11:57:43.254844Z
-bde87637181802e46a7898e056ddf4c7
-2011-04-14T14:49:57.612038Z
-3056
-hoeth
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10659
-
 Vectors.hh
 file
 
@@ -127,6 +93,40 @@ buckley
 
 
 198
+
+Vector3.hh
+file
+
+
+
+
+2011-07-18T11:57:43.254844Z
+bde87637181802e46a7898e056ddf4c7
+2011-04-14T14:49:57.612038Z
+3056
+hoeth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10659
 
 Vector4.hh
 file
@@ -196,8 +196,39 @@ dgrell
 
 1353
 
-eigen
-dir
+MatrixDiag.hh
+file
+
+
+
+
+2011-07-18T11:57:43.258177Z
+09ffb1297368a293a06e144c0226c6e4
+2009-11-19T15:02:51.475160Z
+2080
+buckley
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4683
 
 Math.hh
 file
@@ -233,73 +264,8 @@ buckley
 
 229
 
-MatrixDiag.hh
-file
-
-
-
-
-2011-07-18T11:57:43.258177Z
-09ffb1297368a293a06e144c0226c6e4
-2009-11-19T15:02:51.475160Z
-2080
-buckley
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4683
-
-MathHeader.hh
-file
-
-
-
-
-2011-07-18T11:57:43.258177Z
-05b5dcc188c9a817e3244eec437ae2fb
-2011-06-29T11:35:43.865889Z
-3168
-dgrell
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1450
+eigen
+dir
 
 Units.hh
 file
@@ -334,6 +300,40 @@ buckley
 
 
 7404
+
+MathHeader.hh
+file
+
+
+
+
+2011-07-18T11:57:43.258177Z
+05b5dcc188c9a817e3244eec437ae2fb
+2011-06-29T11:35:43.865889Z
+3168
+dgrell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1450
 
 StdHeader.hh
 file

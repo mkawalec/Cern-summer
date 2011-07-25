@@ -24,7 +24,7 @@ namespace YODA {
       void sort(){
         std::sort(this->begin(), this->end());
       }
-
+      
     };
 
 

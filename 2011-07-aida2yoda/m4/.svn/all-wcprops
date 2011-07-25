@@ -3,17 +3,17 @@ svn:wc:ra_dav:version-url
 V 39
 /cedar/!svn/ver/971/trunk/pub/autotools
 END
-cxx.m4
-K 25
-svn:wc:ra_dav:version-url
-V 46
-/cedar/!svn/ver/954/trunk/pub/autotools/cxx.m4
-END
 pkgchecks.m4
 K 25
 svn:wc:ra_dav:version-url
 V 52
 /cedar/!svn/ver/961/trunk/pub/autotools/pkgchecks.m4
+END
+cxx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/cedar/!svn/ver/954/trunk/pub/autotools/cxx.m4
 END
 ccpythia.m4
 K 25
@@ -27,17 +27,17 @@ svn:wc:ra_dav:version-url
 V 46
 /cedar/!svn/ver/967/trunk/pub/autotools/lcg.m4
 END
-swig.m4
-K 25
-svn:wc:ra_dav:version-url
-V 47
-/cedar/!svn/ver/888/trunk/pub/autotools/swig.m4
-END
 osx.m4
 K 25
 svn:wc:ra_dav:version-url
 V 46
 /cedar/!svn/ver/968/trunk/pub/autotools/osx.m4
+END
+swig.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/cedar/!svn/ver/888/trunk/pub/autotools/swig.m4
 END
 fortran.m4
 K 25

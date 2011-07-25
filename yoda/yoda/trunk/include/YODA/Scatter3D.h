@@ -21,7 +21,7 @@ namespace YODA {
 
 
   /// A very generic data type which is just a collection of 3D data points with errors
-  class Scatter1D : public AnalysisObject {
+  class Scatter3D : public AnalysisObject {
   public:
 
     /// Type of the native Point3D collection
@@ -58,13 +58,15 @@ namespace YODA {
     /// Values with no errors:
     Scatter3D(const std::vector<double>& x, const std::vector<double>& y, const std::vector<double>& z,
               const std::string& path="", const std::string& title="") {
-        std::vector<double> null = x;
-        for(int i=0; i < null.size(); i++) null[i] = 0.0;
+        std::vector<pair<double,double> > null;
+        null.resize(x.size());
+
+        for(unsigned int i=0; i < null.size(); i++) null[i] = make_pair(0.0, 0.0);
         Scatter3D(x, y, z, null, null, null, path, title);
     }
 
     /// Values with completely explicit asymmetric errors
-    Scatter3D(const std::vector<double>& x, const std::vector<double>& y, const std::vector<double>
+    Scatter3D(const std::vector<double>& x, const std::vector<double>& y, const std::vector<double> z,
               const std::vector<double>& exminus,
               const std::vector<double>& explus,
               const std::vector<double>& eyminus,
@@ -151,8 +153,8 @@ namespace YODA {
     }
 
     Scatter3D& addPoint(double x, double exminus, double explus,
-                        double y, double eyminus, double eyplus
-                        double z, double ezminus, double eyplus) {
+                        double y, double eyminus, double eyplus,
+                        double z, double ezminus, double ezplus) {
       _points.insert(Point3D(x, exminus, explus, y, eyminus, eyplus, z, ezminus, ezplus));
       return *this;
     }

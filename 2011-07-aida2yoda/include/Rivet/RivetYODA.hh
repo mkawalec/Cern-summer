@@ -19,7 +19,7 @@
 
 // Yoda ones:
 #include "YODA/AnalysisObject.h"
-#include "YODA/Axis1D/h"
+#include "YODA/Axis1D.h"
 #include "YODA/Bin1D.h"
 #include "YODA/Bin.h"
 #include "YODA/Dbn1D.h"
@@ -36,6 +36,16 @@
 #include "YODA/WriterAIDA.h"
 #include "YODA/Writer.h"
 #include "YODA/WriterYODA.h"
+
+//And second dimension goes here:
+#include "YODA/Axis2D.h"
+#include "YODA/Bin2D.h"
+#include "YODA/Dbn2D.h"
+#include "YODA/Histo2D.h"
+#include "YODA/HistoBin2D.h"
+#include "YODA/Point3D.h"
+#include "YODA/Scatter3D.h"
+
 
 namespace Rivet {
 
@@ -54,7 +64,7 @@ namespace Rivet {
 
   /// Return the integral over the histogram bins
   inline double integral(Histo1DPtr histo) {
-    double intg = 0.;
+    double intg = 0.0;
     for ( size_t i = 0; i < histo->numBins(); ++i ) {
       intg += histo->bin(i).area();
     }

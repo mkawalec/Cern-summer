@@ -1,7 +1,7 @@
 10
 
 dir
-3228
+3229
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -33,7 +33,7 @@ has-props
 
 
 
-((conflict RivetAIDA.hh file update deleted edited (version svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet 4 3187 branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh file) (version svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet 4 3228 branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh none)))
+()
 
 Analyses
 dir
@@ -383,40 +383,6 @@ hoeth
 
 Config
 dir
-
-RivetAIDA.hh
-file
-3187
-
-
-add
-2011-07-18T11:57:43.361510Z
-88ba0515f629de9460b071d142e6e46a
-2011-06-04T14:06:09.500347Z
-3125
-buckley
-
-
-
-
-
-
-
-
-copied
-svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet/RivetAIDA.hh
-3187
-
-
-
-
-
-
-
-
-
-
-1699
 
 Projection.hh
 file
@@ -936,16 +902,37 @@ buckley
 
 RivetYODA.hh
 file
+3230
 
 
 
-
-
-6f05fd97e112ee80e666d6852e3075d8
-2011-07-19T19:37:08.036008Z
-3227
-dgrell
+2011-07-21T10:58:45.032953Z
+898665f3890a93855c59aa299d755206
+2011-07-21T08:23:52.563521Z
+3230
+mkawalec
 has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2073
 
 Constraints.hh
 file

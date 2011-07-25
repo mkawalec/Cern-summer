@@ -1,7 +1,7 @@
 10
 
 dir
-3228
+3229
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet/branches/2011-07-aida2yoda/include/Rivet/Projections
 svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/rivet
 
@@ -536,40 +536,6 @@ buckley
 
 3402
 
-ZFinder.hh
-file
-
-
-
-
-2011-07-18T11:57:43.034845Z
-49db7e7ac3a1d1fa82b6b71e3eeff6cc
-2011-02-09T15:47:24.865636Z
-2919
-fsiegert
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2903
-
 DISLepton.hh
 file
 
@@ -603,6 +569,40 @@ has-props
 
 
 1288
+
+ZFinder.hh
+file
+
+
+
+
+2011-07-18T11:57:43.034845Z
+49db7e7ac3a1d1fa82b6b71e3eeff6cc
+2011-02-09T15:47:24.865636Z
+2919
+fsiegert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2903
 
 JetShape.hh
 file
@@ -706,40 +706,6 @@ hoeth
 
 7743
 
-VisibleFinalState.hh
-file
-
-
-
-
-2011-07-18T11:57:43.038178Z
-767379aa16170d9cd85342241f917a4b
-2011-01-31T18:09:09.249838Z
-2904
-buckley
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1255
-
 ChargedFinalState.hh
 file
 
@@ -773,6 +739,40 @@ has-props
 
 
 1229
+
+VisibleFinalState.hh
+file
+
+
+
+
+2011-07-18T11:57:43.038178Z
+767379aa16170d9cd85342241f917a4b
+2011-01-31T18:09:09.249838Z
+2904
+buckley
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1255
 
 CentralEtHCM.hh
 file
@@ -842,18 +842,17 @@ hoeth
 
 4840
 
-TriggerUA5.hh
+MergedFinalState.hh
 file
 
 
 
 
 2011-07-18T11:57:43.044845Z
-5fbf865049dfa36cbb623eb5b1dfcdfb
-2010-08-30T11:27:45.062709Z
-2681
-fsiegert
-has-props
+0b600683391dd59199bc706230ccfe11
+2010-04-21T15:48:22.472467Z
+2409
+buckley
 
 
 
@@ -874,7 +873,8 @@ has-props
 
 
 
-1675
+
+972
 
 BeamThrust.hh
 file
@@ -910,17 +910,18 @@ hoeth
 
 1639
 
-MergedFinalState.hh
+TriggerUA5.hh
 file
 
 
 
 
 2011-07-18T11:57:43.044845Z
-0b600683391dd59199bc706230ccfe11
-2010-04-21T15:48:22.472467Z
-2409
-buckley
+5fbf865049dfa36cbb623eb5b1dfcdfb
+2010-08-30T11:27:45.062709Z
+2681
+fsiegert
+has-props
 
 
 
@@ -941,8 +942,7 @@ buckley
 
 
 
-
-972
+1675
 
 InitialQuarks.hh
 file
