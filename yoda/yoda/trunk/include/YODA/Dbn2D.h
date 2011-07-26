@@ -24,10 +24,18 @@ namespace YODA {
             _sumWXY *= sf;
         }
 
-        double mean() const;
-        double variance() const;
-        double stdDev() const;
-        double stdErr() const;
+        double xMean() const;
+        double yMean() const;
+
+        double xVariance() const;
+        double yVariance() const;
+
+        double xStdDev() const;
+        double yStdDev() const;
+
+        double xStdErr() const;
+        double yStdErr() const;
+
         unsigned long numEnteries() const;
         double effNumEntries() const;
         double sumW() const;

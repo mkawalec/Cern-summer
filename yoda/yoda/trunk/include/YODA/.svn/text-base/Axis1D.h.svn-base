@@ -59,10 +59,9 @@ namespace YODA {
     void _mkAxis(const vector<double>& binedges) {
       const size_t nbins = binedges.size() - 1;
       for (size_t i = 0; i < nbins; ++i) {
-        _bins.push_back( BIN(binedges.at(i), binedges.at(i+1)) );
+        _bins.insert( BIN(binedges.at(i), binedges.at(i+1)) );
       }
-      //Sorting _bins to impose order:
-      _bins.sort();
+
       /// @todo Remove
       _cachedBinEdges = binedges;
       std::sort(_cachedBinEdges.begin(), _cachedBinEdges.end());
@@ -100,6 +99,7 @@ namespace YODA {
 
     /// Constructor with histogram limits, number of bins, and a bin distribution enum
     Axis1D(size_t nbins, double lower, double upper) {
+      std::cout << lower << " " << upper << std::endl;
       _mkAxis(linspace(lower, upper, nbins));
     }
 
@@ -155,10 +155,13 @@ namespace YODA {
     double lowEdge() const {
       return _bins.front().lowEdge();
     }
+    double xMin() const { return lowEdge(); }
+
 
     double highEdge() const {
       return _bins.back().highEdge();
     }
+    double xMax() const { return highEdge(); }
 
 
     BIN& bin(size_t index) {
@@ -214,7 +217,7 @@ namespace YODA {
     size_t findBinIndex(double coord) const {
       /// @todo Improve!
       if (coord < _cachedBinEdges[0] || coord >= _cachedBinEdges[numBins()]) {
-        throw RangeError("Coordinate is outside the valid range: you should request the underflow or overflow");
+        throw RangeError("Coordinate is outside the valid range: you should request the underlow or overflow");
       }
       size_t i = _binHash.upper_bound(coord)->second;
       return i;

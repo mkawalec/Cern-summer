@@ -1,0 +1,15 @@
+
+# BEGIN YODA_HISTOGRAM1D id
+NormalizeTo=<number>
+Scale=<number>
+NumberOfEvents=<number>  (total generated events)
+IncludeOverflow=bool  (for the normalisation)
+Underflow	_sumW	_sumW2	_sumWX _sumWX2	_numFills
+Overflow	_sumW	_sumW2	_sumWX _sumWX2	_numFills
+
+lowEdge	highEdge	_sumW	_sumW2	_sumWX _sumWX2	_numFills
+
+# END YODA_HISTOGRAM1D
+
+
+Scatter: Mehrfachfehler kommen in Klammern

@@ -108,6 +108,13 @@ namespace YODA {
     return a <= b;
   }
 
+  /// @brief Returns a number floored at the nth decimal place.
+  inline double approx(double a, int n = 5) {
+    int roundTo = pow(10,n);
+    a *= roundTo;
+    a = floor(a);
+    return a/roundTo;
+  }
   //@}
 
 

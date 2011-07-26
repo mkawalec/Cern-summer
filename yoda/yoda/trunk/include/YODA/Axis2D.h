@@ -63,9 +63,9 @@ namespace YODA {
                 }
             }
 
-            // So now, as we are sure that no ordinary crossings take place, 
-            // let's look for 'full inclusions'.
-        
+            //TODO: Check inclusion
+        }
+
         bool _findCutsY(pair<pair<double,double>, pair<double,double>& edge) {
             for(int i=0; i < _binHashSparse.second.size(); i++) {
                 /* An optimisation check that guarantees that we are not looking at edges that
@@ -74,14 +74,17 @@ namespace YODA {
                  */
                 if(edge.second.second < _binHashSparse.second[i].first &&
                    !fuzzyEquals(_binHashSparse.second[i].first, edge.second.second)) break;
+
                 if(fuzzyEquals(_binHashSparse.second[i].first, edge.first.second) ||
                   (_binHashSparse.second[i].first > edge.first.second &&
                    _binHashSparse.second[i].first < edge.second.second) ||
                    fuzzyEquals(_binHashSparse.second[i].first, edge.second.second)) {
                     for(int j=0; j < _binHashSparse.second[i].second.size(); j++) {
+                        
                         //Same type of check as above.
                         if(_binHashSparse.second[i].second[j].second.first > edge.first.first &&
                             !fuzzyEquals(_binHashSparse.second[i].second[j].second.first, edge.first.first)) break;
+                            
                         if(fuzzyEquals(_binHashSparse.second[i].second[j].second.first, edge.first.first) ||
                            (_binHashSparse.second[i].second[j].second.first < edge.first.first &&
                             _binHashSparse.second[i].second[j].second.second > edge.first.first) ||
@@ -99,13 +102,16 @@ namespace YODA {
                 //Sanity check, for more comments see above:
                 if(edge.second.first < _binHashSparse.first[i].first &&
                    !fuzzyEquals(edge.second.first, _binHashSparse.first[i].first)) break;
+
                 if(fuzzyEquals(_binHashSparse.first[i].first, edge.first.first) ||
                   (_binHashSparse.first[i].first > edge.first.first &&
                    _binHashSparse.first[i].first < edge.second.first ) ||
                    fuzzyEquals(_binHashSparse.first[i].first, edge.second.first)) {
                     for(int j=0; j < _binHashSparse.first[i].second.size(); j++) {
+                        
                         if(_binHashSparse.first[i].second[j].second.first > edge.first.second &&
                            !fuzzyEquals(_binHashSparse.first[i].second[j].second.fist, edge.first.second)) break;
+
                         if(fuzzyEquals(_binHashSparse.first[i].second[j].second.first, edge.first.second) ||
                            (_binHashSparse.first[i].second[j].second.first < edge.first.second &&
                             _binHashSparse.first[i].second[j].second.second > edge.first.second) ||
@@ -117,7 +123,8 @@ namespace YODA {
             }
             return true;
         }
-
+        
+        //TODO: Something a bit more elaborate??
         void _dropEdge(vector<pair<pair<double,double>, pair<double,double> > >& edges) {
             std::cerr << "A set of edges was dropped. No additional information is implemented yet, so none can be given. Have a good day." << endl;
         }
@@ -163,6 +170,7 @@ namespace YODA {
             }
             _bins.push_back(BIN(edges[0].first.first, edges[0].first.second, 
                                 edges[1].second.first, edges[1].second.second));
+        }
 
         // Note the orientation! The edge vectors must be oriented 'to the right' or 'upwards'
         // for all procedures to work fine!!111!!!11
@@ -189,10 +197,31 @@ namespace YODA {
                 if(_validateEdge(edges)) _addEdge(edges);
                 else _dropEdge(edges);
             }
+
+            //Setting all the caches
             _binHashSparse.first.regenCache();
             _binHashSparse.second.regenCache();
+            _regenDelimiters();
         }
 
+        void _regenDelimiters() {
+            double highEdgeX = -_binNum;
+            double highEdgeY = -_bigNum;
+            double lowEdgeX = _bigNum;
+            double lowEdgeY = _bigNum;
+
+            for(int i=0; i < _bins.size(); i++) {
+                if(_bins[i].xMin() < lowEdgeX) lowEdgeX = _bins[i].xMin();
+                if(_bins[i].xMax() > highEdgeX) highEdgeX = _bins[i].xMax();
+                if(_bins[i].yMin() < lowEdgeY) lowEdgeY = _bins[i].yMin();
+                if(_bins[i].yMax() > highEdgeY) highEdgeY = _bins[i].yMax();
+            }
+
+            _lowEdgeX = lowEdgeX;
+            _highEdgeX = highEdgeX;
+            _lowEdgeY = lowEdgeY;
+            _highEdgeY = highEdgeY;
+        }
 
     public:
         //Constructors:
@@ -219,8 +248,8 @@ namespace YODA {
 
         /* This is a bin addition operator. It is given a set of boindary points (bottom-left
          * and top-right) that uniquely determine a bin and add a set of bins basing on that.
-         * Please, try to include as many bins as possible in one call, as regeCache() is too
-         * computationaly expensive to be called after one bin is added.
+         * Please, try to include as many bins as possible in one call, as regenCache() is too
+         * computationaly expensive to be called after each one bin is added.
          */
         void addBin(const vector<pair<pair<double,double>, pair<double,double> > >& binedges) {
             for(int=0; i < binedges.size(); i++){
@@ -243,15 +272,34 @@ namespace YODA {
                 if(_validateEdge(binedges)) _addEdge(binedges);
                 else _dropEdge(binedges);
             }
+
+            //Setting all the caches
             _binHashSparse.first.regenCache();
             _binHashSparse.second.regenCache();
+            _regenDelimiters();
         }
         
         //Some helper functions:
 
-        //numBins{X,Y} were dropped as there is no point for them in the sparse distribution.
+        //numBins{X,Y} were dropped as there is no point for them in a sparse distribution.
         unsigned int numBinsTotal() const {
             return _bins.size();
+        }
+
+        double lowEdgeX() {
+            return _lowEdgeX;
+        }
+
+        double highEdgeX() {
+            return _highEdgeX;
+        }
+
+        double lowEdgeY() {
+            return _lowEdgeY;
+        }
+
+        double highEdgeY() {
+            return _highEdgeY;
         }
 
         Bins& bins() {
@@ -287,10 +335,10 @@ namespace YODA {
             return bin(findBinIndex(coords.first, coords.second));
         }
 
-
         Dbn2D& totalDbn() {
             return _dbn;
         }
+
         const Dbn2D& totalDbn() const{
             return _dbn;
         }
@@ -298,40 +346,18 @@ namespace YODA {
         Dbn2D& overflow() {
             return _overflow;
         }
+
         const Dbn2D& overflow() const {
             return _overflow;
         }
 
-        /* This is a function that returns in which bin can a given point be placed.
-         * It will return -1 if the point if outside any of the bins (i.e. falls onto
-         * an empty space). To get the index it uses two maps acting as caches, searches on
-         * which should be executed in ln(n) time, so the total complexity should be in the 
-         * bounds of O(ln(n)). 
-         * An interesing point to note here is that the more irregular the structure, the faster
-         * is the fill going to be (when it gets more regular the ln(n) part gets smaller, but
-         * the n part which searches for a bin get bigger faster).
-         * Notice that n in the above is not the total amount of bins but the number of edges
-         * in the cache. 
-         * double approx(double) returns a number floored at 5th decimal place.
+        /* This version of findBinIndex is searching for the edge on the left
+         * that is enclosing the point and then finds an edge on the bottom
+         * that does the same and if it finds two edges that are a part of 
+         * the same square it returns that if had found a bin. If no bin is 
+         * found, ie. (coordX, coordY) is a point in empty space -1 is returned.
          */
-        int findBinIndex(double coordX, double coordY) const {
-            size_t indexY = _binHashSparse.first._cache.lower_bound(approx(coordY));
-            size_t indexX = _binHashSparse.second._cache.lower_bound(approx(coordX));
-
-            if((indexY < _binHashSparse.first.size() - 1) && 
-               (indexX < _binHashSparse.first.size() - 1)) {
-                vector<size_t> binNumbers;
-                for(int i=0; i < _binHashSparse.first[indexY].second.size(); i++) 
-                    binNumbers.push_back(_binHashSparse.first[indexY].second[i].first);
-                for(int i=0; i < _binHashSparse.second[indexX].second.size(); i++) 
-                    binNumbers.push_back(_binHashSparse.second[indexX].second[i].first);
-                
-                binNumbers.sort();
-                return search(binNumbers);
-            }
-            return -1;
-        }
-
+        //TODO: Make _binHashSparse.first/second.second a memeber of Utils::cachedvector
         int findBinIndex(double coordX, double coordY) const {
             size_t indexY = _binHashSparse.first._cache.lower_bound(approx(coordY));
 
@@ -355,8 +381,11 @@ namespace YODA {
             return -1;
         }
 
-
-
+        /* This function looks for a first (and, as we assume, the only) occurence
+         * of four the same numbers in row. If it exists, it means that a rectangle
+         * was detected. Even though it is a part of a wrong implementation of findBinIndex,
+         * I won't delete it right now.
+         */
         int search(vector<size_t> numbers) {
             size_t binNum = -1; size_t count = -1;
             for(int i=0; i < numbers.size(); i++) {
@@ -377,9 +406,36 @@ namespace YODA {
             for (size_t i=0; i<_bins.size(); i++) _bins[i].reset();
         }
 
-        void scale(double scalefactor) {
-            /// @todo Implement!
-            throw std::runtime_error("Axis coordinate transformations not yet implemented!");
+        void scale(double scaleX = 1.0, double scaleY = 1.0) {
+            // Two loops are put on purpose, just to protect
+            // against improper _binHashSparse
+            for(int i=0; i < _binHashSparse.first.size(); i++) {
+                _binHashSparse.first[i].first *= scaleY;
+                for(int j=0; j < _binHashSparse.first[i].second.size(); j++){
+                    _binHashSparse.first[i].second[j].second.first *=scaleX;
+                    _binHashSparse.first[i].second[j].second.second *=scaleX;
+                }
+            }
+            for(int i=0; i < _binHashSparse.second.size(); i++) {
+                _binHashSparse.second[i].first *= scaleX;
+                for(int j=0; j < _binHashSparse.second[i].second.size(); j++){
+                    _binHashSparse.second[i].second[j].second.first *=scaleY;
+                    _binHashSparse.second[i].second[j].second.second *=scaleY;
+                }
+            }
+
+            // Now, as we have the map rescaled, we need to update the bins
+            // in their own structure in order to have high/low edges correct
+            for(int i=0; i < _bins.size(); i++){
+                _bins[i].highEdgeX() *= scaleX;
+                _bins[i].lowEdgeX() *= scaleX;
+
+                _bins[i].highEdgeY() *= scaleY;
+                _bins[i].lowEdgeY() *= scaleY;
+            }
+
+            //And making sure that we have correct boundaries set after rescaling
+            _regenDelimiters();
         }
 
         void scaleW(double scalefactor) {
@@ -394,18 +450,17 @@ namespace YODA {
         * Disregard if not needed for analyses.
         */
         bool operator == (const Axis2D& other) const {
-            return 1;
-                //TODO
+            return _bins == other._bins;
         }
 
         bool operator != (const Axis2D& other) const {
             return ! operator == (other);
         }
 
-        //Adding two axises requires quite a bit of thorough validation. Is it needed at all?
-        /*
+        // Since adding two histos that have a different binning requires a thorough validation,
+        // I just assume that it is only possible to add two histos that are exactly the same.
         Axis2D<BIN>& operator += (const Axis2D<BIN>& toAdd) {
-            if (*this != toAdd) {
+            if (*this._binHashSparse != toAdd._binHashSparse) {
                 throw LogicError("YODA::Histo1D: Cannot add axes with different binnings.");
             }
             for (int i=0; i < bins().size(); i++) bins().at(i) += toAdd.bins().at(i);
@@ -414,12 +469,11 @@ namespace YODA {
             _underflow += toAdd._underflow;
             _overflow += toAdd._overflow;
             return *this;
-        }*/
+        }
         
-        //What does it mean exactly to substract two Axis2Ds?
-        /*
+        
         Axis2D<BIN>& operator -= (const Axis2D<BIN>& toSubstract) {
-            if (*this != toSubstract) {
+            if (*this._binHashSparse != toSubstract._binHashSparse) {
                 throw LogicError("YODA::Histo1D: Cannot add axes with different binnings.");
             }
             for (int i=0; i < bins().size(); i++) bins().at(i) -= toSubstract.bins().at(i);
@@ -429,7 +483,7 @@ namespace YODA {
             _overflow -= toSubstract._overflow;
             return *this;
         }
-        */    
+
     private:
         //Bins contained in this histogram:
         Bins _bins;
@@ -442,10 +496,15 @@ namespace YODA {
         std::pair<Utils::cachedvector<pair<double,std::vector<pair<size_t, pair<double,double> > > > >,
                   Utils::cachedvector<pair<double,std::vector<pair<size_t, pair<double,double> > > > > > 
                   _binHashSparse;
+
+        //Low/High edges:
+        double _highEdgeX, _highEdgeY, _lowEdgeX, _lowEdgeY;
+
+        //And a big number for the low/high search:
+        double bigNum = 1000000000000000000;
            
    };
-   /* 
-    //TODO: Add a comparison operation for _binHashSparse (may not be needed)
+   
     template <typename BIN>
     Axis2D<BIN> operator + (const Axis2D<BIN>& first, const Axis2D<BIN>& second) {
         Axis2D<BIN> tmp = first;
@@ -464,7 +523,7 @@ namespace YODA {
         if(a.first == b.first) return a.second < b.second;
         return a.first < b.first;
     }
-    */
+    
 }
 
 #endif

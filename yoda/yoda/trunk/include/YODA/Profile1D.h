@@ -78,7 +78,7 @@ namespace YODA {
     //@{
 
     /// Get name of the analysis object type, for persisting
-    std::string _aotype() const { return "Profile1D"; }
+    std::string type() const { return "Profile1D"; }
 
     /// Set the state of the profile object, for unpersisting
     /// @todo Need to set annotations (do that on AO), all-histo Dbns, and dbns for every bin. Delegate!
@@ -125,6 +125,16 @@ namespace YODA {
       return _axis.bins();
     }
 
+    /// Access a bin by index (non-const version)
+    ProfileBin1D& bin(size_t index) {
+      return _axis.bins()[index];
+    }
+
+    /// Access a bin by index (const version)
+    const ProfileBin1D& bin(size_t index) const {
+      return _axis.bins()[index];
+    }
+
     /// Access a bin by x-coordinate.
     ProfileBin1D& binByCoord(double x) {
       return _axis.binByCoord(x);
@@ -133,6 +143,26 @@ namespace YODA {
     /// Access a bin by x-coordinate.
     const ProfileBin1D& binByCoord(double x) const {
       return _axis.binByCoord(x);
+    }
+
+    /// Access underflow (non-const version)
+    Dbn1D& underflow() {
+      return _axis.underflow();
+    }
+
+    /// Access underflow (const version)
+    const Dbn1D& underflow() const {
+      return _axis.underflow();
+    }
+
+    /// Access overflow (non-const version)
+    Dbn1D& overflow() {
+      return _axis.overflow();
+    }
+
+    /// Access overflow (const version)
+    const Dbn1D& overflow() const {
+      return _axis.overflow();
     }
 
     //@}
@@ -201,6 +231,9 @@ namespace YODA {
     tmp -= second;
     return tmp;
   }
+
+  /// Divide two profile histograms
+  Scatter2D operator / (const Profile1D& numer, const Profile1D& denom);
 
   //@}
 

@@ -11,7 +11,7 @@ namespace YODA {
         HistoBin2D(double lowEdgeX, double highEdgeX,
                    double lowEdgeY, double highEdgeY);
 
-        HistoBin2D(std::pair<std::pair<double,double>, std::pair<double,double> >& edges);
+        HistoBin2D(std::vector<std::pair<std::pair<double,double>, std::pair<double,double> > >& edges);
 
         //Modifiers:
         void fill(std::pair<double,double>, double weight=1.0);

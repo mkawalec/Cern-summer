@@ -44,14 +44,15 @@ namespace YODA {
         _axis(nbinsX, lowerX, upperX,
               nbinsY, lowerY, upperY)
     { }
-
-    /// @brief Constructor giving explicit bin edges.
-    /// For n bins, binedges.size() == n+1, the last
-    /// one being the upper bound of the last bin
-    Histo2D(const std::pair<std::vector<double>, std::vector<double> >& binedges,
-            const std::string& path="", const std::string& title="")
-      : AnalysisObject("Histo2D", path, title),
-        _axis(binedges)
+    /* A default constructor. One needs to provide two points 
+     * (top-right and bottom-left) for each rectangular bin that 
+     * is created. It is assumed that the binedges vector is nonempty (why btw?).
+     */
+    Histo2D(const std::vector<std::pair<std::pair<double,double>, pair<double,double> > >& binedges, 
+            const std::string& path="", 
+            const std::string& title="") 
+      : AnalysysObject("Histo2D", path, title),
+      _axis(binedges)
     { }
 
     /// Copy constructor with optional new path

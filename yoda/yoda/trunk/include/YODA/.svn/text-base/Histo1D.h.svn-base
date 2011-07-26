@@ -78,7 +78,7 @@ namespace YODA {
     //@{
 
     /// Get name of the analysis object type, for persisting
-    std::string _aotype() const { return "Histo1D"; }
+    std::string type() const { return "Histo1D"; }
 
     /// Set the state of the histo object, for unpersisting
     /// @todo Need to set annotations (do that on AO), all-histo Dbns, and dbns for every bin. Delegate!
@@ -156,6 +156,26 @@ namespace YODA {
     /// Access a bin by coordinate (const version)
     const HistoBin1D& binByCoord(double x) const {
       return _axis.binByCoord(x);
+    }
+
+    /// Access underflow (non-const version)
+    Dbn1D& underflow() {
+      return _axis.underflow();
+    }
+
+    /// Access underflow (const version)
+    const Dbn1D& underflow() const {
+      return _axis.underflow();
+    }
+
+    /// Access overflow (non-const version)
+    Dbn1D& overflow() {
+      return _axis.overflow();
+    }
+
+    /// Access overflow (const version)
+    const Dbn1D& overflow() const {
+      return _axis.overflow();
     }
 
     //@}
@@ -240,6 +260,9 @@ namespace YODA {
     tmp -= second;
     return tmp;
   }
+
+  /// Divide two histograms
+  Scatter2D operator / (const Histo1D& numer, const Histo1D& denom);
 
   //@}
 
