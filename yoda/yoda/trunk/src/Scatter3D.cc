@@ -1,6 +1,5 @@
 #include "YODA/Scatter3D.h"
 #include "YODA/Histo2D.h"
-#include "YODA/Profile2D.h"
 
 namespace YODA {
 
@@ -17,14 +16,14 @@ namespace YODA {
 
       const double y = b.focus().second;
       const double ey_m = b.focus().second - b.lowEdgeY();
-      const double ex_p = b.highEdgeY() - b.focus().second;
+      const double ey_p = b.highEdgeY() - b.focus().second;
 
       const double z = b.height();
-      const double ez = b.heightError();
+      const double ez = b.heightErr();
       const Point3D pt(x, ex_m, ex_p, y, ey_m, ey_p, z, ez, ez);
       rtn.addPoint(pt);
     }
-    assert(h.numBins() == rtn.numPoints());
+    //assert(h.numBins() == rtn.numPoints());
     return rtn;
   }
 

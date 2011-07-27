@@ -3,6 +3,7 @@
 
 #include "YODA/Bin2D.h"
 #include "YODA/Exceptions.h"
+#include <cmath>
 
 namespace YODA {
     class HistoBin2D : public Bin2D {
@@ -23,17 +24,17 @@ namespace YODA {
         }
 
         void scaleW(double scalefactor) {
-            _xdbn.scaleW(scalefactor);
+            _dbn.scaleW(scalefactor);
         }
 
         //Bin content info:
         
         //Note that area is actually a volume, kept to keep variable names 
         //the same with *1D
-        double area() const;
-        double height() const;
-        double areaErr() const;
-        double heightErr() const;
+        double volume() const { return sumW(); }
+        double height() const { return volume()/(widthX()*widthY()); }
+        double volumeErr() const{ return sqrt(sumW2()); }
+        double heightErr() const{ return volumeErr()/(widthX()*widthY());}
 
         //Operators:
         HistoBin2D& operator += (const HistoBin2D&);

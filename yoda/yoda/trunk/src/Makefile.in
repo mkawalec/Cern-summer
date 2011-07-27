@@ -76,11 +76,14 @@ am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libYODA_la_DEPENDENCIES = tinyxml/libtinyxml.la
 am_libYODA_la_OBJECTS = libYODA_la-Dbn1D.lo libYODA_la-Bin1D.lo \
-	libYODA_la-HistoBin1D.lo libYODA_la-Histo1D.lo \
-	libYODA_la-ProfileBin1D.lo libYODA_la-Profile1D.lo \
-	libYODA_la-Scatter2D.lo libYODA_la-Writer.lo \
-	libYODA_la-WriterAIDA.lo libYODA_la-WriterYODA.lo \
-	libYODA_la-Reader.lo libYODA_la-ReaderAIDA.lo
+	libYODA_la-Dbn2D.lo libYODA_la-Bin2D.lo \
+	libYODA_la-HistoBin2D.lo libYODA_la-Histo2D.lo \
+	libYODA_la-Scatter3D.lo libYODA_la-HistoBin1D.lo \
+	libYODA_la-Histo1D.lo libYODA_la-ProfileBin1D.lo \
+	libYODA_la-Profile1D.lo libYODA_la-Scatter2D.lo \
+	libYODA_la-Writer.lo libYODA_la-WriterAIDA.lo \
+	libYODA_la-WriterYODA.lo libYODA_la-Reader.lo \
+	libYODA_la-ReaderAIDA.lo
 libYODA_la_OBJECTS = $(am_libYODA_la_OBJECTS)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
@@ -294,6 +297,11 @@ lib_LTLIBRARIES = libYODA.la
 libYODA_la_SOURCES = \
     Dbn1D.cc \
     Bin1D.cc \
+    Dbn2D.cc \
+    Bin2D.cc \
+    HistoBin2D.cc \
+    Histo2D.cc \
+    Scatter3D.cc\
     HistoBin1D.cc \
     Histo1D.cc \
     ProfileBin1D.cc \
@@ -382,14 +390,19 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Bin1D.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Bin2D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Dbn1D.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Dbn2D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Histo1D.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Histo2D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-HistoBin1D.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-HistoBin2D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Profile1D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-ProfileBin1D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Reader.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-ReaderAIDA.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Scatter2D.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Scatter3D.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-Writer.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-WriterAIDA.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libYODA_la-WriterYODA.Plo@am__quote@
@@ -433,6 +446,46 @@ libYODA_la-Bin1D.lo: Bin1D.cc
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Bin1D.cc' object='libYODA_la-Bin1D.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-Bin1D.lo `test -f 'Bin1D.cc' || echo '$(srcdir)/'`Bin1D.cc
+
+libYODA_la-Dbn2D.lo: Dbn2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-Dbn2D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-Dbn2D.Tpo -c -o libYODA_la-Dbn2D.lo `test -f 'Dbn2D.cc' || echo '$(srcdir)/'`Dbn2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libYODA_la-Dbn2D.Tpo $(DEPDIR)/libYODA_la-Dbn2D.Plo
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Dbn2D.cc' object='libYODA_la-Dbn2D.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-Dbn2D.lo `test -f 'Dbn2D.cc' || echo '$(srcdir)/'`Dbn2D.cc
+
+libYODA_la-Bin2D.lo: Bin2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-Bin2D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-Bin2D.Tpo -c -o libYODA_la-Bin2D.lo `test -f 'Bin2D.cc' || echo '$(srcdir)/'`Bin2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libYODA_la-Bin2D.Tpo $(DEPDIR)/libYODA_la-Bin2D.Plo
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Bin2D.cc' object='libYODA_la-Bin2D.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-Bin2D.lo `test -f 'Bin2D.cc' || echo '$(srcdir)/'`Bin2D.cc
+
+libYODA_la-HistoBin2D.lo: HistoBin2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-HistoBin2D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-HistoBin2D.Tpo -c -o libYODA_la-HistoBin2D.lo `test -f 'HistoBin2D.cc' || echo '$(srcdir)/'`HistoBin2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libYODA_la-HistoBin2D.Tpo $(DEPDIR)/libYODA_la-HistoBin2D.Plo
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='HistoBin2D.cc' object='libYODA_la-HistoBin2D.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-HistoBin2D.lo `test -f 'HistoBin2D.cc' || echo '$(srcdir)/'`HistoBin2D.cc
+
+libYODA_la-Histo2D.lo: Histo2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-Histo2D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-Histo2D.Tpo -c -o libYODA_la-Histo2D.lo `test -f 'Histo2D.cc' || echo '$(srcdir)/'`Histo2D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libYODA_la-Histo2D.Tpo $(DEPDIR)/libYODA_la-Histo2D.Plo
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Histo2D.cc' object='libYODA_la-Histo2D.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-Histo2D.lo `test -f 'Histo2D.cc' || echo '$(srcdir)/'`Histo2D.cc
+
+libYODA_la-Scatter3D.lo: Scatter3D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-Scatter3D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-Scatter3D.Tpo -c -o libYODA_la-Scatter3D.lo `test -f 'Scatter3D.cc' || echo '$(srcdir)/'`Scatter3D.cc
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libYODA_la-Scatter3D.Tpo $(DEPDIR)/libYODA_la-Scatter3D.Plo
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Scatter3D.cc' object='libYODA_la-Scatter3D.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libYODA_la-Scatter3D.lo `test -f 'Scatter3D.cc' || echo '$(srcdir)/'`Scatter3D.cc
 
 libYODA_la-HistoBin1D.lo: HistoBin1D.cc
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libYODA_la_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libYODA_la-HistoBin1D.lo -MD -MP -MF $(DEPDIR)/libYODA_la-HistoBin1D.Tpo -c -o libYODA_la-HistoBin1D.lo `test -f 'HistoBin1D.cc' || echo '$(srcdir)/'`HistoBin1D.cc

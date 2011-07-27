@@ -35,10 +35,12 @@ build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
 check_PROGRAMS = testweights$(EXEEXT) testhisto1Da$(EXEEXT) \
 	testhisto1Db$(EXEEXT) testprofile1Da$(EXEEXT) \
-	testindexedset$(EXEEXT) testsortedvector$(EXEEXT)
+	testhisto2D$(EXEEXT) testindexedset$(EXEEXT) \
+	testsortedvector$(EXEEXT)
 TESTS = testweights$(EXEEXT) testhisto1Da$(EXEEXT) \
 	testhisto1Db$(EXEEXT) testprofile1Da$(EXEEXT) \
-	testindexedset$(EXEEXT) testsortedvector$(EXEEXT)
+	testhisto2D$(EXEEXT) testindexedset$(EXEEXT) \
+	testsortedvector$(EXEEXT)
 subdir = tests
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in TODO
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -65,6 +67,9 @@ am__v_lt_0 = --silent
 am_testhisto1Db_OBJECTS = TestHisto1Db.$(OBJEXT)
 testhisto1Db_OBJECTS = $(am_testhisto1Db_OBJECTS)
 testhisto1Db_LDADD = $(LDADD)
+am_testhisto2D_OBJECTS = TestHisto2D.$(OBJEXT)
+testhisto2D_OBJECTS = $(am_testhisto2D_OBJECTS)
+testhisto2D_LDADD = $(LDADD)
 am_testindexedset_OBJECTS = TestIndexedSet.$(OBJEXT)
 testindexedset_OBJECTS = $(am_testindexedset_OBJECTS)
 testindexedset_LDADD = $(LDADD)
@@ -104,11 +109,13 @@ AM_V_GEN = $(am__v_GEN_$(V))
 am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
 am__v_GEN_0 = @echo "  GEN   " $@;
 SOURCES = $(testhisto1Da_SOURCES) $(testhisto1Db_SOURCES) \
-	$(testindexedset_SOURCES) $(testprofile1Da_SOURCES) \
-	$(testsortedvector_SOURCES) $(testweights_SOURCES)
+	$(testhisto2D_SOURCES) $(testindexedset_SOURCES) \
+	$(testprofile1Da_SOURCES) $(testsortedvector_SOURCES) \
+	$(testweights_SOURCES)
 DIST_SOURCES = $(testhisto1Da_SOURCES) $(testhisto1Db_SOURCES) \
-	$(testindexedset_SOURCES) $(testprofile1Da_SOURCES) \
-	$(testsortedvector_SOURCES) $(testweights_SOURCES)
+	$(testhisto2D_SOURCES) $(testindexedset_SOURCES) \
+	$(testprofile1Da_SOURCES) $(testsortedvector_SOURCES) \
+	$(testweights_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 am__tty_colors = \
@@ -256,6 +263,7 @@ testhisto1Db_SOURCES = TestHisto1Db.cc
 testprofile1Da_SOURCES = TestProfile1Da.cc
 testindexedset_SOURCES = TestIndexedSet.cc
 testsortedvector_SOURCES = TestSortedVector.cc
+testhisto2D_SOURCES = TestHisto2D.cc
 all: all-am
 
 .SUFFIXES:
@@ -305,6 +313,9 @@ testhisto1Da$(EXEEXT): $(testhisto1Da_OBJECTS) $(testhisto1Da_DEPENDENCIES)
 testhisto1Db$(EXEEXT): $(testhisto1Db_OBJECTS) $(testhisto1Db_DEPENDENCIES) 
 	@rm -f testhisto1Db$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(testhisto1Db_OBJECTS) $(testhisto1Db_LDADD) $(LIBS)
+testhisto2D$(EXEEXT): $(testhisto2D_OBJECTS) $(testhisto2D_DEPENDENCIES) 
+	@rm -f testhisto2D$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(testhisto2D_OBJECTS) $(testhisto2D_LDADD) $(LIBS)
 testindexedset$(EXEEXT): $(testindexedset_OBJECTS) $(testindexedset_DEPENDENCIES) 
 	@rm -f testindexedset$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(testindexedset_OBJECTS) $(testindexedset_LDADD) $(LIBS)
@@ -326,6 +337,7 @@ distclean-compile:
 
 include ./$(DEPDIR)/TestHisto1Da.Po
 include ./$(DEPDIR)/TestHisto1Db.Po
+include ./$(DEPDIR)/TestHisto2D.Po
 include ./$(DEPDIR)/TestIndexedSet.Po
 include ./$(DEPDIR)/TestProfile1Da.Po
 include ./$(DEPDIR)/TestSortedVector.Po

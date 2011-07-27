@@ -5,6 +5,8 @@
 #include "YODA/Dbn2D.h"
 #include <string>
 #include <utility>
+#include <vector>
+using namespace std;
 
 namespace YODA {
 
@@ -58,8 +60,8 @@ namespace YODA {
         double sumWX() const;
         double sumWY() const;
         double sumWXY() const;
-        double sumX2() const;
-        double sumY2() const;
+        double sumWX2() const;
+        double sumWY2() const;
 
         Bin2D& operator += (const Bin2D&);
         Bin2D& operator -= (const Bin2D&);
@@ -76,10 +78,6 @@ namespace YODA {
     Bin2D operator + (const Bin2D& a, const Bin2D& b);
     Bin2D operator - (const Bin2D& a, const Bin2D& b);
 
-    //Comparison functions that _may_ be used for sorting later, we will see...
-    inline bool operator<(const Bin2D& a, const Bin2D& b) {
-        if(a.edgesX().first == b.edgesX().first) return b.edgesY().first > a.edgesY().first;
-        return b.edgesX().first > a.edgesX().first;
 }
 
 

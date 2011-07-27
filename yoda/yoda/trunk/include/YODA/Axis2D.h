@@ -5,6 +5,7 @@
 #include "YODA/Exceptions.h"
 #include "YODA/Bin.h"
 #include "YODA/Utils/sortedvector.h"
+#include "YODA/Utils/cachedvector.h"
 #include "YODA/Utils/MathUtils.h"
 #include "YODA/Dbn2D.h"
 #include <string>
@@ -13,6 +14,9 @@
 #include <algorithm>
 
 using namespace std;
+
+//And a big number for the low/high search:
+const double _largeNum = 10000000000000.0;
 
 namespace YODA {
     template <typename BIN>
@@ -27,7 +31,7 @@ namespace YODA {
         // Notice the fact that all the functions below make an error
         // of the size of fuzzyEquals tolerance!
         // Also, there are no checks in place to test if this edge set is not crossing itself
-        bool _validateEdge(vector<pair<pair<double,double>, pair<double,double> > >& edges) {
+        bool _validateEdge(vector<pair<pair<double,double>, pair<double,double> > > edges) {
             bool ret = true;
             for(int i=0; i < edges.size(); i++) {
                 if(edges[i].first.first == edges[i].second.first) ret =  _findCutsY(edges[i]);
@@ -66,7 +70,7 @@ namespace YODA {
             //TODO: Check inclusion
         }
 
-        bool _findCutsY(pair<pair<double,double>, pair<double,double>& edge) {
+        bool _findCutsY(pair<pair<double,double>, pair<double,double> > edge) {
             for(int i=0; i < _binHashSparse.second.size(); i++) {
                 /* An optimisation check that guarantees that we are not looking at edges that
                  * are surely out of our range of interest. The second condition is put in place
@@ -97,7 +101,7 @@ namespace YODA {
             return true;
         }
 
-        bool _findCutsX(pair<pair<double,double>, pair<double,double>& edge) {
+        bool _findCutsX(pair<pair<double,double>, pair<double,double> > edge) {
             for(int i=0; i < _binHashSparse.first.size(); i++) {
                 //Sanity check, for more comments see above:
                 if(edge.second.first < _binHashSparse.first[i].first &&
@@ -110,7 +114,7 @@ namespace YODA {
                     for(int j=0; j < _binHashSparse.first[i].second.size(); j++) {
                         
                         if(_binHashSparse.first[i].second[j].second.first > edge.first.second &&
-                           !fuzzyEquals(_binHashSparse.first[i].second[j].second.fist, edge.first.second)) break;
+                           !fuzzyEquals(_binHashSparse.first[i].second[j].second.first, edge.first.second)) break;
 
                         if(fuzzyEquals(_binHashSparse.first[i].second[j].second.first, edge.first.second) ||
                            (_binHashSparse.first[i].second[j].second.first < edge.first.second &&
@@ -125,13 +129,13 @@ namespace YODA {
         }
         
         //TODO: Something a bit more elaborate??
-        void _dropEdge(vector<pair<pair<double,double>, pair<double,double> > >& edges) {
+        void _dropEdge(vector<pair<pair<double,double>, pair<double,double> > > edges) {
             std::cerr << "A set of edges was dropped. No additional information is implemented yet, so none can be given. Have a good day." << endl;
         }
 
         //Do not initiate a global sort when another edges were found on the same level
         // needs to be adjusted accordingly
-        void _addEdge(vector<pair<pair<double,double>, pair<double,double> > >& edges) {
+        void _addEdge(vector<pair<pair<double,double>, pair<double,double> > > edges) {
             for(int j=0; j < edges.size(); j++) {
                 pair<pair<double,double>, pair<double,double> > edge = edges[j];
                 if(edge.first.first == edge.second.first) {
@@ -140,14 +144,14 @@ namespace YODA {
                     if(fuzzyEquals(_binHashSparse.second[i].first, edge.first.first)) {
                         _binHashSparse.second[i].second.push_back(
                             make_pair(_bins.size(),make_pair(edge.first.second, edge.second.second)));
-                        _binHashSparse.second[i].second.sort();
+                        sort(_binHashSparse.second[i].second.begin(), _binHashSparse.second[i].second.end());
                         found = true;
                         }
                     }
                     if(!found) {
-                        vector<pair<double,double> > temp;
-                        temp.push_back(make_pair(edge.first.second, edge.second.second));
-                        _binHashSparse.second.push_back(make_pair(_bins.size(),make_pair(edge.first.first, temp)));
+                        vector<pair<size_t, pair<double,double> > > temp;
+                        temp.push_back(make_pair(_bins.size(), make_pair(edge.first.second, edge.second.second)));
+                        _binHashSparse.second.push_back(make_pair(edge.first.first,temp));
                     }
                 }
 
@@ -157,14 +161,14 @@ namespace YODA {
                         if(fuzzyEquals(_binHashSparse.first[i].first, edge.first.second)) {
                             _binHashSparse.first[i].second.push_back(
                                 make_pair(_bins.size(),make_pair(edge.first.first, edge.second.first)));
-                            _binHashSparse.first[i].second.sort();
+                            sort(_binHashSparse.first[i].second.begin(), _binHashSparse.first[i].second.end());
                             found = true;
                         }
                     }
                     if(!found) {
-                        vector<pair<double,double> > temp;
-                        temp.push_back(make_pair(edge.first.first, edge.second.first));
-                        _binHashSparse.first.push_back(make_pair(_bins.size(),make_pair(edge.first.second, temp)));
+                        vector<pair<size_t, pair<double,double> > > temp;
+                        temp.push_back(make_pair(_bins.size(), make_pair(edge.first.first, edge.second.first)));
+                        _binHashSparse.first.push_back(make_pair(edge.second.second, temp));
                     }
                 }
             }
@@ -190,8 +194,8 @@ namespace YODA {
                               make_pair(binedges[i].second.first, binedges[i].first.second));
                 //TODO: Add a function that fixes orientation if it is wrong
 
-                vector<pair<pair<double,double>, pair<double,double> > edges;
-                edges.push_back(edge1); edges.push_back(edge2); edges.push_back(edge3); edge.push_back(edge4);
+                vector<pair<pair<double,double>, pair<double,double> > > edges;
+                edges.push_back(edge1); edges.push_back(edge2); edges.push_back(edge3); edges.push_back(edge4);
                 //TODO: the _dropEdge() part should be moved into _addEdge() function and indicate which edge 
                 //      is the conflicting one, not dropping the whole edgeset, as it is doing now. Same in addBins.
                 if(_validateEdge(edges)) _addEdge(edges);
@@ -205,10 +209,10 @@ namespace YODA {
         }
 
         void _regenDelimiters() {
-            double highEdgeX = -_binNum;
-            double highEdgeY = -_bigNum;
-            double lowEdgeX = _bigNum;
-            double lowEdgeY = _bigNum;
+            double highEdgeX = -_largeNum;
+            double highEdgeY = -_largeNum;
+            double lowEdgeX = _largeNum;
+            double lowEdgeY = _largeNum;
 
             for(int i=0; i < _bins.size(); i++) {
                 if(_bins[i].xMin() < lowEdgeX) lowEdgeX = _bins[i].xMin();
@@ -240,7 +244,7 @@ namespace YODA {
             for(int i=0; i < coeffX - 1; i++) {
                 for(int j=0; j < coeffY - 1; j++) {
                    edges.push_back(make_pair(make_pair(i*coeffX, j*coeffY), 
-                                             make_pair((i+1)*coeffX, (j+1)*coeffY)));
+                                             make_pair((double)(i+1)*coeffX, (double)(j+1)*coeffY)));
                 }
             }
             _mkAxis(edges);
@@ -252,7 +256,7 @@ namespace YODA {
          * computationaly expensive to be called after each one bin is added.
          */
         void addBin(const vector<pair<pair<double,double>, pair<double,double> > >& binedges) {
-            for(int=0; i < binedges.size(); i++){
+            for(int i = 0; i < binedges.size(); i++){
                 vector<pair<pair<double,double>, pair<double,double> > > temp;
                 
                 pair<pair<double,double>, pair<double,double> > edge1 = 
@@ -299,6 +303,22 @@ namespace YODA {
         }
 
         double highEdgeY() {
+            return _highEdgeY;
+        }
+
+        const double lowEdgeX() const {
+            return _lowEdgeX;
+        }
+
+        const double highEdgeX() const {
+            return _highEdgeX;
+        }
+
+        const double lowEdgeY() const {
+            return _lowEdgeY;
+        }
+
+        const double highEdgeY() const {
             return _highEdgeY;
         }
 
@@ -351,6 +371,14 @@ namespace YODA {
             return _overflow;
         }
 
+        const Dbn2D& underflow() const {
+            return _underflow;
+        }
+
+        Dbn2D& underflow() {
+            return _underflow;
+        }
+
         /* This version of findBinIndex is searching for the edge on the left
          * that is enclosing the point and then finds an edge on the bottom
          * that does the same and if it finds two edges that are a part of 
@@ -359,19 +387,19 @@ namespace YODA {
          */
         //TODO: Make _binHashSparse.first/second.second a memeber of Utils::cachedvector
         int findBinIndex(double coordX, double coordY) const {
-            size_t indexY = _binHashSparse.first._cache.lower_bound(approx(coordY));
+            size_t indexY = (*_binHashSparse.first._cache.lower_bound(approx(coordY))).second;
 
             if(indexY < _binHashSparse.first.size() - 1) {
                 for(int i=0; i < _binHashSparse.first[indexY].second.size(); i++){
                     if(_binHashSparse.first[indexY].second[i].second.first < coordX &&
                        _binHashSparse.first[indexY].second[i].second.second > coordX){
-                        size_t indexX = _binHashSparse.second._cache.lower_bound(approx(coordX));
+                        size_t indexX = (*_binHashSparse.second._cache.lower_bound(approx(coordX))).second;
                         if(indexX < _binHashSparse.second.size() - 1){
                             for(int j=0; j < _binHashSparse.second[indexX].second.size(); j++) {
                                 if(_binHashSparse.second[indexX].second[j].second.first < indexY &&
                                    _binHashSparse.second[indexX].second[j].second.second > indexY &&
                                    (_binHashSparse.first[indexX].second[j].first ==
-                                   _binHashSparse,first[indexY].second[i].first)) 
+                                   _binHashSparse.first[indexY].second[i].first)) 
                                     return _binHashSparse.first[indexX].second[j].second.first;
                             }
                         }
@@ -406,6 +434,7 @@ namespace YODA {
             for (size_t i=0; i<_bins.size(); i++) _bins[i].reset();
         }
 
+        //TODO: In-bin stats scalling (x/y Mean, Variance, stdDev...)
         void scale(double scaleX = 1.0, double scaleY = 1.0) {
             // Two loops are put on purpose, just to protect
             // against improper _binHashSparse
@@ -450,7 +479,7 @@ namespace YODA {
         * Disregard if not needed for analyses.
         */
         bool operator == (const Axis2D& other) const {
-            return _bins == other._bins;
+            return _binHashSparse == other._binHashSparse;
         }
 
         bool operator != (const Axis2D& other) const {
@@ -460,7 +489,7 @@ namespace YODA {
         // Since adding two histos that have a different binning requires a thorough validation,
         // I just assume that it is only possible to add two histos that are exactly the same.
         Axis2D<BIN>& operator += (const Axis2D<BIN>& toAdd) {
-            if (*this._binHashSparse != toAdd._binHashSparse) {
+            if (*this != toAdd) {
                 throw LogicError("YODA::Histo1D: Cannot add axes with different binnings.");
             }
             for (int i=0; i < bins().size(); i++) bins().at(i) += toAdd.bins().at(i);
@@ -473,7 +502,7 @@ namespace YODA {
         
         
         Axis2D<BIN>& operator -= (const Axis2D<BIN>& toSubstract) {
-            if (*this._binHashSparse != toSubstract._binHashSparse) {
+            if (*this != toSubstract) {
                 throw LogicError("YODA::Histo1D: Cannot add axes with different binnings.");
             }
             for (int i=0; i < bins().size(); i++) bins().at(i) -= toSubstract.bins().at(i);
@@ -500,9 +529,6 @@ namespace YODA {
         //Low/High edges:
         double _highEdgeX, _highEdgeY, _lowEdgeX, _lowEdgeY;
 
-        //And a big number for the low/high search:
-        double bigNum = 1000000000000000000;
-           
    };
    
     template <typename BIN>

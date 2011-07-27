@@ -20,7 +20,7 @@ namespace YODA {
     _sumWX2 += weight*valX*valX;
     _sumWY +=weight*valY;
     _sumWY2 += weight*valY*valY;
-    _symWXY += weight*valX*valY;    
+    _sumWXY += weight*valX*valY;    
   }
 
 
@@ -83,7 +83,7 @@ namespace YODA {
   }
 
   double Dbn2D::yMean() const {
-    return _sumWY/_symW;
+    return _sumWY/_sumW;
   }
 
   double Dbn2D::xVariance() const {
@@ -109,9 +109,9 @@ namespace YODA {
   
   double Dbn2D::yVariance() const {
     if(effNumEntries() == 0.0) {
-      throw LowStatusError("Requested width of a distribution with no net will weights");
+      throw LowStatsError("Requested width of a distribution with no net will weights");
     } else if (effNumEntries() <= 1.0) {
-      throw LowStatusError("Requested width of a distribution with only one effective entry");
+      throw LowStatsError("Requested width of a distribution with only one effective entry");
     }
     const double num = _sumWY2*_sumW - _sumWY*_sumWY;
     const double den = _sumW*_sumW - _sumW2;
@@ -141,7 +141,7 @@ namespace YODA {
 
   double Dbn2D::yStdErr() const {
     if(effNumEntries() == 0) {
-      throw LowStatusError("Requested std error of a distribution with no net fill weights");
+      throw LowStatsError("Requested std error of a distribution with no net fill weights");
     }
     return std::sqrt(xVariance() / effNumEntries());
   }
@@ -159,7 +159,7 @@ namespace YODA {
   }
 
 
-  Dbn2D& Dbn2D::subtract(const Dbn2D& d) {
+  Dbn2D& Dbn2D::substract(const Dbn2D& d) {
     _numFills += d._numFills; //< @todo Hmm, what's best?!?
     _sumW     -= d._sumW;
     _sumW2    -= d._sumW2;
@@ -178,7 +178,7 @@ namespace YODA {
 
 
   Dbn2D& Dbn2D::operator -= (const Dbn2D& d) {
-    return subtract(d);
+    return substract(d);
   }
 
 

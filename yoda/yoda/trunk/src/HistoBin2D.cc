@@ -18,7 +18,7 @@ namespace YODA {
   { }
 
 
-  HistoBin2D::HistoBin2D(std::vector<std::pair<std::pair<double,double>,std::pair<double,double> > > edges)
+  HistoBin2D::HistoBin2D(std::vector<std::pair<std::pair<double,double>, std::pair<double,double> > >& edges)
     : Bin2D(edges)
   { }
 
@@ -39,8 +39,8 @@ namespace YODA {
   }
 
 
-  HistoBin2D& HistoBin2D::subtract(const HistoBin2D& hb) {
-    Bin2D::subtract(hb);
+  HistoBin2D& HistoBin2D::substract(const HistoBin2D& hb) {
+    Bin2D::substract(hb);
     return *this;
   }
 
@@ -50,8 +50,8 @@ namespace YODA {
   }
 
 
-  HistoBin2D& HistoBin2D::operator -= (const HistoBin2D& toSubtract) {
-    return subtract(toSubtract);
+  HistoBin2D& HistoBin2D::operator -= (const HistoBin2D& toSubstract) {
+    return substract(toSubstract);
   }
 
 

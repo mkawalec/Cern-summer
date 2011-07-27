@@ -12,6 +12,7 @@ namespace YODA {
         }
 
         void fill(double valX, double valY, double weight=1.0);
+        void fill(std::pair<double,double> val, double weight=1.0);
         void reset();
 
         void scaleW(double sf) {
@@ -36,7 +37,7 @@ namespace YODA {
         double xStdErr() const;
         double yStdErr() const;
 
-        unsigned long numEnteries() const;
+        unsigned long numEntries() const;
         double effNumEntries() const;
         double sumW() const;
         double sumW2() const;

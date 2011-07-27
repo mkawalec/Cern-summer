@@ -51,7 +51,7 @@ namespace YODA {
     Histo2D(const std::vector<std::pair<std::pair<double,double>, pair<double,double> > >& binedges, 
             const std::string& path="", 
             const std::string& title="") 
-      : AnalysysObject("Histo2D", path, title),
+      : AnalysisObject("Histo2D", path, title),
       _axis(binedges)
     { }
 
@@ -125,12 +125,12 @@ namespace YODA {
 
     /// Access the bin vector
     /// @todo Actually, it's a Histo
-    std::vector<YODA::HistoBin2D> >& bins() {
+    std::vector<YODA::HistoBin2D>& bins() {
       return _axis.bins();
     }
 
     /// Access the bin vector (const version)
-    const std::vector<YODA::HistoBin2D> >& bins() const {
+    const std::vector<YODA::HistoBin2D>& bins() const {
       return _axis.bins();
     }
 
@@ -154,6 +154,20 @@ namespace YODA {
       return _axis.binByCoord(x, y);
     }
 
+    //Over- and under- flows:
+    const Dbn2D& underflow() const {
+        return _axis.underflow();
+    }
+    Dbn2D& underflow() {
+        return _axis.underflow();
+    }
+
+    const Dbn2D& overflow() const {
+        return _axis.overflow();
+    }
+    Dbn2D& overflow() {
+        return _axis.overflow();
+    }
     //@}
 
 
@@ -174,14 +188,19 @@ namespace YODA {
     double sumW2(bool includeoverflows=true) const;
 
     /// Get the mean
-    double mean(bool includeoverflows=true) const;
+    double xMean(bool includeoverflows=true) const;
+    double yMean(bool includeoverflows=true) const;
 
     /// Get the variance
-    double variance(bool includeoverflows=true) const;
+    double xVariance(bool includeoverflows=true) const;
+    double yVariance(bool includeoverflows=true) const;
 
     /// Get the standard deviation
-    double stdDev(bool includeoverflows=true) const {
-      return std::sqrt(variance(includeoverflows));
+    double xStdDev(bool includeoverflows=true) const {
+      return std::sqrt(xVariance(includeoverflows));
+    }
+    double yStdDev(bool includeoverflows=true) const {
+      return std::sqrt(yVariance(includeoverflows));
     }
 
     //@}
@@ -197,14 +216,14 @@ namespace YODA {
       _axis += toAdd._axis;
       return *this;
     }
-/* I need a definition of substraction for histograms first, 
- * before implementing this one.
+//* I need a definition of substraction for histograms first, 
+//* before implementing this one.
     /// Subtract another histogram from this
     Histo2D& operator -= (const Histo2D& toSubtract) {
       _axis -= toSubtract._axis;
       return *this;
     }
-*/
+
     //@}
 
 

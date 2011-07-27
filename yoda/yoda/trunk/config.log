@@ -383,7 +383,7 @@ configure:11276: checking how to hardcode library paths into programs
 configure:11301: result: immediate
 configure:11395: checking for shl_load
 configure:11395: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/cccsUWpv.o: In function `main':
+/tmp/ccvDQJZL.o: In function `main':
 /home/michal/summer/yoda/yoda/trunk/conftest.c:62: undefined reference to `shl_load'
 collect2: ld returned 1 exit status
 configure:11395: $? = 1
@@ -505,7 +505,7 @@ configure: failed program was:
 configure:11433: result: no
 configure:11438: checking for dlopen
 configure:11438: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/cczpR5xZ.o: In function `main':
+/tmp/cc9fAsOf.o: In function `main':
 /home/michal/summer/yoda/yoda/trunk/conftest.c:62: undefined reference to `dlopen'
 collect2: ld returned 1 exit status
 configure:11438: $? = 1
@@ -586,7 +586,7 @@ configure:11678: $? = 0
 configure:11696: result: yes
 configure:11701: checking whether a statically linked program can dlopen itself
 configure:11781: gcc -o conftest -g -O2  -DHAVE_DLFCN_H  -Wl,--export-dynamic -static conftest.c -ldl  >&5
-/tmp/ccICSuHY.o: In function `main':
+/tmp/ccWxQAlT.o: In function `main':
 /home/michal/summer/yoda/yoda/trunk/configure:11760: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
 configure:11784: $? = 0
 /home/michal/Programowanie/cern/rivet/dev/local/lib/: cannot read file data: Is a directory

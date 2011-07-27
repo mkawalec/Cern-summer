@@ -4,7 +4,6 @@
 // Copyright (C) 2008-2011 The YODA collaboration (see AUTHORS for details)
 //
 #include "YODA/Histo2D.h"
-#include "YODA/Profile2D.h"
 #include "YODA/Scatter2D.h"
 
 #include <cmath>
@@ -23,7 +22,7 @@ namespace YODA {
     if (x < _axis.lowEdgeX()) { _axis.underflow().fill(x, weight); return; }
     if (x >= _axis.highEdgeX()) { _axis.overflow().fill(x, weight); return; }
     // Fill the normal bins
-    HistoBin2D& b = binByCoord(x);
+    HistoBin2D& b = binByCoord(x, y);
     b.fill(x, y, weight);
   }
 
@@ -94,8 +93,8 @@ namespace YODA {
   }
 
   ////////////////////////////////////////
-
-
+/*
+  TODO:
   /// Copy constructor with optional new path
   Histo2D::Histo2D(const Histo2D& h, const std::string& path)
     : AnalysisObject("Histo2D", (path.size() == 0) ? h.path() : path, h, h.title())
@@ -103,7 +102,6 @@ namespace YODA {
     _axis = h._axis;
   }
 
-/*
   /// Constructor from a Scatter2D's binning, with optional new path
   Histo2D::Histo2D(const Scatter3D& s, const std::string& path)
     : AnalysisObject("Histo2D", (path.size() == 0) ? s.path() : path, s, s.title())
@@ -117,6 +115,7 @@ namespace YODA {
 */
   ///////////////////////////////////////
 
+/* TODO!!
 
   /// Divide two histograms
   Scatter3D operator / (const Histo2D& numer, const Histo2D& denom) {
@@ -153,5 +152,5 @@ namespace YODA {
     return tmp;
   }
 
-
+*/
 }

@@ -2,12 +2,14 @@
 
 #include <cassert>
 #include <cmath>
+#include <utility>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 namespace YODA {
-    Bin2D::Bin2D(double lowedgeX, double lowedgeY, 
-                 double highedgeX, double highedgeY) 
-    {
+    
+    Bin2D::Bin2D(double lowedgeX, double lowedgeY, double highedgeX, double highedgeY) {
         assert(lowedgeX < highedgeX && lowedgeY < highedgeY);
 
         pair<pair<double,double>, pair<double,double> > edge1 =
@@ -40,10 +42,10 @@ namespace YODA {
         _dbn.reset();
     }
 
-    double Bin2D::lowedgeX() const { return _edges[0].first.first;  }
-    double Bin2D::lowedgeY() const { return _edges[0].first.second; }
-    double Bin2D::highedgeX() const {return _edges[1].second.first; }
-    double Bin2D::highedgeY() const {return _edges[1].second.second;}
+    double Bin2D::lowEdgeX() const { return _edges[0].first.first;  }
+    double Bin2D::lowEdgeY() const { return _edges[0].first.second; }
+    double Bin2D::highEdgeX() const {return _edges[1].second.first; }
+    double Bin2D::highEdgeY() const {return _edges[1].second.second;}
 
     double Bin2D::widthX() const {
         return _edges[1].second.first - _edges[0].first.first;
@@ -58,8 +60,8 @@ namespace YODA {
     }
 
     std::pair<double,double> Bin2D::midpoint() const {
-        return make_pair(edges[1].second.first-edges[0].first.first,
-                         edges[0].second.second-edges[0].first.second);
+        return make_pair(_edges[1].second.first-_edges[0].first.first,
+                         _edges[0].second.second-_edges[0].first.second);
     }
 
     double Bin2D::xMean() const {

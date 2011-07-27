@@ -58,10 +58,10 @@ namespace YODA {
     /// Values with no errors:
     Scatter3D(const std::vector<double>& x, const std::vector<double>& y, const std::vector<double>& z,
               const std::string& path="", const std::string& title="") {
-        std::vector<pair<double,double> > null;
+        std::vector<std::pair<double,double> > null;
         null.resize(x.size());
 
-        for(unsigned int i=0; i < null.size(); i++) null[i] = make_pair(0.0, 0.0);
+        for(unsigned int i=0; i < null.size(); i++) null[i] = std::make_pair(0.0, 0.0);
         Scatter3D(x, y, z, null, null, null, path, title);
     }
 
