@@ -3,50 +3,50 @@ YODA TODO list
 
 NOW
 
-* Implement profile/profile -> scatter and
-  scatter/scatter -> scatter. Also multiplication? (AB)
 
-* Add a named Weights object, allowing named or vectorised fills? Autoconversion
-  to/from double. Template on this, or use everywhere? (AB)
+* Histo2D & Dbn2D: add Python interface mapping. (MICHAL)
+  (done, compilation is fine, not tested yet, though)
 
-* Histo2D & Dbn2D (MICHAL)
+* Test that a y-binned Histo2D has the same per-y-column stats as an
+  equivalently x-binned Profile1D. Perhaps use this as an opportunity to
+  implement one of the the conversion functions mentioned in the NEXT
+  section... (MICHAL)
+
+* Axis1D::scaleX(d), Axis2D::scaleX/Y(d), Axis2D::scaleXY(d, d),
+  Scatter2D::scaleX/Y(d), Scatter2D::scaleXY(d, d). (MICHAL)
+  (done, also added scaling for Scatter3D. Scaling of errors is done in a 
+  veeery crude way)
+
+* Rebinning: merges of n adjacent bins and global rebinning by integer factor
+  (on widths or on bin groups?) (AB)
+
+* Implement _setstate for Histo1D and Profile1D. (AB)
 
 * Multiple errors on Scatter2D via a vector of Error2D. Combination rule enum
-  arg (QUAD, LIN) on error() method (DANIEL?)
+  arg (QUAD, LIN) on error() method (DANIEL)
 
 * New "flat" file format: adapt WriterYODA and fill ReaderYODA. (HH)
   Need to persist the whole-histo Dbn1D/Dbn2Ds, and over/underflows.
 
-* WriterFlat and ReaderFlat, for Scatter2D only. (HH)
+* WriterFlat and ReaderFlat, for Scatter2D representations only. (HH)
 
-* When we have Dbn2D: template the Axis1D and use Dbn1D for Histo1D and Dbn2D
-  for Profile1D, then implement under-/overflow in Profile1D and write it out
-  in WriterYODA.  (HH)
-
-* Histo1D::integral(bin1id, bin2id) (AB)
 
 
 NEXT
 
-* Slicing and marginalising of 2D histos and profiles.
+* Use Weights objects in Dbn1D / Dbn2D (AB)
 
-* Rebinning:
-  merge of 2 adjacent bins -- no gaps allowed
-  merges of n adjacent bins (via iterator ranges)
-  global rebinning by integer factor (on widths or on bin groups?)
+* Add a Counter type (mostly a UI/persistency wrapper on Dbn1D) (AB)
 
-* Implement _setstate for Histo1D and Profile1D.
-
-* Test that a y-binned Histo2D has the same per-y-column stats as an
-  equivalently x-binned Profile1D. (MICHAL)
-
-
-
-* Counter type (mostly a UI/persistency wrapper on Dbn1D)
-
-* Axis::scale -> scaleX, scaleY, scaleXY to Scatter2D.
+* Conversion functions to build Histo1D and Profile1D objects for slicings and
+  marginalisations along both X and Y directions of 2D histos. Throw an
+  exception if binnings are not complete grids. (MICHAL)
+  (done)
 
 * Profile2D & Dbn3D
+
+* Perhaps ProfileBin1D would be better if it contained a Dbn1D rather than two
+  Dbn2Ds, since the over/underflow now *are* Dbn2Ds...
 
 * Error correlations?
 
@@ -72,6 +72,7 @@ AND AFTER THAT...
 
 * Write scripts to convert between data formats and to plot results.
 
+* Template all classes on floating point type (default to double)
 
 
 PERSISTENCY

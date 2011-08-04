@@ -1,0 +1,24 @@
+#! /usr/bin/env bash 
+#$ -S /bin/bash
+#PBS -N prof-@PROF_JOB
+
+source $HOME/.bashrc
+
+echo "Creating output directory..."
+mkdir -p "@PROF_OUTDIR/@PROF_JOB"
+## Change to output directory so the jobs don't interfere with each other (e.g. ipolhisto/)
+echo "Changing to output directory"
+cd "@PROF_OUTDIR/@PROF_JOB"
+
+echo "Running Professor tuning command"
+
+prof-tune \
+  --refdir @PROF_REFDIR \
+  --obsfile @PROF_OBSFILE \
+  --outfile @PROF_OUTDIR/@PROF_JOB/results.pkl \
+  --runsfile @PROF_RUNSFILE \
+  --ipoldir @PROF_IPOLDIR \
+  @PROF_ADD_OPTS \
+  &> @PROF_OUTDIR/@PROF_JOB/professor.log
+
+exit 0

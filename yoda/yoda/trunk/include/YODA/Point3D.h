@@ -52,7 +52,7 @@ namespace YODA {
       _ez = std::make_pair(ezminus, ezplus);
     }
     
-    //Assymetric Errors given as vectors:
+    /// Assymetric Errors given as vectors:
     Point3D(const double& x, 
             const double& y, 
             const double& z,
@@ -83,14 +83,23 @@ namespace YODA {
     /// Set y value
     void setY(double y) { _y = y; }
 
-    //Get z value
+    /// Get z value
     double z() const { return _z;}
 
-    //Set z value
+    /// Set z value
     void setZ(double z) { _z = z;}
     //@}
 
+    ///Scaling
+    void scale(double scaleX, double scaleY, double scaleZ) {
+        setX(x()*scaleX);
+        setY(y()*scaleY);
+        setZ(z()*scaleZ);
 
+        setXErr(xErrMinus()*scaleX, xErrPlus()*scaleX);
+        setYErr(yErrMinus()*scaleY, yErrPlus()*scaleY);
+        setZErr(zErrMinus()*scaleZ, zErrPlus()*scaleZ);
+    }
     /// @name x error accessors
     //@{
 
@@ -196,6 +205,57 @@ namespace YODA {
 
     //@}
 
+    /// @name z error accessors
+    //@{
+
+    /// Get z-error values
+    const std::pair<double,double>& zErrs() const {
+      return _ez;
+    }
+
+    /// Get negative z-error value
+    const double zErrMinus() const {
+      return _ez.first;
+    }
+
+    /// Get positive z-error value
+    const double zErrPlus() const {
+      return _ez.second;
+    }
+
+    /// Get average z-error value
+    double zErrAvg() const {
+      return (_ez.first + _ez.second)/2.0;
+    }
+
+    /// Set szmmetric z error
+    void setZErr(double ez) {
+      _ez.first = ez;
+      _ez.second = ez;
+    }
+
+    /// Set aszmmetric z error
+    void setZErr(std::pair<double,double> ez) {
+      _ez = ez;
+    }
+
+    /// Set aszmmetric z error
+    void setZErr(double ezminus, double ezplus) {
+      _ez.first = ezminus;
+      _ez.second = ezplus;
+    }
+
+    /// Get value minus negative z-error
+    const double zMin() const {
+      return _z - _ez.first;
+    }
+
+    /// Get value plus positive z-error
+    const double zMax() const {
+      return _z + _ez.second;
+    }
+
+    //@}
 
   protected:
 
@@ -218,46 +278,56 @@ namespace YODA {
   /// @name Comparison operators
   //@{
 
-  /// Equality test of x characteristics only
-  /// Why only X?
+  /// Equality operator
   inline bool operator==(const  Point3D& a, const YODA::Point3D& b) {
-    const bool same_val =  fuzzyEquals(a.x(), b.x());
-    const bool same_eminus =  fuzzyEquals(a.xErrMinus(), b.xErrMinus());
-    const bool same_eplus =  fuzzyEquals(a.xErrPlus(), b.xErrPlus());
+    const bool same_val =  fuzzyEquals(a.x(), b.x()) && fuzzyEquals(a.y(), b.y());
+    const bool same_eminus =  fuzzyEquals(a.xErrMinus(), b.xErrMinus()) && 
+                              fuzzyEquals(a.yErrMinus(), b.yErrMinus());
+    const bool same_eplus =  fuzzyEquals(a.xErrPlus(), b.xErrPlus()) &&
+                             fuzzyEquals(a.yErrPlus(), b.yErrPlus());
     return same_val && same_eminus && same_eplus;
   }
 
-  /// Equality test of x characteristics only
+  /// Inequality operator
   inline bool operator!=(const  Point3D& a, const YODA::Point3D& b) {
     return !(a == b);
   }
 
-  /// Less-than operator used to sort bins by x-ordering
+  /// Less-than operator used to sort bins by x-first ordering
   inline bool operator<(const  Point3D& a, const YODA::Point3D& b) {
     if (! fuzzyEquals(a.x(), b.x())) {
       return a.x() < b.x();
     }
+    if(!fuzzyEquals(a.y(), b.y())) {
+      return a.y() < b.y();
+    }
     if (! fuzzyEquals(a.xErrMinus(), b.xErrMinus())) {
       return a.xErrMinus() < b.xErrMinus();
+    }
+    if(!fuzzyEquals(a.yErrMinus(), b.yErrMinus())) {
+      return a.yErrMinus() < b.yErrMinus();
     }
     if (! fuzzyEquals(a.xErrPlus(), b.xErrPlus())) {
       return a.xErrPlus() < b.xErrPlus();
     }
+    if(!fuzzyEquals(a.yErrPlus(), b.yErrPlus())) {
+      return a.yErrPlus() < b.yErrPlus();
+    }
     return false;
   }
 
-  /// Less-than-or-equals operator used to sort bins by x-ordering
+  /// Less-than-or-equals operator
   inline bool operator<=(const  Point3D& a, const YODA::Point3D& b) {
     if (a == b) return true;
     return a < b;
   }
 
-  /// Greater-than operator used to sort bins by x-ordering
+  /// Greater-than operator
   inline bool operator>(const  Point3D& a, const YODA::Point3D& b) {
     return !(a <= b);
   }
 
-  /// Greater-than-or-equals operator used to sort bins by x-ordering
+  /// Greater-than-or-equals operator
   inline bool operator>=(const  Point3D& a, const YODA::Point3D& b) {
     return !(a < b);
   }

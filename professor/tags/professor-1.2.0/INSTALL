@@ -1,0 +1,133 @@
+Installing the Professor system
+===============================
+
+.. note::
+
+    If you have access to the CERN AFS file system you can try to use
+    a version of Professor installed under
+    :file:`/afs/cern.ch/sw/lcg/external/MCGenerators/professor`.
+
+
+Required packages
+-----------------
+
+In order to use the Professor tools you will need the following external
+packages:
+
+`Numpy <http://numpy.scipy.org>`_
+    The numpy datatypes are used for most numerical calculations.
+
+`SciPy <http://www.scipy.org>`_
+    The SciPy implementation of the matrix pseudo-inversion is used.
+
+`PyMinuit <http://code.google.com/p/pyminuit/>`_ or `PyMinuit2 <http://code.google.com/p/pyminuit2/>`_
+    PyMinuit is used to interface with the well known MINUIT package.
+
+`Matplotlib <http://matplotlib.sourceforge.net>`_
+    Most of the plotting tools require matplotlib to produce output.
+
+    :program:`prof-I` requires the `wxWindows <http://www.wxwindows.org>`_
+    backend for matplotlib.
+
+Except for PyMinuit, all current Linux distributions should come with recent
+enough versions of these packages. Make sure that you get the correct version of
+PyMinuit: PyMinuit2 is probably the version you want, which connects to a recent
+version of ROOT. You may have to persuade its build system to find your ROOT
+system's header files if they are not in a standard location.
+
+Many Professor features also require the Python packages and plotting scripts
+which come with the `Rivet <http://projects.hepforge.org/rivet/>`_ MC
+validation toolkit. As Rivet is anyway the normal source of input data for
+Professor tuning, we highly recommend that you install Rivet. Detailed
+instructions are available on the Rivet website, and there is a handy
+bootstrapping script available to get everyting up and running as quickly as
+possible. Sorry, Professor doesn't have a clever script like that!
+
+
+Installing Professor
+--------------------
+
+There is not currently a Professor release tarball: you should get the code from
+SVN by e.g.::
+
+    svn checkout http://svn.hepforge.org/professor/tags/professor-1.0.1
+
+or, if you want to get the development version::
+
+    svn checkout http://svn.hepforge.org/professor/trunk/ professor-trunk
+
+This will create a directory like :file:`professor-XXX`, containing a
+:file:`bin` and :file:`professor` directory. The :file:`bin` directory contains
+all scripts that come with Professor (and that are prefixed by `prof-`). The
+:file:`professor` directory contains the library modules that are shared by the
+Professor scripts.
+
+To make the Professor scripts and modules available you have several
+options:
+
+1. Quick and dirty: Add the :file:`bin` directory to your :envvar:`$PATH` and
+   :file:`professor` to your :envvar:`$PYTHONPATH` by doing::
+
+       export PATH="/path/to/trunk/bin:$PATH"
+       export PYTHONPATH="/path/to/professor-XXX:$PYTHONPATH"
+
+   in your shell (for C-shells the above commands must be modified).
+   This should allow you to run the Professor scripts from the command
+   line, e.g.::
+
+       prof-tune -h
+
+   To make this persistent between shell sessions you can add the above
+   lines to your shell's runtime configuration, e.g.
+   :file:`$HOME/.bashrc`.
+
+   The down-side of this is that your environment variables might get a
+   bit overloaded and on a multi-user system this has to be done by
+   every user.
+
+2. More systematic: Alternatively, you can use the :command:`setup.py`
+   script that is distributed with Professor and offers the usual
+   options, try::
+
+       ./setup.py --help
+
+   in the :file:`trunk` directory.
+
+   :option:`--prefix` allows you to give a directory under which
+   Professor is installed similar to the usual `.configure && make &&
+   make install` triple jump, e.g.::
+
+      ./setup.py --prefix $HOME/local install
+
+   will install the scripts in :file:`$HOME/local/bin` and the modules
+   in :file:`$HOME/local/lib/python{XY}/site-packages/` where `XY` is
+   the Python version available at this instance.
+
+
+Programmable completion in `bash`
+---------------------------------
+
+Another useful installation detail is the :file:`prof-completion` file in the
+Professor source directory. This provides more intelligent command-line
+tab-completion for the Professor scripts in bash shell terminals, with awareness
+of script option flags and arguments. :file:`prof-completion` can be sourced
+explicitly with::
+
+    source prof-completion
+
+It will be installed into :file:`$prefix/etc/bash_completion.d` by installation
+method number 2 above, from where it may be automatically picked up by the bash
+shell programmable command-line completion system. As with all shell
+configurations, unless it is automatically read at shell initialisation or added
+to your :file:`$HOME/.bashrc` file, it will need to be explicitly sourced in
+each new terminal where you wish to get its benefits.
+
+   .. An interesting alternative to `install` is `develop`. This will
+   .. create files, that work as links to the scripts and
+   .. :file:`professor` directory at the right places. The benefit is that
+   .. when you update your local copy of :file:`trunk` by executing::
+
+   ..     svn update
+
+   .. in :file:`trunk`, the scripts in :file:`{PREFIX}/bin` and the library
+   .. modules are automatically updated as well.

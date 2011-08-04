@@ -3,20 +3,43 @@
 
 #include "YODA/Bin.h"
 #include "YODA/Dbn2D.h"
+#include "YODA/HistoBin1D.h"
 #include <string>
 #include <utility>
+#include <vector>
+using namespace std;
 
 namespace YODA {
 
     class Bin2D : public Bin {
     public:
-
-        Bin2D(double lowedgeX, double lowedgeY, double highedgeX, double highedgeY);
-        Bin2D(std::pair<std::pair<double, double>, std::pair<double, double> > edges);
-
-        virtual void reset();
-
         
+        /// Constructor that is mostly used in manual bin addition.
+        /** Mostly used when creating a bin manually
+          * since it requires the smallest amount 
+          * of infromation transferred. All 4 edges
+          * are then constructed from extremal points which coordinates
+          * are provided.
+          */
+        Bin2D(double lowedgeX, double lowedgeY, double highedgeX, double highedgeY);
+
+        /// A constructor usually used by functions creating Bins in bulk.
+        /** Since all the edges are provided by an external function
+          * it creates a Bin slightly faster (this claim is very weakly true).
+          * It is not suggested to use it if it is just needed to add few bins to 
+          * an already created Histo2D.
+          */
+        Bin2D(std::vector<std::pair<std::pair<double, double>, std::pair<double, double> > > edges);
+
+        Bin2D();
+
+        /// Resetter of all Bin data
+        virtual void reset();
+        
+        /// Scaling function.
+        void scale(double scaleX, double scaleY);
+        
+        /// What this and the following functions return should be self-evident.
         double lowEdgeX() const;
         double xMin() const { return lowEdgeX(); }
 
@@ -29,9 +52,6 @@ namespace YODA {
         double highEdgeY() const;
         double yMax() const { return highEdgeY(); }
 
-        std::pair<double, double> edgesX() const;
-        std::pair<double, double> edgesY() const;
-
         double widthX() const;
         double widthY() const;
         
@@ -39,35 +59,50 @@ namespace YODA {
         std::pair<double, double> midpoint() const;
 
 
-        //Now some distribution statistics:
+        /// Some distribution statistics:
         double xMean() const;
         double yMean() const;
-        std::pair<double, double> Mean() const;
 
         double xVariance() const;
         double yVariance() const;
-        std::pair<double, double> Variance() const;
 
         double xStdDev() const;
         double yStdDev() const;
-        std::pair<double, double> StdDev() const;
 
-        //Standar error, previously named StdError!
+        /// Standard error:
         double xStdErr() const;
         double yStdErr() const;
-        std::pair<double, double> StdErr() const;
 
 
-        //Some "raw distribution statistics"
+        /// Some "raw distribution statistics"
         unsigned long numEntries() const;
         double sumW() const;
         double sumW2() const;
         double sumWX() const;
         double sumWY() const;
         double sumWXY() const;
-        double sumX2() const;
-        double sumY2() const;
+        double sumWX2() const;
+        double sumWY2() const;
 
+        /// Setters
+        void setW(double sumW);
+        void setW2(double sumW2);
+        void setWX(double sumWX);
+        void setWY(double sumWY);
+        void setWX2(double sumWX2);
+        void setWY2(double sumWY2);
+        void setWXY(double sumWXY);
+
+        ///@name Transformers
+        //@{
+
+        /// Transform, taking X coordinates as a bin width
+        HistoBin1D transformX();
+
+        /// Transform, taking Y coordinates as bin width
+        HistoBin1D transformY();
+
+        /// Addition operators:
         Bin2D& operator += (const Bin2D&);
         Bin2D& operator -= (const Bin2D&);
 
@@ -75,19 +110,14 @@ namespace YODA {
         Bin2D& add(const Bin2D&);
         Bin2D& substract(const Bin2D&);
         
-        std::pair<double,double> _edgesX;
-        std::pair<double,double> _edgesY;
-        Dbn2D _xdbn;
+        std::vector<std::pair<std::pair<double,double>,std::pair<double,double> > > _edges;
+        Dbn2D _dbn;
 
     };
 
     Bin2D operator + (const Bin2D& a, const Bin2D& b);
     Bin2D operator - (const Bin2D& a, const Bin2D& b);
 
-    //Comparison functions that _may_ be used for sorting later, we will see...
-    inline bool operator<(const Bin2D& a, const Bin2D& b) {
-        if(a.edgesX().first == b.edgesX().first) return b.edgesY().first > a.edgesY().first;
-        return b.edgesX().first > a.edgesX().first;
 }
 
 

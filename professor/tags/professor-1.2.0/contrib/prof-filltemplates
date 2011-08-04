@@ -1,0 +1,158 @@
+#! /usr/bin/env python
+#"""Usage: %prog [options] <basedir> <templatefile> [<templatefile> ...]
+"""Usage: %prog [options] <BASEDIR> <TEMPLATEFILE>
+
+Walk through all subdirectories of BASEDIR (created by prof-scanparams),
+look for a used_params file and fill the given template file with the
+parameter values found.
+
+If a PREFIX is given in the options absolute paths are created following
+PREFIX/BASEDIR/SUBDIR, if PREFIX is omitted BASEDIR is turned into a
+absolute path by expanding ~username and shell variables.
+"""
+
+
+import os, sys, re
+
+
+import professor.user as prof
+from professor.tools import shell
+shell.usePrettyTraceback()
+
+PROGPATH = sys.argv[0]
+PROGNAME = os.path.basename(PROGPATH)
+
+from optparse import OptionParser
+try:
+    from Cheetah.Template import Template
+except ImportError, e:
+    sys.stderr.write(PROGNAME + " requires Cheetah (www.cheetahtemplate.org):\n");
+    sys.stderr.write("%s\n" % (e))
+    sys.exit(1)
+
+parser = OptionParser(usage=__doc__)
+parser.add_option("-o", "--outdir",
+        dest = "OUTDIR",
+        help = "directory where the filled templates are stored"
+               " [default: %default]")
+parser.add_option("-p", "--prefix",
+        dest = "PREFIX",
+        help = "prefix used to turn relative paths into absolute ones"
+        " (use this if the templates are not filled on the cluster machine)")
+parser.add_option("-a", "--extra-token",
+        dest = "EXTRATOKENS",
+        action = "append",
+        help = "Additional tokens to fill into the template. Name and"
+        " value are separated by an equals (\"=\"), e.g."
+        " SHERPABIN=/path/to/Sherpa . Can be can be specified multiple times"
+        " if multiple extra tokens are needed.")
+
+parser.set_defaults(
+        OUTDIR = "./",
+        PREFIX = None,
+        EXTRATOKENS = []
+        )
+prof.addLoggingCLOptions(parser)
+
+opts, args = parser.parse_args()
+prof.log.setPriority(opts)
+prof.writeGuideLine()
+
+if len(args) != 2:
+    sys.stderr.write(parser.format_help())
+    sys.stderr.write("\n\nBad number of arguments: Only basedir and one"
+            " template file can be given!\n")
+    sys.exit(1)
+
+
+## expand basedir to an absolute path
+basedir = args[0]
+# the local directory where we search for valid MC output directories
+localbase = os.path.expanduser(basedir)
+localbase = os.path.expandvars(localbase)
+localbase = os.path.abspath(localbase)
+
+if opts.PREFIX == None:
+    remotebase = localbase
+else:
+    # If basedir ends with a '/' basename will return an empty
+    # string. So remove this if necessary.
+    if basedir.endswith(os.path.sep):
+        basedir = basedir[:-1]
+    remotebase = os.path.join(opts.PREFIX, os.path.basename(basedir))
+
+# function that returns the (expected) path to a local used_params file for
+# a given run output directory name
+getParFilePath = lambda sdir: os.path.join(localbase, sdir, "used_params")
+
+# templfiles = args[1:]
+templfile = args[1]
+
+## check for valid sub directories
+valrundirs = []
+for rundir in os.listdir(localbase):
+    if not os.path.isdir(os.path.join(localbase, rundir)):
+        continue
+    pfile = getParFilePath(rundir)
+    if os.path.exists(pfile):
+        if os.access(pfile, os.R_OK):
+            prof.log.debug("appending rundir '%s'" % (rundir))
+            valrundirs.append(rundir)
+        else:
+            sys.stderr.write("Parameter file '%s' exists but cannot be"
+                             " read!\n" % (pfile))
+            sys.exit(1)
+
+## check output directory
+if not os.path.exists(opts.OUTDIR):
+    os.makedirs(opts.OUTDIR)
+elif not os.path.isdir(opts.OUTDIR):
+    sys.stderr.write("Given output directory '%s' is not a directory!\n" % (opts.OUTDIR))
+    sys.exit(1)
+else:
+    if not os.access(opts.OUTDIR, os.W_OK|os.X_OK):
+        sys.stderr.write("Given output directory '%s' has bad permissions!\n" % (opts.OUTDIR))
+        sys.exit(1)
+
+## check template
+if not os.access(templfile, os.R_OK):
+    sys.stderr.write("Cannot read template file '%s'!\n" % (templfile))
+    sys.exit(1)
+scriptbasename = os.path.basename(templfile)
+scriptbasename = re.sub(r"\.(template|tmpl|sh)*$", "", scriptbasename)
+template = Template.compile(file=templfile)
+# old stuff for multiple templates
+# templates = {}
+# for tfile in templfiles:
+#    #...
+#    templates[scriptbasename] = Template.compile(tfile)
+
+## load extra tokens
+extratokens = {}
+for etok in opts.EXTRATOKENS:
+    try:
+        name, value = etok.split("=")
+    except ValueError:
+        sys.stderr.write(parser.format_help())
+        sys.stderr.write()
+        sys.stderr.write("Bad extra token '%s'!" % etok)
+        sys.exit(1)
+    extratokens[name] = value
+
+i = 0
+for rundir in sorted(valrundirs):
+    tokens = extratokens.copy()
+
+    tokens["PROF_RUNOUTDIR"] = os.path.join(remotebase, rundir)
+    tokens["PROF_REFOUTDIR"] = os.path.join(remotebase, "ref")
+    tokens["PROF_PARAMS"] = prof.ParameterPoint.mkFromFile(getParFilePath(rundir)).asDict()
+    tokens["PROF_JOB"] = "prof%03d" % i
+    tokens["PROF_STDOUT"] = os.path.join(remotebase, rundir, tokens["PROF_JOB"] + ".log")
+    i += 1
+    scriptpath = os.path.join(opts.OUTDIR, "%s.job%s" % (scriptbasename, rundir))
+    f = open(scriptpath, "w")
+    prof.log.debug("Filling template for run dir '%s' with: %s" % (rundir, tokens))
+    tmpl = template(namespaces=[tokens])
+    f.write(str(tmpl))
+    f.close()
+prof.log.info("Created %i scripts, now qsub!" % (i))

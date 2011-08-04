@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+usage = """
+%prog [options] <parameterfile>
+
+This script produces a histogram file in flat format.
+The bincontents are calculated from bin-interpolations
+that may be created 'on the fly' or may be read from
+already existing interpolations.
+
+It is mandatory to specify a parameter file as such: \n
+\t PAR1    .5 
+\t PAR2    .6 \n
+The interpolation-values are being calculated for this
+point.
+        """
+import sys, logging
+from optparse import OptionParser
+from professor.tools import parameter
+from professor.rivetreader import readObservableFile
+from professor import rivetreader
+try:
+    from IPython.Shell import IPShellEmbed
+    ipshell = IPShellEmbed([])
+except:
+    print "Ipython shell not available."
+
+parser = OptionParser(usage=usage)
+
+parser.add_option("-m", "--mcdir", dest="MCDIR",
+                  default="mc", help="directory with MC runs")
+parser.add_option("-r", "--refdir", dest="REFDIR",
+                  default="ref", help="directory with reference histos")
+parser.add_option("-i", "--ipoldir", dest="IPOLDIR",
+                  default=None, help="directory with previously calculated"
+                  + " interpolations")
+parser.add_option("-o", "--output", dest="OUTPUT",
+                  default="ipolhisto", help="output filename")
+parser.add_option("-O", "--observables", dest="OBSERVABLES",
+                  default=None, help="observable-file")
+parser.add_option("-W", "--weights", dest="WEIGHTS",
+                  default=None, help="observable/weight-file")
+parser.add_option("-R", "--runs", dest="RUNS",
+                  default=None, help="file of runs to use (yet unused feature)")
+(opts, args) = parser.parse_args()
+
+# check if a parameter file was specified
+#if len(args) >1:
+    #logging.error("only one parameter file can be specified")
+    #sys.exit(2)
+if len(args) ==0:
+    logging.error("need to specifiy at least one parameter file")
+    sys.exit(2)
+
+# TODO: include check, that parameters in param file are the same
+# as in the mc/XXX/used_params - files
+
+# build tuning data object
+# TODO: maybe there is a way to avoid this
+tundat = rivetreader.getTuningData(opts.REFDIR, opts.MCDIR, opts.IPOLDIR)
+
+# check if an observable file was specified
+if opts.OBSERVABLES is None:
+    observables = tundat.getMCHistoNames()
+else:
+    observables = readObservableFile(opts.OBSERVABLES).keys()
+
+# check if a runs file was specified
+# TODO: make this actually work
+if opts.RUNS is None:
+    std = tundat.getTuneData(tundat.getRunNums(), observables)
+else:
+    std = tundat.getTuneData(opts.RUNS, observables)
+
+# apply weight-dict if supplied
+if opts.WEIGHTS is not None:
+    weights = readObservableFile(opts.WEIGHTS)
+    for i in observables:
+        if not i in weights.keys():
+            weights[i]=0
+    std.applyObservableWeightDict(weights)
+
+# create unique filename based on the name of the parameter file
+for i in args:
+    try:
+        params = parameter.readParameterFile(i)
+        outname = opts.OUTPUT + "_" + i.split("/")[-1] + ".dat"
+        f = open(outname,'w')
+        for i in sorted(observables):
+        #for i in sorted(std.getObservables()):
+            f.write(std.getInterpolationHisto(i, params, tundat.getTitle(i)).asFlat() + '\n\n')
+        f.close()
+        logging.info("Written interpolation histos to %s"%outname)
+    except:
+        logging.warning("could not process %s"%i)
+        continue

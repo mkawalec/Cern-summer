@@ -8,6 +8,7 @@
 
 #include "YODA/AnalysisObject.h"
 #include "YODA/ProfileBin1D.h"
+#include "YODA/Dbn2D.h"
 #include "YODA/Axis1D.h"
 #include "YODA/Exceptions.h"
 #include <vector>
@@ -22,7 +23,7 @@ namespace YODA {
 
 
   /// Convenience typedef
-  typedef Axis1D<ProfileBin1D> Profile1DAxis;
+  typedef Axis1D<ProfileBin1D, Dbn2D> Profile1DAxis;
 
 
   /// A one-dimensional profile histogram.
@@ -146,22 +147,22 @@ namespace YODA {
     }
 
     /// Access underflow (non-const version)
-    Dbn1D& underflow() {
+    Dbn2D& underflow() {
       return _axis.underflow();
     }
 
     /// Access underflow (const version)
-    const Dbn1D& underflow() const {
+    const Dbn2D& underflow() const {
       return _axis.underflow();
     }
 
     /// Access overflow (non-const version)
-    Dbn1D& overflow() {
+    Dbn2D& overflow() {
       return _axis.overflow();
     }
 
     /// Access overflow (const version)
-    const Dbn1D& overflow() const {
+    const Dbn2D& overflow() const {
       return _axis.overflow();
     }
 
@@ -172,6 +173,8 @@ namespace YODA {
 
     /// @name Whole histo data
     //@{
+
+    /// @todo Add integrals? Or are they too ambiguous to make a core function?
 
     /// Get sum of weights in histo.
     double sumW(bool includeoverflows=true) const;
@@ -208,7 +211,7 @@ namespace YODA {
     //@{
 
     /// The bins contained in this profile histogram
-    Axis1D<ProfileBin1D> _axis;
+    Axis1D<ProfileBin1D, Dbn2D> _axis;
 
     //@}
 

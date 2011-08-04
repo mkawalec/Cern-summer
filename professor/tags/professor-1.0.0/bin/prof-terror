@@ -1,0 +1,139 @@
+#! /usr/bin/env python
+
+"""
+%prog [options] <resultsfile>
+
+This script is intended for the estimation of tuning errors. It samples
+parameter points from within a k-sigma ellipsis defined by the covariance matrix
+of a MinimizationResult.
+
+TODO:
+
+ * Add error-tunes, i.e. 2N tunes at the principle 1 sigma points on the Minuit
+   ellipsoid. --->HS: This is taken care of in the error-tunes, isn't it?
+ * Rename "stat" and "sys" to match the paper convention... these are misleading names.
+ * Add "combined error", i.e. current "stat" and "sys" errors combined.
+ * Extend error tunes to combined error?
+"""
+
+import numpy
+import os, sys
+
+import professor.user as prof
+
+
+## Try to enable ipython traceback printing
+from professor.tools import shell
+shell.usePrettyTraceback()
+shell.setProcessName("prof-terror")
+
+
+
+## Parse command line args
+from optparse import OptionParser
+parser = OptionParser(usage=__doc__, version=prof.version)
+parser.add_option("-n", "--npoints", dest="NPOINTS",
+                  default=3, help="Number of points to sample")
+parser.add_option("-o", "--outdir", dest="OUTDIR",
+                  default="ipolhisto", help="output directory")
+parser.add_option("-c", "--combined", dest="COMBINED", action="store_true",
+                  default=False, help="Store used_params files of the minima"
+                  " found in a result list")
+
+## Add standard logging control
+prof.addLoggingCLOptions(parser, logoswitch=True)
+
+opts, args = parser.parse_args()
+
+
+## Write usage messages
+prof.log.setPriority(opts)
+if opts.SHOW_LOGO:
+    prof.writeLogo()
+prof.writeGuideLine()
+
+
+## TODO: move to prof.tools.eigen
+def getSigmasAndRotationMatrix(res):
+    """
+    Calculate the eigen-decomposition of a (covariance) matrix
+    M = T^{-1} S T and return the Eigenvalues S and the rotation-matrix T.
+    """
+    from professor.tools import stats, eigen
+    if type(res) == prof.ResultList:
+        covmat = stats.convertCovMatToArray(res.getSampleCovMat())[0]
+    elif type(res) == prof.MinimizationResult:
+        covmat = res.covariance
+    else:
+        print "res is neither a ResultList nor a MinimizationResult"
+        sys.exit(1)
+    T_inv, S, T = eigen.eigenDecomposition(covmat)
+    return S, T
+
+def stretchSphereVector(vector, S):
+    """ Transform a vector to an ellipsis in major axes representation."""
+    onellipse = []
+    for num, x in enumerate(vector):
+        onellipse.append(x*numpy.sqrt(S[num]))
+    return onellipse
+
+def saveParams(fname, names, values):
+    """ Write out params to a file."""
+    f = open(fname, "w")
+    for num, name in enumerate(names):
+        f.write("%s   %f\n"%(name, values[num]))
+    f.close()
+
+
+### This produces opts.NPOINTS points randomly sampled from the d-dimensional
+### Standard-Gaussian
+rlist = prof.ResultList.mkFromPickle(args[0])
+prof.log.info("Read minimization result(s) from %s." % args[0])
+res = rlist[0]
+p0 = res.values
+
+if len(args) == 2:
+    res = prof.ResultList.mkFromPickle(args[1])
+    if len(res) < 2:
+        prof.log.error("Covmat. calc. from sample needs more than one minimization result.")
+        sys.exit(1)
+
+
+## See if we want the combined uncerainties, default is the statistical sort
+## of point-sampling for ONE particular minimisation results's covariance matrix
+if not opts.COMBINED:
+    Sigmas, T = getSigmasAndRotationMatrix(res)
+    d = len(Sigmas)
+
+    # Generate ranom points in d dimensions
+    thePoints = numpy.random.randn(int(opts.NPOINTS), d)
+
+    ellipsis = []
+
+    # This stretches the random points to be effectively sampled from an ellipsis
+    import scipy
+    for i in thePoints:
+        ellipsevector = stretchSphereVector(i, Sigmas)
+        rotatedellipsepoint = T*(scipy.matrix(ellipsevector).transpose())
+        ellipsis.append(numpy.array(rotatedellipsepoint)[:,0] + p0)
+
+## This does the combined uncertainty estimate coming from many minimisation results
+else:
+    ellipsis = [R.values for R in rlist]
+
+## Check if output directory exists -- create it otherwise
+if not os.path.exists(opts.OUTDIR):
+    os.mkdir(opts.OUTDIR)
+    prof.log.debug("Created folder %s."%opts.OUTDIR)
+
+## Create one subfolder in the output directory and save the corresponding
+## parameter files
+for i in xrange(len(ellipsis)):
+    ioutdir = os.path.join(opts.OUTDIR, str(i))
+    if not os.path.exists(ioutdir):
+        os.mkdir(ioutdir)
+        saveParams(os.path.join(ioutdir, "used_params"), rlist.getParamNames(), ellipsis[i])
+
+prof.log.info("Done! Written %i parameter-points to %s." % (len(ellipsis), opts.OUTDIR))
+prof.log.info("Use prof-ipolhistos, flat2aida (rename AIDA files to out.aida)")
+prof.log.info("and prof-envelopes to create uncertainty band plots.")

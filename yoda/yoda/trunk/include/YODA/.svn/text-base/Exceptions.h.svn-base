@@ -28,6 +28,12 @@ namespace YODA {
     RangeError(const std::string& what) : Exception(what) {}
   };
 
+  /// Error to throw when a slicing is requested on a non-slicable state of an object:
+  class GridError : public Exception {
+  public:
+    GridError(const std::string& what) : Exception(what) {}
+  };
+
 
   /// Error for places where it should not have been possible to get to!
   class LogicError : public Exception {

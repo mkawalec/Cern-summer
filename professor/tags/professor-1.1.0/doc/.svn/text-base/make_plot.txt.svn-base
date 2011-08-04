@@ -1,0 +1,454 @@
+make_plot.py
+============
+
+About
+-----
+
+`make_plot.py` reads histogram files in a simple text format and converts
+them into PostScript or PDF files. This is done by creating a LaTeX file
+and running `latex`, `dvips`, and maybe `ps2pdf`.
+
+Usage
+-----
+
+To run `make_plot.py` call
+
+--------------------
+ make_plot.py [options] file1 [file2 ...]
+--------------------
+
+where `file` is an ascii histogram file. The following options are supported:
+
+`\--verbose, -v`::
+    Be verbose.
+
+`\--minion`::
+    Use Adobe Minion Pro as font. Note: You need to set TEXMFHOME before.
+
+`\--pdf`::
+    Create PDF output instead of PostScript. This usually
+    results in a smaller file size.
+
+`\--nocleanup`::
+    Keep temporary directory and print its filename.
+
+
+Input Format
+------------
+
+The ascii files which can be read by `make_plot.py` are divided into sections.
+There are four types of sections which are called `PLOT`, `HISTOGRAM`,
+`FUNCTION`, and `SPECIAL`. Every file must contain exactly one `PLOT` section
+and at least one section of the other three types. There may be multiple
+`HISTOGRAM`, `FUNCTION`, and `SPECIAL` sections.
+
+Empty lines and lines starting with `#` are ignored, except for the section
+delimiters described below.
+
+PLOT
+~~~~
+
+The `PLOT` section starts with
+
+--------------------
+# BEGIN PLOT
+--------------------
+
+and ends with
+
+--------------------
+# END PLOT
+--------------------
+
+Every file must have exactly one `PLOT` section. In this section global
+parameters are specified, like the axis labels, the plot title, size, ...
+An empty `PLOT` section is perfectly legal, though.
+
+In this section the following parameters can be set:
+
+Titles, Labels
+^^^^^^^^^^^^^^
+
+--------------------
+Title=<title>
+--------------------
+The title of the plot.
+
+--------------------
+XLabel=<label>
+YLabel=<label>
+--------------------
+Axis labels for the x- and y-axis.
+
+--------------------
+XLabelSep=<distance>
+YLabelSep=<distance>
+--------------------
+Distance between the axis label and the plot in units of `\labelsep`.
+
+--------------------
+XMajorTickMarks=<last_digit>
+YMajorTickMarks=<last_digit>
+XMinorTickMarks=<nticks>
+YMinorTickMarks=<nticks>
+--------------------
+`make_plot.py` tries to guess the distance between tickmarks automatically.
+If you are not satisfied with its result, you can override this by setting
+`<last_digit>` to 1, 2, 5, or 10, and `<nticks>` to the number of minor ticks
+you like.
+_Note_: These options are not available for logarithmic axes.
+
+--------------------
+XCustomTicks=<list>
+YCustomTicks=<list>
+--------------------
+To specify ticks at arbitrary positions and/or with arbitrary labels.
+`<list>` is a tab separated list of format `value1 <tab> label1 <tab> value2
+<tab> label2 ...`.
+
+
+Axes
+^^^^
+
+--------------------
+LogX=<0|1>
+LogY=<0|1>
+--------------------
+Use a logarithmic x- or y-axis. Default is linear.
+
+--------------------
+XMin=<value>
+XMax=<value>
+YMin=<value>
+YMax=<value>
+ZMin=<value>
+ZMax=<value>
+--------------------
+Specify the plot range. By default the range is chosen such that all data
+is visible in linear plots. In logarithmic plots the automatic choice of `YMin`
+is limited to be not smaller than 2e-4*`YMax`, but manually you can specify
+any value.
+
+
+Sizes and Margins
+^^^^^^^^^^^^^^^^^
+
+--------------------
+PlotSize=<xsize,ysize>
+--------------------
+Size in x and y direction of the plot. This can be specified in any unit
+LaTeX understands.
+
+--------------------
+LeftMargin=<size>
+RightMargin=<size>
+TopMargin=<size>
+BottomMargin=<size>
+--------------------
+Distance between the plot and the paper edge.
+
+
+Legends
+^^^^^^^
+
+--------------------
+Legend=<0|1>
+--------------------
+Display a legend in the plot.
+
+--------------------
+CustomLegend=<text>
+--------------------
+Custom text that is added to the legend.
+
+--------------------
+LegendXPos=<pos>
+LegendYPos=<pos>
+--------------------
+Position of the legend within the plot. Units typically range between 0 and
+1.5.
+
+--------------------
+LegendOnly=<list>
+--------------------
+Whitespace separated list of IDs. These can be histograms or functions. The
+legend is only shown for the listed objects. Without this option, all plotted
+objects which have a title enter the legend.
+
+
+Plotting Options
+^^^^^^^^^^^^^^^^
+
+--------------------
+DrawOnly=<list>
+--------------------
+Whitespace separated list of histogram IDs. Only the histograms in this list
+are plotted, even if there are more histograms defined in the file. The
+histograms are plotted in the given order, so there are cases in which it makes
+sense to use `DrawOnly` together with all histogram IDs. This is especially
+useful for the `Stack` option.
+
+--------------------
+Stack=<list>
+--------------------
+Whitespace separated list of histogram IDs. The histograms will be added on top
+of each other. This is useful for example to compare data with background if
+the background has contributions from several histograms.
+
+--------------------
+DrawSpecialFirst=<0|1>
+DrawFunctionFirst=<0|1>
+--------------------
+By default the `SPECIAL` and `FUNCTION` sections are plotted after the
+histograms. With these options you can override that behaviour.
+
+
+Comparison Plots
+^^^^^^^^^^^^^^^^
+
+With the
+
+--------------------
+RatioPlot=1
+RatioPlotReference=<histogram_ID>
+--------------------
+options you can create ratio plots for two or more histograms. Note that you
+must specify your reference data ID. This option is used by the
+link:compare_histos.html[`compare_histos.py`] script.
+
+In ratio plots the following additional options are available and work in
+a similar way as their regular counterparts:
+
+--------------------
+RatioPlotYLabel=<label>
+RatioPlotYMin=<value>
+RatioPlotYMax=<value>
+RatioPlotYSize=<size>
+RatioPlotErrorBandColor=<color>
+--------------------
+
+
+HISTOGRAM
+~~~~~~~~~
+
+The `HISTOGRAM` section starts with
+
+--------------------
+# BEGIN HISTOGRAM <ID>
+--------------------
+
+and ends with
+
+--------------------
+# END HISTOGRAM
+--------------------
+
+There can be more than one `HISTOGRAM` section in a file. Histograms are
+identified by `<ID>` which can be any string _not_ containing whitespace.
+
+
+Data Format
+^^^^^^^^^^^
+
+Lines starting with a number (positive or negative) are interpreted as data.
+Each line specifies one bin. The fields in each line must be separated by tabs,
+not spaces (this needs to be fixes some day). For 1-dimensional histograms the
+format can be
+
+--------------------
+<lowerbinedge>  <upperbinedge>  <value>  <error>
+<lowerbinedge>  <upperbinedge>  <value>  <minuserror>  <pluserror>
+--------------------
+
+2-dimensional histograms are not well supported. They are plotted as colormap
+(error is ignored, and there is no range reference shown) and specified as
+
+--------------------
+<lowerxbinedge>  <upperxbinedge>  <lowerybinedge>  <upperybinedge>  <value>  <error>
+--------------------
+
+
+Titles
+^^^^^^
+
+--------------------
+Title=<title>
+--------------------
+Title of the histogram. This is used for the legend.
+
+
+Linestyles
+^^^^^^^^^^
+
+--------------------
+LineStyle=<style>
+--------------------
+Any linestyle that is understood by the LaTeX pstricks package, e.g. `solid`,
+`dotted`, `dashed`, `none`.
+
+--------------------
+LineColor=<color>
+--------------------
+Color of the line. Default is black, but any color that pstricks understands
+can be used, including constructions like `red!70!blue!20`.
+
+--------------------
+LineWidth=<width>
+--------------------
+Width of the line.
+
+--------------------
+LineDash=<dashstyle>
+--------------------
+If `LineStyle` is set to `dashed`, you can specify the dash style with this
+option. Anything that is understood by pstrick's `dash=...` option is valid.
+An example for a dash-dotted line is `LineDash=3pt 3pt .8pt 3pt`.
+
+
+Fillstyles
+^^^^^^^^^^
+
+--------------------
+FillStyle=<style>
+FillColor=<color>
+--------------------
+To fill the area below a histogram, set `FillStyle` and `FillColor` to
+something pstricks understands. Examples for the style are `solid` or `vlines`.
+
+--------------------
+HatchColor=<color>
+--------------------
+The color of a hatch pattern used for filling the area below a histogram. This
+is used for example when you use `vlines` as style.
+
+
+Data Points
+^^^^^^^^^^^
+
+--------------------
+ErrorBars=<0|1>
+--------------------
+Turn on error bars.
+
+--------------------
+PolyMarker=<dotstyle>
+--------------------
+The marker style of the points. Any dot style which is understood by pstricks
+is valid, e.g. `*`, `o`, `triangle`, `diamond`, ...
+
+--------------------
+DotSize=<size>
+DotScale=<factor>
+--------------------
+The size of the markers. With `DotSize` you can specify the absolute size, e.g.
+in units of `pt`, while `DotScale` is a relative measure with respect to the
+default size. 
+
+
+Normalization, Rebinning
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+--------------------
+NormalizeToIntegral=<1|0>
+NormalizeToSum=<1|0>
+Scale=<factor>
+--------------------
+Normalize the histogram to the integral, to the sum of entries, or scale it by
+some arbitrary factor. If normalization and a scale factor are given, the scale
+factor is applied after normalization. This is useful for stacking histograms
+when the ratios are known.
+
+--------------------
+Rebin=<nbins>
+--------------------
+Rebin the histogram. Starting with the lowest bin <nbins> bins are combined
+into a new bin. If the number of bins in the histogram is not a multiple of
+<nbins>, the remaining bins at the upper histogram end are silently ignored
+(i.e. if the original histogram has 10 bins and <nbins> is 3, the plotted
+histogram shows three bins combining the bins 1--9 of the original histogram).
+
+
+FUNCTION
+~~~~~~~~
+
+`make_plot.py` can draw arbitrary functions. These functions are defined as
+python code sniplets which are evaluated by `make_plot.py`. The code sniplet
+must come after all other options in a `FUNCTION` section and are preceded by
+`Code=` on a single line. An example `FUNCTION` section might look like this:
+
+--------------------
+# BEGIN FUNCTION f_cc
+LineColor=red
+Code=
+p0=16.4
+p1=1.25
+p2=0.9832
+from scipy.special import erf
+x-=0.5
+if x<=0:
+    return 0
+else:
+    return .5*p2*(1.+erf( (x-p0)/sqrt(x*p1) ))
+# END FUNCTION
+--------------------
+
+Common Options with HISTOGRAM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following options have the same meaning as in the `HISTOGRAM` section:
+
+--------------------
+Title=<title>
+LineStyle=<style>
+LineColor=<color>
+LineWidth=<width>
+LineDash=<dashstyle>
+FillStyle=<style>
+FillColor=<color>
+HatchColor=<color>
+--------------------
+
+Function Range
+^^^^^^^^^^^^^^
+
+You can limit the plot range of functions by specifying
+
+--------------------
+XMin=<value>
+XMax=<value>
+--------------------
+
+
+SPECIAL
+~~~~~~~
+
+The `SPECIAL` sections are used to include any custom pstricks code. This is
+useful for drawing arrows and lines, put text at any position into the plot,
+etc. The default coordinate system is defined to be `(0,0)` at the lower left
+and `(1,1)` at the upper right corner of the plot. By putting the
+`\physicscoor` command in front of a coordinate pair, these coordinates are
+interpreted not in the pstricks coordinate system, but in the physics
+coordinate system of the plot, which is useful e.g. for marking cut values in a
+plot.
+
+Hint: If you want to clip your `SPECIAL` code to the plot area, you can use
+--------------------
+\psclip{\psframe[linewidth=0, linestyle=none](0,0)(1,1)}
+   ...
+\endpsclip
+--------------------
+
+An example of a `SPECIAL` section might look like this:
+
+--------------------
+# BEGIN SPECIAL
+\psclip{\psframe[linewidth=0, linestyle=none](0,0)(1,1)}
+\psline[linewidth=1.2pt,linecolor=red]{<-}\physicscoor(2.83,2)\physicscoor(2.83,18)
+\uput{4pt}[180]{0}\physicscoor(2.83,12){observed}
+\psline[linewidth=0.8pt,linecolor=red,linestyle=dashed]\physicscoor( 3.17,0)\physicscoor( 3.17,28.14)
+\psline[linewidth=0.8pt,linecolor=red,linestyle=dashed]\physicscoor(-3.59,0)\physicscoor(-3.59,28.14)
+\endpsclip
+# END SPECIAL
+--------------------
+
+

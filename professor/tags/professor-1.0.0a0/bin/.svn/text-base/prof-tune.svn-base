@@ -1,0 +1,378 @@
+#! /usr/bin/env python
+
+"""
+%prog --datadir DATADIR [--ipoldir IPOLDIR] --weights OBSFILE [--runsfile RUNSFILE]
+
+%prog --refdir REFDIR --ipoldir IPOLDIR --weights OBSFILE [--runsfile RUNSFILE]
+
+Minimise a goodness of fit (GoF) measure using pre-built MC-interpolations from
+IPOLDIR against reference data in REFDIR. The MC-interpolations must be created
+with prof-interpolate before running %prog.
+
+If only the DATADIR variable is used to specify input file locations, it is
+assumed that the saved interpolations are to be found in DATADIR/ipol, and that
+the reference data is in DATADIR/ref. The --refdir and --ipoldir switches can be
+used to specify the information explicitly or to override one of the guesses
+made using the --datadir value.
+
+The same format of observable weights file (and indeed same file!) as used for
+prof-interpolate can be used to specify the observable or bin/range-wise weights
+which will enter into the GoF calculation. However, it is of course necessary
+that the bins for which weights are requested exist in the stored
+interpolations: hence the observables specified at this stage should be a subset
+of those used for prof-interpolate. To build output histograms but not include
+an observable in the optimisation measure, use a weight of 0.
+
+The RUNSFILE is used to restrict the run combinations for which optimisations
+will be calculated. As for the observables specified in the weights file,
+interpolations must exist for the requested run combinations. If unspecified, it
+will be assumed that a file called runcombs.dat exists and is to be used.
+
+TODO:
+  * read in histogram titles
+  * check result is in-/outside limits
+  * use limits dynamically determined from runcomb
+  * threading?? Just use prof-batch tune
+"""
+
+import sys, os
+import professor.user as prof
+
+
+# ## Try to enable ipython traceback printing
+# from professor.tools import shell
+# shell.usePrettyTraceback()
+
+
+## Try to rename the process on Linux
+try:
+    import ctypes
+    libc = ctypes.cdll.LoadLibrary('libc.so.6')
+    libc.prctl(15, 'prof-tune', 0, 0, 0)
+except Exception:
+    pass
+
+
+## Set up signal handling
+import signal
+global RECVD_KILL_SIGNAL
+RECVD_KILL_SIGNAL = None
+def handleKillSignal(signum, frame):
+    """Declare us as having been signalled, and return to default handling
+    behaviour.
+    """
+    prof.log.critical("Signal handler called with signal " + str(signum))
+    prof.log.critical("Waiting for this minimization to finish...")
+    global RECVD_KILL_SIGNAL
+    RECVD_KILL_SIGNAL = signum
+    signal.signal(signum, signal.SIG_DFL)
+## Signals to handle
+signal.signal(signal.SIGTERM, handleKillSignal);
+signal.signal(signal.SIGHUP,  handleKillSignal);
+signal.signal(signal.SIGINT,  handleKillSignal);
+signal.signal(signal.SIGUSR2, handleKillSignal);
+
+
+## Build command-line options parser
+import optparse
+parser = optparse.OptionParser(usage=__doc__)
+
+parser.add_option("-d", "--debug", dest = "debug", default=False, action = "store_true",
+                  help="Turn debug logging on and stop after"
+                       " 3*len(spmethods) minimisations.")
+
+group = optparse.OptionGroup(parser, "Tuning")
+parser.add_option("-R", "--runsfile", "--runcombs", dest = "runsfile",
+                  default="runcombs.dat",
+                  help="File with run combinations to use: space separated, 1 "
+                  "combination per line. [default: %default]")
+group.add_option("--outfile", dest = "outfile", default="results.pkl",
+                 help="Store results in here. [default: %default]")
+group.add_option("--snapshot", dest = "snapshot", action = "store_true",
+                 default=False,
+                 help="Save snapshot result files during minimization every"
+                      " 10 results. [default is off]")
+group.add_option("--histo-outdir", dest = "histooutdir",
+                 default="./ipolhistos",
+                 help="Store *.dat files with histogram data from the"
+                      " interpolations at the predicted minima."
+                      " [default: %default]")
+group.add_option("-I", "--no-ipolhistos", dest = "saveipolhistos",
+                 action = "store_false", default=True,
+                 help="Switch of interpolation histogram storing.")
+parser.add_option_group(group)
+
+mingroup = optparse.OptionGroup(parser, "Minimizer")
+mingroup.add_option("--minimizer", choices=("pyminuit", "scipy"),
+                    default="pyminuit",
+                    help="Select the minimizer to use (pyminuit|scipy)"
+                         " [default: %default]")
+mingroup.add_option("--minos", dest="useminos", action="store_true",
+                    default=False,
+                    help="When using Minuit, use MINOS instead of MIGRAD to"
+                         " estimate the parameter errors.")
+mingroup.add_option("--migrad", dest="useminos", action="store_false",
+                    default=False,
+                    help="When using Minuit, use MIGRAD to estimate the"
+                         " parameter errors (default).")
+mingroup.add_option("--print-minuit", dest="printminuit", type="choice",
+                    choices=("0","1","2","3"), default="0",
+                    help="When using Minuit, set printMode to the given"
+                         " value. [default: %default]")
+mingroup.add_option("--limits", dest="limits", default=None,
+                    help="File with parameter limits for Minuit. E.g. the"
+                         " file used to create the MC sample points.")
+mingroup.add_option("--spmethods", "--start-points",
+                    dest="startpointmethods", default="center",
+                    help="Comma separated list with minimisation starting"
+                         " point methods.")
+mingroup.add_option("--manual-sp", "--manual-startpoint",
+                    dest="manualstartpoint",
+                    help="Comma separated list of parameter name - value"
+                         " pairs to be used as manual startpoints when"
+                         " spmethod 'manual' is selected. Name and value are"
+                         " separated by a equals ('=').  E.g."
+                         " PARJ(21)=1.2,PARJ(22)=2.4 . Unspecified Parameters"
+                         " are chosen randomly.")
+mingroup.add_option("--fixed-parameters", dest="fixedparameters",
+                    help="Comma separated list of parameter name - value"
+                         " pairs with parameter values to be fixed during"
+                         " minimization. Format is the same as with"
+                         " '--manual-startpoint', e.g."
+                         " PARJ(21)=1.2,PARJ(22)=2.4 . NB: Only supported by"
+                         " pyminuit!")
+parser.add_option_group(mingroup)
+
+
+## Add standard Prof options
+prof.DataProxy.addDataCLOptions(parser, mc=False, ref=True, ipol=True, scan=False)
+prof.addIpolCLOptions(parser)
+
+## Parse arguments (and correct type on Minuit log level)
+opts, args = parser.parse_args()
+opts.printminuit = int(opts.printminuit)
+
+## Set up logging level and print initial messages
+prof.log.setPriority(opts)
+prof.writeLogo()
+prof.writeGuideLine()
+
+## Get a DataProxy object (core object for tuning)
+dataproxy = prof.DataProxy.fromCLOptions(opts)
+
+
+## Check data directories.
+prof.log.debug("Ref dir: %s" % dataproxy.refpath)
+prof.log.debug("Ipol dir: %s" % dataproxy.ipolpath)
+
+
+## Check histo output directory.
+if opts.saveipolhistos:
+    if os.path.exists(opts.histooutdir):
+        try:
+            prof.IOTests.WriteDir(opts.histooutdir)
+        except prof.IOTestFailed:
+           prof.log.error("Output directory for interpolation histograms"
+                          " is not  a directory or has bad permissions:"
+                          " %s" % opts.histooutdir)
+           prof.log.error("Exiting!")
+           sys.exit(1)
+    else:
+        prof.log.info("Creating output directory for interpolation"
+                      " histograms: %s" % opts.histooutdir)
+        os.makedirs(opts.histooutdir)
+    prof.log.info("Output directory for interpolation histograms: %s" %
+                  opts.histooutdir)
+else:
+    prof.log.info("Not storing any histogram data for later plotting.")
+
+
+## Get the configured interpolation class.
+try:
+    IpolCls = prof.getInterpolationClass(opts.ipolmethod, opts.useweave)
+    prof.log.info("Using %s for interpolation." % IpolCls.__name__)
+except Exception, e:
+    prof.log.error("Problem getting interpolation method: %s" % e)
+    prof.log.error("Exiting!")
+    sys.exit(1)
+
+
+## Get the configured minimizer class.
+try:
+    MinimizerCls = prof.getMinimizerClass(opts.minimizer,
+                                          useminos=opts.useminos,
+                                          printminuit=opts.printminuit)
+    prof.log.info('Using %s as minimizer.' % MinimizerCls.__name__)
+except Exception, e:
+    prof.log.error("Problem getting minimizer: %s" % e)
+    prof.log.error("Exiting...")
+    sys.exit(1)
+
+
+## Read limits file.
+if opts.limits is not None:
+    prof.IOTests.ReadFile(opts.limits)
+    limits = prof.readParameterFile(opts.limits)
+    prof.log.info("Using minimisation limits from %s." % opts.limits)
+    prof.log.debug("Using minimisation limits %s." % limits)
+else:
+    limits = None
+    prof.log.info("Not using minimisation limits.")
+
+
+## Parse fixed parameter option.
+from professor.tools.config import convParamList
+fixedparams = convParamList(opts.fixedparameters)
+## Parse start point methods.
+spmethods = opts.startpointmethods.split(',')
+## Parse manual start points.
+manualsp = convParamList(opts.manualstartpoint)
+
+
+## Select the observables we want to use for our tune.
+try:
+    W = prof.WeightManager.fromFile(opts.observablefile)
+except Exception, e:
+    prof.log.error("Problem when reading observable file: %s" % (e))
+    prof.log.error("Exiting!")
+    sys.exit(1)
+prof.log.debug("loaded observable file from %s: %s" % (opts.observablefile, W))
+
+
+## Load run combinations
+prof.log.debug("Using %s as runsfile" % (opts.runsfile))
+try:
+    runfile = open(opts.runsfile, "r")
+except Exception, e:
+    prof.log.error("Error while opening run combination file %s: %s" %
+                   (opts.runsfile, e))
+    sys.exit(1)
+allruns = [line.split() for line in runfile.readlines()]
+runfile.close()
+prof.log.info("Loaded %i run combinations from %s" %
+              (len(allruns), opts.runsfile))
+if opts.debug:
+    prof.log.info("Debugging: limiting to 3 minimisations!")
+    allruns = allruns[:3]
+
+
+## Check that all interpolations are available in ipoldir.
+for runs in allruns:
+    path = dataproxy.getIpolFilePath(IpolCls, runs)
+    if not os.path.exists(path):
+        prof.log.error("Could not find interpolation file for runs %s in"
+                       " ipoldir %s: %s" % (sorted(runs), dataproxy.ipolpath, path))
+        prof.log.error("Please call prof-interpolate with the correct"
+                       " arguments before using this program to build"
+                       " interpolation files!")
+        prof.log.error("Exiting!")
+        sys.exit(1)
+
+
+## Build snapshot file name
+if opts.snapshot:
+    base, ext = os.path.splitext(opts.outfile)
+    snapfilename = base + "-snap" + ext
+
+
+def tune(runs, itune, spmethod="center"):
+    # load interpolation set
+    path = dataproxy.getIpolFilePath(IpolCls, runs)
+    prof.log.debug("Loading ipolset from %s" % (path))
+    ipolset = prof.InterpolationSet.fromPickle(path)
+    ipolhistonames = ipolset.getHistogramNames()
+
+    prof.log.debug("Creating TuneData")
+    tundat = dataproxy.getTuneData(withref=True, useipol=IpolCls,
+                                   useobs=W.observables, useruns=runs)
+    tundat.applyObservableWeightDict(W)
+    tundat.vetoEmptyErrors()
+
+    ## TODO: Be able to choose among different GoFs... load user-specified ones with evalfile?
+    gofobject = prof.SimpleIpolChi2(tundat)
+
+    ## TODO? Limiting to runspecific parameter ranges is not possible with
+    ## the data we have.
+
+    msg = "Starting minimiser...\n"
+    msg += "  using spmethod %s\n" % spmethod
+    msg += "  using manualsp %s\n" % manualsp
+    msg += "  using limits %s\n" % limits
+    msg += "  using fixedpars %s" % fixedparams
+    prof.log.debug(msg)
+
+    minimizer = MinimizerCls()
+    result = minimizer.guessMinimum(gofobject,
+                                    spmethod=spmethod, manualsp=manualsp,
+                                    limits=limits, fixedpars=fixedparams)
+    prof.log.info("Minimizer returned:\n%s" % result)
+    result.setIpolMethod(ipolset.ipolmethod.method)
+
+    ## Dress result with some flags
+    if fixedparams is not None:
+        for p in fixedparams.keys():
+            prof.log.debug("Setting fixed flag for parameter %s" % p)
+            result.setFixedFlag(p)
+    if limits is not None:
+        result.setLimitUsedFlag()
+        ## Check if we hit the limit
+        mdict = result.asDict(scaled=False)
+        for param, l in limits.items():
+            if (abs(mdict[param] - l[0]) < 1e-4
+                    or abs(mdict[param] - l[0]) < 1e-4):
+                prof.log.info("Result near parameter limits!")
+                result.setHitLimitFlag()
+                break
+
+    if opts.saveipolhistos:
+        # Store interpolation histograms.
+        global histonametempl
+        fhistoname = os.path.join(opts.histooutdir, histonametempl % itune)
+        prof.log.info("Writing interpolation histos to %s" % fhistoname)
+        f = open(fhistoname, "w")
+        for obs in sorted(tundat.observables):
+            f.write(
+                tundat.getInterpolationHisto(obs, result).asFlat()
+                + "\n\n")
+        f.close()
+    return result
+
+
+## Do tuning for each run combination, and append to the ResultList
+reslist = prof.ResultList()
+nummins = len(allruns)*len(spmethods)
+## Filename template for interpolated histo dat files
+histonametempl = "histos-%%0%ii.dat" % len("%i" % nummins)
+for irun, runs in enumerate(allruns):
+    for imeth, spmethod in enumerate(spmethods):
+        itune = len(spmethods)*irun + imeth
+        prof.log.info("Starting %i/%i tune..." % (itune+1, nummins))
+        try:
+            result = tune(runs, itune, spmethod)
+            reslist.append(result)
+        except prof.MinimizerError, err:
+            prof.log.error("Minimizer yielded an error for this tuning"
+                           " attempt: %s" % err)
+            prof.log.error("No result is saved!")
+            continue
+        except KeyboardInterrupt:
+            prof.log.critical("Keyboard interrupt detected, you'll have to "
+                              " make do with only %i results." % len(reslist))
+            break
+        if RECVD_KILL_SIGNAL is not None:
+            prof.log.critical("Leaving loop early due to signal %s: you'll"
+                              " have to make do with only %i results." %
+                              (RECVD_KILL_SIGNAL, len(reslist)))
+            break
+        if opts.snapshot and len(reslist) % 10 == 0:
+            prof.log.info("Creating %i results snapshots in %s" %
+                          (len(reslist), snapfilename))
+            reslist.write(snapfilename)
+    if RECVD_KILL_SIGNAL is not None:
+        break
+
+prof.log.info("Writing results: %s" % opts.outfile)
+reslist.write(opts.outfile)
+if opts.snapshot and len(reslist) >= 10:
+    prof.log.warn("Snapshots were written to %s. You can remove this file"
+                  " now." % snapfilename)

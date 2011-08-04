@@ -1,0 +1,46 @@
+#! /usr/bin/env python
+usage = """ %prog [options] <resultfile 1> <resultfile 2> [<resultfile 3> ...]\n
+        """
+
+import sys
+from optparse import OptionParser, OptionGroup
+parser = OptionParser(usage=usage)
+parser.add_option("-o", "--outfile", dest="OUTFILE",
+                  default="results_merged.xml",
+                  help="name of the (merged) output results file")
+(opts, args) = parser.parse_args()
+
+
+from professor.minimize import result
+resultlists = [result.ResultList.fromXML(i) for i in args]
+
+
+### Check if all resultfiles belong to the same set of parameters
+if resultlists:
+    rtn = result.ResultList()
+
+    ### Check same params and append valid results
+    pnames0 = sorted( resultlists[0].getParamNames() )
+    for rl in resultlists:
+        try:
+            pnames = rl.getParamNames()
+            if not sorted(pnames) == pnames0:
+                print "ERROR: parameter names differ!"
+                sys.exit(1)
+            for result in rl:
+                rtn.append(result)
+        except:
+            pass
+
+    ### Check for consistency among observables used
+    try:
+        rtn.isValid()
+    except ValueError:
+        print "ERROR: You are trying to merge results that were derived from "
+        print "minimizations that use different observables/weights!"
+        sys.exit(1)
+
+
+    ### Write merged results file to disk
+    rtn.write(opts.OUTFILE)
+    print "Done. Written merged ResultFiles to %s" % opts.OUTFILE

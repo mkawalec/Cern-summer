@@ -1,0 +1,197 @@
+#! /usr/bin/env python
+
+usage = """Usage: %prog [options] [-p PNAME=val1,val2,val3,...] <templatefile> [<templatefile> ...]
+
+Create template instantiations based on command line params,
+using the Cheetah (http://www.cheetahtemplate.org) syntax.
+
+Examples:
+  * %prog -p FOO=1,2,4,3,5,6,3,5,4 -p BAR=432,243,564 script.tmpl
+  * %prog -p -n 20 FOO=1,2,4,3,5,6,3,5,4 -p BAR=432,243,564 script.tmpl
+  * echo 'foo #echo "%03d" % $RUN # bar' | ./quicktemplate -n 3
+  * echo 'myfoo=$FOO, but mybar=$BAR. And, you'll notice, this run is \\
+    #$RUN, part #$PART [$ID], writing to $THIS.' | \\
+    %prog -p FOO=1,2,4,3,5,6,3,5,4 -p BAR=432,243,564 --stdin-name=foo
+
+Character escaping:
+  If substituting into batch scripts where a lot of shell variables are
+  used, you can either escape all the shell variable delimiters like 
+  "$PATH" -> "\$PATH", or you can use the Cheetah #compiler directive
+  in your template, e.g.
+
+  #compiler-settings
+  cheetahVarStartToken = @
+  #end compiler-settings
+
+  Many of the Cheetah engine settings can be overridden in this way ---
+  check the Cheetah documentation: 
+  http://www.cheetahtemplate.org/docs/users_guide_html/users_guide.html#SECTION0001200000000000000000
+
+TODO:
+  * Allow output filename prefix & suffix specification. Timestamp?
+  * Allow specs with repeat number, i.e. -p sqrts=630*4,1800*6
+  * Handling strange characters in param names (specifically Pythia's '(',')')
+  * Param-specific output directory
+  * Ability to use param file directory for output
+  * Auto-typing from strings. Ability to force?
+  * Large (generated) param lists: accept value strings with spaces as 
+     separators? Or use a ".." syntax? Hmm.
+  * Evaluate Python commands?
+"""
+
+
+from optparse import OptionParser, OptionGroup
+import os, sys, re, logging
+
+PROGPATH = sys.argv[0]
+PROGNAME = os.path.basename(PROGPATH)
+
+## Try importing Cheetah (non-standard Python package)
+try:
+    from Cheetah.Template import Template
+except:
+    sys.stderr.write(PROGNAME + " requires Cheetah (www.cheetahtemplate.org)\n");
+    sys.exit(1)
+
+
+## Parse command line options
+parser = OptionParser(usage=usage)
+parser.add_option("-n", "--number", dest="NUM", type=int,
+                  default=None, metavar="NUM", 
+                  help="how many instantiations to make. Defaults to length of longest param list.")
+parser.add_option("-p", "--param", dest="PARAMSTRINGS", type=str, action="append",
+                  default=[], metavar="PNAME=PLIST", 
+                  help="specify a parameter list PLIST for parameter PNAME.")
+parser.add_option("-P", "--paramfile", dest="PARAMFILES", type=str, action="append",
+                  default=[], metavar="PFILE", 
+                  help="specify a file containing parameter list specifications.")
+parser.add_option("--stdin-name", dest="STDIN_NAME", type=str,
+                  default="STDIN", metavar="NAME", 
+                  help="name to be used for files based on a template read from standard input.")
+verbgroup = OptionGroup(parser, "Verbosity control")
+verbgroup.add_option("-V", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                     default=logging.INFO, help="print debug (very verbose) messages")
+verbgroup.add_option("-Q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                     default=logging.INFO, help="be very quiet")
+parser.add_option_group(verbgroup)
+(opts, args) = parser.parse_args()
+
+
+## Set up logging
+logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+## Read param list definitions from files
+PARAMSTRINGS = []
+for pfilepath in opts.PARAMFILES:
+    if not os.access(pfilepath, os.R_OK):
+        logging.error("Param file '%s' cannot be read" % pfilepath)
+        sys.exit(1)
+    pfile = open(pfilepath, "r")
+    for line in pfile:
+        pstring = re.sub(r'^\s*(\S+)\s+(.*)$', r'\1=\2', line[:-1])
+        PARAMSTRINGS.append(pstring)
+    pfile.close()
+
+
+## Append param list definitions from command line
+PARAMSTRINGS += opts.PARAMSTRINGS
+
+
+MAXLISTLEN = 1
+PARAMS = {}
+## Identify param lists from strings
+for pstring in PARAMSTRINGS:
+    parts = pstring.split("=")
+    if len(parts) != 2:
+        logging.error("Param string '%s' is invalid" % pstring)
+        sys.exit(1)
+    pname = parts[0].strip()
+    pliststr = parts[1].strip()
+    #if pliststr[0] in ["[", "{", "("]:
+    #    pliststr = pliststr[1:]
+    #if pliststr[-1] in ["]", "}", ")"]:
+    #    pliststr = pliststr[:-1]
+    plist = pliststr.split(",")
+    if len(plist) > MAXLISTLEN:
+        MAXLISTLEN = len(plist)
+    logging.debug("%s => %s" % (pname, str(plist)))
+    PARAMS[pname] = plist
+
+
+## Decide how many instantiations to make
+logging.debug("Longest list length = %d" % MAXLISTLEN)
+if opts.NUM is None:
+    opts.NUM = MAXLISTLEN
+
+
+## Identify test template files
+TEMPLATEFILES = args
+for tfile in TEMPLATEFILES:
+    if tfile == "-":
+        continue
+    if not os.access(tfile, os.R_OK):
+        logging.warning("Can't read batch script template " + tfile)
+        sys.exit(1)
+    TEMPLATEDIR = os.path.dirname(tfile)
+    if len(TEMPLATEDIR) == 0:
+        TEMPLATEDIR = os.getcwd()
+    if not os.access(TEMPLATEDIR, os.W_OK):
+        logging.warning("Can't write to batch script dir " + os.path.abspath(TEMPLATEDIR))
+        sys.exit(1)
+
+
+## Get template text
+TEMPLATES = {}
+if TEMPLATEFILES:
+    for tfile in TEMPLATEFILES:
+        scriptbasename = tfile
+        scriptbasename = re.sub(r'\.template$', '', scriptbasename)
+        scriptbasename = re.sub(r'\.tmpl$', '', scriptbasename)
+        f = open(tfile, "r")
+        scripttemplate = f.read()
+        f.close()
+        TEMPLATES[scriptbasename] = scripttemplate
+## Read stdin
+if len(TEMPLATEFILES) == 0 or "-" in TEMPLATEFILES:
+    try:
+        logging.debug("Reading stdin...")
+        scripttemplate = sys.stdin.read()
+        logging.debug("Done reading stdin")
+        TEMPLATES[opts.STDIN_NAME] = scripttemplate
+    except KeyboardInterrupt, e:
+        logging.warning("Interrupted!")
+        sys.exit(2)
+
+
+## Write template instantiations
+for run in range(opts.NUM):
+    ## Loop over templates ("parts") for this run
+    runpart = 0
+    for tpath, ttext in TEMPLATES.iteritems():
+        scriptpath = tpath + "." + str(run)
+        ## Tokens for expansion, using Cheetah
+        tokens = {}
+        tokens['THIS'] = scriptpath
+        tokens['RUN'] = run
+        tokens['PART'] = runpart
+        tokens['ID'] = "%s_%s_%s" % (tpath, str(run), str(runpart))
+        for key, vlist in PARAMS.iteritems():
+            tokens[key] = vlist[run % len(vlist)]
+        ## Try to instantiate
+        try:
+            scripttmpl = Template(ttext, tokens)
+            scriptstr = str(scripttmpl)
+        except Exception, e:
+            logging.error("Problem instantiating template %s: %s" % (tpath, e))
+            sys.exit(1)
+        ## Write to file
+        logging.info("Writing run '%s' script #%d to %s" % (run, runpart, scriptpath))
+        f = open(scriptpath, "w")
+        f.write(scriptstr)
+        f.close()
+        runpart += 1
+
+
+logging.debug("Done")
+sys.exit(0)

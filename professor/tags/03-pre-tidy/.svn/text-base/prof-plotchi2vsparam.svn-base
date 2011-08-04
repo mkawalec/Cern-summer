@@ -1,0 +1,271 @@
+#! /usr/bin/env python
+"""%prog [OPTIONS] RESULT.pkl [RESULT2.pkl ...]
+"""
+
+import sys
+import os
+import itertools
+import optparse
+import logging
+logging.basicConfig(level=logging.INFO,
+        format = "%(levelname)s %(message)s")
+
+# TODO(25.Sep.2009): Is this still true?
+import matplotlib     # These two lines must be called before import pylab
+matplotlib.use('Agg') # to prevent memory leakage
+from matplotlib import pyplot
+
+from professor.minimize import ResultList
+from professor.tools import parameter, messages
+
+params = {
+        'backend':'pdf',
+        'figure.dpi': 300,
+        'text.fontsize': 16,
+        'legend.fontsize': 8,
+        'axes.titlesize': 16,
+        'axes.labelsize': 16,
+        'xtick.labelsize': 16,
+        'ytick.labelsize': 16,
+        'lines.markersize':7,
+        'figure.subplot.left' : 0.14,
+        'figure.subplot.right' : 0.98,
+        'figure.subplot.top' : 0.98,
+        'figure.subplot.bottom' : 0.10,
+        'text.usetex': False
+        }
+pyplot.rcParams.update(params)
+
+parser = optparse.OptionParser(usage = __doc__)
+parser.add_option("--logy",
+        dest = "logy",
+        action = "store_true",
+        help = "Log scaled chi^2 axis when PLOTMODE is chi2.")
+parser.add_option("--liny",
+        dest = "logy",
+        action = "store_false",
+        help = "Linear scaled chi^2 axis when PLOTMODE is chi2. (default)")
+parser.add_option("--ndof",
+        dest = "ndof",
+        action = "store_true",
+        help = "Plot chi^2/ndof instead of chi^2 when PLOTMODE is chi2."
+               " (default)")
+parser.add_option("--no-ndof",
+        dest = "ndof",
+        action = "store_false",
+        help = "Plot chi^2 instead of chi^2/ndof when PLOTMODE is chi2.")
+parser.add_option("--outdir",
+        help = "The directory were the plots are saved. (default: %default)")
+parser.add_option("--suffix",
+        help = "suffix for plot file names (will be prepended with a _)")
+parser.add_option("--paramsfile",
+        help = "The file that contains the parameters for prof-runrivet")
+# parser.add_option("--bw",
+        # dest = "bw",
+        # action = "store_true",
+        # help = "produce b/w safe plots, e.g. suitable for publications")
+# parser.add_option("--color",
+        # dest = "bw",
+        # action = "store_false",
+        # help = "produce color plots (default)")
+parser.add_option("-r", "--runs",
+        dest = "diffruns",
+        action = "store_true",
+        help = "change draw style with runs")
+parser.add_option("-R", "--no-runs",
+        dest = "diffruns",
+        action = "store_false",
+        help = "don't change draw style with runs")
+parser.add_option("-s", "--startpoints",
+        dest = "diffstartpoints",
+        action = "store_true",
+        help = "change draw style with startpoints")
+parser.add_option("-S", "--no-startpoints",
+        dest = "diffstartpoints",
+        action = "store_false",
+        help = "don't change draw style with startpoints")
+parser.add_option("-l", "--limits",
+        dest = "difflimits",
+        action = "store_true",
+        help = "change draw style with limits used or not")
+parser.add_option("-L", "--no-limits",
+        dest = "difflimits",
+        action = "store_false",
+        help = "don't change draw style with limits used or not")
+parser.set_defaults(
+        logy = False,
+        ndof = True,
+        outdir = "./",
+        diffruns = True,
+        diffstartpoints = False,
+        difflimits = True
+        # bw = False
+        )
+
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+if len(args) == 0:
+    sys.stderr.write(parser.format_help())
+    sys.stderr.write("\n\nError: No result files given!")
+    sys.exit(1)
+
+if os.path.exists(opts.outdir):
+    if (not os.path.isdir(opts.outdir)
+            or not os.access(opts.outdir, os.R_OK|os.X_OK)):
+        sys.stderr.write("Error: output directory is not a directory or has"
+                " bad permissions: %s" % (opts.output))
+        sys.exit(1)
+else:
+    print "Creating output directory: %s" % (opts.outdir)
+    os.makedirs(opts.outdir)
+
+if opts.paramsfile:
+    samplebounds = parameter.readParameterFile(opts.paramsfile)
+
+
+class ResultPlotter(dict):
+    def __init__(self, resultlists, dflags=None):
+        """Plot the chi2-param values for all results in resultlists in sub.
+
+        dflags is a list with the categories we want to differentiate in
+        the plot. Accepted categories are:
+            numruns
+            startpoint (startpoint method)
+            limits (limits used in minimisation)
+        The results are grouped by color in the first given category.
+        """
+        if dflags is None:
+            dflags = []
+        # build diffkey->plotdata dictionary
+        for result in itertools.chain(*resultlists):
+            key = ""
+            for flag in dflags:
+                if flag == "numruns":
+                    key += "%i:" % (len(result.runs))
+                elif flag == "startpoint":
+                    key += "%s:" % (result.spmethod)
+                elif flag == "limits":
+                    key += "%s:" % (result.LIMITSUSED_FLAG)
+            if not self.has_key(key):
+                label = ""
+                for flag in dflags:
+                    if flag == "numruns":
+                        label += "Runs:%i" % (len(result.runs))
+                    elif flag == "startpoint":
+                        label += " (%s)" % (result.spmethod)
+                    elif flag == "limits":
+                        if result.LIMITSUSED_FLAG:
+                            label += "(limited)"
+                        else:
+                            label += "(not limited)"
+                self[key] = ({"label":label, "linestyle":''}, [])
+            self[key][1].append(result)
+        # fill plotstyles
+        colcycle = itertools.cycle(['r', 'k', 'b', 'g'])
+        symcycle = itertools.cycle(['o', 'x', 'v', '+', '^', '*'])
+        if len(self.keys()) > 1:
+            currentcolorkey = None
+            currentcolor = None
+            for key in sorted(self.keys(), key=lambda k: k.split(":")[0]):
+                colorkey = key.split(":")[0]
+                if colorkey != currentcolorkey:
+                    currentcolorkey = colorkey
+                    currentcolor = colcycle.next()
+                symbol = symcycle.next()
+                self[key][0]["color"] = currentcolor
+                self[key][0]["marker"] = symbol
+        else:
+            self.values()[0][0]["color"] = 'k'
+            self.values()[0][0]["marker"] = 'o'
+
+    def plotParamChi2(self, sub, param, ndof):
+        """Plot to the given axes instance.
+
+        To make it easier to adjust the plot area later
+        the extremal plotted values are returned.
+        """
+        minx = 1.0e15
+        miny = 1.0e15
+        maxx = -1.0e15
+        maxy = -1.0e15
+        for (kwargs, results) in self.itervalues():
+            pindex = results[0].getIndex(param)
+            chi2s = []
+            params = []
+            for res in results:
+                if ndof:
+                    chi2s.append(res.chi2/res.ndof)
+                else:
+                    chi2s.append(res.chi2)
+                params.append(res.parunscaled[pindex])
+            minx = min(minx, min(params))
+            maxx = max(maxx, max(params))
+            miny = min(miny, min(chi2s))
+            maxy = max(maxy, max(chi2s))
+            sub.plot(params, chi2s, **kwargs)
+        return (minx, maxx, miny, maxy)
+
+    def getParameterNames(self):
+        result = self.values()[0][1][0]
+        return result.getKeys()
+    parameternames = property(getParameterNames)
+
+
+## load result lists
+rlists = []
+for fname in args:
+    rlists.append(ResultList.fromPickle(fname))
+
+dflags = []
+if opts.diffruns:
+    dflags.append("numruns")
+if opts.diffstartpoints:
+    dflags.append("startpoint")
+if opts.difflimits:
+    dflags.append("limits")
+
+def getPlotFilename(param):
+    fname = "chi2_" + param
+    if opts.suffix:
+        fname += "_" + opts.suffix
+    fname += ".pdf"
+    return os.path.join(opts.outdir, fname)
+
+resplotter = ResultPlotter(rlists, dflags)
+for param in resplotter.parameternames:
+    fname = getPlotFilename(param)
+    fig = pyplot.figure(facecolor="w")
+    sub = fig.add_subplot(1,1,1)
+
+    minx, maxx, miny, maxy = resplotter.plotParamChi2(sub, param, opts.ndof)
+    if opts.paramsfile:
+        low = samplebounds[param][0]
+        high = samplebounds[param][1]
+        minx = min(minx, low)
+        maxx = max(maxx, high)
+        sub.axvline(x=low, linestyle = ":",
+                color = "g")
+        sub.axvline(x=high, linestyle = ":",
+                color = "g", label = "Sampling boundaries")
+
+    minx -= 0.1*(maxx-minx)
+    maxx += 0.1*(maxx-minx)
+    miny -= 0.1*(maxy-miny)
+    maxy += 0.5*(maxy-miny)
+    sub.set_xlim((minx, maxx))
+    sub.set_ylim((miny, maxy))
+
+    sub.legend(loc="best")
+    sub.set_xlabel(param)
+    if opts.ndof:
+        sub.set_ylabel("chi^2/Ndf")
+    else:
+        sub.set_ylabel("chi^2")
+    if opts.logy:
+        sub.set_yscale("log")
+
+    print "Saving file %s" % (fname)
+    fig.savefig(fname)

@@ -1,0 +1,7 @@
+Making all in src
+make[1]: Wejście do katalogu `/home/michal/summer/2011-07-aida2yoda/src'
+Making all in Core
+make[2]: Wejście do katalogu `/home/michal/summer/2011-07-aida2yoda/src/Core'
+  CXX    libRivetCore_la-Analysis.lo
+make[2]: Opuszczenie katalogu `/home/michal/summer/2011-07-aida2yoda/src/Core'
+make[1]: Opuszczenie katalogu `/home/michal/summer/2011-07-aida2yoda/src'

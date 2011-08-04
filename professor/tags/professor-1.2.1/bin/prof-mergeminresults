@@ -1,0 +1,95 @@
+#! /usr/bin/env python
+
+"""\
+%prog [options] <resultfile 1> <resultfile 2> [<resultfile 3> ...]
+
+or
+
+%prog [options] --fromdir <directory>
+"""
+
+import sys, os
+import professor.user as prof
+
+from professor.tools import shell
+shell.usePrettyTraceback()
+shell.setProcessName("prof-mergeminresults")
+
+import optparse
+parser = optparse.OptionParser(usage=__doc__, version=prof.version)
+parser.add_option("--fromdir", dest="FROMDIR", action="store_true",
+                  default=False,
+                  help="Recursively merge all *.pkl from <directory>")
+prof.addOutputCLOptions(parser)
+prof.addLoggingCLOptions(parser)
+opts, args = parser.parse_args()
+
+prof.log.setPriority(opts)
+prof.writeGuideLine()
+
+## Check if specified outdir exists and create it otherwise.
+outdir = os.path.join(opts.OUTDIR, "mergedresults")
+prof.log.debug("Using %s for result merging output." % outdir)
+prof.io.makeDir(outdir)
+
+def walker(pickles, dirname, fnames):
+    """Function for os.path.walk
+
+    Found pickle files are appended to `pickles`.
+    """
+    # little helpers
+    def pathjoin(fname):
+        return os.path.join(dirname, fname)
+    def ispickle(fname):
+        return fname.endswith(".pkl")
+
+    pickles.extend(map(pathjoin, filter(ispickle, fnames)))
+
+
+if opts.FROMDIR:
+    if len(args) > 1:
+        sys.stderr.write("Only one directory is allowed!")
+        sys.exit(1)
+    resultlists = []
+    os.path.walk(args[0], walker, resultlists)
+    prof.log.debug("Recursively found %i pickle files: %s" % (
+                                            len(resultlists), resultlists))
+    resultlists = map(prof.ResultList.mkFromPickle, resultlists)
+else:
+    resultlists = map(prof.ResultList.mkFromPickle, args)
+
+
+### Check if all resultfiles belong to the same set of parameters
+if resultlists:
+    rtn = prof.ResultList()
+
+    ### Check same params and append valid results
+    pnames0 = sorted( resultlists[0].getParamNames() )
+    for rl in resultlists:
+        try:
+            pnames = rl.getParamNames()
+            if not sorted(pnames) == pnames0:
+                sys.stderr.write("ERROR: parameter names differ!\n")
+                sys.exit(1)
+            for result in rl:
+                rtn.append(result)
+        except:
+            pass
+
+    ### Check for consistency among observables used
+    try:
+        rtn.isValid()
+    except ValueError:
+        sys.stderr.write("ERROR: You are trying to merge results that were"
+                         " derived from minimizations that use different"
+                         " observables/weights!\n")
+        sys.exit(1)
+
+
+    ### Write merged results file to disk
+    fname = os.path.join(outdir, "results.pkl")
+    rtn.write(fname)
+    print "Done. Merged %i results in %s" % (len(rtn), fname)
+else:
+    sys.stderr.write("No result files found!")
+    sys.exit(1)

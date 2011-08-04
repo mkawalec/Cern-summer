@@ -1,0 +1,39 @@
+#! /usr/bin/env bash 
+#$ -S /bin/bash
+##PBS -q short.q 
+##PBS -m ae
+#set jobname = "%s-%s" % (@PROF_NUMSKIP, @PROF_JOB)
+#if @PROF_SETID
+#set jobname = "%s-%s" % (@PROF_SETID, $jobname)
+#end if
+#PBS -N prof-@PROF_JOB
+
+source $HOME/.bashrc
+
+echo "Creating directory for results storage"
+mkdir -p @PROF_OUTDIR
+cd @PROF_OUTDIR
+
+echo "jobname:" $jobname
+#set $runs = " ".join(@PROF_RUNCOMB)
+export RUNSFILE=@PROF_OUTDIR/${jobname}.runs
+echo "@PROF_RUNCOMB" > $RUNSFILE
+cat $RUNSFILE
+
+##echo "Sourcing Professor environment"
+##. @PROF_OUTDIR/env
+
+echo "Running Professor tuning command"
+prof-tune \
+  --datadir @PROF_DATADIR \
+  --obsfile @PROF_OBSFILE \
+  -o @PROF_OUTDIR/@PROF_OUTFILE \
+  --runsfile $RUNSFILE \
+  --ipoldir @PROF_IPOLDIR \
+  --no-check \
+  --weave \
+  --max 1 \
+  &> @PROF_OUTDIR/${PROF_OUTFILE}.log
+
+
+exit 0

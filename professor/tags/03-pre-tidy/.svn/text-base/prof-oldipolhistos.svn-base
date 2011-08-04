@@ -1,0 +1,82 @@
+#!/usr/bin/env python
+usage = """
+%prog [options] <parameterfile>
+
+This script produces histogram files in flat format. The bincontents are
+calculated from bin-interpolations that are read from already existing
+interpolations.
+
+It is mandatory to specify a parameter file as such:
+
+    PAR1    .5
+    PAR2    .6
+While in DIRMODE, the parameter files must be named 'used_params'.
+"""
+
+import sys, os
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+
+from optparse import OptionParser
+from professor.tools import parameter, messages
+from professor import rivetreader, interpolation
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+
+parser = OptionParser(usage=usage)
+
+
+parser.add_option("-i", "--ipolset", dest="ipolset",
+                  default=None, help="file with previously calculated"
+                  + " interpolations")
+parser.add_option("-o", "--obsfile", dest="OBS",
+                  default=None, help="Observable file")
+parser.add_option("-O", "--outdir", dest="OUTDIR",
+                  default="ipolhisto", help="output directory")
+parser.add_option("-d", "--directory-mode", dest="DIRMODE", action="store_true",
+                  default=False, help="Use this switch to parse a directory"
+                  + " for used_params files")
+
+(opts, args) = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+if len(args) ==0:
+    logging.error("need to specifiy at least one parameter file")
+    sys.exit(2)
+
+if not os.path.exists(opts.OUTDIR):
+    os.mkdir(opts.OUTDIR)
+    logging.info("Created folder %s"%opts.OUTDIR)
+
+ipolset = interpolation.InterpolationSet.fromPickle(opts.ipolset)
+
+if opts.OBS is None:
+    observables = sorted(ipolset.getHistogramNames())
+else:
+    observables = rivetreader.readObservableFile(opts.OBS).keys()
+
+if opts.DIRMODE:
+    PARAMS = [args[0]+"/%s/used_params"%sd for sd in os.listdir(
+        args[0]) if "used_params" in os.listdir(args[0]+"/%s"%sd)]
+else:
+    PARAMS = [pfile for pfile in args]
+
+logging.info("About to produce %i Ipol-histos."%(len(PARAMS)*len(observables)))
+bar = flpb(0, len(PARAMS), 30, 'Saving Ipol-histos ')
+for num, p in enumerate(PARAMS):
+    bar.update(num)
+    logging.debug("Interpolating for parameters in '%s'" % (p))
+    params = parameter.readParameterFile(p)
+
+    if opts.DIRMODE:
+        outname = opts.OUTDIR + "/%s/out.dat"%p.split("/used_params")[0]
+    else:
+        outname = opts.OUTDIR + "/out.dat"
+
+    f = open(outname, 'w')
+    for obs in observables:
+        histo = ipolset.getInterpolationHisto(obs, params)
+        f.write(histo.asFlat() + "\n\n")
+    f.close()
+    logging.debug("Written interpolation histos to %s" % (outname))

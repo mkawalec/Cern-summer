@@ -1,0 +1,19 @@
+# Flavour:
+PARJ(1)  = 0.073
+PARJ(2)  = 0.2
+PARJ(3)  = 0.94
+PARJ(4)  = 0.032
+PARJ(11) = 0.31
+PARJ(12) = 0.4
+PARJ(13) = 0.54
+PARJ(25) = 0.63
+PARJ(26) = 0.12
+
+# Fragmentation:
+MSTJ(11) = 5
+PARJ(21) = 0.325
+PARJ(41) = 0.5
+PARJ(42) = 0.6
+PARJ(47) = 0.67
+PARJ(81) = 0.29
+PARJ(82) = 1.65

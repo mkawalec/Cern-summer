@@ -1,0 +1,6 @@
+Professor TODO
+--------------
+
+* Merge rivetrunner into Professor
+* Install standard professor-* scripts (bin directory?)
+* Use setuptools/distutils to build, distribute and install

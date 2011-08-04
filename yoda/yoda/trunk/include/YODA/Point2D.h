@@ -92,7 +92,15 @@ namespace YODA {
     void setY(double y) { _y = y; }
 
     //@}
-
+    
+    /// Scaling
+    void scale(double scaleX, double scaleY) {
+        setX(x()*scaleX);
+        setY(y()*scaleY);
+     
+        setXErr(xErrMinus()*scaleX, xErrPlus()*scaleX);
+        setYErr(yErrMinus()*scaleY, yErrPlus()*scaleY);
+    }
 
     /// @name x error accessors
     //@{

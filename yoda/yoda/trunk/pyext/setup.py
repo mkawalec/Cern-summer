@@ -21,7 +21,7 @@ ext = Extension('_yodawrap',
 
 ## Setup definition
 setup(name = 'YODA',
-      version = '0.3.2',
+      version = '0.4.0beta0',
       ext_package = 'yoda',
       ext_modules = [ext],
       py_modules = ['yoda.__init__', 'yoda.yodawrap'],

@@ -1,0 +1,988 @@
+#!/usr/bin/env python2.5
+"""prof-sensitivities
+
+Produce Sensitivity Plots.
+
+usage:
+    prof-sensitivities --twod -o sensitivityplots -m DATA/mc -r DATA/ref -O weights1
+    prof-sensitivities --threed -o sensitivityplots -m DATA/mc -r DATA/ref -O weights1
+
+"""
+
+import numpy, pylab, sys, os, optparse, logging
+
+import matplotlib     # These two lines must be called before import pylab
+matplotlib.use('Agg') # to prevent memory leakage
+
+try:
+    from IPython.Shell import IPShellEmbed
+    ipshell = IPShellEmbed([])
+except:
+    print "Ipython shell not available."
+
+from professor.rivetreader import getConfiguredData, readObservableFile
+from professor.controlplots import sensitivity as sens
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+from professor.tools import messages
+
+
+
+logging.basicConfig(level=logging.INFO,
+        format = "%(levelname)s %(message)s")
+
+params = {
+        'backend':'pdf',
+        'axes.labelsize': 16,
+        'text.fontsize': 16,
+        'legend.fontsize': 14,
+        'axes.titlesize': 16,
+        'xtick.labelsize': 16,
+        'ytick.labelsize': 16,
+        'text.usetex': True,
+        'text.latex.preamble' :  ['\usepackage{amsmath}', '\usepackage{mathpazo}', '\usepackage{hepunits}'],
+        'figure.dpi': 300,
+        'lines.markersize':7,
+        'figure.subplot.left' : 0.2,
+        'figure.subplot.right' : 0.9,
+        'figure.subplot.bottom' : 0.15,
+        'figure.subplot.top' : 0.9,
+        'figure.subplot.wspace' : 0.4,
+        }
+
+pylab.rcParams.update(params)
+
+parser = optparse.OptionParser(usage = __doc__)
+parser.add_option("-o", help = "Output directory (default: %default)")
+parser.add_option("-m", help = "MC 'data' directory (default: %default)")
+parser.add_option("-r", help = "Reference data directory (default: %default)")
+parser.add_option("-i", help = "Interpolation directory (default: %default)")
+parser.add_option("--params", default="all",
+        help = "Parameters to calculate sensitivities for, must be given" +
+        " as a separated list of strings as such 'PAR(1)':'PAR(5)'")
+parser.add_option("-O", help = "File with observables to plot")
+parser.add_option("--bw",
+        dest = "bw",
+        action = "store_true",
+        help = "produce b/w safe plots, e.g. suitable for publications")
+parser.add_option("--color",
+        dest = "bw",
+        action = "store_false",
+        help = "produce color plots (default)")
+parser.add_option("--cubic",
+        dest = "cubic",
+        action = "store_true",
+        help = "use cubic interpolations")
+parser.add_option("--twod",
+        dest = "twod",
+        action = "store_true",
+        help = "produce 2D plots")
+parser.add_option("--threed",
+        dest = "twod",
+        action = "store_false",
+        help = "produce 2D plots")
+parser.add_option("--pazo",
+        action = "store_true",
+        help = "use Palatino font")
+
+parser.set_defaults(
+        logy = False,
+        ndof = True,
+        o = "sensitivities",
+        m = "mc",
+        r = "ref",
+        i = None,
+        O = None,
+        params = "all",
+        bw = False,
+        pazo = False,
+        cubic= False,
+        twod = False)
+
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+from professor.tools import translate, histotools as hito
+
+def getAvailableObservables(td):
+    temp = td.getMCHistoNames()
+    temp.sort()
+    return temp
+
+def plotTheseObservables(td):
+    """ evaluate some input and find out whether to plot all or a certain
+        observable(s)
+    """
+    observables = opts.O
+    if observables is None:
+        obslist = getAvailableObservables(td)
+        logging.info("producing sensitivity-plots for all available observables")
+    elif os.path.exists(observables):
+        obslist = [obs for obs in readObservableFile(observables).keys(
+            ) if obs in td.getMCHistoNames()]
+        logging.info("producing plots for observables found in %s"%observables)
+    else:
+        logging.error("no observables specified")
+        sys.exit(1)
+    return obslist
+
+def createShortFilename(use_obs):
+    fname = use_obs
+    if opts.twod:
+        fname += "_2D"
+    else:
+        fname += "_3D"
+    return fname.strip("/").replace('/','_')
+
+def create2DPlot(fig, Svity, use_obs, intcenter=.5, method="centered", errorlimit=30, mode="ref",
+        cmap=matplotlib.cm.RdBu, nrofparbins = 'same', cscale='single', absolute=False):
+    #TODO: docstring
+    """ docstring
+    """
+    markers, lines = getMarkersLines()
+
+    sp_1 = fig.add_subplot(1,1,1)
+    x=numpy.array(hito.getPlotRange(td, use_obs, for_cmap=False))
+
+    allsens = []
+    allbadbins = []
+
+    for j, param in enumerate(paramstoplot):
+        sens, badbins = Svity.getSens(Svity._runs, use_obs, param, errorlimit=100., nrofparbins=1)
+        allsens.append(sens)
+        allbadbins.append(badbins)
+    vmin_g, vmax_g = Svity.getGlobalVminVmax(allsens)
+
+    for j, param in enumerate(sorted(paramstoplot)):
+        Svity._badbins = allbadbins[j]
+        A = Svity.getSensAvg_wrt_p(allsens[j], absolute=absolute)
+        temp = []
+        for i, V in enumerate(A):
+            if i in allbadbins[j]:
+                pass
+            else:
+                temp.append((x[i], V[0]))
+        T = numpy.array(temp)
+        if use_obs == "/CDF_2002_S4796047/d01-x01-y01" and param in ("PARP(83)", "PARP(90)", "PARP(91)"):
+            try:
+                sp_1.plot( T[:,0],       .5*T[:,1],      'k'+lines[j])
+                sp_1.plot( T[:,0][::1],  .5*T[:,1][::1], 'k'+markers[j])
+                sp_1.plot([T[:,0][-1]], [.5*T[:,1][-1]], 'k'+markers[j]+lines[j], label=r" ~ i = %s ($\times 0.5$)"%param)
+            except IndexError:
+                pass
+        elif use_obs in ("/CDF_2002_S4796047/d02-x01-y01", "/CDF_2008_NOTE_9337/d01-x01-y01") and param == "PARP(82)":
+            try:
+                sp_1.plot( T[:,0],       .5*T[:,1],      'k'+lines[j])
+                sp_1.plot( T[:,0][::1],  .5*T[:,1][::1], 'k'+markers[j])
+                sp_1.plot([T[:,0][-1]], [.5*T[:,1][-1]], 'k'+markers[j]+lines[j], label=r" ~ i = %s ($\times 0.5$)"%param)
+            except IndexError:
+                pass
+        else:
+            try:
+                sp_1.plot( T[:,0],       T[:,1],      'k'+lines[j])
+                sp_1.plot( T[:,0][::1],  T[:,1][::1], 'k'+markers[j])
+                sp_1.plot([T[:,0][-1]], [T[:,1][-1]], 'k'+markers[j]+lines[j], label=r"~ i = %s"%param)
+            except IndexError:
+                pass
+    l = sp_1.legend(loc=0, labelspacing=0.02, handletextpad=0.04)
+    l.get_frame().set_edgecolor('w')
+    l.set_alpha(.1)
+    l.set_zorder(20)
+
+
+    name = Svity._td.getTitle(use_obs)
+    if "$" in name:
+        sp_1.set_title("%s"%name)
+    else:
+        sp_1.set_title(r"$\mathrm{%s}$"%name.replace(" ","\:"))
+
+    sp_1.get_xaxis().tick_bottom()
+    sp_1.get_yaxis().tick_left()
+    sp_1.axhline(y=0, color='k', ls=':', lw=.6 )
+
+    ptlead=r"$p_\perp \mathrm{(jet\: 1)/GeV}$"
+    ptZ=r"$p_\perp \mathrm{/GeV}$"
+    ptleptons=r"$p_\perp, \mathrm{(lepton\: pair)/GeV)}$"
+    phijet=r"$\Delta\Phi$"
+
+    if absolute:
+        sp_1.set_ylabel('$\\Large \\left< \\left| S^{(b)}_i \\right| \\right>$')
+    else:
+        sp_1.set_ylabel('$\\Large \\left< S^{(b)}_i \\right>$')
+    #sp_1.set_ylim(-1.*vmax_g, vmax_g)
+    if use_obs == "/CDF_2000_S4155203/d01-x01-y01":
+        sp_1.set_xlim(0, 35)
+        sp_1.set_xlabel(ptZ)
+    if use_obs == "/CDF_2002_S4796047/d01-x01-y01":
+        sp_1.set_xlim(0, 26)
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=630~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+        #sp_1.set_ylim(-5, 5)
+        sp_1.set_xlabel("$N_\\text{ch}$")
+    if use_obs == "/CDF_2002_S4796047/d02-x01-y01":
+        sp_1.set_xlim(0, 31)
+        #sp_1.set_ylim(-4, 4)
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=1800~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y01":
+        sp_1.set_xlabel(ptlead)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y02":
+        sp_1.set_xlabel(ptlead)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(.5, 13.5)
+
+    if use_obs == "/CDF_2008_LEADINGJETS/d01-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d02-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d03-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d04-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d05-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d06-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d07-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d08-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d09-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+
+    if use_obs == "/CDF_2008_NOTE_9337/d01-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(.5, 46.5)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d01-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d02-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d03-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d04-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d05-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d06-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d07-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d08-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d09-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d10-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d11-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d12-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d13-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d14-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d15-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d16-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d17-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d18-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d19-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d20-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d21-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+
+    if use_obs == "/D0_2004_S5992206/d01-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d02-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d03-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d04-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+def createMax2DPlot(fig, Svity, use_obs, nrofparbins = 100):
+    #TODO: docstring
+    """ docstring
+    """
+    markers, lines = getMarkersLines()
+
+    sp_1 = fig.add_subplot(1,1,1)
+    x=numpy.array(hito.getPlotRange(td, use_obs, for_cmap=False))
+
+    allsens = []
+    allbadbins = []
+
+    for j, param in enumerate(paramstoplot):
+        sens, badbins = Svity.getSens(Svity._runs, use_obs, param, errorlimit=100., nrofparbins=nrofparbins)
+        allsens.append(sens)
+        allbadbins.append(badbins)
+    vmin_g, vmax_g = Svity.getGlobalVminVmax(allsens)
+
+    for j, param in enumerate(sorted(paramstoplot)):
+        Svity._badbins = allbadbins[j]
+        A = Svity.getSensMax_wrt_p(allsens[j])
+        temp = []
+        for i, V in enumerate(A):
+            if i in allbadbins[j]:
+                pass
+            else:
+                temp.append((x[i], V[0]))
+        T = numpy.array(temp)
+        try:
+            sp_1.plot( T[:,0],       T[:,1],      'k'+lines[j])
+            sp_1.plot( T[:,0][::1],  T[:,1][::1], 'k'+markers[j])
+            sp_1.plot([T[:,0][-1]], [T[:,1][-1]], 'k'+markers[j]+lines[j],
+                    label=r"$~ i = %s$"%param.replace("_","\_"))
+        except IndexError:
+            pass
+    l = sp_1.legend(loc=0, labelspacing=0.02, handletextpad=0.04)
+    l.get_frame().set_edgecolor('w')
+    l.set_alpha(.1)
+    l.set_zorder(20)
+
+
+    name = Svity._td.getTitle(use_obs)
+    if "$" in name:
+        sp_1.set_title("%s"%name)
+    else:
+        sp_1.set_title(r"$\mathrm{%s}$"%name.replace(" ","\:"))
+
+    sp_1.get_xaxis().tick_bottom()
+    sp_1.get_yaxis().tick_left()
+    sp_1.axhline(y=0, color='k', ls=':', lw=.6 )
+
+    ptlead=r"$p_\perp \mathrm{(jet\: 1)/GeV}$"
+    ptZ=r"$p_\perp \mathrm{/GeV}$"
+    #ptleptons=r"$p_\perp, \mathrm{(lepton\: pair)/GeV)}$"
+    ptleptons=r"$p_\perp (\text{Z})/\mathrm{GeV}$"
+    phijet=r"$\Delta\Phi$"
+
+    xlabel='Observable'
+
+    #sp_1.set_ylabel(r"\Large $\text{max} \left( S^{(b)}_i \right) $")
+    sp_1.set_ylabel(r"\Large $\text{extremal } S^{(b)}_i $")
+    if use_obs == "/CDF_2000_S4155203/d01-x01-y01":
+        sp_1.set_xlim(0, 35)
+        xlabel=ptZ
+    if use_obs == "/CDF_2002_S4796047/d01-x01-y01":
+        sp_1.set_xlim(0, 26)
+        #sp_1.set_ylim(-10, 10)
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=630~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+        #sp_1.set_ylim(-5, 5)
+        xlabel="$N_\\text{ch}$"
+    if use_obs == "/CDF_2002_S4796047/d02-x01-y01":
+        sp_1.set_xlim(0, 31)
+        #sp_1.set_ylim(-10, 10)
+        #sp_1.set_ylim(-4, 4)
+        xlabel=r"$N_\text{ch}$"
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=1800~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y02":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y03":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y02":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y03":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y02":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y03":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y02":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y03":
+        xlabel=ptlead
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y01":
+        xlabel=ptlead
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y02":
+        xlabel=ptlead
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y03":
+        xlabel=r"$p_\perp$"
+        sp_1.set_xlim(.5, 6.)
+
+    if use_obs == "/CDF_2008_LEADINGJETS/d01-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d02-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d03-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d04-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d05-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d06-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d07-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d08-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d09-x01-y01":
+        xlabel=ptlead
+        sp_1.set_xlim(0, 400)
+
+    if use_obs == "/CDF_2008_NOTE_9337/d01-x01-y01":
+        xlabel=r"$N_\text{ch}$"
+        sp_1.set_xlim(.5, 40)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d01-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d02-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d03-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d04-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d05-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d06-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d07-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d08-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d09-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d10-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d11-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d12-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d13-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d14-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d15-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d16-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d17-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d18-x01-y01":
+        xlabel=ptleptons
+        sp_1.set_xlim(0, 100)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d19-x01-y01":
+        xlabel=r"$N_\text{ch}$"
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d20-x01-y01":
+        xlabel=r"$N_\text{ch}$"
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d21-x01-y01":
+        xlabel=r"$N_\text{ch}$"
+        sp_1.set_xlim(-.5, 30.5)
+
+    if use_obs == "/D0_2004_S5992206/d01-x02-y01":
+        xlabel=phijet
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d02-x02-y01":
+        xlabel=phijet
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d03-x02-y01":
+        xlabel=phijet
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d04-x02-y01":
+        xlabel=phijet
+        sp_1.set_xlim(1.6765, 3.1425)
+
+    sp_1.set_xlabel(xlabel, ha='right', x=1.)
+
+def getMarkersLines():
+    markers = [
+        'o',   #              circle marker
+        's',   #              square marker
+        'v',   #              triangle_down marker
+        '^',   #              triangle_up marker
+        'x',   #              x marker
+        'p',   #              pentagon marker
+        '*',   #              star marker
+        'h',   #              hexagon1 marker
+        '<',   #              triangle_left marker
+        '>',   #              triangle_right marker
+        'D',   #              diamond marker
+        '1',   #              tri_down marker
+        '2',   #              tri_up marker
+        '3',   #              tri_left marker
+        '4',   #              tri_right marker
+        '.',   #              point marker
+        ',',   #              pixel marker
+        'H',   #              hexagon2 marker
+        '+',   #              plus marker
+        'd',   #              thin_diamond marker
+        '|',   #              vline marker
+        '_'    #             hline marker
+            ]
+
+    lines = [
+            '-'   ,   #              solid line style
+            '--'  ,   #              dashed line style
+            #'-.'  ,   #              dash-dot line style
+            ':'   ,   #              dotted line style
+            '-'   ,   #              solid line style
+            '--'  ,   #              dashed line style
+            #'-.'  ,   #              dash-dot line style
+            ':'   ,   #              dotted line style
+            '-'   ,   #              solid line style
+            '--'  ,   #              dashed line style
+            #'-.'  ,   #              dash-dot line style
+            ':'   ,   #              dotted line style
+            '-'   ,   #              solid line style
+            '--'  ,   #              dashed line style
+            #'-.'  ,   #              dash-dot line style
+            ':'       #              dotted line style
+            ]
+
+    return markers, lines
+
+def create2DPlotFromIpol(fig, Svity, use_obs):
+    #TODO: docstring
+    """ docstring
+    """
+
+    # Some data preparation
+    x=numpy.array(hito.getPlotRange(td, use_obs, for_cmap=False))
+
+    allsens = []
+    for j, param in enumerate(sorted(paramstoplot)):
+        sens, badbins = Svity.getIpolSens(use_obs, param)
+        allsens.append(sens)
+    vmin_g, vmax_g = Svity.getGlobalVminVmax(allsens)
+
+    # The plotting routine
+    markers, lines = getMarkersLines()
+    sp_1 = fig.add_subplot(1,1,1)
+    for j, param in enumerate(sorted(paramstoplot)):
+        temp = []
+        for i, V in enumerate(allsens[j]):
+            temp.append((x[i], V[0]))
+        T = numpy.array(temp)
+        #if use_obs in ("/CDF_2002_S4796047/d01-x01-y01", "/CDF_2002_S4796047/d02-x01-y01") and param == "PARP(78)":
+            #try:
+                #sp_1.plot( T[:,0],       .5*T[:,1],      'k'+lines[j])
+                #sp_1.plot( T[:,0][::1],  .5*T[:,1][::1], 'k'+markers[j])
+                #sp_1.plot([T[:,0][-1]], [.5*T[:,1][-1]], 'k'+markers[j]+lines[j], label=r" ~ i = %s ($\times 0.5$)"%param)
+            #except IndexError:
+                #pass
+        if use_obs in ("/D0_2004_S5992206/d01-x02-y01", "/D0_2004_S5992206/d02-x02-y01", "/D0_2004_S5992206/d03-x02-y01", "/D0_2004_S5992206/d04-x02-y01") and param == "PARP(64)":
+            try:
+                sp_1.plot( T[:,0],       .1*T[:,1],      'k'+lines[j])
+                sp_1.plot( T[:,0][::1],  .1*T[:,1][::1], 'k'+markers[j])
+                sp_1.plot([T[:,0][-1]], [.1*T[:,1][-1]], 'k'+markers[j]+lines[j], label=r" ~ i = %s ($\times 0.1$)"%param)
+            except IndexError:
+                pass
+        else:
+            try:
+                sp_1.plot( T[:,0],       T[:,1],      'k'+lines[j])
+                sp_1.plot( T[:,0][::1],  T[:,1][::1], 'k'+markers[j])
+                sp_1.plot([T[:,0][-1]], [T[:,1][-1]], 'k'+markers[j]+lines[j], label=r"~ i = %s"%param)
+            except IndexError:
+                pass
+
+    l = sp_1.legend(loc=0, labelspacing=0.02, handletextpad=0.04)
+    l.get_frame().set_edgecolor('w')
+    l.set_alpha(.1)
+    l.set_zorder(20)
+
+
+    name = Svity._td.getTitle(use_obs)
+    if "$" in name:
+        sp_1.set_title("%s"%name)
+    else:
+        sp_1.set_title("r$\mathrm{%s}$"%name.replace(" ","\:"))
+
+    sp_1.get_xaxis().tick_bottom()
+    sp_1.get_yaxis().tick_left()
+    sp_1.axhline(y=0, color='k', ls=':', lw=.6 )
+
+    ptlead=r"$p_\perp \mathrm{(jet\: 1)/GeV}$"
+    ptZ=r"$p_\perp \mathrm{/GeV}$"
+    ptleptons=r"$p_\perp, \mathrm{(lepton\: pair)/GeV)}$"
+    phijet=r"$\Delta\Phi$"
+
+    sp_1.set_ylabel('$\\Large S^{(b)}_i $')
+    #sp_1.set_ylim(-1.*vmax_g, vmax_g)
+    if use_obs == "/CDF_2000_S4155203/d01-x01-y01":
+        sp_1.set_xlim(0, 35)
+        sp_1.set_xlabel(ptZ)
+    if use_obs == "/CDF_2002_S4796047/d01-x01-y01":
+        sp_1.set_xlim(0, 26)
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=630~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+        #sp_1.set_ylim(-5, 5)
+        sp_1.set_xlabel("$N_\\text{ch}$")
+    if use_obs == "/CDF_2002_S4796047/d02-x01-y01":
+        sp_1.set_xlim(0, 31)
+        #sp_1.set_ylim(-4, 4)
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_title(r"$N_\text{ch}$ at $\sqrt{s}=1800~\text{GeV}$, $|\eta| < 1$, $p_\perp>0.4~\text{GeV}$")
+
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d03-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d04-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d05-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 21)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y02":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d06-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(18, 50)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y01":
+        sp_1.set_xlabel(ptlead)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y02":
+        sp_1.set_xlabel(ptlead)
+    if use_obs == "/CDF_2001_S4751469/d07-x01-y03":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(.5, 13.5)
+
+    if use_obs == "/CDF_2008_LEADINGJETS/d01-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d02-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d03-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d04-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d05-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d06-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d07-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d08-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+    if use_obs == "/CDF_2008_LEADINGJETS/d09-x01-y01":
+        sp_1.set_xlabel(ptlead)
+        sp_1.set_xlim(0, 400)
+
+    if use_obs == "/CDF_2008_NOTE_9337/d01-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(.5, 46.5)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d01-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d02-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d03-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d04-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d05-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d06-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d07-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d08-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d09-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d10-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d11-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d12-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d13-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d14-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d15-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d16-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d17-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+    if use_obs == "/CDF_2008_NOTE_9351/d18-x01-y01":
+        sp_1.set_xlabel(ptleptons)
+        sp_1.set_xlim(0, 100)
+
+    if use_obs == "/CDF_2008_NOTE_9351/d19-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d20-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+    if use_obs == "/CDF_2008_NOTE_9351/d21-x01-y01":
+        sp_1.set_xlabel(r"$N_\text{ch}$")
+        sp_1.set_xlim(-.5, 30.5)
+
+    if use_obs == "/D0_2004_S5992206/d01-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d02-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d03-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+    if use_obs == "/D0_2004_S5992206/d04-x02-y01":
+        sp_1.set_xlabel(phijet)
+        sp_1.set_xlim(1.6765, 3.1425)
+
+def create3DPlot(fig, Svity, use_obs, intcenter=.5, method="centered", errorlimit=100., mode="ref",
+        cmap=matplotlib.cm.RdBu, nrofparbins = 'same', cscale='single'):
+    #TODO: docstring
+    """ docstring
+    """
+    x=hito.getPlotRange(td, use_obs, for_cmap=True)
+    nrows = len(paramstoplot)
+    ncols = 1
+
+    # handles arrangement of subplots
+    allsens = []
+    allbadbins = []
+
+    for j, param in enumerate(paramstoplot):
+        sens, badbins = Svity.getSens(Svity._runs, use_obs, param)
+        allsens.append(sens)
+        allbadbins.append(badbins)
+    vmin_g, vmax_g = Svity.getGlobalVminVmax(allsens)
+
+    for j, param in enumerate(sorted(paramstoplot)):
+        y = Svity.getYBins(use_obs, nrofparbins=nrofparbins, unscaled=True, paramindex=j)
+        X, Y = numpy.meshgrid(x, y)
+        Z=numpy.array(allsens[j])
+        Svity._badbins = allbadbins[j]
+        ## Colormap plot
+        sp_1 = fig.add_subplot(nrows, ncols, ncols*j + 1)
+        coll = sp_1.pcolormesh(X, Y, Z.transpose(), cmap=cmap, vmin=vmin_g, vmax=vmax_g)
+        pylab.xlim((x[0], x[-1]))
+        cbar = fig.colorbar(coll)
+        pylab.xlim((x[0], x[-1]))
+
+        ## subplot labels
+        if j == nrows -1: # have xlabels only once in a column 
+            name = Svity._td.getTitle(use_obs)
+            if "$" in name:
+                sp_1.set_xlabel("%s"%name)
+            else:
+                sp_1.set_xlabel("r$\mathrm{%s}$"%name.replace(" ","\:"))
+        cbar.set_label( r'$ \mathrm{Sensitivity}$')
+        sp_1.set_ylabel(r'$ \mathrm{%s}$'%param.replace("_","\_"), rotation = 90, va="center")
+        try:
+            sp_1.set_title(Svity._td.getTitle(use_obs))
+        except:
+            pass
+
+# Check existence of outdir
+outdir = opts.o
+if not os.path.isdir(outdir):
+    logging.info("created directory %s"%outdir)
+    os.mkdir(outdir)
+
+if opts.i is not None:
+    logging.info('loading interpolations from %s'%opts.i)
+else:
+    logging.info('no ipoldir specified, building interpolations on the fly (might take a while)')
+
+## create TuningData-object and call TuningData.getTuneData for convenience
+td = getConfiguredData(None, opts.m, opts.r, opts.i)
+
+## confirm that selection of observables to plot is valid, i.e. exist in td
+obs2plot = plotTheseObservables(td)
+
+## create Sensitivity-object
+if opts.cubic:
+    S = sens.CubicSensitivity(td, use_obs=obs2plot)
+else:
+    S = sens.Sensitivity(td, use_obs=obs2plot)
+logging.info('interpolations done')
+
+if opts.params == "all":
+    paramstoplot = S._params
+else:
+    paramstoplot = opts.params.split(":")
+
+bar = flpb(0, len(obs2plot) - 1, 30, 'saving sensitivities ')
+for num, i, in enumerate(sorted(obs2plot)):
+    bar.update(num)
+    fig = pylab.figure(facecolor='w')
+
+    if opts.twod:
+        createMax2DPlot(fig, S, i)
+    else:
+        fig.set_figwidth(6)
+        fig.set_figheight( (1 + .6*len(paramstoplot))*fig.get_figwidth())
+        create3DPlot(fig, S, i)
+
+    pylab.savefig(os.path.join(outdir, createShortFilename(i)
+        + "." +  params['backend']), orientation='landscape')
+    del fig
+    S._td._ipols ={}
+
+logging.info("done!")
+

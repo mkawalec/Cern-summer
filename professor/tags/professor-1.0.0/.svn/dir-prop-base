@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 76
+.*.swp
+example.log
+*~
+build
+dist
+professor.egg-info
+distribute*
+setuptools*
+
+END

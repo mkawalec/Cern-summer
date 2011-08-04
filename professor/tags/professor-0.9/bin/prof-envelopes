@@ -1,0 +1,315 @@
+#!/usr/bin/env python2.5
+""" prof-envelopes
+
+Produce Envelope Plots (dat-files) that can be
+plotted by make-plots
+
+usage:
+    %prog -m <MCDIR>  -r <REFDIR>:"label in legend" -o <OUTDIR> [-O <OBSERVABLES>]
+
+TODOS: error envelope, allow multiple confidence levels
+"""
+
+import numpy
+import sys
+import os
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+from optparse import OptionParser
+
+try:
+    from IPython.Shell import IPShellEmbed
+    ipshell = IPShellEmbed([])
+except:
+    print "Ipython shell not available."
+
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+from professor.rivetreader import ET, getSingleAnalysisInfo
+from professor.lighthisto import Bin, Histo
+from professor.tools import messages
+
+parser = OptionParser()
+parser.add_option('-m', '--mcdir', action='store', default='mc',
+        help="Specify the subdirectory, where the MC-Histos can be found")
+parser.add_option('-r', '--refdir', action='store', default=None,
+        help="Specify the subdirectory, where the REF-Histos can be found")
+parser.add_option('-o', '--outdir', action='store', default='envelopes',
+        help="Specify the subdirectory, where plots are to be saved")
+parser.add_option('-O', '--observable', action='store',
+        help="File with observables to plots", default=None)
+parser.add_option('-c', '--cl', action='store', default="100",
+        help="Create confidence errorband, e.g. '-c 68,95'")
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+def getMCHistos(mcdir):
+    '''Get the generated MC histograms by iterating over all the MC runs
+    in the top-level output directory.'''
+    ## Initialize the return values
+    mchistos = {}
+    mcdir = os.path.abspath(mcdir)
+
+    ls = os.listdir(mcdir)
+    bar = flpb(0, len(ls), 30, 'Reading data...')
+
+    for i, run in enumerate(ls):
+        bar.update(i)
+        mchistos[run] = {}
+        runoutdir = os.path.join(mcdir, str(run))
+        runoutdir = os.path.abspath(runoutdir)
+        if not os.path.isdir(runoutdir):
+            continue
+
+        for f in os.listdir(runoutdir):
+            if f.endswith(".aida"):
+                tree = ET.parse(os.path.join(runoutdir, f))
+                for dps in tree.findall("dataPointSet"):
+                    dpsname = os.path.join(dps.get("path"), dps.get("name"))
+                    ## Make a histogram and add it to the return dictionary
+                    mchistos[run][dpsname] = Histo.fromDPS(dps)
+
+    return mchistos
+
+def readHisto(histo):
+    data = []
+    for b in histo.getBins():
+        try:
+            yerr = float(b.yerr)
+        except:
+            yerr = 0.0
+        temp = (b.xlow, b.xhigh, b.yval, yerr)
+        data.append(temp)
+    return numpy.array(data)
+
+def getEnvelope(observable):
+    # The following is only data preparation
+    nbins = len(mchistos[mchistos.keys()[0]][observable].getBins())
+    nruns = len(mchistos.keys())
+
+    value_envel = numpy.zeros([nbins, nruns])
+    error_envel_max = numpy.zeros([nbins, nruns])
+    error_envel_min = numpy.zeros([nbins, nruns])
+
+    for num, run in enumerate(sorted(mchistos.keys())):
+        try:
+            data = readHisto(mchistos[run][observable])
+            xlow, xhigh, y, yerr = data[:,0], data[:,1], data[:,2], data[:,3]
+            for i in xrange(nbins):
+                value_envel[i, num] = y[i]
+                error_envel_max[i, num] = y[i] + yerr[i]
+                error_envel_min[i, num] = y[i] - yerr[i]
+        except:
+            logging.warning("Observable %s not in run %s!"%(observable, run))
+            pass
+
+    if opts.cl != "100":
+        # Determine indices to cut, since we want a central CL band
+        d = (100 - float(cl))/200
+        start = int(numpy.round(d * nruns))
+        stop  = int(numpy.round((1. - d) * nruns))
+
+    else:
+        start =  0
+        stop  = -1
+
+    # Initiallise return objects
+    value_envel_y         = numpy.zeros(nbins)
+    value_envel_yerr_high = numpy.zeros(nbins)
+    value_envel_yerr_low  = numpy.zeros(nbins)
+    error_envel_y         = numpy.zeros(nbins)
+    error_envel_yerr      = numpy.zeros(nbins)
+
+    for i in xrange(nbins):
+        binmean = numpy.mean(numpy.array(sorted(list(value_envel[i,:])))[start:stop])
+        binmax  = numpy.max(numpy.array(sorted(list(value_envel[i,:])))[start:stop])
+        binmin  = numpy.min(numpy.array(sorted(list(value_envel[i,:])))[start:stop])
+        binerr_high = binmax - binmean
+        binerr_low  = binmean - binmin
+
+        value_envel_y[i] = binmean
+        value_envel_yerr_high[i] = binerr_high
+        value_envel_yerr_low[i] = binerr_low
+
+        #temp_max = max(abs( error_envel_max[i,:] - value_envel[i,:] ))
+        #temp_min = max(abs( value_envel[i,:] - error_envel_min[i,:] ))
+
+    return  xlow, xhigh, value_envel_y, value_envel_yerr_low, value_envel_yerr_high
+
+def loadObservablelist(obsfile):
+    obslist = []
+    try:
+        f = open(obsfile)
+        for line in f:
+            if (line.strip()).startswith('#'):
+                continue
+            if not line.strip() == "":
+                obslist.append((line.split()[0]).strip())
+        f.close()
+    except:
+        logging.info("Could not read observable file or none given: %s"%obsfile)
+    return obslist
+
+def writeHeader(observable):
+    if anainfos.has_key(observable):
+        title = anainfos[observable].get('Title', "")
+        xlabel = anainfos[observable].get('XLabel', "")
+        ylabel = anainfos[observable].get('YLabel', "")
+        logy = anainfos[observable].get('LogY', "0")
+    else:
+        title, xlabel, ylabel = "", "", ""
+        logy = "0"
+    header = "# BEGIN PLOT\n"
+    header +="DrawOnly="
+    for cl in opts.cl.split(","):
+        header+="cl-%s-%s "%(cl, observable)
+    if observable in refhistos.keys():
+        header+="ref-%s "%(observable)
+    header +="\n"
+    header += "RatioPlot=0\n"
+    header += "LogY=%s\n"%logy
+    header += "Title=%s\n"%title
+    header += "XLabel=%s\n"%xlabel
+    header += "YLabel=%s\n"%ylabel
+    header += "Legend=1\n"
+    #header += "LegendXPos=0.75\n"
+    #header += "LegendYPos=0.97\n"
+    header += "# END PLOT\n\n"
+
+    return header
+
+
+def writeRefhisto(observable):
+    """ This plots the reference data
+    """
+    try:
+        title = opts.refdir.split(":")[1]
+    except:
+        title = "data"
+    data = readHisto(refhistos[observable])
+    plot =  "# BEGIN HISTOGRAM ref-%s \n"%observable
+    plot += "Title=%s \n"%title
+    plot += "ErrorBars=1 \n"
+    plot += "PolyMarker=* \n"
+    plot += writeData(data[:,0], data[:,1], data[:,2], data[:,3])
+    plot += "# END HISTOGRAM \n\n"
+    return plot
+
+def writeHisto(data, name, colour, isdata=True):
+    histo = "# BEGIN HISTOGRAM %s \n"%name
+    histo +="# END HISTOGRAM \n\n"
+    return histo
+
+def writeData(xlow, xhigh, y, yerrlow, yerrhigh=None):
+    if yerrhigh is None:
+        yerrhigh = yerrlow
+    data = ""
+    for i in xrange(len(y)):
+        data+= "%e\t%e\t%e\t%e\t%e\n"%(xlow[i], xhigh[i], y[i], yerrlow[i], yerrhigh[i])
+    return data
+
+
+def writeEnvelope(observable, cl="100"):
+    envelope =  "# BEGIN HISTOGRAM cl-%s-%s \n"%(cl, observable)
+    envelope += "Title=Envelope (CL=%s pct.)\n"%cl# (%s \\% of all runs) \n"%cl
+    envelope += "ErrorBands=1\n"
+    envelope += "ErrorBandColor=blue!40!\n"
+    envelope += "LineStyle=none\n"
+    xlow, xhigh, y, yerrlow, yerrhigh = getEnvelope(observable)
+    envelope +=writeData(xlow, xhigh, y, yerrlow, yerrhigh)
+    envelope += "# END HISTOGRAM \n\n"
+    return envelope
+
+
+def getRefHistos(refdir):
+    """ Taken from prof-I. Read in AIDA file and return histos. """
+    refhistos = {}
+    refdir = os.path.abspath(refdir)
+    for f in os.listdir(refdir):
+        if f.endswith(".aida"):
+            # tree = ET.parse(refdir+"/"+f)
+            tree = ET.parse(os.path.join(refdir, f))
+            for dps in tree.findall("dataPointSet"):
+                # dpsname = dps.get("path") + "/" + dps.get("name")
+                dpsname = os.path.join(dps.get("path"), dps.get("name"))
+                if dpsname.startswith("/REF"):
+                    dpsname = dpsname[4:]
+                ## Make a histogram and add it to the return dictionary
+                refhistos[dpsname] = Histo.fromDPS(dps)
+            logging.debug("Successfully loaded comparison histos" +
+                    " from: %s"%(os.path.join(refdir, f)))
+    return refhistos
+
+def getAnaInfos():
+    analyses = []
+    allinfo = {}
+    obs = mchistos[mchistos.keys()[0]].keys()
+    for o in obs:
+        analyses.append(o.split("/")[1])
+    for ana in set(analyses):
+        try:
+            temp = getSingleAnalysisInfo(ana)
+        except Exception:
+            continue
+        for k, v in temp.iteritems():
+            allinfo[k] = v
+    return allinfo
+
+# Check if additional AIDA file was supplied and read histos
+if opts.refdir:
+    refhistos = getRefHistos(opts.refdir.split(":")[0])
+else:
+    refhistos= {}
+logging.info("Loaded %i ref. histograms" % (len(refhistos)))
+
+# check, if specified outdir exists and create it otherwise
+if not os.path.exists(opts.outdir):
+    os.makedirs(opts.outdir)
+
+# Check if supplied confidence levels are valid
+if opts.cl:
+    cls = map(float, opts.cl.split(","))
+    for cl in cls:
+        if cl < 0 or cl > 100:
+            logging.error("Confidence level must be between 0 and 100.")
+            sys.exit(1)
+
+# Load list of observables from file
+obslist = loadObservablelist(opts.observable)
+
+# Load MC histos
+mchistos = getMCHistos(opts.mcdir)
+logging.info("Loaded %i mc histograms" % (len(mchistos.values()[0])))
+
+# check that we have an reference/mc histogram for every obs in obslist
+for obs in obslist:
+    if obs not in refhistos.keys():
+        logging.warn("Observable '%s' missing in reference histograms!" % (obs))
+    if obs not in mchistos.values()[0].keys():
+        logging.warn("Observable '%s' missing in MC histograms!" % (obs))
+
+
+# Try to get titles, xlabels, ylabels
+anainfos = getAnaInfos()
+
+if len(obslist) == 0:
+    obslist = mchistos[mchistos.keys()[0]].keys()
+else:
+    logging.info("Read observables to plot from %s"%opts.observable)
+
+
+# save envelope-plots in the directory specified via --outdir
+#bar = flpb(0, len(obslist), 30, 'Saving envelopes ')
+for num, observable in enumerate(obslist):
+    #bar.update(num)
+    outname = "%s-envelope.dat"%observable.strip("/").replace("/","_")
+    f = open(os.path.join(opts.outdir, outname), "w")
+    f.write(writeHeader(observable))
+    if observable in refhistos.keys():
+        f.write(writeRefhisto(observable))
+    f.write(writeEnvelope(observable, opts.cl))
+    f.close()
+
+logging.info("Use 'make-plots --pdf *.dat' to plot the dat-files and")
+logging.info("'contrib/makegallery.py -s pdf envelopes.html' for html-gallery")

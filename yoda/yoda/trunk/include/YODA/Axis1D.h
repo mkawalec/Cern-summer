@@ -22,13 +22,14 @@ namespace YODA {
 
 
   /// @brief A 1D templated container of ordered bins
-  template <typename BIN>
+  /// This class is separately templated on the bin and distribution types.
+  template <typename BIN1D, typename DBN>
   class Axis1D {
   public:
 
 
-    typedef BIN Bin;
-    typedef typename Utils::sortedvector<BIN> Bins;
+    typedef BIN1D Bin;
+    typedef typename Utils::sortedvector<BIN1D> Bins;
 
 
     /// @name Helper functions to make bin edge vectors (see @file MathUtils.h)
@@ -59,7 +60,7 @@ namespace YODA {
     void _mkAxis(const vector<double>& binedges) {
       const size_t nbins = binedges.size() - 1;
       for (size_t i = 0; i < nbins; ++i) {
-        _bins.insert( BIN(binedges.at(i), binedges.at(i+1)) );
+        _bins.insert( BIN1D(binedges.at(i), binedges.at(i+1)) );
       }
 
       /// @todo Remove
@@ -105,10 +106,10 @@ namespace YODA {
 
 
     /// @todo Accept a general iterable and remove this silly special-casing for std::vector
-    Axis1D(const vector<BIN>& bins) {
+    Axis1D(const vector<BIN1D>& bins) {
       assert(!bins.empty());
       Bins sbins;
-      for (typename vector<BIN>::const_iterator b = bins.begin(); b != bins.end(); ++b) {
+      for (typename vector<BIN1D>::const_iterator b = bins.begin(); b != bins.end(); ++b) {
         sbins.insert(*b);
       }
       _mkAxis(sbins);
@@ -164,52 +165,52 @@ namespace YODA {
     double xMax() const { return highEdge(); }
 
 
-    BIN& bin(size_t index) {
+    BIN1D& bin(size_t index) {
       if (index >= numBins())
         throw RangeError("YODA::Histo: index out of range");
       return _bins[index];
     }
 
 
-    const BIN& bin(size_t index) const {
+    const BIN1D& bin(size_t index) const {
       if (index >= numBins())
         throw RangeError("YODA::Histo: index out of range");
       return _bins[index];
     }
 
 
-    BIN& binByCoord(double x) {
+    BIN1D& binByCoord(double x) {
       return bin(findBinIndex(x));
     }
 
-    const BIN& binByCoord(double x) const {
+    const BIN1D& binByCoord(double x) const {
       return bin(findBinIndex(x));
     }
 
 
-    Dbn1D& totalDbn() {
+    DBN& totalDbn() {
       return _dbn;
     }
 
-    const Dbn1D& totalDbn() const {
+    const DBN& totalDbn() const {
       return _dbn;
     }
 
 
-    Dbn1D& underflow() {
+    DBN& underflow() {
       return _underflow;
     }
 
-    const Dbn1D& underflow() const {
+    const DBN& underflow() const {
       return _underflow;
     }
 
 
-    Dbn1D& overflow() {
+    DBN& overflow() {
       return _overflow;
     }
 
-    const Dbn1D& overflow() const {
+    const DBN& overflow() const {
       return _overflow;
     }
 
@@ -234,14 +235,37 @@ namespace YODA {
     }
 
 
-    /// Scale the axis coordinates (i.e. bin edges)
-    /// @todo Base this on a general transformation of the axis coordinates via a supplied function (object)
-    void scale(double scalefactor) {
-      /// @todo Implement!
-      throw std::runtime_error("Axis coordinate transformations not yet implemented! Pester me, please.");
+    /// @brief Merge bins so that bin widths are roughly increased by a factor @a factor.
+    /// Note that rebinnings to this factor have to be approximate, since bins are discrete.
+    void rebin(int factor) {
+      assert(factor >= 1);
+      /// @todo Implement! Requires ability to change bin edges from outside...
+      throw std::runtime_error("Rebinning is not yet implemented! Pester me, please.");
     }
 
 
+    /// Merge a bin range @a binindex1 to @a binindex2 into a single bin.
+    void mergeBins(size_t binindex1, size_t binindex2) {
+      assert(binindex1 >= binindex2);
+      if (binindex1 < 0 || binindex1 >= numBins()) throw RangeError("binindex1 is out of range");
+      if (binindex2 < 0 || binindex2 >= numBins()) throw RangeError("binindex2 is out of range");
+      /// @todo Implement! Requires ability to change bin edges from outside...
+      throw std::runtime_error("Rebinning is not yet implemented! Pester me, please.");
+    }
+
+
+    /// Scale the axis coordinates (i.e. bin edges).
+    void scaleX(double scalefactor) {
+       _dbn.scaleX(scalefactor);
+       _underflow.scaleW(scalefactor);
+       _overflow.scaleW(scalefactor);
+       for(int i=0; i < _bins.size(); i++) _bins[i].scaleX(scalefactor);
+       for(int i=0; i < _cachedBinEdges.size(); i++) _cachedBinEdges[i] *= scalefactor;
+       _mkBinHash();
+    }
+
+
+    /// Scale the weights, as if all fills so far had used weights which differed by the given factor.
     void scaleW(double scalefactor) {
       _dbn.scaleW(scalefactor);
       _underflow.scaleW(scalefactor);
@@ -267,7 +291,7 @@ namespace YODA {
     }
 
 
-    Axis1D<BIN>& operator += (const Axis1D<BIN>& toAdd) {
+    Axis1D<BIN1D,DBN>& operator += (const Axis1D<BIN1D,DBN>& toAdd) {
       if (*this != toAdd) {
         throw LogicError("YODA::Histo1D: Cannot add axes with different binnings.");
       }
@@ -281,7 +305,7 @@ namespace YODA {
     }
 
 
-    Axis1D<BIN>& operator -= (const Axis1D<BIN>& toSubtract) {
+    Axis1D<BIN1D,DBN>& operator -= (const Axis1D<BIN1D,DBN>& toSubtract) {
       if (*this != toSubtract) {
         throw LogicError("YODA::Histo1D: Cannot subtract axes with different binnings.");
       }
@@ -311,12 +335,12 @@ namespace YODA {
     Bins _bins;
 
     /// A distribution counter for overflow fills
-    Dbn1D _underflow;
+    DBN _underflow;
     /// A distribution counter for underlow fills
-    Dbn1D _overflow;
+    DBN _overflow;
 
     /// A distribution counter for the whole histogram
-    Dbn1D _dbn;
+    DBN _dbn;
 
     /// Bin edges: lower edges, except last entry,
     /// which is the high edge of the last bin
@@ -330,17 +354,17 @@ namespace YODA {
 
 
 
-  template <typename BIN>
-  Axis1D<BIN> operator + (const Axis1D<BIN>& first, const Axis1D<BIN>& second) {
-    Axis1D<BIN> tmp = first;
+  template <typename BIN1D, typename DBN>
+  Axis1D<BIN1D,DBN> operator + (const Axis1D<BIN1D,DBN>& first, const Axis1D<BIN1D,DBN>& second) {
+    Axis1D<BIN1D,DBN> tmp = first;
     tmp += second;
     return tmp;
   }
 
 
-  template <typename BIN>
-  Axis1D<BIN> operator - (const Axis1D<BIN>& first, const Axis1D<BIN>& second) {
-    Axis1D<BIN> tmp = first;
+  template <typename BIN1D, typename DBN>
+  Axis1D<BIN1D,DBN> operator - (const Axis1D<BIN1D,DBN>& first, const Axis1D<BIN1D,DBN>& second) {
+    Axis1D<BIN1D,DBN> tmp = first;
     tmp -= second;
     return tmp;
   }

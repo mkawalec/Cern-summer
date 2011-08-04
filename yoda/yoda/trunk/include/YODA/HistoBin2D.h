@@ -8,36 +8,54 @@
 namespace YODA {
     class HistoBin2D : public Bin2D {
     public:
-        //Constructors:
+        /// Constructor accepting a set of extremal points of a bin 
         HistoBin2D(double lowEdgeX, double highEdgeX,
                    double lowEdgeY, double highEdgeY);
 
+        /// Constructor accepting a set of all edges of a bin
         HistoBin2D(std::vector<std::pair<std::pair<double,double>, std::pair<double,double> > >& edges);
+        
+        //Default constructor
+        HistoBin2D();
 
-        //Modifiers:
+        /// A fill() function accepting the coordinates as std::pair
         void fill(std::pair<double,double>, double weight=1.0);
+
+        /// A fill() function accepting coordinates as spearate numbers
         void fill(double coordX, double coordY, double weight=1.0);
 
+        /// A function that fills this particular bin.
         void fillBin(double weight=1.0);
+
+        /// A reset function
         void reset() {
             Bin2D::reset();
         }
 
+        /// Rescalling the height of a bin
         void scaleW(double scalefactor) {
             _dbn.scaleW(scalefactor);
         }
 
-        //Bin content info:
         
-        //Note that area is actually a volume, kept to keep variable names 
-        //the same with *1D
+        //TODO: Is it a volume? Looks like height.
+        /// The volume of a bin
         double volume() const { return sumW(); }
+
+        /// The height of a bin
         double height() const { return volume()/(widthX()*widthY()); }
+
+        /// Error on volume
         double volumeErr() const{ return sqrt(sumW2()); }
+
+        ///Error on height
         double heightErr() const{ return volumeErr()/(widthX()*widthY());}
 
-        //Operators:
+        
+        /// Addition operator
         HistoBin2D& operator += (const HistoBin2D&);
+
+        /// Substracion operator
         HistoBin2D& operator -= (const HistoBin2D&);
 
     protected:

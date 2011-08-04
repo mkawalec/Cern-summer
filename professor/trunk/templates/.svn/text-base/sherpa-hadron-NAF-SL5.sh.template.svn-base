@@ -1,0 +1,129 @@
+##
+## Script template for the Grid Engine queue system at the DESY NAF. The
+## Rivet binary must be in the user's PATH. The path of the SHERPA binary
+## and the SHERPA working directory must be given to prof-filltemplates.
+##
+
+## Force correct resources
+#$ -w e
+## merge stderr to stdout
+#$ -j y
+## 500k events might take some time
+#$ -l h_cpu=12:00:00
+## Put log file in cwd
+#$ -cwd
+## Sherpa and Rivet are compiled for SL5 only.
+#$ -l os=sl5
+
+## Make sure we're run by bash
+#$ -S /bin/bash
+
+#set ANALYSES = ['ALEPH_1991_S2435284', 'ALEPH_1996_S3486095', \
+    'DELPHI_1995_S3137023', 'DELPHI_1996_S3430090',
+    'DELPHI_2002_069_CONF_603', 'DELPHI_2003_WUD_03_11',
+    'JADE_OPAL_2000_S4300807', 'OPAL_1998_S3780481',
+    'PDG_HADRON_MULTIPLICITIES', 'PDG_HADRON_MULTIPLICITIES_RATIOS']
+
+set -e
+
+##
+## Sherpa paths
+##
+## Path to the SHERPA executable
+SHERPA_BIN=$SHERPABIN
+## Path with the sherpa Run.dat
+SHERPA_WORKPATH=$SHERPAWORK
+SHERPA_STATUSPATH="\${SHERPA_WORKPATH}"
+SHERPA_RESULTDIR="res_hadron/"
+
+## Log files
+LOGSHERPA=${PROF_RUNOUTDIR}/${PROF_JOB}.sherpa.log
+LOGRIVET=${PROF_RUNOUTDIR}/${PROF_JOB}.rivet.log
+
+## Sherpa treats the fifo path relative to it's working directory,
+## so we change into it for fifo creation etc.
+echo "cd'ing into SHERPA_WORKPATH=\$SHERPA_WORKPATH"
+cd \$SHERPA_WORKPATH
+
+echo "Including environment"
+source \${HOME}/myenv.sh
+
+if test -d \$SHERPA_RESULTDIR
+then
+    echo "result directory already exists"
+else
+    echo "creating sherpa integration result directory"
+    mkdir -p \$SHERPA_RESULTDIR
+fi
+
+if ! test -d ${PROF_RUNOUTDIR}
+then
+    echo "creating output directory"
+    mkdir -p ${PROF_RUNOUTDIR}
+fi
+
+
+## save used parameters
+> $PROF_RUNOUTDIR/used_params
+#for $k, $v in $PROF_PARAMS.items()
+echo "$k $v" >> $PROF_RUNOUTDIR/used_params
+#end for
+
+
+echo "Running Professor Sherpa/rivet commands"
+
+## Sherpa adds .hepmc2g extension by itself
+FIFONAMESHERPA=`mktemp -u fifo.${PROF_JOB}_XXXX`
+FIFONAME="\${FIFONAMESHERPA}.hepmc2g"
+if test -e \$FIFONAME
+then
+    echo "** ERROR: Fifo for Sherpa-Rivet data exchange already exists: \$FIFONAME "
+    exit 1
+else
+    echo "Creating fifo \$FIFONAME"
+    mkfifo \$FIFONAME
+fi
+
+\$SHERPA_BIN \
+    PATH=\$SHERPA_WORKPATH \
+    RESULT_DIRECTORY=\$SHERPA_RESULTDIR \
+    STATUS_PATH=\$SHERPA_STATUSPATH \
+    EVENT_MODE=HepMC \
+    EVENTS=500000 \
+    FILE_SIZE=100000000 \
+    HEPMC2_GENEVENT_OUTPUT=\$FIFONAMESHERPA  \
+    OUTPUT=2 \
+#for $k, $v in $PROF_PARAMS.items()
+    "$k"="$v" \
+#end for
+&> \$LOGSHERPA &
+
+rivet \
+  #for $a in $ANALYSES
+  --analysis $a \
+  #end for
+  --histo-file $PROF_RUNOUTDIR/out \
+  \$FIFONAME \
+    &> \$LOGRIVET
+
+# zipping log files
+gzip -f \$LOGSHERPA
+gzip -f \$LOGRIVET
+
+
+if test -d $PROF_REFOUTDIR ; then
+    echo "Refdir already exists... so I do nothing"
+else
+    echo "Creating ref out dir"
+    mkdir $PROF_REFOUTDIR
+    echo "Copying reference data files"
+#for $a in $ANALYSES
+REF=`rivet-config --datadir`/${a}.aida
+test -e \$REF && cp \$REF $PROF_REFOUTDIR/
+#end for
+fi
+
+echo "Removing fifo"
+rm -f \$FIFONAME
+
+exit 0

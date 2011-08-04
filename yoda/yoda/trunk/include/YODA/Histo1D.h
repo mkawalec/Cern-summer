@@ -8,6 +8,7 @@
 
 #include "YODA/AnalysisObject.h"
 #include "YODA/HistoBin1D.h"
+#include "YODA/Dbn1D.h"
 #include "YODA/Scatter2D.h"
 #include "YODA/Axis1D.h"
 #include "YODA/Exceptions.h"
@@ -19,7 +20,7 @@ namespace YODA {
 
 
   /// Convenience typedef
-  typedef Axis1D<HistoBin1D> Histo1DAxis;
+  typedef Axis1D<HistoBin1D, Dbn1D> Histo1DAxis;
 
 
   /// A  one-dimensional histogram.
@@ -191,6 +192,18 @@ namespace YODA {
       return sumW(includeoverflows);
     }
 
+    /// Get the integrated area of the histogram between bins @a binindex1 and @a binindex2.
+    double integral(size_t binindex1, size_t binindex2) const {
+      assert(binindex1 > binindex2);
+      if (binindex1 < 0 || binindex1 >= numBins()) throw RangeError("binindex1 is out of range");
+      if (binindex2 < 0 || binindex2 >= numBins()) throw RangeError("binindex2 is out of range");
+      double rtn = 0;
+      for (size_t i = binindex1; i < binindex2; ++i) {
+        rtn += bin(i).area();
+      }
+      return rtn;
+    }
+
     /// Get sum of weights in histo
     double sumW(bool includeoverflows=true) const;
 
@@ -237,7 +250,7 @@ namespace YODA {
     //@{
 
     /// Definition of bin edges and contents
-    Axis1D<HistoBin1D> _axis;
+    Axis1D<HistoBin1D, Dbn1D> _axis;
 
     //@}
 

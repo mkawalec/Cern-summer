@@ -214,6 +214,11 @@ namespace YODA {
       }
       return *this;
     }
+    
+    /// Scaling
+    void scale(double scaleX, double scaleY) {
+        for(unsigned int i=0; i < _points.size(); i++) _points[i].scale(scaleX, scaleY);
+    }
 
     //@}
 

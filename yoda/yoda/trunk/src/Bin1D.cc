@@ -109,6 +109,11 @@ namespace YODA {
     return _xdbn.sumWX2();
   }
 
+  void Bin1D::setW(double sumW)             {_xdbn.setW(sumW);}
+  void Bin1D::setW2(double sumW2)           {_xdbn.setW2(sumW2);}
+  void Bin1D::setWX(double sumWX)           {_xdbn.setWX(sumWX);}
+  void Bin1D::setWX2(double sumWX2)         {_xdbn.setWX2(sumWX2);}
+  void Bin1D::setNumFills(double numFills)  {_xdbn.setNumFills(numFills);}
 
   Bin1D& Bin1D::add(const Bin1D& b) {
     assert(_edges == b._edges);

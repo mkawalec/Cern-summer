@@ -1,0 +1,50 @@
+#! /usr/bin/env python
+
+usage=""" %prog [options] <pickledparamsets> <outfile>\n
+
+Iterate over all paramsets found in pickledparamsets and set
+values of PARP(86) to (1 + PARP(85))/2. Thus PARP(85) needs
+to be given in paramsets.
+
+The initial file pickledparamsets stays untouched, therefore
+all changes are being stored in outfile.
+
+TODO: Make it work also if only PARP(86) is given.
+"""
+from optparse import OptionParser, OptionGroup
+
+try:
+    import cPickle as pickle
+except:
+    import pickle
+
+parser = OptionParser(usage=usage)
+
+(opts, args) = parser.parse_args()
+
+## read in stored dictionary of sets of parameter points
+f = open(args[0], 'r')
+paramsets = pickle.load(f)
+f.close()
+
+def handlePARP85(paramset):
+    temp = {}
+    for param, value in paramset.iteritems():
+        if param == "PARP(86)":
+            pass
+        elif param == "PARP(85)":
+            temp[param] = value
+            temp["PARP(86)"] = (1. + value)/2.
+        else:
+            temp[param] = value
+    return temp
+
+# create dictionary with manipulated values
+newdict = {}
+for run, pset in paramsets.iteritems():
+    newdict[run] = handlePARP85(pset)
+
+## save to outfile
+f = open(args[1], 'w')
+pickle.dump(newdict, f)
+f.close()

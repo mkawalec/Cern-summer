@@ -280,6 +280,7 @@ class Bin1D(Bin):
         try: self.this.append(this)
         except: self.this = this
     def reset(self): return _yodawrap.Bin1D_reset(self)
+    def scaleX(self, *args): return _yodawrap.Bin1D_scaleX(self, *args)
     def lowEdge(self): return _yodawrap.Bin1D_lowEdge(self)
     def xMin(self): return _yodawrap.Bin1D_xMin(self)
     def highEdge(self): return _yodawrap.Bin1D_highEdge(self)
@@ -303,6 +304,55 @@ class Bin1D(Bin):
     __del__ = lambda self : None;
 Bin1D_swigregister = _yodawrap.Bin1D_swigregister
 Bin1D_swigregister(Bin1D)
+
+class Bin2D(Bin):
+    __swig_setmethods__ = {}
+    for _s in [Bin]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Bin2D, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Bin]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Bin2D, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _yodawrap.new_Bin2D(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def reset(self): return _yodawrap.Bin2D_reset(self)
+    def scale(self, *args): return _yodawrap.Bin2D_scale(self, *args)
+    def lowEdgeX(self): return _yodawrap.Bin2D_lowEdgeX(self)
+    def xMin(self): return _yodawrap.Bin2D_xMin(self)
+    def lowEdgeY(self): return _yodawrap.Bin2D_lowEdgeY(self)
+    def yMin(self): return _yodawrap.Bin2D_yMin(self)
+    def highEdgeX(self): return _yodawrap.Bin2D_highEdgeX(self)
+    def xMax(self): return _yodawrap.Bin2D_xMax(self)
+    def highEdgeY(self): return _yodawrap.Bin2D_highEdgeY(self)
+    def yMax(self): return _yodawrap.Bin2D_yMax(self)
+    def widthX(self): return _yodawrap.Bin2D_widthX(self)
+    def widthY(self): return _yodawrap.Bin2D_widthY(self)
+    def focus(self): return _yodawrap.Bin2D_focus(self)
+    def midpoint(self): return _yodawrap.Bin2D_midpoint(self)
+    def xMean(self): return _yodawrap.Bin2D_xMean(self)
+    def yMean(self): return _yodawrap.Bin2D_yMean(self)
+    def xVariance(self): return _yodawrap.Bin2D_xVariance(self)
+    def yVariance(self): return _yodawrap.Bin2D_yVariance(self)
+    def xStdDev(self): return _yodawrap.Bin2D_xStdDev(self)
+    def yStdDev(self): return _yodawrap.Bin2D_yStdDev(self)
+    def xStdErr(self): return _yodawrap.Bin2D_xStdErr(self)
+    def yStdErr(self): return _yodawrap.Bin2D_yStdErr(self)
+    def numEntries(self): return _yodawrap.Bin2D_numEntries(self)
+    def sumW(self): return _yodawrap.Bin2D_sumW(self)
+    def sumW2(self): return _yodawrap.Bin2D_sumW2(self)
+    def sumWX(self): return _yodawrap.Bin2D_sumWX(self)
+    def sumWY(self): return _yodawrap.Bin2D_sumWY(self)
+    def sumWXY(self): return _yodawrap.Bin2D_sumWXY(self)
+    def sumWX2(self): return _yodawrap.Bin2D_sumWX2(self)
+    def sumWY2(self): return _yodawrap.Bin2D_sumWY2(self)
+    def __iadd__(self, *args): return _yodawrap.Bin2D___iadd__(self, *args)
+    def __isub__(self, *args): return _yodawrap.Bin2D___isub__(self, *args)
+    __swig_destroy__ = _yodawrap.delete_Bin2D
+    __del__ = lambda self : None;
+Bin2D_swigregister = _yodawrap.Bin2D_swigregister
+Bin2D_swigregister(Bin2D)
 
 class HistoBin1D(Bin1D):
     __swig_setmethods__ = {}
@@ -357,7 +407,7 @@ class Histo1D(AnalysisObject):
     def binByCoord(self, *args): return _yodawrap.Histo1D_binByCoord(self, *args)
     def underflow(self, *args): return _yodawrap.Histo1D_underflow(self, *args)
     def overflow(self, *args): return _yodawrap.Histo1D_overflow(self, *args)
-    def integral(self, includeoverflows = True): return _yodawrap.Histo1D_integral(self, includeoverflows)
+    def integral(self, *args): return _yodawrap.Histo1D_integral(self, *args)
     def sumW(self, includeoverflows = True): return _yodawrap.Histo1D_sumW(self, includeoverflows)
     def sumW2(self, includeoverflows = True): return _yodawrap.Histo1D_sumW2(self, includeoverflows)
     def mean(self, includeoverflows = True): return _yodawrap.Histo1D_mean(self, includeoverflows)
@@ -415,6 +465,126 @@ class HistoBin1Ds(_object):
     __del__ = lambda self : None;
 HistoBin1Ds_swigregister = _yodawrap.HistoBin1Ds_swigregister
 HistoBin1Ds_swigregister(HistoBin1Ds)
+
+class HistoBin2D(Bin2D):
+    __swig_setmethods__ = {}
+    for _s in [Bin2D]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, HistoBin2D, name, value)
+    __swig_getmethods__ = {}
+    for _s in [Bin2D]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, HistoBin2D, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _yodawrap.new_HistoBin2D(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def fill(self, *args): return _yodawrap.HistoBin2D_fill(self, *args)
+    def fillBin(self, weight = 1.0): return _yodawrap.HistoBin2D_fillBin(self, weight)
+    def reset(self): return _yodawrap.HistoBin2D_reset(self)
+    def scaleW(self, *args): return _yodawrap.HistoBin2D_scaleW(self, *args)
+    def volume(self): return _yodawrap.HistoBin2D_volume(self)
+    def height(self): return _yodawrap.HistoBin2D_height(self)
+    def volumeErr(self): return _yodawrap.HistoBin2D_volumeErr(self)
+    def heightErr(self): return _yodawrap.HistoBin2D_heightErr(self)
+    def __iadd__(self, *args): return _yodawrap.HistoBin2D___iadd__(self, *args)
+    def __isub__(self, *args): return _yodawrap.HistoBin2D___isub__(self, *args)
+    __swig_destroy__ = _yodawrap.delete_HistoBin2D
+    __del__ = lambda self : None;
+HistoBin2D_swigregister = _yodawrap.HistoBin2D_swigregister
+HistoBin2D_swigregister(HistoBin2D)
+
+class Histo2D(AnalysisObject):
+    __swig_setmethods__ = {}
+    for _s in [AnalysisObject]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Histo2D, name, value)
+    __swig_getmethods__ = {}
+    for _s in [AnalysisObject]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Histo2D, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _yodawrap.new_Histo2D(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def _aotype(self): return _yodawrap.Histo2D__aotype(self)
+    def fill(self, *args): return _yodawrap.Histo2D_fill(self, *args)
+    def reset(self): return _yodawrap.Histo2D_reset(self)
+    def scaleW(self, *args): return _yodawrap.Histo2D_scaleW(self, *args)
+    def scale(self, scaleX = 1.0, scaleY = 1.0): return _yodawrap.Histo2D_scale(self, scaleX, scaleY)
+    def addBin(self, *args): return _yodawrap.Histo2D_addBin(self, *args)
+    def lowEdgeX(self): return _yodawrap.Histo2D_lowEdgeX(self)
+    def lowEdgeY(self): return _yodawrap.Histo2D_lowEdgeY(self)
+    def highEdgeX(self): return _yodawrap.Histo2D_highEdgeX(self)
+    def highEdgeY(self): return _yodawrap.Histo2D_highEdgeY(self)
+    def bins(self, *args): return _yodawrap.Histo2D_bins(self, *args)
+    def bin(self, *args): return _yodawrap.Histo2D_bin(self, *args)
+    def binByCoord(self, *args): return _yodawrap.Histo2D_binByCoord(self, *args)
+    def findBinIndex(self, *args): return _yodawrap.Histo2D_findBinIndex(self, *args)
+    def underflow(self, *args): return _yodawrap.Histo2D_underflow(self, *args)
+    def overflow(self, *args): return _yodawrap.Histo2D_overflow(self, *args)
+    def numBinsTotal(self, *args): return _yodawrap.Histo2D_numBinsTotal(self, *args)
+    def getHash(self, *args): return _yodawrap.Histo2D_getHash(self, *args)
+    def integral(self, includeoverflows = True): return _yodawrap.Histo2D_integral(self, includeoverflows)
+    def sumW(self, includeoverflows = True): return _yodawrap.Histo2D_sumW(self, includeoverflows)
+    def sumW2(self, includeoverflows = True): return _yodawrap.Histo2D_sumW2(self, includeoverflows)
+    def xMean(self, includeoverflows = True): return _yodawrap.Histo2D_xMean(self, includeoverflows)
+    def yMean(self, includeoverflows = True): return _yodawrap.Histo2D_yMean(self, includeoverflows)
+    def xVariance(self, includeoverflows = True): return _yodawrap.Histo2D_xVariance(self, includeoverflows)
+    def yVariance(self, includeoverflows = True): return _yodawrap.Histo2D_yVariance(self, includeoverflows)
+    def xStdDev(self, includeoverflows = True): return _yodawrap.Histo2D_xStdDev(self, includeoverflows)
+    def yStdDev(self, includeoverflows = True): return _yodawrap.Histo2D_yStdDev(self, includeoverflows)
+    def __iadd__(self, *args): return _yodawrap.Histo2D___iadd__(self, *args)
+    def __isub__(self, *args): return _yodawrap.Histo2D___isub__(self, *args)
+    __swig_destroy__ = _yodawrap.delete_Histo2D
+    __del__ = lambda self : None;
+Histo2D_swigregister = _yodawrap.Histo2D_swigregister
+Histo2D_swigregister(Histo2D)
+
+class HistoBin2Ds(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, HistoBin2Ds, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, HistoBin2Ds, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _yodawrap.HistoBin2Ds_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _yodawrap.HistoBin2Ds___nonzero__(self)
+    def __bool__(self): return _yodawrap.HistoBin2Ds___bool__(self)
+    def __len__(self): return _yodawrap.HistoBin2Ds___len__(self)
+    def pop(self): return _yodawrap.HistoBin2Ds_pop(self)
+    def __getslice__(self, *args): return _yodawrap.HistoBin2Ds___getslice__(self, *args)
+    def __setslice__(self, *args): return _yodawrap.HistoBin2Ds___setslice__(self, *args)
+    def __delslice__(self, *args): return _yodawrap.HistoBin2Ds___delslice__(self, *args)
+    def __delitem__(self, *args): return _yodawrap.HistoBin2Ds___delitem__(self, *args)
+    def __getitem__(self, *args): return _yodawrap.HistoBin2Ds___getitem__(self, *args)
+    def __setitem__(self, *args): return _yodawrap.HistoBin2Ds___setitem__(self, *args)
+    def append(self, *args): return _yodawrap.HistoBin2Ds_append(self, *args)
+    def empty(self): return _yodawrap.HistoBin2Ds_empty(self)
+    def size(self): return _yodawrap.HistoBin2Ds_size(self)
+    def clear(self): return _yodawrap.HistoBin2Ds_clear(self)
+    def swap(self, *args): return _yodawrap.HistoBin2Ds_swap(self, *args)
+    def get_allocator(self): return _yodawrap.HistoBin2Ds_get_allocator(self)
+    def begin(self): return _yodawrap.HistoBin2Ds_begin(self)
+    def end(self): return _yodawrap.HistoBin2Ds_end(self)
+    def rbegin(self): return _yodawrap.HistoBin2Ds_rbegin(self)
+    def rend(self): return _yodawrap.HistoBin2Ds_rend(self)
+    def pop_back(self): return _yodawrap.HistoBin2Ds_pop_back(self)
+    def erase(self, *args): return _yodawrap.HistoBin2Ds_erase(self, *args)
+    def __init__(self, *args): 
+        this = _yodawrap.new_HistoBin2Ds(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args): return _yodawrap.HistoBin2Ds_push_back(self, *args)
+    def front(self): return _yodawrap.HistoBin2Ds_front(self)
+    def back(self): return _yodawrap.HistoBin2Ds_back(self)
+    def assign(self, *args): return _yodawrap.HistoBin2Ds_assign(self, *args)
+    def resize(self, *args): return _yodawrap.HistoBin2Ds_resize(self, *args)
+    def insert(self, *args): return _yodawrap.HistoBin2Ds_insert(self, *args)
+    def reserve(self, *args): return _yodawrap.HistoBin2Ds_reserve(self, *args)
+    def capacity(self): return _yodawrap.HistoBin2Ds_capacity(self)
+    __swig_destroy__ = _yodawrap.delete_HistoBin2Ds
+    __del__ = lambda self : None;
+HistoBin2Ds_swigregister = _yodawrap.HistoBin2Ds_swigregister
+HistoBin2Ds_swigregister(HistoBin2Ds)
 
 class ProfileBin1D(Bin1D):
     __swig_setmethods__ = {}
@@ -536,6 +706,7 @@ class Point2D(_object):
     def setX(self, *args): return _yodawrap.Point2D_setX(self, *args)
     def y(self): return _yodawrap.Point2D_y(self)
     def setY(self, *args): return _yodawrap.Point2D_setY(self, *args)
+    def scale(self, *args): return _yodawrap.Point2D_scale(self, *args)
     def xErrs(self): return _yodawrap.Point2D_xErrs(self)
     def xErrMinus(self): return _yodawrap.Point2D_xErrMinus(self)
     def xErrPlus(self): return _yodawrap.Point2D_xErrPlus(self)
@@ -555,26 +726,6 @@ class Point2D(_object):
 Point2D_swigregister = _yodawrap.Point2D_swigregister
 Point2D_swigregister(Point2D)
 
-
-def __eq__(*args):
-  return _yodawrap.__eq__(*args)
-__eq__ = _yodawrap.__eq__
-
-def __ne__(*args):
-  return _yodawrap.__ne__(*args)
-__ne__ = _yodawrap.__ne__
-
-def __le__(*args):
-  return _yodawrap.__le__(*args)
-__le__ = _yodawrap.__le__
-
-def __gt__(*args):
-  return _yodawrap.__gt__(*args)
-__gt__ = _yodawrap.__gt__
-
-def __ge__(*args):
-  return _yodawrap.__ge__(*args)
-__ge__ = _yodawrap.__ge__
 class Scatter2D(AnalysisObject):
     __swig_setmethods__ = {}
     for _s in [AnalysisObject]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -593,15 +744,116 @@ class Scatter2D(AnalysisObject):
     def point(self, *args): return _yodawrap.Scatter2D_point(self, *args)
     def addPoint(self, *args): return _yodawrap.Scatter2D_addPoint(self, *args)
     def addPoints(self, *args): return _yodawrap.Scatter2D_addPoints(self, *args)
+    def scale(self, *args): return _yodawrap.Scatter2D_scale(self, *args)
     def combineWith(self, *args): return _yodawrap.Scatter2D_combineWith(self, *args)
     __swig_destroy__ = _yodawrap.delete_Scatter2D
     __del__ = lambda self : None;
 Scatter2D_swigregister = _yodawrap.Scatter2D_swigregister
 Scatter2D_swigregister(Scatter2D)
 
+class Point3D(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Point3D, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Point3D, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _yodawrap.new_Point3D(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def x(self): return _yodawrap.Point3D_x(self)
+    def setX(self, *args): return _yodawrap.Point3D_setX(self, *args)
+    def y(self): return _yodawrap.Point3D_y(self)
+    def setY(self, *args): return _yodawrap.Point3D_setY(self, *args)
+    def z(self): return _yodawrap.Point3D_z(self)
+    def setZ(self, *args): return _yodawrap.Point3D_setZ(self, *args)
+    def scale(self, *args): return _yodawrap.Point3D_scale(self, *args)
+    def xErrs(self): return _yodawrap.Point3D_xErrs(self)
+    def xErrMinus(self): return _yodawrap.Point3D_xErrMinus(self)
+    def xErrPlus(self): return _yodawrap.Point3D_xErrPlus(self)
+    def xErrAvg(self): return _yodawrap.Point3D_xErrAvg(self)
+    def setXErr(self, *args): return _yodawrap.Point3D_setXErr(self, *args)
+    def xMin(self): return _yodawrap.Point3D_xMin(self)
+    def xMax(self): return _yodawrap.Point3D_xMax(self)
+    def yErrs(self): return _yodawrap.Point3D_yErrs(self)
+    def yErrMinus(self): return _yodawrap.Point3D_yErrMinus(self)
+    def yErrPlus(self): return _yodawrap.Point3D_yErrPlus(self)
+    def yErrAvg(self): return _yodawrap.Point3D_yErrAvg(self)
+    def setYErr(self, *args): return _yodawrap.Point3D_setYErr(self, *args)
+    def yMin(self): return _yodawrap.Point3D_yMin(self)
+    def yMax(self): return _yodawrap.Point3D_yMax(self)
+    def zErrs(self): return _yodawrap.Point3D_zErrs(self)
+    def zErrMinus(self): return _yodawrap.Point3D_zErrMinus(self)
+    def zErrPlus(self): return _yodawrap.Point3D_zErrPlus(self)
+    def zErrAvg(self): return _yodawrap.Point3D_zErrAvg(self)
+    def setZErr(self, *args): return _yodawrap.Point3D_setZErr(self, *args)
+    def zMin(self): return _yodawrap.Point3D_zMin(self)
+    def zMax(self): return _yodawrap.Point3D_zMax(self)
+    __swig_destroy__ = _yodawrap.delete_Point3D
+    __del__ = lambda self : None;
+Point3D_swigregister = _yodawrap.Point3D_swigregister
+Point3D_swigregister(Point3D)
+
+def __add__(*args):
+  return _yodawrap.__add__(*args)
+__add__ = _yodawrap.__add__
+
+def __sub__(*args):
+  return _yodawrap.__sub__(*args)
+__sub__ = _yodawrap.__sub__
+
+def __div__(*args):
+  return _yodawrap.__div__(*args)
+__div__ = _yodawrap.__div__
+
+class Scatter3D(AnalysisObject):
+    __swig_setmethods__ = {}
+    for _s in [AnalysisObject]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Scatter3D, name, value)
+    __swig_getmethods__ = {}
+    for _s in [AnalysisObject]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Scatter3D, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _yodawrap.new_Scatter3D(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def reset(self): return _yodawrap.Scatter3D_reset(self)
+    def scale(self, *args): return _yodawrap.Scatter3D_scale(self, *args)
+    def numPoints(self): return _yodawrap.Scatter3D_numPoints(self)
+    def points(self): return _yodawrap.Scatter3D_points(self)
+    def point(self, *args): return _yodawrap.Scatter3D_point(self, *args)
+    def addPoint(self, *args): return _yodawrap.Scatter3D_addPoint(self, *args)
+    def addPoints(self, *args): return _yodawrap.Scatter3D_addPoints(self, *args)
+    def combineWith(self, *args): return _yodawrap.Scatter3D_combineWith(self, *args)
+    __swig_destroy__ = _yodawrap.delete_Scatter3D
+    __del__ = lambda self : None;
+Scatter3D_swigregister = _yodawrap.Scatter3D_swigregister
+Scatter3D_swigregister(Scatter3D)
+
+def __eq__(*args):
+  return _yodawrap.__eq__(*args)
+__eq__ = _yodawrap.__eq__
+
+def __ne__(*args):
+  return _yodawrap.__ne__(*args)
+__ne__ = _yodawrap.__ne__
+
 def __lt__(*args):
   return _yodawrap.__lt__(*args)
 __lt__ = _yodawrap.__lt__
+
+def __le__(*args):
+  return _yodawrap.__le__(*args)
+__le__ = _yodawrap.__le__
+
+def __gt__(*args):
+  return _yodawrap.__gt__(*args)
+__gt__ = _yodawrap.__gt__
+
+def __ge__(*args):
+  return _yodawrap.__ge__(*args)
+__ge__ = _yodawrap.__ge__
 
 class AOVector(_object):
     __swig_setmethods__ = {}
@@ -657,18 +909,6 @@ combine = _yodawrap.combine
 def mkScatter(*args):
   return _yodawrap.mkScatter(*args)
 mkScatter = _yodawrap.mkScatter
-
-def __add__(*args):
-  return _yodawrap.__add__(*args)
-__add__ = _yodawrap.__add__
-
-def __sub__(*args):
-  return _yodawrap.__sub__(*args)
-__sub__ = _yodawrap.__sub__
-
-def __div__(*args):
-  return _yodawrap.__div__(*args)
-__div__ = _yodawrap.__div__
 
 class AOList(_object):
     __swig_setmethods__ = {}

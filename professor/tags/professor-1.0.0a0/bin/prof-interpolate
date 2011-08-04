@@ -1,0 +1,189 @@
+#! /usr/bin/env python
+
+"""\
+%prog --datadir DATADIR [--ipoldir IPOLDIR] \\
+      --obsfile OBSFILE --runsfile RUNSFILE
+
+%prog --mcdir MCDIR --ipoldir IPOLDIR \\
+      --obsfile OBSFILE --runsfile RUNSFILE
+
+Create interpolations for the observables given in OBSFILE, with the run
+combinations given in RUNSFILE. These interpolations are stored in files under
+IPOLDIR, one file per run combination.
+
+The interpolation file names follow the scheme
+    profipol_METHODNAME_RUNSHASH.pkl
+e.g.
+    profipol_quadratic_19fa164ba87e6e5cc9865d7055875d99.pkl
+
+If IPOLDIR is not given but DATADIR is, the interpolations will be written to
+DATADIR/ipols. If the directory does not exist, it will be created. Existing
+interpolation files will be overwritten (but not deleted).
+"""
+
+import os, sys
+import numpy
+import professor.user as prof
+
+
+## Try to rename the process on Linux
+try:
+    import ctypes
+    libc = ctypes.cdll.LoadLibrary('libc.so.6')
+    libc.prctl(15, 'prof-interpolate', 0, 0, 0)
+except Exception:
+    pass
+
+
+## Set up signal handling
+import signal
+global RECVD_KILL_SIGNAL
+RECVD_KILL_SIGNAL = None
+def handleKillSignal(signum, frame):
+    "Declare us as having been signalled, and return to default handling behaviour"
+    prof.log.critical("Signal handler called with signal " + str(signum))
+    prof.log.critical("Waiting for this minimization to finish...")
+    global RECVD_KILL_SIGNAL
+    RECVD_KILL_SIGNAL = signum
+    signal.signal(signum, signal.SIG_DFL)
+## Signals to handle
+signal.signal(signal.SIGTERM, handleKillSignal);
+signal.signal(signal.SIGHUP,  handleKillSignal);
+signal.signal(signal.SIGINT,  handleKillSignal);
+signal.signal(signal.SIGUSR2, handleKillSignal);
+
+
+## Parse command line
+import optparse
+parser = optparse.OptionParser(usage=__doc__)
+
+parser.add_option("-d", "--debug",
+                  dest = "debug",
+                  action = "store_true",
+                  default = False,
+                  help = "turn debug logging on and stop after three minimisations")
+
+parser.add_option("-R", "--runsfile", "--runcombs",
+                  dest = "runsfile",
+                  default = "runcombs.dat",
+                  help = "specify a file of run combinations to use (space-separated, "
+                  "one combination per line) [default: %default]")
+
+parser.add_option("--check",
+                  dest = "check",
+                  action = "store_true",
+                  default = False,
+                  help = "check the tuning data")
+
+prof.addIpolCLOptions(parser)
+prof.DataProxy.addDataCLOptions(parser, mc=True, ipol=True, scan=False)
+opts, args = parser.parse_args()
+
+
+## Turn on debugging and print initial messages
+prof.log.setPriority(opts)
+prof.writeLogo()
+prof.writeGuideLine()
+
+
+## 1. Check option values and load data
+##    Ordered by time consumption.
+
+
+## Get the configured interpolation class
+try:
+    IpolCls = prof.getInterpolationClass(opts.ipolmethod, opts.useweave)
+    prof.log.info("Using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    prof.log.error("Problem getting interpolation method: %s" % (e))
+    prof.log.error("Exiting!")
+    sys.exit(1)
+
+## Test if we can write to output directory
+ipoldir = prof.DataProxy.getPathsFromCLOptions(opts)["ipol"]
+if ipoldir is None:
+    prof.log.error("No interpolation directory given: Use the --datadir or"
+                   " --ipoldir option!")
+    sys.exit(1)
+prof.log.info("Using %s for interpolation storage." % (ipoldir))
+
+if not os.path.exists(ipoldir):
+    prof.log.info("Creating interpolation directory.")
+    os.makedirs(ipoldir)
+
+prof.IOTests.WriteDir(ipoldir)
+
+## Build DataProxy
+dataproxy = prof.DataProxy.fromCLOptions(opts)
+print dataproxy
+
+## Check if we can open given run combination file ...
+if opts.runsfile is None:
+    prof.log.error("No run combination file given!")
+    prof.log.error("Exiting!")
+    sys.exit(1)
+
+prof.IOTests.ReadFile(opts.runsfile)
+prof.log.debug("Using %s as runsfile" % (opts.runsfile))
+
+## ... and load run combinations
+runfile = open(opts.runsfile, "r")
+allruns = [line.split() for line in runfile.readlines()]
+runfile.close()
+prof.log.info("Loaded %i run combinations from %s" % (
+              len(allruns), opts.runsfile))
+
+
+## Select the observables we want to use for our tune.
+if opts.observablefile is None:
+    prof.log.error("No observable file given!")
+    prof.log.error("Exiting!")
+    sys.exit(1)
+prof.IOTests.ReadFile(opts.observablefile)
+weights = prof.WeightManager.fromFile(opts.observablefile)
+prof.log.debug("loaded observable file from %s: %s" % (
+               opts.observablefile, weights))
+
+
+def buildIpolSet(dataproxy, ipolcls, runs, observables):
+    # a short-cut
+    mcdata = dataproxy.getMCData("sample")
+    # build Scaler from parameter bounds of sample MCData
+    scaler = prof.Scaler(mcdata.getParameterBounds(runs))
+    centre = prof.ParameterPoint.fromList(0.5 * numpy.ones(scaler.dim()), scaler,
+                                          scaled=True)
+    runskey = ":".join(sorted(runs))
+    pnames = scaler.getKeys()
+    ipolset = prof.InterpolationSet(centre, runskey, ipolcls)
+
+    # runnum -> ParameterPoint
+    ppcache = {}
+    for run in runs:
+        ppcache[run] = prof.ParameterPoint(mcdata.getRunParams(run), scaler,
+                                           scaled=False)
+
+    for obs in observables:
+        dummyhisto = mcdata.getRunHistos(runs[0])[obs]
+        for ibin in xrange(dummyhisto.numBins()):
+            binid = dataproxy.getBinID(dummyhisto, ibin)
+            binrange = dummyhisto.getBin(ibin).getXRange()
+            bd = prof.BinDistribution(pnames, binid, binrange)
+            for run in runs:
+                bd.addRun(ppcache[run],
+                          mcdata.getRunHistos(run)[obs].getBin(ibin))
+            ipolset.addBindistribution(bd)
+    return ipolset
+
+
+## Start interpolating
+for i, runs in enumerate(allruns):
+    if RECVD_KILL_SIGNAL is not None:
+        prof.log.critical("Signal %d: leaving event loop early" % RECVD_KILL_SIGNAL)
+        break
+    fpath = dataproxy.getIpolFilePath(IpolCls, runs)
+
+    prof.log.info("Starting interpolation %i/%i" % (i+1, len(allruns)))
+
+    ipolset = buildIpolSet(dataproxy, IpolCls, runs, weights.observables)
+    ipolset.write(fpath)
+    prof.log.info("Interpolation set written to %s" % (os.path.basename(fpath)))

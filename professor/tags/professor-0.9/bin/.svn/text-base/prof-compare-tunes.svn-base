@@ -1,0 +1,248 @@
+#! /usr/bin/env python
+
+usage = """Usage: %prog [options] -r <refdir> [<mchistos:label> ...]\n
+Make a side by side comparison of several tunes in terms of
+chi2 measure.
+
+Example:
+    %prog -r /user/local/share/Rivet histo.aida:"Tune 1" histo_2.aida:"Tune 2"
+
+"""
+
+import os, sys, numpy, logging
+try:
+    import pylab, matplotlib
+    MATPLOTLIB = True
+except ImportError:
+    logging.info("Matplotlib not installed, plotting disabled!")
+    MATPLOTLIB = False
+
+from professor import rivetreader, lighthisto
+from optparse import OptionParser
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+from professor.tools.permut import getIntersection
+from professor.tools.elementtree import ET
+from professor.tools import messages
+
+logging.getLogger().setLevel(logging.INFO)
+
+params = {
+        'axes.labelsize': 10,
+        'text.fontsize': 10,
+        'legend.fontsize': 7,
+        'xtick.labelsize': 8,
+        'ytick.labelsize': 8,
+        'text.usetex': False,
+        }
+pylab.rcParams.update(params)
+
+
+parser = OptionParser(usage=usage)
+
+parser.add_option("-r", "--refdir", dest="REF_DIR", type=str, default=None,
+        help="Specify directory containing reference histos")
+parser.add_option("-O", "--observables", dest="OBSERVABLES", default=None,
+        help="Specify observable/weights-file to make comparisons for")
+parser.add_option("-w", "--weights", action="store_true", dest="USEWEIGHTS", default=False,
+        help="Additional switch to decide whether weights of an observable"
+        + "/weights-file shall be used or not")
+parser.add_option("-o", "--outdir", dest="OUTDIR", default='tune_comparison_plots',
+        help="Write data files into this directory, if omitted, no plots will be made")
+parser.add_option("-c", "--savechi2", dest="SAVE_CHI2", default=False,
+        help="Specify a filename to store observables chi2 values to")
+parser.add_option("-p", "--plot", action="store_true", dest="PLOT", default=False,
+        help="If not set to true, only a summary will we written to stdout,"
+              + "no plots will be generated")
+parser.add_option("-l", "--logy", action="store_true", dest="LOGY", default=True,
+        help="Switch to logarithmic y-scale")
+
+(opts, args) = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+def readMCFile(mcoutfile):
+    returndict = {}
+    tree=ET.parse(mcoutfile)
+    for dps in tree.findall("dataPointSet"):
+        dpsname = dps.get("path") + "/" + dps.get("name")
+        returndict[dpsname] = lighthisto.Histo.fromDPS(dps)
+    return returndict
+
+def getTunesChi2(refmap, mcmap, tune_name, obslist=None):
+    totalchisquared, totalndof = 0.,0
+
+    def chi2(refhisto, mchisto):
+        chi2 = 0.
+        ndof = 0.
+        mcbins = mchisto.getBins()
+        for i, refbin in enumerate(refhisto.getBins()):
+            try:
+                chi2 += (refbin.getYVal() - mcbins[i].getYVal()
+                        )**2/(refbin.getYErr()**2 )
+                ndof += 1
+            except:
+                continue
+        return chi2, ndof
+
+    if obslist is None:
+        use_obs = sorted(refmap.keys())
+    else:
+        use_obs = obslist
+
+    chi2map = {}
+    for i in use_obs:
+        refh = refmap[i]
+        mch  = mcmap[tune_name][i]
+
+        tempc, tempndof = chi2(refh, mch)
+
+        chi2map[i] = (tempc, refh.numBins())
+
+        if opts.USEWEIGHTS:
+            try:
+                totalchisquared += float(obsdict[i])*tempc
+                totalndof += float(obsdict[i])*tempndof
+            except ValueError:
+                logging.debug("weight for observable %s not"%i
+                        +" readable, thus setting weight to one")
+                totalchisquared += tempc
+                totalndof += tempndof
+        else:
+            totalchisquared += tempc
+            totalndof += tempndof
+
+    return chi2map, totalchisquared, totalndof
+
+def plotTuneCompare(refmap, mcmap, obs, allobschi2map, logy=False):
+    ## refhisto
+    refh = refmap[obs]
+    X = numpy.array([i.getBinCenter() for i in refh.getBins()])
+    XErr = numpy.array([i.getXRange()[-1] - i.getBinCenter() for i in refh.getBins()])
+    refY = numpy.array([i.getYVal() for i in refh.getBins()])
+    refYErr = numpy.array([i.getYErr() for i in refh.getBins()])
+    ## create side by side plot of all tunings
+    fig=pylab.figure(facecolor='w')
+    for num, tune_name in enumerate(sorted(mcmap.keys())):
+        sub=fig.add_subplot(1,len(mcmap.keys()),num+1)
+        mch = mcmap[tune_name][obs]
+        mcY = numpy.array([i.getYVal() for i in mch.getBins()])
+        #mcYErr = numpy.array([i.getYErr() for i in mch.getBins()])
+        ### plot refhisto
+        sub.errorbar(X, refY, refYErr, XErr, fmt='k', lw=.1)
+        #sub.errorbar(X, refY, refYErr, XErr, label='DATA')
+        ### plot mchisto
+        chi2, ndof = allobschi2map[tune_name][obs]
+        #sub.errorbar(X, mcY, mcYErr, label="%s, chi2/ndof=%.2f"%(tune_name, chi2/ndof))
+        sub.plot(X, mcY, 'b:', label="%s, chi2/ndof=%.3f"%(tune_name, chi2/ndof))
+        #sub.title(refh.getTitle())
+        sub.legend()
+        if opts.LOGY:
+            sub.set_yscale('log')
+    fig.set_figheight(4)
+    fig.set_figwidth(len(mcmap.keys())*fig.get_figheight())
+    #pylab.figtext(.5,.95, refh.getTitle(), ha='center')
+    try:
+        fig.savefig(opts.OUTDIR + "/t_comp%s.png"%obs.replace('/','_'))
+    except:
+        logging.warning("could not save plot for observable %s"%obs)
+        print refh.getTitle()
+
+def saveChi2(tunename, tuneschi2s, asweight=False):
+    f=open(opts.OUTDIR + '/' + opts.SAVE_CHI2 + '_' + tunename, 'w')
+    lowestndof = min([chi2[0]/chi2[1] for chi2 in tuneschi2s.values()])
+    for k,v in tuneschi2s.iteritems():
+        if asweight:
+            f.write('%s   %f\n'%(k, (v[0]/v[1])/lowestndof))
+        else:
+            f.write('%s   %f\n'%(k, v[0]/v[1]))
+    f.close()
+
+def byChi2NDOF(a,b):
+    if chi2ndof[a][-1] > chi2ndof[b][-1]:
+        return -1
+    else:
+        return 1
+
+# Read in reference histos
+if opts.REF_DIR:
+    refhistomap = rivetreader.getRefHistos(opts.REF_DIR)
+else:
+    logging.error("No reference data given for comparison, exiting.")
+    sys.exit(2)
+
+# Read in MC histo files
+mchistomap = {}
+for num, mcfile in enumerate(args):
+    if not os.access(mcfile.split(":")[0], os.R_OK):
+        logging.error("MC file '%s' not accessible, exiting..."%mcfile)
+        sys.exit(2)
+    else:
+        if len(mcfile.split(":")) == 2:
+            lab = mcfile.split(":")[1]
+        else:
+            lab = "MC_%i"%num
+        mchistomap[lab] = readMCFile(mcfile.split(":")[0])
+
+# Read in observable/weights file
+if opts.OBSERVABLES:
+    logging.info("Reading observables from %s "%opts.OBSERVABLES)
+    obsdict = rivetreader.readObservableFile(opts.OBSERVABLES)
+    if opts.USEWEIGHTS:
+        logging.info("Will use weights specified in %s for"%opts.OBSERVABLES
+                +" chi2 calculation")
+else:
+    obsdict = {}
+    for k in refhistomap.keys():
+        obsdict[k] = 1.0
+    logging.info("Using all observables for chi2 calculation.")
+
+# Neat filtering of observables that are not available in all tunes AND the
+# ref histos as well as obs. with weight zero
+tunekeys = [mchistomap[i] for i in mchistomap.keys()]
+if opts.OBSERVABLES is None:
+    usetheseobs = getIntersection(refhistomap.keys(), *tunekeys)
+else:
+    if type(obsdict) == "dict":
+        keysfromobsfile = [k for k in obsdict.keys() if not float(obsdict[k]) == 0.0]
+    else:
+        keysfromobsfile = obsdict
+    usetheseobs = getIntersection(refhistomap.keys(), keysfromobsfile, *tunekeys)
+
+
+# Calculate chi2 for all tunes
+allobschi2map = {}
+chi2ndof = {}
+print 80*"="
+print "Summary: (sorted from largest to smallest chi2/ndof)\n"
+for tune_name in sorted(mchistomap.keys()):
+    chi2map, tot_chi2, tot_ndof = getTunesChi2(
+            refhistomap, mchistomap, tune_name, obslist=usetheseobs)
+    allobschi2map[tune_name] = chi2map
+    chi2ndof[tune_name] = (tot_chi2, tot_ndof, tot_chi2/tot_ndof)
+
+## Print out summarizd chi2 results ordered by chi2/ndof
+for name in sorted(chi2ndof.keys(), cmp=byChi2NDOF):
+    print "Tuning %s: chi2/ndof = %f, chi2=%f, ndof=%i"%(
+            name, chi2ndof[name][-1], chi2ndof[name][0], chi2ndof[name][1])
+print 80*"="
+
+if not opts.SAVE_CHI2 is False:
+    for tunename in allobschi2map.keys():
+        saveChi2(tunename, allobschi2map[tunename])
+    logging.info("Written chi2-files to " + opts.OUTDIR)
+
+# Plotting section
+if opts.PLOT is True and MATPLOTLIB:
+    if not os.path.exists(opts.OUTDIR):
+        logging.debug("Creating outdir ", opts.OUTDIR)
+        os.mkdir(opts.OUTDIR)
+    bar = flpb(0, len(usetheseobs), 30, "plotting...")
+    # This will create the plots
+    for num, i, in enumerate(usetheseobs):
+        bar.update(num)
+        plotTuneCompare(refhistomap, mchistomap, i, allobschi2map)
+else:
+    logging.info("Not making any plots. Use '-p' to do so.")
+
+sys.exit(1)

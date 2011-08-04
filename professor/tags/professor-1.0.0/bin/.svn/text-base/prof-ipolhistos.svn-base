@@ -1,0 +1,224 @@
+#! /usr/bin/env python
+
+"""\
+%prog [options] --ipoldir IPOLDIR [--obsfile OBSFILE] [--runsfile RUNSFILE]
+        [--paramsfile PARAMSFILE|--paramsvector PAR1:42.0,...]
+or
+%prog [options] --datadir DATADIR [--obsfile OBSFILE] [--runsfile RUNSFILE]
+        [--paramsfile PARAMSFILE|--paramsvector PAR1:42.0,...]
+
+Create interpolated histograms at a user defined parameter point.
+
+The histograms are store in flat format files in OUTDIR/, one file for each
+run combination in RUNSFILE. The bincontents are calculated from
+bin-interpolations that were created by prof-interpolate.
+
+Use rivet's flat2aida and aida2flat to convert these files into lists of
+files that you can use with compare-histos.
+
+If you want to use the AIDA files later as fake MC data you can use the
+`--subdirs' switch.
+"""
+
+import sys, os
+import professor.user as prof
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+
+import optparse
+parser = optparse.OptionParser(usage=__doc__, version=prof.version)
+parser.add_option("-o", "--outdir",
+                  dest = "OUTDIR",
+                  default = ".",
+                  help = "Save histogram data here. This will overwrite files with"
+                  " colliding names! [default: %default]")
+parser.add_option("--subdirs",
+                  dest = "SUBDIRS",
+                  action = "store_true",
+                  default = False,
+                  help = "Create fake-run subdirectories in OUTDIR for each run"
+                  " combination.")
+prof.addRunCombsCLOptions(parser)
+parser.add_option("--pf", "--paramsfile",
+                  dest = "PARAMSFILE",
+                  help = "File with the parameter values. If it's"
+                  " a result file, the first result is used.")
+parser.add_option("--pv", "--paramsvector",
+                  dest = "PARAMSVECTOR",
+                  help = "Parameter values as comma-separated list. E.g."
+                  " PAR1=42.0,PAR2=0.23 .")
+parser.add_option("--pd", "--paramsdir",
+                  dest = "PARAMSDIR",
+                  help = "Folder containing sub-directories with 'used_params' files")
+prof.addLoggingCLOptions(parser)
+prof.addIpolCLOptions(parser)
+prof.addDataCLOptions(parser, mc=False, ipol=True, scan=False)
+opts, args = parser.parse_args()
+
+prof.log.setPriority(opts)
+prof.writeGuideLine()
+
+# DataProxy object
+dataproxy = prof.DataProxy.mkFromCLOptions(opts)
+
+## Read in parameter values.
+superparamdict = {}
+paramdict = None
+if not (opts.PARAMSVECTOR or opts.PARAMSFILE or opts.PARAMSDIR):
+    prof.log.error(parser.format_help())
+    prof.log.error("No parameters specified! Use the --paramsfile or --paramsvector option.")
+    sys.exit(1)
+
+if ((opts.PARAMSVECTOR and opts.PARAMSFILE) or
+    (opts.PARAMSVECTOR and opts.PARAMSDIR) or
+    (opts.PARAMSFILE and opts.PARAMSDIR)):
+    prof.log.error(parser.format_help())
+    prof.log.error("More than one option given, use only --paramsfile, --paramsvector or paramsdir")
+    sys.exit(1)
+
+if opts.PARAMSVECTOR is not None:
+    superparamdict["000"] = prof.ParameterPoint.mkFromString(opts.PARAMSVECTOR)
+elif opts.PARAMSFILE is not None:
+    try:
+        parampoint = prof.ParameterPoint.mkFromFile(opts.PARAMSFILE)
+        prof.log.info("Reading parameters from parameter file %s" % opts.PARAMSFILE)
+    except Exception, err:
+        prof.log.debug("Failed to read parameter point file with %s: %s" % (type(err), err))
+        parampoint = prof.ResultList.mkFromPickle(opts.PARAMSFILE)[0].values
+        prof.log.info("Reading parameters from result file %s" % opts.PARAMSFILE)
+    superparamdict["000"] = parampoint
+    del parampoint
+elif opts.PARAMSDIR is not None:
+    for d in os.listdir(opts.PARAMSDIR):
+        if not os.path.isdir(os.path.join(opts.PARAMSDIR, d)):
+            continue
+        p = os.path.join(opts.PARAMSDIR, d, "used_params")
+        if os.path.exists(p):
+            superparamdict[d] = prof.ParameterPoint.mkFromFile(p)
+        else:
+            prof.log.warn("Could not find 'used_params' in %s" % os.path.join(opts.PARAMSDIR, d))
+else:
+    raise RuntimeError("Strange logic in this program!")
+
+
+## Check data directories.
+ipoldir = prof.DataProxy.getPathsFromCLOptions(opts)["ipol"]
+prof.log.debug("ipoldir: %s" % ipoldir)
+if not prof.isDirR(ipoldir):
+    prof.log.error("Interpolation data directory is not a directory or has bad permissions: %s" % ipoldir)
+    prof.log.error("Exiting!")
+    sys.exit(1)
+
+## Check/make output directory.
+prof.io.makeDir(opts.OUTDIR)
+prof.log.debug("Output directory for interpolation histograms: %s" % opts.OUTDIR)
+
+
+## Get the configured interpolation class.
+try:
+    IpolCls = prof.getInterpolationClass(opts.IPOLMETHOD, True)
+    prof.log.info("Using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    prof.log.error("Problem getting interpolation method: %s" % (e))
+    prof.log.error("Exiting!")
+    sys.exit(1)
+
+## Load run combinations
+prof.log.debug("Using %s as runsfile" % opts.RUNSFILE)
+try:
+    runfile = open(opts.RUNSFILE, "r")
+except Exception, e:
+    prof.log.error("Error while opening run combination file %s: %s" % (opts.RUNSFILE, e))
+    sys.exit(1)
+allruns = [line.split() for line in runfile.readlines()]
+runfile.close()
+prof.log.info("Loaded %i run combinations from %s" % (len(allruns), opts.RUNSFILE))
+
+## Check that all interpolations are available in ipoldir.
+for runs in allruns:
+    path = dataproxy.getIpolFilePath(IpolCls, runs)
+    if not os.path.exists(path):
+        prof.log.error("Could not find interpolation file for runs %s: %s" % (
+            sorted(runs), path))
+        prof.log.error("Please call prof-interpolate with the correct"
+                " arguments first!")
+        prof.log.error("Exiting!")
+        sys.exit(1)
+
+observables = None
+## Select the observables we want to use for our tune.
+if opts.OBSERVABLEFILE:
+    try:
+        wm = prof.WeightManager.mkFromFile(opts.OBSERVABLEFILE)
+        observables = wm.observables
+    except Exception, e:
+        prof.log.error("Problem when reading observable file: %s" % e)
+        prof.log.error("Exiting!")
+        sys.exit(1)
+    prof.log.debug("Loaded observable file from %s: %s" % (opts.OBSERVABLEFILE, observables))
+
+def buildhistos(runs, iruns):
+    # load interpolation set
+    # path = dataproxy.getIpolFilePath(IpolCls, runs)
+    # prof.log.debug("Loading ipolset from %s" % (path))
+    # ipolset = prof.InterpolationSet.mkFromPickle(path)
+    ipolset = dataproxy.getInterpolationSet(IpolCls, runs)
+    ipolhistonames = ipolset.getHistogramNames()
+
+    # check that we have the interpolations
+    global observables
+    if observables is not None:
+        for obs in observables:
+            if not obs in ipolhistonames:
+                prof.log.error("Could not find interpolation for histogram %s"
+                        " in file %s !" % (obs, path))
+                prof.log.error("Please call prof-interpolate with the correct"
+                        " arguments first!")
+                prof.log.error("Exiting!")
+                sys.exit(1)
+    else:
+        observables = ipolhistonames
+        prof.log.warning("No observable file specified, plotting all"
+                        " observables found.")
+    bar = flpb(0, len(superparamdict), 30, 'Producing ipol-histos ')
+    for num, paramkey in enumerate(sorted(superparamdict.keys())):
+        bar.update(num)
+        parampoint = superparamdict[paramkey]
+        # check that all parameters are defined
+        if parampoint.names != ipolset.getParameterNames():
+            msg = ("Different sets of parameters for parameter key '%s':\n"
+                   "  parameter file: %s\n"
+                   "  interpolations: %s" % (paramkey, parampoint.names,
+                                             ipolset.getParameterNames()))
+            prof.log.error(msg)
+            sys.exit(1)
+
+        # Create subdirectories only if necessary.
+        if superparamdict:
+            outdir = os.path.join(opts.OUTDIR, paramkey)
+        else:
+            outdir = opts.OUTDIR
+
+        # Create a fake-MC run subdirectory.
+        if opts.SUBDIRS:
+            outdir = os.path.join(outdir, "FakeMC%03i" % iruns)
+
+        prof.io.makeDir(outdir)
+
+        outname = os.path.join(outdir, "histo-%03i.dat" % iruns)
+        prof.log.debug("Writing interpolation histograms to %s" % (outname))
+        f = open(outname, "w")
+        for obsname in sorted(observables):
+            h = prof.Histo()
+            h.name = obsname
+            # get bin interpolations for this observable
+            obsipols = [i for binid, i in ipolset.iteritems()
+                            if binid.startswith(obsname)]
+            #loop, sorted by bin number
+            for i in sorted(obsipols,
+                            key=lambda ipol: int(ipol.binid.split(":")[1])):
+                h.addBin(i.getBin(parampoint))
+            f.write(h.asFlat() + "\n\n")
+        f.close()
+
+for i, runs in enumerate(allruns):
+    buildhistos(runs, i)

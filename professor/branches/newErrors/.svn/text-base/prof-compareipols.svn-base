@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+"""%prog
+
+Compares interpolations and MC data.
+
+Generates histograms comparing the interpolation based on all available MC
+runs with the MC data at each anchor point. The data is in *.dat files which
+must be processed with make_plot.py to create ps files.
+
+Usage:
+    %prog --datadir DATADIR [--obsfile OBSFILE] [options]
+"""
+
+import os.path
+import optparse
+import logging
+logging.basicConfig(level=logging.INFO,
+        format = "%(levelname)s %(message)s")
+
+from professor.tools.parameter import ParameterPoint
+from professor import interpolation
+from professor import rivetreader
+
+
+parser = optparse.OptionParser(usage = __doc__)
+rivetreader.addDataCLOptions(parser)
+interpolation.addCLOptions(parser)
+
+parser.add_option("--outdir",
+        help = "The directory where the *.dat files are written to.")
+parser.set_default("outdir", "./")
+opts, args = parser.parse_args()
+
+outdir = opts.outdir
+
+td = rivetreader.getConfiguredData(opts.datadir, opts.mcdir, opts.refdir,
+        opts.ipoldir)
+IpolCls = interpolation.getInterpolationClass(opts.ipolmethod, opts.useweave)
+
+std = td.getTuneData(IpolCls)
+
+def createRatioPlot(obs, run):
+    fname = os.path.basename(obs)
+    fname = "%s_%s.dat"%(fname, run)
+    f = open(os.path.join(opts.outdir, fname), "w")
+    mc = ""
+    ipol = ""
+    pp = ParameterPoint(td.getParams(run), std.scaler, scaled=False)
+    for bp in std.getBinProps(obs):
+        mcb = bp.mcdict[run]
+        mc += "%f\t%f\t%f\t%f\n"%(mcb.getXRange()[0], mcb.getXRange()[1],
+                                  mcb.getYVal(), mcb.getYErr())
+        ibin = bp.ipol.getBin(pp.getScaled())
+        ipol += "%f\t%f\t%f\t%f\n"%(mcb.getXRange()[0],
+                                    mcb.getXRange()[1],
+                                    ibin.getYVal(), ibin.getYErr())
+    fw = f.write
+    fw("# BEGIN PLOT\n")
+    fw("Title=%s\n"%(td.getTitle(obs)))
+    fw("Legend=1\n")
+    # fw("LogY=1\n")
+    fw("DrawOnly=%s_MC %s_IPOL\n"%(obs, obs))
+    fw("RatioPlot=1\n")
+    fw("RatioPlotReference=%s_MC\n"%(obs))
+    fw("RatioPlotYMin=0.5\n")
+    fw("RatioPlotYMax=1.5\n")
+    fw("RatioPlotYLabel=interpolation/MC\n")
+    fw("# END PLOT\n\n")
+
+    fw("# BEGIN HISTOGRAM %s_MC\n"%(obs))
+    fw("ErrorBars=1\n")
+    fw("PolyMarker=*\n")
+    fw("Title=MC\n")
+    fw(mc)
+    fw("# END HISTOGRAM\n\n")
+
+    fw("# BEGIN HISTOGRAM %s_IPOL\n"%(obs))
+    fw("PolyMarker=*\n")
+    fw("ErrorBars=1\n")
+    fw("LineColor=red\n")
+    # fw("LineStyle=solid\n")
+    fw("Title=Interpolation\n")
+    fw(ipol)
+    fw("# END HISTOGRAM")
+    f.close()
+    logging.info("Written file %s"%(f.name))
+
+
+if __name__ == "__main__":
+    for obs in std.getObservables():
+        for run in std.getRunNums():
+            createRatioPlot(obs, run)

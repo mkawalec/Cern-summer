@@ -103,7 +103,12 @@ namespace YODA {
     return std::sqrt(variance() / effNumEntries());
   }
 
-
+  /// Setters
+  void Dbn1D::setW(double sumW)             {_sumW = sumW;}
+  void Dbn1D::setW2(double sumW2)           {_sumW2 = sumW2;}
+  void Dbn1D::setWX(double sumWX)           {_sumWX = sumWX;}
+  void Dbn1D::setWX2(double sumWX2)         {_sumWX2 = sumWX2;}
+  void Dbn1D::setNumFills(double numFills)  {_numFills = numFills;}
 
 
   Dbn1D& Dbn1D::add(const Dbn1D& d) {

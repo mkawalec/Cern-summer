@@ -1,0 +1,35 @@
+# professor config file
+# format is the same as accepted from Python standard
+# library module ConfigParser
+[test]
+loglevel = debug
+logfiles = -
+
+[genpulldata]
+number of pull sets = 4
+number of test points = -1
+use error for comparison = fake dist
+loglevel = debug
+logfiles = -
+
+[global]
+loglevel = info
+logfiles = -
+
+[testinter]
+mc run min = 100
+add mc runs = 0
+mc run step = 2
+start dim = 1
+stop dim = 10
+basedir = /scratch/users/eike/pulls/anchorpoints-with-fd-errors/
+y distribution = twominima
+relative error = .05
+loglevel = debug
+logfiles = -
+
+[interpolation]
+method = quadratic
+loglevel = warning
+logfiles = -
+

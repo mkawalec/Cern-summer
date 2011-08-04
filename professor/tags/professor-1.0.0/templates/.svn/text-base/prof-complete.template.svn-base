@@ -1,0 +1,76 @@
+#! /usr/bin/env bash 
+#$ -S /bin/bash
+#PBS -N prof-$PROF_JOB
+
+source \$HOME/.bashrc
+
+export IP=$PROF_IPOL_HISTOS
+export PP=$PROF_PARAMSFILE
+export PW=\$PWD
+
+export WEIGHTS=`basename $PROF_OBSFILE`
+export RESOUT=$PROF_OUTDIR\_\$WEIGHTS
+echo "Creating output directory..."
+
+if [ ! -d \$RESOUT/$PROF_JOB ]; then
+mkdir -p \$RESOUT/$PROF_JOB
+fi
+
+## Change to output directory so the jobs don't interfere with each other (e.g. ipolhisto/)
+echo "Changing to output directory"
+#cd "$PROF_OUTDIR/$PROF_JOB"
+cd $PROF_OUTDIR\_\$WEIGHTS/$PROF_JOB
+
+echo "Running Professor tuning command"
+
+if [[ -n \$IP ]];
+    then prof-tune \
+      --refdir $PROF_REFDIR \
+      --obsfile $PROF_OBSFILE \
+      --outfile \$RESOUT/$PROF_JOB/results.pkl \
+      --runsfile $PROF_RUNSFILE \
+      --ipoldir $PROF_IPOLDIR \
+      --histo-outdir $PROF_IPOL_HISTOS \
+      $PROF_ADD_OPTS \
+      &> \$RESOUT/$PROF_JOB/professor.log;
+      
+      cd $PROF_IPOL_HISTOS;
+      echo "Converting Flat to AIDA";
+      flat2aida histos-0.dat;
+      echo "Running compare-histos";
+      compare-histos `rivet-config --datadir`/*.aida histos-0.aida:"\$WEIGHTS" -o plots;
+      cd plots;
+      echo "Running make-plots";
+      make-plots --pdf *.dat;
+      echo "Running makegallery";
+      `dirname \$(which prof-tune)`/../contrib/makegallery.py -s . pdf plots.html;
+      
+      cd \$PW;
+else prof-tune \
+  --refdir $PROF_REFDIR \
+  --obsfile $PROF_OBSFILE \
+  --outfile \$RESOUT/$PROF_JOB/results.pkl \
+  --runsfile $PROF_RUNSFILE \
+  --ipoldir $PROF_IPOLDIR \
+  $PROF_ADD_OPTS 
+fi
+
+if [[ -n \$PP ]];
+    then echo "Merging results";
+    sleep 100;
+
+    prof-mergeminresults -o \$RESOUT/merged_\$WEIGHTS \$RESOUT/*/results.pkl
+    echo "Plotting chi2 vs param";
+
+    prof-plotchi2vsparam --make-plots --outdir \$RESOUT/chi2vsparam_\$WEIGHTS --paramsfile \$PP \$RESOUT/merged_\$WEIGHTS
+    cd \$RESOUT/chi2vsparam_\$WEIGHTS;
+    make-plots --pdf *.dat 
+
+    echo "Creating html gallery";
+
+    `dirname \$(which prof-tune)`/../contrib/makegallery.py -s . pdf plots.html
+    cd -;
+fi
+
+  
+exit 0

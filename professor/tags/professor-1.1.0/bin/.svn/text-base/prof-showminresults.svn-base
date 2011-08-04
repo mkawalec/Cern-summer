@@ -1,0 +1,51 @@
+#! /usr/bin/env python
+
+"""
+Print out all minimization results in supplied pickled results files,
+plus a small summary in terms of weighted means of all the results.
+"""
+
+import sys
+import professor.user as prof
+
+import optparse
+parser = optparse.OptionParser(usage=__doc__, version=prof.version)
+prof.log.addLoggingCLOptions(parser)
+opts, args = parser.parse_args()
+prof.log.setPriority(opts)
+prof.writeGuideLine()
+
+for pklfile in args:
+    try:
+        rs = prof.ResultList.mkFromPickle(pklfile)
+    except IndexError:
+        print __doc__
+        print "Error: bad number of arguments!"
+        sys.exit(1)
+    except IOError:
+        print __doc__
+        print "Error: file not found!"
+        sys.exit(1)
+
+    nruns = rs.getRunCounts()
+    for n in sorted(nruns):
+        print 20*"-" + "\n"
+        print "Minimization results from %s that use %i runs:\n\n" % (pklfile, n)
+        for r in rs:
+            if len(r.runs) == n:
+                print r , "\n"
+
+    print 80*"*"
+    print 80*"*" + "\n"
+    print rs
+    # inside = prof.ResultList([mr for mr in rs if not mr.f_extrapolation])
+    # nolimithit = prof.ResultList([mr for mr in rs if not mr.f_hitlimit])
+    # both = prof.ResultList([mr for mr in rs if mr.f_hitlimit and mr.f_extrapolation])
+    # print 80*"*" + "\n"
+    # print "%i results are in a region of extrapolation\n"%(len(rs) - len(inside))
+    # print "%i results hit parameter limits\n"%(len(rs) - len(nolimithit))
+    # print "%i results do both\n"%(len(both))
+    # if len(rs) != len(nolimithit):
+        # print 80*"*" + "\n"
+        # print "Summary of results that do not hit any limits:"
+        # print nolimithit

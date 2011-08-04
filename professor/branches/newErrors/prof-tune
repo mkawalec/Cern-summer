@@ -1,0 +1,455 @@
+#! /usr/bin/env python
+"""
+%prog --datadir DATADIR --obsfile OBSFILE
+%prog --refdir REFDIR --mcdir MCDIR --obsfile OBSFILE
+
+Start chi^2 minimizations for all one-run-left-out choices and all runs.
+The minimization results are stored in a given file (--outfile option) and
+can be read by other programs (e.g. prof-plotminresults to plot the results
+in a chi^2 parameter plane).
+
+TODO
+  * Reduce num CL opts, to standardise work flow (i.e. only one out dir)
+  * Use central minimization start point by default
+  * Clarify option groups (distinction between 'tuning' and 'minimization'?)
+"""
+
+import sys, os
+
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+
+from professor.tools.config import convParamList
+from professor.rivetreader import (getConfiguredData, readObservableFile,
+        addDataCLOptions)
+from professor.minimize import (getMinimizerClass, ResultList,
+        ValidationFailed, MinError)
+from professor.tuningdata import SimpleGoFData, MCStatErrGoFData
+from professor.tools import permut
+from professor.histo import Histo
+from professor.tools.parameter import readParameterFile
+from professor import interpolation
+
+
+## Set up signal handling
+import signal
+global RECVD_KILL_SIGNAL
+RECVD_KILL_SIGNAL = None
+def handleKillSignal(signum, frame):
+    "Declare us as having been signalled, and return to default handling behaviour"
+    logging.critical("Signal handler called with signal " + str(signum))
+    logging.critical("Waiting for this minimization to finish...")
+    global RECVD_KILL_SIGNAL
+    RECVD_KILL_SIGNAL = signum
+    signal.signal(signum, signal.SIG_DFL)
+## Signals to handle
+signal.signal(signal.SIGTERM, handleKillSignal);
+signal.signal(signal.SIGHUP,  handleKillSignal);
+signal.signal(signal.SIGINT,  handleKillSignal);
+signal.signal(signal.SIGUSR2, handleKillSignal);
+
+## Parse command line
+import optparse
+parser = optparse.OptionParser(usage=__doc__)
+
+group = optparse.OptionGroup(parser, "Tuning")
+group.add_option("-d", "--debug",
+        dest = "debug",
+        action = "store_true",
+        help = "Turn debug logging on and stop after three minimisations.")
+group.add_option("-n", "--num-skip-runs",
+        dest = "skipruns",
+        type = "int",
+        help = "The number of runs that should be left out, e.g. for 30"
+               " available MC runs, '1' gives the 30 parameterisations with 1"
+               " run left out. You can restrict the combinatorics using --max")
+group.add_option("--runsfile",
+        dest = "runsfile",
+        help = "Specify a file of run combinations to use (space separated, 1"
+               " combination per line)")
+group.add_option("--max",
+        dest = "maxminimizations",
+        type = "int",
+        help = "maximum number of minimizations")
+group.add_option("-o", "--outdir",
+        dest = "outdir",
+        help = "directory where the results are stored")
+group.add_option("--check",
+        dest = "check",
+        action = "store_true",
+        help = "call TuningData.isValid() after object has been built")
+group.add_option("--no-check",
+        dest = "check",
+        action = "store_false",
+        help = "don't call TuningData.isValid() after object has been built")
+group.add_option("--shell",
+        dest = "shell",
+        action = "store_true",
+        help = "Start an IPython shell after running the script.")
+group.add_option("--manual-sp", "--manual-startpoint",
+        dest = "manualstartpoint",
+        help = "Comma separated list of parameter name - value pairs to be used"
+               " as manual startpoints when spmethod 'manual' is selected."
+               " Name and value are separated by a equals ('=').  E.g."
+               " PARJ(21)=1.2,PARJ(22)=2.4 .")
+group.add_option("--spmethods", "--start-points",
+        dest = "startpointmethods",
+        help = "Comma separated list with the minimization"
+               " starting point methods")
+group.add_option("--mc-disbelief",
+        dest = "mcdisbelief",
+        type = "float",
+        help = "Use (MCDISBELIEF*simulated bin content) as additional error"
+               " contribution to account for model imperfections.")
+
+parser.set_defaults(
+        outdir = ".",
+        startpointmethods = "center",
+        check = True,
+        debug = False,
+        shell = False,
+        skipruns = 0,
+        maxminimizations = 1000,
+        mcdisbelief = 0.0
+        )
+parser.add_option_group(group)
+
+def callbackLimits(option, opt, value, parser):
+    """ Evaluate --limits option: do not use parameter limits by default,
+        use runspecific limits if '--limits' is used as a switch,
+        use parameter limits to be read from file if something like
+            '--limits parameter.file'
+        is given.
+    """
+    rargs = parser.rargs
+    # loop over all args after --limits
+    while rargs:
+        arg = rargs[0]
+        # stop if we encounter another option
+        if ((arg[:2] == "--" and len(arg) > 2) or
+            (arg[:1] == "-" and len(arg) > 1 and arg[1] != "-")):
+            break
+        else:
+            value = arg
+            del rargs[0]
+    # evaluate given options
+    if not value:
+        returnvalue = "runspecific"
+        logging.info("Using runspecific parameter limits.")
+    else:
+        # check if specified file exist in the first place
+        if os.path.exists(value):
+            # see if we can read the file
+            try:
+                returnvalue = readParameterFile(value)
+                logging.info("Read parameter limits from file %s."%value)
+            except:
+                raise StandardError("Could not read limits file %s."%value)
+        else:
+            raise StandardError("Specified limit file does not exist.")
+    # set values
+    setattr(parser.values, option.dest, returnvalue)
+
+mingroup = optparse.OptionGroup(parser, "Minimization")
+mingroup.add_option("--minimizer",
+        choices = ("pyminuit", "scipy"),
+        help = "Select the minimizer to use (pyminuit|scipy)"
+               " (default: %default)")
+mingroup.add_option("--minos",
+        dest = "useminos",
+        action = "store_true",
+        help = "When using Minuit, use MINOS instead of MIGRAD to estimate"
+               " the parameter errors.")
+mingroup.add_option("--migrad",
+        dest = "useminos",
+        action = "store_false",
+        help = "When using Minuit, use MIGRAD to estimate"
+               " the parameter errors (default).")
+mingroup.add_option("--print-minuit",
+        dest = "printminuit",
+        type = "choice",
+        choices = (0,1,2,3),
+        help = "When using Minuit, set printMode to the given value."
+               " (default: %default)")
+group.add_option("--validate",
+        dest = "validate",
+        action = "store_true",
+        help = "Validate the result. NB: Only supported by pyminuit.")
+group.add_option("--no-validate",
+        dest = "validate",
+        action = "store_false",
+        help = "Don't validate the result (default).")
+mingroup.add_option("--fixed-parameters",
+        dest = "fixedparameters",
+        help = "Comma separated list of parameter name - value pairs with"
+               " parameter values to be fixed during minimization. Format is"
+               " the same as with '--manual-startpoint', e.g."
+               " PARJ(21)=1.2,PARJ(22)=2.4 . NB: Only supported by pyminuit!")
+group.add_option("--limits",
+        dest = "limits",
+        action= "callback", callback=callbackLimits,
+        help = "file with parameter limits to be used with minuit")
+parser.set_defaults(
+        minimizer = "pyminuit",
+        useminos = False,
+        printminuit = 0,
+        validate = False,
+        limits = {})
+parser.add_option_group(mingroup)
+
+interpolation.addCLOptions(parser)
+addDataCLOptions(parser)
+opts, args = parser.parse_args()
+
+## Turn on debugging
+if opts.debug:
+    logging.getLogger().setLevel(logging.DEBUG)
+    logging.debug("Options: %s" % (opts))
+
+## 1. Check option values and load data
+##    Ordered by time consumption.
+
+## Read start point config
+spmethods = opts.startpointmethods.split(',')
+logging.info("using start point methods: %s"%(', '.join(spmethods)))
+
+
+## Convert manual startpoint option
+manualsp = convParamList(opts.manualstartpoint)
+logging.info("Using manual startpoint %s"%(manualsp))
+if manualsp is not None and "manual" not in spmethods:
+    if len(spmethods)== 1:
+        logging.info("Changing start point method from %s to %s"
+                % (spmethods, ["manual"]))
+        spmethods = ["manual"]
+    else:
+        logging.info("Adding 'manual' to start point methods.")
+        spmethods.append("manual")
+
+
+## Get the configured interpolation class
+try:
+    IpolCls = interpolation.getInterpolationClass(opts.ipolmethod,
+            opts.useweave)
+    logging.info("using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    logging.error("Problem getting interpolation method: %s" % (e))
+    logging.error("Exiting...")
+    sys.exit(1)
+
+
+## Get the configured minimizer class.
+try:
+    MinimizerCls = getMinimizerClass(opts.minimizer,
+            useminos = opts.useminos, printminuit = int(opts.printminuit))
+    logging.info('Using %s as minimizer.'%(MinimizerCls.__name__))
+except Exception, e:
+    logging.error("Problem getting minimizer: %s" % (e))
+    logging.error("Exiting...")
+    sys.exit(1)
+
+
+## Test if we can write to output directory
+OUTDIR = os.path.expanduser(opts.outdir)
+OUTFILE = os.path.join(OUTDIR, "results.pkl")
+HISTOOUTDIR = os.path.join(OUTDIR, "ipolhistos")
+IPOLOUTDIR = os.path.join(OUTDIR, "ipols")
+# if os.path.exists(OUTDIR):
+#     contents = os.listdir(OUTDIR)
+#     if os.basename(OUTFILE) in contents or \
+#             os.basename(HISTOOUTDIR) in contents or \
+#             os.basename(IPOLOUTDIR) in contents:
+#         logging.error("Output directory %s already exists and is non-empty:" +\
+#                       "please specify a clean output location")
+#         sys.exit(1)
+if not os.path.exists(OUTDIR):
+    os.makedirs(OUTDIR)
+if not os.path.exists(HISTOOUTDIR):
+    os.makedirs(HISTOOUTDIR)
+if not os.path.exists(IPOLOUTDIR):
+    os.makedirs(IPOLOUTDIR)
+
+
+## Convert fixed parameters
+fixedpars = convParamList(opts.fixedparameters)
+logging.info("Using fixed parameter %s"%(fixedpars))
+
+
+## Select the observables we want to use for our tune.
+try:
+    obsdict = readObservableFile(opts.observablefile)
+except Exception, e:
+    logging.error("Problem when reading observable file: %s" % (e))
+    logging.error("Exiting!")
+    sys.exit(1)
+else:
+    logging.debug("loaded observable file from %s: %s" % (
+        opts.observablefile, obsdict))
+
+
+## Load and check tuning data
+tundat = getConfiguredData(opts.datadir, opts.mcdir, opts.refdir, IPOLOUTDIR) #opts.ipoldir)
+if opts.check:
+    tundat.isValid()
+else:
+    logging.warning("No validation of TuningData object performed")
+
+
+## 2. Build minimizer and result container
+minimizer = MinimizerCls()
+## Create a result list which will be written to an outfile at the end.
+reslist = ResultList()
+
+
+## 3. Set up observables and available MC run numbers.
+observables = obsdict.keys()
+allruns = tundat.getRunNums()
+if opts.maxminimizations is None:
+    allruns.sort()
+else:
+    logging.info("Max. number of tunings: %d" % opts.maxminimizations)
+
+
+def tune(runs):
+    """Perform a full tune for the given choice of runs."""
+    # build SingleTuneData instance
+    std = tundat.getTuneData(IpolCls, use_runnums=runs, use_obs=observables)
+    if opts.mcdisbelief > 0.0:
+        std.mcdisbelief = opts.mcdisbelief
+        std.gofcls = MCStatErrGoFData
+    ranges = tundat.getParameterRanges(runs)
+    # and apply weights
+    std.applyObservableWeightDict(obsdict)
+    for meth in spmethods:
+        logging.info("Starting minimization for runs %s and spmethod %s"%(
+                                sorted(runs), meth))
+        if opts.limits == "runspecific":
+            mr = minimizer.guessMinimum(std, spmethod=meth, manualsp=manualsp,
+                    fixedpars=fixedpars, limits=ranges)
+        else:
+            mr = minimizer.guessMinimum(std, spmethod=meth, manualsp=manualsp,
+                    fixedpars=fixedpars, limits=opts.limits)
+        # Replace the line above by an appropiately changing the following
+        # line. (For the parameter index remember that parameters are sorted
+        # alphabetically)
+        # mr = minimizer.guessMinimumFixed(std, meth, {0: 1.45})
+        logging.info("Result: %s"%(mr))
+
+        if opts.validate:
+            try:
+                minimizer.validateResult(mr)
+            except ValidationFailed, e:
+                logging.error("Validation failed for runs %s:\n    %s"%(runs, e))
+                logging.error("Result not appended!")
+                continue
+
+        if opts.limits != {}:
+            # set a flag that limits were specified via --limits
+            mr.setLimitUsedFlag()
+            # set an extra flag if the limit was hit
+            mdict = mr.asDict(scaled=False)
+
+            def equal(a, b, epsilon=1e-4):
+                """Compare floats to abs precision epsilon"""
+                return abs(a - b) < epsilon
+
+            def resultIsLimit():
+                """Check if minresult is a param limit """
+                try:
+                    for k,v in opts.limits.iteritems():
+                        if equal(mdict[k],v[0]) or equal(mdict[k],v[1]):
+                            return True
+                except AttributeError:
+                    for k,v in ranges.iteritems():
+                        if equal(mdict[k],v[0]) or equal(mdict[k],v[1]):
+                            return True
+                return False
+
+            if resultIsLimit():
+                mr.setHitLimitFlag()
+                logging.info("Result compenent == param limit -> flag set!")
+
+        if not mr.isInRange(ranges):
+            mr.setOutsideFlag()
+        if not opts.fixedparameters is None:
+            for param in fixedpars.keys():
+                mr.setFixedFlag(param)
+        reslist.append(mr)
+
+        ## Save interpolation histograms to file at the predicted minimum
+        outname = os.path.join(HISTOOUTDIR, "histos-%i.dat" %(len(reslist)-1))
+        f = open(outname,'w')
+        for i in sorted(std.getObservables()):
+            f.write(std.getInterpolationHisto(i, mr, tundat.getTitle(i)).asFlat() + '\n\n')
+        f.close()
+        logging.info("Written corresponding interpolation histos to %s" % outname)
+
+
+
+##  Function to iterate over run combinations from a file
+def iter_runcombs_file(runs, maxnum=None):
+    global opts
+    f = open(opts.runsfile, "r")
+    for n, l in enumerate(f.readlines()):
+        if maxnum is not None and n >= maxnum:
+            break
+        runcomb = l.split()
+        yield runcomb
+    f.close()
+
+
+##  Function to iterate over run combinations generated on the fly
+def iter_runcombs(runs, maxnum):
+    global num_runs_to_skip
+    for combn in permut.xrandomUniqueCombinations(runs, (len(runs) - opts.skipruns), maxnum):
+        yield combn
+
+
+## Chose sampling from file or on the fly based on --runsfile arg
+if opts.runsfile:
+    iter_runcombs = iter_runcombs_file
+
+
+## 4. Start tuning for the run combinations
+num_tunes_done = 0
+MAXNUM = opts.maxminimizations
+if opts.debug:
+    MAXNUM = 3
+for runs in iter_runcombs(allruns, MAXNUM+1):
+    ## Break out now if we should
+    if num_tunes_done >= MAXNUM:
+        logging.info("Max number of tunings reached, stopping here...")
+        break
+    if RECVD_KILL_SIGNAL is not None:
+        logger.critical("Leaving event loop early due to signal " + str(RECVD_KILL_SIGNAL))
+        break
+
+    ## Do this tune!
+    try:
+        tune(runs)
+        num_tunes_done += 1
+    ## TODO: Hide this as a generic prof.MinimiserError
+    except MinError:
+        logging.warning("Minimiser yielded an error for this tuning attempt")
+        continue
+    except KeyboardInterrupt:
+        logging.critical("Keyboard interrupt detected, you'll have to go with %i results only." % len(reslist))
+        break
+    if RECVD_KILL_SIGNAL is not None:
+        logging.critical("Leaving event loop early due to signal " + str(RECVD_KILL_SIGNAL))
+        break
+
+
+## 5. Store results in outfile
+## TODO: It would be nice if we could periodically dump this file during 
+##   the tuning process, rather than having to wait all the way to the end
+logging.info("Writing results to '%s'" % OUTFILE)
+reslist.write(OUTFILE)
+
+
+## 6. Optionally start an IPython shell to inspect the results
+if opts.shell:
+    logging.info("Opening IPython shell...")
+    from IPython.Shell import IPShellEmbed
+    ipshell = IPShellEmbed([])
+    ipshell()

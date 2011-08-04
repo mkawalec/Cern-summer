@@ -1,0 +1,23 @@
+PARP(67)   ISR scale fudge factor
+
+PARP(77)   High-pT CR suppression
+PARP(78)   MPI colour reconn
+PARP(82)   MPI merging scale pT0
+PARP(84)   MPI matter dbn width
+PARP(90)   MPI cutoff sqrtS evol
+
+PARJ(1)    dq-dqbar suppression
+PARJ(2)    ssbar suppression
+PARJ(3)    strange diquark suppr
+PARJ(4)    spin 1 diquark suppr
+PARJ(5)    popcorn baryon admix
+PARJ(6)    ssbar baryon splitting
+PARJ(7)    extra s baryon suppr
+PARJ(8)    adv popcorn param
+PARJ(9)    adv popcorn param
+PARJ(10)   adv popcorn param
+PARJ(11)   light meson p(spin1)
+PARJ(12)   strg meson p(spin1)
+PARJ(13)   heavy meson  p(spin1)
+PARJ(25)   eta suppr
+PARJ(26)   eta' suppr

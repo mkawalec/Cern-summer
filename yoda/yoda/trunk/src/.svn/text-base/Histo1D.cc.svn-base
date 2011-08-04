@@ -37,7 +37,6 @@ namespace YODA {
     return sumw;
   }
 
-
   double Histo1D::sumW2(bool includeoverflows) const {
     if (includeoverflows) return _axis.totalDbn().sumW2();
     double sumw2 = 0;
@@ -91,7 +90,7 @@ namespace YODA {
     for (Scatter2D::Points::const_iterator p = s.points().begin(); p != s.points().end(); ++p) {
       bins.push_back(HistoBin1D(p->xMin(), p->xMax()));
     }
-    _axis = Axis1D<HistoBin1D>(bins);
+    _axis = Histo1DAxis(bins);
   }
 
 
@@ -103,7 +102,7 @@ namespace YODA {
     for (std::vector<ProfileBin1D>::const_iterator b = p.bins().begin(); b != p.bins().end(); ++b) {
       bins.push_back(HistoBin1D(b->xMin(), b->xMax()));
     }
-    _axis = Axis1D<HistoBin1D>(bins);
+    _axis = Histo1DAxis(bins);
 
   }
 

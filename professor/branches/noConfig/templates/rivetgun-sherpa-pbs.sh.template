@@ -1,0 +1,59 @@
+#! /usr/bin/env bash 
+#PBS -q short.q 
+#PBS -m abe 
+#PBS -N $PROF_JOB
+#$ -l h_vmem=850M
+#$ -l h_cpu=03:00:00
+source \$HOME/.zshrc
+mkdir -p $PROF_RUNOUTDIR
+#set ANALYSES = ['ALEPH_1996_S3486095', 'DELPHI_1995_S3137023', 'DELPHI_1996_S3430090', 'DELPHI_2002_069_CONF_603', 'OPAL_1998_S3780481', 'PDG_HADRON_MULTIPLICITIES', 'PDG_HADRON_MULTIPLICITIES_RATIOS'  ]
+
+export ANPATH=\$GHOME/DATA/sherpa/scanPT_MAX/atDefault
+
+if test -d \$ANPATH/Result
+then
+    echo "result directory already exists"
+else
+    echo "creating result directory"
+    mkdir -p \$ANPATH/Result
+fi
+
+echo "Writing used_params file"
+> $PROF_RUNOUTDIR/used_params
+#for $k, $v in $PROF_PARAMS.iteritems()
+echo "$k $v" >> $PROF_RUNOUTDIR/used_params  
+#end for
+
+echo "Running Professor Sherpa/rivet commands"
+rm -f fifo.hepmc2g
+mkfifo fifo.hepmc2g
+
+Sherpa -n 200000 \
+  PATH=\$ANPATH \
+  RESULT_DIRECTORY=\$ANPATH/Result \
+  SHERPA_CPP_PATH=\$ANPATH/Cpp \
+  #for $k, $v in $PROF_PARAMS.iteritems()
+  -p "$k=$v" \
+  #end for
+  &
+
+rivet fifo.hepmc2g \
+  #for $a in $ANALYSES
+  -a $a \
+  #end for
+  -H $PROF_RUNOUTDIR/histos \
+    &> $PROF_STDOUT
+
+echo "Copying reference data files"
+if test -d $PROF_REFOUTDIR
+then
+    echo "refdir already exists... so I do nothing"
+else
+    echo "creating ref out dir"
+    mkdir $PROF_REFOUTDIR
+fi
+#for $a in $ANALYSES
+cp `rivet-config --datadir`/${a}.aida $PROF_REFOUTDIR/
+#end for
+
+exit 0

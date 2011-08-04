@@ -4,6 +4,12 @@
 using namespace std;
 using namespace YODA;
 
+
+int foo(const Weights& w) {
+  return w.size();
+}
+
+
 int main() {
 
   vector<string> keys;
@@ -25,6 +31,17 @@ int main() {
 
   Weights w3 = w1 / w2;
   cout << "W3 = " << w3 << endl;
+
+  Weights w4 = 5;
+  w4 += 4.5;
+  w4 += -1.5;
+  w4 += -1.5;
+  foo(w1);
+  foo(w2);
+  foo(w3);
+  foo(w4);
+  foo(5);
+  foo(Weights(6));
 
   return EXIT_SUCCESS;
 }

@@ -1,0 +1,64 @@
+## 
+## observable file to be used with loadObservableFile(PATH) in rivetreader.py
+## 
+#
+# /DELPHI_1996_S3430090/d01-x01-y01    1.0    # In-plane p_T in GeV w.r.t. thrust axes (charged)
+# /DELPHI_1996_S3430090/d02-x01-y01    1.0    # Out-of-plane p_T in GeV w.r.t. thrust axes (charged)
+# /DELPHI_1996_S3430090/d03-x01-y01    1.0    # In-plane p_T in GeV w.r.t. sphericity axes (charged)
+# /DELPHI_1996_S3430090/d04-x01-y01    1.0    # Out-of-plane p_T in GeV w.r.t. sphericity axes (charged)
+# /DELPHI_1996_S3430090/d05-x01-y01    1.0    # Rapidity w.r.t. thrust axes, y_T (charged)
+# /DELPHI_1996_S3430090/d06-x01-y01    1.0    # Rapidity w.r.t. sphericity axes, y_S (charged)
+# /DELPHI_1996_S3430090/d07-x01-y01    1.0    # Scaled momentum, x_p = |p|/|p_beam| (charged)
+# /DELPHI_1996_S3430090/d08-x01-y01    1.0    # Log of scaled momentum, log(1/x_p) (charged)
+# /DELPHI_1996_S3430090/d09-x01-y01    1.0    # Mean out-of-plane p_T in GeV w.r.t. thrust axes vs. x_p (charged)
+# /DELPHI_1996_S3430090/d10-x01-y01    1.0    # Mean p_T in GeV vs. x_p (charged)
+# /DELPHI_1996_S3430090/d11-x01-y01    1.0    # 1-thrust, 1-T (charged)
+# /DELPHI_1996_S3430090/d12-x01-y01    1.0    # Thrust major, M (charged)
+# /DELPHI_1996_S3430090/d13-x01-y01    1.0    # Thrust minor, m (charged)
+# /DELPHI_1996_S3430090/d14-x01-y01    1.0    # Oblateness = M - m (charged)
+# /DELPHI_1996_S3430090/d15-x01-y01    1.0    # Sphericity, S (charged)
+# /DELPHI_1996_S3430090/d16-x01-y01    1.0    # Aplanarity, A (charged)
+# /DELPHI_1996_S3430090/d17-x01-y01    1.0    # Planarity, P (charged)
+# /DELPHI_1996_S3430090/d18-x01-y01    1.0    # C parameter (charged)
+# /DELPHI_1996_S3430090/d19-x01-y01    1.0    # D parameter (charged)
+# /DELPHI_1996_S3430090/d20-x01-y01    1.0    # Heavy hemisphere masses, M_h^2/E_vis^2 (charged)
+# /DELPHI_1996_S3430090/d21-x01-y01    1.0    # Light hemisphere masses, M_l^2/E_vis^2 (charged)
+# /DELPHI_1996_S3430090/d22-x01-y01    1.0    # Difference in hemisphere masses, M_d^2/E_vis^2 (charged)
+# /DELPHI_1996_S3430090/d23-x01-y01    1.0    # Wide hemisphere broadening, B_max (charged)
+# /DELPHI_1996_S3430090/d24-x01-y01    1.0    # Narrow hemisphere broadening, B_min (charged)
+# /DELPHI_1996_S3430090/d25-x01-y01    1.0    # Total hemisphere broadening, B_sum (charged)
+# /DELPHI_1996_S3430090/d26-x01-y01    1.0    # Difference in hemisphere broadening, B_diff (charged)
+# /DELPHI_1996_S3430090/d27-x01-y01    1.0    # Differential 2-jet rate with Durham algorithm, D_2^Durham (charged)
+# /DELPHI_1996_S3430090/d28-x01-y01    1.0    # Differential 2-jet rate with Jade algorithm, D_2^Jade (charged)
+# /DELPHI_1996_S3430090/d29-x01-y01    1.0    # Differential 3-jet rate with Durham algorithm, D_3^Durham (charged)
+# /DELPHI_1996_S3430090/d30-x01-y01    1.0    # Differential 3-jet rate with Jade algorithm, D_3^Jade (charged)
+# /DELPHI_1996_S3430090/d31-x01-y01    1.0    # Differential 4-jet rate with Durham algorithm, D_4^Durham (charged)
+# /DELPHI_1996_S3430090/d32-x01-y01    1.0    # Differential 4-jet rate with Jade algorithm, D_4^Jade (charged)
+# /DELPHI_1996_S3430090/d33-x01-y01    1.0    # Energy-energy correlation, EEC (charged)
+# /DELPHI_1996_S3430090/d34-x01-y01    1.0    # Asymmetry of the energy-energy correlation, AEEC (charged)
+# /DELPHI_1996_S3430090/d35-x01-y01    1.0    # Mean charged multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y01    1.0    # Mean pi+/pi- multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y02    1.0    # Mean pi0 multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y03    1.0    # Mean K+/K- multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y04    1.0    # Mean K0 multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y05    1.0    # Mean eta multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y06    1.0    # Mean etaprime multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y07    1.0    # Mean D+ multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y08    1.0    # Mean D0 multiplicity
+# /DELPHI_1996_S3430090/d36-x01-y09    1.0    # Mean B+/B-/B0 multiplicity
+# /DELPHI_1996_S3430090/d37-x01-y01    1.0    # Mean f0(980) multiplicity
+# /DELPHI_1996_S3430090/d38-x01-y01    1.0    # Mean rho multiplicity
+# /DELPHI_1996_S3430090/d38-x01-y02    1.0    # Mean K*(892)+/K*(892)- multiplicity
+# /DELPHI_1996_S3430090/d38-x01-y03    1.0    # Mean K*(892)0 multiplicity
+# /DELPHI_1996_S3430090/d38-x01-y04    1.0    # Mean phi multiplicity
+# /DELPHI_1996_S3430090/d38-x01-y05    1.0    # Mean D*(2010)+/D*(2010)- multiplicity
+# /DELPHI_1996_S3430090/d39-x01-y01    1.0    # Mean f2(1270) multiplicity
+# /DELPHI_1996_S3430090/d39-x01-y02    1.0    # Mean K2*(1430)0 multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y01    1.0    # Mean p multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y02    1.0    # Mean Lambda0 multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y03    1.0    # Mean Xi- multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y04    1.0    # Mean Omega- multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y05    1.0    # Mean Delta(1232)++ multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y06    1.0    # Mean Sigma(1385)+/Sigma(1385)- multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y07    1.0    # Mean Xi(1530)0 multiplicity
+# /DELPHI_1996_S3430090/d40-x01-y08    1.0    # Mean Lambda_b0 multiplicity

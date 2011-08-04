@@ -1,0 +1,16 @@
+# Switch to pT-ordered shower:
+MSTJ(41) = 12
+
+# Switch on Bowler:
+MSTJ(11) = 5
+
+# Tuned flavour parameters:
+PARJ(1)  = 0.073
+PARJ(2)  = 0.2
+PARJ(3)  = 0.94
+PARJ(4)  = 0.032
+PARJ(11) = 0.31
+PARJ(12) = 0.4
+PARJ(13) = 0.54
+PARJ(25) = 0.63
+PARJ(26) = 0.12

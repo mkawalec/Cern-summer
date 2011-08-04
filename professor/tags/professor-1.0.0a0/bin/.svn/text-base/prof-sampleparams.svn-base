@@ -1,0 +1,294 @@
+#! /usr/bin/env python
+
+#%prog [options] <paramrangefile> <templatefile> [<templatefile> ...]
+usage = \
+"""%prog [options] <paramrangefile>
+
+Sample from a parameter space defined by a set of ranges and
+write the results to used_params files.
+
+By default, %prog generates points by random sampling from
+the parameter hypercube. The --scan option treats the parameter
+ranges as defining endpoints of a line in param space to be uniformly
+sampled. A "fake reference" point within a central region of
+the param hypercube for bootstrap testing of Professor when
+no real reference data is available.
+
+
+direction           scan center         sampling line
+=========           ===========         =============
+                MinimisationResult      sampling along body diagonal of the
+diagonal        parameter file          largest hyper cube that is centered
+                                        around `scan center' and fits into
+                                        parameter ranges
+
+steep/shallow   MinimisationResult      sampling along longest line that
+                                        fits into parameter ranges in steep/shallow
+                                        direction of the result's covariance
+                                        matrix, i.e. not necessarily symmetric.
+                                        If the `:sym' flag is given the line
+                                        will be symmetric around the result.
+"""
+
+import os
+import sys
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+import time
+import random
+
+from optparse import OptionParser, OptionGroup
+
+from professor.tools import parameter, pointsampling, messages
+from professor import minimize
+
+PROGPATH = sys.argv[0]
+PROGNAME = os.path.basename(PROGPATH)
+
+
+## Parse command line options
+parser = OptionParser(usage=usage)
+
+parser.add_option("-N", "--num-runs", dest="NUM_RUNS", type=int,
+                  default=1,
+                  help = "how many parameter space points to run the"
+                         " generator for")
+parser.add_option("--first-run", dest="NUM_FIRST_RUN", type=int,
+                  default=0, help="number given to the first run")
+parser.add_option("-o", "--outdir", dest="OUT_DIR",
+                  default = "professor-out",
+                  help = "directory into which to write the generator output")
+parser.add_option("-t", "--timestamp", action="store_true", dest="TIMESTAMP",
+                  default=False,
+                  help = "add a timestamp prefix to the output directory name")
+parser.add_option("-T", "--template", dest="TEMPLATES", action="append",
+                  default = [],
+                  help = "Replace variables in template files instead of"
+                         " writing used_params files")
+
+scangroup = OptionGroup(parser, "Param line scanning")
+scangroup.add_option("-s", "--scan", action="store_true", dest="SCANMODE",
+                     default=False,
+                     help = "rather than scan randomly, treat param ranges"
+                            " as being endpoints of a straight, uniformly"
+                            " sampled line in param space. Requires at least"
+                            " 2 runs to work, and more to really make sense."
+                            " Used to verify MC behaviour around a proposed"
+                            " optimum and to compare systematically to other"
+                            " tunes.")
+scangroup.add_option("--scancenter", dest="SCANCENTER", default=None,
+                     help = "Define the center for line scanning:"
+                            " Either a text file with parameter values or"
+                            " a result list file with the comma separated"
+                            " index of the MinimizationResult that defines"
+                            " the directions" " for --direction 'steep' or"
+                            " 'shallow'. E.g. center.params OR"
+                            " results.pkl,10")
+scangroup.add_option("--direction", dest="DIRECTION",
+                     default="diagonal",
+                     help = "the direction of line scan. Can be 'diagonal',"
+                            " 'steep' or 'shallow'. 'steep' and 'shallow'"
+                            " require a MinimisationResult given via"
+                            " --scancenter  and they allow an additional"
+                            " ':sym' to make the line scan symmetric around"
+                            " the minimisation result. (default: %default)")
+scangroup.add_option("--excess", dest="EXCESS", type="float",
+                     default=0.,
+                     help = "symmetrically stretch scanline by this fraction")
+parser.add_option_group(scangroup)
+
+refgroup = OptionGroup(parser, "Reference data")
+refgroup.add_option("-R", "--fake-reference", action="store_true", dest="MKREF",
+                    default=False,
+                    help = "make an extra run as a fake reference point")
+refgroup.add_option("--ref-range", dest="REFRANGE", type=float,
+                    default=0.5,
+                    help = "specify central fraction of the param range from"
+                           " which to sample the fake reference")
+parser.add_option_group(refgroup)
+
+verbgroup = OptionGroup(parser, "Verbosity control")
+verbgroup.add_option("-V", "--verbose", action="store_const", dest="LOGLEVEL",
+                     default=logging.INFO, const=logging.DEBUG, help="print debug messages")
+verbgroup.add_option("-Q", "--quiet", action="store_const", dest="LOGLEVEL",
+                     default=logging.INFO, const=logging.WARNING, help="be very quiet")
+parser.add_option_group(verbgroup)
+
+(opts, args) = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+## Set up logging
+logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+
+## Add timestamp to output dir name
+if opts.TIMESTAMP:
+    outname = os.path.basename(opts.OUT_DIR)
+    outparent = os.path.dirname(opts.OUT_DIR)
+    timestamp = time.strftime("%Y-%m-%d")
+    opts.OUT_DIR = os.path.join(outparent, timestamp + "-" + outname)
+
+
+## Read the params files to get ranges
+if len(args) == 0:
+    logging.error("Need to specify at least one parameter file")
+    sys.exit(1)
+
+temp = [parameter.readParameterFile(i) for i in args]
+
+if len(temp) == 1 and len(temp[0][temp[0].keys()[0]]) == 2:
+    paramranges = temp[0]
+elif len(temp) == 2 and type(temp[0][temp[0].keys()[0]]) == type(
+        temp[1][temp[1].keys()[1]]) == float:
+    paramranges = {}
+    for k in temp[0].keys():
+        paramranges[k] = (temp[0][k], temp[1][k])
+else:
+    logging.error("Could not get parameter ranges from parameter file(s):"
+            " %s" % (args))
+    sys.exit(1)
+
+
+## Print out params
+if opts.SCANMODE:
+    s = "Parameter end points/surrounding hypercube:"
+else:
+    s = "Parameter ranges:"
+maxlen = max(map(len, paramranges.keys()))
+for pname, limits in sorted(paramranges.iteritems()):
+    s += "\n        %s  %f - %f" % (pname.ljust(maxlen), limits[0], limits[1])
+logging.info(s)
+del s
+del maxlen
+
+## Notify re. run conditions
+logging.info("Making %d param sets" % opts.NUM_RUNS)
+
+## Make param sets
+paramsets = {}
+
+### RANDOM SAMPLING
+if not opts.SCANMODE:
+    ## Initialize RNG
+    random.seed()
+    rpg = pointsampling.RandomPointGenerator(paramranges, opts.NUM_RUNS)
+    logging.info("Sampling randomly from hypercube above")
+
+    for i in range(opts.NUM_FIRST_RUN, opts.NUM_FIRST_RUN + opts.NUM_RUNS):
+        runname = "%03d" % i
+        paramsets[runname] = rpg[i - opts.NUM_FIRST_RUN]
+
+
+### UNIFORM LINE SCAN SAMPLING
+else:
+    ## Notify that this is scan mode
+    logging.info("Using linear scan mode: param points will NOT be randomly"
+                 " distributed!")
+    if opts.MKREF:
+        logging.warn("Fake refs can't be used in scan mode: skipping fake"
+                     " ref command.")
+
+    ## sampling along body diagonal of hyper-cube defined by argument parameter file(s) 
+    if opts.SCANCENTER is None:
+        centered = False
+        logging.info("Sampling along diagonal from  hypercube defined by"
+                     " parameters above.")
+        p1, p2 = {}, {}
+        for k, v  in paramranges.iteritems():
+            p1[k] = v[0]
+            p2[k] = v[1]
+        cube = pointsampling.Hypercube.fromTwoPoints(p1, p2, opts.EXCESS)
+
+    ## sampling along body diagonal of maximal sub-hyper-cube that fits into
+    ## parameter ranges from argument(s) and that is centered around
+    ## opts.SCANCENTER
+    elif opts.DIRECTION == "diagonal":
+        centered = True
+        # load scan center
+        tokens = opts.SCANCENTER.split(",")
+        if len(tokens) == 2:
+            logging.info("Sampling from symmetric hypercube, center defined"
+                         " by Min.Result #%s in results file %s" % tokens)
+            minres = minimize.ResultList.fromPickle(tokens[0])[int(tokens[1])]
+            cube = pointsampling.SymmetricHypercube.fromMinimizationResult(
+                                                        paramranges, minres)
+        else:
+            logging.info("Sampling from symmetric hypercube, center defined"
+                         " by parameters given in %s, that fits into"
+                         " hypercube given by range file(s)." % (
+                                                            opts.SCANCENTER))
+            cube = pointsampling.SymmetricHypercube.fromFlatFile(
+                                            paramranges, opts.SCANCENTER)
+    ## sampling along steep/shallow directions of covariance matrix of the given min. result
+    else:
+        tokens = opts.SCANCENTER.split(",")
+        if len(tokens) != 2:
+            logging.error("Direction mode '%s' only work with --scancenter"
+                          " results.pkl,IDX!" % (opts.DIRECTION))
+            sys.exit(1)
+        minres = minimize.ResultList.fromPickle(tokens[0])[int(tokens[1])]
+
+        # parse direction option if we want a centered, i.e. symmetric
+        # hypercube
+        tokens = opts.DIRECTION.split(":")
+        if len(tokens) == 2:
+            direction = tokens[0]
+            if tokens[1].lower().startswith("sym"):
+                centered = True
+            else:
+                centered = False
+        else:
+            direction = tokens[0]
+            centered = False
+        if centered:
+            logging.info("Linescanning SYMMETRICALLY around given"
+                         " minimisation result in direction '%s'" % (
+                                                        direction))
+            cube = pointsampling.SymmetricHypercube.fromMinimizationResult(
+                                                        paramranges, minres)
+        else:
+            logging.info("Linescanning ASYMMETRICALLY around given"
+                         " minimisation result in direction '%s'" % (
+                                                        direction))
+            cube = pointsampling.Hypercube(paramranges)
+
+    ## Save hypercube to file
+    fname = os.path.join(opts.OUT_DIR, "hypercube.params")
+    if not os.path.exists(opts.OUT_DIR):
+        os.mkdir(opts.OUT_DIR)
+    cube.write(fname)
+
+    ## Create point generator
+    if opts.DIRECTION == "diagonal":
+        spg = pointsammpling.ScanPointGenerator(cube, opts.NUM_RUNS)
+        spg.generateLine()
+    else:
+        spg = pointsampling.ScanPointGenerator(cube, opts.NUM_RUNS, minres)
+        spg.generateLine(spg.getGradientsForExtremalScan(direction, centered))
+
+    ## Create dictionary of paramsets to fill template files with
+    for i in range(opts.NUM_RUNS):
+        runname = "%03d" % (opts.NUM_FIRST_RUN + i)
+        paramsets[runname] = spg[i]
+
+
+## Write used_params files
+for run, runparams in paramsets.iteritems():
+    runoutdir = os.path.join(opts.OUT_DIR, run)
+    if not os.path.isdir(runoutdir):
+        os.makedirs(runoutdir)
+    f = open(os.path.join(runoutdir, "used_params"), "w")
+    for pname in sorted(runparams.keys()):
+        f.write("%s %e\n" % (pname, runparams[pname]))
+    f.close()
+    for template in opts.TEMPLATES:
+        f = open(os.path.join(runoutdir, os.path.basename(template)), "w")
+        for line in open(template):
+            line = line.replace("<__RUNID__>", "%s" % run);
+            for pname in sorted(runparams.keys()):
+                line = line.replace("<__%s__>" % pname, "%e" % runparams[pname])
+            f.write(line);
+        f.close()

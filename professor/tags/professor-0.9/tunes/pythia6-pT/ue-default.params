@@ -1,0 +1,51 @@
+# Flavour:
+PARJ(1)  = 0.1
+PARJ(2)  = 0.3
+PARJ(3)  = 0.4
+PARJ(4)  = 0.05
+PARJ(11) = 0.5
+PARJ(12) = 0.6
+PARJ(13) = 0.75
+PARJ(25) = 0.1
+PARJ(26) = 0.4
+
+# Switch to pT-ordered shower:
+MSTJ(41) = 12
+
+# Switch on Bowler:
+MSTJ(11) = 5
+
+# Fragmentation:
+PARJ(21) = 0.36
+PARJ(41) = 0.3
+PARJ(42) = 0.58
+PARJ(47) = 1.0
+PARJ(81) = 0.29
+PARJ(82) = 1.0
+
+# MSTP similar to tune S0
+MSTP(51) =  7
+MSTP(52) =  1
+MSTP(68) =  3
+MSTP(70) =  2
+MSTP(72) =  0
+MSTP(81) = 21
+MSTP(82) =  5
+MSTP(88) =  0
+MSTP(89) =  1
+MSTP(91) =  1
+MSTP(95) =  6
+
+# UE:
+PARP(64) = 1.0
+PARP(71) = 4.0
+PARP(78) = 0.03
+PARP(79) = 2.0
+PARP(80) = 0.1
+PARP(82) = 2.0
+PARP(83) = 1.8
+PARP(89) = 1800
+PARP(90) = 0.16
+PARP(91) = 2.0
+PARP(93) = 5.0
+

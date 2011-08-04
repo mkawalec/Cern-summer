@@ -2945,69 +2945,84 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_AnalysisObject swig_types[0]
 #define SWIGTYPE_p_Annotations swig_types[1]
 #define SWIGTYPE_p_Axis swig_types[2]
-#define SWIGTYPE_p_Axis1DT_YODA__HistoBin1D_t swig_types[3]
-#define SWIGTYPE_p_Axis1DT_YODA__ProfileBin1D_t swig_types[4]
-#define SWIGTYPE_p_Bins swig_types[5]
-#define SWIGTYPE_p_Dbn1D swig_types[6]
-#define SWIGTYPE_p_Points swig_types[7]
-#define SWIGTYPE_p_Profile1D swig_types[8]
-#define SWIGTYPE_p_Scatter2D swig_types[9]
-#define SWIGTYPE_p_Utils__sortedvectorT_YODA__Point2D_t swig_types[10]
-#define SWIGTYPE_p_ValuePair swig_types[11]
-#define SWIGTYPE_p_YODA__AnalysisObject swig_types[12]
-#define SWIGTYPE_p_YODA__Bin swig_types[13]
-#define SWIGTYPE_p_YODA__Bin1D swig_types[14]
-#define SWIGTYPE_p_YODA__Histo1D swig_types[15]
-#define SWIGTYPE_p_YODA__HistoBin1D swig_types[16]
-#define SWIGTYPE_p_YODA__Point2D swig_types[17]
-#define SWIGTYPE_p_YODA__Profile1D swig_types[18]
-#define SWIGTYPE_p_YODA__ProfileBin1D swig_types[19]
-#define SWIGTYPE_p_YODA__Scatter2D swig_types[20]
-#define SWIGTYPE_p_YODA__Writer swig_types[21]
-#define SWIGTYPE_p_YODA__WriterAIDA swig_types[22]
-#define SWIGTYPE_p_YODA__WriterYODA swig_types[23]
-#define SWIGTYPE_p_allocator_type swig_types[24]
-#define SWIGTYPE_p_char swig_types[25]
-#define SWIGTYPE_p_const_reference swig_types[26]
-#define SWIGTYPE_p_difference_type swig_types[27]
-#define SWIGTYPE_p_first_type swig_types[28]
-#define SWIGTYPE_p_key_type swig_types[29]
-#define SWIGTYPE_p_mapped_type swig_types[30]
-#define SWIGTYPE_p_p_PyObject swig_types[31]
-#define SWIGTYPE_p_reference swig_types[32]
-#define SWIGTYPE_p_second_type swig_types[33]
-#define SWIGTYPE_p_size_type swig_types[34]
-#define SWIGTYPE_p_std__allocatorT_AnalysisObject_p_t swig_types[35]
-#define SWIGTYPE_p_std__allocatorT_YODA__HistoBin1D_t swig_types[36]
-#define SWIGTYPE_p_std__allocatorT_YODA__ProfileBin1D_t swig_types[37]
-#define SWIGTYPE_p_std__allocatorT_double_t swig_types[38]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_size_t_const_double_t_t swig_types[39]
-#define SWIGTYPE_p_std__dequeT_YODA__AnalysisObject_p_t swig_types[40]
-#define SWIGTYPE_p_std__invalid_argument swig_types[41]
-#define SWIGTYPE_p_std__lessT_AnalysisObject_p_t swig_types[42]
-#define SWIGTYPE_p_std__lessT_size_t_t swig_types[43]
-#define SWIGTYPE_p_std__listT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t swig_types[44]
-#define SWIGTYPE_p_std__listT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[45]
-#define SWIGTYPE_p_std__listT__Tp_p__Alloc_t swig_types[46]
-#define SWIGTYPE_p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t swig_types[47]
-#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t swig_types[48]
-#define SWIGTYPE_p_std__ostream swig_types[49]
-#define SWIGTYPE_p_std__pairT_double_double_t swig_types[50]
-#define SWIGTYPE_p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t swig_types[51]
-#define SWIGTYPE_p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[52]
-#define SWIGTYPE_p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t swig_types[53]
-#define SWIGTYPE_p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[54]
-#define SWIGTYPE_p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t swig_types[55]
-#define SWIGTYPE_p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t swig_types[56]
-#define SWIGTYPE_p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t swig_types[57]
-#define SWIGTYPE_p_std__vectorT__Tp__Alloc_t swig_types[58]
-#define SWIGTYPE_p_std__vectorT__Tp_p__Alloc_t swig_types[59]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[60]
-#define SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t swig_types[61]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[62]
-#define SWIGTYPE_p_value_type swig_types[63]
-static swig_type_info *swig_types[65];
-static swig_module_info swig_module = {swig_types, 64, 0, 0, 0, 0};
+#define SWIGTYPE_p_Axis1DT_YODA__HistoBin1D_Dbn1D_t swig_types[3]
+#define SWIGTYPE_p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t swig_types[4]
+#define SWIGTYPE_p_Axis2DT_YODA__HistoBin2D_t swig_types[5]
+#define SWIGTYPE_p_Bins swig_types[6]
+#define SWIGTYPE_p_Dbn1D swig_types[7]
+#define SWIGTYPE_p_Dbn2D swig_types[8]
+#define SWIGTYPE_p_Points swig_types[9]
+#define SWIGTYPE_p_Profile1D swig_types[10]
+#define SWIGTYPE_p_Scatter2D swig_types[11]
+#define SWIGTYPE_p_Scatter3D swig_types[12]
+#define SWIGTYPE_p_Utils__sortedvectorT_YODA__Point2D_t swig_types[13]
+#define SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t swig_types[14]
+#define SWIGTYPE_p_ValuePair swig_types[15]
+#define SWIGTYPE_p_YODA__AnalysisObject swig_types[16]
+#define SWIGTYPE_p_YODA__Bin swig_types[17]
+#define SWIGTYPE_p_YODA__Bin1D swig_types[18]
+#define SWIGTYPE_p_YODA__Bin2D swig_types[19]
+#define SWIGTYPE_p_YODA__Histo1D swig_types[20]
+#define SWIGTYPE_p_YODA__Histo2D swig_types[21]
+#define SWIGTYPE_p_YODA__Histo3D swig_types[22]
+#define SWIGTYPE_p_YODA__HistoBin1D swig_types[23]
+#define SWIGTYPE_p_YODA__HistoBin2D swig_types[24]
+#define SWIGTYPE_p_YODA__Point2D swig_types[25]
+#define SWIGTYPE_p_YODA__Point3D swig_types[26]
+#define SWIGTYPE_p_YODA__Profile1D swig_types[27]
+#define SWIGTYPE_p_YODA__ProfileBin1D swig_types[28]
+#define SWIGTYPE_p_YODA__Scatter2D swig_types[29]
+#define SWIGTYPE_p_YODA__Scatter3D swig_types[30]
+#define SWIGTYPE_p_YODA__Writer swig_types[31]
+#define SWIGTYPE_p_YODA__WriterAIDA swig_types[32]
+#define SWIGTYPE_p_YODA__WriterYODA swig_types[33]
+#define SWIGTYPE_p_allocator_type swig_types[34]
+#define SWIGTYPE_p_char swig_types[35]
+#define SWIGTYPE_p_const_reference swig_types[36]
+#define SWIGTYPE_p_difference_type swig_types[37]
+#define SWIGTYPE_p_first_type swig_types[38]
+#define SWIGTYPE_p_key_type swig_types[39]
+#define SWIGTYPE_p_mapped_type swig_types[40]
+#define SWIGTYPE_p_p_PyObject swig_types[41]
+#define SWIGTYPE_p_reference swig_types[42]
+#define SWIGTYPE_p_second_type swig_types[43]
+#define SWIGTYPE_p_size_type swig_types[44]
+#define SWIGTYPE_p_std__allocatorT_AnalysisObject_p_t swig_types[45]
+#define SWIGTYPE_p_std__allocatorT_YODA__HistoBin1D_t swig_types[46]
+#define SWIGTYPE_p_std__allocatorT_YODA__HistoBin2D_t swig_types[47]
+#define SWIGTYPE_p_std__allocatorT_YODA__ProfileBin1D_t swig_types[48]
+#define SWIGTYPE_p_std__allocatorT_double_t swig_types[49]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_size_t_const_double_t_t swig_types[50]
+#define SWIGTYPE_p_std__dequeT_YODA__AnalysisObject_p_t swig_types[51]
+#define SWIGTYPE_p_std__invalid_argument swig_types[52]
+#define SWIGTYPE_p_std__lessT_AnalysisObject_p_t swig_types[53]
+#define SWIGTYPE_p_std__lessT_size_t_t swig_types[54]
+#define SWIGTYPE_p_std__listT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t swig_types[55]
+#define SWIGTYPE_p_std__listT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[56]
+#define SWIGTYPE_p_std__listT__Tp_p__Alloc_t swig_types[57]
+#define SWIGTYPE_p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t swig_types[58]
+#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t swig_types[59]
+#define SWIGTYPE_p_std__ostream swig_types[60]
+#define SWIGTYPE_p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t swig_types[61]
+#define SWIGTYPE_p_std__pairT_double_double_t swig_types[62]
+#define SWIGTYPE_p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t swig_types[63]
+#define SWIGTYPE_p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[64]
+#define SWIGTYPE_p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t swig_types[65]
+#define SWIGTYPE_p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t swig_types[66]
+#define SWIGTYPE_p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t swig_types[67]
+#define SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t swig_types[68]
+#define SWIGTYPE_p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t swig_types[69]
+#define SWIGTYPE_p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t swig_types[70]
+#define SWIGTYPE_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t swig_types[71]
+#define SWIGTYPE_p_std__vectorT__Tp__Alloc_t swig_types[72]
+#define SWIGTYPE_p_std__vectorT__Tp_p__Alloc_t swig_types[73]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[74]
+#define SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t swig_types[75]
+#define SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t swig_types[76]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[77]
+#define SWIGTYPE_p_value_type swig_types[78]
+static swig_type_info *swig_types[80];
+static swig_module_info swig_module = {swig_types, 79, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3108,8 +3123,13 @@ namespace swig {
   #include "YODA/Histo1D.h"
   #include "YODA/Profile1D.h"
 
+  #include "YODA/Histo2D.h"
+
   #include "YODA/Point2D.h"
   #include "YODA/Scatter2D.h"
+
+  #include "YODA/Point3D.h"
+  #include "YODA/Scatter3D.h"
 
   #include "YODA/WriterYODA.h"
   #include "YODA/WriterAIDA.h"
@@ -5289,6 +5309,114 @@ SWIGINTERN void std_vector_Sl_YODA_HistoBin1D_Sg____setitem____SWIG_2(std::vecto
       *(swig::getpos(self,i)) = x;
     }
 SWIGINTERN void std_vector_Sl_YODA_HistoBin1D_Sg__append(std::vector< YODA::HistoBin1D > *self,std::vector< YODA::HistoBin1D >::value_type const &x){
+      self->push_back(x);
+    }
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_int  (int value)
+{    
+  return SWIG_From_long  (value);
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_unsigned_SS_int  (unsigned int value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
+}
+
+
+  namespace swig {
+    template <>  struct traits<YODA::HistoBin2D > {
+      typedef pointer_category category;
+      static const char* type_name() { return"YODA::HistoBin2D"; }
+    };
+  }
+
+
+      namespace swig {
+	template <>  struct traits<std::vector<YODA::HistoBin2D, std::allocator< YODA::HistoBin2D > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "YODA::HistoBin2D" "," "std::allocator< YODA::HistoBin2D >" " >";
+	  }
+	};
+      }
+    
+SWIGINTERN swig::SwigPyIterator *std_vector_Sl_YODA_HistoBin2D_Sg__iterator(std::vector< YODA::HistoBin2D > *self,PyObject **PYTHON_SELF){
+      return swig::make_output_iterator(self->begin(), self->begin(), self->end(), *PYTHON_SELF);
+    }
+SWIGINTERN bool std_vector_Sl_YODA_HistoBin2D_Sg____nonzero__(std::vector< YODA::HistoBin2D > const *self){
+      return !(self->empty());
+    }
+SWIGINTERN bool std_vector_Sl_YODA_HistoBin2D_Sg____bool__(std::vector< YODA::HistoBin2D > const *self){
+      return !(self->empty());
+    }
+SWIGINTERN std::vector< YODA::HistoBin2D >::size_type std_vector_Sl_YODA_HistoBin2D_Sg____len__(std::vector< YODA::HistoBin2D > const *self){
+      return self->size();
+    }
+SWIGINTERN std::vector< YODA::HistoBin2D >::value_type std_vector_Sl_YODA_HistoBin2D_Sg__pop(std::vector< YODA::HistoBin2D > *self){
+      if (self->size() == 0)
+	throw std::out_of_range("pop from empty container");
+      std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >::value_type x = self->back();
+      self->pop_back();
+      return x;
+    }
+SWIGINTERN std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *std_vector_Sl_YODA_HistoBin2D_Sg____getslice__(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::difference_type i,std::vector< YODA::HistoBin2D >::difference_type j){
+      return swig::getslice(self, i, j);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____setslice____SWIG_0(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::difference_type i,std::vector< YODA::HistoBin2D >::difference_type j,std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &v=std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >()){
+      swig::setslice(self, i, j, v);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____delslice__(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::difference_type i,std::vector< YODA::HistoBin2D >::difference_type j){
+      swig::delslice(self, i, j);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____delitem____SWIG_0(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::difference_type i){
+      self->erase(swig::getpos(self,i));
+    }
+SWIGINTERN std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *std_vector_Sl_YODA_HistoBin2D_Sg____getitem____SWIG_0(std::vector< YODA::HistoBin2D > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return NULL;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), self->size(), &i, &j, &step);
+      return swig::getslice(self, i, j);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_0(std::vector< YODA::HistoBin2D > *self,PySliceObject *slice,std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &v){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), self->size(), &i, &j, &step);
+      swig::setslice(self, i, j, v);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_1(std::vector< YODA::HistoBin2D > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), self->size(), &i, &j, &step);
+      swig::delslice(self, i,j);
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____delitem____SWIG_1(std::vector< YODA::HistoBin2D > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), self->size(), &i, &j, &step);
+      swig::delslice(self, i,j);
+    }
+SWIGINTERN std::vector< YODA::HistoBin2D >::value_type const &std_vector_Sl_YODA_HistoBin2D_Sg____getitem____SWIG_1(std::vector< YODA::HistoBin2D > const *self,std::vector< YODA::HistoBin2D >::difference_type i){
+      return *(swig::cgetpos(self, i));
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_2(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::difference_type i,std::vector< YODA::HistoBin2D >::value_type const &x){
+      *(swig::getpos(self,i)) = x;
+    }
+SWIGINTERN void std_vector_Sl_YODA_HistoBin2D_Sg__append(std::vector< YODA::HistoBin2D > *self,std::vector< YODA::HistoBin2D >::value_type const &x){
       self->push_back(x);
     }
 
@@ -10518,6 +10646,36 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Bin1D_scaleX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin1D *arg1 = (YODA::Bin1D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Bin1D_scaleX",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin1D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin1D_scaleX" "', argument " "1"" of type '" "YODA::Bin1D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin1D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Bin1D_scaleX" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->scaleX(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Bin1D_lowEdge(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Bin1D *arg1 = (YODA::Bin1D *) 0 ;
@@ -11093,6 +11251,987 @@ SWIGINTERN PyObject *_wrap___lt____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObje
   arg2 = reinterpret_cast< YODA::Bin1D * >(argp2);
   result = (bool)YODA::operator <((YODA::Bin1D const &)*arg1,(YODA::Bin1D const &)*arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Bin2D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  YODA::Bin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Bin2D",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Bin2D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Bin2D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Bin2D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Bin2D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  result = (YODA::Bin2D *)new YODA::Bin2D(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Bin2D__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > > arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Bin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Bin2D",&obj0)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Bin2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > >""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Bin2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > >""'");
+    } else {
+      std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * temp = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  result = (YODA::Bin2D *)new YODA::Bin2D(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Bin2D(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Bin2D__SWIG_1(self, args);
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_Bin2D__SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Bin2D'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Bin2D::Bin2D(double,double,double,double)\n"
+    "    YODA::Bin2D::Bin2D(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > >)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_reset",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_reset" "', argument " "1"" of type '" "YODA::Bin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  (arg1)->reset();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Bin2D_scale",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_scale" "', argument " "1"" of type '" "YODA::Bin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Bin2D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Bin2D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->scale(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_lowEdgeX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_lowEdgeX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_lowEdgeX" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->lowEdgeX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xMin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xMin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xMin" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xMin();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_lowEdgeY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_lowEdgeY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_lowEdgeY" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->lowEdgeY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yMin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yMin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yMin" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yMin();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_highEdgeX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_highEdgeX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_highEdgeX" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->highEdgeX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xMax(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xMax",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xMax" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xMax();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_highEdgeY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_highEdgeY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_highEdgeY" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->highEdgeY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yMax(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yMax",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yMax" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yMax();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_widthX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_widthX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_widthX" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->widthX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_widthY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_widthY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_widthY" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->widthY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_focus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::pair< double,double > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_focus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_focus" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = ((YODA::Bin2D const *)arg1)->focus();
+  resultobj = swig::from(static_cast< std::pair<double,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_midpoint(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::pair< double,double > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_midpoint",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_midpoint" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = ((YODA::Bin2D const *)arg1)->midpoint();
+  resultobj = swig::from(static_cast< std::pair<double,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xMean(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xMean",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xMean" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xMean();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yMean(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yMean",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yMean" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yMean();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xVariance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xVariance",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xVariance" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xVariance();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yVariance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yVariance",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yVariance" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yVariance();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xStdDev(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xStdDev",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xStdDev" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xStdDev();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yStdDev(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yStdDev",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yStdDev" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yStdDev();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_xStdErr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_xStdErr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_xStdErr" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->xStdErr();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_yStdErr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_yStdErr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_yStdErr" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->yStdErr();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_numEntries(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned long result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_numEntries",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_numEntries" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (unsigned long)((YODA::Bin2D const *)arg1)->numEntries();
+  resultobj = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumW(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumW",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumW" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumW();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumW2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumW2",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumW2" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumW2();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumWX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumWX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumWX" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumWX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumWY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumWY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumWY" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumWY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumWXY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumWXY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumWXY" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumWXY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumWX2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumWX2",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumWX2" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumWX2();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D_sumWY2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Bin2D_sumWY2",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D_sumWY2" "', argument " "1"" of type '" "YODA::Bin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  result = (double)((YODA::Bin2D const *)arg1)->sumWY2();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  YODA::Bin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Bin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Bin2D___iadd__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D___iadd__" "', argument " "1"" of type '" "YODA::Bin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Bin2D___iadd__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Bin2D___iadd__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Bin2D * >(argp2);
+  result = (YODA::Bin2D *) &(arg1)->operator +=((YODA::Bin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Bin2D___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  YODA::Bin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Bin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Bin2D___isub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Bin2D___isub__" "', argument " "1"" of type '" "YODA::Bin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Bin2D___isub__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Bin2D___isub__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Bin2D * >(argp2);
+  result = (YODA::Bin2D *) &(arg1)->operator -=((YODA::Bin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Bin2D(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = (YODA::Bin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Bin2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Bin2D" "', argument " "1"" of type '" "YODA::Bin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Bin2D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_YODA__Bin2D, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap___add____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = 0 ;
+  YODA::Bin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::Bin2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__add__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__add__" "', argument " "1"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "1"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__add__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Bin2D * >(argp2);
+  result = YODA::operator +((YODA::Bin2D const &)*arg1,(YODA::Bin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::Bin2D(static_cast< const YODA::Bin2D& >(result))), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___sub____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Bin2D *arg1 = 0 ;
+  YODA::Bin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::Bin2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__sub__" "', argument " "1"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "1"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Bin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Bin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__sub__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "2"" of type '" "YODA::Bin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Bin2D * >(argp2);
+  result = YODA::operator -((YODA::Bin2D const &)*arg1,(YODA::Bin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::Bin2D(static_cast< const YODA::Bin2D& >(result))), SWIGTYPE_p_YODA__Bin2D, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -11697,7 +12836,7 @@ SWIGINTERN PyObject *HistoBin1D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap___add____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___add____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::HistoBin1D *arg1 = 0 ;
   YODA::HistoBin1D *arg2 = 0 ;
@@ -11734,7 +12873,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___sub____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___sub____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::HistoBin1D *arg1 = 0 ;
   YODA::HistoBin1D *arg2 = 0 ;
@@ -13425,14 +14564,54 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Histo1D_integral__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo1D *arg1 = (YODA::Histo1D *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo1D_integral",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo1D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo1D_integral" "', argument " "1"" of type '" "YODA::Histo1D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo1D * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo1D_integral" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo1D_integral" "', argument " "3"" of type '" "size_t""'");
+  } 
+  arg3 = static_cast< size_t >(val3);
+  result = (double)((YODA::Histo1D const *)arg1)->integral(arg2,arg3);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Histo1D_integral(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[3];
+  PyObject *argv[4];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 1) {
@@ -13459,12 +14638,34 @@ SWIGINTERN PyObject *_wrap_Histo1D_integral(PyObject *self, PyObject *args) {
       }
     }
   }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo1D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo1D_integral__SWIG_2(self, args);
+        }
+      }
+    }
+  }
   
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo1D_integral'.\n"
     "  Possible C/C++ prototypes are:\n"
     "    YODA::Histo1D::integral(bool) const\n"
-    "    YODA::Histo1D::integral() const\n");
+    "    YODA::Histo1D::integral() const\n"
+    "    YODA::Histo1D::integral(size_t,size_t) const\n");
   return 0;
 }
 
@@ -14050,7 +15251,7 @@ SWIGINTERN PyObject *Histo1D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObje
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap___add____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___add____SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Histo1D *arg1 = 0 ;
   YODA::Histo1D *arg2 = 0 ;
@@ -14087,7 +15288,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___sub____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___sub____SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Histo1D *arg1 = 0 ;
   YODA::Histo1D *arg2 = 0 ;
@@ -15900,6 +17101,5909 @@ SWIGINTERN PyObject *HistoBin1Ds_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_HistoBin2D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_HistoBin2D",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_HistoBin2D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_HistoBin2D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_HistoBin2D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_HistoBin2D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  result = (YODA::HistoBin2D *)new YODA::HistoBin2D(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2D__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_HistoBin2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_HistoBin2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_HistoBin2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > &""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * >(argp1);
+  result = (YODA::HistoBin2D *)new YODA::HistoBin2D(*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2D(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_HistoBin2D__SWIG_1(self, args);
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_HistoBin2D__SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_HistoBin2D'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::HistoBin2D::HistoBin2D(double,double,double,double)\n"
+    "    YODA::HistoBin2D::HistoBin2D(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fill__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  std::pair< double,double > arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2D_fill",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fill" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "HistoBin2D_fill" "', argument " "2"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2D_fill" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->fill(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fill__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  std::pair< double,double > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2D_fill",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fill" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "HistoBin2D_fill" "', argument " "2"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  (arg1)->fill(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fill__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:HistoBin2D_fill",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fill" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2D_fill" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2D_fill" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "HistoBin2D_fill" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  (arg1)->fill(arg2,arg3,arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fill__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2D_fill",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fill" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2D_fill" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2D_fill" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->fill(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fill(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::pair<double,double >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_HistoBin2D_fill__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_HistoBin2D_fill__SWIG_3(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::pair<double,double >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_HistoBin2D_fill__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_HistoBin2D_fill__SWIG_2(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2D_fill'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::HistoBin2D::fill(std::pair< double,double >,double)\n"
+    "    YODA::HistoBin2D::fill(std::pair< double,double >)\n"
+    "    YODA::HistoBin2D::fill(double,double,double)\n"
+    "    YODA::HistoBin2D::fill(double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fillBin__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2D_fillBin",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fillBin" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2D_fillBin" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->fillBin(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fillBin__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_fillBin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_fillBin" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  (arg1)->fillBin();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_fillBin(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_HistoBin2D_fillBin__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_HistoBin2D_fillBin__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2D_fillBin'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::HistoBin2D::fillBin(double)\n"
+    "    YODA::HistoBin2D::fillBin()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_reset",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_reset" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  (arg1)->reset();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_scaleW(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2D_scaleW",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_scaleW" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2D_scaleW" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->scaleW(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_volume(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_volume",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_volume" "', argument " "1"" of type '" "YODA::HistoBin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  result = (double)((YODA::HistoBin2D const *)arg1)->volume();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_height(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_height",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_height" "', argument " "1"" of type '" "YODA::HistoBin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  result = (double)((YODA::HistoBin2D const *)arg1)->height();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_volumeErr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_volumeErr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_volumeErr" "', argument " "1"" of type '" "YODA::HistoBin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  result = (double)((YODA::HistoBin2D const *)arg1)->volumeErr();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D_heightErr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2D_heightErr",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D_heightErr" "', argument " "1"" of type '" "YODA::HistoBin2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  result = (double)((YODA::HistoBin2D const *)arg1)->heightErr();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  YODA::HistoBin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2D___iadd__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D___iadd__" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "HistoBin2D___iadd__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2D___iadd__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::HistoBin2D * >(argp2);
+  result = (YODA::HistoBin2D *) &(arg1)->operator +=((YODA::HistoBin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2D___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  YODA::HistoBin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2D___isub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2D___isub__" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "HistoBin2D___isub__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2D___isub__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::HistoBin2D * >(argp2);
+  result = (YODA::HistoBin2D *) &(arg1)->operator -=((YODA::HistoBin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_HistoBin2D(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = (YODA::HistoBin2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_HistoBin2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_HistoBin2D" "', argument " "1"" of type '" "YODA::HistoBin2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *HistoBin2D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_YODA__HistoBin2D, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap___add____SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = 0 ;
+  YODA::HistoBin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::HistoBin2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__add__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__add__" "', argument " "1"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "1"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__add__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::HistoBin2D * >(argp2);
+  result = YODA::operator +((YODA::HistoBin2D const &)*arg1,(YODA::HistoBin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::HistoBin2D(static_cast< const YODA::HistoBin2D& >(result))), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___sub____SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::HistoBin2D *arg1 = 0 ;
+  YODA::HistoBin2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::HistoBin2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__sub__" "', argument " "1"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "1"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::HistoBin2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__sub__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "2"" of type '" "YODA::HistoBin2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::HistoBin2D * >(argp2);
+  result = YODA::operator -((YODA::HistoBin2D const &)*arg1,(YODA::HistoBin2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::HistoBin2D(static_cast< const YODA::HistoBin2D& >(result))), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  size_t arg1 ;
+  double arg2 ;
+  double arg3 ;
+  size_t arg4 ;
+  double arg5 ;
+  double arg6 ;
+  std::string *arg7 = 0 ;
+  std::string *arg8 = 0 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  size_t val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  int res7 = SWIG_OLDOBJ ;
+  int res8 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOO:new_Histo2D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "size_t""'");
+  } 
+  arg1 = static_cast< size_t >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Histo2D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_size_t(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Histo2D" "', argument " "4"" of type '" "size_t""'");
+  } 
+  arg4 = static_cast< size_t >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Histo2D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Histo2D" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Histo2D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "new_Histo2D" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D(arg1,arg2,arg3,arg4,arg5,arg6,(std::string const &)*arg7,(std::string const &)*arg8);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  size_t arg1 ;
+  double arg2 ;
+  double arg3 ;
+  size_t arg4 ;
+  double arg5 ;
+  double arg6 ;
+  std::string *arg7 = 0 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  size_t val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  int res7 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:new_Histo2D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "size_t""'");
+  } 
+  arg1 = static_cast< size_t >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Histo2D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_size_t(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Histo2D" "', argument " "4"" of type '" "size_t""'");
+  } 
+  arg4 = static_cast< size_t >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Histo2D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Histo2D" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Histo2D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D(arg1,arg2,arg3,arg4,arg5,arg6,(std::string const &)*arg7);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  size_t arg1 ;
+  double arg2 ;
+  double arg3 ;
+  size_t arg4 ;
+  double arg5 ;
+  double arg6 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  size_t val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_Histo2D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "size_t""'");
+  } 
+  arg1 = static_cast< size_t >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Histo2D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_size_t(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Histo2D" "', argument " "4"" of type '" "size_t""'");
+  } 
+  arg4 = static_cast< size_t >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Histo2D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Histo2D" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  result = (YODA::Histo2D *)new YODA::Histo2D(arg1,arg2,arg3,arg4,arg5,arg6);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Histo2D",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Histo2D" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D((std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &)*arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Histo2D",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D((std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &)*arg1,(std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Histo2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > * >(argp1);
+  result = (YODA::Histo2D *)new YODA::Histo2D((std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Histo2D",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D((YODA::Histo2D const &)*arg1,(std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Histo2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (YODA::Histo2D *)new YODA::Histo2D((YODA::Histo2D const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Scatter3D *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Histo2D",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Scatter3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "Scatter3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "Scatter3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< Scatter3D * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (YODA::Histo2D *)new YODA::Histo2D((Scatter3D const &)*arg1,(std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D__SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Scatter3D *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Histo2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Scatter3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Histo2D" "', argument " "1"" of type '" "Scatter3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Histo2D" "', argument " "1"" of type '" "Scatter3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< Scatter3D * >(argp1);
+  result = (YODA::Histo2D *)new YODA::Histo2D((Scatter3D const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Histo2D(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[9];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 8) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Histo2D__SWIG_5(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Histo2D__SWIG_7(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Histo2D__SWIG_9(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Histo2D__SWIG_4(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Histo2D__SWIG_8(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Histo2D__SWIG_6(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_Histo2D__SWIG_3(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_size_t(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                return _wrap_new_Histo2D__SWIG_2(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 7) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_size_t(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  return _wrap_new_Histo2D__SWIG_1(self, args);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 8) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_size_t(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  int res = SWIG_AsPtr_std_string(argv[7], (std::string**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    return _wrap_new_Histo2D__SWIG_0(self, args);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Histo2D'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::Histo2D(size_t,double,double,size_t,double,double,std::string const &,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(size_t,double,double,size_t,double,double,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(size_t,double,double,size_t,double,double)\n"
+    "    YODA::Histo2D::Histo2D(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &,std::string const &,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > const &)\n"
+    "    YODA::Histo2D::Histo2D(YODA::Histo2D const &,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(YODA::Histo2D const &)\n"
+    "    YODA::Histo2D::Histo2D(Scatter3D const &,std::string const &)\n"
+    "    YODA::Histo2D::Histo2D(Scatter3D const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D__aotype(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D__aotype",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D__aotype" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = ((YODA::Histo2D const *)arg1)->_aotype();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_fill__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Histo2D_fill",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_fill" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_fill" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_fill" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Histo2D_fill" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  result = (int)(arg1)->fill(arg2,arg3,arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_fill__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_fill",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_fill" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_fill" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_fill" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (int)(arg1)->fill(arg2,arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_fill(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_fill__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_Histo2D_fill__SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_fill'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::fill(double,double,double)\n"
+    "    YODA::Histo2D::fill(double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_reset",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_reset" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  (arg1)->reset();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_scaleW(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_scaleW",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_scaleW" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_scaleW" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->scaleW(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_scale__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_scale",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_scale" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->scale(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_scale__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_scale",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_scale" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->scale(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_scale__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_scale",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_scale" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  (arg1)->scale();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_scale(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_scale__SWIG_2(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_scale__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_scale__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_scale'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::scale(double,double)\n"
+    "    YODA::Histo2D::scale(double)\n"
+    "    YODA::Histo2D::scale()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_addBin__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  SwigValueWrapper< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_addBin",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_addBin" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Histo2D_addBin" "', argument " "2"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > const""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Histo2D_addBin" "', argument " "2"" of type '" "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > const""'");
+    } else {
+      std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > * temp = reinterpret_cast< std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  (arg1)->addBin(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_addBin__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOO:Histo2D_addBin",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_addBin" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_addBin" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_addBin" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Histo2D_addBin" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Histo2D_addBin" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  (arg1)->addBin(arg2,arg3,arg4,arg5);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_addBin(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[6];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 5) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Histo2D_addBin__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_Histo2D_addBin__SWIG_1(self, args);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_addBin'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::addBin(std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > const)\n"
+    "    YODA::Histo2D::addBin(double,double,double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_lowEdgeX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_lowEdgeX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_lowEdgeX" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->lowEdgeX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_lowEdgeY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_lowEdgeY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_lowEdgeY" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->lowEdgeY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_highEdgeX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_highEdgeX",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_highEdgeX" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->highEdgeX();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_highEdgeY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_highEdgeY",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_highEdgeY" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->highEdgeY();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bins__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_bins",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_bins" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *) &(arg1)->bins();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bins__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_bins",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_bins" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *) &((YODA::Histo2D const *)arg1)->bins();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bins(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_bins__SWIG_0(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_bins__SWIG_1(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_bins'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::bins()\n"
+    "    YODA::Histo2D::bins() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bin__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_bin",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_bin" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_bin" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = (YODA::HistoBin2D *) &(arg1)->bin(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bin__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_bin",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_bin" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_bin" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = (YODA::HistoBin2D *) &((YODA::Histo2D const *)arg1)->bin(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_bin(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_bin__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_bin__SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_bin'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::bin(size_t)\n"
+    "    YODA::Histo2D::bin(size_t) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_binByCoord__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_binByCoord",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_binByCoord" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_binByCoord" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_binByCoord" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (YODA::HistoBin2D *) &(arg1)->binByCoord(arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_binByCoord__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::HistoBin2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_binByCoord",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_binByCoord" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_binByCoord" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_binByCoord" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (YODA::HistoBin2D *) &((YODA::Histo2D const *)arg1)->binByCoord(arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_binByCoord(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_binByCoord__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_binByCoord__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_binByCoord'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::binByCoord(double,double)\n"
+    "    YODA::Histo2D::binByCoord(double,double) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_findBinIndex__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_findBinIndex",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_findBinIndex" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_findBinIndex" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_findBinIndex" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (int)(arg1)->findBinIndex(arg2,arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_findBinIndex__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Histo2D_findBinIndex",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_findBinIndex" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_findBinIndex" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Histo2D_findBinIndex" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (int)((YODA::Histo2D const *)arg1)->findBinIndex(arg2,arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_findBinIndex(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_findBinIndex__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Histo2D_findBinIndex__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_findBinIndex'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::findBinIndex(double,double)\n"
+    "    YODA::Histo2D::findBinIndex(double,double) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_underflow__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Dbn2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_underflow",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_underflow" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (Dbn2D *) &((YODA::Histo2D const *)arg1)->underflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_underflow__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Dbn2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_underflow",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_underflow" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (Dbn2D *) &(arg1)->underflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_underflow(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_underflow__SWIG_1(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_underflow__SWIG_0(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_underflow'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::underflow() const\n"
+    "    YODA::Histo2D::underflow()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_overflow__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Dbn2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_overflow",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_overflow" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (Dbn2D *) &((YODA::Histo2D const *)arg1)->overflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_overflow__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Dbn2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_overflow",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_overflow" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (Dbn2D *) &(arg1)->overflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_overflow(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_overflow__SWIG_1(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_overflow__SWIG_0(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_overflow'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::overflow() const\n"
+    "    YODA::Histo2D::overflow()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_numBinsTotal__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_numBinsTotal",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_numBinsTotal" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (unsigned int)(arg1)->numBinsTotal();
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_numBinsTotal__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_numBinsTotal",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_numBinsTotal" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (unsigned int)((YODA::Histo2D const *)arg1)->numBinsTotal();
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_numBinsTotal(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_numBinsTotal__SWIG_0(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_numBinsTotal__SWIG_1(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_numBinsTotal'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::numBinsTotal()\n"
+    "    YODA::Histo2D::numBinsTotal() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_getHash__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_getHash",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_getHash" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (arg1)->getHash();
+  resultobj = SWIG_NewPointerObj((new std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > >(static_cast< const std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > >& >(result))), SWIGTYPE_p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_getHash__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_getHash",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_getHash" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = ((YODA::Histo2D const *)arg1)->getHash();
+  resultobj = SWIG_NewPointerObj((new std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > >(static_cast< const std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > >& >(result))), SWIGTYPE_p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_getHash(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_getHash__SWIG_0(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_getHash__SWIG_1(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_getHash'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::getHash()\n"
+    "    YODA::Histo2D::getHash() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_integral__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_integral",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_integral" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_integral" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->integral(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_integral__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_integral",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_integral" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->integral();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_integral(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_integral__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_integral__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_integral'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::integral(bool) const\n"
+    "    YODA::Histo2D::integral() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_sumW",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_sumW" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_sumW" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->sumW(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_sumW",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_sumW" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->sumW();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_sumW__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_sumW__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_sumW'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::sumW(bool) const\n"
+    "    YODA::Histo2D::sumW() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW2__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_sumW2",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_sumW2" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_sumW2" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->sumW2(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW2__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_sumW2",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_sumW2" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->sumW2();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_sumW2(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_sumW2__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_sumW2__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_sumW2'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::sumW2(bool) const\n"
+    "    YODA::Histo2D::sumW2() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xMean__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_xMean",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xMean" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_xMean" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->xMean(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xMean__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_xMean",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xMean" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->xMean();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xMean(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_xMean__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_xMean__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_xMean'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::xMean(bool) const\n"
+    "    YODA::Histo2D::xMean() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yMean__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_yMean",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yMean" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_yMean" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->yMean(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yMean__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_yMean",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yMean" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->yMean();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yMean(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_yMean__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_yMean__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_yMean'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::yMean(bool) const\n"
+    "    YODA::Histo2D::yMean() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xVariance__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_xVariance",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xVariance" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_xVariance" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->xVariance(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xVariance__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_xVariance",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xVariance" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->xVariance();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xVariance(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_xVariance__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_xVariance__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_xVariance'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::xVariance(bool) const\n"
+    "    YODA::Histo2D::xVariance() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yVariance__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_yVariance",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yVariance" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_yVariance" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->yVariance(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yVariance__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_yVariance",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yVariance" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->yVariance();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yVariance(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_yVariance__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_yVariance__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_yVariance'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::yVariance(bool) const\n"
+    "    YODA::Histo2D::yVariance() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xStdDev__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_xStdDev",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xStdDev" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_xStdDev" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->xStdDev(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xStdDev__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_xStdDev",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_xStdDev" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->xStdDev();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_xStdDev(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_xStdDev__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_xStdDev__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_xStdDev'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::xStdDev(bool) const\n"
+    "    YODA::Histo2D::xStdDev() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yStdDev__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D_yStdDev",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yStdDev" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Histo2D_yStdDev" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  result = (double)((YODA::Histo2D const *)arg1)->yStdDev(arg2);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yStdDev__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Histo2D_yStdDev",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D_yStdDev" "', argument " "1"" of type '" "YODA::Histo2D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  result = (double)((YODA::Histo2D const *)arg1)->yStdDev();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D_yStdDev(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_Histo2D_yStdDev__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_bool(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Histo2D_yStdDev__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Histo2D_yStdDev'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Histo2D::yStdDev(bool) const\n"
+    "    YODA::Histo2D::yStdDev() const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  YODA::Histo2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D___iadd__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D___iadd__" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Histo2D___iadd__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Histo2D___iadd__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Histo2D * >(argp2);
+  result = (YODA::Histo2D *) &(arg1)->operator +=((YODA::Histo2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Histo2D___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  YODA::Histo2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Histo2D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Histo2D___isub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Histo2D___isub__" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Histo2D___isub__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Histo2D___isub__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Histo2D * >(argp2);
+  result = (YODA::Histo2D *) &(arg1)->operator -=((YODA::Histo2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Histo2D(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = (YODA::Histo2D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Histo2D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Histo2D" "', argument " "1"" of type '" "YODA::Histo2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Histo2D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_YODA__Histo2D, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap___add____SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = 0 ;
+  YODA::Histo2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::Histo2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__add__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__add__" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__add__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Histo2D * >(argp2);
+  result = YODA::operator +((YODA::Histo2D const &)*arg1,(YODA::Histo2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::Histo2D(static_cast< const YODA::Histo2D& >(result))), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___sub____SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo2D *arg1 = 0 ;
+  YODA::Histo2D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  SwigValueWrapper< YODA::Histo2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__sub__" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "1"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo2D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Histo2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__sub__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__sub__" "', argument " "2"" of type '" "YODA::Histo2D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Histo2D * >(argp2);
+  result = YODA::operator -((YODA::Histo2D const &)*arg1,(YODA::Histo2D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::Histo2D(static_cast< const YODA::Histo2D& >(result))), SWIGTYPE_p_YODA__Histo2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_iterator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  PyObject **arg2 = (PyObject **) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  swig::SwigPyIterator *result = 0 ;
+  
+  arg2 = &obj0;
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_iterator",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_iterator" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (swig::SwigPyIterator *)std_vector_Sl_YODA_HistoBin2D_Sg__iterator(arg1,arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___nonzero__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds___nonzero__",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___nonzero__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (bool)std_vector_Sl_YODA_HistoBin2D_Sg____nonzero__((std::vector< YODA::HistoBin2D > const *)arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___bool__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds___bool__",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___bool__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (bool)std_vector_Sl_YODA_HistoBin2D_Sg____bool__((std::vector< YODA::HistoBin2D > const *)arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___len__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::size_type result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds___len__",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___len__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = std_vector_Sl_YODA_HistoBin2D_Sg____len__((std::vector< YODA::HistoBin2D > const *)arg1);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_pop(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< YODA::HistoBin2D > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_pop",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_pop" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  try {
+    result = std_vector_Sl_YODA_HistoBin2D_Sg__pop(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj((new std::vector< YODA::HistoBin2D >::value_type(static_cast< const std::vector< YODA::HistoBin2D >::value_type& >(result))), SWIGTYPE_p_YODA__HistoBin2D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___getslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds___getslice__",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___getslice__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___getslice__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2Ds___getslice__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val3);
+  try {
+    result = (std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *)std_vector_Sl_YODA_HistoBin2D_Sg____getslice__(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setslice____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg3 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  int res4 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:HistoBin2Ds___setslice__",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___setslice__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___setslice__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2Ds___setslice__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val3);
+  {
+    std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *ptr = (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *)0;
+    res4 = swig::asptr(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "HistoBin2Ds___setslice__" "', argument " "4"" of type '" "std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds___setslice__" "', argument " "4"" of type '" "std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____setslice____SWIG_0(arg1,arg2,arg3,(std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &)*arg4);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setslice____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds___setslice__",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___setslice__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___setslice__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2Ds___setslice__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val3);
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____setslice____SWIG_0(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setslice__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_ptrdiff_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_HistoBin2Ds___setslice____SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_ptrdiff_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          int res = swig::asptr(argv[3], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_HistoBin2Ds___setslice____SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds___setslice__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::__setslice__(std::vector< YODA::HistoBin2D >::difference_type,std::vector< YODA::HistoBin2D >::difference_type,std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &)\n"
+    "    std::vector< YODA::HistoBin2D >::__setslice__(std::vector< YODA::HistoBin2D >::difference_type,std::vector< YODA::HistoBin2D >::difference_type)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___delslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds___delslice__",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___delslice__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___delslice__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2Ds___delslice__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val3);
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____delslice__(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___delitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds___delitem__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___delitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___delitem__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____delitem____SWIG_0(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___getitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds___getitem__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___getitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  {
+    if (!PySlice_Check(obj1)) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds___getitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) obj1;
+  }
+  try {
+    result = (std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *)std_vector_Sl_YODA_HistoBin2D_Sg____getitem____SWIG_0(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds___setitem__",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___setitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  {
+    if (!PySlice_Check(obj1)) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds___setitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) obj1;
+  }
+  {
+    std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *ptr = (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "HistoBin2Ds___setitem__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds___setitem__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_0(arg1,arg2,(std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds___setitem__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___setitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  {
+    if (!PySlice_Check(obj1)) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds___setitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) obj1;
+  }
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_1(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___delitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds___delitem__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___delitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  {
+    if (!PySlice_Check(obj1)) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds___delitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) obj1;
+  }
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____delitem____SWIG_1(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___delitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        _v = PySlice_Check(argv[1]);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds___delitem____SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds___delitem____SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds___delitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::__delitem__(std::vector< YODA::HistoBin2D >::difference_type)\n"
+    "    std::vector< YODA::HistoBin2D >::__delitem__(PySliceObject *)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___getitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< YODA::HistoBin2D >::value_type *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds___getitem__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___getitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___getitem__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  try {
+    result = (std::vector< YODA::HistoBin2D >::value_type *) &std_vector_Sl_YODA_HistoBin2D_Sg____getitem____SWIG_1((std::vector< YODA::HistoBin2D > const *)arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___getitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        _v = PySlice_Check(argv[1]);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds___getitem____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds___getitem____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds___getitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::__getitem__(PySliceObject *)\n"
+    "    std::vector< YODA::HistoBin2D >::__getitem__(std::vector< YODA::HistoBin2D >::difference_type) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setitem____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::difference_type arg2 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds___setitem__",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds___setitem__" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds___setitem__" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::difference_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "HistoBin2Ds___setitem__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds___setitem__" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp3);
+  try {
+    std_vector_Sl_YODA_HistoBin2D_Sg____setitem____SWIG_2(arg1,arg2,(YODA::HistoBin2D const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds___setitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        _v = PySlice_Check(argv[1]);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds___setitem____SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        _v = PySlice_Check(argv[1]);
+      }
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_HistoBin2Ds___setitem____SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_HistoBin2Ds___setitem____SWIG_2(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds___setitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::__setitem__(PySliceObject *,std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > const &)\n"
+    "    std::vector< YODA::HistoBin2D >::__setitem__(PySliceObject *)\n"
+    "    std::vector< YODA::HistoBin2D >::__setitem__(std::vector< YODA::HistoBin2D >::difference_type,std::vector< YODA::HistoBin2D >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_append(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_append",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_append" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "HistoBin2Ds_append" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_append" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp2);
+  std_vector_Sl_YODA_HistoBin2D_Sg__append(arg1,(YODA::HistoBin2D const &)*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2Ds__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_HistoBin2Ds")) SWIG_fail;
+  result = (std::vector< YODA::HistoBin2D > *)new std::vector< YODA::HistoBin2D >();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2Ds__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_HistoBin2Ds",&obj0)) SWIG_fail;
+  {
+    std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *ptr = (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_HistoBin2Ds" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_HistoBin2Ds" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  result = (std::vector< YODA::HistoBin2D > *)new std::vector< YODA::HistoBin2D >((std::vector< YODA::HistoBin2D > const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_empty(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_empty",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_empty" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (bool)((std::vector< YODA::HistoBin2D > const *)arg1)->empty();
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_size(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::size_type result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_size",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_size" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = ((std::vector< YODA::HistoBin2D > const *)arg1)->size();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_clear(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_clear",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_clear" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  (arg1)->clear();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_swap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_swap",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_swap" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "HistoBin2Ds_swap" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D > &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_swap" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D > &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp2);
+  (arg1)->swap(*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_get_allocator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< std::allocator< YODA::HistoBin2D > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_get_allocator",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_get_allocator" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = ((std::vector< YODA::HistoBin2D > const *)arg1)->get_allocator();
+  resultobj = SWIG_NewPointerObj((new std::vector< YODA::HistoBin2D >::allocator_type(static_cast< const std::vector< YODA::HistoBin2D >::allocator_type& >(result))), SWIGTYPE_p_std__allocatorT_YODA__HistoBin2D_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_begin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_begin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_begin" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (arg1)->begin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_end(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_end",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_end" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (arg1)->end();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_rbegin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::reverse_iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_rbegin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_rbegin" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (arg1)->rbegin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::reverse_iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_rend(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::reverse_iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_rend",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_rend" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (arg1)->rend();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::reverse_iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2Ds__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D >::size_type arg1 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_HistoBin2Ds",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_HistoBin2Ds" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg1 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val1);
+  result = (std::vector< YODA::HistoBin2D > *)new std::vector< YODA::HistoBin2D >(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_pop_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_pop_back",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_pop_back" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  (arg1)->pop_back();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_resize__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::size_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_resize",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_resize" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds_resize" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val2);
+  (arg1)->resize(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_erase__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::iterator arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< YODA::HistoBin2D >::iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_erase",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_erase" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+    }
+  }
+  result = (arg1)->erase(arg2);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_erase__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::iterator arg2 ;
+  std::vector< YODA::HistoBin2D >::iterator arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  swig::SwigPyIterator *iter3 = 0 ;
+  int res3 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  std::vector< YODA::HistoBin2D >::iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds_erase",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_erase" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+    }
+  }
+  res3 = SWIG_ConvertPtr(obj2, SWIG_as_voidptrptr(&iter3), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res3) || !iter3) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter3);
+    if (iter_t) {
+      arg3 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_erase" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+    }
+  }
+  result = (arg1)->erase(arg2,arg3);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_erase(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      swig::SwigPyIterator *iter = 0;
+      int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter) != 0));
+      if (_v) {
+        return _wrap_HistoBin2Ds_erase__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      swig::SwigPyIterator *iter = 0;
+      int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter) != 0));
+      if (_v) {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[2], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter) != 0));
+        if (_v) {
+          return _wrap_HistoBin2Ds_erase__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds_erase'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::erase(std::vector< YODA::HistoBin2D >::iterator)\n"
+    "    std::vector< YODA::HistoBin2D >::erase(std::vector< YODA::HistoBin2D >::iterator,std::vector< YODA::HistoBin2D >::iterator)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2Ds__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D >::size_type arg1 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg2 = 0 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< YODA::HistoBin2D > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_HistoBin2Ds",&obj0,&obj1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_HistoBin2Ds" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg1 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_HistoBin2Ds" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_HistoBin2Ds" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp2);
+  result = (std::vector< YODA::HistoBin2D > *)new std::vector< YODA::HistoBin2D >(arg1,(std::vector< YODA::HistoBin2D >::value_type const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_HistoBin2Ds(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_HistoBin2Ds__SWIG_0(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      return _wrap_new_HistoBin2Ds__SWIG_2(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_HistoBin2Ds__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_HistoBin2Ds__SWIG_3(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_HistoBin2Ds'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::vector()\n"
+    "    std::vector< YODA::HistoBin2D >::vector(std::vector< YODA::HistoBin2D > const &)\n"
+    "    std::vector< YODA::HistoBin2D >::vector(std::vector< YODA::HistoBin2D >::size_type)\n"
+    "    std::vector< YODA::HistoBin2D >::vector(std::vector< YODA::HistoBin2D >::size_type,std::vector< YODA::HistoBin2D >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_push_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_push_back",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_push_back" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "HistoBin2Ds_push_back" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_push_back" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp2);
+  (arg1)->push_back((std::vector< YODA::HistoBin2D >::value_type const &)*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_front(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::value_type *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_front",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_front" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (std::vector< YODA::HistoBin2D >::value_type *) &((std::vector< YODA::HistoBin2D > const *)arg1)->front();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::value_type *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_back",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_back" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = (std::vector< YODA::HistoBin2D >::value_type *) &((std::vector< YODA::HistoBin2D > const *)arg1)->back();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__HistoBin2D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_assign(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::size_type arg2 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds_assign",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_assign" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds_assign" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "HistoBin2Ds_assign" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_assign" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp3);
+  (arg1)->assign(arg2,(std::vector< YODA::HistoBin2D >::value_type const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_resize__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::size_type arg2 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds_resize",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_resize" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds_resize" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "HistoBin2Ds_resize" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_resize" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp3);
+  (arg1)->resize(arg2,(std::vector< YODA::HistoBin2D >::value_type const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_resize(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_HistoBin2Ds_resize__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_HistoBin2Ds_resize__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds_resize'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::resize(std::vector< YODA::HistoBin2D >::size_type)\n"
+    "    std::vector< YODA::HistoBin2D >::resize(std::vector< YODA::HistoBin2D >::size_type,std::vector< YODA::HistoBin2D >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_insert__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::iterator arg2 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  std::vector< YODA::HistoBin2D >::iterator result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:HistoBin2Ds_insert",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_insert" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_insert" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_insert" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+    }
+  }
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "HistoBin2Ds_insert" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_insert" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp3);
+  result = (arg1)->insert(arg2,(std::vector< YODA::HistoBin2D >::value_type const &)*arg3);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< YODA::HistoBin2D >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_insert__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::iterator arg2 ;
+  std::vector< YODA::HistoBin2D >::size_type arg3 ;
+  std::vector< YODA::HistoBin2D >::value_type *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:HistoBin2Ds_insert",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_insert" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_insert" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "HistoBin2Ds_insert" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::iterator""'");
+    }
+  }
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "HistoBin2Ds_insert" "', argument " "3"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg3 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_YODA__HistoBin2D,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "HistoBin2Ds_insert" "', argument " "4"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "HistoBin2Ds_insert" "', argument " "4"" of type '" "std::vector< YODA::HistoBin2D >::value_type const &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< YODA::HistoBin2D >::value_type * >(argp4);
+  (arg1)->insert(arg2,arg3,(std::vector< YODA::HistoBin2D >::value_type const &)*arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_insert(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      swig::SwigPyIterator *iter = 0;
+      int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter) != 0));
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_HistoBin2Ds_insert__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      swig::SwigPyIterator *iter = 0;
+      int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+      _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< YODA::HistoBin2D >::iterator > *>(iter) != 0));
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_HistoBin2Ds_insert__SWIG_1(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'HistoBin2Ds_insert'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< YODA::HistoBin2D >::insert(std::vector< YODA::HistoBin2D >::iterator,std::vector< YODA::HistoBin2D >::value_type const &)\n"
+    "    std::vector< YODA::HistoBin2D >::insert(std::vector< YODA::HistoBin2D >::iterator,std::vector< YODA::HistoBin2D >::size_type,std::vector< YODA::HistoBin2D >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_reserve(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  std::vector< YODA::HistoBin2D >::size_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:HistoBin2Ds_reserve",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_reserve" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "HistoBin2Ds_reserve" "', argument " "2"" of type '" "std::vector< YODA::HistoBin2D >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< YODA::HistoBin2D >::size_type >(val2);
+  (arg1)->reserve(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_HistoBin2Ds_capacity(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< YODA::HistoBin2D >::size_type result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:HistoBin2Ds_capacity",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "HistoBin2Ds_capacity" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  result = ((std::vector< YODA::HistoBin2D > const *)arg1)->capacity();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_HistoBin2Ds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::HistoBin2D > *arg1 = (std::vector< YODA::HistoBin2D > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_HistoBin2Ds",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_HistoBin2Ds" "', argument " "1"" of type '" "std::vector< YODA::HistoBin2D > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::HistoBin2D > * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *HistoBin2Ds_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_ProfileBin1D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   double arg1 ;
@@ -16558,7 +23662,7 @@ SWIGINTERN PyObject *ProfileBin1D_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap___add____SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___add____SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::ProfileBin1D *arg1 = 0 ;
   YODA::ProfileBin1D *arg2 = 0 ;
@@ -16595,7 +23699,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___sub____SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___sub____SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::ProfileBin1D *arg1 = 0 ;
   YODA::ProfileBin1D *arg2 = 0 ;
@@ -18061,7 +25165,7 @@ SWIGINTERN PyObject *_wrap_Profile1D_underflow__SWIG_0(PyObject *SWIGUNUSEDPARM(
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Dbn1D *result = 0 ;
+  Dbn2D *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Profile1D_underflow",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Profile1D, 0 |  0 );
@@ -18069,8 +25173,8 @@ SWIGINTERN PyObject *_wrap_Profile1D_underflow__SWIG_0(PyObject *SWIGUNUSEDPARM(
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Profile1D_underflow" "', argument " "1"" of type '" "YODA::Profile1D *""'"); 
   }
   arg1 = reinterpret_cast< YODA::Profile1D * >(argp1);
-  result = (Dbn1D *) &(arg1)->underflow();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn1D, 0 |  0 );
+  result = (Dbn2D *) &(arg1)->underflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -18083,7 +25187,7 @@ SWIGINTERN PyObject *_wrap_Profile1D_underflow__SWIG_1(PyObject *SWIGUNUSEDPARM(
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Dbn1D *result = 0 ;
+  Dbn2D *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Profile1D_underflow",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Profile1D, 0 |  0 );
@@ -18091,8 +25195,8 @@ SWIGINTERN PyObject *_wrap_Profile1D_underflow__SWIG_1(PyObject *SWIGUNUSEDPARM(
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Profile1D_underflow" "', argument " "1"" of type '" "YODA::Profile1D const *""'"); 
   }
   arg1 = reinterpret_cast< YODA::Profile1D * >(argp1);
-  result = (Dbn1D *) &((YODA::Profile1D const *)arg1)->underflow();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn1D, 0 |  0 );
+  result = (Dbn2D *) &((YODA::Profile1D const *)arg1)->underflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -18143,7 +25247,7 @@ SWIGINTERN PyObject *_wrap_Profile1D_overflow__SWIG_0(PyObject *SWIGUNUSEDPARM(s
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Dbn1D *result = 0 ;
+  Dbn2D *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Profile1D_overflow",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Profile1D, 0 |  0 );
@@ -18151,8 +25255,8 @@ SWIGINTERN PyObject *_wrap_Profile1D_overflow__SWIG_0(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Profile1D_overflow" "', argument " "1"" of type '" "YODA::Profile1D *""'"); 
   }
   arg1 = reinterpret_cast< YODA::Profile1D * >(argp1);
-  result = (Dbn1D *) &(arg1)->overflow();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn1D, 0 |  0 );
+  result = (Dbn2D *) &(arg1)->overflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -18165,7 +25269,7 @@ SWIGINTERN PyObject *_wrap_Profile1D_overflow__SWIG_1(PyObject *SWIGUNUSEDPARM(s
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  Dbn1D *result = 0 ;
+  Dbn2D *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Profile1D_overflow",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Profile1D, 0 |  0 );
@@ -18173,8 +25277,8 @@ SWIGINTERN PyObject *_wrap_Profile1D_overflow__SWIG_1(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Profile1D_overflow" "', argument " "1"" of type '" "YODA::Profile1D const *""'"); 
   }
   arg1 = reinterpret_cast< YODA::Profile1D * >(argp1);
-  result = (Dbn1D *) &((YODA::Profile1D const *)arg1)->overflow();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn1D, 0 |  0 );
+  result = (Dbn2D *) &((YODA::Profile1D const *)arg1)->overflow();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Dbn2D, 0 |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -18509,7 +25613,7 @@ SWIGINTERN PyObject *Profile1D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap___add____SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___add____SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Profile1D *arg1 = 0 ;
   YODA::Profile1D *arg2 = 0 ;
@@ -18546,7 +25650,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___sub____SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___sub____SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Profile1D *arg1 = 0 ;
   YODA::Profile1D *arg2 = 0 ;
@@ -21049,6 +28153,45 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Point2D_scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point2D *arg1 = (YODA::Point2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Point2D_scale",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point2D_scale" "', argument " "1"" of type '" "YODA::Point2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point2D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Point2D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->scale(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Point2D_xErrs(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = (YODA::Point2D *) 0 ;
@@ -21683,7 +28826,7 @@ SWIGINTERN PyObject *Point2D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObje
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___eq____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = 0 ;
   YODA::Point2D *arg2 = 0 ;
@@ -21720,7 +28863,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___ne__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___ne____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = 0 ;
   YODA::Point2D *arg2 = 0 ;
@@ -21794,48 +28937,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___lt__(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[3];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Bin1D, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Bin1D, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lt____SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap___lt____SWIG_1(self, args);
-      }
-    }
-  }
-  
-fail:
-  Py_INCREF(Py_NotImplemented);
-  return Py_NotImplemented;
-}
-
-
-SWIGINTERN PyObject *_wrap___le__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___le____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = 0 ;
   YODA::Point2D *arg2 = 0 ;
@@ -21872,7 +28974,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___gt__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___gt____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = 0 ;
   YODA::Point2D *arg2 = 0 ;
@@ -21909,7 +29011,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___ge__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___ge____SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Point2D *arg1 = 0 ;
   YODA::Point2D *arg2 = 0 ;
@@ -25149,6 +32251,45 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Scatter2D_scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter2D *arg1 = (YODA::Scatter2D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Scatter2D_scale",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter2D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter2D_scale" "', argument " "1"" of type '" "YODA::Scatter2D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter2D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter2D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Scatter2D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->scale(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Scatter2D_combineWith__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Scatter2D *arg1 = (YODA::Scatter2D *) 0 ;
@@ -25353,46 +32494,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_combine(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[3];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_combine__SWIG_1(self, args);
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_combine__SWIG_0(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'combine'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    YODA::combine(YODA::Scatter2D const &,YODA::Scatter2D const &)\n"
-    "    YODA::combine(std::vector< YODA::Scatter2D,std::allocator< YODA::Scatter2D > > const &)\n");
-  return 0;
-}
-
-
 SWIGINTERN PyObject *_wrap_mkScatter__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Histo1D *arg1 = 0 ;
@@ -25443,43 +32544,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_mkScatter(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[2];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo1D, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_mkScatter__SWIG_0(self, args);
-    }
-  }
-  if (argc == 1) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Profile1D, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_mkScatter__SWIG_1(self, args);
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'mkScatter'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    YODA::mkScatter(YODA::Histo1D const &)\n"
-    "    YODA::mkScatter(YODA::Profile1D const &)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap___add____SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___add____SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Scatter2D *arg1 = 0 ;
   YODA::Scatter2D *arg2 = 0 ;
@@ -25534,7 +32599,19 @@ SWIGINTERN PyObject *_wrap___add__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__HistoBin1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___add____SWIG_1(self, args);
+        return _wrap___add____SWIG_2(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___add____SWIG_4(self, args);
       }
     }
   }
@@ -25546,7 +32623,7 @@ SWIGINTERN PyObject *_wrap___add__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__ProfileBin1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___add____SWIG_3(self, args);
+        return _wrap___add____SWIG_6(self, args);
       }
     }
   }
@@ -25558,7 +32635,31 @@ SWIGINTERN PyObject *_wrap___add__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Histo1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___add____SWIG_2(self, args);
+        return _wrap___add____SWIG_3(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Bin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Bin2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___add____SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___add____SWIG_5(self, args);
       }
     }
   }
@@ -25582,7 +32683,7 @@ SWIGINTERN PyObject *_wrap___add__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Profile1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___add____SWIG_4(self, args);
+        return _wrap___add____SWIG_7(self, args);
       }
     }
   }
@@ -25594,7 +32695,7 @@ SWIGINTERN PyObject *_wrap___add__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___add____SWIG_5(self, args);
+        return _wrap___add____SWIG_8(self, args);
       }
     }
   }
@@ -25605,7 +32706,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap___sub____SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap___sub____SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   YODA::Scatter2D *arg1 = 0 ;
   YODA::Scatter2D *arg2 = 0 ;
@@ -25660,7 +32761,19 @@ SWIGINTERN PyObject *_wrap___sub__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__HistoBin1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___sub____SWIG_1(self, args);
+        return _wrap___sub____SWIG_2(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__HistoBin2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___sub____SWIG_4(self, args);
       }
     }
   }
@@ -25672,7 +32785,7 @@ SWIGINTERN PyObject *_wrap___sub__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__ProfileBin1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___sub____SWIG_3(self, args);
+        return _wrap___sub____SWIG_6(self, args);
       }
     }
   }
@@ -25684,7 +32797,31 @@ SWIGINTERN PyObject *_wrap___sub__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Histo1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___sub____SWIG_2(self, args);
+        return _wrap___sub____SWIG_3(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Bin2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Bin2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___sub____SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Histo2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___sub____SWIG_5(self, args);
       }
     }
   }
@@ -25708,7 +32845,7 @@ SWIGINTERN PyObject *_wrap___sub__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Profile1D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___sub____SWIG_4(self, args);
+        return _wrap___sub____SWIG_7(self, args);
       }
     }
   }
@@ -25720,7 +32857,7 @@ SWIGINTERN PyObject *_wrap___sub__(PyObject *self, PyObject *args) {
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap___sub____SWIG_5(self, args);
+        return _wrap___sub____SWIG_8(self, args);
       }
     }
   }
@@ -25818,6 +32955,4982 @@ SWIGINTERN PyObject *_wrap___div__(PyObject *self, PyObject *args) {
 fail:
   Py_INCREF(Py_NotImplemented);
   return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Point3D")) SWIG_fail;
+  result = (YODA::Point3D *)new YODA::Point3D();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_Point3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Point3D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Point3D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Point3D" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  result = (YODA::Point3D *)new YODA::Point3D(arg1,arg2,arg3,arg4,arg5,arg6);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOO:new_Point3D",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Point3D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Point3D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  result = (YODA::Point3D *)new YODA::Point3D(arg1,arg2,arg3,arg4,arg5);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Point3D",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Point3D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  result = (YODA::Point3D *)new YODA::Point3D(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Point3D",&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  result = (YODA::Point3D *)new YODA::Point3D(arg1,arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double arg7 ;
+  double arg8 ;
+  double arg9 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  double val8 ;
+  int ecode8 = 0 ;
+  double val9 ;
+  int ecode9 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOO:new_Point3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Point3D" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Point3D" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Point3D" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  ecode7 = SWIG_AsVal_double(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "new_Point3D" "', argument " "7"" of type '" "double""'");
+  } 
+  arg7 = static_cast< double >(val7);
+  ecode8 = SWIG_AsVal_double(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "new_Point3D" "', argument " "8"" of type '" "double""'");
+  } 
+  arg8 = static_cast< double >(val8);
+  ecode9 = SWIG_AsVal_double(obj8, &val9);
+  if (!SWIG_IsOK(ecode9)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode9), "in method '" "new_Point3D" "', argument " "9"" of type '" "double""'");
+  } 
+  arg9 = static_cast< double >(val9);
+  result = (YODA::Point3D *)new YODA::Point3D(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double *arg1 = 0 ;
+  double *arg2 = 0 ;
+  double *arg3 = 0 ;
+  std::pair< double,double > *arg4 = 0 ;
+  std::pair< double,double > *arg5 = 0 ;
+  std::pair< double,double > *arg6 = 0 ;
+  double temp1 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double temp3 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_Point3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point3D" "', argument " "1"" of type '" "double""'");
+  } 
+  temp1 = static_cast< double >(val1);
+  arg1 = &temp1;
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point3D" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Point3D" "', argument " "3"" of type '" "double""'");
+  } 
+  temp3 = static_cast< double >(val3);
+  arg3 = &temp3;
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    res4 = swig::asptr(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Point3D" "', argument " "4"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Point3D" "', argument " "4"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    res5 = swig::asptr(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Point3D" "', argument " "5"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Point3D" "', argument " "5"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    res6 = swig::asptr(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Point3D" "', argument " "6"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Point3D" "', argument " "6"" of type '" "std::pair< double,double > const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  result = (YODA::Point3D *)new YODA::Point3D((double const &)*arg1,(double const &)*arg2,(double const &)*arg3,(std::pair< double,double > const &)*arg4,(std::pair< double,double > const &)*arg5,(std::pair< double,double > const &)*arg6);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Point3D(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[10];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 9) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_Point3D__SWIG_0(self, args);
+  }
+  if (argc == 3) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_new_Point3D__SWIG_4(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_Point3D__SWIG_3(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_new_Point3D__SWIG_2(self, args);
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                return _wrap_new_Point3D__SWIG_1(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          int res = swig::asptr(argv[3], (std::pair<double,double >**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = swig::asptr(argv[4], (std::pair<double,double >**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = swig::asptr(argv[5], (std::pair<double,double >**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                return _wrap_new_Point3D__SWIG_6(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 9) {
+    int _v;
+    {
+      int res = SWIG_AsVal_double(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                {
+                  int res = SWIG_AsVal_double(argv[6], NULL);
+                  _v = SWIG_CheckState(res);
+                }
+                if (_v) {
+                  {
+                    int res = SWIG_AsVal_double(argv[7], NULL);
+                    _v = SWIG_CheckState(res);
+                  }
+                  if (_v) {
+                    {
+                      int res = SWIG_AsVal_double(argv[8], NULL);
+                      _v = SWIG_CheckState(res);
+                    }
+                    if (_v) {
+                      return _wrap_new_Point3D__SWIG_5(self, args);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Point3D'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Point3D::Point3D()\n"
+    "    YODA::Point3D::Point3D(double,double,double,double,double,double)\n"
+    "    YODA::Point3D::Point3D(double,double,double,double,double)\n"
+    "    YODA::Point3D::Point3D(double,double,double,double)\n"
+    "    YODA::Point3D::Point3D(double,double,double)\n"
+    "    YODA::Point3D::Point3D(double,double,double,double,double,double,double,double,double)\n"
+    "    YODA::Point3D::Point3D(double const &,double const &,double const &,std::pair< double,double > const &,std::pair< double,double > const &,std::pair< double,double > const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_x(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_x",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_x" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->x();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setX(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setX",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setX" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setX" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setX(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_y(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_y",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_y" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->y();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setY(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setY",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setY" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setY" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setY(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_z(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_z",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_z" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->z();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setZ(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setZ",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setZ" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setZ" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setZ(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Point3D_scale",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_scale" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Point3D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Point3D_scale" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  (arg1)->scale(arg2,arg3,arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xErrs(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::pair< double,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xErrs",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xErrs" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (std::pair< double,double > *) &((YODA::Point3D const *)arg1)->xErrs();
+  resultobj = swig::from(static_cast< std::pair<double,double > >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xErrMinus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xErrMinus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xErrMinus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->xErrMinus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xErrPlus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xErrPlus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xErrPlus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->xErrPlus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xErrAvg(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xErrAvg",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xErrAvg" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->xErrAvg();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setXErr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setXErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setXErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setXErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setXErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setXErr__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  std::pair< double,double > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setXErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setXErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Point3D_setXErr" "', argument " "2"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  (arg1)->setXErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setXErr__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Point3D_setXErr",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setXErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setXErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Point3D_setXErr" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->setXErr(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setXErr(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Point3D_setXErr__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::pair<double,double >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Point3D_setXErr__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Point3D_setXErr__SWIG_2(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Point3D_setXErr'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Point3D::setXErr(double)\n"
+    "    YODA::Point3D::setXErr(std::pair< double,double >)\n"
+    "    YODA::Point3D::setXErr(double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xMin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xMin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xMin" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->xMin();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_xMax(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_xMax",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_xMax" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->xMax();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yErrs(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::pair< double,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yErrs",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yErrs" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (std::pair< double,double > *) &((YODA::Point3D const *)arg1)->yErrs();
+  resultobj = swig::from(static_cast< std::pair<double,double > >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yErrMinus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yErrMinus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yErrMinus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->yErrMinus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yErrPlus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yErrPlus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yErrPlus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->yErrPlus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yErrAvg(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yErrAvg",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yErrAvg" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->yErrAvg();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setYErr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setYErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setYErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setYErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setYErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setYErr__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  std::pair< double,double > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setYErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setYErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Point3D_setYErr" "', argument " "2"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  (arg1)->setYErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setYErr__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Point3D_setYErr",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setYErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setYErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Point3D_setYErr" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->setYErr(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setYErr(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Point3D_setYErr__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::pair<double,double >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Point3D_setYErr__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Point3D_setYErr__SWIG_2(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Point3D_setYErr'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Point3D::setYErr(double)\n"
+    "    YODA::Point3D::setYErr(std::pair< double,double >)\n"
+    "    YODA::Point3D::setYErr(double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yMin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yMin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yMin" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->yMin();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_yMax(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_yMax",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_yMax" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->yMax();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zErrs(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::pair< double,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zErrs",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zErrs" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (std::pair< double,double > *) &((YODA::Point3D const *)arg1)->zErrs();
+  resultobj = swig::from(static_cast< std::pair<double,double > >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zErrMinus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zErrMinus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zErrMinus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->zErrMinus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zErrPlus(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zErrPlus",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zErrPlus" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->zErrPlus();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zErrAvg(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zErrAvg",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zErrAvg" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->zErrAvg();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setZErr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setZErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setZErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setZErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->setZErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setZErr__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  std::pair< double,double > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Point3D_setZErr",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setZErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Point3D_setZErr" "', argument " "2"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  (arg1)->setZErr(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setZErr__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Point3D_setZErr",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_setZErr" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point3D_setZErr" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Point3D_setZErr" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  (arg1)->setZErr(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_setZErr(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Point3D_setZErr__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::pair<double,double >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Point3D_setZErr__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Point3D_setZErr__SWIG_2(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Point3D_setZErr'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Point3D::setZErr(double)\n"
+    "    YODA::Point3D::setZErr(std::pair< double,double >)\n"
+    "    YODA::Point3D::setZErr(double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zMin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zMin",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zMin" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->zMin();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Point3D_zMax(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Point3D_zMax",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point3D_zMax" "', argument " "1"" of type '" "YODA::Point3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  result = (double)((YODA::Point3D const *)arg1)->zMax();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Point3D(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = (YODA::Point3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Point3D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Point3D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Point3D" "', argument " "1"" of type '" "YODA::Point3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Point3D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_YODA__Point3D, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap___eq____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__eq__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__eq__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__eq__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__eq__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__eq__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator ==((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___eq__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___eq____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___eq____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap___ne____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__ne__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__ne__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__ne__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__ne__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__ne__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator !=((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___ne__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___ne____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___ne____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap___lt____SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__lt__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lt__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lt__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lt__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lt__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator <((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___lt__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Bin1D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Bin1D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___lt____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___lt____SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___lt____SWIG_2(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap___le____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__le__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__le__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__le__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__le__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__le__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator <=((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___le__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___le____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___le____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap___gt____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__gt__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__gt__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__gt__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__gt__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__gt__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator >((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___gt__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___gt____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___gt____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap___ge____SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Point3D *arg1 = 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__ge__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__ge__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__ge__" "', argument " "1"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Point3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__ge__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__ge__" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (bool)YODA::operator >=((YODA::Point3D const &)*arg1,(YODA::Point3D const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___ge__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___ge____SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Point3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap___ge____SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Scatter3D",&obj0,&obj1)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::string const &)*arg1,(std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Scatter3D",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::string const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Scatter3D")) SWIG_fail;
+  result = (YODA::Scatter3D *)new YODA::Scatter3D();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D::Points *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Scatter3D",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D::Points * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((YODA::Scatter3D::Points const &)*arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D::Points *arg1 = 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Scatter3D",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D::Points * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((YODA::Scatter3D::Points const &)*arg1,(std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D::Points *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Scatter3D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D::Points const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D::Points * >(argp1);
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((YODA::Scatter3D::Points const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg4 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg5 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg6 = 0 ;
+  std::string *arg7 = 0 ;
+  std::string *arg8 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  int res7 = SWIG_OLDOBJ ;
+  int res8 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg5 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg6 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp6);
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg4,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg5,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg6,(std::string const &)*arg7,(std::string const &)*arg8);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg4 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg5 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg6 = 0 ;
+  std::string *arg7 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  int res7 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg5 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg6 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp6);
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg4,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg5,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg6,(std::string const &)*arg7);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg4 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg5 = 0 ;
+  std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *arg6 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg5 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &""'"); 
+  }
+  arg6 = reinterpret_cast< std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > * >(argp6);
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg4,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg5,(std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)*arg6);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  std::string *arg5 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res4 = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res5 = SWIG_AsPtr_std_string(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_10(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res4 = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3,(std::string const &)*arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_11(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > *arg3 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Scatter3D",&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res3 = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,(std::vector< double,std::allocator< double > > const &)*arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_12(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > arg3 ;
+  std::vector< double,std::allocator< double > > *arg4 = 0 ;
+  std::vector< double,std::allocator< double > > *arg5 = 0 ;
+  std::vector< double,std::allocator< double > > *arg6 = 0 ;
+  std::vector< double,std::allocator< double > > *arg7 = 0 ;
+  std::vector< double,std::allocator< double > > *arg8 = 0 ;
+  std::vector< double,std::allocator< double > > *arg9 = 0 ;
+  std::string *arg10 = 0 ;
+  std::string *arg11 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  int res7 = SWIG_OLDOBJ ;
+  int res8 = SWIG_OLDOBJ ;
+  int res9 = SWIG_OLDOBJ ;
+  int res10 = SWIG_OLDOBJ ;
+  int res11 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
+  PyObject * obj10 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9,&obj10)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    int res = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res4 = swig::asptr(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res5 = swig::asptr(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res6 = swig::asptr(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res7 = swig::asptr(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res8 = swig::asptr(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res9 = swig::asptr(obj8, &ptr);
+    if (!SWIG_IsOK(res9)) {
+      SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg9 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res10 = SWIG_AsPtr_std_string(obj9, &ptr);
+    if (!SWIG_IsOK(res10)) {
+      SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "new_Scatter3D" "', argument " "10"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "10"" of type '" "std::string const &""'"); 
+    }
+    arg10 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res11 = SWIG_AsPtr_std_string(obj10, &ptr);
+    if (!SWIG_IsOK(res11)) {
+      SWIG_exception_fail(SWIG_ArgError(res11), "in method '" "new_Scatter3D" "', argument " "11"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "11"" of type '" "std::string const &""'"); 
+    }
+    arg11 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,arg3,(std::vector< double,std::allocator< double > > const &)*arg4,(std::vector< double,std::allocator< double > > const &)*arg5,(std::vector< double,std::allocator< double > > const &)*arg6,(std::vector< double,std::allocator< double > > const &)*arg7,(std::vector< double,std::allocator< double > > const &)*arg8,(std::vector< double,std::allocator< double > > const &)*arg9,(std::string const &)*arg10,(std::string const &)*arg11);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  if (SWIG_IsNewObj(res10)) delete arg10;
+  if (SWIG_IsNewObj(res11)) delete arg11;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  if (SWIG_IsNewObj(res10)) delete arg10;
+  if (SWIG_IsNewObj(res11)) delete arg11;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_13(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > arg3 ;
+  std::vector< double,std::allocator< double > > *arg4 = 0 ;
+  std::vector< double,std::allocator< double > > *arg5 = 0 ;
+  std::vector< double,std::allocator< double > > *arg6 = 0 ;
+  std::vector< double,std::allocator< double > > *arg7 = 0 ;
+  std::vector< double,std::allocator< double > > *arg8 = 0 ;
+  std::vector< double,std::allocator< double > > *arg9 = 0 ;
+  std::string *arg10 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  int res7 = SWIG_OLDOBJ ;
+  int res8 = SWIG_OLDOBJ ;
+  int res9 = SWIG_OLDOBJ ;
+  int res10 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    int res = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res4 = swig::asptr(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res5 = swig::asptr(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res6 = swig::asptr(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res7 = swig::asptr(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res8 = swig::asptr(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res9 = swig::asptr(obj8, &ptr);
+    if (!SWIG_IsOK(res9)) {
+      SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg9 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res10 = SWIG_AsPtr_std_string(obj9, &ptr);
+    if (!SWIG_IsOK(res10)) {
+      SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "new_Scatter3D" "', argument " "10"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "10"" of type '" "std::string const &""'"); 
+    }
+    arg10 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,arg3,(std::vector< double,std::allocator< double > > const &)*arg4,(std::vector< double,std::allocator< double > > const &)*arg5,(std::vector< double,std::allocator< double > > const &)*arg6,(std::vector< double,std::allocator< double > > const &)*arg7,(std::vector< double,std::allocator< double > > const &)*arg8,(std::vector< double,std::allocator< double > > const &)*arg9,(std::string const &)*arg10);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  if (SWIG_IsNewObj(res10)) delete arg10;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  if (SWIG_IsNewObj(res10)) delete arg10;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D__SWIG_14(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< double,std::allocator< double > > *arg1 = 0 ;
+  std::vector< double,std::allocator< double > > *arg2 = 0 ;
+  std::vector< double,std::allocator< double > > arg3 ;
+  std::vector< double,std::allocator< double > > *arg4 = 0 ;
+  std::vector< double,std::allocator< double > > *arg5 = 0 ;
+  std::vector< double,std::allocator< double > > *arg6 = 0 ;
+  std::vector< double,std::allocator< double > > *arg7 = 0 ;
+  std::vector< double,std::allocator< double > > *arg8 = 0 ;
+  std::vector< double,std::allocator< double > > *arg9 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  int res2 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  int res7 = SWIG_OLDOBJ ;
+  int res8 = SWIG_OLDOBJ ;
+  int res9 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOO:new_Scatter3D",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8)) SWIG_fail;
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res1 = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "1"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "2"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    int res = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "new_Scatter3D" "', argument " "3"" of type '" "std::vector< double,std::allocator< double > > const""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res4 = swig::asptr(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "4"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res5 = swig::asptr(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "5"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res6 = swig::asptr(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "6"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res7 = swig::asptr(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "7"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res8 = swig::asptr(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "8"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  {
+    std::vector<double,std::allocator< double > > *ptr = (std::vector<double,std::allocator< double > > *)0;
+    res9 = swig::asptr(obj8, &ptr);
+    if (!SWIG_IsOK(res9)) {
+      SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Scatter3D" "', argument " "9"" of type '" "std::vector< double,std::allocator< double > > const &""'"); 
+    }
+    arg9 = ptr;
+  }
+  result = (YODA::Scatter3D *)new YODA::Scatter3D((std::vector< double,std::allocator< double > > const &)*arg1,(std::vector< double,std::allocator< double > > const &)*arg2,arg3,(std::vector< double,std::allocator< double > > const &)*arg4,(std::vector< double,std::allocator< double > > const &)*arg5,(std::vector< double,std::allocator< double > > const &)*arg6,(std::vector< double,std::allocator< double > > const &)*arg7,(std::vector< double,std::allocator< double > > const &)*arg8,(std::vector< double,std::allocator< double > > const &)*arg9);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res9)) delete arg9;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Scatter3D(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[12];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 11) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_Scatter3D__SWIG_2(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Scatter3D__SWIG_5(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Scatter3D__SWIG_1(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Scatter3D__SWIG_4(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Scatter3D__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_Scatter3D__SWIG_3(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_Scatter3D__SWIG_11(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_new_Scatter3D__SWIG_10(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_AsPtr_std_string(argv[4], (std::string**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              return _wrap_new_Scatter3D__SWIG_9(self, args);
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_ConvertPtr(argv[4], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = SWIG_ConvertPtr(argv[5], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                return _wrap_new_Scatter3D__SWIG_8(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 7) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_ConvertPtr(argv[4], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = SWIG_ConvertPtr(argv[5], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  return _wrap_new_Scatter3D__SWIG_7(self, args);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 8) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_ConvertPtr(argv[4], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = SWIG_ConvertPtr(argv[5], 0, SWIGTYPE_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0);
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  int res = SWIG_AsPtr_std_string(argv[7], (std::string**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    return _wrap_new_Scatter3D__SWIG_6(self, args);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 9) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = swig::asptr(argv[3], (std::vector<double,std::allocator< double > >**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = swig::asptr(argv[4], (std::vector<double,std::allocator< double > >**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = swig::asptr(argv[5], (std::vector<double,std::allocator< double > >**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = swig::asptr(argv[6], (std::vector<double,std::allocator< double > >**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  int res = swig::asptr(argv[7], (std::vector<double,std::allocator< double > >**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    int res = swig::asptr(argv[8], (std::vector<double,std::allocator< double > >**)(0));
+                    _v = SWIG_CheckState(res);
+                    if (_v) {
+                      return _wrap_new_Scatter3D__SWIG_14(self, args);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 10) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = swig::asptr(argv[3], (std::vector<double,std::allocator< double > >**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = swig::asptr(argv[4], (std::vector<double,std::allocator< double > >**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = swig::asptr(argv[5], (std::vector<double,std::allocator< double > >**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = swig::asptr(argv[6], (std::vector<double,std::allocator< double > >**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  int res = swig::asptr(argv[7], (std::vector<double,std::allocator< double > >**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    int res = swig::asptr(argv[8], (std::vector<double,std::allocator< double > >**)(0));
+                    _v = SWIG_CheckState(res);
+                    if (_v) {
+                      int res = SWIG_AsPtr_std_string(argv[9], (std::string**)(0));
+                      _v = SWIG_CheckState(res);
+                      if (_v) {
+                        return _wrap_new_Scatter3D__SWIG_13(self, args);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 11) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector<double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = swig::asptr(argv[1], (std::vector<double,std::allocator< double > >**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = swig::asptr(argv[2], (std::vector<double,std::allocator< double > >**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = swig::asptr(argv[3], (std::vector<double,std::allocator< double > >**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = swig::asptr(argv[4], (std::vector<double,std::allocator< double > >**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = swig::asptr(argv[5], (std::vector<double,std::allocator< double > >**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = swig::asptr(argv[6], (std::vector<double,std::allocator< double > >**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  int res = swig::asptr(argv[7], (std::vector<double,std::allocator< double > >**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    int res = swig::asptr(argv[8], (std::vector<double,std::allocator< double > >**)(0));
+                    _v = SWIG_CheckState(res);
+                    if (_v) {
+                      int res = SWIG_AsPtr_std_string(argv[9], (std::string**)(0));
+                      _v = SWIG_CheckState(res);
+                      if (_v) {
+                        int res = SWIG_AsPtr_std_string(argv[10], (std::string**)(0));
+                        _v = SWIG_CheckState(res);
+                        if (_v) {
+                          return _wrap_new_Scatter3D__SWIG_12(self, args);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Scatter3D'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Scatter3D::Scatter3D(std::string const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D()\n"
+    "    YODA::Scatter3D::Scatter3D(YODA::Scatter3D::Points const &,std::string const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(YODA::Scatter3D::Points const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(YODA::Scatter3D::Points const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::string const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &,std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::string const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::string const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::string const &)\n"
+    "    YODA::Scatter3D::Scatter3D(std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &,std::vector< double,std::allocator< double > > const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_reset(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Scatter3D_reset",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_reset" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  (arg1)->reset();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_scale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Scatter3D_scale",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_scale" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_scale" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Scatter3D_scale" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Scatter3D_scale" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  (arg1)->scale(arg2,arg3,arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_numPoints(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Scatter3D_numPoints",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_numPoints" "', argument " "1"" of type '" "YODA::Scatter3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  result = ((YODA::Scatter3D const *)arg1)->numPoints();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Scatter3D::Points *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Scatter3D_points",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_points" "', argument " "1"" of type '" "YODA::Scatter3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  result = (YODA::Scatter3D::Points *) &((YODA::Scatter3D const *)arg1)->points();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_point__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_point",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_point" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_point" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = (YODA::Point3D *) &(arg1)->point(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_point__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Point3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_point",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_point" "', argument " "1"" of type '" "YODA::Scatter3D const *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_point" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = (YODA::Point3D *) &((YODA::Scatter3D const *)arg1)->point(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Point3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_point(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Scatter3D_point__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_Scatter3D_point__SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Scatter3D_point'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Scatter3D::point(size_t)\n"
+    "    YODA::Scatter3D::point(size_t) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoint__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  YODA::Point3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_addPoint",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_addPoint" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Point3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Scatter3D_addPoint" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Scatter3D_addPoint" "', argument " "2"" of type '" "YODA::Point3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Point3D * >(argp2);
+  result = (YODA::Scatter3D *) &(arg1)->addPoint((YODA::Point3D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoint__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Scatter3D_addPoint",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_addPoint" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_addPoint" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Scatter3D_addPoint" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Scatter3D_addPoint" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  result = (YODA::Scatter3D *) &(arg1)->addPoint(arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoint__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  std::pair< double,double > arg5 ;
+  std::pair< double,double > arg6 ;
+  std::pair< double,double > arg7 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:Scatter3D_addPoint",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_addPoint" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_addPoint" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Scatter3D_addPoint" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Scatter3D_addPoint" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj4, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Scatter3D_addPoint" "', argument " "5"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg5 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj5, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Scatter3D_addPoint" "', argument " "6"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg6 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::pair<double,double > *ptr = (std::pair<double,double > *)0;
+    int res = swig::asptr(obj6, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Scatter3D_addPoint" "', argument " "7"" of type '" "std::pair< double,double >""'"); 
+    }
+    arg7 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  result = (YODA::Scatter3D *) &(arg1)->addPoint(arg2,arg3,arg4,arg5,arg6,arg7);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoint__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double arg7 ;
+  double arg8 ;
+  double arg9 ;
+  double arg10 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  double val8 ;
+  int ecode8 = 0 ;
+  double val9 ;
+  int ecode9 = 0 ;
+  double val10 ;
+  int ecode10 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOOO:Scatter3D_addPoint",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_addPoint" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Scatter3D_addPoint" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Scatter3D_addPoint" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Scatter3D_addPoint" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Scatter3D_addPoint" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "Scatter3D_addPoint" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  ecode7 = SWIG_AsVal_double(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "Scatter3D_addPoint" "', argument " "7"" of type '" "double""'");
+  } 
+  arg7 = static_cast< double >(val7);
+  ecode8 = SWIG_AsVal_double(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "Scatter3D_addPoint" "', argument " "8"" of type '" "double""'");
+  } 
+  arg8 = static_cast< double >(val8);
+  ecode9 = SWIG_AsVal_double(obj8, &val9);
+  if (!SWIG_IsOK(ecode9)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode9), "in method '" "Scatter3D_addPoint" "', argument " "9"" of type '" "double""'");
+  } 
+  arg9 = static_cast< double >(val9);
+  ecode10 = SWIG_AsVal_double(obj9, &val10);
+  if (!SWIG_IsOK(ecode10)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode10), "in method '" "Scatter3D_addPoint" "', argument " "10"" of type '" "double""'");
+  } 
+  arg10 = static_cast< double >(val10);
+  result = (YODA::Scatter3D *) &(arg1)->addPoint(arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoint(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[11];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 10) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Point3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Scatter3D_addPoint__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_Scatter3D_addPoint__SWIG_1(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 7) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            int res = swig::asptr(argv[4], (std::pair<double,double >**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = swig::asptr(argv[5], (std::pair<double,double >**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = swig::asptr(argv[6], (std::pair<double,double >**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  return _wrap_Scatter3D_addPoint__SWIG_2(self, args);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 10) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_double(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                {
+                  int res = SWIG_AsVal_double(argv[6], NULL);
+                  _v = SWIG_CheckState(res);
+                }
+                if (_v) {
+                  {
+                    int res = SWIG_AsVal_double(argv[7], NULL);
+                    _v = SWIG_CheckState(res);
+                  }
+                  if (_v) {
+                    {
+                      int res = SWIG_AsVal_double(argv[8], NULL);
+                      _v = SWIG_CheckState(res);
+                    }
+                    if (_v) {
+                      {
+                        int res = SWIG_AsVal_double(argv[9], NULL);
+                        _v = SWIG_CheckState(res);
+                      }
+                      if (_v) {
+                        return _wrap_Scatter3D_addPoint__SWIG_3(self, args);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Scatter3D_addPoint'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Scatter3D::addPoint(YODA::Point3D const &)\n"
+    "    YODA::Scatter3D::addPoint(double,double,double)\n"
+    "    YODA::Scatter3D::addPoint(double,double,double,std::pair< double,double >,std::pair< double,double >,std::pair< double,double >)\n"
+    "    YODA::Scatter3D::addPoint(double,double,double,double,double,double,double,double,double)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_addPoints(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  YODA::Scatter3D::Points arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_addPoints",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_addPoints" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Utils__sortedvectorT_YODA__Point3D_t,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Scatter3D_addPoints" "', argument " "2"" of type '" "YODA::Scatter3D::Points""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Scatter3D_addPoints" "', argument " "2"" of type '" "YODA::Scatter3D::Points""'");
+    } else {
+      YODA::Scatter3D::Points * temp = reinterpret_cast< YODA::Scatter3D::Points * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  result = (YODA::Scatter3D *) &(arg1)->addPoints(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_combineWith__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  YODA::Scatter3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_combineWith",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_combineWith" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Scatter3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Scatter3D_combineWith" "', argument " "2"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Scatter3D_combineWith" "', argument " "2"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Scatter3D * >(argp2);
+  result = (YODA::Scatter3D *) &(arg1)->combineWith((YODA::Scatter3D const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_combineWith__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Scatter3D_combineWith",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Scatter3D_combineWith" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Scatter3D_combineWith" "', argument " "2"" of type '" "std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Scatter3D_combineWith" "', argument " "2"" of type '" "std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > * >(argp2);
+  result = (YODA::Scatter3D *) &(arg1)->combineWith((std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_YODA__Scatter3D, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Scatter3D_combineWith(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Scatter3D_combineWith__SWIG_0(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Scatter3D_combineWith__SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Scatter3D_combineWith'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::Scatter3D::combineWith(YODA::Scatter3D const &)\n"
+    "    YODA::Scatter3D::combineWith(std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Scatter3D(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = (YODA::Scatter3D *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Scatter3D",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Scatter3D" "', argument " "1"" of type '" "YODA::Scatter3D *""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Scatter3D_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_YODA__Scatter3D, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_combine__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Scatter3D *arg1 = 0 ;
+  YODA::Scatter3D *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  YODA::Scatter3D result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:combine",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Scatter3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "combine" "', argument " "1"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "combine" "', argument " "1"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Scatter3D * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_YODA__Scatter3D,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "combine" "', argument " "2"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "combine" "', argument " "2"" of type '" "YODA::Scatter3D const &""'"); 
+  }
+  arg2 = reinterpret_cast< YODA::Scatter3D * >(argp2);
+  result = YODA::combine((YODA::Scatter3D const &)*arg1,(YODA::Scatter3D const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new YODA::Scatter3D(static_cast< const YODA::Scatter3D& >(result))), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_combine__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Scatter3D result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:combine",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "combine" "', argument " "1"" of type '" "std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "combine" "', argument " "1"" of type '" "std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > * >(argp1);
+  result = YODA::combine((std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &)*arg1);
+  resultobj = SWIG_NewPointerObj((new YODA::Scatter3D(static_cast< const YODA::Scatter3D& >(result))), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_combine(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_combine__SWIG_1(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_combine__SWIG_3(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Scatter3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter3D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_combine__SWIG_2(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_YODA__Scatter2D, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_combine__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'combine'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::combine(YODA::Scatter2D const &,YODA::Scatter2D const &)\n"
+    "    YODA::combine(std::vector< YODA::Scatter2D,std::allocator< YODA::Scatter2D > > const &)\n"
+    "    YODA::combine(YODA::Scatter3D const &,YODA::Scatter3D const &)\n"
+    "    YODA::combine(std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_mkScatter__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  YODA::Histo3D *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  YODA::Scatter3D result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:mkScatter",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_YODA__Histo3D,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "mkScatter" "', argument " "1"" of type '" "YODA::Histo3D const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "mkScatter" "', argument " "1"" of type '" "YODA::Histo3D const &""'"); 
+  }
+  arg1 = reinterpret_cast< YODA::Histo3D * >(argp1);
+  result = YODA::mkScatter((YODA::Histo3D const &)*arg1);
+  resultobj = SWIG_NewPointerObj((new YODA::Scatter3D(static_cast< const YODA::Scatter3D& >(result))), SWIGTYPE_p_YODA__Scatter3D, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_mkScatter(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[2];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 1) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo1D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_mkScatter__SWIG_0(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Profile1D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_mkScatter__SWIG_1(self, args);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_YODA__Histo3D, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_mkScatter__SWIG_2(self, args);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'mkScatter'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    YODA::mkScatter(YODA::Histo1D const &)\n"
+    "    YODA::mkScatter(YODA::Profile1D const &)\n"
+    "    YODA::mkScatter(YODA::Histo3D const &)\n");
+  return 0;
 }
 
 
@@ -31478,6 +43591,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Bin_swigregister", Bin_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Bin1D", _wrap_new_Bin1D, METH_VARARGS, NULL},
 	 { (char *)"Bin1D_reset", _wrap_Bin1D_reset, METH_VARARGS, NULL},
+	 { (char *)"Bin1D_scaleX", _wrap_Bin1D_scaleX, METH_VARARGS, NULL},
 	 { (char *)"Bin1D_lowEdge", _wrap_Bin1D_lowEdge, METH_VARARGS, NULL},
 	 { (char *)"Bin1D_xMin", _wrap_Bin1D_xMin, METH_VARARGS, NULL},
 	 { (char *)"Bin1D_highEdge", _wrap_Bin1D_highEdge, METH_VARARGS, NULL},
@@ -31499,6 +43613,41 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Bin1D___isub__", _wrap_Bin1D___isub__, METH_VARARGS, NULL},
 	 { (char *)"delete_Bin1D", _wrap_delete_Bin1D, METH_VARARGS, NULL},
 	 { (char *)"Bin1D_swigregister", Bin1D_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_Bin2D", _wrap_new_Bin2D, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_reset", _wrap_Bin2D_reset, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_scale", _wrap_Bin2D_scale, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_lowEdgeX", _wrap_Bin2D_lowEdgeX, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xMin", _wrap_Bin2D_xMin, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_lowEdgeY", _wrap_Bin2D_lowEdgeY, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yMin", _wrap_Bin2D_yMin, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_highEdgeX", _wrap_Bin2D_highEdgeX, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xMax", _wrap_Bin2D_xMax, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_highEdgeY", _wrap_Bin2D_highEdgeY, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yMax", _wrap_Bin2D_yMax, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_widthX", _wrap_Bin2D_widthX, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_widthY", _wrap_Bin2D_widthY, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_focus", _wrap_Bin2D_focus, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_midpoint", _wrap_Bin2D_midpoint, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xMean", _wrap_Bin2D_xMean, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yMean", _wrap_Bin2D_yMean, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xVariance", _wrap_Bin2D_xVariance, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yVariance", _wrap_Bin2D_yVariance, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xStdDev", _wrap_Bin2D_xStdDev, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yStdDev", _wrap_Bin2D_yStdDev, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_xStdErr", _wrap_Bin2D_xStdErr, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_yStdErr", _wrap_Bin2D_yStdErr, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_numEntries", _wrap_Bin2D_numEntries, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumW", _wrap_Bin2D_sumW, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumW2", _wrap_Bin2D_sumW2, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumWX", _wrap_Bin2D_sumWX, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumWY", _wrap_Bin2D_sumWY, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumWXY", _wrap_Bin2D_sumWXY, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumWX2", _wrap_Bin2D_sumWX2, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_sumWY2", _wrap_Bin2D_sumWY2, METH_VARARGS, NULL},
+	 { (char *)"Bin2D___iadd__", _wrap_Bin2D___iadd__, METH_VARARGS, NULL},
+	 { (char *)"Bin2D___isub__", _wrap_Bin2D___isub__, METH_VARARGS, NULL},
+	 { (char *)"delete_Bin2D", _wrap_delete_Bin2D, METH_VARARGS, NULL},
+	 { (char *)"Bin2D_swigregister", Bin2D_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_HistoBin1D", _wrap_new_HistoBin1D, METH_VARARGS, NULL},
 	 { (char *)"HistoBin1D_fill", _wrap_HistoBin1D_fill, METH_VARARGS, NULL},
 	 { (char *)"HistoBin1D_fillBin", _wrap_HistoBin1D_fillBin, METH_VARARGS, NULL},
@@ -31570,6 +43719,85 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"HistoBin1Ds_capacity", _wrap_HistoBin1Ds_capacity, METH_VARARGS, NULL},
 	 { (char *)"delete_HistoBin1Ds", _wrap_delete_HistoBin1Ds, METH_VARARGS, NULL},
 	 { (char *)"HistoBin1Ds_swigregister", HistoBin1Ds_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_HistoBin2D", _wrap_new_HistoBin2D, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_fill", _wrap_HistoBin2D_fill, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_fillBin", _wrap_HistoBin2D_fillBin, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_reset", _wrap_HistoBin2D_reset, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_scaleW", _wrap_HistoBin2D_scaleW, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_volume", _wrap_HistoBin2D_volume, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_height", _wrap_HistoBin2D_height, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_volumeErr", _wrap_HistoBin2D_volumeErr, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_heightErr", _wrap_HistoBin2D_heightErr, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D___iadd__", _wrap_HistoBin2D___iadd__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D___isub__", _wrap_HistoBin2D___isub__, METH_VARARGS, NULL},
+	 { (char *)"delete_HistoBin2D", _wrap_delete_HistoBin2D, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2D_swigregister", HistoBin2D_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_Histo2D", _wrap_new_Histo2D, METH_VARARGS, NULL},
+	 { (char *)"Histo2D__aotype", _wrap_Histo2D__aotype, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_fill", _wrap_Histo2D_fill, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_reset", _wrap_Histo2D_reset, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_scaleW", _wrap_Histo2D_scaleW, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_scale", _wrap_Histo2D_scale, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_addBin", _wrap_Histo2D_addBin, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_lowEdgeX", _wrap_Histo2D_lowEdgeX, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_lowEdgeY", _wrap_Histo2D_lowEdgeY, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_highEdgeX", _wrap_Histo2D_highEdgeX, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_highEdgeY", _wrap_Histo2D_highEdgeY, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_bins", _wrap_Histo2D_bins, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_bin", _wrap_Histo2D_bin, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_binByCoord", _wrap_Histo2D_binByCoord, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_findBinIndex", _wrap_Histo2D_findBinIndex, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_underflow", _wrap_Histo2D_underflow, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_overflow", _wrap_Histo2D_overflow, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_numBinsTotal", _wrap_Histo2D_numBinsTotal, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_getHash", _wrap_Histo2D_getHash, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_integral", _wrap_Histo2D_integral, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_sumW", _wrap_Histo2D_sumW, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_sumW2", _wrap_Histo2D_sumW2, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_xMean", _wrap_Histo2D_xMean, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_yMean", _wrap_Histo2D_yMean, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_xVariance", _wrap_Histo2D_xVariance, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_yVariance", _wrap_Histo2D_yVariance, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_xStdDev", _wrap_Histo2D_xStdDev, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_yStdDev", _wrap_Histo2D_yStdDev, METH_VARARGS, NULL},
+	 { (char *)"Histo2D___iadd__", _wrap_Histo2D___iadd__, METH_VARARGS, NULL},
+	 { (char *)"Histo2D___isub__", _wrap_Histo2D___isub__, METH_VARARGS, NULL},
+	 { (char *)"delete_Histo2D", _wrap_delete_Histo2D, METH_VARARGS, NULL},
+	 { (char *)"Histo2D_swigregister", Histo2D_swigregister, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_iterator", _wrap_HistoBin2Ds_iterator, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___nonzero__", _wrap_HistoBin2Ds___nonzero__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___bool__", _wrap_HistoBin2Ds___bool__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___len__", _wrap_HistoBin2Ds___len__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_pop", _wrap_HistoBin2Ds_pop, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___getslice__", _wrap_HistoBin2Ds___getslice__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___setslice__", _wrap_HistoBin2Ds___setslice__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___delslice__", _wrap_HistoBin2Ds___delslice__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___delitem__", _wrap_HistoBin2Ds___delitem__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___getitem__", _wrap_HistoBin2Ds___getitem__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds___setitem__", _wrap_HistoBin2Ds___setitem__, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_append", _wrap_HistoBin2Ds_append, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_empty", _wrap_HistoBin2Ds_empty, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_size", _wrap_HistoBin2Ds_size, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_clear", _wrap_HistoBin2Ds_clear, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_swap", _wrap_HistoBin2Ds_swap, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_get_allocator", _wrap_HistoBin2Ds_get_allocator, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_begin", _wrap_HistoBin2Ds_begin, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_end", _wrap_HistoBin2Ds_end, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_rbegin", _wrap_HistoBin2Ds_rbegin, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_rend", _wrap_HistoBin2Ds_rend, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_pop_back", _wrap_HistoBin2Ds_pop_back, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_erase", _wrap_HistoBin2Ds_erase, METH_VARARGS, NULL},
+	 { (char *)"new_HistoBin2Ds", _wrap_new_HistoBin2Ds, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_push_back", _wrap_HistoBin2Ds_push_back, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_front", _wrap_HistoBin2Ds_front, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_back", _wrap_HistoBin2Ds_back, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_assign", _wrap_HistoBin2Ds_assign, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_resize", _wrap_HistoBin2Ds_resize, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_insert", _wrap_HistoBin2Ds_insert, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_reserve", _wrap_HistoBin2Ds_reserve, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_capacity", _wrap_HistoBin2Ds_capacity, METH_VARARGS, NULL},
+	 { (char *)"delete_HistoBin2Ds", _wrap_delete_HistoBin2Ds, METH_VARARGS, NULL},
+	 { (char *)"HistoBin2Ds_swigregister", HistoBin2Ds_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ProfileBin1D", _wrap_new_ProfileBin1D, METH_VARARGS, NULL},
 	 { (char *)"ProfileBin1D_fill", _wrap_ProfileBin1D_fill, METH_VARARGS, NULL},
 	 { (char *)"ProfileBin1D_fillBin", _wrap_ProfileBin1D_fillBin, METH_VARARGS, NULL},
@@ -31640,6 +43868,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Point2D_setX", _wrap_Point2D_setX, METH_VARARGS, NULL},
 	 { (char *)"Point2D_y", _wrap_Point2D_y, METH_VARARGS, NULL},
 	 { (char *)"Point2D_setY", _wrap_Point2D_setY, METH_VARARGS, NULL},
+	 { (char *)"Point2D_scale", _wrap_Point2D_scale, METH_VARARGS, NULL},
 	 { (char *)"Point2D_xErrs", _wrap_Point2D_xErrs, METH_VARARGS, NULL},
 	 { (char *)"Point2D_xErrMinus", _wrap_Point2D_xErrMinus, METH_VARARGS, NULL},
 	 { (char *)"Point2D_xErrPlus", _wrap_Point2D_xErrPlus, METH_VARARGS, NULL},
@@ -31656,12 +43885,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Point2D_yMax", _wrap_Point2D_yMax, METH_VARARGS, NULL},
 	 { (char *)"delete_Point2D", _wrap_delete_Point2D, METH_VARARGS, NULL},
 	 { (char *)"Point2D_swigregister", Point2D_swigregister, METH_VARARGS, NULL},
-	 { (char *)"__eq__", _wrap___eq__, METH_VARARGS, NULL},
-	 { (char *)"__ne__", _wrap___ne__, METH_VARARGS, NULL},
-	 { (char *)"__lt__", _wrap___lt__, METH_VARARGS, NULL},
-	 { (char *)"__le__", _wrap___le__, METH_VARARGS, NULL},
-	 { (char *)"__gt__", _wrap___gt__, METH_VARARGS, NULL},
-	 { (char *)"__ge__", _wrap___ge__, METH_VARARGS, NULL},
 	 { (char *)"new_Scatter2D", _wrap_new_Scatter2D, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_reset", _wrap_Scatter2D_reset, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_numPoints", _wrap_Scatter2D_numPoints, METH_VARARGS, NULL},
@@ -31669,14 +43892,63 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Scatter2D_point", _wrap_Scatter2D_point, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_addPoint", _wrap_Scatter2D_addPoint, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_addPoints", _wrap_Scatter2D_addPoints, METH_VARARGS, NULL},
+	 { (char *)"Scatter2D_scale", _wrap_Scatter2D_scale, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_combineWith", _wrap_Scatter2D_combineWith, METH_VARARGS, NULL},
 	 { (char *)"delete_Scatter2D", _wrap_delete_Scatter2D, METH_VARARGS, NULL},
 	 { (char *)"Scatter2D_swigregister", Scatter2D_swigregister, METH_VARARGS, NULL},
-	 { (char *)"combine", _wrap_combine, METH_VARARGS, NULL},
-	 { (char *)"mkScatter", _wrap_mkScatter, METH_VARARGS, NULL},
 	 { (char *)"__add__", _wrap___add__, METH_VARARGS, NULL},
 	 { (char *)"__sub__", _wrap___sub__, METH_VARARGS, NULL},
 	 { (char *)"__div__", _wrap___div__, METH_VARARGS, NULL},
+	 { (char *)"new_Point3D", _wrap_new_Point3D, METH_VARARGS, NULL},
+	 { (char *)"Point3D_x", _wrap_Point3D_x, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setX", _wrap_Point3D_setX, METH_VARARGS, NULL},
+	 { (char *)"Point3D_y", _wrap_Point3D_y, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setY", _wrap_Point3D_setY, METH_VARARGS, NULL},
+	 { (char *)"Point3D_z", _wrap_Point3D_z, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setZ", _wrap_Point3D_setZ, METH_VARARGS, NULL},
+	 { (char *)"Point3D_scale", _wrap_Point3D_scale, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xErrs", _wrap_Point3D_xErrs, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xErrMinus", _wrap_Point3D_xErrMinus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xErrPlus", _wrap_Point3D_xErrPlus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xErrAvg", _wrap_Point3D_xErrAvg, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setXErr", _wrap_Point3D_setXErr, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xMin", _wrap_Point3D_xMin, METH_VARARGS, NULL},
+	 { (char *)"Point3D_xMax", _wrap_Point3D_xMax, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yErrs", _wrap_Point3D_yErrs, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yErrMinus", _wrap_Point3D_yErrMinus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yErrPlus", _wrap_Point3D_yErrPlus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yErrAvg", _wrap_Point3D_yErrAvg, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setYErr", _wrap_Point3D_setYErr, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yMin", _wrap_Point3D_yMin, METH_VARARGS, NULL},
+	 { (char *)"Point3D_yMax", _wrap_Point3D_yMax, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zErrs", _wrap_Point3D_zErrs, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zErrMinus", _wrap_Point3D_zErrMinus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zErrPlus", _wrap_Point3D_zErrPlus, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zErrAvg", _wrap_Point3D_zErrAvg, METH_VARARGS, NULL},
+	 { (char *)"Point3D_setZErr", _wrap_Point3D_setZErr, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zMin", _wrap_Point3D_zMin, METH_VARARGS, NULL},
+	 { (char *)"Point3D_zMax", _wrap_Point3D_zMax, METH_VARARGS, NULL},
+	 { (char *)"delete_Point3D", _wrap_delete_Point3D, METH_VARARGS, NULL},
+	 { (char *)"Point3D_swigregister", Point3D_swigregister, METH_VARARGS, NULL},
+	 { (char *)"__eq__", _wrap___eq__, METH_VARARGS, NULL},
+	 { (char *)"__ne__", _wrap___ne__, METH_VARARGS, NULL},
+	 { (char *)"__lt__", _wrap___lt__, METH_VARARGS, NULL},
+	 { (char *)"__le__", _wrap___le__, METH_VARARGS, NULL},
+	 { (char *)"__gt__", _wrap___gt__, METH_VARARGS, NULL},
+	 { (char *)"__ge__", _wrap___ge__, METH_VARARGS, NULL},
+	 { (char *)"new_Scatter3D", _wrap_new_Scatter3D, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_reset", _wrap_Scatter3D_reset, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_scale", _wrap_Scatter3D_scale, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_numPoints", _wrap_Scatter3D_numPoints, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_points", _wrap_Scatter3D_points, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_point", _wrap_Scatter3D_point, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_addPoint", _wrap_Scatter3D_addPoint, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_addPoints", _wrap_Scatter3D_addPoints, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_combineWith", _wrap_Scatter3D_combineWith, METH_VARARGS, NULL},
+	 { (char *)"delete_Scatter3D", _wrap_delete_Scatter3D, METH_VARARGS, NULL},
+	 { (char *)"Scatter3D_swigregister", Scatter3D_swigregister, METH_VARARGS, NULL},
+	 { (char *)"combine", _wrap_combine, METH_VARARGS, NULL},
+	 { (char *)"mkScatter", _wrap_mkScatter, METH_VARARGS, NULL},
 	 { (char *)"AOVector_iterator", _wrap_AOVector_iterator, METH_VARARGS, NULL},
 	 { (char *)"AOVector___nonzero__", _wrap_AOVector___nonzero__, METH_VARARGS, NULL},
 	 { (char *)"AOVector___bool__", _wrap_AOVector___bool__, METH_VARARGS, NULL},
@@ -31790,6 +44062,9 @@ static PyMethodDef SwigMethods[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_YODA__Bin2DTo_p_YODA__Bin(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((YODA::Bin *)  ((YODA::Bin2D *) x));
+}
 static void *_p_YODA__HistoBin1DTo_p_YODA__Bin(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::Bin *) (YODA::Bin1D *) ((YODA::HistoBin1D *) x));
 }
@@ -31799,11 +44074,20 @@ static void *_p_YODA__Bin1DTo_p_YODA__Bin(void *x, int *SWIGUNUSEDPARM(newmemory
 static void *_p_YODA__ProfileBin1DTo_p_YODA__Bin(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::Bin *) (YODA::Bin1D *) ((YODA::ProfileBin1D *) x));
 }
+static void *_p_YODA__HistoBin2DTo_p_YODA__Bin(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((YODA::Bin *) (YODA::Bin2D *) ((YODA::HistoBin2D *) x));
+}
 static void *_p_YODA__WriterAIDATo_p_YODA__Writer(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::Writer *)  ((YODA::WriterAIDA *) x));
 }
 static void *_p_YODA__WriterYODATo_p_YODA__Writer(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::Writer *)  ((YODA::WriterYODA *) x));
+}
+static void *_p_YODA__HistoBin2DTo_p_YODA__Bin2D(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((YODA::Bin2D *)  ((YODA::HistoBin2D *) x));
+}
+static void *_p_YODA__Histo2DTo_p_YODA__AnalysisObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((YODA::AnalysisObject *)  ((YODA::Histo2D *) x));
 }
 static void *_p_YODA__Scatter2DTo_p_YODA__AnalysisObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::AnalysisObject *)  ((YODA::Scatter2D *) x));
@@ -31814,6 +44098,9 @@ static void *_p_YODA__Histo1DTo_p_YODA__AnalysisObject(void *x, int *SWIGUNUSEDP
 static void *_p_YODA__Profile1DTo_p_YODA__AnalysisObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::AnalysisObject *)  ((YODA::Profile1D *) x));
 }
+static void *_p_YODA__Scatter3DTo_p_YODA__AnalysisObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((YODA::AnalysisObject *)  ((YODA::Scatter3D *) x));
+}
 static void *_p_YODA__HistoBin1DTo_p_YODA__Bin1D(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((YODA::Bin1D *)  ((YODA::HistoBin1D *) x));
 }
@@ -31823,24 +44110,34 @@ static void *_p_YODA__ProfileBin1DTo_p_YODA__Bin1D(void *x, int *SWIGUNUSEDPARM(
 static swig_type_info _swigt__p_AnalysisObject = {"_p_AnalysisObject", "std::set< AnalysisObject * >::key_type|AnalysisObject *|std::vector< AnalysisObject * >::value_type|std::list< AnalysisObject * >::value_type|std::set< AnalysisObject * >::value_type", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Annotations = {"_p_Annotations", "Annotations *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Axis = {"_p_Axis", "Axis *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Axis1DT_YODA__HistoBin1D_t = {"_p_Axis1DT_YODA__HistoBin1D_t", "YODA::Histo1DAxis *|Axis1D< YODA::HistoBin1D > *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Axis1DT_YODA__ProfileBin1D_t = {"_p_Axis1DT_YODA__ProfileBin1D_t", "YODA::Profile1DAxis *|Axis1D< YODA::ProfileBin1D > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Axis1DT_YODA__HistoBin1D_Dbn1D_t = {"_p_Axis1DT_YODA__HistoBin1D_Dbn1D_t", "YODA::Histo1DAxis *|Axis1D< YODA::HistoBin1D,Dbn1D > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t = {"_p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t", "YODA::Profile1DAxis *|Axis1D< YODA::ProfileBin1D,Dbn2D > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Axis2DT_YODA__HistoBin2D_t = {"_p_Axis2DT_YODA__HistoBin2D_t", "YODA::Histo2DAxis *|Axis2D< YODA::HistoBin2D > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Bins = {"_p_Bins", "Bins *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Dbn1D = {"_p_Dbn1D", "Dbn1D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Dbn2D = {"_p_Dbn2D", "Dbn2D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Points = {"_p_Points", "Points *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Profile1D = {"_p_Profile1D", "Profile1D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Scatter2D = {"_p_Scatter2D", "Scatter2D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Scatter3D = {"_p_Scatter3D", "Scatter3D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Utils__sortedvectorT_YODA__Point2D_t = {"_p_Utils__sortedvectorT_YODA__Point2D_t", "YODA::Scatter2D::Points *|Utils::sortedvector< YODA::Point2D > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Utils__sortedvectorT_YODA__Point3D_t = {"_p_Utils__sortedvectorT_YODA__Point3D_t", "Utils::sortedvector< YODA::Point3D > *|YODA::Scatter3D::Points *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ValuePair = {"_p_ValuePair", "ValuePair *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__AnalysisObject = {"_p_YODA__AnalysisObject", "YODA::AnalysisObject *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Bin = {"_p_YODA__Bin", "YODA::Bin *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Bin1D = {"_p_YODA__Bin1D", "YODA::Bin1D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__Bin2D = {"_p_YODA__Bin2D", "YODA::Bin2D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Histo1D = {"_p_YODA__Histo1D", "YODA::Histo1D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__Histo2D = {"_p_YODA__Histo2D", "YODA::Histo2D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__Histo3D = {"_p_YODA__Histo3D", "YODA::Histo3D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__HistoBin1D = {"_p_YODA__HistoBin1D", "std::vector< YODA::HistoBin1D >::value_type *|YODA::HistoBin1D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__HistoBin2D = {"_p_YODA__HistoBin2D", "std::vector< YODA::HistoBin2D >::value_type *|YODA::HistoBin2D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Point2D = {"_p_YODA__Point2D", "YODA::Point2D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__Point3D = {"_p_YODA__Point3D", "YODA::Point3D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Profile1D = {"_p_YODA__Profile1D", "YODA::Profile1D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__ProfileBin1D = {"_p_YODA__ProfileBin1D", "std::vector< YODA::ProfileBin1D >::value_type *|YODA::ProfileBin1D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Scatter2D = {"_p_YODA__Scatter2D", "YODA::Scatter2D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_YODA__Scatter3D = {"_p_YODA__Scatter3D", "YODA::Scatter3D *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__Writer = {"_p_YODA__Writer", "YODA::Writer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__WriterAIDA = {"_p_YODA__WriterAIDA", "YODA::WriterAIDA *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_YODA__WriterYODA = {"_p_YODA__WriterYODA", "YODA::WriterYODA *", 0, 0, (void*)0, 0};
@@ -31857,6 +44154,7 @@ static swig_type_info _swigt__p_second_type = {"_p_second_type", "second_type *"
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_AnalysisObject_p_t = {"_p_std__allocatorT_AnalysisObject_p_t", "std::vector< AnalysisObject * >::allocator_type *|std::list< AnalysisObject * >::allocator_type *|std::allocator< AnalysisObject * > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_YODA__HistoBin1D_t = {"_p_std__allocatorT_YODA__HistoBin1D_t", "std::vector< YODA::HistoBin1D >::allocator_type *|std::allocator< YODA::HistoBin1D > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__allocatorT_YODA__HistoBin2D_t = {"_p_std__allocatorT_YODA__HistoBin2D_t", "std::vector< YODA::HistoBin2D >::allocator_type *|std::allocator< YODA::HistoBin2D > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_YODA__ProfileBin1D_t = {"_p_std__allocatorT_YODA__ProfileBin1D_t", "std::allocator< YODA::ProfileBin1D > *|std::vector< YODA::ProfileBin1D >::allocator_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_double_t = {"_p_std__allocatorT_double_t", "std::vector< double >::allocator_type *|std::allocator< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_std__pairT_size_t_const_double_t_t = {"_p_std__allocatorT_std__pairT_size_t_const_double_t_t", "std::map< size_t,double >::allocator_type *|std::allocator< std::pair< size_t const,double > > *", 0, 0, (void*)0, 0};
@@ -31870,18 +44168,22 @@ static swig_type_info _swigt__p_std__listT__Tp_p__Alloc_t = {"_p_std__listT__Tp_
 static swig_type_info _swigt__p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t = {"_p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t", "std::map< size_t,double,std::less< size_t >,std::allocator< std::pair< size_t const,double > > > *|std::map< size_t,double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t = {"_p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t", "YODA::AnalysisObject::Annotations *|std::map< std::string,std::string,std::less< std::string >,std::allocator< std::pair< std::string const,std::string > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__ostream = {"_p_std__ostream", "std::ostream *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t = {"_p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t", "std::pair< Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > >,Utils::cachedvector< std::pair< double,std::vector< std::pair< size_t,std::pair< double,double > >,std::allocator< std::pair< size_t,std::pair< double,double > > > > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__pairT_double_double_t = {"_p_std__pairT_double_double_t", "std::pair< double,double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t = {"_p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t", "std::set< AnalysisObject *,std::less< AnalysisObject * >,std::allocator< AnalysisObject * > > *|std::set< AnalysisObject * > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t = {"_p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t", "std::set< YODA::AnalysisObject *,std::less< YODA::AnalysisObject * >,std::allocator< YODA::AnalysisObject * > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t = {"_p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t", "std::vector< AnalysisObject *,std::allocator< AnalysisObject * > > *|std::vector< AnalysisObject * > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t = {"_p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t", "std::vector< YODA::AnalysisObject *,std::allocator< YODA::AnalysisObject * > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t = {"_p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t", "std::vector< YODA::HistoBin1D > *|std::vector< YODA::HistoBin1D,std::allocator< YODA::HistoBin1D > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t = {"_p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t", "std::vector< YODA::HistoBin2D > *|std::vector< YODA::HistoBin2D,std::allocator< YODA::HistoBin2D > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t = {"_p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t", "std::vector< YODA::ProfileBin1D,std::allocator< YODA::ProfileBin1D > > *|std::vector< YODA::ProfileBin1D > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t = {"_p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t", "std::vector< YODA::Scatter2D,std::allocator< YODA::Scatter2D > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t = {"_p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t", "std::vector< YODA::Scatter3D,std::allocator< YODA::Scatter3D > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT__Tp__Alloc_t = {"_p_std__vectorT__Tp__Alloc_t", "std::vector< _Tp,_Alloc > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT__Tp_p__Alloc_t = {"_p_std__vectorT__Tp_p__Alloc_t", "std::vector< _Tp *,_Alloc > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_double_std__allocatorT_double_t_t = {"_p_std__vectorT_double_std__allocatorT_double_t_t", "std::vector< double,std::allocator< double > > *|std::vector< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t = {"_p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t", "std::vector< std::pair< double,double >,std::allocator< std::pair< double,double > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t = {"_p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t", "std::vector< std::pair< std::pair< double,double >,std::pair< double,double > >,std::allocator< std::pair< std::pair< double,double >,std::pair< double,double > > > > *|std::vector< std::pair< std::pair< double,double >,std::pair< double,double > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
 
@@ -31889,24 +44191,34 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_AnalysisObject,
   &_swigt__p_Annotations,
   &_swigt__p_Axis,
-  &_swigt__p_Axis1DT_YODA__HistoBin1D_t,
-  &_swigt__p_Axis1DT_YODA__ProfileBin1D_t,
+  &_swigt__p_Axis1DT_YODA__HistoBin1D_Dbn1D_t,
+  &_swigt__p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t,
+  &_swigt__p_Axis2DT_YODA__HistoBin2D_t,
   &_swigt__p_Bins,
   &_swigt__p_Dbn1D,
+  &_swigt__p_Dbn2D,
   &_swigt__p_Points,
   &_swigt__p_Profile1D,
   &_swigt__p_Scatter2D,
+  &_swigt__p_Scatter3D,
   &_swigt__p_Utils__sortedvectorT_YODA__Point2D_t,
+  &_swigt__p_Utils__sortedvectorT_YODA__Point3D_t,
   &_swigt__p_ValuePair,
   &_swigt__p_YODA__AnalysisObject,
   &_swigt__p_YODA__Bin,
   &_swigt__p_YODA__Bin1D,
+  &_swigt__p_YODA__Bin2D,
   &_swigt__p_YODA__Histo1D,
+  &_swigt__p_YODA__Histo2D,
+  &_swigt__p_YODA__Histo3D,
   &_swigt__p_YODA__HistoBin1D,
+  &_swigt__p_YODA__HistoBin2D,
   &_swigt__p_YODA__Point2D,
+  &_swigt__p_YODA__Point3D,
   &_swigt__p_YODA__Profile1D,
   &_swigt__p_YODA__ProfileBin1D,
   &_swigt__p_YODA__Scatter2D,
+  &_swigt__p_YODA__Scatter3D,
   &_swigt__p_YODA__Writer,
   &_swigt__p_YODA__WriterAIDA,
   &_swigt__p_YODA__WriterYODA,
@@ -31923,6 +44235,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_size_type,
   &_swigt__p_std__allocatorT_AnalysisObject_p_t,
   &_swigt__p_std__allocatorT_YODA__HistoBin1D_t,
+  &_swigt__p_std__allocatorT_YODA__HistoBin2D_t,
   &_swigt__p_std__allocatorT_YODA__ProfileBin1D_t,
   &_swigt__p_std__allocatorT_double_t,
   &_swigt__p_std__allocatorT_std__pairT_size_t_const_double_t_t,
@@ -31936,18 +44249,22 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t,
   &_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t,
   &_swigt__p_std__ostream,
+  &_swigt__p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t,
   &_swigt__p_std__pairT_double_double_t,
   &_swigt__p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t,
   &_swigt__p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t,
   &_swigt__p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t,
   &_swigt__p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t,
   &_swigt__p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t,
+  &_swigt__p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t,
   &_swigt__p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t,
   &_swigt__p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t,
+  &_swigt__p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t,
   &_swigt__p_std__vectorT__Tp__Alloc_t,
   &_swigt__p_std__vectorT__Tp_p__Alloc_t,
   &_swigt__p_std__vectorT_double_std__allocatorT_double_t_t,
   &_swigt__p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,
+  &_swigt__p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,
   &_swigt__p_swig__SwigPyIterator,
   &_swigt__p_value_type,
 };
@@ -31955,24 +44272,34 @@ static swig_type_info *swig_type_initial[] = {
 static swig_cast_info _swigc__p_AnalysisObject[] = {  {&_swigt__p_AnalysisObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Annotations[] = {  {&_swigt__p_Annotations, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Axis[] = {  {&_swigt__p_Axis, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Axis1DT_YODA__HistoBin1D_t[] = {  {&_swigt__p_Axis1DT_YODA__HistoBin1D_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Axis1DT_YODA__ProfileBin1D_t[] = {  {&_swigt__p_Axis1DT_YODA__ProfileBin1D_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Axis1DT_YODA__HistoBin1D_Dbn1D_t[] = {  {&_swigt__p_Axis1DT_YODA__HistoBin1D_Dbn1D_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t[] = {  {&_swigt__p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Axis2DT_YODA__HistoBin2D_t[] = {  {&_swigt__p_Axis2DT_YODA__HistoBin2D_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Bins[] = {  {&_swigt__p_Bins, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Dbn1D[] = {  {&_swigt__p_Dbn1D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Dbn2D[] = {  {&_swigt__p_Dbn2D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Points[] = {  {&_swigt__p_Points, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Profile1D[] = {  {&_swigt__p_Profile1D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Scatter2D[] = {  {&_swigt__p_Scatter2D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Scatter3D[] = {  {&_swigt__p_Scatter3D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Utils__sortedvectorT_YODA__Point2D_t[] = {  {&_swigt__p_Utils__sortedvectorT_YODA__Point2D_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Utils__sortedvectorT_YODA__Point3D_t[] = {  {&_swigt__p_Utils__sortedvectorT_YODA__Point3D_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ValuePair[] = {  {&_swigt__p_ValuePair, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_YODA__AnalysisObject[] = {  {&_swigt__p_YODA__Scatter2D, _p_YODA__Scatter2DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__Histo1D, _p_YODA__Histo1DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__AnalysisObject, 0, 0, 0},  {&_swigt__p_YODA__Profile1D, _p_YODA__Profile1DTo_p_YODA__AnalysisObject, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_YODA__Bin[] = {  {&_swigt__p_YODA__HistoBin1D, _p_YODA__HistoBin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__ProfileBin1D, _p_YODA__ProfileBin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__Bin1D, _p_YODA__Bin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__Bin, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__AnalysisObject[] = {  {&_swigt__p_YODA__Histo2D, _p_YODA__Histo2DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__Scatter2D, _p_YODA__Scatter2DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__Histo1D, _p_YODA__Histo1DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__AnalysisObject, 0, 0, 0},  {&_swigt__p_YODA__Profile1D, _p_YODA__Profile1DTo_p_YODA__AnalysisObject, 0, 0},  {&_swigt__p_YODA__Scatter3D, _p_YODA__Scatter3DTo_p_YODA__AnalysisObject, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Bin[] = {  {&_swigt__p_YODA__Bin2D, _p_YODA__Bin2DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__HistoBin1D, _p_YODA__HistoBin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__ProfileBin1D, _p_YODA__ProfileBin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__Bin1D, _p_YODA__Bin1DTo_p_YODA__Bin, 0, 0},  {&_swigt__p_YODA__Bin, 0, 0, 0},  {&_swigt__p_YODA__HistoBin2D, _p_YODA__HistoBin2DTo_p_YODA__Bin, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Bin1D[] = {  {&_swigt__p_YODA__HistoBin1D, _p_YODA__HistoBin1DTo_p_YODA__Bin1D, 0, 0},  {&_swigt__p_YODA__ProfileBin1D, _p_YODA__ProfileBin1DTo_p_YODA__Bin1D, 0, 0},  {&_swigt__p_YODA__Bin1D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Bin2D[] = {  {&_swigt__p_YODA__Bin2D, 0, 0, 0},  {&_swigt__p_YODA__HistoBin2D, _p_YODA__HistoBin2DTo_p_YODA__Bin2D, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Histo1D[] = {  {&_swigt__p_YODA__Histo1D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Histo2D[] = {  {&_swigt__p_YODA__Histo2D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Histo3D[] = {  {&_swigt__p_YODA__Histo3D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__HistoBin1D[] = {  {&_swigt__p_YODA__HistoBin1D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__HistoBin2D[] = {  {&_swigt__p_YODA__HistoBin2D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Point2D[] = {  {&_swigt__p_YODA__Point2D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Point3D[] = {  {&_swigt__p_YODA__Point3D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Profile1D[] = {  {&_swigt__p_YODA__Profile1D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__ProfileBin1D[] = {  {&_swigt__p_YODA__ProfileBin1D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Scatter2D[] = {  {&_swigt__p_YODA__Scatter2D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_YODA__Scatter3D[] = {  {&_swigt__p_YODA__Scatter3D, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__Writer[] = {  {&_swigt__p_YODA__Writer, 0, 0, 0},  {&_swigt__p_YODA__WriterAIDA, _p_YODA__WriterAIDATo_p_YODA__Writer, 0, 0},  {&_swigt__p_YODA__WriterYODA, _p_YODA__WriterYODATo_p_YODA__Writer, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__WriterAIDA[] = {  {&_swigt__p_YODA__WriterAIDA, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_YODA__WriterYODA[] = {  {&_swigt__p_YODA__WriterYODA, 0, 0, 0},{0, 0, 0, 0}};
@@ -31989,6 +44316,7 @@ static swig_cast_info _swigc__p_second_type[] = {  {&_swigt__p_second_type, 0, 0
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_AnalysisObject_p_t[] = {  {&_swigt__p_std__allocatorT_AnalysisObject_p_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_YODA__HistoBin1D_t[] = {  {&_swigt__p_std__allocatorT_YODA__HistoBin1D_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__allocatorT_YODA__HistoBin2D_t[] = {  {&_swigt__p_std__allocatorT_YODA__HistoBin2D_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_YODA__ProfileBin1D_t[] = {  {&_swigt__p_std__allocatorT_YODA__ProfileBin1D_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_double_t[] = {  {&_swigt__p_std__allocatorT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_std__pairT_size_t_const_double_t_t[] = {  {&_swigt__p_std__allocatorT_std__pairT_size_t_const_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -32002,18 +44330,22 @@ static swig_cast_info _swigc__p_std__listT__Tp_p__Alloc_t[] = {  {&_swigt__p_std
 static swig_cast_info _swigc__p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t[] = {  {&_swigt__p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__ostream[] = {  {&_swigt__p_std__ostream, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t[] = {  {&_swigt__p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__pairT_double_double_t[] = {  {&_swigt__p_std__pairT_double_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t[] = {  {&_swigt__p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t[] = {  {&_swigt__p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t[] = {  {&_swigt__p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t[] = {  {&_swigt__p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t[] = {  {&_swigt__p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t[] = {  {&_swigt__p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t[] = {  {&_swigt__p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t[] = {  {&_swigt__p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t[] = {  {&_swigt__p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT__Tp__Alloc_t[] = {  {&_swigt__p_std__vectorT__Tp__Alloc_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT__Tp_p__Alloc_t[] = {  {&_swigt__p_std__vectorT__Tp_p__Alloc_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_double_std__allocatorT_double_t_t[] = {  {&_swigt__p_std__vectorT_double_std__allocatorT_double_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t[] = {  {&_swigt__p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
 
@@ -32021,24 +44353,34 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_AnalysisObject,
   _swigc__p_Annotations,
   _swigc__p_Axis,
-  _swigc__p_Axis1DT_YODA__HistoBin1D_t,
-  _swigc__p_Axis1DT_YODA__ProfileBin1D_t,
+  _swigc__p_Axis1DT_YODA__HistoBin1D_Dbn1D_t,
+  _swigc__p_Axis1DT_YODA__ProfileBin1D_Dbn2D_t,
+  _swigc__p_Axis2DT_YODA__HistoBin2D_t,
   _swigc__p_Bins,
   _swigc__p_Dbn1D,
+  _swigc__p_Dbn2D,
   _swigc__p_Points,
   _swigc__p_Profile1D,
   _swigc__p_Scatter2D,
+  _swigc__p_Scatter3D,
   _swigc__p_Utils__sortedvectorT_YODA__Point2D_t,
+  _swigc__p_Utils__sortedvectorT_YODA__Point3D_t,
   _swigc__p_ValuePair,
   _swigc__p_YODA__AnalysisObject,
   _swigc__p_YODA__Bin,
   _swigc__p_YODA__Bin1D,
+  _swigc__p_YODA__Bin2D,
   _swigc__p_YODA__Histo1D,
+  _swigc__p_YODA__Histo2D,
+  _swigc__p_YODA__Histo3D,
   _swigc__p_YODA__HistoBin1D,
+  _swigc__p_YODA__HistoBin2D,
   _swigc__p_YODA__Point2D,
+  _swigc__p_YODA__Point3D,
   _swigc__p_YODA__Profile1D,
   _swigc__p_YODA__ProfileBin1D,
   _swigc__p_YODA__Scatter2D,
+  _swigc__p_YODA__Scatter3D,
   _swigc__p_YODA__Writer,
   _swigc__p_YODA__WriterAIDA,
   _swigc__p_YODA__WriterYODA,
@@ -32055,6 +44397,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_size_type,
   _swigc__p_std__allocatorT_AnalysisObject_p_t,
   _swigc__p_std__allocatorT_YODA__HistoBin1D_t,
+  _swigc__p_std__allocatorT_YODA__HistoBin2D_t,
   _swigc__p_std__allocatorT_YODA__ProfileBin1D_t,
   _swigc__p_std__allocatorT_double_t,
   _swigc__p_std__allocatorT_std__pairT_size_t_const_double_t_t,
@@ -32068,18 +44411,22 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__mapT_size_t_double_std__lessT_size_t_t_std__allocatorT_std__pairT_size_t_const_double_t_t_t,
   _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_std__allocatorT_std__pairT_std__string_const_std__string_t_t_t,
   _swigc__p_std__ostream,
+  _swigc__p_std__pairT_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_Utils__cachedvectorT_std__pairT_double_std__vectorT_std__pairT_size_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_size_t_std__pairT_double_double_t_t_t_t_t_t_t,
   _swigc__p_std__pairT_double_double_t,
   _swigc__p_std__setT_AnalysisObject_p_std__lessT_AnalysisObject_p_t_std__allocatorT_AnalysisObject_p_t_t,
   _swigc__p_std__setT_YODA__AnalysisObject_p_std__lessT_YODA__AnalysisObject_p_t_std__allocatorT_YODA__AnalysisObject_p_t_t,
   _swigc__p_std__vectorT_AnalysisObject_p_std__allocatorT_AnalysisObject_p_t_t,
   _swigc__p_std__vectorT_YODA__AnalysisObject_p_std__allocatorT_YODA__AnalysisObject_p_t_t,
   _swigc__p_std__vectorT_YODA__HistoBin1D_std__allocatorT_YODA__HistoBin1D_t_t,
+  _swigc__p_std__vectorT_YODA__HistoBin2D_std__allocatorT_YODA__HistoBin2D_t_t,
   _swigc__p_std__vectorT_YODA__ProfileBin1D_std__allocatorT_YODA__ProfileBin1D_t_t,
   _swigc__p_std__vectorT_YODA__Scatter2D_std__allocatorT_YODA__Scatter2D_t_t,
+  _swigc__p_std__vectorT_YODA__Scatter3D_std__allocatorT_YODA__Scatter3D_t_t,
   _swigc__p_std__vectorT__Tp__Alloc_t,
   _swigc__p_std__vectorT__Tp_p__Alloc_t,
   _swigc__p_std__vectorT_double_std__allocatorT_double_t_t,
   _swigc__p_std__vectorT_std__pairT_double_double_t_std__allocatorT_std__pairT_double_double_t_t_t,
+  _swigc__p_std__vectorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_std__allocatorT_std__pairT_std__pairT_double_double_t_std__pairT_double_double_t_t_t_t,
   _swigc__p_swig__SwigPyIterator,
   _swigc__p_value_type,
 };

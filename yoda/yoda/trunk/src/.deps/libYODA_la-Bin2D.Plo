@@ -88,6 +88,14 @@ libYODA_la-Bin2D.lo: Bin2D.cc ../include/YODA/Bin2D.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_relops.h \
  ../include/YODA/Dbn2D.h ../include/YODA/Exceptions.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/stdexcept \
+ ../include/YODA/HistoBin1D.h ../include/YODA/Bin1D.h \
+ ../include/YODA/Dbn1D.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cmath \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/vector \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_construct.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_uninitialized.h \
@@ -96,12 +104,6 @@ libYODA_la-Bin2D.lo: Bin2D.cc ../include/YODA/Bin2D.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/vector.tcc \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cassert \
  /usr/include/assert.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cmath \
- /usr/include/math.h /usr/include/bits/huge_val.h \
- /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
- /usr/include/bits/inf.h /usr/include/bits/nan.h \
- /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
- /usr/include/bits/mathinline.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/iostream \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/ostream \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/ios \
@@ -351,21 +353,11 @@ libYODA_la-Bin2D.lo: Bin2D.cc ../include/YODA/Bin2D.h \
 
 /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/stdexcept:
 
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/vector:
+../include/YODA/HistoBin1D.h:
 
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_construct.h:
+../include/YODA/Bin1D.h:
 
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_uninitialized.h:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_vector.h:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_bvector.h:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/vector.tcc:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cassert:
-
-/usr/include/assert.h:
+../include/YODA/Dbn1D.h:
 
 /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cmath:
 
@@ -386,6 +378,22 @@ libYODA_la-Bin2D.lo: Bin2D.cc ../include/YODA/Bin2D.h \
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/mathinline.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/vector:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_construct.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_uninitialized.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_vector.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/stl_bvector.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/bits/vector.tcc:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/cassert:
+
+/usr/include/assert.h:
 
 /usr/lib/gcc/x86_64-unknown-linux-gnu/4.6.1/../../../../include/c++/4.6.1/iostream:
 

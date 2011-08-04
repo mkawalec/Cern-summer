@@ -10,13 +10,13 @@
 #define YODA_NAME "YODA"
 
 /* Define to the full name and version of this package. */
-#define YODA_STRING "YODA 0.3.2"
+#define YODA_STRING "YODA 0.4.0beta0"
 
 /* Define to the one symbol short name of this package. */
 #define YODA_TARNAME "YODA"
 
 /* Define to the version of this package. */
-#define YODA_VERSION "0.3.2"
+#define YODA_VERSION "0.4.0beta0"
 
 
 #endif

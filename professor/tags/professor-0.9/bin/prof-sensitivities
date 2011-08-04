@@ -1,0 +1,837 @@
+#!/usr/bin/env python2.5
+"""%prog [--datadir DATADIR|--ipoldir IPOLDIR] --obsfile OBSFILE
+    [--plotmode (extremal|colormap|colormaplim|colormapobslim)]
+
+E.g:
+
+    %prog  --datadir mydata/ --obsfile weights --runsfile myruns --plotmode colormaplim
+
+Produce sensitivity plots. Sensitivities are calculated by varying one
+parameter and keeping the rest constant at the center of the sampling
+hypercube (default) or at given parameter values (see options --paramsvector
+and --paramsfile).
+
+Supported plot types:
+    extremal  -- plot the extremal sensitivities. Produces one plot per
+            observable.
+    colormap  -- create colormaps of the sensitivity in the
+            observable-parameter plane. Produces one plot for each
+            observable and parameter.
+    colormaplim  -- create colormaps of the sensitivity in the
+            observable-parameter plane. Produces one plot for each
+            observable and parameter.
+            The limits for the colors are the same for all plots, i.e.
+            colors can be compared between plots.
+    colormapobslim  -- create colormaps of the sensitivity in the
+            observable-parameter plane. Produces one plot for each
+            observable and parameter.
+            The limits for the colors are the same for all plots about the
+            same observable, i.e. colors can be compared between plots.
+
+Implemented sensitivity definitions:
+    slope  -- this definition uses the numerically computed slope of the MC
+        response:
+            S_i = dMC_i/dp
+    relslope -- a definition that yields a sensitivity that is
+        proportional to 1/MC(p) if the slope dMC(p)/dp is constant:
+            S_i = ( dMC_i/MC )/ dp
+    old  -- the definition used in the old code, i.e.
+            S_i = ( dMC_i/MC )/( (p_i + dp)/p_i )
+        With constant slope dMC(p)/dp this definition yields a sensitivity
+        that is proportional to p/MC(p).
+    original  -- the definition used in the original professor paper
+        (DELPHI collab. Z. Phys., C73 (1996) 11-60)
+            S_i = ( dMC_i/MC )/( (dp)/p_i )
+
+where in the above we use
+    dMC_i = MC(p + u_i*dp) - MC(p)
+for the numerically computed differential.
+
+
+TODO:
+    * log-scaled x-axis
+    * use dRefData/RefData criterion to calculate sensitivities only for
+      bins with reliable data.
+"""
+
+import sys
+import os
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+import optparse
+import itertools
+
+import numpy
+from scipy import interpolate
+# TODO: is this still necessary?
+import matplotlib     # These two lines must be called before import pylab
+matplotlib.use('Agg') # to prevent memory leakage
+from matplotlib import pyplot
+# WARNING: There's a memory leak in matplotlib when saving figures. The
+# following seems to circumvene it:
+#
+# from  matplotlib import pyplot
+# fig = pyplot.figure(1)
+# sub = fig.add_subplot()
+# [do stuff]
+# pyplot.savefig(PATH)
+# fig.clf()
+#
+# taken from german forum:
+# http://www.python-forum.de/viewtopic.php?p=145135&sid=108b118e841872bd893f0b5a5c171099
+
+from professor import rivetreader as RR
+from professor import interpolation
+from professor.tools import parameter, messages
+from professor.controlplots.stylegen import StyleGenerator
+
+plotparams = {
+        'backend':'pdf',
+        'figure.dpi': 300,
+        # 'text.fontsize': 16,
+        'text.fontsize': 24,
+        # 'legend.fontsize': 8,
+        'legend.fontsize': 16,
+        # 'axes.titlesize': 16,
+        'axes.titlesize': 24,
+        # 'axes.labelsize': 24,
+        'axes.labelsize': 24,
+        # 'xtick.labelsize': 16,
+        'xtick.labelsize': 20,
+        # 'ytick.labelsize': 16,
+        'ytick.labelsize': 20,
+        # 'lines.markersize': 7,
+        'lines.markersize': 12,
+        # 'figure.subplot.left' : 0.14,
+        'figure.subplot.left' : 0.16,
+        'figure.subplot.right' : 0.96,
+        # 'figure.subplot.bottom' : 0.10,
+        'figure.subplot.bottom' : 0.14,
+        'figure.subplot.top' : 0.98,
+        'figure.subplot.wspace' : 0.4,
+        # Don't use TeX because it failes with some parameter names.
+        'text.usetex': False
+        # 'text.latex.preamble' :  ['\usepackage{amsmath}', '\usepackage{mathpazo}', '\usepackage{hepunits}']
+        }
+
+matplotlib.rcParams.update(plotparams)
+
+parser = optparse.OptionParser(usage=__doc__)
+
+parser.add_option("-d", "--debug",
+        dest = "debug",
+        action = "store_true",
+        help = "Turn debug logging on.")
+parser.add_option("-o", "--outdir",
+        dest = "outdir",
+        help = "Output directory (default: %default)")
+parser.add_option("-R", "--runsfile", "--runcombs",
+        dest = "runsfile",
+        help = "File with run combinations. Only the first run combination"
+               " is taken.(default: %default)")
+parser.add_option("--plotmode",
+        dest = "plotmode",
+        type = "choice",
+        choices = ("extremal", "colormap", "colormaplim", "colormapobslim"),
+        help = "The type of plots. (default: %default)")
+
+parser.add_option("--splines",
+        dest = "splines",
+        action = "store_true",
+        help = "Connect points by splines in extremal plot mode (default).")
+parser.add_option("--no-splines",
+        dest = "splines",
+        action = "store_false",
+        help = "Don't connect points by splines in extremal plot mode.")
+
+parser.add_option("--legend",
+        dest = "legend",
+        action = "store_true",
+        help = "Put a legend on each plot. (default)")
+parser.add_option("--no-legend",
+        dest = "legend",
+        action = "store_false",
+        help = "Do not show a legend.")
+
+parser.add_option("--table",
+        action = "store_true",
+        help = "Store a tex-fragment table of sensitivity values for one-bin"
+               " observables in '/tmp/sens.table'.")
+
+parser.add_option("--logy",
+        dest = "logy",
+        action = "store_true",
+        help = "Log y-axis scaling for extremal plot mode.")
+
+parser.add_option("--definition",
+        type = "choice",
+        choices = ("old", "original", "relslope", "slope"),
+        help = "Sensitivity definition (default: %default)")
+
+parser.add_option("--pf", "--paramsfile",
+        dest = "paramsfile",
+        help = "File with the parameter values.")
+parser.add_option("--pv", "--paramsvector",
+        dest = "paramsvector",
+        help = "Parameter values as comma-separated list. E.g."
+            " PAR1=42.0,PAR2=0.23 .")
+
+parser.set_defaults(
+        debug = False,
+        outdir = "./sensitivities/",
+        runsfile= "runcombs.dat",
+        plotmode = "extremal",
+        splines = True,
+        legend = True,
+        logy = False,
+        table = False,
+        definition = "slope"
+        )
+
+interpolation.addCLOptions(parser)
+RR.addDataCLOptions(parser)
+
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+if opts.debug:
+    logging.getLogger().setLevel(logging.DEBUG)
+
+# 
+# TODO:
+# This class should be put somewhere under professor/ in the future.
+# 
+def addmethodattribute(attrname, attrvalue):
+    def newdecorator(method):
+        setattr(method, attrname, attrvalue)
+        return method
+    return newdecorator
+
+class SensCalculator(interpolation.InterpolationSet):
+    """Sensitivity calculator built on top of an InterpolationSet
+
+    Several sensitivtiy definitions are implemented. For more information
+    about the implemented definitions or to use different definitions see
+    the setSensitivityDefinition method.
+
+    The basic method to get sensitivity information is arraySensitivity()
+    that returns an 2D array of sensitivities of one observable on one
+    parameter.
+
+    extremalSensitivity() is a convenience method to get signed extremal
+    sensitivities for one observable on one parameter.
+    """
+    def __init__(self, ipolset, deltaP):
+        super(SensCalculator, self).__init__(ipolset.center,
+                ipolset.runskey, ipolset.ipolmethod, ipolset)
+        self.deltaP = deltaP
+        self.parampoint = self.center
+        # initialize bin sensitivity definition
+        self.binSensitivity = self._oldSensitivity
+
+    def setSensitivityDefinition(self, definition):
+        if definition == "slope":
+            self.binSensitivity = self._slopeSensitivity
+        elif definition == "relslope":
+            self.binSensitivity = self._relSlopeSensitivity
+        elif definition == "old":
+            self.binSensitivity = self._oldSensitivity
+        elif definition == "original":
+            self.binSensitivity = self._originalSensitivity
+        else:
+            raise ValueError("Unknown sensitivity definition: %s!" % (definition))
+
+    def getSensitivityDefinition(self):
+        return self.binSensitivity.definition
+
+    def setParampoint(self, params, scaled=False):
+        """Set the default parameter values for sensitivity calculation.
+
+        These values are used for the location in parameter space when the
+        sensitivities are calculated for one parameter.
+
+        params  -- Either a  {name => value} dictionary with the values, or
+                a ParamPoint instance.
+        scaled  -- If params is a dictionary, this flag indicates if the
+                values are scaled to the unit-hypercube or not.
+        """
+        if type(params) == dict:
+            self.parampoint = parameter.ParameterPoint(params,
+                    self.scaler, scaled)
+            logging.debug("setting parameter point from dict: %s"
+                    " (scaled=%s): %s" % (params, scaled, self.parampoint))
+        elif type(params) == parameter.ParameterPoint:
+            logging.debug("setting parameter point from ParameterPoint: %s" % (params))
+            self.parampoint = params
+        else:
+            raise TypeError("Argument `params' must be either a dict or a"
+                    "ParameterPoint, but got type %s !" % (type(param)))
+
+    # TODO: parameter values of the other parameters
+    def arraySensitivity(self, observable, param, parbincenters):
+        """Return sensitivity of observable on param as 2D array.
+
+        The return value is a 2D numpy array:
+            axis 0 -> observable bin index
+            axis 1 -> parameter bin index
+        e.g.
+            >>> ret = sc.sensitivityArray(...)
+            >>> # get the sensitivity of obs-bin #3 at parameter location #5
+            >>> ret[3,5]
+
+        observable  -- The observable name.
+        param       -- The parameter name.
+        parbincenters  -- The parameter points to calculate sensitivities
+                    at as numpy.array.
+        """
+        logging.debug("Calculating sensitivity of obs %s on param %s at %s."
+                % (observable, param, parbincenters))
+        logging.debug("Using sensitivity definition: %s."
+                % (self.binSensitivity.definition))
+        # check that the distance of the parameter bins is greater than our
+        # deltaP for sensitivitiy calculation
+        if (len(parbincenters) > 1 and
+            ((parbincenters[1:] - parbincenters[:-1]).min() < self.deltaP)):
+            logging.warn("Minimal distance of parameter bins is smaller than"
+                    " deltaP for sensitivitiy calculation!")
+            logging.warn("Continuing anyway...")
+        subset = self.getObservableBins(observable)
+        ret = numpy.zeros((len(subset), len(parbincenters)))
+        for i, binid in enumerate(subset.sortedBinIDs()):
+            binipol = self[binid]
+            for j, par in enumerate(parbincenters):
+                pindex = self.scaler.getIndex(param)
+                pscaled = self.parampoint.getScaled()
+                pscaled[pindex] = par
+                ppoint = parameter.ppFromList(pscaled, self.scaler,
+                        scaled=True)
+                sens = self.binSensitivity(binipol, param, ppoint)
+                ret[i,j] = sens
+        return ret
+
+    def extremalSensitivity(self, observable, param, parbincenters,
+            retstd=False):
+        """Return extremal sensitivity of observable on param.
+
+        Sensitivities are first calculated by arraySensitivity and then the
+        array is reduced to a 1D-array with the signed extremal values.
+
+        If retstd is True a second array with the standard deviation values
+        of the sensitivity samples for each bin.
+
+        The return value is a 1D numpy array:
+            axis 0 -> observable bin index
+
+        observable  -- The observable name.
+        param       -- The parameter name.
+        parbincenters  -- The parameter points to calculate sensitivities
+                    at.
+        retstd      -- Additionaly return the standard deviation of the
+                    sensitivitiy samples.
+        """
+        a = self.arraySensitivity(observable, param, parbincenters)
+        mins = a.min(1)
+        maxs = a.max(1)
+        extremals = numpy.zeros(len(mins))
+        for i in xrange(len(mins)):
+            if abs(mins[i]) > abs(maxs[i]):
+                extremals[i] = mins[i]
+            else:
+                extremals[i] = maxs[i]
+        if retstd == True:
+            return extremals, a.std(1, ddof=1)
+        else:
+            return extremals
+
+    # Sensitivity is defined as
+    # { \delta(MC)/MC }/{ \delta(P_i)/P_i }
+    @addmethodattribute("definition", "original")
+    def _originalSensitivity(self, binipol, param, ppoint):
+        """Calculate the sensitivity on param of binipol at ppoint.
+
+        Sensitivity is defined as:
+            { \delta(MC)/MC } / { \delta(P_i)/P_i }
+        This means that with constant slope dMC/dp the sensitivity is not
+        constant but proportional to p/MC !
+        """
+        pindex = ppoint.getIndex(param)
+        # build the new parameter point as scaled numpy array
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus[pindex] += self.deltaP
+        MC_0 = binipol.getValue(ppoint.getScaled(), error=False)
+        MC_plus = binipol.getValue(ppoint_plus, error=False)
+        return (MC_plus-MC_0)*ppoint.getScaled()[pindex]/(MC_0 * self.deltaP)
+
+    # Sensitivity is defined as
+    # { \delta(MC)/MC }/{ (P_i + \delta(P_i))/P_i }
+    @addmethodattribute("definition", "old")
+    def _oldSensitivity(self, binipol, param, ppoint):
+        """Calculate the sensitivity on param of binipol at ppoint.
+
+        Sensitivity is defined as:
+            { \delta(MC)/MC } / { (P_i + \delta(P_i))/P_i }
+        This is the definition we used in the old sensistivity code.
+        """
+        pindex = ppoint.getIndex(param)
+        # build the new parameter point as scaled numpy array
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus[pindex] += self.deltaP
+        MC_0 = binipol.getValue(ppoint.getScaled(), error=False)
+        MC_plus = binipol.getValue(ppoint_plus, error=False)
+        return ( (MC_plus-MC_0)*ppoint.getScaled()[pindex]
+                / (MC_0 * ppoint_plus[pindex]) )
+
+    # Sensitivity is defined as
+    # { \delta(MC)/MC } / \delta(P_i)
+    @addmethodattribute("definition", "relslope")
+    def _relSlopeSensitivity(self, binipol, param, ppoint):
+        """Calculate the sensitivity on param of binipol at ppoint.
+
+        Sensitivity is defined as:
+            { \delta(MC)/MC } / \delta(p_i)
+        This means that with constant slope dMC/dp the sensitivity is not
+        constant but proportional to 1/MC !
+        """
+        pindex = ppoint.getIndex(param)
+        # build the new parameter point as scaled numpy array
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus[pindex] += self.deltaP
+        MC_0 = binipol.getValue(ppoint.getScaled(), error=False)
+        MC_plus = binipol.getValue(ppoint_plus, error=False)
+        return (MC_plus-MC_0)/(MC_0 * self.deltaP)
+
+    # Sensitivity is defined as
+    # \delta(MC) / \delta(P_i)
+    # i.e. the slope
+    @addmethodattribute("definition", "slope")
+    def _slopeSensitivity(self, binipol, param, ppoint):
+        """Calculate the sensitivity on param of binipol at ppoint.
+
+        Sensitivity is defined as:
+            \delta(MC) / \delta(P_i)
+        i.e. the slope.
+        """
+        pindex = ppoint.getIndex(param)
+        # build the new parameter point as scaled numpy array
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus = ppoint.getScaled()
+        ppoint_plus[pindex] += self.deltaP
+        MC_0 = binipol.getValue(ppoint.getScaled(), error=False)
+        MC_plus = binipol.getValue(ppoint_plus, error=False)
+        return (MC_plus-MC_0)/self.deltaP
+
+    def getSensFormulaSign(self):
+        d = self.getSensitivityDefinition()
+        if d == "slope":
+            return "S^\mathrm{slope}_i"
+        if d == "relslope":
+            return "S^\mathrm{rel}_i"
+        return d
+
+
+## Check ipol directory.
+ipoldir = RR.getDataDirectories(opts)["ipol"]
+if ipoldir is None:
+    logging.error(parser.format_help())
+    logging.error("No interpolation directory given! Use the --datadir or"
+            " --ipoldir option for this!")
+    sys.exit(1)
+elif (not os.path.isdir(ipoldir) or
+    not os.access(ipoldir, os.R_OK|os.X_OK)):
+    logging.error("Interpolation data directory does not exist or is not a"
+            " directory or has bad permissions: %s" % (ipoldir))
+    logging.error("Exiting!")
+    sys.exit(1)
+
+## Check output directory.
+if os.path.exists(opts.outdir):
+    if (not os.path.isdir(opts.outdir)
+            or not os.access(opts.outdir, os.R_OK|os.X_OK)):
+        logging.error("Output directory for sensitivity plots is not"
+                " a directory or has bad permissions: %s" % (opts.outdir))
+        logging.error("Exiting!")
+        sys.exit(1)
+else:
+    logging.info("Creating output directory for sensitivity plots:"
+            " %s" % (opts.outdir))
+    os.makedirs(opts.outdir)
+logging.info("Output directory for sensitivity plots: %s" % (
+    opts.outdir))
+
+
+## Check the parameter file/vector.
+paramdict = None
+if opts.paramsvector and opts.paramsfile:
+    logging.error(parser.format_help())
+    logging.error("Both options --paramsfile and --paramsvector given:"
+            " Cannot decide, please give only one option!")
+    sys.exit(1)
+elif opts.paramsvector is not None:
+    paramdict = {}
+    tokens = opts.paramsvector.split(",")
+    for t in tokens:
+        name, val = t.split("=")
+        paramdict[name] = float(val)
+elif opts.paramsfile is not None:
+    paramdict = parameter.readParameterFile(opts.paramsfile)
+
+
+## Get the configured interpolation class.
+try:
+    IpolCls = interpolation.getInterpolationClass(opts.ipolmethod,
+            opts.useweave)
+    logging.info("Using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    logging.error("Problem getting interpolation method: %s" % (e))
+    logging.error("Exiting!")
+    sys.exit(1)
+
+
+## Select the observables for the sensitivity calculations.
+try:
+    obsnames = RR.readObservableFile(opts.observablefile).keys()
+except Exception, e:
+    logging.error("Problem when reading observable file: %s" % (e))
+    logging.error("Exiting!")
+    sys.exit(1)
+logging.debug("loaded observable file from %s: %s" % (
+        opts.observablefile, obsnames))
+
+## Load AIDA-path => title dictionary.
+histoinfos = RR.getHistosInfo(obsnames)
+logging.debug("Histogram informations: %s" % (histoinfos))
+
+## Load run combinations
+logging.debug("Using %s as runsfile" % (opts.runsfile))
+try:
+    runfile = open(opts.runsfile, "r")
+except Exception, e:
+    logging.error("Error while opening run combination file %s: %s" %
+            (opts.runsfile, e))
+    sys.exit(1)
+runs = runfile.readline().split()
+runfile.close()
+logging.info("Loaded the first run combination from %s" % (opts.runsfile))
+
+
+ipolfname = RR.getIpolFilename(IpolCls, runs)
+ipolfpath = os.path.join(ipoldir, ipolfname)
+if not os.path.exists(ipolfpath):
+    logging.error("Could not find interpolation file for runs %s: %s" % (
+        sorted(runs), ipolfname))
+    logging.error("Please call prof-interpolate with the correct"
+            " arguments first!")
+    logging.error("Exiting!")
+    sys.exit(1)
+## Load interpolation set in a SensCalculator.
+senscal = SensCalculator(interpolation.InterpolationSet.fromPickle(ipolfpath),
+        0.01)
+if paramdict is not None:
+    senscal.setParampoint(paramdict, False)
+
+ipolhistonames = senscal.getHistogramNames()
+## Check that we have all needed interpolations.
+for obs in obsnames:
+    if obs not in ipolhistonames:
+        logging.error("Could not find interpolation for histogram %s"
+                " in file %s !" % (obs, ipolfname))
+        logging.error("Please call prof-interpolate with the correct"
+                " arguments first!")
+        logging.error("Exiting!")
+        sys.exit(1)
+
+## Finished parsing options.
+## Define some plotting helper functions and then do the plotting.
+
+
+def plotExtremal(subplot, observable, stylegen):
+    """Plot the extremal sensitivities of observable for all parameters.
+
+    subplot  -- the matplotlib.Axes we plot in.
+    observable  -- the observable identifier (i.e. AIDA path).
+    symcycle, colcycle  -- itertools.cycle's to get symbols and colors for
+            plots.
+    """
+    # get the observable bin centers
+    obsbincenters = []
+    for binid in senscal.getObservableBins(observable).sortedBinIDs():
+        obsbincenters.append(senscal[binid].getBinCenter())
+    if opts.table and (len(obsbincenters) == 1):
+        global tablefile
+        # make the obs name column 70 characters wide (70 is an educated
+        # guess ;)
+        tablefile.write(histoinfos[obs]["Title"].ljust(70))
+    logging.debug("I got %i observable bins: %s" % (len(obsbincenters),
+                            obsbincenters))
+    # calculate parameter bin centers
+    nparbins = max(10, len(obsbincenters))
+    parbincenters, width = numpy.linspace(0.0, 1.0,
+                            nparbins,
+                            endpoint = False, retstep = True)
+    parbincenters += 0.5*width
+    logging.debug("Created %i parameter bins between 0.0 and 1.0: %s" % (
+        len(parbincenters), parbincenters))
+    for param in senscal.getParameterNames():
+        dotstyle = stylegen.next()
+        splinestyle = dotstyle.copy()
+
+        dotstyle["label"] = param
+        dotstyle["linestyle"] = ""
+
+        splinestyle["marker"] = ""
+        splinestyle["label"] = "_nolabel_"
+
+        sensitivities = senscal.extremalSensitivity(observable, param,
+                            parbincenters)
+        subplot.plot(obsbincenters, sensitivities, **dotstyle)
+
+        if opts.table and (len(obsbincenters) == 1):
+            tablefile.write(" & %.3g" % (sensitivities[0]))
+
+        if opts.splines and len(obsbincenters) > 3:
+            # calculate splines (k=order, s=smoothness)
+            spline_coeffs = interpolate.splrep(obsbincenters, sensitivities,
+                    k=3, s=0)
+            xfine = numpy.linspace(obsbincenters[0], obsbincenters[-1], 100,
+                    endpoint=True)
+            yfine = interpolate.splev(xfine, spline_coeffs)
+            subplot.plot(xfine, yfine, **splinestyle)
+
+    if opts.table and (len(obsbincenters) == 1):
+        tablefile.write(" \\\\\n")
+
+
+def getColormapData(observable, param):
+    # get the observable range
+    # TODO: this does not account for gaps in the binning!
+    obsedges = []
+    for binid in senscal.getObservableBins(observable).sortedBinIDs():
+        obsedges.append(senscal[binid].binrange[0])
+    obsedges.append(senscal[binid].binrange[1])
+    logging.debug("I got %i observable bin edges: %s" % (len(obsedges), obsedges))
+    # calculate parameter bin edges and centers
+    nparbins = max(10, len(obsedges)-1)
+    parbinedges, width = numpy.linspace(0.0, 1.0,
+                            nparbins + 1,
+                            endpoint = True, retstep = True)
+    parbincenters = parbinedges[:-1] + 0.5*width
+    logging.debug("Created %i parameter bins between 0.0 and 1.0: %s" % (
+        len(parbincenters), parbincenters))
+    sensitivities = senscal.arraySensitivity(observable, param, parbincenters)
+    logging.debug("Scaled parbinedges: %s" % (parbinedges))
+    parbinedges = senscal.scaler.descaleComponent(parbinedges, param)
+    logging.debug("Descaled parbinedges: %s" % (parbinedges))
+
+    # X, Y = numpy.meshgrid(numpy.array(obsedges), parbinedges)
+    return obsedges, parbinedges, sensitivities
+    # return subplot.pcolor(X, Y, sensitivities.transpose())
+
+
+def getExtremalLimits(vmin, vmax):
+    """Return the interval limits with the greater extremum as tuple."""
+    if abs(vmin) > vmax:
+        return vmin, -vmin
+    else:
+        return -vmax, vmax
+
+
+logging.info("Setting sensitivitiy definition: %s." % (opts.definition))
+senscal.setSensitivityDefinition(opts.definition)
+
+tablefile = None
+
+if opts.plotmode == "extremal":
+    if opts.table:
+        tablefile = open("/tmp/sens.table", "w")
+        tablefile.write(opts.definition + " & "
+                        + " & ".join(senscal.getParameterNames())
+                        + "\\\\\n")
+
+    for i, obs in enumerate(sorted(obsnames)):
+        logging.info("Starting observable %i/%i: %s." % (i+1,
+                    len(obsnames), obs))
+        # replace "/"s in observable name by "_"s for file name
+        fpath = os.path.join(opts.outdir, obs.replace("/","_").strip("_")
+                                          + "_ext_" + opts.definition
+                                          + ".pdf")
+        stylegen = StyleGenerator(
+                marker = itertools.cycle(['o', 'd', 'v', '*', '^', 'p', '<']),
+                color = itertools.cycle(['r', 'g', 'b', 'k']),
+                linestyle = itertools.cycle([":", "--", "-."]))
+        fig = pyplot.figure(1, facecolor="w")
+        sub = fig.add_subplot(1,1,1)
+        plotExtremal(sub, obs, stylegen)
+
+        if opts.legend:
+            legendbox = sub.legend(loc="best", numpoints=1
+                                  # , borderpad=0.0
+                                  , borderaxespad=0.0
+                                  )
+            legendbox.draw_frame(False)
+
+            # labels = [line.get_label() for line in sub.lines]
+            # legendbox = fig.legend(sub.lines, labels, "upper right", numpoints=1)
+            # alpha does not work :(
+            legendbox.set_alpha(0.0)
+            # legendbox.set_zorder(-1)
+
+        # draw line at sens=0.0 after the legend is drawn
+        sub.axhline(y=0.0, linestyle=":", label="_nolabel_")
+
+        sub.set_xlabel(histoinfos[obs]["Title"])
+        # sub.set_ylabel("Extremal sensitivity (" + opts.definition + ")")
+        sub.set_ylabel(r"$\mathrm{extr}\," + senscal.getSensFormulaSign() + "$")
+        if opts.logy:
+            sub.set_yscale("log")
+
+        logging.info("Saving file %s" % (fpath))
+        pyplot.savefig(fpath)
+        fig.clf()
+
+elif opts.plotmode == "colormap":
+    # import guppy
+    # hp = guppy.hpy()
+    # heapstart = hp.heap()
+    paramnames = senscal.getParameterNames()
+    logging.info("Calculating and plotting sensitivities...")
+    for i, obs in enumerate(sorted(obsnames)):
+        logging.info("Starting observable %i/%i: %s." % (i+1,
+                    len(obsnames), obs))
+        for param in paramnames:
+        # replace "/"s in observable name by "_"s for file name
+            fpath = os.path.join(opts.outdir,
+                obs.replace("/","_").strip("_") + "_"
+                + param.replace("/", "_") + "_cm_" + opts.definition
+                + ".pdf")
+                # "cm_" + obs.replace("/","_") + "_" + param + ".pdf")
+            fig = pyplot.figure(1, facecolor="w")
+            sub = fig.add_subplot(1,1,1)
+
+            obsedges, parbinedges, sensitivities = getColormapData(obs, param)
+            vmin, vmax = getExtremalLimits(sensitivities.min(), sensitivities.max())
+            X, Y = numpy.meshgrid(numpy.array(obsedges), parbinedges)
+            colplot = sub.pcolor(X, Y, sensitivities.transpose(),
+                    cmap = pyplot.cm.RdBu, vmin=vmin, vmax=vmax)
+            colbar = fig.colorbar(colplot)
+
+            # sub.set_xlabel(histotitles[obs])
+            sub.set_xlabel(histoinfos[obs]["Title"])
+            sub.set_ylabel(param)
+            colbar.set_label("Sensitivity")
+            logging.info("  Saving file %s" % (fpath))
+            pyplot.savefig(fpath)
+            fig.clf()
+
+        # heapnow = hp.heap()
+        # logging.warn("Heap difference:\n%s" % (heapnow - heapstart))
+        # logging.warn("nparray references:\n%s" % (
+            # ((heapnow - heapstart)&numpy.ndarray).byvia) )
+
+elif opts.plotmode == "colormapobslim":
+    paramnames = senscal.getParameterNames()
+    logging.info("Calculating and plotting sensitivities...")
+    for i, obs in enumerate(sorted(obsnames)):
+        logging.info("Starting observable %i/%i: %s." % (i+1,
+                    len(obsnames), obs))
+        plotdata = {}
+        maxsens = 0.0
+        minsens = 0.0
+        logging.info("  Calculating extremal sensitivities...")
+        for param in paramnames:
+            obsedges, parbinedges, sensitivities = getColormapData(obs, param)
+            maxsens = max(maxsens, sensitivities.max())
+            minsens = min(minsens, sensitivities.min())
+            if maxsens == minsens:
+                print obsedges, parbinedges, sensitivities
+            plotdata[param] = obsedges, parbinedges, sensitivities
+        logging.debug("Extremal overall sensitivities: max=%f min=%f" % (
+                            maxsens, minsens))
+        minsens, maxsens = getExtremalLimits(minsens, maxsens)
+        logging.debug("Extremal plotting sensitivities: max=%f min=%f" % (
+                            maxsens, minsens))
+
+        for param in paramnames:
+        # replace "/"s in observable name by "_"s for file name
+            fpath = os.path.join(opts.outdir,
+                obs.replace("/","_").strip("_") + "_"
+                + param.replace("/", "_") + "_cmobs_" + opts.definition
+                + ".pdf")
+                # "cmobs_" + obs.replace("/","_") + "_" + param + ".pdf")
+            fig = pyplot.figure(1, facecolor="w")
+            sub = fig.add_subplot(1,1,1)
+
+            obsedges, parbinedges, sensitivities = plotdata[param]
+
+            X, Y = numpy.meshgrid(numpy.array(obsedges), parbinedges)
+            colplot = sub.pcolor(X, Y, sensitivities.transpose(),
+                    cmap = pyplot.cm.RdBu, vmin=minsens, vmax=maxsens)
+            colbar = fig.colorbar(colplot)
+
+            # sub.set_xlabel(histotitles[obs])
+            sub.set_xlabel(histoinfos[obs]["Title"])
+            sub.set_ylabel(param)
+            colbar.set_label("Sensitivity")
+            logging.info("  Saving file %s" % (fpath))
+            pyplot.savefig(fpath)
+            fig.clf()
+
+elif opts.plotmode == "colormaplim":
+    paramnames = senscal.getParameterNames()
+    # fill nested dict {obsname => {param => (X, Y, sensitivities)}}
+    # plotdata = {}
+    maxsens = -1.0e18
+    minsens = 1.0e18
+    logging.info("Calculating extremal sensitivities...")
+    for i, obs in enumerate(sorted(obsnames)):
+        logging.info("  for observable %i/%i: %s" % (i+1, len(obsnames), obs))
+        # plotdata[obs] = {}
+        for param in paramnames:
+            # senscal.setSensitivityDefinition("oldstyle")
+            # X, Y, sensitivities = getColormapData(obs, param)
+            # plotdata[obs][param] = (X, Y, sensitivities)
+            sensitivities = getColormapData(obs, param)[2]
+            # update max-/minsens
+            maxsens = max(maxsens, sensitivities.max())
+            minsens = min(minsens, sensitivities.min())
+
+    logging.debug("Extremal overall sensitivities: max=%f min=%f" % (
+                        maxsens, minsens))
+    if numpy.sign(maxsens) == numpy.sign(minsens):
+        logging.warn("Unexpected: all sensitivities have the same sign,"
+                " colors may be odd!")
+    else:
+        minsens, maxsens = getExtremalLimits(minsens, maxsens)
+    logging.debug("Extremal plotting sensitivities: max=%f min=%f" % (
+                        maxsens, minsens))
+
+    logging.info("Plotting sensitivities...")
+    for i, obs in enumerate(sorted(obsnames)):
+        logging.info("Starting observable %i/%i: %s." % (i+1,
+                    len(obsnames), obs))
+        for param in paramnames:
+        # replace "/"s in observable name by "_"s for file name
+            fpath = os.path.join(opts.outdir,
+                obs.replace("/","_").strip("_") + "_"
+                + param.replace("/", "_") + "_cmlim_" + opts.definition
+                + ".pdf")
+                # "cmlim_" + obs.replace("/","_") + "_" + param + ".pdf")
+            fig = pyplot.figure(1, facecolor="w")
+            sub = fig.add_subplot(1,1,1)
+
+            # obsedges, parbinedges, sensitivities = plotdata[obs][param]
+            obsedges, parbinedges, sensitivities = getColormapData(obs, param)
+            X, Y = numpy.meshgrid(numpy.array(obsedges), parbinedges)
+            colplot = sub.pcolor(X, Y, sensitivities.transpose(),
+                    vmin=minsens, vmax=maxsens)
+            colbar = fig.colorbar(colplot)
+
+            # sub.set_xlabel(histotitles[obs])
+            sub.set_xlabel(histoinfos[obs]["Title"])
+            sub.set_ylabel(param)
+            colbar.set_label("Sensitivity")
+            logging.info("  Saving file %s" % (fpath))
+            pyplot.savefig(fpath)
+            fig.clf()

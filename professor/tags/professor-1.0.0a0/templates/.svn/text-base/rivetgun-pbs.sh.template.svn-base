@@ -1,0 +1,8 @@
+#!/bin/bash 
+##PBS -q short.q 
+##PBS -m abe 
+##PBS -N @PROF_RIVET_RUN@
+echo "Running Professor rivetgun command"
+@PROF_RIVET_CMD@
+echo "Finished Professor rivetgun command"
+exit 0

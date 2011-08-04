@@ -1,0 +1,52 @@
+# -*-shell-script-*-
+
+[Meta]
+RootName: @hepforge.org/rivet:$SOFTWAREVERSION
+DisplayName: Rivet
+ShortName: rivet
+Maintainer: Andy Buckley <andy.buckley@durham.ac.uk>
+Packager: Andy Buckley <andy.buckley@durham.ac.uk>
+Summary: Validation tool for high-energy physics event generators
+URL: http://projects.hepforge.org/rivet/
+License: GNU General Public License, Version 2
+SoftwareVersion: 2.0.0a0
+Repository: http://www.hepforge.org/archive/rivet/rivet.xml
+PackageVersion: 1
+AutopackageTarget: 1.2
+# InterfaceVersion: 0.0
+
+[BuildPrepare]
+prepareBuild
+
+[BuildUnprepare]
+unprepareBuild
+
+[Globals]
+# export MY_VAR=1
+
+[Imports]
+echo '*' | import
+
+[Prepare]
+require @hepforge.org/rivet-data 2.0.0a0
+require @hepforge.org/libfastjet >= 2.3
+require @hepforge.org/libhepmc >= 2.3
+require @hepforge.org/libgsl XXX
+
+recommends @hepforge.org/rivet-python 2.0.0a0
+recommends @hepforge.org/rivet-dev 2.0.0a0
+
+#{
+recommends @hepforge.org/rivet-bin 2.0.0a0
+recommends @hepforge.org/agile >= 1.0
+recommends @hepforge.org/lhapdf ANY
+#}
+
+#removeOwningPackage $PREFIX/bin/my-program
+
+[Install]
+installExe bin/*
+installLib lib/*
+
+[Uninstall]
+uninstallFromLog

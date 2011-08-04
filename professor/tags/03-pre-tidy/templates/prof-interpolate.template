@@ -1,0 +1,19 @@
+#! /usr/bin/env bash 
+#$ -S /bin/bash
+#PBS -N profi-$PROF_JOB
+
+source \$HOME/.bashrc
+
+echo "Running Professor interpolation command"
+
+
+prof-interpolate \
+  --mcdir $PROF_MCDIR \
+  --refdir $PROF_REFDIR \
+  --obsfile $PROF_OBSFILE \
+  --runsfile $PROF_RUNSFILE \
+  --ipoldir $PROF_IPOLDIR \
+  &> $PROF_OUTDIR/$PROF_JOB/interpolate.log
+
+
+exit 0

@@ -1,0 +1,36 @@
+#! /usr/bin/env python
+
+usage = """\
+Print out all minimization results in supplied XML results files,
+plus a small summary in terms of weighted means of all the results.
+"""
+
+import sys
+from professor.minimize import result
+
+from optparse import OptionParser
+parser = OptionParser(usage=usage)
+opts, args = parser.parse_args()
+
+for xmlfile in args:
+    try:
+        rs = result.ResultList.fromXML(xmlfile)
+    except IndexError:
+        print __doc__
+        print "Error: bad number of arguments!"
+        sys.exit(1)
+    except IOError:
+        print __doc__
+        print "Error: file not found!"
+        sys.exit(1)
+
+    nruns = rs.getRunCounts()
+    for n in sorted(nruns):
+        print 20*"-" + "\n"
+        print "Minimization results from %s that use %i runs:\n\n" % (xmlfile, n)
+        for r in rs:
+            if len(r.runs) == n:
+                print r , "\n"
+
+    print 80*"*" + "\n"
+    print rs

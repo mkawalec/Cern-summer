@@ -1,0 +1,154 @@
+#! /usr/bin/env python
+# This should work on python2.3 for SL4 support!
+"""prof-failed-runs [DIRECTORY]
+
+Checks in a output directory tree for directories containing an .../out.aida
+file and prints out the maximal hypercube of these successful runs.
+
+If DIRECTORY is omitted the current working directory (./) is inspected.
+
+Additionally files with all failed and successful parameters
+`./failed.params' and `./worked.params' are opened.  Each row represents the
+parameters for one failed run. You can use this to find any systematic in
+the distribution of these parameters.
+
+You can use this snippet to get histograms of the failed/worked parameters in a IPython matplotlib/Professor shell:
+
+In [1]: worked = loadtxt("worked.params")
+In [2]: failed = loadtxt("failed.params")
+In [3]: pnames = sorted(readParameterFile("sherpa-flav6.params").keys())
+In [7]: for i, pn in enumerate(pnames):
+   ...:     ax = subplot(len(pnames), 1, i+1)
+   ...:     hist(failed[:,i], facecolor="r")
+   ...:     hist(worked[:,i], facecolor="g", alpha=0.5)
+   ...:     ax.set_ylabel(pn)
+
+To move failed run directories into a quarantaine directory, use:
+
+% prof-failed-runs mc/ | grep "^Direct.*is no successful MC"  | cut -d " " -f 2 | xargs mv -t mc.failed
+"""
+
+import sys
+import os
+
+if not hasattr(__builtins__, "sorted"):
+    def sorted(iterable):
+        rtn = iterable
+        rtn.sort()
+        return rtn
+
+class NoMCDirectory(Exception):
+    pass
+
+class NoAIDAFile(Exception):
+    def __init__(self, path, pardict):
+        Exception.__init__(self, "Directory %s is no successful MC output"
+                "directory: no out.aida file found." % (path))
+        self.paramdict = pardict
+
+def CheckDir(path):
+    """Check a directory raise an error or return the parameter dict."""
+    parfile = os.path.join(path, "used_params")
+    aida = os.path.join(path, "out.aida")
+
+    if not os.path.exists(parfile):
+        raise NoMCDirectory("Directory %s is no MC output directory: no"
+                " used_params file found." % (path))
+
+    # read the parameter file
+    pardict = {}
+    for line in open(parfile, "r"):
+        line = line.strip()
+        if len(line) == 0 or line.startswith("#"):
+            continue
+        tokens = line.split()
+        name = tokens[0]
+        value = float(tokens[1])
+        pardict[name] = value
+
+    if not os.path.exists(aida):
+        raise NoAIDAFile(path, pardict)
+    return pardict
+
+if "-h" in sys.argv or "--help" in sys.argv:
+    print __doc__
+    sys.exit(0)
+
+try:
+    basedir = sys.argv[1]
+except IndexError:
+    basedir = "."
+
+# parameter name  => (min, max)
+gpardict = {}
+# parameter name  => [failed1, failed2, ...]
+gfaileddict = {}
+gworkeddict = {}
+
+nsubdirs = 0
+nsuccsubdirs = 0
+## Run over all subdirectories.
+for p in sorted(filter(os.path.isdir,
+        [os.path.join(basedir, i) for i in os.listdir(basedir)])):
+    try:
+        nsubdirs += 1
+        pardict = CheckDir(p)
+    except NoMCDirectory, e:
+        print e
+        nsubdirs -= 1
+        continue
+    except NoAIDAFile, e:
+        print e
+        if len(gfaileddict) == 0:
+            for name in e.paramdict.keys():
+                gfaileddict[name] = []
+        for name in e.paramdict.keys():
+            gfaileddict[name].append(e.paramdict[name])
+        continue
+
+
+    nsuccsubdirs += 1
+    # if len(gpardict) == 0:
+        # for name, val in pardict.items():
+            # gpardict[name] = (val, val)
+    # else:
+        # for name, val in pardict.items():
+            # oldmin, oldmax = gpardict[name]
+            # gpardict[name] = (min(oldmin, val),
+                              # max(oldmax, val))
+    if len(gworkeddict) == 0:
+        for name in pardict.keys():
+            gworkeddict[name] = []
+    for name, val in pardict.items():
+        gworkeddict[name].append(val)
+
+print "# %i of %i MC runs seem to be successful" % (nsuccsubdirs, nsubdirs)
+for pname in sorted(gworkeddict.keys()):
+    print "%s    %f    %f" % (pname, min(gworkeddict[pname]),
+                              max(gworkeddict[pname]))
+# for pname in sorted(gpardict.keys()):
+    # print "%s    %f    %f" % (pname, gpardict[pname][0], gpardict[pname][1])
+
+if len(gfaileddict):
+    fname = "failed.params"
+    print "Opening failed parameter file:", fname
+    failedfile = open(fname, "w")
+    pnames = sorted(gfaileddict.keys())
+    failedfile.write("# " + "  ".join(pnames) + "\n")
+    for i in xrange(len(gfaileddict.values()[0])):
+        for name in pnames:
+            failedfile.write("%e  " % (gfaileddict[name][i]))
+        failedfile.write("\n")
+    failedfile.close()
+
+if len(gworkeddict):
+    fname = "worked.params"
+    print "Opening worked parameter file:", fname
+    workedfile = open(fname, "w")
+    pnames = sorted(gworkeddict.keys())
+    workedfile.write("# " + "  ".join(pnames) + "\n")
+    for i in xrange(len(gworkeddict.values()[0])):
+        for name in pnames:
+            workedfile.write("%e  " % (gworkeddict[name][i]))
+        workedfile.write("\n")
+    workedfile.close()

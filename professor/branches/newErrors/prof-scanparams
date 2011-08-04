@@ -1,0 +1,204 @@
+#! /usr/bin/env python
+
+#%prog [options] <paramrangefile> <templatefile> [<templatefile> ...]
+usage = \
+"""%prog [options] <paramrangefile>
+
+Sample from a parameter space defined by a set of ranges and 
+write the results to used_params files.
+
+By default, %prog generates points by random sampling from
+the parameter hypercube. The --scan option treats the parameter
+ranges as defining endpoints of a line in param space to be uniformly
+sampled. A "fake reference" point within a central region of 
+the param hypercube for bootstrap testing of Professor when 
+no real reference data is available.
+"""
+
+
+from optparse import OptionParser, OptionGroup
+from professor.tools import parameter, pointsampling
+from professor import minimize
+#import professor.tools.pointsampling, professor.tools.parameter, professor.minimize
+import os, sys, re, logging, commands, glob, shutil, time, random
+import threading, Queue, subprocess, signal
+#import traceback, unittest
+
+PROGPATH = sys.argv[0]
+PROGNAME = os.path.basename(PROGPATH)
+
+
+## Parse command line options
+parser = OptionParser(usage=usage)
+
+parser.add_option("-N", "--num-runs", dest="NUM_RUNS", type=int,
+                  default=1, help="how many parameter space points to run the generator for")
+parser.add_option("--first-run", dest="NUM_FIRST_RUN", type=int,
+                  default=0, help="number given to the first run")
+parser.add_option("-i", "--instantdir", dest="INSTANT_DIR", default=None,
+                  help="professor-out", help="directory into which to write the template instantiations")
+parser.add_option("-o", "--outdir", dest="OUT_DIR",
+                  default="professor-out", help="directory into which to write the generator output")
+parser.add_option("-t", "--timestamp", action="store_true", dest="TIMESTAMP",
+                  default=False, help="add a timestamp prefix to the output directory name")
+
+scangroup = OptionGroup(parser, "Param line scanning")
+scangroup.add_option("-s", "--scan", action="store_true", dest="SCANMODE",
+                     default=False, help="rather than scan randomly, treat param ranges as being endpoints " + \
+                         "of a straight, uniformly sampled line in param space. Requires at least 2 runs to " + \
+                         "work, and more to really make sense. Used to verify MC behaviour around a proposed " + \
+                         "optimum and to compare systematically to other tunes.")
+scangroup.add_option("--scan-range", dest="SCANRANGE", type=float,
+                     default=1.0, help="specify symmetric fraction of the param range from which to sample " + \
+                         "the params in scan mode. Internally, the line is specified by a linear parameter t, " + \
+                         "with t=0,1 corresponding to the specified param range limits: setting the scan " + \
+                         "range param to 1.2 would sample t uniformly from -0.1 to 1.1.")
+scangroup.add_option("--scancenter", dest="SCANCENTER", default=None, help="specify a file that holds a single " + \
+                         "point of the parameter space around which a symmetric hypercube is defined from which " + \
+                         "linescan parameters are obtained.")
+scangroup.add_option("--direction", dest="DIRECTION",
+                     default=False, help="sample along extremal direction, has to be either 'steep' or 'shallow'"
+                     +" need to specify a MinimizationResult via --scancenter")
+scangroup.add_option("--excess", dest="EXCESS",
+                     default=0., help="symmetrically stretch scanline by this fraction")
+parser.add_option_group(scangroup)
+
+refgroup = OptionGroup(parser, "Reference data")
+refgroup.add_option("-R", "--fake-reference", action="store_true", dest="MKREF",
+                    default=False, help="make an extra run as a fake reference point")
+refgroup.add_option("--ref-range", dest="REFRANGE", type=float,
+                    default=0.5, help="specify central fraction of the param range from which to sample the fake reference")
+parser.add_option_group(refgroup)
+
+verbgroup = OptionGroup(parser, "Verbosity control")
+verbgroup.add_option("-V", "--verbose", action="store_const", dest="LOGLEVEL",
+                     default=logging.INFO, const=logging.DEBUG, help="print debug messages")
+verbgroup.add_option("-Q", "--quiet", action="store_const", dest="LOGLEVEL",
+                     default=logging.INFO, const=logging.WARNING, help="be very quiet")
+parser.add_option_group(verbgroup)
+
+(opts, args) = parser.parse_args()
+
+## Set up logging
+logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+
+
+
+## Add timestamp to output dir name
+if opts.TIMESTAMP:
+    outname = os.path.basename(opts.OUT_DIR)
+    outparent = os.path.dirname(opts.OUT_DIR)
+    timestamp = time.strftime("%Y-%m-%d")
+    opts.OUT_DIR = os.path.join(outparent, timestamp + "-" + outname)
+
+
+## Read the params files to get ranges
+if len(args) == 0:
+    logging.error("Need to specify at least one parameter file")
+    exit(1)
+
+temp = [parameter.readParameterFile(i) for i in args]
+
+if len(temp) == 1 and len(temp[0][temp[0].keys()[0]]) == 2:
+    paramranges = temp[0]
+elif len(temp) == 2 and type(temp[0][temp[0].keys()[0]]) == type(
+        temp[1][temp[1].keys()[1]]) == float:
+    paramranges = {}
+    for k in temp[0].keys():
+        paramranges[k] = (temp[0][k], temp[1][k])
+else:
+    logging.error("Check parameter file(s)!")
+    exit(1)
+
+
+## Print out params
+if opts.SCANMODE:
+    logging.info("Parameter end points:")
+else:
+    logging.info("Parameter ranges:")
+for k, v in sorted(paramranges.iteritems()):
+    logging.info("%-10s: %f - %f" % (k, v[0], v[1]))
+
+## Notify re. run conditions
+logging.info("Making %d param sets" % opts.NUM_RUNS)
+
+## Make param sets
+paramsets = {}
+
+### RANDOM SAMPLING
+if not opts.SCANMODE:
+    ## Initialize RNG
+    random.seed()
+    rpg = pointsampling.RandomPointGenerator(paramranges, opts.NUM_RUNS)
+    logging.info("Sampling randomly from hypercube above")
+
+    for i in range(opts.NUM_FIRST_RUN, opts.NUM_FIRST_RUN + opts.NUM_RUNS):
+        runname = "%03d" % i
+        paramsets[runname] = rpg[i - opts.NUM_FIRST_RUN]
+
+
+### UNIFORM LINE SCAN SAMPLING
+else:
+    ## Notify that this is scan mode
+    logging.info("Using linear scan mode: param points will NOT be randomly distributed!")
+    if opts.MKREF:
+        logging.info("Fake refs can't be used in scan mode: skipping fake ref command.")
+    ## hypercube creation
+    if opts.SCANCENTER is not None and len(opts.SCANCENTER.split(','))== 2:
+        reslist, index = opts.SCANCENTER.split(',')
+        logging.info("Sampling from symmetric hypercube, center defined by"
+                + " Min.Result #%s in results file %s"%(index, reslist))
+        minres = minimize.ResultList.fromXML(reslist)[int(index)]
+        cube = pointsampling.SymmetricHypercube\
+            .fromMinimizationResult(paramranges, minres)
+        centered = True
+    elif opts.SCANCENTER is not None:
+        if opts.DIRECTION is not False:
+            logging.error("--direction only works with MinimizationResults")
+            exit(1)
+        logging.info("Sampling from symmetric hypercube, center defined by"
+                     + " parameters given in %s"%opts.SCANCENTER)
+        cube = pointsampling.SymmetricHypercube\
+            .fromFlatFile(paramranges, opts.SCANCENTER)
+        centered = True
+    else:
+        logging.info("Sampling from hypercube defined by parameters above")
+        p1, p2 = {}, {}
+        for k, v  in paramranges.iteritems():
+            p1[k] = v[0]
+            p2[k] = v[1]
+        cube = pointsampling.Hypercube.fromTwoPoints(p1, p2,float(opts.EXCESS))
+        centered = False
+
+    ## Save hypercube to file 
+    #fname = "Hypercube_center_%s_direction_%s" % (str(opts.SCANCENTER), str(opts.DIRECTION))
+    cube.write()
+
+    ## Sample points from hypercube
+    if centered  and opts.DIRECTION is False:
+        logging.info("Sampling through cube along cube's body diagonal")
+        spg = pointsampling.ScanPointGenerator(cube, opts.NUM_RUNS)
+        spg.generateLine()
+    elif centered  and opts.DIRECTION is not False:
+        logging.info("Sampling through cube along %s direction" % opts.DIRECTION)
+        spg = pointsampling.ScanPointGenerator(cube, opts.NUM_RUNS, minres, piercing_fname="piercing-the-"+fname)
+        spg.generateLine(spg.getGradientsForExtremalScan(opts.DIRECTION))
+    else:
+        logging.info("Sampling through asymetric cube along body diagonal")
+        spg = pointsampling.ScanPointGenerator(cube, opts.NUM_RUNS)
+        spg.generateLine()
+
+    ## Create dictionary of paramsets to fill template files with
+    for i in range(opts.NUM_RUNS):
+        runname = "%03d" % (opts.NUM_FIRST_RUN + i)
+        paramsets[runname] = spg[i]
+
+
+## Write used_params files
+for run, runparams in paramsets.iteritems():
+    runoutdir = os.path.join(opts.OUT_DIR, run)
+    if not os.path.isdir(runoutdir):
+        os.makedirs(runoutdir)
+    f = open(os.path.join(runoutdir, "used_params"), "w")
+    for pname in sorted(runparams.keys()):
+        f.write("%s %e\n" % (pname, runparams[pname]))

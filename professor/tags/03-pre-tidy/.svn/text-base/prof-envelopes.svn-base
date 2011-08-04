@@ -1,0 +1,347 @@
+#!/usr/bin/env python2.5
+""" prof-envelopes
+
+Produce Envelope Plots
+
+usage:
+    %prog -m <MCDIR>  -r <REFDIR>:"label" -o <OUTDIR> [-O <OBSERVABLES>]
+        -a <histos.aida>:"label"
+
+    You might want to add the -b switch in case you need to overwrite
+    existing files.
+
+TODO: proper labelling in legend
+"""
+try:
+    import psyco
+    psyco.full()
+except:
+    print "Psyco not available"
+
+import numpy, pylab, logging, sys, os
+from optparse import OptionParser
+
+try:
+    from IPython.Shell import IPShellEmbed
+    ipshell = IPShellEmbed([])
+except:
+    print "Ipython shell not available."
+
+from professor.rivetreader import ET, mkHistoFromDPS, getTuningData, getTitleFromDotPlot
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+from professor.tools import messages
+from professor.controlplots import envelope as env
+from professor.histo import Bin
+
+params = {
+        'backend':'pdf',
+        'axes.labelsize':  18,
+        'text.fontsize':   18,
+        'legend.fontsize': 15,
+        'axes.titlesize':  18,
+        'xtick.labelsize': 18,
+        'ytick.labelsize': 18,
+        'text.usetex': False,
+        'figure.dpi': 50,
+        'figure.subplot.left' : 0.12,
+        'figure.subplot.right' : 0.95,
+        'figure.subplot.bottom' : 0.1,
+        'figure.subplot.top' : 0.94,
+        'lines.markersize':7,
+        'text.latex.preamble' :  ['\usepackage{amsmath}', '\usepackage{mathpazo}', '\usepackage{hepunits}']
+        }
+
+pylab.rcParams.update(params)
+
+parser = OptionParser()
+parser.add_option('-b', '--bruteforce', action='store_true',
+        help="Overwrite files if fiven outdir exists", default=False)
+parser.add_option('--best', action='store_true',
+        help="Plot best MC run w.r.t. observable g.o.f.", default=False)
+parser.add_option('-f', '--filetype', action='store',
+        help="Filetype for output images", default='pdf')
+parser.add_option('-m', '--mcdir', action='store', default='mc',
+        help="Specify the subdirectory, where the MC-Histos can be found")
+parser.add_option('-o', '--outdir', action='store', default='envelopes',
+        help="Specify the subdirectory, where plots are to be saved")
+parser.add_option('-O', '--observable', action='store',
+        help="File with observables to plots", default='all')
+parser.add_option('-a', '--aida', action='store',
+        help="Aida file to draw on top of envelope", default=None)
+parser.add_option('-r', '--refdir', action='store', default='ref',
+        help="Specify the subdirectory, where the REF-Histos can be found")
+parser.add_option('-c', '--confidence', action='store', default=False,
+        help="Create confidence errorband, e.g. '-c 68'")
+parser.add_option('-t', '--usetex', action='store', default='no',
+        help="Whether or whether not to use LATEX")
+parser.add_option('-v', '--validate', action='store', default='no',
+        help="Validate TuningData object after its construction")
+parser.add_option('-l', '--logy', action='store', default='no',
+        help="Produce semilogy plots")
+parser.add_option('--xmax', action='store', default=False,
+        help="Set xlimits")
+parser.add_option('--ymax', action='store', default=False,
+        help="Set ylimits")
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+
+logy = opts.logy
+
+def getAvailableObservables(td):
+    return sorted(td.getMCHistoNames())
+
+def plotTheseObservables(td):
+    obslist = []
+    if opts.observable == 'all':
+        obslist = getAvailableObservables(td)
+    else:
+        f = open(opts.observable)
+        for line in f:
+            if (line.strip()).startswith('#'):
+                continue
+            if not line.strip() == "":
+                obslist.append((line.split()[0]).strip())
+        f.close()
+    return obslist
+
+def plotRefData(sp, envelope):
+    """ This plots the reference data
+    """
+    temp = numpy.array([(bin.getXRange()[0] + .5*(
+        bin.getXRange()[1] -bin.getXRange()[0]), bin.getYVal(), bin.getYErr())
+        for bin in envelope._td.getRefHisto(envelope._obs).getBins()])
+    if len(opts.refdir.split(":")) == 2:
+        reflabel = opts.refdir.split(":")[-1]
+    else:
+        reflabel = "Data"
+    if opts.usetex == 'yes':
+        sp.errorbar(temp[:,0], temp[:,1], temp[:,2], ls=' ', fmt='k+', label=r'%s'%reflabel)
+    else:
+        sp.errorbar(temp[:,0], temp[:,1], temp[:,2], ls=' ', fmt='k+', label=r'%s'%reflabel)
+
+def plotConfidenceEnvelope(sp, envelope, cl, color='b', zorder=1):
+    # the value enclosing patches
+    vpatches = [numpy.array(envelope.getConfidencePatch(i[0], i[1], cl=cl, logy=logy))
+            for i in envelope._allxranges
+            if not envelope.getConfidencePatch(i[0] ,i[1], cl=cl) is None]
+
+    for patchtuple in vpatches[:-1]:
+        myFill(sp, patchtuple, color=color, zorder=zorder, alpha = .2)
+    myFill(sp, vpatches[-1], color=color, zorder=zorder, alpha = .2, label=r'CL %.1f pct.'%cl)
+
+def plotEnvelope(sp, envelope):
+    """ Plot several patch objects """
+    # the value enclosing patches
+    vpatches    = [numpy.array(envelope.getPatch(i[0],i[1], logy=logy)[0])
+            for i in envelope._allxranges
+            if not envelope.getPatch(i[0],i[1])[0] is None]
+    # the upper error enclosing patches                                                                                                        
+    uvpepatches = [numpy.array(envelope.getPatch(i[0],i[1], logy=logy)[1])
+            for i in envelope._allxranges
+            if not envelope.getPatch(i[0],i[1])[1] is None]
+    # the lower error enclosing patches                                                                                                        
+    lvpepatches = [numpy.array(envelope.getPatch(i[0],i[1], logy=logy)[2])
+            for i in envelope._allxranges
+            if not envelope.getPatch(i[0],i[1])[2] is None]
+
+    for patchtuple in vpatches[:-1]:
+        myFill(sp, patchtuple,'0.5', alpha = .4)
+    myFill(sp, vpatches[-1],'0.5', alpha = .4, label=r'$\mathrm{Bin-heights}$')
+    # the line above is a workaround to get only one entry in the legend
+
+    for patchtuple in uvpepatches[:-1]:
+        myFill(sp, patchtuple,'0.5', alpha = .2)
+    myFill(sp, uvpepatches[-1],'0.5', alpha = .2, label=r'$\mathrm{Bin-errors}$')
+    # the line above is a workaround to get only one entry in the legend
+
+    for patchtuple in lvpepatches:
+        myFill(sp, patchtuple,'0.5', alpha = .1)
+
+def plotBest(sp, td, obs):
+    bestrun = getBest(td, obs)
+    if not bestrun is None:
+        x, y = getLine(td.getMCHistos(obs)[bestrun])
+        if not logy=='no':
+            sp.semilogy(x,y, ls='-', color='b', label=r'$\mathrm{Run  (%s)}$'%bestrun)
+        else:
+            sp.plot(x,y, ls='-', color='b', label=r'$\mathrm{Run (%s)}$'%bestrun)
+
+def plotAIDAOnTop(sp, obs, label=" "):
+    """ Draw histo on top of envelope """
+    x, y = getLine(ontophistos[obs])
+    if not logy=='no':
+        sp.semilogy(x,y, ls='-', color='b', label=r'$\mathrm{%s}$'%label)
+    else:
+        sp.plot(x,y, ls='-', color='b', label=r'$\mathrm{%s}$'%label)
+
+def getLine(histo):
+    """ Taken from prof-I. Make a line representation of a histo."""
+    x=[]
+    y=[]
+    for b in histo.getBins():
+        for r in b.getXRange():
+            x.append(r)
+            y.append(b.getYVal())
+    return x, y
+
+def getOnTopHistos(hfile):
+    """ Taken from prof-I. Read in AIDA file and return histos. """
+    ontophistos = {}
+    tree = ET.parse(hfile)
+    for dps in tree.findall("dataPointSet"):
+        dpsname = dps.get("path") + "/" + dps.get("name")
+        ## Make a histogram and add it to the return dictionary
+        ontophistos[dpsname] = mkHistoFromDPS(dps)
+    logging.debug("Successfully loaded comparison histos" +
+            " from: %s"%hfile)
+    return ontophistos
+
+def myFill(sp, ptuple , color='r', zorder=1, alpha = .3, label=None):
+    """ Nasty workaround """
+    try:
+        ptuple[:,0]
+        sp.fill(ptuple[:,0], ptuple[:,1], color, zorder=zorder, alpha=alpha, label=label)
+    except IndexError:
+        pass
+
+def getBest(td, obs):
+    """ Return the runkey of the run that is closest to the ref-data """
+    mchistos = td.getMCHistos(obs)
+    refbins = td.getRefHisto(obs).getBins()
+    allchi2s = {}
+    for runnr, mchisto in mchistos.iteritems():
+        mcbins = mchisto.getBins()
+        chi2 = sum([(mcbins[i].getYVal() - refbins[i].getYVal())**2 for i in xrange(len(mcbins))])
+        allchi2s[runnr] = chi2
+    for k,v in allchi2s.iteritems():
+        if v == min(allchi2s.values()):
+            return k
+
+def doPlot(sp, envelope, plotwhat=(True, True, False)):
+    """ This will draw everything """
+    if plotwhat[0]:
+        if opts.confidence:
+            colors = ['r', 'b', 'g']
+            for num, cl in enumerate(sorted(map(float, opts.confidence.split(",")))):
+                plotConfidenceEnvelope(sp, envelope, cl, color=colors[num], zorder=num)
+        else:
+            plotEnvelope(sp, envelope)
+    if plotwhat[1]:
+        plotRefData(sp, envelope)
+
+def makeItFancy(envelope, obs):
+    """ Show everything that was plotted before, create title, labels and
+        legends
+    """
+    a, b = envelope.getTotalXRange()[0][0], envelope.getTotalXRange()[1][1]
+    if logy=='no':
+        pylab.ylim(0)
+
+    # Read title, xlabel, ylabel from .plot files
+    title  = getTitleFromDotPlot(obs.split("/")[-2], obs.split("/")[-1]
+            ).replace("text","mathrm")
+    xlabel = getTitleFromDotPlot(obs.split("/")[-2], obs.split("/")[-1],
+            lookfor="XLabel=").replace("text","mathrm")
+    ylabel = getTitleFromDotPlot(obs.split("/")[-2], obs.split("/")[-1],
+            lookfor="YLabel=").replace("text","mathrm")
+
+    ## display title
+    pylab.figtext(.5,.95, r'%s'%title,ha='center', fontsize=20)
+    pylab.xlabel(r'%s'%xlabel)
+    pylab.ylabel(r'%s'%ylabel)
+    l=pylab.legend(loc='best', numpoints=1)
+    l.get_frame().set_edgecolor('w')
+    l.set_alpha(.1)
+    if opts.xmax:
+        pylab.xlim(xmax=float(opts.xmax))
+    if opts.ymax:
+        pylab.ylim(ymax=float(opts.ymax))
+
+# Check if additional AIDA file was supplied and read histos
+if not opts.aida is None:
+    ontophistos = getOnTopHistos(opts.aida.split(":")[0])
+else:
+    ontophistos = {}
+
+# check, if specified outdir exists and create it otherwise
+if not os.path.exists(opts.outdir):
+    os.system('mkdir -p %s'%opts.outdir)
+elif os.path.exists(opts.outdir) and opts.bruteforce:
+    pass
+else:
+    logging.error("Outdir already exists! Use '-b' to overwrite")
+    sys.exit(1)
+
+# Check if supplied confidence levels are valid
+if opts.confidence:
+    cls = map(float, opts.confidence.split(","))
+    for cl in cls:
+        if cl < 0 or cl > 100:
+            logging.error("Confidence level must be between 0 and 100.")
+            sys.exit(1)
+
+# create TuningData-object
+if opts.mcdir is not None and opts.refdir is not None:
+    logging.info("Building TuningData object...")
+    td = getTuningData(opts.refdir.split(":")[0], opts.mcdir)
+    logging.info("...done!")
+else:
+    logging.error("No mcdir and/or refdir specified, aborting...")
+    logging.error(__doc__)
+    sys.exit(1)
+
+# validate TuningData object
+if opts.validate == 'yes':
+    td.isValid()
+else:
+    logging.warning("Skipping validation of TuningData object"
+            " - use -v yes on the commandline to validate")
+
+# selection of observables to plot
+if opts.observable is not None and os.path.exists(opts.observable):
+    logging.info("Creating envelopes for observables found in %s"%opts.observable)
+elif opts.observable is not None and opts.observable == 'all':
+    logging.info("Saving envelope-plots for all available observables")
+else:
+    logging.error("Specified observable doesn't exist or none specified")
+    print 'list of available observables:'
+    for i in getAvailableObservables(td):
+        print i
+    logging.error(__doc__)
+    sys.exit(1)
+
+# save envelope-plots in the directory specified via --outdir
+obslist = plotTheseObservables(td)
+bar = flpb(0, len(obslist), 30, 'Saving envelopes ')
+for num, i in enumerate(obslist):
+    bar.update(num)
+    # create plot-window
+    fig = pylab.figure(facecolor='w')
+    sp = fig.add_subplot(1, 1, 1)
+    envelope = env.Envelope(td, observable=i)
+    doPlot(sp, envelope)
+    if i in ontophistos.keys():
+        extrareflabel = opts.aida.split(":")[-1]
+        plotAIDAOnTop(sp, i, extrareflabel)
+
+    if opts.best:
+        try:
+            plotBest(sp, td, i)
+        except Exception, r:
+            logging.error("Could not plot best run for observable %s:"%i)
+            print r
+            pass
+
+    makeItFancy(envelope, i)
+
+    try:
+        pylab.savefig(opts.outdir +'/'+ i.replace('/','_') + '.' + opts.filetype, format=opts.filetype)
+    except Exception, r:
+        logging.error("\nCould not save envelope for %s:\r"%i)
+        print r
+logging.info("Done!")
+logging.info("You may now want to create an html-gallery using 'makegallery.py' as such:\n")
+logging.info("         professor/tools/makegallery.py -s %s %s envelopes.html\n"%(opts.outdir, opts.filetype))

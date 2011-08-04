@@ -15,7 +15,7 @@
 namespace YODA {
 
 
-  /// A named, vectorised generalisation of an event weight.
+  /// @brief A named, vectorised generalisation of an event weight.
   /// @todo Accept general Boost.Ranges as constructor args... but start with literal arrays for convenience
   /// @todo Autogenerate numerical names if not given
   class Weights {

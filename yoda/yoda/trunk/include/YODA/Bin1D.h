@@ -20,11 +20,12 @@ namespace YODA {
   class Bin1D : public Bin {
   public:
 
-    /// @name Constructors, giving bin low and high edges.
+    /// @name Constructors, giving bin low and high edges. 
     //@{
     Bin1D(double lowedge, double highedge);
 
     Bin1D(std::pair<double,double> edges);
+
     //@}
 
 
@@ -33,6 +34,14 @@ namespace YODA {
 
     /// Reset this bin
     virtual void reset();
+
+    /// Scale:
+    void scaleX(double factor) {
+        _edges.first *= factor;
+        _edges.second *= factor;
+
+        _xdbn.scaleX(factor);
+    }
 
     //@}
 
@@ -104,8 +113,15 @@ namespace YODA {
 
     //@}
 
+    /// Setters
+    void setW(double sumW);
+    void setW2(double sumW2);
+    void setWX(double sumWX);
+    void setWX2(double sumWX2);
+    void setNumFills(double numFills);
 
   public:
+
 
     /// @name Operators
     //@{

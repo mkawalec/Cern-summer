@@ -1,0 +1,454 @@
+#!/usr/bin/python2
+
+"""\
+Usage: %prog  --datadir=<datadir>  --weights <weightsfile> \\
+              [--params <par1>,...]  [--results=<results.pkl>]
+
+Plot goodness-of-fit along a MC line scan.
+
+Usually you want to compare interpolation prediction with the MC results.
+Use the --results or --runcombs options to specifiy run combinations for
+interpolations.
+
+Also an obervable(weights) file has to be specified via --weights. Only
+observables in it will be used during any chi2 calculation.
+
+The special parameter name `LINESCAN' can be used to follow the line scan
+parameter.
+
+
+TODO:
+
+ * This script has massive feature bloat! Reduce to a mimimal subset with a
+   sensible default format which can be modified by users.
+
+ * Optionally the minimization results themselves can be drawn (at least in
+   LINESCAN mode) as vertical which indicate the position of a minimization
+   results parameter point if projected onto a parameter axis. In this case it
+   is recommended to also specify the file of parameter boundaries the scan was
+   done with via --scanrange. Otherwise the first and the last run's parameters
+   will be used to calculate the projection, which only works properly if these
+   two runs really contain the edges of the LINESCAN.
+"""
+
+import sys, os, itertools
+import numpy, pylab
+
+import professor.user as prof
+import professor.controlplots as profCP
+from professor.tools.stringtools import safeFilename
+
+
+import optparse
+parser = optparse.OptionParser(usage=__doc__, version=prof.version)
+parser.add_option("--tag",
+                  dest = "TAG",
+                  default = None,
+                  help = "specify a tag that is appended to the generated file name")
+parser.add_option("--results",
+                  dest = "RESULTS",
+                  help = "The results file to use, to reload the used run names"
+                  " and observables for the interpolation. The observables"
+                  " must match those in the observable/weight file (option"
+                  " obsfile)!")
+# TODO: Use standard run combs option
+parser.add_option("--runs", "--runcombs",
+                  dest = "RUNCOMBS",
+                  default = "",
+                  help = "Files with run combinations that are used for GoF"
+                  " estimation from interpolations. The interpolation"
+                  " method must be given as well separated by a ':' and"
+                  " different files must be separated by a ','. E.g."
+                  " 'myruncombs.dat:quadratic,mycubecombs.dat:cubic'")
+parser.add_option("--params",
+                  dest = "PARAMS",
+                  default = "LINESCAN",
+                  help = "Specify the parameters for the x-axis in a comma"
+                  " separated list. For each parameter a new plot is"
+                  " created. Use 'LINESCAN' to use the line scan"
+                  " parameter, this is the default.")
+parser.add_option("--scanparams", "--endpoints",
+                  dest = "ENDPOINTS",
+                  help = "The endpoints of the line scan. This is usually the"
+                  " `hypercube.params' file from prof-scanparams in linescan"
+                  " mode. If two files need to be specified, separate them with"
+                  " a comma.")
+parser.add_option("--vlines",
+                  dest = "VLINES",
+                  help = "Draw vertical lines or errorbands at the projection of these"
+                  " points on the scan line. E.g. --vlines file.params:'tune A'")
+
+group = optparse.OptionGroup(parser, "Plotting options")
+group.add_option("--logy",
+                 dest = "LOGY",
+                 action = "store_true",
+                 default = True,
+                 help = "Log scaled chi^2 axis when PLOTMODE is chi2. [default]")
+group.add_option("--liny",
+                 dest = "LOGY",
+                 default = True,
+                 action = "store_false",
+                 help = "Linear scaled chi^2 axis when PLOTMODE is chi2.")
+group.add_option("--hist",
+                 dest = "SHOWHIST",
+                 action = "store_true",
+                 default = True,
+                 help = "Plot a histogram with the projections of the results.")
+group.add_option("--no-hist",
+                 dest = "SHOWHIST",
+                 action = "store_false",
+                 default = True,
+                 help = "Do not plot a histogram with the projections of the results.")
+group.add_option("--ndof",
+                 dest = "NDOF",
+                 default = True,
+                 action = "store_true",
+                 help = "Plot chi^2/ndof instead of chi^2 when PLOTMODE is chi2. [default]")
+group.add_option("--no-ndof",
+                 dest = "NDOF",
+                 default = True,
+                 action = "store_false",
+                 help = "Plot chi^2 instead of chi^2/ndof when PLOTMODE is chi2. [default]")
+# # TODO
+# group.add_option("--plotminima",
+#                  dest = "PLOTMINIMA",
+#                  action = "store_true",
+#                  default = False,
+#                  help = "!TODO Draw vertical lines to indicate predicted minima.")
+# group.add_option("--no-plotminimia",
+#                  dest = "PLOTMINIMA",
+#                  default = False,
+#                  action = "store_false",
+#                  help = "Don't draw vertical lines to indicate predicted minima. [default]")
+# # TODO
+# group.add_option("--clean",
+#                  dest = "CLEAN",
+#                  action = "store_true",
+#                  default = False,
+#                  help = "!TODO if set, only those minimization results will be considered"
+#                  " that really fall into the hypercube")
+# # TODO
+# group.add_option("--direction",
+#                  dest = "DIRECTION",
+#                  help = "!TODO additional information for the plot title")
+group.add_option("--bw",
+                 dest = "BW",
+                 action = "store_true",
+                 default = False,
+                 help = "produce b/w safe plots, e.g. suitable for publications")
+group.add_option("--color",
+                 dest = "BW",
+                 action = "store_false",
+                 help = "produce color plots [default]")
+group.add_option("--no-legend",
+                 dest = "LEGEND",
+                 action = "store_false",
+                 default = True,
+                 help = "don't plot legend")
+group.add_option("--legend-position",
+                 dest = "LEGENDPOSITION",
+                 default = "best",
+                 help = "Position for legend box. Must be accepted by Matplotlib's"
+                 " legend() [default: %default].")
+group.add_option("--vline-label-ypos", "--vll-ypos",
+                 dest = "VLINELABELYPOS",
+                 type = "float",
+                 default = 0.1,
+                 help = "Y-position of the labels of vertival lines in plot"
+                 " coordinates (0 < y < 1).")
+group.add_option("--no-scandata",
+                 dest = "NOSCANDATA",
+                 action = "store_true",
+                 default = False,
+                 help = "do not plot/require MC scan histos in scan/RUNNUM/ directories")
+parser.add_option_group(group)
+
+#interpolation.addIpolCLOptions(parser)
+prof.addDataCLOptions(parser, ref=True, mc=True, ipol=True, scan=True)
+prof.addOutputCLOptions(parser)
+prof.addLoggingCLOptions(parser)
+opts, args = parser.parse_args()
+prof.log.setPriority(opts)
+prof.writeGuideLine()
+
+
+## Delete the scandir attribute, to make DataProxy.mkFromCLOptions believe we
+## don't want MC scan data.
+# TODO: Doesn't this indicate a design problem? ;-)
+if opts.NOSCANDATA:
+    if opts.ENDPOINTS is None:
+        sys.stderr.write(parser.format_help())
+        sys.stderr.write("No MC scan data given. Use --endpoints to specify"
+                         " the endpoints of the line scan!\n")
+        sys.exit(1)
+    del opts.SCANDIR
+
+
+## Check if specified outdir exists and create it otherwise.
+outdir = prof.getOutputDirectory(opts, "scanchi2")
+prof.log.debug("Using %s for chi2-scan output." % outdir)
+prof.io.makeDir(outdir)
+
+dataproxy = prof.DataProxy.mkFromCLOptions(opts)
+
+## Matplotlib setup
+params = {
+        'backend':'pdf',
+        'font.size':24,
+        # 'axes.labelsize': 24,
+        # 'text.fontsize': 24,
+        'legend.fontsize': 20,
+        # 'axes.titlesize': 24,
+        'xtick.labelsize': 20,
+        'ytick.labelsize': 20,
+        'text.usetex': False,
+        'figure.dpi': 150,
+        'lines.markersize':7.5,
+        'figure.subplot.left' : 0.15,
+        'figure.subplot.right' : 0.97,
+        'figure.subplot.bottom' : 0.13,
+        'figure.subplot.top' : 0.979,
+        'figure.subplot.wspace' : 0.05,
+        }
+pylab.rcParams.update(params)
+
+
+## Check option values and load data.
+## Ordered by time consumption.
+
+## Select the observables and weights we want to use for our tune.
+if opts.OBSERVABLEFILE is not None:
+    wm = prof.WeightManager.mkFromFile(opts.OBSERVABLEFILE)
+    observables = wm.observables
+    prof.log.debug("loaded observable file from %s: %s" % (opts.OBSERVABLEFILE, wm))
+else:
+    sys.stderr.write(parser.format_help())
+    sys.stderr.write("An observable weight file must be given!\n"
+                     "Use the --weights switch!\n")
+    sys.exit(1)
+
+## Load vertical line points.
+# label => point-dict
+vlpts = {}
+nolabel = 1
+if opts.VLINES:
+    for pt in opts.VLINES.split(","):
+        tokens = pt.split(":")
+        if len(tokens) == 1:
+            path = tokens[0]
+            label = "nolabel%i" % (nolabel)
+            nolabel += 1
+        elif len(tokens) == 2:
+            path = tokens[0]
+            label = tokens[1]
+        else:
+            prof.log.error("Could not parse vline specification '%s'"
+                           " -> tokens='%s'!" % (pt, tokens))
+            prof.log.error("Exiting!")
+            sys.exit(1)
+        prof.log.info("Loading vline parameter file %s labeled '%s'." % (
+                      path, label))
+        vlpts[label] = prof.ParameterPoint.mkFromFile(path)
+
+
+## Load minimization results.
+reslist = []
+if opts.RESULTS is not None:
+    reslist = prof.ResultList.mkFromPickle(opts.RESULTS)
+    prof.log.debug("Number of raw results: %i" % (len(reslist)))
+    # if opts.CLEAN:
+        # try:
+            # # TODO
+            # # reslist=reslist.getResultsInsideRange(getScanRange()[-1])
+            # pass
+        # except IndexError:
+            # # TODO
+            # # reslist=reslist.getResultsInsideRange(getScanRange())
+            # pass
+    # logging.debug("Number of clean results: %i" % (len(reslist)))
+
+    ## Check if observables match observables
+    if reslist.getObservables() != sorted(wm.observables):
+        prof.log.warn("Observables in obsfile %s and result file %s do not"
+                      " match!" % (opts.OBSERVABLEFILE, opts.RESULTS))
+        prof.log.warn("Continuing anyway!")
+
+## Parse run combination paths.
+method_runcombs = {}   # { method => list of run combination lists }
+if opts.RUNCOMBS:
+    for t in opts.RUNCOMBS.split(","):
+        try:
+            path, method = t.split(":")
+        except ValueError, err:
+            sys.stderr.write(parser.format_help() + "\n")
+            sys.stderr.write("Error: Failed to parse run combination option given by"
+                             " '%s'!\n" % (t))
+            sys.exit(1)
+        if not method_runcombs.has_key(method):
+            method_runcombs[method] = []
+        prof.log.info("Adding run combinations from file %s with interpolation"
+                      " method %s" % (path, method))
+        f = open(path, "r")
+        # update the list with all run combinations found in this file
+        method_runcombs[method].extend([line.split() for line in f])
+
+
+## Check/make output directory
+#outdir = os.path.abspath(opts.OUTDIR)
+
+#if not os.path.exists(outdir):
+    #os.makedirs(outdir)
+    #prof.log.info("Making output directory: %s"%(outdir))
+#elif not os.path.isdir(outdir):
+    #sys.stderr.write("Output directory '%s' exists but is not a directory!"%(
+                     #outdir))
+    #sys.stderr.write("Exiting...\n")
+    #sys.exit(1)
+#if not os.access(outdir, os.W_OK| os.X_OK):
+    #sys.stderr.write("Output directory '%s' has not the proper access"
+                     #" mode!\n" % (outdir))
+    #sys.stderr.write("Exiting...\n")
+    #sys.exit(1)
+
+# TODO checks
+
+## Load ref and linescan-MC data into TuningData object.
+if opts.NOSCANDATA:
+    prof.log.info("Only parameter files loaded, no MC scan data will be plotted!")
+
+plotter = profCP.LineScanPlotter(dataproxy, wm)
+plotter.ndof = opts.NDOF
+
+## Set the line scan end points.
+## We cannot put this earlier, plotter needs to be defined!
+if opts.ENDPOINTS is not None:
+    endpts = opts.ENDPOINTS.split(",")
+else:
+    endpts = []
+
+if len(endpts) == 1:
+    plotter.setEndpoints(prof.ParameterRange.mkFromFile(endpts[0]))
+elif len(endpts) == 2:
+    plotter.setEndpoints(prof.ParameterPoint.mkFromFile(endpts[0]),
+                         prof.ParameterPoint.mkFromFile(endpts[1]))
+else:
+    prof.log.warn("Trying to get line end points from scan MC data.")
+    # find run numbers of start/end points of scan line
+    plotter.setEndpoints()
+
+## Set the plot styles.
+if opts.BW:
+    prof.log.info("Using black and white style.")
+    scanstyle = {"color":"w", "marker":"o", "linestyle":""}
+    ipolstyle = profCP.StyleGenerator(
+                    color = itertools.cycle(["k", "0.5", "0.95"]),
+                    linestyle = itertools.repeat("solid"),
+                    linewidth = itertools.cycle(numpy.arange(2.0, 0.3, -0.6)))
+    pointstyle = {"color":"k", "linestyle":"--"}
+else:
+    prof.log.info("Using color style.")
+    scanstyle = {"color":"r", "marker":"o", "linestyle":""}
+    ipolstyle = profCP.StyleGenerator(
+                    color = itertools.cycle(["r", "k", "b", "g"]),
+                    linestyle = itertools.repeat("solid"),
+                    linewidth = itertools.cycle(numpy.arange(2.0, 0.3, -0.6)))
+    pointstyle = {"color":"g", "linestyle":"-"}
+
+
+## Fill minimisation results and run combinations in the plotter.
+for res in reslist:
+    plotter.addResult(res)
+prof.log.debug("plotter now contains %i results: %s" % (
+               plotter.numresults, plotter.results))
+for method, runcombs in method_runcombs.items():
+    for rc in runcombs:
+        plotter.addRunComb(rc, method)
+
+## Only plot histogram if we have results.
+if not plotter.hasResults() and opts.SHOWHIST:
+    prof.log.warn("No minimisation result... switching off the histogram plotting!")
+    opts.SHOWHIST = False
+
+## main
+left = pylab.rcParams.get('figure.subplot.left')
+right = pylab.rcParams.get('figure.subplot.right')
+top = pylab.rcParams.get('figure.subplot.top')
+bottom = pylab.rcParams.get('figure.subplot.bottom')
+wspace = pylab.rcParams.get('figure.subplot.wspace')
+## desired height of plotwindow with interpolations and scan data
+plotheight = 0.63
+if opts.SHOWHIST:
+    histheight = top - bottom - plotheight - wspace
+
+prof.log.info("Scan line parameters:\n"
+              "    length: %f\n"
+              "    direction unit vector:\n%s" % (
+                  plotter.getLineLength(),
+                  plotter.getDirection()))
+
+for pname in opts.PARAMS.split(","):
+    ## define figure and axis
+    fig = pylab.figure()
+    fname = "scan_chi2_" + safeFilename(pname)
+
+    ## the lower axes
+    if opts.SHOWHIST:
+        ax_scan = pylab.axes([left, bottom, right-left, plotheight])
+    else:
+        ax_scan = pylab.axes([left, bottom, right-left, top-bottom])
+    zorder = 1
+    # do the plotting
+    prof.log.info("Plotting interpolated GoF data...")
+    zorder = plotter.plotIpolScanData(ax_scan, pname, zorder, ipolstyle)
+    prof.log.info("Plotting points as vertical lines...")
+    zorder = plotter.plotPoints(vlpts, ax_scan, pname, zorder, pointstyle,
+                                opts.VLINELABELYPOS)
+    if not opts.NOSCANDATA:
+        prof.log.info("Plotting MC GoF data...")
+        zorder = plotter.plotMCScanData(ax_scan, pname, zorder, scanstyle)
+    else:
+        prof.log.info("Not plotting MC GoF data (--no-scandata given) ...")
+
+    if opts.LOGY:
+        ax_scan.set_yscale("log", subsy=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        fname += "_log"
+    else:
+        ax_scan.set_yscale("linear")
+        fname += "_lin"
+
+    ax_scan.set_ylabel(plotter.GoFAxisLabel())
+    ax_scan.set_xlabel(plotter.ParAxisLabel(pname))
+    if opts.LEGEND:
+        legend = ax_scan.legend(loc=opts.LEGENDPOSITION, labelspacing=0.02)
+        legend.get_frame().set_edgecolor("w")
+        legend.set_alpha(.1)
+        legend.set_zorder(zorder+1)
+
+    ## the upper axes used for the histogram of minimization results
+    if opts.SHOWHIST:
+        ax_hist = pylab.axes([left, bottom + plotheight + wspace, right-left,
+                              histheight])
+        n, bins, patches = ax_hist.hist(plotter.getResultPTildes(),
+                     bins = 4*numpy.floor(numpy.sqrt(plotter.numresults)),
+                     range = (0, 1), histtype = "step",
+                     facecolor=None, edgecolor=None)
+        n = sum(n)
+        ax_hist.text(0.98, 0.98, r"$\sum N_i = %i$" % (n),
+                     ha="right", va="top", transform = ax_hist.transAxes)
+        ax_hist.set_xticklabels([])
+        yticks = ax_hist.get_yticks()
+        ax_hist.set_yticks(yticks[1:-1], minor=True)
+        ax_hist.set_yticks([yticks[0], yticks[-1]])
+        ax_hist.set_ylabel(r"$\Delta N /\Delta p$")
+        fname += "_hist"
+
+    if opts.TAG is not None:
+        if opts.TAG.startswith("_"):
+            fname += opts.TAG
+        else:
+            fname += "_" + opts.TAG
+
+    fname += "." + pylab.rcParams.get("backend")
+    fname = os.path.join(outdir, fname)
+    prof.log.info("Saving image to file %s" % fname)
+    fig.savefig(fname)

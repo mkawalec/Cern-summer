@@ -45,7 +45,7 @@
 #define PACKAGE_NAME "YODA"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "YODA 0.3.2"
+#define PACKAGE_STRING "YODA 0.4.0beta0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "YODA"
@@ -54,13 +54,13 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.3.2"
+#define PACKAGE_VERSION "0.4.0beta0"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
 
 /* Version number of package */
-#define VERSION "0.3.2"
+#define VERSION "0.4.0beta0"
 
 /* "YODA contact email address" */
 #define YODA_BUGREPORT "yoda@projects.hepforge.org"
@@ -69,10 +69,10 @@
 #define YODA_NAME "YODA"
 
 /* "YODA name and version string" */
-#define YODA_STRING "YODA 0.3.2"
+#define YODA_STRING "YODA 0.4.0beta0"
 
 /* "YODA short name string" */
 #define YODA_TARNAME "YODA"
 
 /* "YODA version string" */
-#define YODA_VERSION "0.3.2"
+#define YODA_VERSION "0.4.0beta0"

@@ -1,0 +1,29 @@
+### Fragmentation
+## Lund A
+#PARJ(41)  0.1    1.0
+## Lund B
+#PARJ(42)  0.1    2.5
+## String tension
+#PARJ(21)  0.05   1.0
+## Flavour content
+# + strangeness suppression etc.
+
+### Shower
+## Lambda_QCD
+#PARJ(81)   0.1   0.6
+## PS 2*pT_min, m_min
+#PARJ(82)   0.5   3.0
+
+### Underlying event
+#MSTP(95)   2
+PARP(78)   0.01  0.5
+PARP(82)   1.9   3.0
+PARP(83)   0.2   1.0
+PARP(84)   0.2   1.0
+#PARP(78)   .01   .5
+#PARP(82)   1.9   2.3
+#PARP(83)   .2   1.
+#PARP(84)   .2   1.
+
+### Kinematic cuts (should actually be in RG param file)
+#CKIN(3)   80.0

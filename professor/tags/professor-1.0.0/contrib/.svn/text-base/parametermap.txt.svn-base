@@ -1,0 +1,14 @@
+PARJ(21)  r'$\sigma_{\mathit{p_{x,y}, had}}$'
+PARJ(41)  r'$a_{\mathit{Lund}}$'
+PARJ(42)  r'$b_{\mathit{Lund}}$'
+PARJ(81)  r'$\Lambda (\alpha_S)$'
+PARJ(82)  r'$m_\mathit{min}$'
+PARP(64)  scale of alpha_S
+PARP(71)  ME-FSR shower merging
+PARP(78)  Colour reconnection
+PARP(79)  Beam remnant x-enhancement
+PARP(82)  UE cut-off
+PARP(83)  Hadronic matter distribution
+PARP(90)  UE energy evolution exponent
+PARP(91)  Width of primordial kt
+PARP(93)  Upper cut-off of primordial kt

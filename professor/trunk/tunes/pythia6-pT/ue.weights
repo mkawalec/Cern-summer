@@ -1,0 +1,53 @@
+/CDF_2000_S4155203/d01-x01-y01     10.0  # Z pT
+/CDF_2001_S4751469/d03-x01-y01      1.0  # Num (toward) for min-bias
+/CDF_2001_S4751469/d03-x01-y02      1.0  # Num (transverse) for min-bias
+/CDF_2001_S4751469/d03-x01-y03      1.0  # Num (away) for min-bias
+/CDF_2001_S4751469/d04-x01-y01      0.0  # Num (toward) for JET20
+/CDF_2001_S4751469/d04-x01-y02      0.0  # Num (transverse) for JET20
+/CDF_2001_S4751469/d04-x01-y03      0.0  # Num (away) for JET20
+/CDF_2001_S4751469/d05-x01-y01      1.0  # pT sum (toward) for min-bias
+/CDF_2001_S4751469/d05-x01-y02      1.0  # pT sum (transverse) for min-bias
+/CDF_2001_S4751469/d05-x01-y03      1.0  # pT sum (away) for min-bias
+/CDF_2001_S4751469/d06-x01-y01      1.0  # pT sum (toward) for JET20
+/CDF_2001_S4751469/d06-x01-y02      1.0  # pT sum (transverse) for JET20
+/CDF_2001_S4751469/d06-x01-y03      1.0  # pT sum (away) for JET20
+/CDF_2001_S4751469/d07-x01-y01      0.0  # pT distribution (transverse, pT1 > 2 GeV)
+/CDF_2001_S4751469/d07-x01-y02      0.0  # pT distribution (transverse, pT1 > 5 GeV)
+/CDF_2001_S4751469/d07-x01-y03      1.0  # pT distribution (transverse, pT1 > 30 GeV)
+/CDF_2002_S4796047/d01-x01-y01      2.0  # nCharged at 630 GeV
+/CDF_2002_S4796047/d02-x01-y01      2.0  # nCharged at 1800 GeV
+/CDF_2008_LEADINGJETS/d01-x01-y01   1.0  # Transverse Region Charged Particle Density
+/CDF_2008_LEADINGJETS/d02-x01-y01   1.0  # TransMAX Region Charged Particle Density
+/CDF_2008_LEADINGJETS/d03-x01-y01   1.0  # TransMIN Region Charged Particle Density
+/CDF_2008_LEADINGJETS/d04-x01-y01   1.0  # TransDIF Region Charged Particle Density
+/CDF_2008_LEADINGJETS/d05-x01-y01   1.0  # Transverse Region Charged pT Sum Density
+/CDF_2008_LEADINGJETS/d06-x01-y01   1.0  # TransMAX Region Charged pT Sum Density
+/CDF_2008_LEADINGJETS/d07-x01-y01   1.0  # TransMIN Region Charged pT Sum Density
+/CDF_2008_LEADINGJETS/d08-x01-y01   1.0  # TransDIF Region Charged pT Sum Density
+/CDF_2008_LEADINGJETS/d09-x01-y01   1.0  # Transverse Region Charged pT Average
+/CDF_2008_NOTE_9337/d01-x01-y01     2.0  # Mean track pT vs multiplicity
+/CDF_2008_NOTE_9351/d01-x01-y01     1.0  # Toward Region Charged Particle Density
+/CDF_2008_NOTE_9351/d02-x01-y01     1.0  # Transverse Region Charged Particle Density
+/CDF_2008_NOTE_9351/d03-x01-y01     1.0  # TransMAX Region Charged Particle Density
+/CDF_2008_NOTE_9351/d04-x01-y01     1.0  # TransMIN Region Charged Particle Density
+/CDF_2008_NOTE_9351/d05-x01-y01     1.0  # TransDIF Region Charged Particle Density
+/CDF_2008_NOTE_9351/d06-x01-y01     1.0  # Away Region Charged Particle Density
+/CDF_2008_NOTE_9351/d07-x01-y01     1.0  # Toward Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d08-x01-y01     1.0  # Transverse Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d09-x01-y01     1.0  # TransMAX Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d10-x01-y01     1.0  # TransMIN Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d11-x01-y01     1.0  # TransDIF Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d12-x01-y01     1.0  # Away Region Charged pT Sum Density
+/CDF_2008_NOTE_9351/d13-x01-y01     1.0  # Toward Region Charged pT Average
+/CDF_2008_NOTE_9351/d14-x01-y01     1.0  # Transverse Region Charged pT Average
+/CDF_2008_NOTE_9351/d15-x01-y01     1.0  # Away Region Charged pT Average
+/CDF_2008_NOTE_9351/d16-x01-y01     1.0  # Toward Region Charged pT Maximum
+/CDF_2008_NOTE_9351/d17-x01-y01     1.0  # Transverse Region Charged pT Maximum
+/CDF_2008_NOTE_9351/d18-x01-y01     1.0  # Away Region Charged pT Maximum
+/CDF_2008_NOTE_9351/d19-x01-y01     1.0  # Average Lepton Pair pT versus Charged Multiplicity
+/CDF_2008_NOTE_9351/d20-x01-y01     1.0  # Average Charged pT versus Charged Multiplicity
+/CDF_2008_NOTE_9351/d21-x01-y01     1.0  # Average Charged pT versus Charged Multiplicity, pT(Z) less than 10 GeV
+/D0_2004_S5992206/d01-x02-y01       2.0  # Jet Jet azimuthal angle, pTmax=75..100
+/D0_2004_S5992206/d02-x02-y01       2.0  # Jet Jet azimuthal angle, pTmax=100..130
+/D0_2004_S5992206/d03-x02-y01       2.0  # Jet Jet azimuthal angle, pTmax=130..180
+/D0_2004_S5992206/d04-x02-y01       2.0  # Jet Jet azimuthal angle, pTmax > 180

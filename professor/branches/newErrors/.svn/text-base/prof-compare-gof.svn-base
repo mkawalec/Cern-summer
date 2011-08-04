@@ -1,0 +1,257 @@
+#!/usr/bin/env python
+"""Usage: %prog [options] --datadir=<datadir> --obsfile=<weightfile> \\
+    <paramrangefile> <gof1> [<gof2> ...]
+
+To store the plot automatically use the --outfile option (Known bug: this
+still needs a working X11).
+
+Create linescan plots to compare different GoF definitions. Possible GoFs
+are:
+    * simple (simple chi^2 with only the reference errors)
+    * mcstat (simple chi^2 with reference and averaged MC statistical
+         errors)
+"""
+
+import itertools
+import optparse
+import os
+import sys
+import logging
+logging.basicConfig(level=logging.INFO,
+        format = "%(levelname)s %(message)s")
+
+import numpy
+import pylab
+
+from professor import rivetreader
+from professor.tools import parameter
+from professor import tuningdata
+from professor import interpolation
+
+parser = optparse.OptionParser(usage=__doc__)
+# TODO: add CL options
+parser.add_option("-d", "--debug",
+        dest = "debug",
+        action = "store_true",
+        help = "Turn debug logging on.")
+parser.add_option("--pazo",
+        dest = "pazo",
+        action = "store_true",
+        help = "include \usepackage[mathpazo] in preamble")
+parser.add_option("--logy",
+        dest = "logy",
+        action = "store_true",
+        help = "use logarithmic y axes")
+parser.add_option("--liny",
+        dest = "logy",
+        action = "store_false",
+        help = "use linear y axes (default)")
+parser.add_option("--bw",
+        dest = "bw",
+        action = "store_true",
+        help = "produce b/w safe plots, e.g. suitable for publications")
+parser.add_option("--color",
+        dest = "bw",
+        action = "store_false",
+        help = "produce color plots (default)")
+parser.add_option("--outfile",
+        dest = "outfile",
+        help = "The file to save the plot in, this suppresses graphical "
+                " interaction!")
+parser.set_defaults(
+        debug = False,
+        pazo = False,
+        logy = False,
+        bw = False
+        )
+interpolation.addCLOptions(parser)
+rivetreader.addDataCLOptions(parser)
+
+opts, args = parser.parse_args()
+
+## Turn on debugging
+if opts.debug:
+    logging.getLogger().setLevel(logging.DEBUG)
+
+## check and parse arguments
+if len(args) < 2:
+    sys.stderr.write(parser.format_help() + "\n")
+    sys.stderr.write("Bad number of arguments: Need at least 2 arguments!\n")
+    sys.exit(1)
+
+## load parameter ranges
+try:
+    ranges = parameter.readParameterFile(args[0])
+    pstart = numpy.zeros(len(ranges))
+    pend = numpy.zeros(len(ranges))
+    for i, pname in enumerate(sorted(ranges.keys())):
+        pstart[i] = ranges[pname][0]
+        pend[i] = ranges[pname][1]
+except Exception, e:
+    logging.error("Error parsing parameter range file %s: %s\n" % (
+        args[0], e))
+    sys.exit(1)
+
+## load GoF definitions
+def mapGoFName2Cls(name):
+    """maps a CLI GoF token to a (GoF class, mc disbelief factor) tuple."""
+    name = name.lower()
+    if name == "simple":
+        return (tuningdata.SimpleGoFData, 0.0)
+    if name == "test":
+        return (tuningdata.OLDGoFData, 0.0)
+    if name == "centralstat":
+        return (tuningdata.CentralMCStatErrGoFData, 0.0)
+    if name.startswith("mcstat"):
+        toks = name.split(":")
+        if len(toks) == 1:
+            return (tuningdata.MCStatErrGoFData, 0.0)
+        if len(toks) == 2:
+            try:
+                mcdisbelief = float(toks[1])
+                return (tuningdata.MCStatErrGoFData, mcdisbelief)
+            except ValueError, e:
+                logging.error("Could not parse GoF token '%s': bad mc"
+                        " disbelief factor!" % (name))
+                sys.exit(1)
+    logging.error("Error parsing GoF token '%s'!" % (name))
+    sys.exit(1)
+
+
+# list of (GoF class, mc disbelief factor) tuples
+gofs = []
+for i in args[1:]:
+    t = mapGoFName2Cls(i)
+    logging.debug("Using GoF method %s -> %s" % (i, t))
+    gofs.append(t)
+
+## check the outfile if given
+if opts.outfile is not None:
+    if os.path.exists(opts.outfile):
+        if not os.path.isfile(opts.outfile):
+            sys.stderr.write("Given output file '%s' exists but is not a"
+                    " file!" % (opts.outfile))
+            sys.exit(1)
+        elif not os.access(opts.outfile, os.W_OK):
+            sys.stderr.write("Given output file '%s' exists but cannot be"
+                    " opened!" % (opts.outfile))
+            sys.exit(1)
+    else:
+        dirname = os.path.dirname(opts.outfile)
+        dirname = os.path.expanduser(dirname)
+        dirname = os.path.expandvars(dirname)
+        dirname = os.path.realpath(dirname)
+        if not os.access(dirname, os.W_OK|os.X_OK):
+            sys.stderr.write("Given output file '%s' cannot be created in"
+                    " directory '%s'!" % (opts.outfile, dirname))
+            sys.exit(1)
+
+
+## Get the configured interpolation class
+try:
+    IpolCls = interpolation.getInterpolationClass(opts.ipolmethod,
+            opts.useweave)
+    logging.info("using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    logging.error("Problem getting interpolation method: %s" % (e))
+    logging.error("Exiting...")
+    sys.exit(1)
+
+
+## load data
+tundata = rivetreader.getConfiguredData(opts.datadir, opts.mcdir, opts.refdir, opts.ipoldir)
+try:
+    obsdict = rivetreader.readObservableFile(opts.observablefile)
+    logging.debug("loaded obervable file from %s: %s" % (
+        opts.observablefile, obsdict))
+except Exception, e:
+    logging.error("Problem when reading observable file %s: %s" % (
+        opts.observablefile, e))
+    logging.error("Exiting!")
+    sys.exit(1)
+
+std = tundata.getTuneData(IpolCls, use_obs=obsdict.keys())
+centrun = tundata.getMostCentralRun()[0]
+
+## produce plotting data
+numpts = 100
+ts = numpy.linspace(0.0, 1.0, numpts, endpoint=True)
+# {label : gof data list}
+plotdata = {}
+
+for (gof, mcdisbelief) in gofs:
+    label = gof.__name__
+    if mcdisbelief > 0:
+        label += ":%f" % (mcdisbelief)
+    if hasattr(gof, "centralrun"):
+        gof.centralrun = centrun
+    std.gofcls = gof
+    std.mcdisbelief = mcdisbelief
+    gofdata = numpy.zeros(numpts)
+    for i, t in enumerate(ts):
+        p = pstart + t*(pend - pstart)
+        t = std.getGoFFromIpol(p)
+        gofdata[i] = t.gof / t.ndof
+    plotdata[label] = gofdata
+logging.debug("finished generating data for %i GoFs" % (len(plotdata)))
+
+## plotting
+
+## matplotlib setup
+matplotlibparams = {
+        # 'backend':'pdf',
+        'axes.labelsize': 20,
+        'text.fontsize': 20,
+        'legend.fontsize': 20,
+        'axes.titlesize': 20,
+        'xtick.labelsize': 20,
+        'ytick.labelsize': 20,
+        'text.usetex': True,
+        'text.latex.preamble' :  ['\usepackage{amsmath}'],
+        'figure.dpi': 150,
+        'lines.markersize':7.5,
+        'figure.subplot.left' : 0.1,
+        'figure.subplot.right' : 0.97,
+        'figure.subplot.bottom' : 0.15,
+        'figure.subplot.top' : 0.97
+        }
+if opts.logy:
+    matplotlibparams["figure.subplot.left"] = 0.13
+if opts.pazo:
+    params['text.latex.preamble'] = ['\usepackage{amsmath}', '\usepackage{mathpazo}']
+pylab.rcParams.update(matplotlibparams)
+
+fig = pylab.figure(facecolor="w")
+ax = fig.add_subplot(111)
+
+if opts.bw:
+    colorwheel = itertools.cycle(["0.0", "0.6", "0.2", "0.4"])
+else:
+    colorwheel = itertools.cycle(["b", "r", "g"])
+markerwheel = itertools.cycle(pylab.Line2D.filled_markers)
+
+## calculate indices to plot marker points
+nummrk = 10
+dt = numpts/nummrk
+mrkidx = [int((i+0.5)*dt) for i in xrange(nummrk)]
+for label, ys in plotdata.iteritems():
+    # label = gof.__name__
+    color = colorwheel.next()
+    marker = markerwheel.next()
+    logging.debug("plotting  %s with color %s marker %s" % (
+        label, color, marker))
+    ax.plot(ts, ys, label="__nolegend__", color=color)
+    ax.plot(ts[mrkidx], ys[mrkidx], label=label, color=color, marker=marker, ls="")
+if opts.logy:
+    ax.set_yscale("log")
+# fig.suptitle("Comparsion of GoF definitions")
+ax.set_xlabel(r"$\tilde{p}$")
+ax.set_ylabel(r"GoF")
+ax.legend()
+
+if opts.outfile is None:
+    pylab.show()
+else:
+    fig.savefig(opts.outfile)
+    logging.info("Saved figure to '%s'" % (opts.outfile))
+

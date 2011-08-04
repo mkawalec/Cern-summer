@@ -1,0 +1,188 @@
+#! /usr/bin/env python
+"""%prog --datadir DATADIR --obsfile OBSFILE --runsfile RUNSFILE
+or
+%prog --refdir REFDIR --mcdir MCDIR --obsfile OBSFILE --runsfile RUNSFILE \\
+    --ipoldir IPOLDIR
+
+Create interpolations for the observables given in OBSFILE (i.e.  all
+uncommented lines) with the run combinations given in RUNSFILE. These
+interpolations are stored in files under, IPOLDIR one file per run
+combination.
+
+The file names follow the scheme
+    profipol_METHODNAME_RUNSHASH.pkl
+e.g.
+    profipol_quadratic_19fa164ba87e6e5cc9865d7055875d99.pkl
+
+If IPOLDIR is not given but DATADIR, DATADIR/ipols is used. If IPOLDIR does
+not exist it's silently created. Existing interpolation files will be
+overwritten (but not deleted).
+
+TODO:
+    * do not depend on REFDIR
+"""
+
+import sys
+import os
+import itertools
+import optparse
+
+import logging
+logging.basicConfig(level=logging.INFO, format = "%(levelname)s %(message)s")
+
+import professor.rivetreader as RR
+from professor.tools import permut, messages
+from professor import interpolation
+
+
+## Set up signal handling
+import signal
+global RECVD_KILL_SIGNAL
+RECVD_KILL_SIGNAL = None
+def handleKillSignal(signum, frame):
+    "Declare us as having been signalled, and return to default handling behaviour"
+    logging.critical("Signal handler called with signal " + str(signum))
+    logging.critical("Waiting for this minimization to finish...")
+    global RECVD_KILL_SIGNAL
+    RECVD_KILL_SIGNAL = signum
+    signal.signal(signum, signal.SIG_DFL)
+## Signals to handle
+signal.signal(signal.SIGTERM, handleKillSignal);
+signal.signal(signal.SIGHUP,  handleKillSignal);
+signal.signal(signal.SIGINT,  handleKillSignal);
+signal.signal(signal.SIGUSR2, handleKillSignal);
+
+## Parse command line
+parser = optparse.OptionParser(usage=__doc__)
+
+parser.add_option("-d", "--debug",
+        dest = "debug",
+        action = "store_true",
+        help = "turn debug logging on and stop after three minimisations")
+parser.add_option("--runsfile",
+        dest = "runsfile",
+        help = "specify a file of run combinations to use (space separated, 1"
+        " combination per line), (default: %default)")
+parser.add_option("--check",
+        dest = "check",
+        action = "store_true",
+        help = "check the tuning data")
+
+parser.set_defaults(
+        debug = False,
+        runsfile = "runcombs.dat",
+        check = False
+        )
+
+interpolation.addCLOptions(parser)
+RR.addDataCLOptions(parser)
+opts, args = parser.parse_args()
+
+## Turn on debugging
+if opts.debug:
+    logging.getLogger().setLevel(logging.DEBUG)
+    logging.debug("Options are: %s" % (str(opts)))
+
+sys.stdout.write(messages.logo + "\n" + messages.guideline)
+sys.stdout.flush()
+
+## 1. Check option values and load data
+##    Ordered by time consumption.
+
+
+## Get the configured interpolation class
+try:
+    IpolCls = interpolation.getInterpolationClass(opts.ipolmethod,
+            opts.useweave)
+    logging.info("Using %s for interpolation." % (IpolCls.__name__))
+except Exception, e:
+    logging.error("Problem getting interpolation method: %s" % (e))
+    logging.error("Exiting!")
+    sys.exit(1)
+
+
+## Test if we can write to output directory
+ipoldir = RR.getDataDirectories(opts)["ipol"]
+if ipoldir is None:
+    logging.error("No interpolation directory given: Use the --datadir or"
+            " --ipoldir option!")
+    sys.exit(1)
+logging.info("Using %s for interpolation storage." % (ipoldir))
+
+if not os.path.exists(ipoldir):
+    logging.info("Creating interpolation directory.")
+    os.makedirs(ipoldir)
+
+## Check if we can open given run combination file ...
+if opts.runsfile is None:
+    logging.error("No run combination file given!")
+    logging.error("Exiting!")
+    sys.exit(1)
+
+if not os.path.isfile(opts.runsfile):
+    logging.error("Given run combination file does not exist: %s" % (
+            opts.runsfile))
+    logging.error("Exiting!")
+    sys.exit(1)
+if not os.access(opts.runsfile, os.R_OK):
+    logging.error("Given run combination file cannot be opened for read"
+            " operation: %s" % (opts.runsfile))
+    logging.error("Exiting!")
+    sys.exit(1)
+logging.debug("Using %s as runsfile" % (opts.runsfile))
+
+## ... and load run combinations
+runfile = open(opts.runsfile, "r")
+allruns = [line.split() for line in runfile.readlines()]
+runfile.close()
+logging.info("Loaded %i run combinations from %s" % (len(allruns),
+    opts.runsfile))
+
+
+## Select the observables we want to use for our tune.
+try:
+    obsdict = RR.readObservableFile(opts.observablefile)
+except Exception, e:
+    logging.error("Problem when reading observable file: %s" % (e))
+    logging.error("Exiting!")
+    sys.exit(1)
+logging.debug("loaded observable file from %s: %s" % (
+        opts.observablefile, obsdict))
+
+observables = obsdict.keys()
+
+
+## Load and check tuning data
+tundat = RR.getConfiguredData(opts.datadir, opts.mcdir, opts.refdir, None)
+if opts.check:
+    tundat.isValid()
+else:
+    logging.warning("No validation of TuningData object performed")
+## Check that we're not using any runs with NaN
+naninfo = tundat.getNaNInfo()
+uniqueallruns = set(itertools.chain(*allruns))
+for obs in naninfo.keys():
+    if obs in observables:
+        for run in naninfo[obs].keys():
+            if run in uniqueallruns:
+                logging.error("MC data used for interpolation contains NaN"
+                        " in observable %s and run %s!" % (obs, run))
+                logging.error("Probably, this is the result of a failed MC"
+                        " run: Inspect your generator's output!")
+                logging.error("Continuing anyway and hoping for the best...")
+
+
+## Start interpolating
+for i, runs in enumerate(allruns):
+    if RECVD_KILL_SIGNAL is not None:
+        logger.critical("Leaving event loop early due to signal "
+                        + str(RECVD_KILL_SIGNAL))
+        break
+    name = RR.getIpolFilename(IpolCls, runs)
+    path = os.path.join(ipoldir, name)
+
+    logging.info("Starting interpolation %i/%i" % (i+1, len(allruns)))
+    ipolset = tundat.getInterpolationSet(IpolCls, runs, observables)
+
+    ipolset.write(path)
+    logging.info("Interpolation set written to %s" % (name))

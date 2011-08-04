@@ -1,0 +1,146 @@
+#! /usr/bin/env python
+
+"""%prog
+
+Create pdf pull plots for a reference and a MC/Iinterpolation data (AIDA-XML) file.
+
+Usage:
+    %prog [options] -r ref -w tune2/weights mc.aida
+"""
+
+
+import os, sys, numpy, pylab, optparse, logging, matplotlib
+logging.basicConfig(level=logging.INFO,
+        format = "%(levelname)s %(message)s")
+from professor import rivetreader
+from professor.tools.progressbar import ForLoopProgressBar as flpb
+from professor.tools.elementtree import ET
+from professor.tools import messages
+
+params = {
+        'backend':'pdf',
+        'axes.labelsize': 14,
+        'text.fontsize': 14,
+        'legend.fontsize': 14,
+        'axes.titlesize': 14,
+        'xtick.labelsize': 14,
+        'ytick.labelsize': 14,
+        'text.usetex': True,
+        'figure.dpi': 300,
+        'figure.subplot.left' : 0.12,
+        'figure.subplot.right' : 0.9,
+        'figure.subplot.bottom' : 0.1,
+        'figure.subplot.top' : 0.9,
+        'lines.markersize':7,
+        'text.latex.preamble' :  ['\usepackage{amsmath}', '\usepackage{mathpazo}', '\usepackage{hepunits}']
+        }
+
+matplotlib.pyplot.rcParams.update(params)
+
+parser = optparse.OptionParser(usage = __doc__)
+parser.add_option("-o", dest="OUTDIR",
+        help = "The directory were the plots are saved. (default: %default)")
+parser.add_option("-w", dest="WEIGHTS",
+        help = "The observable/weights file, just in case not all available" +
+        " histograms shall be processed")
+parser.add_option("-r", dest="REFDIR",
+        help = "The directory were the reference aida files are to be found.")
+
+parser.set_defaults(
+        OUTDIR = "pulls",
+        WEIGHTS = None)
+
+opts, args = parser.parse_args()
+
+sys.stdout.write(messages.guideline)
+sys.stdout.flush()
+
+# Check if output directory exists - create otherwise
+if not os.path.exists(opts.OUTDIR):
+    os.mkdir(opts.OUTDIR)
+
+def readAida(aidafile):
+    """ A function for reading in histograms from an AIDA-file.
+        This is basically copied from rivetreader.getMCHistosAndParams.
+    """
+
+    mchistos, titles = {}, {}
+
+    tree = ET.parse(aidafile)
+    for dps in tree.findall("dataPointSet"):
+        dpsname = dps.get("path") + "/" + dps.get("name")
+        ## Make a histogram and add it to the return dictionary
+        mchistos[dpsname] = rivetreader.mkHistoFromDPS(dps)
+        ## read histo-titles
+        titles[dpsname] = dps.get("title")
+    return mchistos, titles
+
+def pull(refbin, mcbin):
+    """ The definition for the pull calculation based on a reference
+        bin and a MC bin.
+    """
+    return (refbin.getYVal() - mcbin.getYVal())/refbin.getYErr()
+
+def plotPulls(observable):
+    """ The plotting routine. This plots the pulls for bins of a
+        certain observable.
+    """
+    # Processing histos to have an easy to handle numpy.array as input only.
+    mc_h = mchistos[observable]
+    ref_h= refhistos[observable]
+    data = [(mcbin.getBinCenter(), pull(ref_h.getBins()[n] ,mcbin)
+        )  for n, mcbin in enumerate(mc_h.getBins())  if not ref_h.getBins(
+            )[n].getYVal() == 0]
+    D = numpy.array(data)
+
+    # Define a figure and subplot.
+    fig=pylab.figure(facecolor='w')
+    sub=fig.add_subplot(1,1,1)
+
+    # The actual data-plotting command.
+    sub.plot(D[:,0], D[:,1], ls=" ", marker="o", color="k")
+
+    # Three horizontal lines to guide the eye at y = -1, 0 and +1
+    sub.axhline(0)
+    sub.axhline(1., ls="--")
+    sub.axhline(-1., ls="--")
+
+    # Make the y - plot range symmetric around 0
+    ymax = numpy.ceil(max(abs(D[:,1])))
+    sub.set_ylim(-1.*ymax, ymax)
+
+    # Plot and axis titles
+    sub.set_title("Pulls for observable %s"%mctitles[observable])
+    sub.set_xlabel(mctitles[observable])
+    sub.set_ylabel("pull")
+
+    # Have tickmarks only at the bottom and to the left
+    sub.get_xaxis().tick_bottom()
+    sub.get_yaxis().tick_left()
+
+    # Save the plot to a pdf file.
+    fig.savefig(opts.OUTDIR + "/" + (observable.strip("/")).replace("/","_")
+            + ".pdf")
+
+# read in histos, titles
+refhistos = rivetreader.getRefHistos(opts.REFDIR)
+mchistos,  mctitles  = readAida(args[0])
+
+# read in observable/weights file
+if opts.WEIGHTS is None:
+    plot_obs = mchistos.keys()
+else:
+    weights = rivetreader.readObservableFile(opts.WEIGHTS)
+    plot_obs = [k for k, v in weights.iteritems() if not v==0]
+
+# process the observables
+bar = flpb(0, len(plot_obs), 30, 'plotting... ')
+for n, obs in enumerate(plot_obs):
+    bar.update(n)
+    try:
+        plotPulls(obs)
+    except:
+        print "Could not process %s."%mctitles[obs]
+
+# Exit nicely
+sys.exit(0)

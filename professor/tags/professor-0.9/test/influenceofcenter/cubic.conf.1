@@ -1,0 +1,36 @@
+# professor config file
+# format is the same as accepted from Python standard
+# library module ConfigParser
+[test]
+loglevel = debug
+logfiles = -
+
+[gencenterdata]
+number of centers = 1000
+loglevel = debug
+number of interpolations = 5
+number of test points = 10000
+logfiles = -
+use error for comparison = fake dist
+
+[global]
+loglevel = info
+logfiles = -
+
+[testinter]
+mc run min = -1
+mc run step = 2
+add mc runs = 12
+start dim = 1
+stop dim = 7
+basedir = /scratch/users/eike/influenceofcenter/
+y distribution = cubic
+relative error = .05
+loglevel = debug
+logfiles = -
+
+[interpolation]
+loglevel = warning
+method = quadratic
+logfiles = -
+
