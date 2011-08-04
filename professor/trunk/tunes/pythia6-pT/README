@@ -1,8 +1,0 @@
-## Pythia 6 pT tune details
-
-In e+e- frag/shower part:
-
-  Fix PARJ(47) = 1
-  Fix PARJ(82) = 0.8
-  Change DELPHI_1996 ref data to pretend that mean charged multiplicity = 20.3
-

@@ -1,3 +1,0 @@
-#for i in $PROF_RUNCOMB
-$i #slurp
-#end for

@@ -1,40 +1,0 @@
-10
-
-dir
-1330
-svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/professor/branches/noConfig/tunes
-svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/professor
-
-
-
-2009-03-13T19:32:53.641184Z
-532
-buckley
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-b182a513-290a-0410-831b-f4ee8f18b9b2
-
-sherpa
-dir
-
-pythia6-Q2
-dir
-
-pythia6-pT
-dir
-
-herwig++
-dir
-

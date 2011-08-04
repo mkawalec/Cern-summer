@@ -1,40 +1,0 @@
-10
-
-dir
-1330
-svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/professor/branches/newErrors/tunes
-svn+ssh://mkawalec@svn.hepforge.org/hepforge/svn/professor
-
-
-
-2009-02-25T22:43:45.724339Z
-515
-holsch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-b182a513-290a-0410-831b-f4ee8f18b9b2
-
-sherpa
-dir
-
-pythia6-Q2
-dir
-
-pythia6-pT
-dir
-
-herwig++
-dir
-

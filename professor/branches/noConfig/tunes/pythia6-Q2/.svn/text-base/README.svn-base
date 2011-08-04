@@ -1,5 +1,0 @@
-## Pythia 6 Q2 tune
-
-In pp UE part:
-  Fix PARP(93) = 5.0 (primordial kT tail cutoff)
-  Or equivalently, just don't sample it, since this is the default!

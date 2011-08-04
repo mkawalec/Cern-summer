@@ -1,1 +1,0 @@
-./rivetrunner.py -n 50000 -N30 -p fpythia.params -P lep1.params -P fpythia-hadronic.params -a DELPHI_1996_S3430090 -g FPythia:6413 -T3 --timestamp -o pythia6413-4D-p21p41p81p82 --run
