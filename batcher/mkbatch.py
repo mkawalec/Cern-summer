@@ -2,7 +2,7 @@ import random
 import os
 import os.path
 
-HOME_DIR = '/afs/cern.ch/user/d/dmallows'
+HOME_DIR = '/afs/cern.ch/user/d/mkawalec/pprofessor'
 MASTER_BATCH_DIR = os.path.join(HOME_DIR, 'mc')
 
 base_params = ''

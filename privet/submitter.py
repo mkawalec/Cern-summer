@@ -17,11 +17,12 @@ def LaunchJobs(hosts):
 
     subprocess = []
     for host in hosts:
-        with open(host, 'r') as file:
-            for n, line in enumerate(file):
-                line = line.strip()
-                index = line.find(" ")
-                subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),n)))
+        for i in xrange(5):
+            with open(host, 'r') as file:
+                for n, line in enumerate(file):
+                    line = line.strip()
+                    index = line.find(" ")
+                    subprocess.append(Process(target=LaunchSsh, args=(line[:index], line[index:].strip(),n)))
     for process in subprocess:
         process.start()
     
@@ -42,6 +43,7 @@ def LaunchSsh(host, threads, n):
     from subprocess import call
 
     call("ssh "+ host + " \' mkdir -p ~/batchJob/" + str(n) + " \'", stdout = devnull, stderr = devnull, shell=True)
+    
     
     call(['scp make.py *.cc *.params ' + host + ':~/batchJob/' + str(n)], shell=True , stdout = devnull, stderr = devnull)
     
