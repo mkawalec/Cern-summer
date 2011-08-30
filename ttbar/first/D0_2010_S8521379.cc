@@ -87,7 +87,7 @@ namespace Rivet {
 
       const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
 
-      if (inRange(W.mass(), 70, 90)) {
+      if (W.Et() > 20*GeV) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
         std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight  << endl;
@@ -101,7 +101,7 @@ namespace Rivet {
     }
 
     void finalize() {
-      scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
+      scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
     }
 
     //@}
