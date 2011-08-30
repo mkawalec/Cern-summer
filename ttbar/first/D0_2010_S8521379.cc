@@ -87,9 +87,10 @@ namespace Rivet {
 
       const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
 
-      if (inRange(W.pseudorapidity()/GeV, -1.1, 1.1)) {
+      if (inRange(W.mass(), 70, 90)) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
+        std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight  << endl;
 	      _h_t_pT_W_cut->fill(t.pT(), weight);
       }
       else {
