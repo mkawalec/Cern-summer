@@ -26,7 +26,10 @@ namespace Rivet {
       addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_mass_W_cut = bookHistogram1D("t_mass_W_cut", 26, 100, 400);
-      _h_t_pT_W_cut = bookHistogram1D("t_pT_W_cut", 8, 0, 400);
+
+      std::vector<double> edges;
+      edges.push_back(0); edges.push_back(400);
+      _h_t_pT_W_cut = bookHistogram1D("t_pT_W_cut", edges);
     }
 
 

@@ -7,3 +7,25 @@ lepton + jets ->
   At least one jet B tagged
   e  -> E_T > 20GeV, |eta| < 1.1
   mu -> E_T > 25GeV, |eta| < 2.0
+
+  used a CTEQ6L1 set of PDFs with a common factorisation and renormalisation
+  scale of mu = m_t + \sum p_t^{jets} for m_t = 170GeV
+
+  detector response simulated using geant
+
+  The fit assumes
+  equal masses for the two reconstructed top quarks and
+  the two reconstructed W boson masses are constrained
+  to 80.4 GeV/c2 .
+
+
+  The simulated tt signal is normalized to the cross section
+   measured by a dedicated likelihood fit in the same fi-
+   nal state using the same event selections (including the
+   b-tagging requirement) and data as Ref. [15], namely to
+   8.46+1.09 pb at a top-quark mass mt = 170 GeV/c2 (in
+   −0.97
+   good agreement with the value extracted in this study
+   by integrating the differential cross section)
+  
+
