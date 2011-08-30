@@ -22,7 +22,7 @@ namespace Rivet {
     //@{
 
     void init() {
-      addProjection(ChargedLeptons(FinalState(-2.0, 2.0, 20*GeV)), "LFS");
+      addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
       addProjection(FastJets(FinalState(-4.2, 4.2, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_mass_W_cut = bookHistogram1D("t_mass_W_cut", 26, 100, 400);
@@ -35,13 +35,12 @@ namespace Rivet {
 
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
       MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
-
       foreach (Particle lepton, lfs.chargedLeptons()) {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
       }
 
       // Would be very nice to find a way to make this bit work!
-      if (lfs.chargedLeptons().size() != 1) {
+      if (lfs.chargedLeptons().empty()) {
         MSG_DEBUG("Event failed lepton multiplicity cut");
         vetoEvent;
       }
@@ -62,27 +61,30 @@ namespace Rivet {
       }
 
       Jets bjets, ljets;
-      FourMomentum W()
       foreach (const Jet& jet, jets) {
         if (jet.containsBottom()) {
           bjets.push_back(jet);
         } else {
-	  W += jet.momentum()
           ljets.push_back(jet);
         }
       }
-      const FourMomentum W = W;
 
       MSG_DEBUG("Number of b-jets = " << bjets.size());
-      if (bjets.size() < 1) {
+      if (bjets.size() != 2) {
         MSG_DEBUG("Event failed b-tagging cut");
         vetoEvent;
       }
 
-      // Really need to think about this... How are they reconstructing with variable number of b quarks?
+      MSG_DEBUG("Number of l-jets = " << ljets.size());
+      if (ljets.size() != 2) {
+        MSG_DEBUG("Event failed l-tagging cut");
+        vetoEvent;
+      }
+
+      const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
+
       if (inRange(W.pseudorapidity()/GeV, -1.1, 1.1)) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
-	foreach (const Jet& jet, jets) {
         const FourMomentum t1 = W + bjets[0].momentum();
         const FourMomentum t2 = W + bjets[1].momentum();
         _h_t_mass_W_cut->fill(t1.mass(), weight);
