@@ -23,7 +23,7 @@ namespace Rivet {
 
     void init() {
       addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
-      addProjection(FastJets(FinalState(-4.2, 4.2, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
+      addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_mass_W_cut = bookHistogram1D("t_mass_W_cut", 26, 100, 400);
       _h_t_pT_W_cut = bookHistogram1D("t_pT_W_cut", 8, 0, 400);
@@ -49,7 +49,7 @@ namespace Rivet {
         vetoEvent;
       }
 
-      const Jets jets = jetpro.jetsByPt(20*GeV);
+      const Jets jets = jetpro.jetsByPt(20*GeV, MAXDOUBLE, -2.5, 2.5);
       foreach (const Jet& jet, jets) {
         MSG_DEBUG("Jet pT = " << jet.momentum().pT()/GeV << " GeV");
       }
@@ -74,7 +74,7 @@ namespace Rivet {
       }
 
       MSG_DEBUG("Number of b-jets = " << bjets.size());
-      if (bjets.size() != 2) {
+      if (bjets.size() < 1) {
         MSG_DEBUG("Event failed b-tagging cut");
         vetoEvent;
       }
@@ -89,12 +89,9 @@ namespace Rivet {
 
       if (inRange(W.pseudorapidity()/GeV, -1.1, 1.1)) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
-        const FourMomentum t1 = W + bjets[0].momentum();
-        const FourMomentum t2 = W + bjets[1].momentum();
-        _h_t_mass_W_cut->fill(t1.mass(), weight);
-        _h_t_mass_W_cut->fill(t2.mass(), weight);
-	_h_t_pT_W_cut->fill(t1.pT(), weight);
-	_h_t_pT_W_cut->fill(t2.pT(), weight);
+        const FourMomentum t = W + bjets[0].momentum();
+        _h_t_mass_W_cut->fill(t.mass(), weight);
+	_h_t_pT_W_cut->fill(t.pT(), weight);
       }
       else {
         vetoEvent;
