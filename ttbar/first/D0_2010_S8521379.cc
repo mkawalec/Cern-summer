@@ -22,7 +22,7 @@ namespace Rivet {
     //@{
 
     void init() {
-      addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
+      addProjection(ChargedLeptons(FinalState(-2.0, 2.0, 20*GeV)), "LFS");
       addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
@@ -44,7 +44,7 @@ namespace Rivet {
       }*/
 
       // Would be very nice to find a way to make this bit work!
-      if (lfs.chargedLeptons().empty()) {
+      if (lfs.chargedLeptons().size() != 1) {
         MSG_DEBUG("Event failed lepton multiplicity cut");
         vetoEvent;
       }
@@ -87,20 +87,40 @@ namespace Rivet {
 
       const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
 
+      const Particle lepton = lfs.chargedLeptons()[0];
+      if (lepton.pdgId() == ELECTRON)  {
+       	if (lepton.momentum().Et() <= 20*GeV) {
+	  // Need to throw debug stuff, so cannot be amalgomated
+          vetoEvent;
+        }
+        if (fabs(lepton.momentum().eta()) >= 1.1) {
+          vetoEvent;
+        }
+      }
+      else if(lepton.pdgId() == MUON) {
+       	if (lepton.momentum().Et() <= 25*GeV) {
+	  // Need to throw debug stuff, so cannot be amalgomated
+          vetoEvent;
+        }
+        if (fabs(lepton.momentum().eta()) >= 2.0) {
+          vetoEvent;
+        }
+      }
+      else {
+        vetoEvent;
+      }	
+
       if (W.Et() > 20*GeV) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
 	      _h_t_pT_W_cut->fill(t.pT(), weight);
-      }
-      else {
-        vetoEvent;
       }
 
       /// @todo Add reconstruction of the other top from the leptonically decaying W, using WFinder
     }
 
     void finalize() {
-      scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
+      scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
     }
 
     //@}
