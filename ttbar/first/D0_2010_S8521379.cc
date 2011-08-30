@@ -25,11 +25,7 @@ namespace Rivet {
       addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
       addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
-      _h_t_mass_W_cut = bookHistogram1D("t_mass_W_cut", 26, 100, 400);
-
-      std::vector<double> edges;
-      edges.push_back(0); edges.push_back(400);
-      _h_t_pT_W_cut = bookHistogram1D("t_pT_W_cut", edges);
+      _h_t_pT_W_cut = bookHistogram1D(2,1,1);
     }
 
 
@@ -93,7 +89,6 @@ namespace Rivet {
       if (inRange(W.pseudorapidity()/GeV, -1.1, 1.1)) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
-        _h_t_mass_W_cut->fill(t.mass(), weight);
 	_h_t_pT_W_cut->fill(t.pT(), weight);
       }
       else {
@@ -104,16 +99,13 @@ namespace Rivet {
     }
 
     void finalize() {
-      // No histos, so nothing to do!
       scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
-      scale(_h_t_mass_W_cut, crossSection()/sumOfWeights());
     }
 
     //@}
 
   private:
 
-    AIDA::IHistogram1D *_h_t_mass_W_cut;
     AIDA::IHistogram1D *_h_t_pT_W_cut;
 
   };
