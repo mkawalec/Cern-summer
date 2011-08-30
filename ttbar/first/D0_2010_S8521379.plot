@@ -1,8 +1,6 @@
-# BEGIN PLOT /D0_2010_S8521379/d01-x01-y01
-#Title=[Uncomment and insert title for histogram d01-x01-y01 here]
-#XLabel=[Uncomment and insert x-axis label for histogram d01-x01-y01 here]
-#YLabel=[Uncomment and insert y-axis label for histogram d01-x01-y01 here]
-# + any additional plot settings you might like, see make-plots documentation
-# END PLOT
-
-# ... add more histograms as you need them ...
+#BEGIN PLOT Rivet.aida/D0_2010_S8521379/t_mass_W_cut t_mass_W_cut
+Title=Invariant mass distribution
+XLabel=$m_{t \bar t}$ [GeV]
+YLabel=$dN / d p_\perp$ [GeV]
+LogY=0
+#END PLOT

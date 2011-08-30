@@ -34,7 +34,11 @@ namespace Rivet {
       const double weight = event.weight();
 
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
+
+      const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
+
       MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
+
       foreach (Particle lepton, lfs.chargedLeptons()) {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
       }
@@ -101,8 +105,8 @@ namespace Rivet {
 
     void finalize() {
       // No histos, so nothing to do!
-      scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
-      scale(_h_t_mass_W_cut, crossSection()/sumOfWeights());
+      scale(_h_t_pT_W_cut, crossSection());
+      scale(_h_t_mass_W_cut, crossSection());
     }
 
     //@}
