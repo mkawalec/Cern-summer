@@ -43,7 +43,7 @@ namespace Rivet {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
       }*/
 
-      // Would be very nice to find a way to make this bit work!
+      /// This works with no problems
       if (lfs.chargedLeptons().empty()) {
         MSG_DEBUG("Event failed lepton multiplicity cut");
         vetoEvent;
@@ -101,7 +101,9 @@ namespace Rivet {
     }
 
     void finalize() {
-      scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
+      normalize(_h_t_pT_W_cut, 1/crossSection());
+      //scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
+      //scale(_h_t_pT_W_cut,crossSection());
     }
 
     //@}
