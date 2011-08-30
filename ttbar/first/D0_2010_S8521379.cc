@@ -38,9 +38,10 @@ namespace Rivet {
 
       MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
 
-      foreach (Particle lepton, lfs.chargedLeptons()) {
+      // Not really needed, and should speed stuff up
+      /*foreach (Particle lepton, lfs.chargedLeptons()) {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
-      }
+      }*/
 
       // Would be very nice to find a way to make this bit work!
       if (lfs.chargedLeptons().empty()) {
@@ -60,7 +61,7 @@ namespace Rivet {
 
       if (jets[0].momentum().pT() <= 40) {
         MSG_DEBUG("Event failed leading jet pT cut");
-	vetoEvent;
+	      vetoEvent;
       }
 
       Jets bjets, ljets;
@@ -89,7 +90,7 @@ namespace Rivet {
       if (W.Et() > 20*GeV) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
-	_h_t_pT_W_cut->fill(t.pT(), weight);
+	      _h_t_pT_W_cut->fill(t.pT(), weight);
       }
       else {
         vetoEvent;
