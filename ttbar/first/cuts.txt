@@ -1,0 +1,9 @@
+From the paper:
+Analysis uses similar data samples as Ref 15.
+lepton + jets ->
+  exactly one isolated lepton (ChargedLeptons.multiplicity = 1), pT > 20GeV
+  >= 4 jets with pT > 20GeV AND |eta| < 2.5
+  At least one jet with pT > 40GeV
+  At least one jet B tagged
+  e  -> E_T > 20GeV, |eta| < 1.1
+  mu -> E_T > 25GeV, |eta| < 2.0
