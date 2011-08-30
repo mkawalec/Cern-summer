@@ -102,8 +102,8 @@ namespace Rivet {
 
     void finalize() {
       // No histos, so nothing to do!
-      scale(_h_t_pT_W_cut, crossSection());
-      scale(_h_t_mass_W_cut, crossSection());
+      scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
+      scale(_h_t_mass_W_cut, crossSection()/sumOfWeights());
     }
 
     //@}
