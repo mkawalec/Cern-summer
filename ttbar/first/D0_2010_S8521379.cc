@@ -43,7 +43,6 @@ namespace Rivet {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
       }*/
 
-      // Would be very nice to find a way to make this bit work!
       if (lfs.chargedLeptons().size() != 1) {
         MSG_DEBUG("Event failed lepton multiplicity cut");
         vetoEvent;
@@ -90,7 +89,6 @@ namespace Rivet {
       const Particle lepton = lfs.chargedLeptons()[0];
       if (lepton.pdgId() == ELECTRON)  {
        	if (lepton.momentum().Et() <= 20*GeV) {
-	  // Need to throw debug stuff, so cannot be amalgomated
           vetoEvent;
         }
         if (fabs(lepton.momentum().eta()) >= 1.1) {
@@ -115,12 +113,15 @@ namespace Rivet {
         const FourMomentum t = W + bjets[0].momentum();
 	      _h_t_pT_W_cut->fill(t.pT(), weight);
       }
+      else {
+        vetoEvent;
+      }
 
       /// @todo Add reconstruction of the other top from the leptonically decaying W, using WFinder
     }
 
     void finalize() {
-      scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
+      scale(_h_t_pT_W_cut, 1e6 * crossSection()/sumOfWeights());
     }
 
     //@}
