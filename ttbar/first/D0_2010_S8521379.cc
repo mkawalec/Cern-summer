@@ -7,7 +7,6 @@
 #include "Rivet/AnalysisLoader.hh"
 #include "Rivet/RivetAIDA.hh"
 
-
 namespace Rivet {
 
   class D0_2010_S8521379 : public Analysis {
@@ -24,15 +23,14 @@ namespace Rivet {
     //@{
 
     void init() {
-      FinalState fs = FinalState(-2, 2, 25*GeV);
-      addProjection(ChargedLeptons(fs), "LFS");
+
+      FinalState fs = FinalState(-5, 5, 0*GeV);
       addProjection(MissingMomentum(HadronicFinalState(fs)), "MM");
-      addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
+      addProjection(ChargedLeptons(FinalState(-2.0, 2.0, 0*GeV)), "LFS"); 
+      addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
-      _multiplicity = bookHistogram1D("multi", 10, 0, 10);
     }
-
 
     void analyze(const Event& event) {
       const double weight = event.weight();
@@ -41,7 +39,6 @@ namespace Rivet {
       const MissingMomentum& missmom = applyProjection<MissingMomentum>(event, "MM");
       const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
 
-      MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
 
       // Not really needed, and should speed stuff up
       /*foreach (Particle lepton, lfs.chargedLeptons()) {
@@ -62,10 +59,36 @@ namespace Rivet {
         MSG_DEBUG("Event failed jet pT cut");
         vetoEvent;
       }
+        
+      const Particle& lepton = lfs.chargedLeptons().at(0);
+      const FourMomentum misslmom = missmom.visibleMomentum() - lepton.momentum();
+
+      if (lepton.pdgId() == MUON) {
+        if (misslmom.Et() <= 25*GeV) {
+          MSG_DEBUG("Muon failed Et cut");
+          vetoEvent;
+        }
+
+        if (abs(lepton.momentum().eta()) >= 2.0) {
+          MSG_DEBUG("Muon failed rapidity cut");
+          vetoEvent;
+        }
+      }
+      else if (lepton.pdgId() == ELECTRON) {
+        if (misslmom.Et() <= 20*GeV) {
+          MSG_DEBUG("Electron failed Et cut");
+          vetoEvent;
+        }
+
+        if (abs(lepton.momentum().eta()) >= 1.1) {
+          MSG_DEBUG("Electron failed rapidity cut");
+          vetoEvent;
+        }
+      }
 
       if (jets[0].momentum().pT() <= 40) {
         MSG_DEBUG("Event failed leading jet pT cut");
-	      vetoEvent;
+        vetoEvent;
       }
 
       Jets bjets, ljets;
@@ -76,8 +99,6 @@ namespace Rivet {
           ljets.push_back(jet);
         }
       }
-
-      _multiplicity->fill(ljets.size(), 1);
 
       if (bjets.size() != 2) {
         MSG_DEBUG("Event failed b-tagging cut");
@@ -138,15 +159,13 @@ namespace Rivet {
     }
 
     void finalize() {
-      normalize(_h_t_pT_W_cut, 1/crossSection());
-      scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
+      scale(_h_t_pT_W_cut,1000 * crossSection()/sumOfWeights());
     }
     //@}
 
   private:
 
     AIDA::IHistogram1D *_h_t_pT_W_cut;
-    AIDA::IHistogram1D *_multiplicity;
 
   };
 
