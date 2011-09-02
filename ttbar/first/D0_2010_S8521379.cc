@@ -122,10 +122,10 @@ namespace Rivet {
         const FourMomentum t2bar = Wlep + bjets[0].momentum();
 
         // Consider combinatorics of t,tbar configurations
-	const double c11 = fabs(t1.mass() - t1bar.mass());
-	const double c12 = fabs(t1.mass() - t2bar.mass());
-	const double c21 = fabs(t2.mass() - t1bar.mass());
-	const double c22 = fabs(t2.mass() - t2bar.mass());
+	      const double c11 = fabs(t1.mass() - t1bar.mass());
+	      const double c12 = fabs(t1.mass() - t2bar.mass());
+	      const double c21 = fabs(t2.mass() - t1bar.mass());
+	      const double c22 = fabs(t2.mass() - t2bar.mass());
 
         // Choose configuration with minimum difference of t, tbar masses
         FourMomentum top = t1;
