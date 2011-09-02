@@ -2,6 +2,7 @@
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedLeptons.hh"
 #include "Rivet/Projections/MissingMomentum.hh"
+#include "Rivet/Projections/WFinder.hh"
 #include "Rivet/Projections/HadronicFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/AnalysisLoader.hh"
@@ -27,6 +28,8 @@ namespace Rivet {
         FinalState fs = FinalState(-5, 5, 0*GeV);
 
         addProjection(ChargedLeptons(fs), "LFS"); 
+      	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, ELECTRON, 60.0*GeV, 100.0*GeV, 20.0*GeV, 0.2), "WE");
+      	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, MUON, 60.0*GeV, 100.0*GeV, 25.0*GeV, 0.2), "WMU");
         addProjection(MissingMomentum(FinalState(fs)), "MM");
         addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
@@ -64,24 +67,23 @@ namespace Rivet {
         const Particle& lepton = lfs.chargedLeptons().at(0);
         const FourMomentum misslmom = missmom.visibleMomentum();
 
-        /*
-        if (lepton.pdgId() == MUON) {
-          if (misslmom.Et() <= 25*GeV) {
-            MSG_DEBUG("Muon failed Et cut");
-            vetoEvent;
-          }
+        const WFinder& wfinder = (abs(lepton.pdgId()) == MUON) ? 
+          applyProjection<WFinder>(event, "WMU") : 
+          applyProjection<WFinder>(event, "WE") ;
 
+        if (wfinder.bosons().size() != 1) {
+          vetoEvent;
+        }
+
+        FourMomentum Wlep(wfinder.bosons().front().momentum());
+
+        if (abs(lepton.pdgId()) == MUON) {
           if (abs(lepton.momentum().eta()) >= 2.0) {
             MSG_DEBUG("Muon failed rapidity cut");
             vetoEvent;
           }
         }
-        else if (lepton.pdgId() == ELECTRON) {
-          if (misslmom.Et() <= 20*GeV) {
-            MSG_DEBUG("Electron failed Et cut");
-            vetoEvent;
-          }
-
+        else if (abs(lepton.pdgId()) == ELECTRON) {
           if (abs(lepton.momentum().eta()) >= 1.1) {
             MSG_DEBUG("Electron failed rapidity cut");
             vetoEvent;
@@ -92,7 +94,6 @@ namespace Rivet {
           MSG_DEBUG("Event failed leading jet pT cut");
           vetoEvent;
         }
-        */
 
         Jets bjets, ljets;
         foreach (const Jet& jet, jets) {
@@ -102,7 +103,6 @@ namespace Rivet {
             ljets.push_back(jet);
           }
         }
-
 
         if (bjets.size() != 2) {
           MSG_DEBUG("Event failed b-tagging cut");
@@ -116,7 +116,6 @@ namespace Rivet {
 
 
         const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
-        const FourMomentum Wlep = missmom.visibleMomentum() + lepton.momentum();
 
         if (inRange(Whad.mass()/GeV, 70, 90) && inRange(Wlep.mass()/GeV, 70, 90)) {
           MSG_INFO("hadronic W mass: " << Whad.mass()/GeV);
