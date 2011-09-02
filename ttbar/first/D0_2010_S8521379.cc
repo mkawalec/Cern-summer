@@ -25,8 +25,9 @@ namespace Rivet {
     void init() {
 
       FinalState fs = FinalState(-5, 5, 0*GeV);
+
+      addProjection(ChargedLeptons(fs), "LFS"); 
       addProjection(MissingMomentum(HadronicFinalState(fs)), "MM");
-      addProjection(ChargedLeptons(FinalState(-2.0, 2.0, 0*GeV)), "LFS"); 
       addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
