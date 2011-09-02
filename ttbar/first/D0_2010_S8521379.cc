@@ -82,7 +82,6 @@ namespace Rivet {
       }
       _multiplicity->fill(ljets.size(), 1);
 
-      MSG_DEBUG("Number of b-jets = " << bjets.size());
       if (bjets.size() != 2) {
         MSG_DEBUG("Event failed b-tagging cut");
         vetoEvent;
@@ -93,22 +92,18 @@ namespace Rivet {
         vetoEvent;
       }
 
-      const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
-      // Or we could veto if ljet multiplicity != 2 ...
+      const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
+      const FourMomentum Wlep = missmom.visibleMomentum() + lfs.chargedLeptons().at(0).momentum();
 
-      if (W.mass()/GeV < 90 && W.mass()/GeV > 70) {
-        MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
-        const FourMomentum t = W + bjets[0].momentum();
-        // std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight;
-        cout << "Ljets number = " << ljets.size() << endl;
-	      _h_t_pT_W_cut->fill(t.pT(), weight);
+      if (inRange(Whad.mass()/GeV, 70, 90) && inRange(Wlep.mass()/GeV, 70, 90)) {
+      	MSG_INFO("hadronic W mass: " << Whad.mass()/GeV);
+      	MSG_INFO("leptonic W mass: " << Wlep.mass()/GeV);
+        const FourMomentum t1 = Whad + bjets[0].momentum();
+        const FourMomentum t2 = Wlep + bjets[1].momentum();
+        const FourMomentum t1bar = Wlep + bjets[1].momentum();
+        const FourMomentum t2bar = Wlep + bjets[0].momentum();
       }
-      else {
-        vetoEvent;
-      }
-
-      double lWmass = mass(missmom.visibleMomentum() + lfs.chargedLeptons().at(0).momentum());
-      MSG_INFO("leptonic W mass: " << lWmass);
+      else vetoEvent;
     }
 
     void finalize() {
@@ -116,7 +111,6 @@ namespace Rivet {
       //scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
       //scale(_h_t_pT_W_cut,crossSection());
     }
-
     //@}
 
   private:
