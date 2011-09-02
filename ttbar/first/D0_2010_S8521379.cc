@@ -26,6 +26,7 @@ namespace Rivet {
       addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
+      _multiplicity = bookHistogram1D("multi", 10, 0, 10);
     }
 
 
@@ -72,6 +73,7 @@ namespace Rivet {
           ljets.push_back(jet);
         }
       }
+      _multiplicity->fill(ljets.size(), 1);
 
       MSG_DEBUG("Number of b-jets = " << bjets.size());
       if (bjets.size() < 1) {
@@ -85,12 +87,26 @@ namespace Rivet {
         vetoEvent;
       }
 
-      const FourMomentum W  = ljets[0].momentum() + ljets[1].momentum();
+      size_t blah1 = 0; size_t blah2 = 0; int Wmass = -1000000;
+      for(size_t i = 0; i < ljets.size(); ++i){
+        for(size_t j = 0; j < i; ++j) {
+          if(i != j) {
+            if(abs((ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV - 80.4) < 
+               abs(Wmass - 80.4)){
+              Wmass = (ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV;
+              blah1 = i;
+              blah2 = j;
+            }
+          }
+        }
+      }
+      const FourMomentum W  = ljets[blah1].momentum() + ljets[blah2].momentum();
 
-      if (W.Et() > 20*GeV) {
+      if (W.mass()/GeV < 90 && W.mass()/GeV > 70) {
         MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
         const FourMomentum t = W + bjets[0].momentum();
-        std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight  << endl;
+        std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight;
+        cout << "Ljets number = " << ljets.size() << endl;
 	      _h_t_pT_W_cut->fill(t.pT(), weight);
       }
       else {
@@ -111,6 +127,7 @@ namespace Rivet {
   private:
 
     AIDA::IHistogram1D *_h_t_pT_W_cut;
+    AIDA::IHistogram1D *_multiplicity;
 
   };
 
