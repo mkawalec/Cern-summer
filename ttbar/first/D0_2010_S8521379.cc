@@ -1,10 +1,11 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedLeptons.hh"
+#include "Rivet/Projections/MissingMomentum.hh"
+#include "Rivet/Projections/HadronicFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/AnalysisLoader.hh"
 #include "Rivet/RivetAIDA.hh"
-
 
 namespace Rivet {
 
@@ -22,30 +23,29 @@ namespace Rivet {
     //@{
 
     void init() {
-      addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
-      addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
+
+      FinalState fs = FinalState(-5, 5, 0*GeV);
+      addProjection(MissingMomentum(HadronicFinalState(fs)), "MM");
+      addProjection(ChargedLeptons(FinalState(-2.0, 2.0, 0*GeV)), "LFS"); 
+      addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
-      _multiplicity = bookHistogram1D("multi", 10, 0, 10);
     }
-
 
     void analyze(const Event& event) {
       const double weight = event.weight();
 
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
-
+      const MissingMomentum& missmom = applyProjection<MissingMomentum>(event, "MM");
       const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
 
-      MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
 
       // Not really needed, and should speed stuff up
       /*foreach (Particle lepton, lfs.chargedLeptons()) {
         MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
       }*/
 
-      /// This works with no problems
-      if (lfs.chargedLeptons().empty()) {
+      if (lfs.chargedLeptons().size() != 1) {
         MSG_DEBUG("Event failed lepton multiplicity cut");
         vetoEvent;
       }
@@ -59,10 +59,36 @@ namespace Rivet {
         MSG_DEBUG("Event failed jet pT cut");
         vetoEvent;
       }
+        
+      const Particle& lepton = lfs.chargedLeptons().at(0);
+      const FourMomentum misslmom = missmom.visibleMomentum() - lepton.momentum();
+
+      if (lepton.pdgId() == MUON) {
+        if (misslmom.Et() <= 25*GeV) {
+          MSG_DEBUG("Muon failed Et cut");
+          vetoEvent;
+        }
+
+        if (abs(lepton.momentum().eta()) >= 2.0) {
+          MSG_DEBUG("Muon failed rapidity cut");
+          vetoEvent;
+        }
+      }
+      else if (lepton.pdgId() == ELECTRON) {
+        if (misslmom.Et() <= 20*GeV) {
+          MSG_DEBUG("Electron failed Et cut");
+          vetoEvent;
+        }
+
+        if (abs(lepton.momentum().eta()) >= 1.1) {
+          MSG_DEBUG("Electron failed rapidity cut");
+          vetoEvent;
+        }
+      }
 
       if (jets[0].momentum().pT() <= 40) {
         MSG_DEBUG("Event failed leading jet pT cut");
-	      vetoEvent;
+        vetoEvent;
       }
 
       Jets bjets, ljets;
@@ -73,61 +99,73 @@ namespace Rivet {
           ljets.push_back(jet);
         }
       }
-      _multiplicity->fill(ljets.size(), 1);
 
-      MSG_DEBUG("Number of b-jets = " << bjets.size());
-      if (bjets.size() < 1) {
+      if (bjets.size() != 2) {
         MSG_DEBUG("Event failed b-tagging cut");
         vetoEvent;
       }
 
-      MSG_DEBUG("Number of l-jets = " << ljets.size());
       if (ljets.size() != 2) {
         MSG_DEBUG("Event failed l-tagging cut");
         vetoEvent;
       }
 
-      size_t blah1 = 0; size_t blah2 = 0; int Wmass = -1000000;
-      for(size_t i = 0; i < ljets.size(); ++i){
-        for(size_t j = 0; j < i; ++j) {
-          if(i != j) {
-            if(abs((ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV - 80.4) < 
-               abs(Wmass - 80.4)){
-              Wmass = (ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV;
-              blah1 = i;
-              blah2 = j;
-            }
-          }
+      const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
+      const FourMomentum Wlep = missmom.visibleMomentum();
+
+      if (inRange(Whad.mass()/GeV, 70, 90) && inRange(Wlep.mass()/GeV, 70, 90)) {
+      	MSG_INFO("hadronic W mass: " << Whad.mass()/GeV);
+      	MSG_INFO("leptonic W mass: " << Wlep.mass()/GeV);
+        const FourMomentum t1 = Whad + bjets[0].momentum();
+        const FourMomentum t2 = Wlep + bjets[1].momentum();
+        const FourMomentum t1bar = Wlep + bjets[1].momentum();
+        const FourMomentum t2bar = Wlep + bjets[0].momentum();
+
+        // Consider combinatorics of t,tbar configurations
+	const double c11 = fabs(t1.mass() - t1bar.mass());
+	const double c12 = fabs(t1.mass() - t2bar.mass());
+	const double c21 = fabs(t2.mass() - t1bar.mass());
+	const double c22 = fabs(t2.mass() - t2bar.mass());
+
+        // Choose configuration with minimum difference of t, tbar masses
+        FourMomentum top = t1;
+        FourMomentum tbar = t1bar;
+        double cmin = c11;
+
+        if (c12 < cmin) {
+          top = t1;
+          tbar = t2bar;
+          cmin = c12;
         }
-      }
-      const FourMomentum W  = ljets[blah1].momentum() + ljets[blah2].momentum();
 
-      if (W.mass()/GeV < 90 && W.mass()/GeV > 70) {
-        MSG_DEBUG("W found with mass " << W.mass()/GeV << " GeV");
-        const FourMomentum t = W + bjets[0].momentum();
-        std::cout << "Found W! t_pT = "<< t.pT() << ", weight= "<< weight;
-        cout << "Ljets number = " << ljets.size() << endl;
-	      _h_t_pT_W_cut->fill(t.pT(), weight);
-      }
-      else {
-        vetoEvent;
-      }
+        if (c21 < cmin) {
+          top = t2;
+          tbar = t1bar;
+          cmin = c21;
+        }
 
-      /// @todo Add reconstruction of the other top from the leptonically decaying W, using WFinder
+        if (c22 < cmin) {
+          top = t2;
+          tbar = t2bar;
+          cmin = c22;
+        }
+
+        // Fill t, tbar
+        _h_t_pT_W_cut->fill(top.pT(), weight);
+        _h_t_pT_W_cut->fill(tbar.pT(), weight);
+
+      }
+      else vetoEvent;
     }
 
     void finalize() {
-      normalize(_h_t_pT_W_cut, 1/crossSection());
-      //scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
-      //scale(_h_t_pT_W_cut,crossSection());
+      scale(_h_t_pT_W_cut,1000 * crossSection()/sumOfWeights());
     }
-
     //@}
 
   private:
 
     AIDA::IHistogram1D *_h_t_pT_W_cut;
-    AIDA::IHistogram1D *_multiplicity;
 
   };
 

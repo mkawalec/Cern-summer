@@ -1,5 +1,3 @@
-rivet-buildplugin RivetPlugin.so *.cc
-ANA=D0_2010_S8521379
 
 mkfifo hepmc.fifo
 
