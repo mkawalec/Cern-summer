@@ -95,6 +95,7 @@ namespace Rivet {
           vetoEvent;
         }
 
+
         Jets bjets, ljets;
         foreach (const Jet& jet, jets) {
           if (jet.containsBottom()) {
@@ -109,11 +110,27 @@ namespace Rivet {
           vetoEvent;
         }
 
-        if (ljets.size() != 2) {
+        if (ljets.size() < 2) {
           MSG_DEBUG("Event failed l-tagging cut");
           vetoEvent;
         }
 
+      // Brought this back because it might be important, but cannot get it to work.
+      // Perhaps it's in the wrong place now? Can both start at zero?
+      //  size_t blah1 = 0; size_t blah2 = 0; int Wmass = -1000000;
+      //  for(size_t i = 0; i < ljets.size(); ++i){
+      //    for(size_t j = 0; j < i; ++j) {
+      //      if(i != j) {
+      //        if(abs((ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV - 80.4) < abs(Wmass - 80.4)){
+      //          Wmass = (ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV;
+      //          blah1 = i;
+      //          blah2 = j;
+      //        }
+      //      }
+      //    }
+      //  }
+      //
+      //  const FourMomentum Whad = ljets[blah1].momentum() + ljets[blah2].momentum();
 
         const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
 
