@@ -24,11 +24,9 @@ namespace Rivet {
     //@{
 
     void init() {
-
-      addProjection(ChargedLeptons(FinalState(-1.1, 1.1, 30*GeV)), "LFS");
-
-      addProjection(MissingMomentum(FinalState(-1.1, 1.1, 30*GeV)), "MM");
-
+      FinalState fs = FinalState(-2, 2, 25*GeV);
+      addProjection(ChargedLeptons(fs), "LFS");
+      addProjection(MissingMomentum(HadronicFinalState(fs)), "MM");
       addProjection(FastJets(FinalState(-5, 5, 0*GeV), FastJets::ANTIKT, 0.4), "Jets");
 
       _h_t_pT_W_cut = bookHistogram1D(2,1,1);
@@ -40,9 +38,7 @@ namespace Rivet {
       const double weight = event.weight();
 
       const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
-
       const MissingMomentum& missmom = applyProjection<MissingMomentum>(event, "MM");
-
       const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
 
       MSG_DEBUG("Charged lepton multiplicity = " << lfs.chargedLeptons().size());
@@ -80,6 +76,7 @@ namespace Rivet {
           ljets.push_back(jet);
         }
       }
+
       _multiplicity->fill(ljets.size(), 1);
 
       if (bjets.size() != 2) {
@@ -93,7 +90,7 @@ namespace Rivet {
       }
 
       const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
-      const FourMomentum Wlep = missmom.visibleMomentum() + lfs.chargedLeptons().at(0).momentum();
+      const FourMomentum Wlep = missmom.visibleMomentum();
 
       if (inRange(Whad.mass()/GeV, 70, 90) && inRange(Wlep.mass()/GeV, 70, 90)) {
       	MSG_INFO("hadronic W mass: " << Whad.mass()/GeV);
@@ -102,14 +99,47 @@ namespace Rivet {
         const FourMomentum t2 = Wlep + bjets[1].momentum();
         const FourMomentum t1bar = Wlep + bjets[1].momentum();
         const FourMomentum t2bar = Wlep + bjets[0].momentum();
+
+        // Consider combinatorics of t,tbar configurations
+	const double c11 = fabs(t1.mass() - t1bar.mass());
+	const double c12 = fabs(t1.mass() - t2bar.mass());
+	const double c21 = fabs(t2.mass() - t1bar.mass());
+	const double c22 = fabs(t2.mass() - t2bar.mass());
+
+        // Choose configuration with minimum difference of t, tbar masses
+        FourMomentum top = t1;
+        FourMomentum tbar = t1bar;
+        double cmin = c11;
+
+        if (c12 < cmin) {
+          top = t1;
+          tbar = t2bar;
+          cmin = c12;
+        }
+
+        if (c21 < cmin) {
+          top = t2;
+          tbar = t1bar;
+          cmin = c21;
+        }
+
+        if (c22 < cmin) {
+          top = t2;
+          tbar = t2bar;
+          cmin = c22;
+        }
+
+        // Fill t, tbar
+        _h_t_pT_W_cut->fill(top.pT(), weight);
+        _h_t_pT_W_cut->fill(tbar.pT(), weight);
+
       }
       else vetoEvent;
     }
 
     void finalize() {
       normalize(_h_t_pT_W_cut, 1/crossSection());
-      //scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
-      //scale(_h_t_pT_W_cut,crossSection());
+      scale(_h_t_pT_W_cut,crossSection()/sumOfWeights());
     }
     //@}
 
