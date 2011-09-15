@@ -1,7 +1,6 @@
 #include "Rivet/Analysis.hh"
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedLeptons.hh"
-#include "Rivet/Projections/MissingMomentum.hh"
 #include "Rivet/Projections/WFinder.hh"
 #include "Rivet/Projections/HadronicFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
@@ -11,6 +10,7 @@
 namespace Rivet {
 
   class D0_2010_S8521379 : public Analysis {
+    
 
     public:
 
@@ -26,12 +26,12 @@ namespace Rivet {
       void init() {
 
         FinalState fs = FinalState(-5, 5, 0*GeV);
-
         addProjection(ChargedLeptons(fs), "LFS"); 
+        addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
+
+        // Separated Electron and Muon Wfinder projections
       	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, ELECTRON, 60.0*GeV, 100.0*GeV, 20.0*GeV, 0.2), "WE");
       	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, MUON, 60.0*GeV, 100.0*GeV, 25.0*GeV, 0.2), "WMU");
-        addProjection(MissingMomentum(FinalState(fs)), "MM");
-        addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
         _h_t_pT_W_cut = bookHistogram1D(2,1,1);
       }
@@ -39,22 +39,39 @@ namespace Rivet {
       void analyze(const Event& event) {
         const double weight = event.weight();
 
+        // Ensure that there is only one charged lepton in the event
         const ChargedLeptons& lfs = applyProjection<ChargedLeptons>(event, "LFS");
-        const MissingMomentum& missmom = applyProjection<MissingMomentum>(event, "MM");
-        const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
-
-
-        // Not really needed, and should speed stuff up
-        /*foreach (Particle lepton, lfs.chargedLeptons()) {
-          MSG_DEBUG("Lepton pT = " << lepton.momentum().pT());
-          }*/
 
         if (lfs.chargedLeptons().size() != 1) {
-          MSG_DEBUG("Event failed lepton multiplicity cut");
+          MSG_DEBUG("Event failed charged lepton multiplicity cut");
           vetoEvent;
         }
 
+        // Find the leptonically decaying W. @todo: find a better way to do this
+        // branching.
+
+        const Particle& lepton = lfs.chargedLeptons().at(0);
+        const WFinder& wfinder = (abs(lepton.pdgId()) == MUON) ? 
+          applyProjection<WFinder>(event, "WMU") : 
+          applyProjection<WFinder>(event, "WE") ;
+
+        if (wfinder.bosons().size() < 1) {
+          MSG_DEBUG("Event failed charged lepton cuts");
+          vetoEvent;
+        }
+
+        // Apply the lepton rapiditiy cuts.
+        const double maxEta = (abs(lepton.pdgId() == MUON)) ? 2.0 : 1.1;
+        if (abs(lepton.momentum().eta()) >= maxEta) {
+          MSG_DEBUG("Charged lepton failed rapidity cut");
+          vetoEvent;
+        }
+
+        // Run the jet finder, 
+
+        const FastJets& jetpro = applyProjection<FastJets>(event, "Jets");
         const Jets jets = jetpro.jetsByPt(20*GeV, MAXDOUBLE, -2.5, 2.5);
+
         foreach (const Jet& jet, jets) {
           MSG_DEBUG("Jet pT = " << jet.momentum().pT()/GeV << " GeV");
         }
@@ -64,38 +81,11 @@ namespace Rivet {
           vetoEvent;
         }
 
-        const Particle& lepton = lfs.chargedLeptons().at(0);
-        const FourMomentum misslmom = missmom.visibleMomentum();
-
-        const WFinder& wfinder = (abs(lepton.pdgId()) == MUON) ? 
-          applyProjection<WFinder>(event, "WMU") : 
-          applyProjection<WFinder>(event, "WE") ;
-
-        if (wfinder.bosons().size() != 1) {
-          vetoEvent;
-        }
-
-        FourMomentum Wlep(wfinder.bosons().front().momentum());
-
-        if (abs(lepton.pdgId()) == MUON) {
-          if (abs(lepton.momentum().eta()) >= 2.0) {
-            MSG_DEBUG("Muon failed rapidity cut");
-            vetoEvent;
-          }
-        }
-        else if (abs(lepton.pdgId()) == ELECTRON) {
-          if (abs(lepton.momentum().eta()) >= 1.1) {
-            MSG_DEBUG("Electron failed rapidity cut");
-            vetoEvent;
-          }
-        }
-
         if (jets[0].momentum().pT() <= 40*GeV) {
           MSG_DEBUG("Event failed leading jet pT cut");
           vetoEvent;
         }
-
-
+        
         Jets bjets, ljets;
         foreach (const Jet& jet, jets) {
           if (jet.containsBottom()) {
@@ -110,88 +100,45 @@ namespace Rivet {
           vetoEvent;
         }
 
-        if (ljets.size() < 2) {
-          MSG_DEBUG("Event failed l-tagging cut");
-          vetoEvent;
-        }
+        const FourMomentum had_W = ljets[0].momentum() + ljets[1].momentum();
+        const FourMomentum lep_W = wfinder.bosons().front().momentum();
 
-      // Brought this back because it might be important, but cannot get it to work.
-      // Perhaps it's in the wrong place now? Can both start at zero?
-      //  size_t blah1 = 0; size_t blah2 = 0; int Wmass = -1000000;
-      //  for(size_t i = 0; i < ljets.size(); ++i){
-      //    for(size_t j = 0; j < i; ++j) {
-      //      if(i != j) {
-      //        if(abs((ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV - 80.4) < abs(Wmass - 80.4)){
-      //          Wmass = (ljets[i].momentum().mass() + ljets[i].momentum().mass())/GeV;
-      //          blah1 = i;
-      //          blah2 = j;
-      //        }
-      //      }
-      //    }
-      //  }
-      //
-      //  const FourMomentum Whad = ljets[blah1].momentum() + ljets[blah2].momentum();
+        if (inRange(lep_W.mass()/GeV, 70, 90) && inRange(had_W.mass()/GeV, 70, 90)) {
+          MSG_INFO("hadronic W mass: " << had_W.mass()/GeV);
+          MSG_INFO("leptonic W mass: " << lep_W.mass()/GeV);
 
-        const FourMomentum Whad = ljets[0].momentum() + ljets[1].momentum();
+          // We don't know if which b-tagged jet to combine each W with. We
+          // choose the combinations which minimises the difference between the
+          // masses of the reconstructed t,tbar pair.
+          ttbar ttb1 = ttbar(lep_W + bjets[0].momentum(), had_W + bjets[1].momentum());
+          ttbar ttb2 = ttbar(lep_W + bjets[1].momentum(), had_W + bjets[0].momentum());
 
-        if (inRange(Whad.mass()/GeV, 70, 90) && inRange(Wlep.mass()/GeV, 70, 90)) {
-          MSG_INFO("hadronic W mass: " << Whad.mass()/GeV);
-          MSG_INFO("leptonic W mass: " << Wlep.mass()/GeV);
-          const FourMomentum t1 = Whad + bjets[0].momentum();
-          const FourMomentum t2 = Wlep + bjets[1].momentum();
-          const FourMomentum t1bar = Wlep + bjets[1].momentum();
-          const FourMomentum t2bar = Wlep + bjets[0].momentum();
+          // Choose the t,tbar pair that minimises the mass difference
+          ttbar ttb = (_massdiff(ttb1) < _massdiff(ttb2)) ? ttb1 : ttb2;
 
-          // Consider combinatorics of t,tbar configurations
-          const double c11 = fabs(t1.mass() - t1bar.mass());
-          const double c12 = fabs(t1.mass() - t2bar.mass());
-          const double c21 = fabs(t2.mass() - t1bar.mass());
-          const double c22 = fabs(t2.mass() - t2bar.mass());
-
-          // Choose configuration with minimum difference of t, tbar masses
-          FourMomentum top = t1;
-          FourMomentum tbar = t1bar;
-          double cmin = c11;
-
-          if (c12 < cmin) {
-            top = t1;
-            tbar = t2bar;
-            cmin = c12;
-          }
-
-          if (c21 < cmin) {
-            top = t2;
-            tbar = t1bar;
-            cmin = c21;
-          }
-
-          if (c22 < cmin) {
-            top = t2;
-            tbar = t2bar;
-            cmin = c22;
-          }
-
-          // Fill t, tbar
-          _h_t_pT_W_cut->fill(top.pT(), weight);
-          _h_t_pT_W_cut->fill(tbar.pT(), weight);
-
+          _h_t_pT_W_cut->fill(ttb.first.pT(), weight);
+          _h_t_pT_W_cut->fill(ttb.second.pT(), weight);
         }
         else vetoEvent;
       }
 
       void finalize() {
-        scale(_h_t_pT_W_cut,1000 * crossSection()/sumOfWeights());
+        scale(_h_t_pT_W_cut, 1000 * crossSection()/sumOfWeights());
       }
       //@}
 
     private:
 
+      typedef std::pair<FourMomentum, FourMomentum> ttbar;
+
+      double _massdiff(ttbar ttb) {
+        return abs(ttb.first.mass() - ttb.second.mass());
+      }
+
       AIDA::IHistogram1D *_h_t_pT_W_cut;
 
   };
 
-
   // This global object acts as a hook for the plugin system
   AnalysisBuilder<D0_2010_S8521379> plugin_D0_2010_S8521379;
-
 }
