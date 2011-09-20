@@ -2,7 +2,6 @@
 #include "Rivet/Projections/FinalState.hh"
 #include "Rivet/Projections/ChargedLeptons.hh"
 #include "Rivet/Projections/WFinder.hh"
-#include "Rivet/Projections/HadronicFinalState.hh"
 #include "Rivet/Projections/FastJets.hh"
 #include "Rivet/AnalysisLoader.hh"
 #include "Rivet/RivetAIDA.hh"
@@ -30,8 +29,10 @@ namespace Rivet {
         addProjection(FastJets(fs, FastJets::ANTIKT, 0.4), "Jets");
 
         // Separated Electron and Muon Wfinder projections
-      	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, ELECTRON, 60.0*GeV, 100.0*GeV, 20.0*GeV, 0.2), "WE");
-      	addProjection(WFinder(-3.5, 3.5, 25.0*GeV, MUON, 60.0*GeV, 100.0*GeV, 25.0*GeV, 0.2), "WMU");
+        addProjection(WFinder(-3.5, 3.5, 25.0*GeV, ELECTRON, 60.0*GeV,
+              100.0*GeV, 20.0*GeV, 0.2), "WE");
+        addProjection(WFinder(-3.5, 3.5, 25.0*GeV, MUON, 60.0*GeV,
+              100.0*GeV, 25.0*GeV, 0.2), "WMU");
 
         _h_t_pT_W_cut = bookHistogram1D(2,1,1);
       }
@@ -123,7 +124,7 @@ namespace Rivet {
       }
 
       void finalize() {
-        scale(_h_t_pT_W_cut, 1000 * crossSection()/sumOfWeights());
+        scale(_h_t_pT_W_cut, crossSection()/sumOfWeights());
       }
       //@}
 
