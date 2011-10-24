@@ -1,2 +1,4 @@
+set term svg 
+set output '1.svg'
 plot "bench2.dat" using 1:2 title "Linear grid" with lines, "bench2.dat" using 1:3 title "Log grid" with lines, "bench2.dat" using 1:4 title "Sparse linear grid" with lines
 set grid
