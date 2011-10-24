@@ -1,0 +1,74 @@
+\documentclass{beamer}
+
+\setbeamertemplate{navigation symbols}{}%Double number of navigation symbols
+\usepackage[utf8]{inputenc}
+
+\title{Summer projects at PPE}
+\subtitle{Or why we got paid}
+\author{M.Kawałec \\ D.Mallows}
+\setbeamercovered{transparent=25}
+\date{\today}
+\usetheme{default}
+
+\begin{document}
+  \frame{\titlepage}
+
+%  \begin{frame}
+%    \frametitle{Table of Contents}
+%    \tableofcontents
+%  \end{frame}
+
+  \begin{frame}{Introduction}
+
+
+  \end{frame}
+
+  \begin{frame}{Plotting}
+    \begin{itemize}[<uncover@+>]
+      \item Rivet uses make-plots
+      \item Produces excellent plots
+      \item Outgrown initial goals
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{The ideal scientific plotting package}
+    \begin{itemize}[<uncover@+>]
+      \item \LaTeX\ -- use what you already use
+      \item Preview -- see changes as they happen
+      \item Aimed at Physical Sciences
+      \item Clear focus on graphics for print, not screen
+      \item Simplicity over esoteric features
+      \item Sane defaults
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{The not-so-ideal scientific plotting package}
+    \begin{itemize}[<uncover@+>]
+      \item A concise Python drawing library which uses \TeX\ for text placement.
+      \item Output as \LaTeX, PDF, PNG, SVG and on-screen preview
+      \item Plotting library with heirarchical parameters
+      \item First release {\em imminent}, along with thin wrapper for YODA
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Top reconstruction - naive approach}
+    \begin{itemize}[<uncover@+>]
+      \item One charged lepton
+      \item Jet-finding algorithm
+      \item Tag jets containing hadronised b-particles 
+      \item Reconstruct hadronically decaying W's mass from non b-tagged jets
+      \item Place cuts on W mass
+      \item Reconstruct $t$, $\bar{t}$ pair
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Top reconstruction - improvements}
+    \begin{itemize}[<uncover@+>]
+      \item Reconstruct leptonically decaying W as well
+      \item Select combinations of l-jets that minimise difference in W-masses
+      \item Choose t, tbar pair that minimises difference between t, tbar masses
+      \item Change Pythia parameters!
+    \end{itemize}
+  \end{frame}
+
+\end{document}
