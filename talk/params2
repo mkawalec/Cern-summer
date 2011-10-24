@@ -1,0 +1,5 @@
+set term svg 
+set output '2.svg'
+plot "bench.dat" using 1:2 title "Adding 1k bins" with lines, "bench.dat" u 1:3 t "Removing 1k bins" w l
+set grid
+
