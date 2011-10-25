@@ -2,6 +2,7 @@
 
 \setbeamertemplate{navigation symbols}{}%Double number of navigation symbols
 \usepackage[utf8]{inputenc}
+\usepackage{wrapfig}
 
 \title{Summer projects at PPE}
 \subtitle{Or why we got paid}
@@ -19,6 +20,15 @@
 %  \end{frame}
 
 % I have said 'thou shalt not maketh anotherth fileth, we shalt useth the sameth oneth'
+  
+  \begin{frame}{What is YODA?}
+  \begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{yoda-logo}
+  \end{center}
+  \end{wrapfigure}
+  YODA is a small set of data analysis (specifically histogramming) classes being developed by MCnet members as a lightweight common system for MC event generator validation analyses. 
+  \end{frame}
 
   \begin{frame}{YODA capabilities}
     \begin{itemize}[<uncover@+>]
@@ -61,7 +71,7 @@
       \item Jet-finding algorithm
       \item Tag jets containing hadronised b-particles 
       \item Reconstruct hadronically decaying W's mass from non b-tagged jets
-      \item Place cuts on W mass (instead of weighting faunction)
+      \item Place cuts on W mass (instead of weighting function)
       \item Reconstruct $t$, $\bar{t}$ pair
     \end{itemize}
   \end{frame}
