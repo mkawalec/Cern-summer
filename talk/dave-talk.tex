@@ -20,11 +20,60 @@
 
 % I have said 'thou shalt not maketh anotherth fileth, we shalt useth the sameth oneth'
 
-  \begin{frame}{Introduction}
-
-
+  \begin{frame}{YODA capabilities}
+    \begin{itemize}[<uncover@+>]
+      \item Fully transparent and on-line bin management
+      \item Efficient algorithms used under the hood
+      \item Bin validation included
+      \item Concise and modular codebase
+      \item Python bindings 
+      \item Easily extendable with new classes
+    \end{itemize}
   \end{frame}
 
+  \begin{frame}
+      \frametitle{fill() operations}
+      \includegraphics[height=0.89\textheight]{1.jpg}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{add/rem operations}
+    \includegraphics[height=0.89\textheight]{2.jpg}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{rebin() all bins}
+    \includegraphics[height=0.89\textheight]{2a.jpg}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Top production route}
+    \includegraphics[height=0.89\textheight]{ttbar.jpg}
+  \end{frame}
+
+  \begin{frame}
+    \includegraphics[width=\textwidth]{top_paper}
+  \end{frame}
+
+  \begin{frame}{Top reconstruction - naive approach}
+    \begin{itemize}[<uncover@+>]
+      \item One charged lepton
+      \item Jet-finding algorithm
+      \item Tag jets containing hadronised b-particles 
+      \item Reconstruct hadronically decaying W's mass from non b-tagged jets
+      \item Place cuts on W mass (instead of weighting faunction)
+      \item Reconstruct $t$, $\bar{t}$ pair
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Top reconstruction - improvements}
+    \begin{itemize}[<uncover@+>]
+      \item Reconstruct leptonically decaying W as well
+      \item Select combinations of l-jets that minimise difference in W-masses
+      \item Choose t, tbar pair that minimises difference between t, tbar masses
+      \item Change Pythia parameters!
+    \end{itemize}
+  \end{frame}
 	
   \begin{frame}{Plotting}
     \begin{itemize}[<uncover@+>]
@@ -61,51 +110,4 @@
     \includegraphics[width=\textwidth]{daveplot}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Top production route}
-    \includegraphics[height=0.89\textheight]{ttbar.jpg}
-  \end{frame}
-
-  \begin{frame}{Top reconstruction - naive approach}
-    \begin{itemize}[<uncover@+>]
-      \item One charged lepton
-      \item Jet-finding algorithm
-      \item Tag jets containing hadronised b-particles 
-      \item Reconstruct hadronically decaying W's mass from non b-tagged jets
-      \item Place cuts on W mass (instead of weighting faunction)
-      \item Reconstruct $t$, $\bar{t}$ pair
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}{Top reconstruction - improvements}
-    \begin{itemize}[<uncover@+>]
-      \item Reconstruct leptonically decaying W as well
-      \item Select combinations of l-jets that minimise difference in W-masses
-      \item Choose t, tbar pair that minimises difference between t, tbar masses
-      \item Change Pythia parameters!
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}{YODA capabilities}
-    \begin{itemize}[<uncover@+>]
-      \item Fully transparent and on-line bin management
-      \item Efficient algorithms used under the hood
-      \item Bin validation included
-      \item Concise and modular codebase
-      \item Python bindings 
-      \item Easily extendable with new classes
-    \end{itemize}
-  \end{frame}
-  \begin{frame}
-      \frametitle{fill() operations}
-      \includegraphics[height=0.89\textheight]{1.jpg}
-  \end{frame}
-  \begin{frame}
-    \frametitle{add/rem operations}
-    \includegraphics[height=0.89\textheight]{2.jpg}
-  \end{frame}
-  \begin{frame}
-    \frametitle{rebin() all bins}
-    \includegraphics[height=0.89\textheight]{2a.jpg}
-  \end{frame}
 \end{document}

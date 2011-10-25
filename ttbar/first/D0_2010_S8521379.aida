@@ -11,27 +11,27 @@
   <dataPointSet name="d02-x01-y01" dimension="2" path="/REF/D0_2010_S8521379" title="D(SIG)/DPT IN FB/GEV" >
     <dataPoint>
       <measurement value="29.0" errorPlus="16.0" errorMinus="29.0"/>
-      <measurement value="70.0" errorPlus="12.083045973594572" errorMinus="12.083045973594572"/>
+      <measurement value="0.07" errorPlus="12.083045973594572" errorMinus="12.083045973594572"/>
     </dataPoint>
     <dataPoint>
       <measurement value="68.0" errorPlus="22.0" errorMinus="23.0"/>
-      <measurement value="130.0" errorPlus="22.360679774997898" errorMinus="22.360679774997898"/>
+      <measurement value="0.1300" errorPlus="22.360679774997898" errorMinus="22.360679774997898"/>
     </dataPoint>
     <dataPoint>
       <measurement value="113.0" errorPlus="27.0" errorMinus="23.0"/>
-      <measurement value="89.0" errorPlus="14.317821063276353" errorMinus="14.317821063276353"/>
+      <measurement value="0.089" errorPlus="14.317821063276353" errorMinus="14.317821063276353"/>
     </dataPoint>
     <dataPoint>
       <measurement value="165.0" errorPlus="35.0" errorMinus="25.0"/>
-      <measurement value="37.0" errorPlus="6.708203932499369" errorMinus="6.708203932499369"/>
+      <measurement value="0.037" errorPlus="6.708203932499369" errorMinus="6.708203932499369"/>
     </dataPoint>
     <dataPoint>
       <measurement value="233.0" errorPlus="67.0" errorMinus="33.0"/>
-      <measurement value="8.7" errorPlus="1.8384776310850235" errorMinus="1.8384776310850235"/>
+      <measurement value="0.0087" errorPlus="1.8384776310850235" errorMinus="1.8384776310850235"/>
     </dataPoint>
     <dataPoint>
       <measurement value="329.0" errorPlus="71.0" errorMinus="29.0"/>
-      <measurement value="1.1" errorPlus="0.31622776601683794" errorMinus="0.31622776601683794"/>
+      <measurement value="0.0011" errorPlus="0.31622776601683794" errorMinus="0.31622776601683794"/>
     </dataPoint>
   </dataPointSet>
 </aida>
