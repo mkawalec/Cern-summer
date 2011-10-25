@@ -27,5 +27,3 @@ lepton + jets ->
    −0.97
    good agreement with the value extracted in this study
    by integrating the differential cross section)
-  
-
